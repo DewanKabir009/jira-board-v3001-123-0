@@ -1,4 +1,5 @@
 name: Update Jira Assignee
+# v3001.123.0 secured assignee automation
 
 on:
   workflow_dispatch:
