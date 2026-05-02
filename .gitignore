@@ -1,0 +1,7 @@
+node_modules/
+*.log
+localtunnel*.out.log
+localtunnel*.err.log
+jira-board-latest.html
+jira-board-latest.png
+jira-v*-tickets.json

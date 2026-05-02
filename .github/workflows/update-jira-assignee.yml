@@ -1,0 +1,62 @@
+name: Update Jira Assignee
+
+on:
+  workflow_dispatch:
+    inputs:
+      issue_key:
+        description: Jira issue key, for example CORE-14398
+        required: true
+        type: string
+      assignee_display_name:
+        description: New assignee
+        required: true
+        type: choice
+        options:
+          - Dewan Kabir
+          - Nicole Greer
+          - Alex Mcnay
+          - Anton Yurkevich
+
+concurrency:
+  group: jira-assignee-update
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    name: Update Jira and publish dashboard
+    if: github.actor == 'DewanKabir009'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Update Jira assignee
+        id: assign
+        env:
+          JIRA_FIX_VERSION: v3001.123.0
+          JIRA_CLOUD_ID: ${{ secrets.JIRA_CLOUD_ID }}
+          JIRA_EMAIL: ${{ secrets.JIRA_EMAIL }}
+          JIRA_MCP_TOKEN: ${{ secrets.JIRA_MCP_TOKEN }}
+          TRUSTED_GITHUB_ACTORS: DewanKabir009
+          ISSUE_KEY: ${{ inputs.issue_key }}
+          ASSIGNEE_DISPLAY_NAME: ${{ inputs.assignee_display_name }}
+        run: node scripts/update-jira-assignee.cjs
+
+      - name: Commit and push dashboard
+        if: steps.assign.outputs.board_changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Update Jira assignee ${{ steps.assign.outputs.issue_key }}"
+          git push
