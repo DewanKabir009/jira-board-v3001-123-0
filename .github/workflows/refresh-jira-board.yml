@@ -38,7 +38,7 @@ jobs:
         run: node scripts/refresh-jira-board-action.cjs
 
       - name: Commit and push dashboard
-        if: steps.refresh.outputs.changed == 'true'
+        if: steps.refresh.outputs.publish == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

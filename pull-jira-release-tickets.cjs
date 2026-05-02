@@ -3,7 +3,7 @@ const path = require("path");
 
 const workspace = __dirname;
 const siteUrl = "https://golfnow.atlassian.net";
-const dashboardVersion = "v1.3.1";
+const dashboardVersion = "v1.4";
 const repositorySlug = "DewanKabir009/jira-board-v3001-123-0";
 const dashboardUrl = "https://dewankabir009.github.io/jira-board-v3001-123-0/";
 const assigneeDispatchEndpoint = "http://127.0.0.1:3992/assign";

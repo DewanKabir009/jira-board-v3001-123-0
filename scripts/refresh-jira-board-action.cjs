@@ -53,17 +53,20 @@ const added = diff.added || [];
 const updated = diff.updated || [];
 const statusChanges = diff.statusChanges || [];
 const removed = diff.removed || [];
-const changed = hasChanges(diff);
+const jiraChanged = hasChanges(diff);
+const previousIndex = fs.existsSync(indexPath) ? fs.readFileSync(indexPath, "utf8") : "";
 
-if (changed) {
-  fs.copyFileSync(htmlPath, indexPath);
-}
+fs.copyFileSync(htmlPath, indexPath);
 
-writeOutput("changed", changed ? "true" : "false");
+const currentIndex = fs.existsSync(indexPath) ? fs.readFileSync(indexPath, "utf8") : "";
+const publish = previousIndex !== currentIndex;
+
+writeOutput("changed", jiraChanged ? "true" : "false");
+writeOutput("publish", publish ? "true" : "false");
 writeOutput("pulled_at", diff.currentPulledAtDisplay || data.pulledAtDisplay || "");
 
 const lines = [
-  `## Jira board refresh: ${changed ? "changes detected" : "No Change"}`,
+  `## Jira board refresh: ${jiraChanged ? "changes detected" : "No Change"}`,
   "",
   `- Version: \`${data.version}\``,
   `- Pull: ${diff.currentPulledAtDisplay || data.pulledAtDisplay} ET`,
@@ -94,8 +97,12 @@ if (removed.length) {
   lines.push("", `Removed tickets: ${listKeys(removed).join(", ")}`);
 }
 
-if (!changed) {
-  lines.push("", "No ticket field changes were detected, so the dashboard was not committed.");
+if (!jiraChanged) {
+  lines.push("", "No ticket field changes were detected. The dashboard timestamp and Data Pull panel were still published.");
+}
+
+if (!publish) {
+  lines.push("", "The generated dashboard matched the current published file, so there was nothing to commit.");
 }
 
 writeSummary(lines.join("\n"));

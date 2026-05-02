@@ -4,7 +4,7 @@ Interactive release dashboard for Jira fixVersion `v3001.123.0`.
 
 - Live dashboard: <https://dewankabir009.github.io/jira-board-v3001-123-0/>
 - Jira source: `fixVersion = "v3001.123.0" ORDER BY updated DESC`
-- Current dashboard version: `v1.3.1`
+- Current dashboard version: `v1.4`
 
 The board groups release tickets by workflow status, keeps component and QA filters at the top, tracks subtask relationships, and preserves a Data Pull history so status movement is visible over time.
 
@@ -18,8 +18,8 @@ Behavior:
 - Can also be run manually from the GitHub Actions tab.
 - Pulls the latest Jira data for `v3001.123.0`.
 - Compares the new Jira snapshot against the snapshot embedded in `index.html`.
-- Commits and pushes `index.html` only when Jira ticket data changes.
-- Skips dashboard commits for `No Change` pulls to avoid noisy history.
+- Publishes `index.html` after each successful pull so the dashboard shows the latest pull timestamp.
+- Uses `No Change` in the Data Pull panel when Jira ticket fields match the previous snapshot.
 
 Required repository secrets:
 
@@ -220,6 +220,12 @@ Screenshot: `screenshots/jira-board-versions/13-v3001-123-initial-board.png`
 - Kept the v3001.123.0 repo, page URL, Jira data, screenshots, workflows, and assignee bridge separate from v3001.122.0.
 - Assigned the v3001.123.0 assignee bridge to local port `3992` so it can run next to the v3001.122.0 bridge on port `3991`.
 - Pulled the first v3001.123.0 Jira snapshot as a baseline.
+
+### v1.4 - Published No-Change Pulls
+
+- Updated the GitHub Actions refresh path so every successful Jira pull publishes the dashboard timestamp.
+- Kept `No Change` visible in the Data Pull panel when Jira ticket fields did not change.
+- Preserved separate Jira-change counts so the workflow summary still distinguishes true ticket changes from timestamp refreshes.
 
 ## Planned Next Steps
 
