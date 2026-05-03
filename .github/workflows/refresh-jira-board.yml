@@ -47,7 +47,7 @@ jobs:
             git pull --rebase origin "$GITHUB_REF_NAME"
             node scripts/refresh-jira-board-action.cjs
 
-            if git diff --quiet -- index.html assets/jira-media; then
+            if [ -z "$(git status --porcelain -- index.html assets/jira-media)" ]; then
               echo "No dashboard or Jira media asset change to commit."
             else
               pulled_at="$(node - <<'NODE'
