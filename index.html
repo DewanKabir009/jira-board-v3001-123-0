@@ -120,6 +120,18 @@
       font-size: 13px;
     }
 
+    .stamp-next,
+    .stamp-domain {
+      display: block;
+    }
+
+    .stamp-next {
+      margin-top: 2px;
+      color: #334968;
+      font-size: 12px;
+      font-weight: 720;
+    }
+
     .toolbar {
       display: flex;
       align-items: center;
@@ -1004,8 +1016,9 @@
         </div>
         <div class="stamp">
           <strong>Pulled from Jira</strong>
-          <span id="pulled-at"></span> ET<br>
-          golfnow.atlassian.net
+          <span id="pulled-at"></span> ET
+          <span class="stamp-next">Next Refresh on: <span id="next-refresh-at"></span> ET</span>
+          <span class="stamp-domain">golfnow.atlassian.net</span>
         </div>
       </header>
 
@@ -1058,14 +1071,14 @@
             <span class="bridge-dot" aria-hidden="true"></span>
             <span><b>Assignee Bridge Status</b><small id="bridge-status-text">Checking</small></span>
           </span>
-          <a href="https://github.com/DewanKabir009/jira-board-v3001-123-0#version-history">Dashboard v1.4 notes</a>
+          <a href="https://github.com/DewanKabir009/jira-board-v3001-123-0#version-history">Dashboard v1.5 notes</a>
           <a href="https://golfnow.atlassian.net/issues/?jql=fixVersion%20%3D%20%22v3001.123.0%22%20ORDER%20BY%20updated%20DESC">Open Jira filter</a>
         </span>
       </div>
     </section>
   </main>
 
-  <script id="jira-data" type="application/json">{"version":"v3001.123.0","siteUrl":"https://golfnow.atlassian.net","jql":"fixVersion = \"v3001.123.0\" ORDER BY updated DESC","pulledAt":"2026-05-03T00:07:18.791Z","pulledAtDisplay":"May 2, 2026, 8:07 PM","total":1,"issues":[{"key":"CORE-14436","url":"https://golfnow.atlassian.net/browse/CORE-14436","summary":"Code changes for [CORE - 14304]","type":"Developer Task (sub task)","isSubtask":true,"status":"Development","priority":"P2","assignee":"Luis Vallejo Mursuli","updated":"2026-05-01T02:00:50.138-0400","updatedDisplay":"May 1, 2026, 2:00 AM","created":"2026-05-01T01:52:58.338-0400","createdDisplay":"May 1, 2026, 1:52 AM","components":[],"fixVersions":["v3001.123.0"],"resolution":"","parent":{"key":"CORE-14304","url":"https://golfnow.atlassian.net/browse/CORE-14304","summary":"Update GolfPass Terms for Employee Comp Email Template","type":"Task","status":"Planning","priority":"P2"}}],"pullDiff":{"previousPulledAt":"2026-05-02T23:23:34.049Z","previousPulledAtDisplay":"May 2, 2026, 7:23 PM","currentPulledAt":"2026-05-03T00:07:18.791Z","currentPulledAtDisplay":"May 2, 2026, 8:07 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},"pullHistory":[{"previousPulledAt":"2026-05-02T23:23:34.049Z","previousPulledAtDisplay":"May 2, 2026, 7:23 PM","currentPulledAt":"2026-05-03T00:07:18.791Z","currentPulledAtDisplay":"May 2, 2026, 8:07 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-02T22:29:20.598Z","previousPulledAtDisplay":"May 2, 2026, 6:29 PM","currentPulledAt":"2026-05-02T23:23:34.049Z","currentPulledAtDisplay":"May 2, 2026, 7:23 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-02T21:50:11.814Z","previousPulledAtDisplay":"May 2, 2026, 5:50 PM","currentPulledAt":"2026-05-02T22:29:20.598Z","currentPulledAtDisplay":"May 2, 2026, 6:29 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-02T20:55:57.436Z","previousPulledAtDisplay":"May 2, 2026, 4:55 PM","currentPulledAt":"2026-05-02T21:50:11.814Z","currentPulledAtDisplay":"May 2, 2026, 5:50 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-02T20:01:36.012Z","previousPulledAtDisplay":"May 2, 2026, 4:01 PM","currentPulledAt":"2026-05-02T20:55:57.436Z","currentPulledAtDisplay":"May 2, 2026, 4:55 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-02T19:53:55.315Z","previousPulledAtDisplay":"May 2, 2026, 3:53 PM","currentPulledAt":"2026-05-02T20:01:36.012Z","currentPulledAtDisplay":"May 2, 2026, 4:01 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-02T19:51:43.002Z","previousPulledAtDisplay":"May 2, 2026, 3:51 PM","currentPulledAt":"2026-05-02T19:53:55.315Z","currentPulledAtDisplay":"May 2, 2026, 3:53 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-02T19:12:50.786Z","previousPulledAtDisplay":"May 2, 2026, 3:12 PM","currentPulledAt":"2026-05-02T19:51:43.002Z","currentPulledAtDisplay":"May 2, 2026, 3:51 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-02T19:09:47.239Z","previousPulledAtDisplay":"May 2, 2026, 3:09 PM","currentPulledAt":"2026-05-02T19:12:50.786Z","currentPulledAtDisplay":"May 2, 2026, 3:12 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":null,"previousPulledAtDisplay":null,"currentPulledAt":"2026-05-02T19:09:47.239Z","currentPulledAtDisplay":"May 2, 2026, 3:09 PM","isBaseline":true,"added":[{"key":"CORE-14436","url":"https://golfnow.atlassian.net/browse/CORE-14436","summary":"Code changes for [CORE - 14304]","type":"Developer Task (sub task)","isSubtask":true,"status":"Development","priority":"P2","assignee":"Luis Vallejo Mursuli","updated":"2026-05-01T02:00:50.138-0400","updatedDisplay":"May 1, 2026, 2:00 AM","created":"2026-05-01T01:52:58.338-0400","createdDisplay":"May 1, 2026, 1:52 AM","components":[],"fixVersions":["v3001.123.0"],"resolution":"","parent":{"key":"CORE-14304","url":"https://golfnow.atlassian.net/browse/CORE-14304","summary":"Update GolfPass Terms for Employee Comp Email Template","type":"Task","status":"Planning","priority":"P2"}}],"removed":[],"updated":[],"statusChanges":[]}],"jiraFilterUrl":"https://golfnow.atlassian.net/issues/?jql=fixVersion%20%3D%20%22v3001.123.0%22%20ORDER%20BY%20updated%20DESC","dashboardVersion":"v1.4","repositorySlug":"DewanKabir009/jira-board-v3001-123-0","dashboardUrl":"https://dewankabir009.github.io/jira-board-v3001-123-0/","assigneeDispatchEndpoint":"http://127.0.0.1:3992/assign","assigneeOptions":["Dewan Kabir","Nicole Greer","Alex Mcnay","Anton Yurkevich"]}</script>
+  <script id="jira-data" type="application/json">{"version":"v3001.123.0","siteUrl":"https://golfnow.atlassian.net","jql":"fixVersion = \"v3001.123.0\" ORDER BY updated DESC","pulledAt":"2026-05-03T01:07:43.490Z","pulledAtDisplay":"May 2, 2026, 9:07 PM","total":1,"issues":[{"key":"CORE-14436","url":"https://golfnow.atlassian.net/browse/CORE-14436","summary":"Code changes for [CORE - 14304]","type":"Developer Task (sub task)","isSubtask":true,"status":"Development","priority":"P2","assignee":"Luis Vallejo Mursuli","updated":"2026-05-01T02:00:50.138-0400","updatedDisplay":"May 1, 2026, 2:00 AM","created":"2026-05-01T01:52:58.338-0400","createdDisplay":"May 1, 2026, 1:52 AM","components":[],"fixVersions":["v3001.123.0"],"resolution":"","parent":{"key":"CORE-14304","url":"https://golfnow.atlassian.net/browse/CORE-14304","summary":"Update GolfPass Terms for Employee Comp Email Template","type":"Task","status":"Planning","priority":"P2"}}],"pullDiff":{"previousPulledAt":"2026-05-03T00:07:18.791Z","previousPulledAtDisplay":"May 2, 2026, 8:07 PM","currentPulledAt":"2026-05-03T01:07:43.490Z","currentPulledAtDisplay":"May 2, 2026, 9:07 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},"pullHistory":[{"previousPulledAt":"2026-05-03T00:07:18.791Z","previousPulledAtDisplay":"May 2, 2026, 8:07 PM","currentPulledAt":"2026-05-03T01:07:43.490Z","currentPulledAtDisplay":"May 2, 2026, 9:07 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-02T23:23:34.049Z","previousPulledAtDisplay":"May 2, 2026, 7:23 PM","currentPulledAt":"2026-05-03T00:07:18.791Z","currentPulledAtDisplay":"May 2, 2026, 8:07 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-02T22:29:20.598Z","previousPulledAtDisplay":"May 2, 2026, 6:29 PM","currentPulledAt":"2026-05-02T23:23:34.049Z","currentPulledAtDisplay":"May 2, 2026, 7:23 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-02T21:50:11.814Z","previousPulledAtDisplay":"May 2, 2026, 5:50 PM","currentPulledAt":"2026-05-02T22:29:20.598Z","currentPulledAtDisplay":"May 2, 2026, 6:29 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-02T20:55:57.436Z","previousPulledAtDisplay":"May 2, 2026, 4:55 PM","currentPulledAt":"2026-05-02T21:50:11.814Z","currentPulledAtDisplay":"May 2, 2026, 5:50 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-02T20:01:36.012Z","previousPulledAtDisplay":"May 2, 2026, 4:01 PM","currentPulledAt":"2026-05-02T20:55:57.436Z","currentPulledAtDisplay":"May 2, 2026, 4:55 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-02T19:53:55.315Z","previousPulledAtDisplay":"May 2, 2026, 3:53 PM","currentPulledAt":"2026-05-02T20:01:36.012Z","currentPulledAtDisplay":"May 2, 2026, 4:01 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-02T19:51:43.002Z","previousPulledAtDisplay":"May 2, 2026, 3:51 PM","currentPulledAt":"2026-05-02T19:53:55.315Z","currentPulledAtDisplay":"May 2, 2026, 3:53 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-02T19:12:50.786Z","previousPulledAtDisplay":"May 2, 2026, 3:12 PM","currentPulledAt":"2026-05-02T19:51:43.002Z","currentPulledAtDisplay":"May 2, 2026, 3:51 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-02T19:09:47.239Z","previousPulledAtDisplay":"May 2, 2026, 3:09 PM","currentPulledAt":"2026-05-02T19:12:50.786Z","currentPulledAtDisplay":"May 2, 2026, 3:12 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":null,"previousPulledAtDisplay":null,"currentPulledAt":"2026-05-02T19:09:47.239Z","currentPulledAtDisplay":"May 2, 2026, 3:09 PM","isBaseline":true,"added":[{"key":"CORE-14436","url":"https://golfnow.atlassian.net/browse/CORE-14436","summary":"Code changes for [CORE - 14304]","type":"Developer Task (sub task)","isSubtask":true,"status":"Development","priority":"P2","assignee":"Luis Vallejo Mursuli","updated":"2026-05-01T02:00:50.138-0400","updatedDisplay":"May 1, 2026, 2:00 AM","created":"2026-05-01T01:52:58.338-0400","createdDisplay":"May 1, 2026, 1:52 AM","components":[],"fixVersions":["v3001.123.0"],"resolution":"","parent":{"key":"CORE-14304","url":"https://golfnow.atlassian.net/browse/CORE-14304","summary":"Update GolfPass Terms for Employee Comp Email Template","type":"Task","status":"Planning","priority":"P2"}}],"removed":[],"updated":[],"statusChanges":[]}],"jiraFilterUrl":"https://golfnow.atlassian.net/issues/?jql=fixVersion%20%3D%20%22v3001.123.0%22%20ORDER%20BY%20updated%20DESC","dashboardVersion":"v1.5","repositorySlug":"DewanKabir009/jira-board-v3001-123-0","dashboardUrl":"https://dewankabir009.github.io/jira-board-v3001-123-0/","assigneeDispatchEndpoint":"http://127.0.0.1:3992/assign","assigneeOptions":["Dewan Kabir","Nicole Greer","Alex Mcnay","Anton Yurkevich"]}</script>
   <script>
     (function () {
       "use strict";
@@ -1138,6 +1151,40 @@
 
       function getAssigneeStatusEndpoint() {
         return assigneeDispatchEndpoint.replace(/\/assign$/, "/status");
+      }
+
+      function formatEasternTimestamp(date) {
+        return new Intl.DateTimeFormat("en-US", {
+          timeZone: "America/New_York",
+          month: "short",
+          day: "numeric",
+          year: "numeric",
+          hour: "numeric",
+          minute: "2-digit"
+        }).format(date);
+      }
+
+      function getNextRefreshDate() {
+        var now = new Date();
+        var next = new Date(now.getTime());
+        next.setSeconds(0, 0);
+        if (next <= now) {
+          next.setMinutes(next.getMinutes() + 1);
+        }
+
+        var remainder = next.getMinutes() % 5;
+        if (remainder !== 0) {
+          next.setMinutes(next.getMinutes() + (5 - remainder));
+        }
+
+        return next;
+      }
+
+      function renderNextRefresh() {
+        var target = document.getElementById("next-refresh-at");
+        if (target) {
+          target.textContent = formatEasternTimestamp(getNextRefreshDate());
+        }
       }
 
       function setBridgeStatus(mode, message) {
@@ -1824,6 +1871,7 @@
         renderBoard();
         renderDataPull();
         document.getElementById("pulled-at").textContent = data.pulledAtDisplay;
+        renderNextRefresh();
         document.getElementById("source-line").textContent = "Source: live Jira JQL " + data.jql + ". Components and subtasks are generated from the current ticket snapshot.";
         document.getElementById("copy-components").innerHTML = copyIcon();
         var toggle = document.getElementById("toggle-subtasks");
@@ -2004,6 +2052,7 @@
 
       renderAll();
       checkBridgeStatus();
+      window.setInterval(renderNextRefresh, 30000);
       window.setInterval(checkBridgeStatus, 30000);
     })();
   </script>

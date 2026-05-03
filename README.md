@@ -4,7 +4,7 @@ Interactive release dashboard for Jira fixVersion `v3001.123.0`.
 
 - Live dashboard: <https://dewankabir009.github.io/jira-board-v3001-123-0/>
 - Jira source: `fixVersion = "v3001.123.0" ORDER BY updated DESC`
-- Current dashboard version: `v1.4`
+- Current dashboard version: `v1.5`
 
 The board groups release tickets by workflow status, keeps component and QA filters at the top, tracks subtask relationships, and preserves a Data Pull history so status movement is visible over time.
 
@@ -226,6 +226,14 @@ Screenshot: `screenshots/jira-board-versions/13-v3001-123-initial-board.png`
 - Updated the GitHub Actions refresh path so every successful Jira pull publishes the dashboard timestamp.
 - Kept `No Change` visible in the Data Pull panel when Jira ticket fields did not change.
 - Preserved separate Jira-change counts so the workflow summary still distinguishes true ticket changes from timestamp refreshes.
+
+### v1.5 - Next Refresh Stamp
+
+Screenshot: `screenshots/jira-board-versions/14-next-refresh-stamp.png`
+
+- Added `Next Refresh on:` to the Jira pull stamp.
+- Calculates the next expected 5-minute refresh boundary in Eastern Time.
+- Keeps the last pull timestamp and next expected refresh visible together.
 
 ## Planned Next Steps
 

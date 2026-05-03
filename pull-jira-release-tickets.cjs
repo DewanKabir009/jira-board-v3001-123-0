@@ -3,7 +3,7 @@ const path = require("path");
 
 const workspace = __dirname;
 const siteUrl = "https://golfnow.atlassian.net";
-const dashboardVersion = "v1.4";
+const dashboardVersion = "v1.5";
 const repositorySlug = "DewanKabir009/jira-board-v3001-123-0";
 const dashboardUrl = "https://dewankabir009.github.io/jira-board-v3001-123-0/";
 const assigneeDispatchEndpoint = "http://127.0.0.1:3992/assign";
@@ -490,6 +490,18 @@ function renderHtml(data) {
       display: block;
       color: var(--ink);
       font-size: 13px;
+    }
+
+    .stamp-next,
+    .stamp-domain {
+      display: block;
+    }
+
+    .stamp-next {
+      margin-top: 2px;
+      color: #334968;
+      font-size: 12px;
+      font-weight: 720;
     }
 
     .toolbar {
@@ -1376,8 +1388,9 @@ function renderHtml(data) {
         </div>
         <div class="stamp">
           <strong>Pulled from Jira</strong>
-          <span id="pulled-at"></span> ET<br>
-          ${escapeHtml(siteUrl.replace("https://", ""))}
+          <span id="pulled-at"></span> ET
+          <span class="stamp-next">Next Refresh on: <span id="next-refresh-at"></span> ET</span>
+          <span class="stamp-domain">${escapeHtml(siteUrl.replace("https://", ""))}</span>
         </div>
       </header>
 
@@ -1510,6 +1523,40 @@ function renderHtml(data) {
 
       function getAssigneeStatusEndpoint() {
         return assigneeDispatchEndpoint.replace(/\\/assign$/, "/status");
+      }
+
+      function formatEasternTimestamp(date) {
+        return new Intl.DateTimeFormat("en-US", {
+          timeZone: "America/New_York",
+          month: "short",
+          day: "numeric",
+          year: "numeric",
+          hour: "numeric",
+          minute: "2-digit"
+        }).format(date);
+      }
+
+      function getNextRefreshDate() {
+        var now = new Date();
+        var next = new Date(now.getTime());
+        next.setSeconds(0, 0);
+        if (next <= now) {
+          next.setMinutes(next.getMinutes() + 1);
+        }
+
+        var remainder = next.getMinutes() % 5;
+        if (remainder !== 0) {
+          next.setMinutes(next.getMinutes() + (5 - remainder));
+        }
+
+        return next;
+      }
+
+      function renderNextRefresh() {
+        var target = document.getElementById("next-refresh-at");
+        if (target) {
+          target.textContent = formatEasternTimestamp(getNextRefreshDate());
+        }
       }
 
       function setBridgeStatus(mode, message) {
@@ -2196,6 +2243,7 @@ function renderHtml(data) {
         renderBoard();
         renderDataPull();
         document.getElementById("pulled-at").textContent = data.pulledAtDisplay;
+        renderNextRefresh();
         document.getElementById("source-line").textContent = "Source: live Jira JQL " + data.jql + ". Components and subtasks are generated from the current ticket snapshot.";
         document.getElementById("copy-components").innerHTML = copyIcon();
         var toggle = document.getElementById("toggle-subtasks");
@@ -2376,6 +2424,7 @@ function renderHtml(data) {
 
       renderAll();
       checkBridgeStatus();
+      window.setInterval(renderNextRefresh, 30000);
       window.setInterval(checkBridgeStatus, 30000);
     })();
   </script>
