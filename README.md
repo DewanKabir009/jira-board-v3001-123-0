@@ -4,7 +4,7 @@ Interactive release dashboard for Jira fixVersion `v3001.123.0`.
 
 - Live dashboard: <https://dewankabir009.github.io/jira-board-v3001-123-0/>
 - Jira source: `fixVersion = "v3001.123.0" ORDER BY updated DESC`
-- Current dashboard version: `v1.9.3`
+- Current dashboard version: `v1.9.4`
 
 The board groups release tickets by workflow status, keeps component and QA filters at the top, tracks subtask relationships, and preserves a Data Pull history so status movement is visible over time.
 
@@ -287,6 +287,12 @@ Screenshot: `screenshots/jira-board-versions/18-full-description-images.png`
 - Added a Priority section below the top metrics with counts for `P0`, `P1`, `P2`, `P3`, and `No Priority`.
 - Included main/subtask splits in each Priority count to keep nested subtasks clear.
 - Sorted main ticket cards inside each status section by priority first, then by most recent Jira update.
+
+### v1.9.4 - Description Modal
+
+- Moved ticket and subtask descriptions from inline card expansion into an in-page modal.
+- Enlarged embedded Jira description images inside the modal so screenshots can be reviewed without opening a separate browser tab.
+- Kept the compact Description button on each card while preventing long descriptions from stretching status lanes.
 
 ## Planned Next Steps
 

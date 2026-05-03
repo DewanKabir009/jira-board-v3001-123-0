@@ -3,7 +3,7 @@ const path = require("path");
 
 const workspace = __dirname;
 const siteUrl = "https://golfnow.atlassian.net";
-const dashboardVersion = "v1.9.3";
+const dashboardVersion = "v1.9.4";
 const repositorySlug = "DewanKabir009/jira-board-v3001-123-0";
 const dashboardUrl = "https://dewankabir009.github.io/jira-board-v3001-123-0/";
 const assigneeDispatchEndpoint = "http://127.0.0.1:3992/assign";
@@ -338,9 +338,7 @@ function renderMediaNode(media, context) {
   }
 
   return `<figure class="description-media">` +
-    `<a href="${escapeHtml(asset.relativePath)}" target="_blank" rel="noopener">` +
-      `<img src="${escapeHtml(asset.relativePath)}" alt="${escapeHtml(alt)}" loading="lazy">` +
-    `</a>` +
+    `<img src="${escapeHtml(asset.relativePath)}" alt="${escapeHtml(alt)}" loading="lazy">` +
     `<figcaption>${escapeHtml(alt)}</figcaption>` +
   `</figure>`;
 }
@@ -464,7 +462,11 @@ function readDataFromHtml(htmlPath) {
     return null;
   }
 
-  return parseJsonText(html.slice(startIndex + start.length, endIndex));
+  try {
+    return parseJsonText(html.slice(startIndex + start.length, endIndex));
+  } catch {
+    return null;
+  }
 }
 
 function newerPullData(left, right) {
@@ -847,6 +849,10 @@ function renderHtml(data) {
       font: 13px/1.42 "Segoe UI", Arial, sans-serif;
       letter-spacing: 0;
       overflow-x: hidden;
+    }
+
+    body.modal-open {
+      overflow: hidden;
     }
 
     button,
@@ -1539,6 +1545,146 @@ function renderHtml(data) {
       color: #172033;
     }
 
+    .description-modal[hidden] {
+      display: none;
+    }
+
+    .description-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 80;
+      display: grid;
+      place-items: center;
+      padding: 18px;
+    }
+
+    .description-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.48);
+    }
+
+    .description-dialog {
+      position: relative;
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr);
+      width: min(1120px, 100%);
+      max-height: min(900px, calc(100vh - 36px));
+      overflow: hidden;
+      border: 1px solid #cbd7e6;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 24px 70px rgba(23, 32, 51, 0.28);
+    }
+
+    .description-modal-header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: start;
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--line);
+      background: #f8fbff;
+    }
+
+    .description-modal-title {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 7px;
+    }
+
+    .description-modal-title h2 {
+      margin: 0;
+      color: var(--ink);
+      font-size: 18px;
+      line-height: 1.25;
+    }
+
+    .description-modal-summary {
+      margin: 0;
+      color: #334968;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .description-modal-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 10px;
+    }
+
+    .description-modal-meta span,
+    .description-modal-meta a {
+      border: 1px solid #dce3ef;
+      border-radius: 999px;
+      background: #fff;
+      padding: 3px 8px;
+      color: #41506a;
+      font-size: 11px;
+      font-weight: 750;
+      text-decoration: none;
+    }
+
+    .description-close {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      border: 1px solid #cbd7e6;
+      background: #fff;
+      color: #334968;
+      font-size: 20px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .description-close:hover {
+      border-color: #9eb1c8;
+      color: var(--ink);
+    }
+
+    .description-modal-body {
+      min-height: 0;
+      overflow: auto;
+      padding: 18px;
+      background: #fff;
+    }
+
+    .description-modal-body .description-panel {
+      max-height: none;
+      margin: 0;
+      border: 0;
+      background: transparent;
+      padding: 0;
+      color: #26384f;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .description-modal-body .description-panel h3,
+    .description-modal-body .description-panel h4,
+    .description-modal-body .description-panel h5 {
+      font-size: 15px;
+    }
+
+    .description-modal-body .description-media-group {
+      gap: 14px;
+    }
+
+    .description-modal-body .description-media {
+      padding: 10px;
+      background: #f8fafc;
+    }
+
+    .description-modal-body .description-media img {
+      max-height: min(72vh, 760px);
+      border-radius: 6px;
+      background: #fff;
+    }
+
     .description-empty {
       color: var(--muted);
       font-style: italic;
@@ -2041,6 +2187,22 @@ function renderHtml(data) {
         justify-content: flex-start;
         white-space: normal;
       }
+
+      .description-modal {
+        padding: 10px;
+      }
+
+      .description-dialog {
+        max-height: calc(100vh - 20px);
+      }
+
+      .description-modal-header {
+        padding: 12px;
+      }
+
+      .description-modal-body {
+        padding: 12px;
+      }
     }
   </style>
 </head>
@@ -2126,6 +2288,23 @@ function renderHtml(data) {
     </section>
   </main>
 
+  <div class="description-modal" id="description-modal" hidden>
+    <div class="description-backdrop" data-description-close></div>
+    <section class="description-dialog" role="dialog" aria-modal="true" aria-labelledby="description-modal-title">
+      <header class="description-modal-header">
+        <div>
+          <div class="description-modal-title" id="description-modal-title"></div>
+          <p class="description-modal-summary" id="description-modal-summary"></p>
+          <div class="description-modal-meta" id="description-modal-meta"></div>
+        </div>
+        <button class="description-close" type="button" data-description-close aria-label="Close description">x</button>
+      </header>
+      <div class="description-modal-body">
+        <div class="description-panel" id="description-modal-content"></div>
+      </div>
+    </section>
+  </div>
+
   <script id="jira-data" type="application/json">${dataJson}</script>
   <script>
     (function () {
@@ -2137,7 +2316,7 @@ function renderHtml(data) {
         activeQa: "all",
         collapsedStatuses: new Set(),
         expandedSubtasks: new Set(),
-        expandedDescriptions: new Set()
+        activeDescriptionKey: null
       };
       var githubRepo = data.repositorySlug || "DewanKabir009/jira-board-v3001-123-0";
       var dashboardUrl = data.dashboardUrl || "https://dewankabir009.github.io/jira-board-v3001-123-0/";
@@ -2683,7 +2862,6 @@ function renderHtml(data) {
       }
 
       function renderDescription(issue) {
-        var expanded = state.expandedDescriptions.has(issue.key);
         var hasIssueDescription = hasDescription(issue);
         var imageCount = Number(issue.descriptionImageCount || 0);
         var stateLabel = !hasIssueDescription
@@ -2691,13 +2869,65 @@ function renderHtml(data) {
           : (imageCount ? imageCount + " image" + (imageCount === 1 ? "" : "s") : "View");
 
         return "<div class=\\"description-shell" + (hasIssueDescription ? "" : " is-empty") + "\\">" +
-          "<button class=\\"description-toggle\\" type=\\"button\\" aria-expanded=\\"" + expanded + "\\" data-description-for=\\"" + escape(issue.key) + "\\">" +
+          "<button class=\\"description-toggle\\" type=\\"button\\" aria-haspopup=\\"dialog\\" data-description-for=\\"" + escape(issue.key) + "\\">" +
             "<span>Description</span>" +
             "<span class=\\"description-state\\">" + escape(stateLabel) + "</span>" +
-            "<span class=\\"chevron\\">" + (expanded ? "v" : ">") + "</span>" +
+            "<span class=\\"chevron\\">></span>" +
           "</button>" +
-          (expanded ? "<div class=\\"description-panel\\">" + renderDescriptionContent(issue) + "</div>" : "") +
         "</div>";
+      }
+
+      function findDescriptionIssue(issueKey) {
+        var cards = getIssueModel();
+        for (var index = 0; index < cards.length; index += 1) {
+          if (cards[index].issue.key === issueKey) {
+            return cards[index].issue;
+          }
+
+          var subtask = cards[index].subtasks.find(function (item) {
+            return item.key === issueKey;
+          });
+          if (subtask) {
+            return subtask;
+          }
+        }
+
+        return data.issues.find(function (issue) {
+          return issue.key === issueKey;
+        });
+      }
+
+      function openDescriptionModal(issueKey) {
+        var issue = findDescriptionIssue(issueKey);
+        if (!issue) {
+          return;
+        }
+
+        state.activeDescriptionKey = issue.key;
+        document.getElementById("description-modal-title").innerHTML =
+          renderKeyLink(issue) + "<h2>Description</h2>";
+        document.getElementById("description-modal-summary").textContent = issue.summary || "";
+        document.getElementById("description-modal-meta").innerHTML =
+          "<span>" + escape(issue.type || "Ticket") + "</span>" +
+          "<span>Status: " + escape(issue.status || "No status") + "</span>" +
+          "<span>Priority: " + escape(priorityLabel(issue.priority)) + "</span>" +
+          "<span>Updated: " + escape(issue.updatedDisplay || "Unknown") + "</span>" +
+          "<span>Images: " + escape(Number(issue.descriptionImageCount || 0)) + "</span>" +
+          "<a href=\\"" + escape(issue.url) + "\\" target=\\"_blank\\" rel=\\"noopener\\">Open Jira</a>";
+        document.getElementById("description-modal-content").innerHTML = renderDescriptionContent(issue);
+        document.getElementById("description-modal").hidden = false;
+        document.body.classList.add("modal-open");
+        var closeButton = document.querySelector("[data-description-close].description-close");
+        if (closeButton) {
+          closeButton.focus();
+        }
+      }
+
+      function closeDescriptionModal() {
+        state.activeDescriptionKey = null;
+        document.getElementById("description-modal").hidden = true;
+        document.getElementById("description-modal-content").innerHTML = "";
+        document.body.classList.remove("modal-open");
       }
 
       function renderMeta(issue, includeStatus) {
@@ -2818,18 +3048,11 @@ function renderHtml(data) {
         weight += Math.min(1.3, summaryLength / 90);
         weight += issueComponents(card.issue).length * 0.25;
 
-        if (state.expandedDescriptions.has(card.issue.key)) {
-          weight += 1 + Math.min(5.5, text(card.issue.description).length / 220 + Number(card.issue.descriptionImageCount || 0) * 1.8);
-        }
-
         if (card.subtasks.length) {
           weight += 0.9;
           if (state.expandedSubtasks.has(card.issue.key)) {
             weight += card.subtasks.reduce(function (total, subtask) {
-              var descriptionWeight = state.expandedDescriptions.has(subtask.key)
-                ? 1 + Math.min(4.8, text(subtask.description).length / 220 + Number(subtask.descriptionImageCount || 0) * 1.8)
-                : 0;
-              return total + 1.8 + Math.min(1.1, text(subtask.summary).length / 100) + issueComponents(subtask).length * 0.18 + descriptionWeight;
+              return total + 1.8 + Math.min(1.1, text(subtask.summary).length / 100) + issueComponents(subtask).length * 0.18;
             }, 0);
           }
         }
@@ -3235,13 +3458,7 @@ function renderHtml(data) {
 
         var descriptionToggle = event.target.closest(".description-toggle");
         if (descriptionToggle) {
-          var descriptionIssueKey = descriptionToggle.getAttribute("data-description-for");
-          if (state.expandedDescriptions.has(descriptionIssueKey)) {
-            state.expandedDescriptions.delete(descriptionIssueKey);
-          } else {
-            state.expandedDescriptions.add(descriptionIssueKey);
-          }
-          renderAll();
+          openDescriptionModal(descriptionToggle.getAttribute("data-description-for"));
           return;
         }
 
@@ -3257,6 +3474,27 @@ function renderHtml(data) {
           state.collapsedStatuses.add(status);
         }
         renderAll();
+      });
+
+      document.getElementById("description-modal").addEventListener("click", function (event) {
+        var closeTarget = event.target.closest("[data-description-close]");
+        if (closeTarget) {
+          closeDescriptionModal();
+          return;
+        }
+
+        var copyButton = event.target.closest("[data-copy-link]");
+        if (copyButton) {
+          copyText(copyButton.getAttribute("data-copy-link")).then(function () {
+            markCopied(copyButton);
+          });
+        }
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && !document.getElementById("description-modal").hidden) {
+          closeDescriptionModal();
+        }
       });
 
       document.getElementById("toggle-subtasks").addEventListener("click", function () {
