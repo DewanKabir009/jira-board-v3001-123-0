@@ -4,7 +4,7 @@ Interactive release dashboard for Jira fixVersion `v3001.123.0`.
 
 - Live dashboard: <https://dewankabir009.github.io/jira-board-v3001-123-0/>
 - Jira source: `fixVersion = "v3001.123.0" ORDER BY updated DESC`
-- Current dashboard version: `v1.6`
+- Current dashboard version: `v1.7`
 
 The board groups release tickets by workflow status, keeps component and QA filters at the top, tracks subtask relationships, and preserves a Data Pull history so status movement is visible over time.
 
@@ -14,7 +14,8 @@ The repo includes `.github/workflows/refresh-jira-board.yml`.
 
 Behavior:
 
-- Runs every 5 minutes with `cron: */5 * * * *`.
+- Starts from GitHub Actions schedule at minute 3 each hour.
+- Scheduled runs stay active for up to 12 pull cycles and poll Jira every 5 minutes inside the job.
 - Can also be run manually from the GitHub Actions tab.
 - Pulls the latest Jira data for `v3001.123.0`.
 - Compares the new Jira snapshot against the snapshot embedded in `index.html`.
@@ -243,6 +244,15 @@ Screenshot: `screenshots/jira-board-versions/15-auto-freshness-check.png`
 - Added a lightweight freshness check that asks the live GitHub Pages page for the latest deployed pull timestamp.
 - Automatically reloads an open dashboard tab when a newer deployed pull is available.
 - Preserves the newest embedded pull history when local generator snapshots are older than `index.html`.
+
+### v1.7 - Watchdog Refresh Loop
+
+Screenshot: `screenshots/jira-board-versions/16-watchdog-refresh-loop.png`
+
+- Replaced the unreliable `*/5` GitHub scheduler assumption with an hourly watcher job.
+- Scheduled refresh runs now poll Jira every 5 minutes inside the running GitHub Actions job.
+- Increased the refresh job timeout to cover the full watcher window.
+- Kept manual workflow runs as a single immediate Jira pull.
 
 ## Planned Next Steps
 

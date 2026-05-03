@@ -4,11 +4,11 @@ name: Refresh Jira Board
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "3 * * * *"
 
 concurrency:
   group: refresh-jira-board
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -17,7 +17,10 @@ jobs:
   refresh:
     name: Pull Jira and publish dashboard
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 70
+    env:
+      REFRESH_ITERATIONS: ${{ github.event_name == 'schedule' && '12' || '1' }}
+      REFRESH_INTERVAL_SECONDS: 300
 
     steps:
       - name: Check out repository
@@ -28,20 +31,42 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Pull Jira data
-        id: refresh
+      - name: Pull Jira data and publish dashboard
         env:
           JIRA_FIX_VERSION: v3001.123.0
           JIRA_CLOUD_ID: ${{ secrets.JIRA_CLOUD_ID }}
           JIRA_EMAIL: ${{ secrets.JIRA_EMAIL }}
           JIRA_MCP_TOKEN: ${{ secrets.JIRA_MCP_TOKEN }}
-        run: node scripts/refresh-jira-board-action.cjs
-
-      - name: Commit and push dashboard
-        if: steps.refresh.outputs.publish == 'true'
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html
-          git commit -m "Refresh Jira board data ${{ steps.refresh.outputs.pulled_at }}"
-          git push
+
+          for iteration in $(seq 1 "$REFRESH_ITERATIONS"); do
+            echo "Refresh iteration ${iteration}/${REFRESH_ITERATIONS}"
+            git pull --rebase origin "$GITHUB_REF_NAME"
+            node scripts/refresh-jira-board-action.cjs
+
+            if git diff --quiet -- index.html; then
+              echo "No dashboard file change to commit."
+            else
+              pulled_at="$(node - <<'NODE'
+          const fs = require("fs");
+          const html = fs.readFileSync("index.html", "utf8");
+          const start = '<script id="jira-data" type="application/json">';
+          const end = "</script>";
+          const startIndex = html.indexOf(start);
+          const endIndex = html.indexOf(end, startIndex);
+          const data = JSON.parse(html.slice(startIndex + start.length, endIndex));
+          console.log(data.pullDiff?.currentPulledAtDisplay || data.pulledAtDisplay || new Date().toISOString());
+          NODE
+              )"
+              git add index.html
+              git commit -m "Refresh Jira board data ${pulled_at}"
+              git push
+            fi
+
+            if [ "$iteration" -lt "$REFRESH_ITERATIONS" ]; then
+              sleep "$REFRESH_INTERVAL_SECONDS"
+            fi
+          done
