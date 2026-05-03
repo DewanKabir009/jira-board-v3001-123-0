@@ -79,6 +79,8 @@ jobs:
         if: steps.refresh.outputs.changed == 'true'
         env:
           JIRA_FIX_VERSION: v3001.123.0
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL }}
           QA_EMAIL_TO: ${{ secrets.QA_EMAIL_TO }}

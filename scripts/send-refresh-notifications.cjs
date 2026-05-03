@@ -154,13 +154,7 @@ function buildHtmlBody(summary) {
   ].join("");
 }
 
-async function sendSlack(summary) {
-  const webhookUrl = process.env.SLACK_WEBHOOK_URL;
-  if (!webhookUrl) {
-    console.log("::warning::SLACK_WEBHOOK_URL is not configured; Slack notification skipped.");
-    return false;
-  }
-
+function buildSlackPayload(summary) {
   const detailLines = [];
   for (const [title, items] of summary.sections) {
     detailLines.push(`*${title}*`);
@@ -170,7 +164,7 @@ async function sendSlack(summary) {
     }
   }
 
-  const payload = {
+  return {
     text: `Jira board changed: ${summary.headline}`,
     blocks: [
       {
@@ -215,6 +209,53 @@ async function sendSlack(summary) {
       },
     ],
   };
+}
+
+async function sendSlack(summary) {
+  const botToken = process.env.SLACK_BOT_TOKEN;
+  const channelId = process.env.SLACK_CHANNEL_ID || process.env.SLACK_CHANNEL;
+
+  if (botToken && channelId) {
+    const payload = buildSlackPayload(summary);
+    payload.channel = channelId;
+
+    const response = await fetch("https://slack.com/api/chat.postMessage", {
+      method: "POST",
+      headers: {
+        authorization: `Bearer ${botToken}`,
+        "content-type": "application/json; charset=utf-8",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    const resultText = await response.text();
+    let result = null;
+    try {
+      result = JSON.parse(resultText);
+    } catch {
+      result = null;
+    }
+
+    if (!response.ok || !result?.ok) {
+      const detail = result?.error || resultText || `HTTP ${response.status}`;
+      throw new Error(`Slack bot notification failed: ${detail}`);
+    }
+
+    console.log(`Slack bot notification sent to ${channelId}.`);
+    return true;
+  }
+
+  if (botToken && !channelId) {
+    console.log("::warning::SLACK_BOT_TOKEN is configured but SLACK_CHANNEL_ID is missing; trying webhook fallback.");
+  }
+
+  const webhookUrl = process.env.SLACK_WEBHOOK_URL;
+  if (!webhookUrl) {
+    console.log("::warning::Slack notification skipped. Configure SLACK_BOT_TOKEN with SLACK_CHANNEL_ID, or configure SLACK_WEBHOOK_URL.");
+    return false;
+  }
+
+  const payload = buildSlackPayload(summary);
 
   if (process.env.SLACK_CHANNEL) {
     payload.channel = process.env.SLACK_CHANNEL;

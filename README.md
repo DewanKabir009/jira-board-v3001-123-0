@@ -4,7 +4,7 @@ Interactive release dashboard for Jira fixVersion `v3001.123.0`.
 
 - Live dashboard: <https://dewankabir009.github.io/jira-board-v3001-123-0/>
 - Jira source: `fixVersion = "v3001.123.0" ORDER BY updated DESC`
-- Current dashboard version: `v1.9.5`
+- Current dashboard version: `v1.9.6`
 
 The board groups release tickets by workflow status, keeps component and QA filters at the top, tracks subtask relationships, and preserves a Data Pull history so status movement is visible over time.
 
@@ -42,15 +42,17 @@ For `JIRA_MCP_TOKEN`, paste the token only into the GitHub CLI prompt or GitHub 
 
 When a scheduled or manually triggered refresh detects real Jira ticket data changes, GitHub Actions sends:
 
-- A Slack notification through `SLACK_WEBHOOK_URL`.
+- A Slack notification through either `SLACK_BOT_TOKEN` + `SLACK_CHANNEL_ID`, or the older `SLACK_WEBHOOK_URL` fallback.
 - An email notification to the QA group listed in `QA_EMAIL_TO`.
 
 No Slack or email notification is sent for `No Change` pulls. The dashboard timestamp is still published as usual.
 
 Notification repository secrets:
 
-- `SLACK_WEBHOOK_URL`: Slack incoming webhook URL.
-- `SLACK_CHANNEL`: Optional Slack channel override if the webhook allows it.
+- `SLACK_BOT_TOKEN`: Slack bot user OAuth token, usually starting with `xoxb-`.
+- `SLACK_CHANNEL_ID`: Slack channel ID such as `C012ABCDEF`; invite the bot to this channel.
+- `SLACK_WEBHOOK_URL`: Optional fallback Slack incoming webhook URL.
+- `SLACK_CHANNEL`: Optional webhook channel override if the webhook allows it.
 - `QA_EMAIL_TO`: Comma-separated QA email list, for example `dewan@example.com,nicole@example.com`.
 - `QA_EMAIL_FROM`: Sender address for the dashboard notification.
 - `SMTP_HOST`: SMTP server host.
@@ -63,7 +65,8 @@ Notification repository secrets:
 Example setup:
 
 ```powershell
-gh secret set SLACK_WEBHOOK_URL --repo DewanKabir009/jira-board-v3001-123-0
+gh secret set SLACK_BOT_TOKEN --repo DewanKabir009/jira-board-v3001-123-0
+gh secret set SLACK_CHANNEL_ID --body "C012ABCDEF" --repo DewanKabir009/jira-board-v3001-123-0
 gh secret set QA_EMAIL_TO --body "qa-team@example.com" --repo DewanKabir009/jira-board-v3001-123-0
 gh secret set QA_EMAIL_FROM --body "jira-board@example.com" --repo DewanKabir009/jira-board-v3001-123-0
 gh secret set SMTP_HOST --body "smtp.office365.com" --repo DewanKabir009/jira-board-v3001-123-0
@@ -334,6 +337,12 @@ Screenshot: `screenshots/jira-board-versions/18-full-description-images.png`
 - Added Slack incoming-webhook notifications with the pull timestamp, counts, changed ticket keys, status moves, and dashboard link.
 - Added SMTP email notifications for the QA group using repository secrets.
 - Kept `No Change` pulls quiet for Slack and email while still publishing the dashboard timestamp.
+
+### v1.9.6 - Slack Bot Notifications
+
+- Added Slack bot-token notification support with `SLACK_BOT_TOKEN` and `SLACK_CHANNEL_ID`.
+- Kept incoming webhooks as a fallback path when a webhook secret exists.
+- Documented the Slack app setup and GitHub secret names needed for channel notifications.
 
 ## Planned Next Steps
 
