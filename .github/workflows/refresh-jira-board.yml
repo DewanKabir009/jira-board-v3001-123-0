@@ -4,7 +4,7 @@ name: Refresh Jira Board
 on:
   workflow_dispatch:
   schedule:
-    - cron: "3 * * * *"
+    - cron: "*/5 * * * *"
 
 concurrency:
   group: refresh-jira-board
@@ -17,9 +17,9 @@ jobs:
   refresh:
     name: Pull Jira and publish dashboard
     runs-on: ubuntu-latest
-    timeout-minutes: 70
+    timeout-minutes: 15
     env:
-      REFRESH_ITERATIONS: ${{ github.event_name == 'schedule' && '12' || '1' }}
+      REFRESH_ITERATIONS: 1
       REFRESH_INTERVAL_SECONDS: 300
 
     steps:
