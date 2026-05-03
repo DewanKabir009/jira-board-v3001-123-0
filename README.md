@@ -4,7 +4,7 @@ Interactive release dashboard for Jira fixVersion `v3001.123.0`.
 
 - Live dashboard: <https://dewankabir009.github.io/jira-board-v3001-123-0/>
 - Jira source: `fixVersion = "v3001.123.0" ORDER BY updated DESC`
-- Current dashboard version: `v1.5`
+- Current dashboard version: `v1.6`
 
 The board groups release tickets by workflow status, keeps component and QA filters at the top, tracks subtask relationships, and preserves a Data Pull history so status movement is visible over time.
 
@@ -234,6 +234,15 @@ Screenshot: `screenshots/jira-board-versions/14-next-refresh-stamp.png`
 - Added `Next Refresh on:` to the Jira pull stamp.
 - Calculates the next expected 5-minute refresh boundary in Eastern Time.
 - Keeps the last pull timestamp and next expected refresh visible together.
+
+### v1.6 - Auto Freshness Check
+
+Screenshot: `screenshots/jira-board-versions/15-auto-freshness-check.png`
+
+- Added no-cache meta hints to the static dashboard HTML.
+- Added a lightweight freshness check that asks the live GitHub Pages page for the latest deployed pull timestamp.
+- Automatically reloads an open dashboard tab when a newer deployed pull is available.
+- Preserves the newest embedded pull history when local generator snapshots are older than `index.html`.
 
 ## Planned Next Steps
 

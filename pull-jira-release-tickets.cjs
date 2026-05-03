@@ -3,7 +3,7 @@ const path = require("path");
 
 const workspace = __dirname;
 const siteUrl = "https://golfnow.atlassian.net";
-const dashboardVersion = "v1.5";
+const dashboardVersion = "v1.6";
 const repositorySlug = "DewanKabir009/jira-board-v3001-123-0";
 const dashboardUrl = "https://dewankabir009.github.io/jira-board-v3001-123-0/";
 const assigneeDispatchEndpoint = "http://127.0.0.1:3992/assign";
@@ -73,6 +73,11 @@ function serializeJsonForScript(value) {
     .replace(/\u2029/g, "\\u2029");
 }
 
+function parseJsonText(text) {
+  const normalized = text.charCodeAt(0) === 0xfeff ? text.slice(1) : text;
+  return JSON.parse(normalized);
+}
+
 function readDataFromHtml(htmlPath) {
   if (!fs.existsSync(htmlPath)) {
     return null;
@@ -91,7 +96,27 @@ function readDataFromHtml(htmlPath) {
     return null;
   }
 
-  return JSON.parse(html.slice(startIndex + start.length, endIndex));
+  return parseJsonText(html.slice(startIndex + start.length, endIndex));
+}
+
+function newerPullData(left, right) {
+  if (!left) {
+    return right || null;
+  }
+  if (!right) {
+    return left;
+  }
+
+  const leftTime = Date.parse(left.pulledAt || "");
+  const rightTime = Date.parse(right.pulledAt || "");
+  if (Number.isNaN(leftTime)) {
+    return right;
+  }
+  if (Number.isNaN(rightTime)) {
+    return left;
+  }
+
+  return rightTime > leftTime ? right : left;
 }
 
 async function fetchIssues() {
@@ -375,6 +400,9 @@ function renderHtml(data) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <title>GolfNow CORE Jira Board - ${escapeHtml(version)}</title>
   <style>
     :root {
@@ -1559,6 +1587,57 @@ function renderHtml(data) {
         }
       }
 
+      function cacheBustedUrl(paramName) {
+        var url = new URL(window.location.href);
+        url.searchParams.set(paramName, String(Date.now()));
+        return url.toString();
+      }
+
+      function readPulledAtFromHtml(html) {
+        var start = '<script id="jira-data" type="application/json">';
+        var end = "<\\/script>";
+        var startIndex = html.indexOf(start);
+        if (startIndex === -1) {
+          return "";
+        }
+
+        var endIndex = html.indexOf(end, startIndex);
+        if (endIndex === -1) {
+          return "";
+        }
+
+        try {
+          return JSON.parse(html.slice(startIndex + start.length, endIndex)).pulledAt || "";
+        } catch (error) {
+          return "";
+        }
+      }
+
+      function checkForFreshDeployment() {
+        if (!/^https?:$/.test(window.location.protocol) || !window.fetch || !data.pulledAt) {
+          return;
+        }
+
+        fetch(cacheBustedUrl("freshnessCheck"), { cache: "no-store" })
+          .then(function (response) {
+            if (!response.ok) {
+              throw new Error("Freshness check failed.");
+            }
+            return response.text();
+          })
+          .then(function (html) {
+            var latestPulledAt = readPulledAtFromHtml(html);
+            var currentTime = Date.parse(data.pulledAt || "");
+            var latestTime = Date.parse(latestPulledAt || "");
+            if (!Number.isNaN(currentTime) && !Number.isNaN(latestTime) && latestTime > currentTime) {
+              window.location.replace(cacheBustedUrl("fresh"));
+            }
+          })
+          .catch(function () {
+            // Keep the dashboard usable even if GitHub Pages is briefly slow.
+          });
+      }
+
       function setBridgeStatus(mode, message) {
         var badge = document.getElementById("bridge-status");
         var textNode = document.getElementById("bridge-status-text");
@@ -2424,7 +2503,9 @@ function renderHtml(data) {
 
       renderAll();
       checkBridgeStatus();
+      window.setTimeout(checkForFreshDeployment, 5000);
       window.setInterval(renderNextRefresh, 30000);
+      window.setInterval(checkForFreshDeployment, 60000);
       window.setInterval(checkBridgeStatus, 30000);
     })();
   </script>
@@ -2440,11 +2521,11 @@ async function main() {
   const indexPath = path.join(workspace, "index.html");
   let previousData = null;
 
-  if (fs.existsSync(jsonPath)) {
-    previousData = JSON.parse(fs.readFileSync(jsonPath, "utf8"));
-  } else {
-    previousData = readDataFromHtml(indexPath);
-  }
+  const previousJsonData = fs.existsSync(jsonPath)
+    ? parseJsonText(fs.readFileSync(jsonPath, "utf8"))
+    : null;
+  const previousHtmlData = readDataFromHtml(indexPath);
+  previousData = newerPullData(previousJsonData, previousHtmlData);
 
   const { jql, issues: rawIssues } = await fetchIssues();
   const issues = rawIssues.map(normalizeIssue);
