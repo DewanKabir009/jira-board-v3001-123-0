@@ -4,7 +4,7 @@ Interactive release dashboard for Jira fixVersion `v3001.123.0`.
 
 - Live dashboard: <https://dewankabir009.github.io/jira-board-v3001-123-0/>
 - Jira source: `fixVersion = "v3001.123.0" ORDER BY updated DESC`
-- Current dashboard version: `v1.9.4`
+- Current dashboard version: `v1.9.5`
 
 The board groups release tickets by workflow status, keeps component and QA filters at the top, tracks subtask relationships, and preserves a Data Pull history so status movement is visible over time.
 
@@ -37,6 +37,40 @@ gh secret set JIRA_MCP_TOKEN --repo DewanKabir009/jira-board-v3001-123-0
 ```
 
 For `JIRA_MCP_TOKEN`, paste the token only into the GitHub CLI prompt or GitHub repository secret UI. Do not commit it to the repository.
+
+### Change Notifications
+
+When a scheduled or manually triggered refresh detects real Jira ticket data changes, GitHub Actions sends:
+
+- A Slack notification through `SLACK_WEBHOOK_URL`.
+- An email notification to the QA group listed in `QA_EMAIL_TO`.
+
+No Slack or email notification is sent for `No Change` pulls. The dashboard timestamp is still published as usual.
+
+Notification repository secrets:
+
+- `SLACK_WEBHOOK_URL`: Slack incoming webhook URL.
+- `SLACK_CHANNEL`: Optional Slack channel override if the webhook allows it.
+- `QA_EMAIL_TO`: Comma-separated QA email list, for example `dewan@example.com,nicole@example.com`.
+- `QA_EMAIL_FROM`: Sender address for the dashboard notification.
+- `SMTP_HOST`: SMTP server host.
+- `SMTP_PORT`: SMTP server port, usually `587`.
+- `SMTP_USERNAME`: SMTP username, when required.
+- `SMTP_PASSWORD`: SMTP password or app password, when required.
+- `SMTP_SECURE`: Optional. Use `true` for implicit TLS such as port `465`; omit for STARTTLS on port `587`.
+- `SMTP_REJECT_UNAUTHORIZED`: Optional. Leave unset unless a trusted internal SMTP certificate requires `false`.
+
+Example setup:
+
+```powershell
+gh secret set SLACK_WEBHOOK_URL --repo DewanKabir009/jira-board-v3001-123-0
+gh secret set QA_EMAIL_TO --body "qa-team@example.com" --repo DewanKabir009/jira-board-v3001-123-0
+gh secret set QA_EMAIL_FROM --body "jira-board@example.com" --repo DewanKabir009/jira-board-v3001-123-0
+gh secret set SMTP_HOST --body "smtp.office365.com" --repo DewanKabir009/jira-board-v3001-123-0
+gh secret set SMTP_PORT --body "587" --repo DewanKabir009/jira-board-v3001-123-0
+gh secret set SMTP_USERNAME --body "jira-board@example.com" --repo DewanKabir009/jira-board-v3001-123-0
+gh secret set SMTP_PASSWORD --repo DewanKabir009/jira-board-v3001-123-0
+```
 
 ## Secured Assignee Updates
 
@@ -294,7 +328,13 @@ Screenshot: `screenshots/jira-board-versions/18-full-description-images.png`
 - Enlarged embedded Jira description images inside the modal so screenshots can be reviewed without opening a separate browser tab.
 - Kept the compact Description button on each card while preventing long descriptions from stretching status lanes.
 
+### v1.9.5 - Change Notifications
+
+- Added a GitHub Actions notification step that runs only when Jira ticket data changes.
+- Added Slack incoming-webhook notifications with the pull timestamp, counts, changed ticket keys, status moves, and dashboard link.
+- Added SMTP email notifications for the QA group using repository secrets.
+- Kept `No Change` pulls quiet for Slack and email while still publishing the dashboard timestamp.
+
 ## Planned Next Steps
 
-- Add email notification support that sends the dashboard link and pull summary without attaching the HTML file.
 - Add optional allow-list expansion if more GitHub users should be allowed to submit dashboard assignee updates.
