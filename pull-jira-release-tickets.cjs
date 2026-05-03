@@ -3,7 +3,7 @@ const path = require("path");
 
 const workspace = __dirname;
 const siteUrl = "https://golfnow.atlassian.net";
-const dashboardVersion = "v1.7";
+const dashboardVersion = "v1.8";
 const repositorySlug = "DewanKabir009/jira-board-v3001-123-0";
 const dashboardUrl = "https://dewankabir009.github.io/jira-board-v3001-123-0/";
 const assigneeDispatchEndpoint = "http://127.0.0.1:3992/assign";
@@ -25,6 +25,7 @@ if (!token) {
 
 const fields = [
   "summary",
+  "description",
   "status",
   "issuetype",
   "priority",
@@ -71,6 +72,94 @@ function serializeJsonForScript(value) {
     .replace(/>/g, "\\u003e")
     .replace(/\u2028/g, "\\u2028")
     .replace(/\u2029/g, "\\u2029");
+}
+
+function appendDescriptionText(node, output) {
+  if (!node) {
+    return;
+  }
+
+  if (typeof node === "string") {
+    output.push(node);
+    return;
+  }
+
+  if (Array.isArray(node)) {
+    node.forEach((child) => appendDescriptionText(child, output));
+    return;
+  }
+
+  switch (node.type) {
+    case "text":
+      output.push(node.text || "");
+      break;
+    case "hardBreak":
+      output.push("\n");
+      break;
+    case "emoji":
+      output.push(node.attrs?.shortName || node.attrs?.text || "");
+      break;
+    case "mention":
+      output.push(node.attrs?.text || node.attrs?.displayName || "");
+      break;
+    case "inlineCard":
+    case "blockCard":
+      output.push(node.attrs?.url || "");
+      break;
+    case "listItem":
+      output.push("- ");
+      appendDescriptionText(node.content, output);
+      output.push("\n");
+      break;
+    case "paragraph":
+    case "heading":
+    case "blockquote":
+    case "codeBlock":
+    case "mediaSingle":
+    case "panel":
+      appendDescriptionText(node.content, output);
+      output.push("\n\n");
+      break;
+    case "bulletList":
+    case "orderedList":
+      appendDescriptionText(node.content, output);
+      output.push("\n");
+      break;
+    case "rule":
+      output.push("\n---\n");
+      break;
+    default:
+      appendDescriptionText(node.content, output);
+      break;
+  }
+}
+
+function descriptionToText(description) {
+  if (!description) {
+    return "";
+  }
+
+  if (typeof description === "string") {
+    return description.trim();
+  }
+
+  const output = [];
+  appendDescriptionText(description, output);
+  return output.join("")
+    .replace(/\u00a0/g, " ")
+    .replace(/[ \t]+\n/g, "\n")
+    .replace(/\n[ \t]+/g, "\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
+function descriptionExcerpt(value) {
+  const text = String(value || "").replace(/\s+/g, " ").trim();
+  if (!text) {
+    return "None";
+  }
+
+  return text.length > 140 ? `${text.slice(0, 137)}...` : text;
 }
 
 function parseJsonText(text) {
@@ -164,6 +253,7 @@ function normalizeIssue(issue) {
     key: issue.key,
     url: jiraUrl(issue.key),
     summary: issueFields.summary || "",
+    description: descriptionToText(issueFields.description),
     type: issueType.name || "",
     isSubtask: Boolean(issueType.subtask),
     status: issueFields.status?.name || "",
@@ -180,6 +270,7 @@ function normalizeIssue(issue) {
       key: issueFields.parent.key,
       url: jiraUrl(issueFields.parent.key),
       summary: parentFields.summary || "",
+      description: descriptionToText(parentFields.description),
       type: parentFields.issuetype?.name || "Parent",
       status: parentFields.status?.name || "",
       priority: parentFields.priority?.name || "",
@@ -229,6 +320,16 @@ function compareIssues(previous, current) {
       label: "Components",
       before: formatList(previous.components),
       after: formatList(current.components),
+    });
+  }
+
+  if (Object.prototype.hasOwnProperty.call(previous, "description") &&
+      (previous.description || "") !== (current.description || "")) {
+    changes.push({
+      field: "description",
+      label: "Description",
+      before: descriptionExcerpt(previous.description),
+      after: descriptionExcerpt(current.description),
     });
   }
 
@@ -342,6 +443,26 @@ function buildPullDiff(previousData, issues, pulledAt, pulledAtDisplay) {
   };
 }
 
+function isDescriptionBackfillDiff(entry, previousData) {
+  if (previousData?.dashboardVersion === dashboardVersion) {
+    return false;
+  }
+
+  const updated = entry?.updated || [];
+  if (!updated.length ||
+      (entry.added || []).length ||
+      (entry.removed || []).length ||
+      (entry.statusChanges || []).length) {
+    return false;
+  }
+
+  return updated.every((item) => {
+    const changes = item.changes || [];
+    return changes.length &&
+      changes.every((change) => change.field === "description" && change.before === "None");
+  });
+}
+
 function buildPullHistory(previousData, currentDiff) {
   const previousHistory = Array.isArray(previousData?.pullHistory)
     ? previousData.pullHistory
@@ -351,6 +472,9 @@ function buildPullHistory(previousData, currentDiff) {
 
   for (const entry of [currentDiff, ...previousHistory]) {
     if (!entry?.currentPulledAt || seen.has(entry.currentPulledAt)) {
+      continue;
+    }
+    if (isDescriptionBackfillDiff(entry, previousData)) {
       continue;
     }
     seen.add(entry.currentPulledAt);
@@ -371,6 +495,7 @@ function buildJson(issues, jql, previousData) {
 
   return {
     version,
+    dashboardVersion,
     siteUrl,
     jql,
     pulledAt,
@@ -904,6 +1029,73 @@ function renderHtml(data) {
       display: grid;
       gap: 6px;
       margin-top: 10px;
+    }
+
+    .description-shell {
+      margin-top: 10px;
+      border-left: 3px solid #c8dcff;
+      padding-left: 10px;
+    }
+
+    .description-toggle {
+      width: 100%;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto auto;
+      align-items: center;
+      gap: 8px;
+      border: 0;
+      border-radius: 6px;
+      background: var(--blue-soft);
+      padding: 7px 8px;
+      color: #0747a6;
+      font-size: 11px;
+      font-weight: 800;
+      text-align: left;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .description-toggle:hover {
+      color: #05326f;
+    }
+
+    .description-toggle .chevron {
+      color: #0747a6;
+    }
+
+    .description-state {
+      border-radius: 999px;
+      background: #fff;
+      padding: 2px 8px;
+      color: #41506a;
+      font-size: 11px;
+      font-weight: 750;
+      text-transform: none;
+    }
+
+    .description-panel {
+      display: grid;
+      gap: 8px;
+      max-height: 280px;
+      overflow: auto;
+      margin-top: 8px;
+      border: 1px solid #dce3ef;
+      border-radius: 8px;
+      background: #fbfcff;
+      padding: 10px 11px;
+      color: #334968;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .description-panel p {
+      margin: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .description-empty {
+      color: var(--muted);
+      font-style: italic;
     }
 
     .assign-form {
@@ -1488,7 +1680,8 @@ function renderHtml(data) {
         activeComponent: "all",
         activeQa: "all",
         collapsedStatuses: new Set(),
-        expandedSubtasks: new Set()
+        expandedSubtasks: new Set(),
+        expandedDescriptions: new Set()
       };
       var githubRepo = data.repositorySlug || "DewanKabir009/jira-board-v3001-123-0";
       var dashboardUrl = data.dashboardUrl || "https://dewankabir009.github.io/jira-board-v3001-123-0/";
@@ -1813,6 +2006,7 @@ function renderHtml(data) {
                 updated: issue.updated,
                 updatedDisplay: issue.updatedDisplay,
                 components: [],
+                description: issue.parent && issue.parent.description ? issue.parent.description : "",
                 isSubtask: false
               },
               subtasks: [],
@@ -1932,6 +2126,31 @@ function renderHtml(data) {
         }).join("");
       }
 
+      function renderDescriptionText(value) {
+        var description = text(value).trim();
+        if (!description) {
+          return "<p class=\\"description-empty\\">No description provided.</p>";
+        }
+
+        return description.split(/\\n{2,}/).map(function (paragraph) {
+          return "<p>" + paragraph.split(/\\n/).map(escape).join("<br>") + "</p>";
+        }).join("");
+      }
+
+      function renderDescription(issue) {
+        var expanded = state.expandedDescriptions.has(issue.key);
+        var hasDescription = text(issue.description).trim().length > 0;
+
+        return "<div class=\\"description-shell" + (hasDescription ? "" : " is-empty") + "\\">" +
+          "<button class=\\"description-toggle\\" type=\\"button\\" aria-expanded=\\"" + expanded + "\\" data-description-for=\\"" + escape(issue.key) + "\\">" +
+            "<span>Description</span>" +
+            "<span class=\\"description-state\\">" + (hasDescription ? "View" : "Empty") + "</span>" +
+            "<span class=\\"chevron\\">" + (expanded ? "v" : ">") + "</span>" +
+          "</button>" +
+          (expanded ? "<div class=\\"description-panel\\">" + renderDescriptionText(issue.description) + "</div>" : "") +
+        "</div>";
+      }
+
       function renderMeta(issue, includeStatus) {
         var status = includeStatus ? "<div><b>Status</b>" + escape(issue.status) + "</div>" : "";
         return "<div class=\\"meta\\">" +
@@ -1973,6 +2192,7 @@ function renderHtml(data) {
             "<span class=\\"type\\">" + escape(subtask.type) + "</span>" +
           "</div>" +
           "<p class=\\"summary\\">" + escape(subtask.summary) + "</p>" +
+          renderDescription(subtask) +
           renderMeta(subtask, true) +
           renderIssueActions(subtask) +
         "</article>";
@@ -2005,6 +2225,7 @@ function renderHtml(data) {
             "<span class=\\"type\\">" + escape(issue.type) + "</span>" +
           "</div>" +
           "<p class=\\"summary\\">" + escape(issue.summary) + "</p>" +
+          renderDescription(issue) +
           renderMeta(issue, false) +
           renderIssueActions(issue) +
           subtaskBlock +
@@ -2044,11 +2265,18 @@ function renderHtml(data) {
         weight += Math.min(1.3, summaryLength / 90);
         weight += issueComponents(card.issue).length * 0.25;
 
+        if (state.expandedDescriptions.has(card.issue.key)) {
+          weight += 1 + Math.min(3.5, text(card.issue.description).length / 220);
+        }
+
         if (card.subtasks.length) {
           weight += 0.9;
           if (state.expandedSubtasks.has(card.issue.key)) {
             weight += card.subtasks.reduce(function (total, subtask) {
-              return total + 1.8 + Math.min(1.1, text(subtask.summary).length / 100) + issueComponents(subtask).length * 0.18;
+              var descriptionWeight = state.expandedDescriptions.has(subtask.key)
+                ? 1 + Math.min(2.8, text(subtask.description).length / 220)
+                : 0;
+              return total + 1.8 + Math.min(1.1, text(subtask.summary).length / 100) + issueComponents(subtask).length * 0.18 + descriptionWeight;
             }, 0);
           }
         }
@@ -2323,7 +2551,7 @@ function renderHtml(data) {
         renderDataPull();
         document.getElementById("pulled-at").textContent = data.pulledAtDisplay;
         renderNextRefresh();
-        document.getElementById("source-line").textContent = "Source: live Jira JQL " + data.jql + ". Components and subtasks are generated from the current ticket snapshot.";
+        document.getElementById("source-line").textContent = "Source: live Jira JQL " + data.jql + ". Components, descriptions, and subtasks are generated from the current ticket snapshot.";
         document.getElementById("copy-components").innerHTML = copyIcon();
         var toggle = document.getElementById("toggle-subtasks");
         var cardsWithSubtasks = getVisibleSubtaskCards();
@@ -2446,6 +2674,18 @@ function renderHtml(data) {
             state.expandedSubtasks.delete(issueKey);
           } else {
             state.expandedSubtasks.add(issueKey);
+          }
+          renderAll();
+          return;
+        }
+
+        var descriptionToggle = event.target.closest(".description-toggle");
+        if (descriptionToggle) {
+          var descriptionIssueKey = descriptionToggle.getAttribute("data-description-for");
+          if (state.expandedDescriptions.has(descriptionIssueKey)) {
+            state.expandedDescriptions.delete(descriptionIssueKey);
+          } else {
+            state.expandedDescriptions.add(descriptionIssueKey);
           }
           renderAll();
           return;

@@ -4,7 +4,7 @@ Interactive release dashboard for Jira fixVersion `v3001.123.0`.
 
 - Live dashboard: <https://dewankabir009.github.io/jira-board-v3001-123-0/>
 - Jira source: `fixVersion = "v3001.123.0" ORDER BY updated DESC`
-- Current dashboard version: `v1.7`
+- Current dashboard version: `v1.8`
 
 The board groups release tickets by workflow status, keeps component and QA filters at the top, tracks subtask relationships, and preserves a Data Pull history so status movement is visible over time.
 
@@ -253,6 +253,14 @@ Screenshot: `screenshots/jira-board-versions/16-watchdog-refresh-loop.png`
 - Scheduled refresh runs now poll Jira every 5 minutes inside the running GitHub Actions job.
 - Increased the refresh job timeout to cover the full watcher window.
 - Kept manual workflow runs as a single immediate Jira pull.
+
+### v1.8 - Ticket Description Dropdowns
+
+Screenshot: `screenshots/jira-board-versions/17-ticket-description-dropdowns.png`
+
+- Added Jira descriptions to the pulled ticket snapshot.
+- Added a collapsed `Description` dropdown to every main ticket and subtask card.
+- Preserved readable line breaks from Jira descriptions and included description edits in Data Pull update detection.
 
 ## Planned Next Steps
 
