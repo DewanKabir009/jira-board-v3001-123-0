@@ -237,6 +237,10 @@
       background: #fff;
     }
 
+    .priority-panel {
+      background: #fff;
+    }
+
     .panel-title {
       display: flex;
       align-items: center;
@@ -297,6 +301,41 @@
     .chip.active .chip-count {
       background: #fff;
       color: #0747a6;
+    }
+
+    .priority-summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 8px;
+    }
+
+    .priority-card {
+      min-width: 0;
+      border: 1px solid #dce3ef;
+      border-radius: 8px;
+      background: #fff;
+      padding: 9px 10px;
+    }
+
+    .priority-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .priority-total {
+      color: var(--ink);
+      font-size: 22px;
+      font-weight: 780;
+      line-height: 1;
+    }
+
+    .priority-card-detail {
+      margin-top: 6px;
+      color: #41506a;
+      font-size: 11px;
+      font-weight: 650;
     }
 
     .board {
@@ -486,6 +525,11 @@
     .p-p1 {
       background: var(--amber-soft);
       color: var(--amber);
+    }
+
+    .p-p2 {
+      background: var(--blue-soft);
+      color: var(--blue);
     }
 
     .p-p3 {
@@ -1223,6 +1267,16 @@
 
       <section class="metrics" id="metrics" aria-label="Board metrics"></section>
 
+      <section class="components-panel priority-panel" aria-label="Priority summary">
+        <div class="panel-title">
+          <div class="title-row">
+            <h2>Priority</h2>
+          </div>
+          <div class="panel-note">Counts include main tickets and subtasks.</div>
+        </div>
+        <div class="priority-summary" id="priority-summary"></div>
+      </section>
+
       <section class="components-panel" aria-label="Components">
         <div class="panel-title">
           <div class="title-row">
@@ -1261,14 +1315,14 @@
             <span class="bridge-dot" aria-hidden="true"></span>
             <span><b>Assignee Bridge Status</b><small id="bridge-status-text">Checking</small></span>
           </span>
-          <a href="https://github.com/DewanKabir009/jira-board-v3001-123-0#version-history">Dashboard v1.9.2 notes</a>
+          <a href="https://github.com/DewanKabir009/jira-board-v3001-123-0#version-history">Dashboard v1.9.3 notes</a>
           <a href="https://golfnow.atlassian.net/issues/?jql=fixVersion%20%3D%20%22v3001.123.0%22%20ORDER%20BY%20updated%20DESC">Open Jira filter</a>
         </span>
       </div>
     </section>
   </main>
 
-  <script id="jira-data" type="application/json">{"version":"v3001.123.0","dashboardVersion":"v1.9.2","siteUrl":"https://golfnow.atlassian.net","jql":"fixVersion = \"v3001.123.0\" ORDER BY updated DESC","pulledAt":"2026-05-03T19:16:33.251Z","pulledAtDisplay":"May 3, 2026, 3:16 PM","total":1,"issues":[{"key":"CORE-14436","url":"https://golfnow.atlassian.net/browse/CORE-14436","summary":"Code changes for [CORE - 14304]","description":"","descriptionHtml":"","descriptionImageCount":0,"type":"Developer Task (sub task)","isSubtask":true,"status":"Development","priority":"P2","assignee":"Luis Vallejo Mursuli","updated":"2026-05-01T02:00:50.138-0400","updatedDisplay":"May 1, 2026, 2:00 AM","created":"2026-05-01T01:52:58.338-0400","createdDisplay":"May 1, 2026, 1:52 AM","components":[],"fixVersions":["v3001.123.0"],"resolution":"","parent":{"key":"CORE-14304","url":"https://golfnow.atlassian.net/browse/CORE-14304","summary":"Update GolfPass Terms for Employee Comp Email Template","description":"","type":"Task","status":"Planning","priority":"P2"}}],"pullDiff":{"previousPulledAt":"2026-05-03T18:06:57.912Z","previousPulledAtDisplay":"May 3, 2026, 2:06 PM","currentPulledAt":"2026-05-03T19:16:33.251Z","currentPulledAtDisplay":"May 3, 2026, 3:16 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},"pullHistory":[{"previousPulledAt":"2026-05-03T18:06:57.912Z","previousPulledAtDisplay":"May 3, 2026, 2:06 PM","currentPulledAt":"2026-05-03T19:16:33.251Z","currentPulledAtDisplay":"May 3, 2026, 3:16 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T17:39:48.165Z","previousPulledAtDisplay":"May 3, 2026, 1:39 PM","currentPulledAt":"2026-05-03T18:06:57.912Z","currentPulledAtDisplay":"May 3, 2026, 2:06 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T17:25:09.963Z","previousPulledAtDisplay":"May 3, 2026, 1:25 PM","currentPulledAt":"2026-05-03T17:39:48.165Z","currentPulledAtDisplay":"May 3, 2026, 1:39 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T17:15:53.854Z","previousPulledAtDisplay":"May 3, 2026, 1:15 PM","currentPulledAt":"2026-05-03T17:25:09.963Z","currentPulledAtDisplay":"May 3, 2026, 1:25 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T16:50:02.429Z","previousPulledAtDisplay":"May 3, 2026, 12:50 PM","currentPulledAt":"2026-05-03T17:15:53.854Z","currentPulledAtDisplay":"May 3, 2026, 1:15 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T16:49:46.630Z","previousPulledAtDisplay":"May 3, 2026, 12:49 PM","currentPulledAt":"2026-05-03T16:50:02.429Z","currentPulledAtDisplay":"May 3, 2026, 12:50 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T16:24:29.464Z","previousPulledAtDisplay":"May 3, 2026, 12:24 PM","currentPulledAt":"2026-05-03T16:49:46.630Z","currentPulledAtDisplay":"May 3, 2026, 12:49 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T16:22:40.152Z","previousPulledAtDisplay":"May 3, 2026, 12:22 PM","currentPulledAt":"2026-05-03T16:24:29.464Z","currentPulledAtDisplay":"May 3, 2026, 12:24 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T16:08:33.371Z","previousPulledAtDisplay":"May 3, 2026, 12:08 PM","currentPulledAt":"2026-05-03T16:22:40.152Z","currentPulledAtDisplay":"May 3, 2026, 12:22 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T15:57:06.643Z","previousPulledAtDisplay":"May 3, 2026, 11:57 AM","currentPulledAt":"2026-05-03T16:08:33.371Z","currentPulledAtDisplay":"May 3, 2026, 12:08 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T15:53:38.402Z","previousPulledAtDisplay":"May 3, 2026, 11:53 AM","currentPulledAt":"2026-05-03T15:57:06.643Z","currentPulledAtDisplay":"May 3, 2026, 11:57 AM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T15:48:03.888Z","previousPulledAtDisplay":"May 3, 2026, 11:48 AM","currentPulledAt":"2026-05-03T15:53:38.402Z","currentPulledAtDisplay":"May 3, 2026, 11:53 AM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T15:40:43.434Z","previousPulledAtDisplay":"May 3, 2026, 11:40 AM","currentPulledAt":"2026-05-03T15:48:03.888Z","currentPulledAtDisplay":"May 3, 2026, 11:48 AM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T15:32:29.236Z","previousPulledAtDisplay":"May 3, 2026, 11:32 AM","currentPulledAt":"2026-05-03T15:40:43.434Z","currentPulledAtDisplay":"May 3, 2026, 11:40 AM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T14:40:10.479Z","previousPulledAtDisplay":"May 3, 2026, 10:40 AM","currentPulledAt":"2026-05-03T15:32:29.236Z","currentPulledAtDisplay":"May 3, 2026, 11:32 AM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T13:49:40.730Z","previousPulledAtDisplay":"May 3, 2026, 9:49 AM","currentPulledAt":"2026-05-03T14:40:10.479Z","currentPulledAtDisplay":"May 3, 2026, 10:40 AM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T12:09:26.447Z","previousPulledAtDisplay":"May 3, 2026, 8:09 AM","currentPulledAt":"2026-05-03T13:49:40.730Z","currentPulledAtDisplay":"May 3, 2026, 9:49 AM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T11:31:26.890Z","previousPulledAtDisplay":"May 3, 2026, 7:31 AM","currentPulledAt":"2026-05-03T12:09:26.447Z","currentPulledAtDisplay":"May 3, 2026, 8:09 AM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T10:45:14.975Z","previousPulledAtDisplay":"May 3, 2026, 6:45 AM","currentPulledAt":"2026-05-03T11:31:26.890Z","currentPulledAtDisplay":"May 3, 2026, 7:31 AM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T09:50:52.870Z","previousPulledAtDisplay":"May 3, 2026, 5:50 AM","currentPulledAt":"2026-05-03T10:45:14.975Z","currentPulledAtDisplay":"May 3, 2026, 6:45 AM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T08:27:04.859Z","previousPulledAtDisplay":"May 3, 2026, 4:27 AM","currentPulledAt":"2026-05-03T09:50:52.870Z","currentPulledAtDisplay":"May 3, 2026, 5:50 AM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T06:41:32.903Z","previousPulledAtDisplay":"May 3, 2026, 2:41 AM","currentPulledAt":"2026-05-03T08:27:04.859Z","currentPulledAtDisplay":"May 3, 2026, 4:27 AM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T04:10:19.997Z","previousPulledAtDisplay":"May 3, 2026, 12:10 AM","currentPulledAt":"2026-05-03T06:41:32.903Z","currentPulledAtDisplay":"May 3, 2026, 2:41 AM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T01:07:43.490Z","previousPulledAtDisplay":"May 2, 2026, 9:07 PM","currentPulledAt":"2026-05-03T04:10:19.997Z","currentPulledAtDisplay":"May 3, 2026, 12:10 AM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T00:07:18.791Z","previousPulledAtDisplay":"May 2, 2026, 8:07 PM","currentPulledAt":"2026-05-03T01:07:43.490Z","currentPulledAtDisplay":"May 2, 2026, 9:07 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-02T23:23:34.049Z","previousPulledAtDisplay":"May 2, 2026, 7:23 PM","currentPulledAt":"2026-05-03T00:07:18.791Z","currentPulledAtDisplay":"May 2, 2026, 8:07 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-02T22:29:20.598Z","previousPulledAtDisplay":"May 2, 2026, 6:29 PM","currentPulledAt":"2026-05-02T23:23:34.049Z","currentPulledAtDisplay":"May 2, 2026, 7:23 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-02T21:50:11.814Z","previousPulledAtDisplay":"May 2, 2026, 5:50 PM","currentPulledAt":"2026-05-02T22:29:20.598Z","currentPulledAtDisplay":"May 2, 2026, 6:29 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-02T20:55:57.436Z","previousPulledAtDisplay":"May 2, 2026, 4:55 PM","currentPulledAt":"2026-05-02T21:50:11.814Z","currentPulledAtDisplay":"May 2, 2026, 5:50 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-02T20:01:36.012Z","previousPulledAtDisplay":"May 2, 2026, 4:01 PM","currentPulledAt":"2026-05-02T20:55:57.436Z","currentPulledAtDisplay":"May 2, 2026, 4:55 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-02T19:53:55.315Z","previousPulledAtDisplay":"May 2, 2026, 3:53 PM","currentPulledAt":"2026-05-02T20:01:36.012Z","currentPulledAtDisplay":"May 2, 2026, 4:01 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-02T19:51:43.002Z","previousPulledAtDisplay":"May 2, 2026, 3:51 PM","currentPulledAt":"2026-05-02T19:53:55.315Z","currentPulledAtDisplay":"May 2, 2026, 3:53 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-02T19:12:50.786Z","previousPulledAtDisplay":"May 2, 2026, 3:12 PM","currentPulledAt":"2026-05-02T19:51:43.002Z","currentPulledAtDisplay":"May 2, 2026, 3:51 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-02T19:09:47.239Z","previousPulledAtDisplay":"May 2, 2026, 3:09 PM","currentPulledAt":"2026-05-02T19:12:50.786Z","currentPulledAtDisplay":"May 2, 2026, 3:12 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":null,"previousPulledAtDisplay":null,"currentPulledAt":"2026-05-02T19:09:47.239Z","currentPulledAtDisplay":"May 2, 2026, 3:09 PM","isBaseline":true,"added":[{"key":"CORE-14436","url":"https://golfnow.atlassian.net/browse/CORE-14436","summary":"Code changes for [CORE - 14304]","type":"Developer Task (sub task)","isSubtask":true,"status":"Development","priority":"P2","assignee":"Luis Vallejo Mursuli","updated":"2026-05-01T02:00:50.138-0400","updatedDisplay":"May 1, 2026, 2:00 AM","created":"2026-05-01T01:52:58.338-0400","createdDisplay":"May 1, 2026, 1:52 AM","components":[],"fixVersions":["v3001.123.0"],"resolution":"","parent":{"key":"CORE-14304","url":"https://golfnow.atlassian.net/browse/CORE-14304","summary":"Update GolfPass Terms for Employee Comp Email Template","description":"","type":"Task","status":"Planning","priority":"P2"}}],"removed":[],"updated":[],"statusChanges":[]}],"jiraFilterUrl":"https://golfnow.atlassian.net/issues/?jql=fixVersion%20%3D%20%22v3001.123.0%22%20ORDER%20BY%20updated%20DESC","repositorySlug":"DewanKabir009/jira-board-v3001-123-0","dashboardUrl":"https://dewankabir009.github.io/jira-board-v3001-123-0/","assigneeDispatchEndpoint":"http://127.0.0.1:3992/assign","assigneeOptions":["Dewan Kabir","Nicole Greer","Alex Mcnay","Anton Yurkevich"]}</script>
+  <script id="jira-data" type="application/json">{"version":"v3001.123.0","dashboardVersion":"v1.9.3","siteUrl":"https://golfnow.atlassian.net","jql":"fixVersion = \"v3001.123.0\" ORDER BY updated DESC","pulledAt":"2026-05-03T19:39:26.372Z","pulledAtDisplay":"May 3, 2026, 3:39 PM","total":1,"issues":[{"key":"CORE-14436","url":"https://golfnow.atlassian.net/browse/CORE-14436","summary":"Code changes for [CORE - 14304]","description":"","descriptionHtml":"","descriptionImageCount":0,"type":"Developer Task (sub task)","isSubtask":true,"status":"Development","priority":"P2","assignee":"Luis Vallejo Mursuli","updated":"2026-05-01T02:00:50.138-0400","updatedDisplay":"May 1, 2026, 2:00 AM","created":"2026-05-01T01:52:58.338-0400","createdDisplay":"May 1, 2026, 1:52 AM","components":[],"fixVersions":["v3001.123.0"],"resolution":"","parent":{"key":"CORE-14304","url":"https://golfnow.atlassian.net/browse/CORE-14304","summary":"Update GolfPass Terms for Employee Comp Email Template","description":"","type":"Task","status":"Planning","priority":"P2"}}],"pullDiff":{"previousPulledAt":"2026-05-03T19:33:53.121Z","previousPulledAtDisplay":"May 3, 2026, 3:33 PM","currentPulledAt":"2026-05-03T19:39:26.372Z","currentPulledAtDisplay":"May 3, 2026, 3:39 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},"pullHistory":[{"previousPulledAt":"2026-05-03T19:33:53.121Z","previousPulledAtDisplay":"May 3, 2026, 3:33 PM","currentPulledAt":"2026-05-03T19:39:26.372Z","currentPulledAtDisplay":"May 3, 2026, 3:39 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T17:39:48.165Z","previousPulledAtDisplay":"May 3, 2026, 1:39 PM","currentPulledAt":"2026-05-03T19:33:53.121Z","currentPulledAtDisplay":"May 3, 2026, 3:33 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T17:25:09.963Z","previousPulledAtDisplay":"May 3, 2026, 1:25 PM","currentPulledAt":"2026-05-03T17:39:48.165Z","currentPulledAtDisplay":"May 3, 2026, 1:39 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T17:15:53.854Z","previousPulledAtDisplay":"May 3, 2026, 1:15 PM","currentPulledAt":"2026-05-03T17:25:09.963Z","currentPulledAtDisplay":"May 3, 2026, 1:25 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T16:50:02.429Z","previousPulledAtDisplay":"May 3, 2026, 12:50 PM","currentPulledAt":"2026-05-03T17:15:53.854Z","currentPulledAtDisplay":"May 3, 2026, 1:15 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T16:49:46.630Z","previousPulledAtDisplay":"May 3, 2026, 12:49 PM","currentPulledAt":"2026-05-03T16:50:02.429Z","currentPulledAtDisplay":"May 3, 2026, 12:50 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T16:24:29.464Z","previousPulledAtDisplay":"May 3, 2026, 12:24 PM","currentPulledAt":"2026-05-03T16:49:46.630Z","currentPulledAtDisplay":"May 3, 2026, 12:49 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T16:22:40.152Z","previousPulledAtDisplay":"May 3, 2026, 12:22 PM","currentPulledAt":"2026-05-03T16:24:29.464Z","currentPulledAtDisplay":"May 3, 2026, 12:24 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T16:08:33.371Z","previousPulledAtDisplay":"May 3, 2026, 12:08 PM","currentPulledAt":"2026-05-03T16:22:40.152Z","currentPulledAtDisplay":"May 3, 2026, 12:22 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T15:57:06.643Z","previousPulledAtDisplay":"May 3, 2026, 11:57 AM","currentPulledAt":"2026-05-03T16:08:33.371Z","currentPulledAtDisplay":"May 3, 2026, 12:08 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T15:53:38.402Z","previousPulledAtDisplay":"May 3, 2026, 11:53 AM","currentPulledAt":"2026-05-03T15:57:06.643Z","currentPulledAtDisplay":"May 3, 2026, 11:57 AM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T15:48:03.888Z","previousPulledAtDisplay":"May 3, 2026, 11:48 AM","currentPulledAt":"2026-05-03T15:53:38.402Z","currentPulledAtDisplay":"May 3, 2026, 11:53 AM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T15:40:43.434Z","previousPulledAtDisplay":"May 3, 2026, 11:40 AM","currentPulledAt":"2026-05-03T15:48:03.888Z","currentPulledAtDisplay":"May 3, 2026, 11:48 AM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T15:32:29.236Z","previousPulledAtDisplay":"May 3, 2026, 11:32 AM","currentPulledAt":"2026-05-03T15:40:43.434Z","currentPulledAtDisplay":"May 3, 2026, 11:40 AM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T14:40:10.479Z","previousPulledAtDisplay":"May 3, 2026, 10:40 AM","currentPulledAt":"2026-05-03T15:32:29.236Z","currentPulledAtDisplay":"May 3, 2026, 11:32 AM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T13:49:40.730Z","previousPulledAtDisplay":"May 3, 2026, 9:49 AM","currentPulledAt":"2026-05-03T14:40:10.479Z","currentPulledAtDisplay":"May 3, 2026, 10:40 AM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T12:09:26.447Z","previousPulledAtDisplay":"May 3, 2026, 8:09 AM","currentPulledAt":"2026-05-03T13:49:40.730Z","currentPulledAtDisplay":"May 3, 2026, 9:49 AM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T11:31:26.890Z","previousPulledAtDisplay":"May 3, 2026, 7:31 AM","currentPulledAt":"2026-05-03T12:09:26.447Z","currentPulledAtDisplay":"May 3, 2026, 8:09 AM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T10:45:14.975Z","previousPulledAtDisplay":"May 3, 2026, 6:45 AM","currentPulledAt":"2026-05-03T11:31:26.890Z","currentPulledAtDisplay":"May 3, 2026, 7:31 AM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T09:50:52.870Z","previousPulledAtDisplay":"May 3, 2026, 5:50 AM","currentPulledAt":"2026-05-03T10:45:14.975Z","currentPulledAtDisplay":"May 3, 2026, 6:45 AM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T08:27:04.859Z","previousPulledAtDisplay":"May 3, 2026, 4:27 AM","currentPulledAt":"2026-05-03T09:50:52.870Z","currentPulledAtDisplay":"May 3, 2026, 5:50 AM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T06:41:32.903Z","previousPulledAtDisplay":"May 3, 2026, 2:41 AM","currentPulledAt":"2026-05-03T08:27:04.859Z","currentPulledAtDisplay":"May 3, 2026, 4:27 AM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T04:10:19.997Z","previousPulledAtDisplay":"May 3, 2026, 12:10 AM","currentPulledAt":"2026-05-03T06:41:32.903Z","currentPulledAtDisplay":"May 3, 2026, 2:41 AM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T01:07:43.490Z","previousPulledAtDisplay":"May 2, 2026, 9:07 PM","currentPulledAt":"2026-05-03T04:10:19.997Z","currentPulledAtDisplay":"May 3, 2026, 12:10 AM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-03T00:07:18.791Z","previousPulledAtDisplay":"May 2, 2026, 8:07 PM","currentPulledAt":"2026-05-03T01:07:43.490Z","currentPulledAtDisplay":"May 2, 2026, 9:07 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-02T23:23:34.049Z","previousPulledAtDisplay":"May 2, 2026, 7:23 PM","currentPulledAt":"2026-05-03T00:07:18.791Z","currentPulledAtDisplay":"May 2, 2026, 8:07 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-02T22:29:20.598Z","previousPulledAtDisplay":"May 2, 2026, 6:29 PM","currentPulledAt":"2026-05-02T23:23:34.049Z","currentPulledAtDisplay":"May 2, 2026, 7:23 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-02T21:50:11.814Z","previousPulledAtDisplay":"May 2, 2026, 5:50 PM","currentPulledAt":"2026-05-02T22:29:20.598Z","currentPulledAtDisplay":"May 2, 2026, 6:29 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-02T20:55:57.436Z","previousPulledAtDisplay":"May 2, 2026, 4:55 PM","currentPulledAt":"2026-05-02T21:50:11.814Z","currentPulledAtDisplay":"May 2, 2026, 5:50 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-02T20:01:36.012Z","previousPulledAtDisplay":"May 2, 2026, 4:01 PM","currentPulledAt":"2026-05-02T20:55:57.436Z","currentPulledAtDisplay":"May 2, 2026, 4:55 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-02T19:53:55.315Z","previousPulledAtDisplay":"May 2, 2026, 3:53 PM","currentPulledAt":"2026-05-02T20:01:36.012Z","currentPulledAtDisplay":"May 2, 2026, 4:01 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-02T19:51:43.002Z","previousPulledAtDisplay":"May 2, 2026, 3:51 PM","currentPulledAt":"2026-05-02T19:53:55.315Z","currentPulledAtDisplay":"May 2, 2026, 3:53 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-02T19:12:50.786Z","previousPulledAtDisplay":"May 2, 2026, 3:12 PM","currentPulledAt":"2026-05-02T19:51:43.002Z","currentPulledAtDisplay":"May 2, 2026, 3:51 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":"2026-05-02T19:09:47.239Z","previousPulledAtDisplay":"May 2, 2026, 3:09 PM","currentPulledAt":"2026-05-02T19:12:50.786Z","currentPulledAtDisplay":"May 2, 2026, 3:12 PM","isBaseline":false,"added":[],"removed":[],"updated":[],"statusChanges":[]},{"previousPulledAt":null,"previousPulledAtDisplay":null,"currentPulledAt":"2026-05-02T19:09:47.239Z","currentPulledAtDisplay":"May 2, 2026, 3:09 PM","isBaseline":true,"added":[{"key":"CORE-14436","url":"https://golfnow.atlassian.net/browse/CORE-14436","summary":"Code changes for [CORE - 14304]","type":"Developer Task (sub task)","isSubtask":true,"status":"Development","priority":"P2","assignee":"Luis Vallejo Mursuli","updated":"2026-05-01T02:00:50.138-0400","updatedDisplay":"May 1, 2026, 2:00 AM","created":"2026-05-01T01:52:58.338-0400","createdDisplay":"May 1, 2026, 1:52 AM","components":[],"fixVersions":["v3001.123.0"],"resolution":"","parent":{"key":"CORE-14304","url":"https://golfnow.atlassian.net/browse/CORE-14304","summary":"Update GolfPass Terms for Employee Comp Email Template","description":"","type":"Task","status":"Planning","priority":"P2"}}],"removed":[],"updated":[],"statusChanges":[]}],"jiraFilterUrl":"https://golfnow.atlassian.net/issues/?jql=fixVersion%20%3D%20%22v3001.123.0%22%20ORDER%20BY%20updated%20DESC","repositorySlug":"DewanKabir009/jira-board-v3001-123-0","dashboardUrl":"https://dewankabir009.github.io/jira-board-v3001-123-0/","assigneeDispatchEndpoint":"http://127.0.0.1:3992/assign","assigneeOptions":["Dewan Kabir","Nicole Greer","Alex Mcnay","Anton Yurkevich"]}</script>
   <script>
     (function () {
       "use strict";
@@ -1303,6 +1357,10 @@
         "QA Testing (STG)",
         "Closed"
       ];
+      var priorityOrder = ["P0", "P1", "P2", "P3", "None"];
+      var priorityLabels = {
+        None: "No Priority"
+      };
 
       function text(value) {
         return String(value == null ? "" : value);
@@ -1316,8 +1374,22 @@
           .replace(/"/g, "&quot;");
       }
 
+      function priorityKey(priority) {
+        var value = text(priority).trim();
+        if (!value || value.toLowerCase() === "none" || value.toLowerCase() === "no priority") {
+          return "None";
+        }
+        var normalized = value.toUpperCase();
+        return priorityOrder.indexOf(normalized) === -1 ? value : normalized;
+      }
+
+      function priorityLabel(priority) {
+        var key = priorityKey(priority);
+        return priorityLabels[key] || key;
+      }
+
       function priorityClass(priority) {
-        return "p-" + text(priority || "none").toLowerCase().replace(/[^a-z0-9]+/g, "-");
+        return "p-" + priorityKey(priority).toLowerCase().replace(/[^a-z0-9]+/g, "-");
       }
 
       function copyIcon() {
@@ -1520,6 +1592,16 @@
         return new Date(right.updated || 0) - new Date(left.updated || 0);
       }
 
+      function getPriorityRank(priority) {
+        var index = priorityOrder.indexOf(priorityKey(priority));
+        return index === -1 ? priorityOrder.length : index;
+      }
+
+      function sortCardsByPriority(left, right) {
+        return getPriorityRank(left.issue.priority) - getPriorityRank(right.issue.priority) ||
+          sortByUpdatedDesc(left.issue, right.issue);
+      }
+
       function getStatusRank(status) {
         var index = statusOrder.indexOf(status);
         return index === -1 ? statusOrder.length : index;
@@ -1545,6 +1627,25 @@
             return issue.assignee === qaName;
           }).length;
           return [qaName, count];
+        });
+      }
+
+      function getPriorityCounts() {
+        return priorityOrder.map(function (priority) {
+          var issues = data.issues.filter(function (issue) {
+            return priorityKey(issue.priority) === priority;
+          });
+          var subtasks = issues.filter(function (issue) {
+            return issue.isSubtask;
+          }).length;
+
+          return {
+            priority: priority,
+            label: priorityLabel(priority),
+            total: issues.length,
+            main: issues.length - subtasks,
+            subtasks: subtasks
+          };
         });
       }
 
@@ -1624,7 +1725,7 @@
 
         cards.sort(function (left, right) {
           var rank = getStatusRank(left.issue.status) - getStatusRank(right.issue.status);
-          return rank || sortByUpdatedDesc(left.issue, right.issue);
+          return rank || sortCardsByPriority(left, right);
         });
 
         return cards;
@@ -1675,7 +1776,8 @@
         var qaSplit = statusSplit("QA Testing (DEV)");
         var pendingDevSplit = statusSplit("Pending Deployment (DEV)");
         var highPriorityCount = data.issues.filter(function (issue) {
-          return issue.priority === "P0" || issue.priority === "P1";
+          var priority = priorityKey(issue.priority);
+          return priority === "P0" || priority === "P1";
         }).length;
 
         var metrics = [
@@ -1688,6 +1790,18 @@
 
         document.getElementById("metrics").innerHTML = metrics.map(function (metric) {
           return "<div class=\"metric\"><div class=\"value\">" + escape(metric.value) + "</div><div class=\"label\">" + escape(metric.label) + "</div>" + (metric.detail ? "<div class=\"metric-detail\">" + escape(metric.detail) + "</div>" : "") + "</div>";
+        }).join("");
+      }
+
+      function renderPrioritySummary() {
+        document.getElementById("priority-summary").innerHTML = getPriorityCounts().map(function (entry) {
+          return "<div class=\"priority-card\">" +
+            "<div class=\"priority-card-top\">" +
+              "<span class=\"priority " + escape(priorityClass(entry.priority)) + "\">" + escape(entry.label) + "</span>" +
+              "<span class=\"priority-total\">" + escape(entry.total) + "</span>" +
+            "</div>" +
+            "<div class=\"priority-card-detail\">" + escape(entry.main + " main / " + entry.subtasks + " subtasks") + "</div>" +
+          "</div>";
         }).join("");
       }
 
@@ -1874,6 +1988,10 @@
           groups.get(status).push(card);
         });
 
+        groups.forEach(function (statusCards) {
+          statusCards.sort(sortCardsByPriority);
+        });
+
         return Array.from(groups.entries()).sort(function (left, right) {
           return getStatusRank(left[0]) - getStatusRank(right[0]) || left[0].localeCompare(right[0]);
         });
@@ -1947,6 +2065,7 @@
         var groups = groupCards(cards);
 
         buildMetrics(cards);
+        renderPrioritySummary();
         renderComponentChips();
         renderQaChips();
 

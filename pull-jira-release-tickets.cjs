@@ -3,7 +3,7 @@ const path = require("path");
 
 const workspace = __dirname;
 const siteUrl = "https://golfnow.atlassian.net";
-const dashboardVersion = "v1.9.2";
+const dashboardVersion = "v1.9.3";
 const repositorySlug = "DewanKabir009/jira-board-v3001-123-0";
 const dashboardUrl = "https://dewankabir009.github.io/jira-board-v3001-123-0/";
 const assigneeDispatchEndpoint = "http://127.0.0.1:3992/assign";
@@ -1041,6 +1041,10 @@ function renderHtml(data) {
       background: #fff;
     }
 
+    .priority-panel {
+      background: #fff;
+    }
+
     .panel-title {
       display: flex;
       align-items: center;
@@ -1101,6 +1105,41 @@ function renderHtml(data) {
     .chip.active .chip-count {
       background: #fff;
       color: #0747a6;
+    }
+
+    .priority-summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 8px;
+    }
+
+    .priority-card {
+      min-width: 0;
+      border: 1px solid #dce3ef;
+      border-radius: 8px;
+      background: #fff;
+      padding: 9px 10px;
+    }
+
+    .priority-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .priority-total {
+      color: var(--ink);
+      font-size: 22px;
+      font-weight: 780;
+      line-height: 1;
+    }
+
+    .priority-card-detail {
+      margin-top: 6px;
+      color: #41506a;
+      font-size: 11px;
+      font-weight: 650;
     }
 
     .board {
@@ -1290,6 +1329,11 @@ function renderHtml(data) {
     .p-p1 {
       background: var(--amber-soft);
       color: var(--amber);
+    }
+
+    .p-p2 {
+      background: var(--blue-soft);
+      color: var(--blue);
     }
 
     .p-p3 {
@@ -2027,6 +2071,16 @@ function renderHtml(data) {
 
       <section class="metrics" id="metrics" aria-label="Board metrics"></section>
 
+      <section class="components-panel priority-panel" aria-label="Priority summary">
+        <div class="panel-title">
+          <div class="title-row">
+            <h2>Priority</h2>
+          </div>
+          <div class="panel-note">Counts include main tickets and subtasks.</div>
+        </div>
+        <div class="priority-summary" id="priority-summary"></div>
+      </section>
+
       <section class="components-panel" aria-label="Components">
         <div class="panel-title">
           <div class="title-row">
@@ -2107,6 +2161,10 @@ function renderHtml(data) {
         "QA Testing (STG)",
         "Closed"
       ];
+      var priorityOrder = ["P0", "P1", "P2", "P3", "None"];
+      var priorityLabels = {
+        None: "No Priority"
+      };
 
       function text(value) {
         return String(value == null ? "" : value);
@@ -2120,8 +2178,22 @@ function renderHtml(data) {
           .replace(/"/g, "&quot;");
       }
 
+      function priorityKey(priority) {
+        var value = text(priority).trim();
+        if (!value || value.toLowerCase() === "none" || value.toLowerCase() === "no priority") {
+          return "None";
+        }
+        var normalized = value.toUpperCase();
+        return priorityOrder.indexOf(normalized) === -1 ? value : normalized;
+      }
+
+      function priorityLabel(priority) {
+        var key = priorityKey(priority);
+        return priorityLabels[key] || key;
+      }
+
       function priorityClass(priority) {
-        return "p-" + text(priority || "none").toLowerCase().replace(/[^a-z0-9]+/g, "-");
+        return "p-" + priorityKey(priority).toLowerCase().replace(/[^a-z0-9]+/g, "-");
       }
 
       function copyIcon() {
@@ -2324,6 +2396,16 @@ function renderHtml(data) {
         return new Date(right.updated || 0) - new Date(left.updated || 0);
       }
 
+      function getPriorityRank(priority) {
+        var index = priorityOrder.indexOf(priorityKey(priority));
+        return index === -1 ? priorityOrder.length : index;
+      }
+
+      function sortCardsByPriority(left, right) {
+        return getPriorityRank(left.issue.priority) - getPriorityRank(right.issue.priority) ||
+          sortByUpdatedDesc(left.issue, right.issue);
+      }
+
       function getStatusRank(status) {
         var index = statusOrder.indexOf(status);
         return index === -1 ? statusOrder.length : index;
@@ -2349,6 +2431,25 @@ function renderHtml(data) {
             return issue.assignee === qaName;
           }).length;
           return [qaName, count];
+        });
+      }
+
+      function getPriorityCounts() {
+        return priorityOrder.map(function (priority) {
+          var issues = data.issues.filter(function (issue) {
+            return priorityKey(issue.priority) === priority;
+          });
+          var subtasks = issues.filter(function (issue) {
+            return issue.isSubtask;
+          }).length;
+
+          return {
+            priority: priority,
+            label: priorityLabel(priority),
+            total: issues.length,
+            main: issues.length - subtasks,
+            subtasks: subtasks
+          };
         });
       }
 
@@ -2428,7 +2529,7 @@ function renderHtml(data) {
 
         cards.sort(function (left, right) {
           var rank = getStatusRank(left.issue.status) - getStatusRank(right.issue.status);
-          return rank || sortByUpdatedDesc(left.issue, right.issue);
+          return rank || sortCardsByPriority(left, right);
         });
 
         return cards;
@@ -2479,7 +2580,8 @@ function renderHtml(data) {
         var qaSplit = statusSplit("QA Testing (DEV)");
         var pendingDevSplit = statusSplit("Pending Deployment (DEV)");
         var highPriorityCount = data.issues.filter(function (issue) {
-          return issue.priority === "P0" || issue.priority === "P1";
+          var priority = priorityKey(issue.priority);
+          return priority === "P0" || priority === "P1";
         }).length;
 
         var metrics = [
@@ -2492,6 +2594,18 @@ function renderHtml(data) {
 
         document.getElementById("metrics").innerHTML = metrics.map(function (metric) {
           return "<div class=\\"metric\\"><div class=\\"value\\">" + escape(metric.value) + "</div><div class=\\"label\\">" + escape(metric.label) + "</div>" + (metric.detail ? "<div class=\\"metric-detail\\">" + escape(metric.detail) + "</div>" : "") + "</div>";
+        }).join("");
+      }
+
+      function renderPrioritySummary() {
+        document.getElementById("priority-summary").innerHTML = getPriorityCounts().map(function (entry) {
+          return "<div class=\\"priority-card\\">" +
+            "<div class=\\"priority-card-top\\">" +
+              "<span class=\\"priority " + escape(priorityClass(entry.priority)) + "\\">" + escape(entry.label) + "</span>" +
+              "<span class=\\"priority-total\\">" + escape(entry.total) + "</span>" +
+            "</div>" +
+            "<div class=\\"priority-card-detail\\">" + escape(entry.main + " main / " + entry.subtasks + " subtasks") + "</div>" +
+          "</div>";
         }).join("");
       }
 
@@ -2678,6 +2792,10 @@ function renderHtml(data) {
           groups.get(status).push(card);
         });
 
+        groups.forEach(function (statusCards) {
+          statusCards.sort(sortCardsByPriority);
+        });
+
         return Array.from(groups.entries()).sort(function (left, right) {
           return getStatusRank(left[0]) - getStatusRank(right[0]) || left[0].localeCompare(right[0]);
         });
@@ -2751,6 +2869,7 @@ function renderHtml(data) {
         var groups = groupCards(cards);
 
         buildMetrics(cards);
+        renderPrioritySummary();
         renderComponentChips();
         renderQaChips();
 
