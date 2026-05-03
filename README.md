@@ -4,7 +4,7 @@ Interactive release dashboard for Jira fixVersion `v3001.123.0`.
 
 - Live dashboard: <https://dewankabir009.github.io/jira-board-v3001-123-0/>
 - Jira source: `fixVersion = "v3001.123.0" ORDER BY updated DESC`
-- Current dashboard version: `v1.8`
+- Current dashboard version: `v1.9`
 
 The board groups release tickets by workflow status, keeps component and QA filters at the top, tracks subtask relationships, and preserves a Data Pull history so status movement is visible over time.
 
@@ -261,6 +261,14 @@ Screenshot: `screenshots/jira-board-versions/17-ticket-description-dropdowns.png
 - Added Jira descriptions to the pulled ticket snapshot.
 - Added a collapsed `Description` dropdown to every main ticket and subtask card.
 - Preserved readable line breaks from Jira descriptions and included description edits in Data Pull update detection.
+
+### v1.9 - Full Description Images
+
+Screenshot: `screenshots/jira-board-versions/18-full-description-images.png`
+
+- Rendered richer Jira description content, including lists, links, code blocks, tables, and panels.
+- Embedded Jira description images as dashboard assets under `assets/jira-media`.
+- Updated description toggles to show the image count when a ticket description includes screenshots.
 
 ## Planned Next Steps
 

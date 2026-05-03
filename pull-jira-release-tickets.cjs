@@ -3,10 +3,11 @@ const path = require("path");
 
 const workspace = __dirname;
 const siteUrl = "https://golfnow.atlassian.net";
-const dashboardVersion = "v1.8";
+const dashboardVersion = "v1.9";
 const repositorySlug = "DewanKabir009/jira-board-v3001-123-0";
 const dashboardUrl = "https://dewankabir009.github.io/jira-board-v3001-123-0/";
 const assigneeDispatchEndpoint = "http://127.0.0.1:3992/assign";
+const mediaAssetBasePath = "assets/jira-media";
 const assigneeOptions = [
   "Dewan Kabir",
   "Nicole Greer",
@@ -17,6 +18,7 @@ const cloudId = process.env.JIRA_CLOUD_ID || "24a77690-829a-4704-94eb-fafef6370d
 const email = process.env.JIRA_EMAIL || "dewan.kabir@versantmedia.com";
 const token = process.env.JIRA_MCP_TOKEN;
 const version = process.argv[2] || process.env.JIRA_FIX_VERSION || "v3001.123.0";
+const authHeader = `Basic ${Buffer.from(`${email}:${token || ""}`).toString("base64")}`;
 
 if (!token) {
   console.error("JIRA_MCP_TOKEN is not set.");
@@ -36,6 +38,7 @@ const fields = [
   "components",
   "resolution",
   "parent",
+  "attachment",
 ];
 
 function escapeHtml(value) {
@@ -162,6 +165,282 @@ function descriptionExcerpt(value) {
   return text.length > 140 ? `${text.slice(0, 137)}...` : text;
 }
 
+function slugifyFilename(value) {
+  return String(value || "image")
+    .replace(/[\\/:*?"<>|]+/g, "-")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "")
+    .slice(0, 120) || "image";
+}
+
+function isImageAttachment(attachment) {
+  return /^image\//i.test(attachment?.mimeType || "");
+}
+
+function collectDescriptionMedia(node, output = []) {
+  if (!node) {
+    return output;
+  }
+
+  if (Array.isArray(node)) {
+    node.forEach((child) => collectDescriptionMedia(child, output));
+    return output;
+  }
+
+  if (node.type === "media") {
+    output.push(node.attrs || {});
+  }
+
+  collectDescriptionMedia(node.content, output);
+  return output;
+}
+
+function buildAttachmentQueues(attachments) {
+  const queues = new Map();
+
+  for (const attachment of attachments || []) {
+    if (!isImageAttachment(attachment)) {
+      continue;
+    }
+
+    const key = String(attachment.filename || "").toLowerCase();
+    if (!queues.has(key)) {
+      queues.set(key, []);
+    }
+    queues.get(key).push(attachment);
+  }
+
+  return queues;
+}
+
+function attachmentForMedia(media, attachmentQueues, fallbackAttachments, index) {
+  const altKey = String(media.alt || "").toLowerCase();
+  const queue = altKey ? attachmentQueues.get(altKey) : null;
+  if (queue?.length) {
+    return queue.shift();
+  }
+
+  return fallbackAttachments[index] || null;
+}
+
+function assetForAttachment(issueKey, attachment) {
+  const filename = slugifyFilename(attachment.filename);
+  const assetRelativePath = `${mediaAssetBasePath}/${issueKey}/${attachment.id}-${filename}`;
+
+  return {
+    id: attachment.id,
+    filename: attachment.filename || filename,
+    mimeType: attachment.mimeType || "",
+    contentUrl: attachment.content,
+    relativePath: assetRelativePath,
+    filePath: path.join(workspace, assetRelativePath),
+  };
+}
+
+async function downloadMediaAsset(asset) {
+  if (!asset?.contentUrl || !asset.filePath) {
+    return false;
+  }
+
+  if (fs.existsSync(asset.filePath) && fs.statSync(asset.filePath).size > 0) {
+    return true;
+  }
+
+  fs.mkdirSync(path.dirname(asset.filePath), { recursive: true });
+  const response = await fetch(asset.contentUrl, {
+    headers: {
+      Authorization: authHeader,
+      Accept: "*/*",
+    },
+  });
+
+  if (!response.ok) {
+    console.warn(`Could not download Jira description image ${asset.filename}: HTTP ${response.status}`);
+    return false;
+  }
+
+  const bytes = Buffer.from(await response.arrayBuffer());
+  fs.writeFileSync(asset.filePath, bytes);
+  return true;
+}
+
+function buildDescriptionMedia(description, attachments, issueKey) {
+  const mediaNodes = collectDescriptionMedia(description);
+  const imageAttachments = (attachments || []).filter(isImageAttachment);
+  const attachmentQueues = buildAttachmentQueues(imageAttachments);
+  const usedAttachmentIds = new Set();
+
+  return mediaNodes.map((media, index) => {
+    const attachment = attachmentForMedia(media, attachmentQueues, imageAttachments, index);
+    if (!attachment || usedAttachmentIds.has(attachment.id)) {
+      return {
+        alt: media.alt || "Jira description image",
+        width: media.width || null,
+        height: media.height || null,
+        missing: true,
+      };
+    }
+
+    usedAttachmentIds.add(attachment.id);
+    return {
+      ...assetForAttachment(issueKey, attachment),
+      alt: media.alt || attachment.filename || "Jira description image",
+      width: media.width || null,
+      height: media.height || null,
+      missing: false,
+    };
+  });
+}
+
+function renderTextMarks(value, marks = []) {
+  let output = escapeHtml(value);
+
+  for (const mark of marks) {
+    switch (mark.type) {
+      case "strong":
+        output = `<strong>${output}</strong>`;
+        break;
+      case "em":
+        output = `<em>${output}</em>`;
+        break;
+      case "strike":
+        output = `<s>${output}</s>`;
+        break;
+      case "code":
+        output = `<code>${output}</code>`;
+        break;
+      case "link": {
+        const href = mark.attrs?.href || "";
+        if (/^https?:\/\//i.test(href) || href.startsWith("mailto:")) {
+          output = `<a href="${escapeHtml(href)}" target="_blank" rel="noopener">${output}</a>`;
+        }
+        break;
+      }
+      default:
+        break;
+    }
+  }
+
+  return output;
+}
+
+function renderAdfChildren(node, context) {
+  return (node?.content || []).map((child) => renderAdfNode(child, context)).join("");
+}
+
+function renderMediaNode(media, context) {
+  const asset = context.mediaAssets[context.mediaIndex++] || {};
+  const alt = asset.alt || media.attrs?.alt || "Jira description image";
+
+  if (!asset.relativePath || asset.missing) {
+    return `<div class="description-media-missing">${escapeHtml(alt)} could not be embedded.</div>`;
+  }
+
+  return `<figure class="description-media">` +
+    `<a href="${escapeHtml(asset.relativePath)}" target="_blank" rel="noopener">` +
+      `<img src="${escapeHtml(asset.relativePath)}" alt="${escapeHtml(alt)}" loading="lazy">` +
+    `</a>` +
+    `<figcaption>${escapeHtml(alt)}</figcaption>` +
+  `</figure>`;
+}
+
+function renderAdfNode(node, context) {
+  if (!node) {
+    return "";
+  }
+
+  if (Array.isArray(node)) {
+    return node.map((child) => renderAdfNode(child, context)).join("");
+  }
+
+  switch (node.type) {
+    case "doc":
+      return renderAdfChildren(node, context);
+    case "paragraph": {
+      const content = renderAdfChildren(node, context);
+      return content ? `<p>${content}</p>` : "";
+    }
+    case "text":
+      return renderTextMarks(node.text || "", node.marks || []);
+    case "hardBreak":
+      return "<br>";
+    case "heading": {
+      const level = Math.min(5, Math.max(3, Number(node.attrs?.level || 4)));
+      return `<h${level}>${renderAdfChildren(node, context)}</h${level}>`;
+    }
+    case "bulletList":
+      return `<ul>${renderAdfChildren(node, context)}</ul>`;
+    case "orderedList":
+      return `<ol>${renderAdfChildren(node, context)}</ol>`;
+    case "listItem":
+      return `<li>${renderAdfChildren(node, context)}</li>`;
+    case "blockquote":
+      return `<blockquote>${renderAdfChildren(node, context)}</blockquote>`;
+    case "codeBlock":
+      return `<pre><code>${renderAdfChildren(node, context)}</code></pre>`;
+    case "rule":
+      return "<hr>";
+    case "panel":
+      return `<div class="description-note">${renderAdfChildren(node, context)}</div>`;
+    case "mediaSingle":
+    case "mediaGroup":
+      return `<div class="description-media-group">${renderAdfChildren(node, context)}</div>`;
+    case "media":
+      return renderMediaNode(node, context);
+    case "inlineCard":
+    case "blockCard": {
+      const url = node.attrs?.url || "";
+      return url ? `<a href="${escapeHtml(url)}" target="_blank" rel="noopener">${escapeHtml(url)}</a>` : "";
+    }
+    case "mention":
+      return escapeHtml(node.attrs?.text || node.attrs?.displayName || "");
+    case "emoji":
+      return escapeHtml(node.attrs?.shortName || node.attrs?.text || "");
+    case "table":
+      return `<div class="description-table-wrap"><table>${renderAdfChildren(node, context)}</table></div>`;
+    case "tableRow":
+      return `<tr>${renderAdfChildren(node, context)}</tr>`;
+    case "tableHeader":
+      return `<th>${renderAdfChildren(node, context)}</th>`;
+    case "tableCell":
+      return `<td>${renderAdfChildren(node, context)}</td>`;
+    default:
+      return renderAdfChildren(node, context);
+  }
+}
+
+function descriptionToHtml(description, mediaAssets = []) {
+  if (!description) {
+    return "";
+  }
+
+  if (typeof description === "string") {
+    return description
+      .trim()
+      .split(/\n{2,}/)
+      .map((paragraph) => `<p>${paragraph.split(/\n/).map(escapeHtml).join("<br>")}</p>`)
+      .join("");
+  }
+
+  return renderAdfNode(description, { mediaAssets, mediaIndex: 0 }).trim();
+}
+
+async function buildRichDescription(issueKey, description, attachments) {
+  const mediaAssets = buildDescriptionMedia(description, attachments, issueKey);
+  const downloaded = await Promise.all(mediaAssets.map(downloadMediaAsset));
+  const availableMediaAssets = mediaAssets.map((asset, index) => ({
+    ...asset,
+    missing: asset.missing || !downloaded[index],
+  }));
+
+  return {
+    text: descriptionToText(description),
+    html: descriptionToHtml(description, availableMediaAssets),
+    imageCount: availableMediaAssets.filter((asset) => !asset.missing && asset.relativePath).length,
+  };
+}
+
 function parseJsonText(text) {
   const normalized = text.charCodeAt(0) === 0xfeff ? text.slice(1) : text;
   return JSON.parse(normalized);
@@ -211,7 +490,6 @@ function newerPullData(left, right) {
 async function fetchIssues() {
   const jql = `fixVersion = "${version}" ORDER BY updated DESC`;
   const endpoint = `https://api.atlassian.com/ex/jira/${cloudId}/rest/api/3/search/jql`;
-  const auth = Buffer.from(`${email}:${token}`).toString("base64");
   const issues = [];
   let nextPageToken;
 
@@ -219,7 +497,7 @@ async function fetchIssues() {
     const response = await fetch(endpoint, {
       method: "POST",
       headers: {
-        Authorization: `Basic ${auth}`,
+        Authorization: authHeader,
         Accept: "application/json",
         "Content-Type": "application/json",
       },
@@ -244,16 +522,20 @@ async function fetchIssues() {
   return { jql, issues };
 }
 
-function normalizeIssue(issue) {
+async function normalizeIssue(issue) {
   const issueFields = issue.fields || {};
   const issueType = issueFields.issuetype || {};
   const parentFields = issueFields.parent?.fields || {};
+  const richDescription = await buildRichDescription(issue.key, issueFields.description, issueFields.attachment || []);
+  const parentDescription = descriptionToText(parentFields.description);
 
   return {
     key: issue.key,
     url: jiraUrl(issue.key),
     summary: issueFields.summary || "",
-    description: descriptionToText(issueFields.description),
+    description: richDescription.text,
+    descriptionHtml: richDescription.html,
+    descriptionImageCount: richDescription.imageCount,
     type: issueType.name || "",
     isSubtask: Boolean(issueType.subtask),
     status: issueFields.status?.name || "",
@@ -270,7 +552,7 @@ function normalizeIssue(issue) {
       key: issueFields.parent.key,
       url: jiraUrl(issueFields.parent.key),
       summary: parentFields.summary || "",
-      description: descriptionToText(parentFields.description),
+      description: parentDescription,
       type: parentFields.issuetype?.name || "Parent",
       status: parentFields.status?.name || "",
       priority: parentFields.priority?.name || "",
@@ -1076,7 +1358,7 @@ function renderHtml(data) {
     .description-panel {
       display: grid;
       gap: 8px;
-      max-height: 280px;
+      max-height: min(72vh, 760px);
       overflow: auto;
       margin-top: 8px;
       border: 1px solid #dce3ef;
@@ -1088,9 +1370,122 @@ function renderHtml(data) {
       font-weight: 600;
     }
 
+    .description-panel h3,
+    .description-panel h4,
+    .description-panel h5 {
+      margin: 6px 0 2px;
+      color: #172033;
+      font-size: 13px;
+    }
+
     .description-panel p {
       margin: 0;
       overflow-wrap: anywhere;
+    }
+
+    .description-panel ul,
+    .description-panel ol {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .description-panel li {
+      margin: 3px 0;
+    }
+
+    .description-panel blockquote,
+    .description-note {
+      margin: 0;
+      border-left: 3px solid #b8c7dc;
+      border-radius: 6px;
+      background: #fff;
+      padding: 8px 10px;
+    }
+
+    .description-panel pre {
+      max-width: 100%;
+      overflow: auto;
+      margin: 0;
+      border-radius: 6px;
+      background: #172033;
+      padding: 10px;
+      color: #fff;
+      font-size: 11px;
+    }
+
+    .description-panel code {
+      border-radius: 4px;
+      background: #eef2f7;
+      padding: 1px 4px;
+      color: #172033;
+      font-size: 11px;
+    }
+
+    .description-panel pre code {
+      background: transparent;
+      padding: 0;
+      color: inherit;
+    }
+
+    .description-panel a {
+      color: var(--blue);
+      font-weight: 750;
+    }
+
+    .description-media-group {
+      display: grid;
+      gap: 10px;
+    }
+
+    .description-media {
+      margin: 0;
+      border: 1px solid #dce3ef;
+      border-radius: 8px;
+      background: #fff;
+      padding: 8px;
+    }
+
+    .description-media img {
+      display: block;
+      width: 100%;
+      max-height: 560px;
+      object-fit: contain;
+      border-radius: 6px;
+      background: #f7f9fc;
+    }
+
+    .description-media figcaption,
+    .description-media-missing {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      overflow-wrap: anywhere;
+    }
+
+    .description-table-wrap {
+      max-width: 100%;
+      overflow: auto;
+    }
+
+    .description-panel table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      font-size: 11px;
+    }
+
+    .description-panel th,
+    .description-panel td {
+      border: 1px solid #dce3ef;
+      padding: 6px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .description-panel th {
+      background: #eef4ff;
+      color: #172033;
     }
 
     .description-empty {
@@ -2007,6 +2402,8 @@ function renderHtml(data) {
                 updatedDisplay: issue.updatedDisplay,
                 components: [],
                 description: issue.parent && issue.parent.description ? issue.parent.description : "",
+                descriptionHtml: "",
+                descriptionImageCount: 0,
                 isSubtask: false
               },
               subtasks: [],
@@ -2137,17 +2534,35 @@ function renderHtml(data) {
         }).join("");
       }
 
+      function hasDescription(issue) {
+        return text(issue.description).trim().length > 0 ||
+          text(issue.descriptionHtml).trim().length > 0 ||
+          Number(issue.descriptionImageCount || 0) > 0;
+      }
+
+      function renderDescriptionContent(issue) {
+        if (text(issue.descriptionHtml).trim()) {
+          return issue.descriptionHtml;
+        }
+
+        return renderDescriptionText(issue.description);
+      }
+
       function renderDescription(issue) {
         var expanded = state.expandedDescriptions.has(issue.key);
-        var hasDescription = text(issue.description).trim().length > 0;
+        var hasIssueDescription = hasDescription(issue);
+        var imageCount = Number(issue.descriptionImageCount || 0);
+        var stateLabel = !hasIssueDescription
+          ? "Empty"
+          : (imageCount ? imageCount + " image" + (imageCount === 1 ? "" : "s") : "View");
 
-        return "<div class=\\"description-shell" + (hasDescription ? "" : " is-empty") + "\\">" +
+        return "<div class=\\"description-shell" + (hasIssueDescription ? "" : " is-empty") + "\\">" +
           "<button class=\\"description-toggle\\" type=\\"button\\" aria-expanded=\\"" + expanded + "\\" data-description-for=\\"" + escape(issue.key) + "\\">" +
             "<span>Description</span>" +
-            "<span class=\\"description-state\\">" + (hasDescription ? "View" : "Empty") + "</span>" +
+            "<span class=\\"description-state\\">" + escape(stateLabel) + "</span>" +
             "<span class=\\"chevron\\">" + (expanded ? "v" : ">") + "</span>" +
           "</button>" +
-          (expanded ? "<div class=\\"description-panel\\">" + renderDescriptionText(issue.description) + "</div>" : "") +
+          (expanded ? "<div class=\\"description-panel\\">" + renderDescriptionContent(issue) + "</div>" : "") +
         "</div>";
       }
 
@@ -2266,7 +2681,7 @@ function renderHtml(data) {
         weight += issueComponents(card.issue).length * 0.25;
 
         if (state.expandedDescriptions.has(card.issue.key)) {
-          weight += 1 + Math.min(3.5, text(card.issue.description).length / 220);
+          weight += 1 + Math.min(5.5, text(card.issue.description).length / 220 + Number(card.issue.descriptionImageCount || 0) * 1.8);
         }
 
         if (card.subtasks.length) {
@@ -2274,7 +2689,7 @@ function renderHtml(data) {
           if (state.expandedSubtasks.has(card.issue.key)) {
             weight += card.subtasks.reduce(function (total, subtask) {
               var descriptionWeight = state.expandedDescriptions.has(subtask.key)
-                ? 1 + Math.min(2.8, text(subtask.description).length / 220)
+                ? 1 + Math.min(4.8, text(subtask.description).length / 220 + Number(subtask.descriptionImageCount || 0) * 1.8)
                 : 0;
               return total + 1.8 + Math.min(1.1, text(subtask.summary).length / 100) + issueComponents(subtask).length * 0.18 + descriptionWeight;
             }, 0);
@@ -2551,7 +2966,7 @@ function renderHtml(data) {
         renderDataPull();
         document.getElementById("pulled-at").textContent = data.pulledAtDisplay;
         renderNextRefresh();
-        document.getElementById("source-line").textContent = "Source: live Jira JQL " + data.jql + ". Components, descriptions, and subtasks are generated from the current ticket snapshot.";
+        document.getElementById("source-line").textContent = "Source: live Jira JQL " + data.jql + ". Components, descriptions, embedded images, and subtasks are generated from the current ticket snapshot.";
         document.getElementById("copy-components").innerHTML = copyIcon();
         var toggle = document.getElementById("toggle-subtasks");
         var cardsWithSubtasks = getVisibleSubtaskCards();
@@ -2768,7 +3183,7 @@ async function main() {
   previousData = newerPullData(previousJsonData, previousHtmlData);
 
   const { jql, issues: rawIssues } = await fetchIssues();
-  const issues = rawIssues.map(normalizeIssue);
+  const issues = await Promise.all(rawIssues.map(normalizeIssue));
   const json = buildJson(issues, jql, previousData);
 
   fs.writeFileSync(jsonPath, `${JSON.stringify(json, null, 2)}\n`);
