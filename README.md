@@ -4,7 +4,7 @@ Interactive release dashboard for Jira fixVersion `v3001.123.0`.
 
 - Live dashboard: <https://dewankabir009.github.io/jira-board-v3001-123-0/>
 - Jira source: `fixVersion = "v3001.123.0" ORDER BY updated DESC`
-- Current dashboard version: `v1.9.1`
+- Current dashboard version: `v1.9.2`
 
 The board groups release tickets by workflow status, keeps component and QA filters at the top, tracks subtask relationships, and preserves a Data Pull history so status movement is visible over time.
 
@@ -275,6 +275,12 @@ Screenshot: `screenshots/jira-board-versions/18-full-description-images.png`
 - Replaced the hourly watchdog start with direct every-5-minute scheduled refresh attempts.
 - Kept Jira media assets in the scheduled publish path so new description images are committed with the refreshed dashboard.
 - Reduced the refresh job timeout because each scheduled run now performs one pull instead of sleeping inside a long runner session.
+
+### v1.9.2 - Metric Status Split
+
+- Clarified status metric counts by adding a main/subtask split under tracked-ticket and workflow-status metrics.
+- Kept the Jira source count intact while making hidden nested subtasks visible in the top summary.
+- Helps explain cases where a status lane has one main card but the Jira count includes subtasks under a parent in another lane.
 
 ## Planned Next Steps
 

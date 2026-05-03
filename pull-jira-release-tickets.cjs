@@ -3,7 +3,7 @@ const path = require("path");
 
 const workspace = __dirname;
 const siteUrl = "https://golfnow.atlassian.net";
-const dashboardVersion = "v1.9.1";
+const dashboardVersion = "v1.9.2";
 const repositorySlug = "DewanKabir009/jira-board-v3001-123-0";
 const dashboardUrl = "https://dewankabir009.github.io/jira-board-v3001-123-0/";
 const assigneeDispatchEndpoint = "http://127.0.0.1:3992/assign";
@@ -1022,6 +1022,13 @@ function renderHtml(data) {
       font-size: 12px;
       font-weight: 650;
       text-transform: uppercase;
+    }
+
+    .metric-detail {
+      margin-top: 6px;
+      color: #41506a;
+      font-size: 11px;
+      font-weight: 650;
     }
 
     .components-panel {
@@ -2456,22 +2463,35 @@ function renderHtml(data) {
         });
 
         var subtaskCount = data.issues.filter(function (issue) { return issue.isSubtask; }).length;
-        var qaCount = data.issues.filter(function (issue) { return issue.status === "QA Testing (DEV)"; }).length;
-        var pendingDevCount = data.issues.filter(function (issue) { return issue.status === "Pending Deployment (DEV)"; }).length;
+        var mainCount = data.issues.filter(function (issue) { return !issue.isSubtask; }).length;
+        function statusSplit(status) {
+          var matching = data.issues.filter(function (issue) { return issue.status === status; });
+          var subtasks = matching.filter(function (issue) { return issue.isSubtask; }).length;
+          return {
+            total: matching.length,
+            main: matching.length - subtasks,
+            subtasks: subtasks
+          };
+        }
+        function splitDetail(split) {
+          return split.main + " main / " + split.subtasks + " subtasks";
+        }
+        var qaSplit = statusSplit("QA Testing (DEV)");
+        var pendingDevSplit = statusSplit("Pending Deployment (DEV)");
         var highPriorityCount = data.issues.filter(function (issue) {
           return issue.priority === "P0" || issue.priority === "P1";
         }).length;
 
         var metrics = [
-          { value: data.total, label: "Tracked tickets" },
-          { value: qaCount, label: "QA Testing (DEV)" },
-          { value: pendingDevCount, label: "Pending Deployment (DEV)" },
+          { value: data.total, label: "Tracked tickets", detail: mainCount + " main / " + subtaskCount + " subtasks" },
+          { value: qaSplit.total, label: "QA Testing (DEV)", detail: splitDetail(qaSplit) },
+          { value: pendingDevSplit.total, label: "Pending Deployment (DEV)", detail: splitDetail(pendingDevSplit) },
           { value: highPriorityCount, label: "P0/P1 priority items" },
           { value: subtaskCount, label: "Subtasks linked" }
         ];
 
         document.getElementById("metrics").innerHTML = metrics.map(function (metric) {
-          return "<div class=\\"metric\\"><div class=\\"value\\">" + escape(metric.value) + "</div><div class=\\"label\\">" + escape(metric.label) + "</div></div>";
+          return "<div class=\\"metric\\"><div class=\\"value\\">" + escape(metric.value) + "</div><div class=\\"label\\">" + escape(metric.label) + "</div>" + (metric.detail ? "<div class=\\"metric-detail\\">" + escape(metric.detail) + "</div>" : "") + "</div>";
         }).join("");
       }
 
