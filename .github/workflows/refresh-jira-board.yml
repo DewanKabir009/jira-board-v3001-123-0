@@ -61,7 +61,10 @@ jobs:
           console.log(data.pullDiff?.currentPulledAtDisplay || data.pulledAtDisplay || new Date().toISOString());
           NODE
               )"
-              git add index.html assets/jira-media
+              git add index.html
+              if [ -d assets/jira-media ]; then
+                git add assets/jira-media
+              fi
               git commit -m "Refresh Jira board data ${pulled_at}"
               git push
             fi
