@@ -4,9 +4,10 @@ const path = require("path");
 const tls = require("tls");
 
 const workspace = path.resolve(__dirname, "..");
-const version = process.env.JIRA_FIX_VERSION || "v3001.122.0";
+const version = process.env.JIRA_FIX_VERSION || "v3001.123.0";
 const safeVersion = version.replace(/[^a-zA-Z0-9._-]/g, "_");
 const jsonPath = path.join(workspace, `jira-${safeVersion}-tickets.json`);
+const indexPath = path.join(workspace, "index.html");
 
 function parseList(value) {
   return String(value || "")
@@ -209,6 +210,27 @@ function buildSlackPayload(summary) {
       },
     ],
   };
+}
+
+function readEmbeddedDashboardData() {
+  if (!fs.existsSync(indexPath)) {
+    throw new Error(`Neither Jira data file nor dashboard file was found. Missing: ${jsonPath}, ${indexPath}`);
+  }
+
+  const html = fs.readFileSync(indexPath, "utf8");
+  const start = '<script id="jira-data" type="application/json">';
+  const end = "</script>";
+  const startIndex = html.indexOf(start);
+  if (startIndex < 0) {
+    throw new Error(`Dashboard data script was not found in ${indexPath}`);
+  }
+
+  const endIndex = html.indexOf(end, startIndex);
+  if (endIndex < 0) {
+    throw new Error(`Dashboard data script was not closed in ${indexPath}`);
+  }
+
+  return JSON.parse(html.slice(startIndex + start.length, endIndex));
 }
 
 async function sendSlack(summary) {
@@ -446,11 +468,10 @@ async function sendEmail(summary) {
 }
 
 async function main() {
-  if (!fs.existsSync(jsonPath)) {
-    throw new Error(`Jira data file not found: ${jsonPath}`);
-  }
+  const data = fs.existsSync(jsonPath)
+    ? JSON.parse(fs.readFileSync(jsonPath, "utf8"))
+    : readEmbeddedDashboardData();
 
-  const data = JSON.parse(fs.readFileSync(jsonPath, "utf8"));
   if (!hasChanges(data.pullDiff || {})) {
     console.log("No Jira ticket changes detected; notifications skipped.");
     return;
