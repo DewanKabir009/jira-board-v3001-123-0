@@ -4,7 +4,7 @@ name: Refresh Jira Board
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 * * * *"
+    - cron: "1,16,31,46 * * * *"
 
 concurrency:
   group: refresh-jira-board
@@ -17,10 +17,10 @@ jobs:
   refresh:
     name: Pull Jira and publish dashboard
     runs-on: ubuntu-latest
-    timeout-minutes: 70
+    timeout-minutes: 25
     env:
       MANUAL_REFRESH_ITERATIONS: 1
-      SCHEDULE_REFRESH_ITERATIONS: 12
+      SCHEDULE_REFRESH_ITERATIONS: 3
       REFRESH_INTERVAL_SECONDS: 300
 
     steps:
