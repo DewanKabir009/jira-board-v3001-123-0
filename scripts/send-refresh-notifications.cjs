@@ -46,21 +46,76 @@ function listKeys(items) {
   return (items || []).map((item) => item.key).filter(Boolean);
 }
 
+function cleanText(value) {
+  return String(value ?? "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function ticketTitle(item) {
+  return `${item.key || "Unknown"} - ${cleanText(item.summary) || "Untitled ticket"}`;
+}
+
+function slackLink(url, label) {
+  return url ? `<${url}|${label}>` : label;
+}
+
+function slackTicketLink(item) {
+  return slackLink(item.url, item.key || "Unknown");
+}
+
+function changeText(change) {
+  return `${change.label || change.field || "Field"}: ${change.before || "None"} -> ${change.after || "None"}`;
+}
+
 function issueText(item) {
   const parent = item.parent?.key
-    ? ` Parent: ${item.parent.key} - ${item.parent.summary || "Untitled parent"}.`
+    ? ` Parent: ${item.parent.key} - ${cleanText(item.parent.summary) || "Untitled parent"}.`
     : "";
   const changes = Array.isArray(item.changes) && item.changes.length
-    ? ` Changes: ${item.changes.map((change) => `${change.label || change.field}: ${change.before || "None"} -> ${change.after || "None"}`).join("; ")}.`
+    ? ` Changes: ${item.changes.map(changeText).join("; ")}.`
     : "";
-  return `${item.key} - ${item.summary || "Untitled ticket"}.${parent}${changes}`;
+  return `${ticketTitle(item)}.${parent}${changes}`;
 }
 
 function statusMoveText(item) {
   const parent = item.parent?.key
-    ? ` Parent: ${item.parent.key} - ${item.parent.summary || "Untitled parent"}.`
+    ? ` Parent: ${item.parent.key} - ${cleanText(item.parent.summary) || "Untitled parent"}.`
     : "";
-  return `${item.key} - ${item.summary || "Untitled ticket"}: ${item.before || "None"} -> ${item.after || "None"}.${parent}`;
+  return `${ticketTitle(item)}: ${item.before || "None"} -> ${item.after || "None"}.${parent}`;
+}
+
+function slackIssueLines(item, options = {}) {
+  const lines = [`- ${slackTicketLink(item)} - ${truncate(cleanText(item.summary) || "Untitled ticket", 160)}`];
+
+  if (options.statusMove) {
+    lines.push(`  Status: ${item.before || "None"} -> ${item.after || "None"}`);
+  }
+
+  if (item.parent?.key) {
+    const parentLabel = `${item.parent.key} - ${truncate(cleanText(item.parent.summary) || "Untitled parent", 120)}`;
+    lines.push(`  Parent: ${slackLink(item.parent.url, parentLabel)}`);
+  }
+
+  const meta = [];
+  if (item.assignee) {
+    meta.push(`Assignee: ${item.assignee}`);
+  }
+  if (item.priority) {
+    meta.push(`Priority: ${item.priority}`);
+  }
+  if (item.status && !options.statusMove) {
+    meta.push(`Status: ${item.status}`);
+  }
+  if (meta.length) {
+    lines.push(`  ${meta.join(" | ")}`);
+  }
+
+  if (Array.isArray(item.changes) && item.changes.length) {
+    lines.push(`  Changes: ${item.changes.map(changeText).join("; ")}`);
+  }
+
+  return lines;
 }
 
 function buildSummary(data) {
@@ -156,23 +211,50 @@ function buildHtmlBody(summary) {
 }
 
 function buildSlackPayload(summary) {
-  const detailLines = [];
-  for (const [title, items] of summary.sections) {
-    detailLines.push(`*${title}*`);
-    detailLines.push(...items.slice(0, 8).map((item) => `- ${item}`));
-    if (items.length > 8) {
-      detailLines.push(`- ...and ${items.length - 8} more`);
+  const diff = summary.diff || {};
+  const statusMoveKeys = new Set((diff.statusChanges || []).map((item) => item.key).filter(Boolean));
+  const otherUpdates = (diff.updated || []).filter((item) => !statusMoveKeys.has(item.key));
+  const changeSections = [
+    ["Status moves", diff.statusChanges || [], { statusMove: true }],
+    ["Added", diff.added || [], {}],
+    ["Other updates", otherUpdates, {}],
+    ["Removed", diff.removed || [], {}],
+  ];
+
+  const detailBlocks = [];
+  for (const [title, items, options] of changeSections) {
+    if (!items.length) {
+      continue;
     }
+
+    const lines = [`*${title}*`];
+    for (const item of items.slice(0, 6)) {
+      lines.push(...slackIssueLines(item, options));
+    }
+    if (items.length > 6) {
+      lines.push(`- ...and ${items.length - 6} more`);
+    }
+
+    detailBlocks.push(
+      { type: "divider" },
+      {
+        type: "section",
+        text: {
+          type: "mrkdwn",
+          text: truncate(lines.join("\n"), 2900),
+        },
+      }
+    );
   }
 
   return {
-    text: `Jira board changed: ${summary.headline}`,
+    text: `Jira board changed: ${summary.data.version} - ${summary.changedKeys.join(", ") || summary.headline}`,
     blocks: [
       {
         type: "header",
         text: {
           type: "plain_text",
-          text: truncate(`Jira board changed: ${summary.data.version}`, 150),
+          text: truncate(`Jira board update: ${summary.data.version}`, 150),
           emoji: false,
         },
       },
@@ -181,19 +263,22 @@ function buildSlackPayload(summary) {
         text: {
           type: "mrkdwn",
           text: [
-            `*Pull:* ${summary.pull} ET`,
+            `*Latest pull:* ${summary.pull} ET`,
             `*Previous pull:* ${summary.previousPull}${summary.previousPull === "None" ? "" : " ET"}`,
-            `*Counts:* ${summary.counts.added} added, ${summary.counts.updated} updated, ${summary.counts.statusMoves} status moves, ${summary.counts.removed} removed`,
+            summary.changedKeys.length ? `*Changed tickets:* ${summary.changedKeys.map((key) => `\`${key}\``).join(", ")}` : "*Changed tickets:* None",
           ].join("\n"),
         },
       },
       {
         type: "section",
-        text: {
-          type: "mrkdwn",
-          text: truncate(detailLines.join("\n") || "Ticket data changed.", 2900),
-        },
+        fields: [
+          { type: "mrkdwn", text: `*Added*\n${summary.counts.added}` },
+          { type: "mrkdwn", text: `*Updated*\n${summary.counts.updated}` },
+          { type: "mrkdwn", text: `*Status moves*\n${summary.counts.statusMoves}` },
+          { type: "mrkdwn", text: `*Removed*\n${summary.counts.removed}` },
+        ],
       },
+      ...detailBlocks,
       {
         type: "actions",
         elements: [
