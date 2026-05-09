@@ -1,0 +1,21 @@
+name = "jira-board-assignee-bridge"
+main = "workers/assignee-bridge-worker.js"
+compatibility_date = "2026-05-09"
+
+[vars]
+ALLOWED_ORIGINS = "https://dewankabir009.github.io"
+ALLOWED_REPOSITORIES = "DewanKabir009/jira-board-v3001-122-0,DewanKabir009/jira-board-v3001-123-0"
+DEFAULT_REPOSITORY = "DewanKabir009/jira-board-v3001-123-0"
+ALLOWED_ASSIGNEES = "Dewan Kabir,Nicole Greer,Alex Mcnay,Anton Yurkevich"
+
+# Recommended with Cloudflare Access in front of the Worker.
+# Set this to the email addresses allowed to submit Jira updates from the dashboard.
+ALLOWED_USER_EMAILS = "dewan.kabir@versantmedia.com"
+
+# Required secret:
+# wrangler secret put BOARD_DISPATCH_TOKEN
+#
+# BOARD_DISPATCH_TOKEN must be a GitHub token that can dispatch Actions workflows
+# in both board repos. A fine-grained token with Actions read/write access to
+# DewanKabir009/jira-board-v3001-122-0 and DewanKabir009/jira-board-v3001-123-0
+# is the preferred scope.

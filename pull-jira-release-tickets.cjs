@@ -3,10 +3,10 @@ const path = require("path");
 
 const workspace = __dirname;
 const siteUrl = "https://golfnow.atlassian.net";
-const dashboardVersion = "v1.9.6";
+const dashboardVersion = "v1.9.7";
 const repositorySlug = "DewanKabir009/jira-board-v3001-123-0";
 const dashboardUrl = "https://dewankabir009.github.io/jira-board-v3001-123-0/";
-const assigneeDispatchEndpoint = "http://127.0.0.1:3992/assign";
+const assigneeDispatchEndpoint = process.env.ASSIGNEE_DISPATCH_ENDPOINT || "http://127.0.0.1:3992/assign";
 const mediaAssetBasePath = "assets/jira-media";
 const assigneeOptions = [
   "Dewan Kabir",
@@ -2501,7 +2501,7 @@ function renderHtml(data) {
 
       function checkBridgeStatus() {
         setBridgeStatus("", "Checking");
-        fetch(getAssigneeStatusEndpoint(), { method: "GET", cache: "no-store" })
+        fetch(getAssigneeStatusEndpoint(), { method: "GET", cache: "no-store", credentials: "include" })
           .then(function (response) {
             return response.json().catch(function () {
               return { ok: false, message: "Unreadable bridge response." };
@@ -3408,7 +3408,11 @@ function renderHtml(data) {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             issueKey: issueKey,
-            assigneeDisplayName: requestedAssignee
+            assigneeDisplayName: requestedAssignee,
+            releaseVersion: data.version,
+            repositorySlug: githubRepo,
+            dashboardUrl: dashboardUrl,
+            requestedAt: new Date().toISOString()
           })
         })
           .then(function (response) {

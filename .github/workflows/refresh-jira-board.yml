@@ -51,6 +51,7 @@ jobs:
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
           SMTP_SECURE: ${{ secrets.SMTP_SECURE }}
           SMTP_REJECT_UNAUTHORIZED: ${{ secrets.SMTP_REJECT_UNAUTHORIZED }}
+          ASSIGNEE_DISPATCH_ENDPOINT: ${{ vars.ASSIGNEE_DISPATCH_ENDPOINT }}
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"

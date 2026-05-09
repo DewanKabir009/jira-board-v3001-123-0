@@ -40,6 +40,7 @@ function writeJson(response, status, payload, origin) {
     "Access-Control-Allow-Origin": origin && allowedOrigins.has(origin) ? origin : "https://dewankabir009.github.io",
     "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
     "Access-Control-Allow-Headers": "Content-Type",
+    "Access-Control-Allow-Credentials": "true",
   });
   response.end(JSON.stringify(payload));
 }
