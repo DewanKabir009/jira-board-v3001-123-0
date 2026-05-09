@@ -3405,7 +3405,7 @@ function renderHtml(data) {
 
         fetch(assigneeDispatchEndpoint, {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: { "Content-Type": "text/plain;charset=UTF-8" },
           body: JSON.stringify({
             issueKey: issueKey,
             assigneeDisplayName: requestedAssignee,

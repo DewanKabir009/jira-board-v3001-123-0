@@ -225,7 +225,7 @@ function resolveRepositorySlug(payload, env) {
 
 async function readJson(request) {
   try {
-    return await request.json();
+    return JSON.parse((await request.text()) || "{}");
   } catch (error) {
     throw new Error("Request body must be valid JSON.");
   }
