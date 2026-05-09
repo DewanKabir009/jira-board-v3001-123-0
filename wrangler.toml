@@ -1,0 +1,10 @@
+name = "jira-board-v3001-123-0"
+main = "workers/assignee-bridge-worker.js"
+compatibility_date = "2026-05-09"
+
+[vars]
+ALLOWED_ORIGINS = "https://dewankabir009.github.io"
+ALLOWED_REPOSITORIES = "DewanKabir009/jira-board-v3001-122-0,DewanKabir009/jira-board-v3001-123-0"
+DEFAULT_REPOSITORY = "DewanKabir009/jira-board-v3001-123-0"
+ALLOWED_ASSIGNEES = "Dewan Kabir,Nicole Greer,Alex Mcnay,Anton Yurkevich"
+ALLOWED_USER_EMAILS = "dewan.kabir@versantmedia.com"
