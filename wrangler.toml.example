@@ -11,6 +11,9 @@ ALLOWED_ASSIGNEES = "Dewan Kabir,Nicole Greer,Alex Mcnay,Anton Yurkevich"
 # Recommended with Cloudflare Access in front of the Worker.
 # Set this to the email addresses allowed to submit Jira updates from the dashboard.
 ALLOWED_USER_EMAILS = "dewan.kabir@versantmedia.com,Dfkabir253@gmail.com"
+ACCESS_AUD = "e2bd8d36596bfdc19a7ac95d5f25d63e285c2ec7b33ee5c9160a705377179dd6"
+ACCESS_JWKS_URL = "https://dfkabir253.cloudflareaccess.com/cdn-cgi/access/certs"
+ACCESS_ISSUER = "https://dfkabir253.cloudflareaccess.com"
 
 # Required secret:
 # wrangler secret put BOARD_DISPATCH_TOKEN

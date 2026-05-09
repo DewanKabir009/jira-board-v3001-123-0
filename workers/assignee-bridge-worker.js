@@ -106,14 +106,90 @@ function hasValidAccessToken(request, env) {
   return token === env.BRIDGE_ACCESS_TOKEN;
 }
 
-function authorizeMutation(request, env) {
+function base64UrlDecode(value) {
+  const padded = value.replace(/-/g, "+").replace(/_/g, "/").padEnd(Math.ceil(value.length / 4) * 4, "=");
+  return Uint8Array.from(atob(padded), (character) => character.charCodeAt(0));
+}
+
+function decodeJwtPart(value) {
+  const decoded = new TextDecoder().decode(base64UrlDecode(value));
+  return JSON.parse(decoded);
+}
+
+async function verifyAccessJwt(request, env) {
+  const token = request.headers.get("Cf-Access-Jwt-Assertion");
+  if (!token || !env.ACCESS_AUD || !env.ACCESS_JWKS_URL) {
+    return null;
+  }
+
+  const parts = token.split(".");
+  if (parts.length !== 3) {
+    throw new Error("Cloudflare Access JWT is malformed.");
+  }
+
+  const header = decodeJwtPart(parts[0]);
+  const payload = decodeJwtPart(parts[1]);
+  const now = Math.floor(Date.now() / 1000);
+  const audiences = Array.isArray(payload.aud) ? payload.aud : [payload.aud];
+
+  if (!audiences.includes(env.ACCESS_AUD)) {
+    throw new Error("Cloudflare Access JWT audience does not match this bridge.");
+  }
+  if (env.ACCESS_ISSUER && payload.iss !== env.ACCESS_ISSUER) {
+    throw new Error("Cloudflare Access JWT issuer does not match this bridge.");
+  }
+  if (payload.exp && payload.exp < now) {
+    throw new Error("Cloudflare Access JWT has expired.");
+  }
+  if (payload.nbf && payload.nbf > now) {
+    throw new Error("Cloudflare Access JWT is not active yet.");
+  }
+
+  const jwksResponse = await fetch(env.ACCESS_JWKS_URL, {
+    headers: { Accept: "application/json" },
+  });
+  if (!jwksResponse.ok) {
+    throw new Error(`Could not load Cloudflare Access signing keys (${jwksResponse.status}).`);
+  }
+
+  const jwks = await jwksResponse.json();
+  const key = (jwks.keys || []).find((candidate) => candidate.kid === header.kid);
+  if (!key) {
+    throw new Error("Cloudflare Access signing key was not found.");
+  }
+
+  const cryptoKey = await crypto.subtle.importKey(
+    "jwk",
+    key,
+    { name: "RSASSA-PKCS1-v1_5", hash: "SHA-256" },
+    false,
+    ["verify"],
+  );
+  const signedData = new TextEncoder().encode(`${parts[0]}.${parts[1]}`);
+  const signature = base64UrlDecode(parts[2]);
+  const verified = await crypto.subtle.verify("RSASSA-PKCS1-v1_5", cryptoKey, signature, signedData);
+  if (!verified) {
+    throw new Error("Cloudflare Access JWT signature is invalid.");
+  }
+
+  return {
+    email: String(payload.email || payload.common_name || "").trim(),
+    subject: payload.sub,
+  };
+}
+
+async function authorizeMutation(request, env) {
   if (hasValidAccessToken(request, env)) {
     return { ok: true, mode: "access-token" };
   }
 
   const allowedEmails = parseList(env.ALLOWED_USER_EMAILS).map((email) => email.toLowerCase());
   if (allowedEmails.length) {
-    const email = getAuthenticatedEmail(request).toLowerCase();
+    let email = getAuthenticatedEmail(request).toLowerCase();
+    if (!email) {
+      const accessIdentity = await verifyAccessJwt(request, env);
+      email = String(accessIdentity?.email || "").toLowerCase();
+    }
     if (email && allowedEmails.includes(email)) {
       return { ok: true, mode: "cloudflare-access", email };
     }
@@ -195,7 +271,7 @@ async function handleStatus(request, env) {
 }
 
 async function handleAssign(request, env) {
-  const auth = authorizeMutation(request, env);
+  const auth = await authorizeMutation(request, env);
   if (!auth.ok) {
     return json(request, env, auth.status, { ok: false, message: auth.message });
   }
@@ -229,7 +305,7 @@ async function handleAssign(request, env) {
 }
 
 async function handleChecklistComment(request, env) {
-  const auth = authorizeMutation(request, env);
+  const auth = await authorizeMutation(request, env);
   if (!auth.ok) {
     return json(request, env, auth.status, { ok: false, message: auth.message });
   }

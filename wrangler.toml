@@ -8,3 +8,6 @@ ALLOWED_REPOSITORIES = "DewanKabir009/jira-board-v3001-122-0,DewanKabir009/jira-
 DEFAULT_REPOSITORY = "DewanKabir009/jira-board-v3001-123-0"
 ALLOWED_ASSIGNEES = "Dewan Kabir,Nicole Greer,Alex Mcnay,Anton Yurkevich"
 ALLOWED_USER_EMAILS = "dewan.kabir@versantmedia.com,Dfkabir253@gmail.com"
+ACCESS_AUD = "e2bd8d36596bfdc19a7ac95d5f25d63e285c2ec7b33ee5c9160a705377179dd6"
+ACCESS_JWKS_URL = "https://dfkabir253.cloudflareaccess.com/cdn-cgi/access/certs"
+ACCESS_ISSUER = "https://dfkabir253.cloudflareaccess.com"
