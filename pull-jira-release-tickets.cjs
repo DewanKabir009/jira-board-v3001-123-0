@@ -3,10 +3,11 @@ const path = require("path");
 
 const workspace = __dirname;
 const siteUrl = "https://golfnow.atlassian.net";
-const dashboardVersion = "v1.10.4";
+const dashboardVersion = "v1.10.5";
 const repositorySlug = "DewanKabir009/jira-board-v3001-123-0";
 const dashboardUrl = "https://dewankabir009.github.io/jira-board-v3001-123-0/";
-const assigneeDispatchEndpoint = process.env.ASSIGNEE_DISPATCH_ENDPOINT || "http://127.0.0.1:3992/assign";
+const defaultAssigneeDispatchEndpoint = "https://jira-board-assignee-bridge.dfkabir253.workers.dev/assign";
+const assigneeDispatchEndpoint = process.env.ASSIGNEE_DISPATCH_ENDPOINT || defaultAssigneeDispatchEndpoint;
 const mediaAssetBasePath = "assets/jira-media";
 const assigneeOptions = [
   "Dewan Kabir",
@@ -2334,7 +2335,7 @@ function renderHtml(data) {
       };
       var githubRepo = data.repositorySlug || "DewanKabir009/jira-board-v3001-123-0";
       var dashboardUrl = data.dashboardUrl || "https://dewankabir009.github.io/jira-board-v3001-123-0/";
-      var assigneeDispatchEndpoint = data.assigneeDispatchEndpoint || "http://127.0.0.1:3992/assign";
+      var assigneeDispatchEndpoint = data.assigneeDispatchEndpoint || "https://jira-board-assignee-bridge.dfkabir253.workers.dev/assign";
       var assigneeNames = data.assigneeOptions || [
         "Dewan Kabir",
         "Nicole Greer",
@@ -3507,7 +3508,7 @@ function renderHtml(data) {
             status.textContent = "Workflow started. Jira will refresh shortly.";
           })
           .catch(function (error) {
-            status.textContent = "Bridge offline. Open Actions to run it.";
+            status.textContent = "Hosted bridge unavailable. Sign in through Cloudflare Access or retry.";
             console.error(error);
           })
           .finally(function () {
