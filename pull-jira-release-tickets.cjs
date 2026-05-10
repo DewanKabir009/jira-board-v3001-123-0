@@ -3,7 +3,7 @@ const path = require("path");
 
 const workspace = __dirname;
 const siteUrl = "https://golfnow.atlassian.net";
-const dashboardVersion = "v1.9.7";
+const dashboardVersion = "v1.10.4";
 const repositorySlug = "DewanKabir009/jira-board-v3001-123-0";
 const dashboardUrl = "https://dewankabir009.github.io/jira-board-v3001-123-0/";
 const assigneeDispatchEndpoint = process.env.ASSIGNEE_DISPATCH_ENDPOINT || "http://127.0.0.1:3992/assign";
@@ -1165,6 +1165,11 @@ function renderHtml(data) {
 
     .section {
       min-width: 0;
+      border: 1px solid var(--section-border, #dce3ef);
+      border-radius: 10px;
+      background: var(--section-bg, #fff);
+      padding: 10px;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.04);
     }
 
     .section-toggle {
@@ -1175,11 +1180,18 @@ function renderHtml(data) {
       gap: 10px;
       margin-bottom: 10px;
       padding: 9px 10px;
-      border-color: transparent;
-      border-top: 3px solid var(--blue);
-      background: var(--blue-soft);
-      color: #0b3f8a;
+      border-color: var(--section-border, transparent);
+      border-top: 3px solid var(--section-accent, var(--blue));
+      background: color-mix(in srgb, var(--section-bg, var(--blue-soft)) 84%, #fff);
+      color: var(--section-text, #0b3f8a);
       text-align: left;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.82);
+    }
+
+    .section .section-toggle:hover {
+      border-color: var(--section-accent, #9eb5d5);
+      color: var(--section-text, var(--blue));
+      background: color-mix(in srgb, var(--section-bg, var(--blue-soft)) 70%, #fff);
     }
 
     .section-toggle .title {
@@ -1189,14 +1201,16 @@ function renderHtml(data) {
     .count {
       min-width: 24px;
       border-radius: 999px;
-      background: #fff;
+      border: 1px solid var(--section-border, transparent);
+      background: var(--section-chip-bg, #fff);
+      color: var(--section-text, #0f172a);
       padding: 2px 8px;
       text-align: center;
       font-size: 12px;
     }
 
     .chevron {
-      color: #41506a;
+      color: var(--section-accent, #41506a);
       font-size: 12px;
     }
 
@@ -1216,7 +1230,7 @@ function renderHtml(data) {
     .ticket,
     .subtask {
       min-width: 0;
-      border: 1px solid #dce3ef;
+      border: 1px solid color-mix(in srgb, var(--section-border, #dce3ef) 68%, #fff);
       border-radius: 8px;
       background: var(--panel);
       padding: 12px;
@@ -3070,13 +3084,77 @@ function renderHtml(data) {
         }, 0);
       }
 
+      var sectionThemeTokens = [
+        { bg: "#f8fafc", border: "#cbd5e1", accent: "#64748b", text: "#0f172a", chip: "#ffffff" },
+        { bg: "#eff6ff", border: "#bfdbfe", accent: "#2563eb", text: "#1e3a8a", chip: "#dbeafe" },
+        { bg: "#f0f9ff", border: "#bae6fd", accent: "#0284c7", text: "#075985", chip: "#e0f2fe" },
+        { bg: "#ecfeff", border: "#a5f3fc", accent: "#0891b2", text: "#155e75", chip: "#cffafe" },
+        { bg: "#f0fdf4", border: "#bbf7d0", accent: "#16a34a", text: "#166534", chip: "#dcfce7" },
+        { bg: "#fefce8", border: "#fde68a", accent: "#ca8a04", text: "#854d0e", chip: "#fef3c7" },
+        { bg: "#fff7ed", border: "#fed7aa", accent: "#ea580c", text: "#9a3412", chip: "#ffedd5" },
+        { bg: "#fff1f2", border: "#fecdd3", accent: "#e11d48", text: "#9f1239", chip: "#ffe4e6" },
+        { bg: "#f5f3ff", border: "#ddd6fe", accent: "#7c3aed", text: "#5b21b6", chip: "#ede9fe" },
+        { bg: "#fdf2f8", border: "#fbcfe8", accent: "#db2777", text: "#9d174d", chip: "#fce7f3" },
+      ];
+
+      function getSectionTheme(status) {
+        var normalized = text(status).toLowerCase();
+
+        if (normalized.indexOf("blocked") >= 0) {
+          return sectionThemeTokens[7];
+        }
+        if (normalized.indexOf("analysis") >= 0) {
+          return sectionThemeTokens[1];
+        }
+        if (normalized.indexOf("pre planning") >= 0) {
+          return sectionThemeTokens[0];
+        }
+        if (normalized.indexOf("code review") >= 0) {
+          return sectionThemeTokens[8];
+        }
+        if (normalized.indexOf("pending deployment") >= 0 && normalized.indexOf("dev") >= 0) {
+          return sectionThemeTokens[2];
+        }
+        if (normalized.indexOf("pending deployment") >= 0 && normalized.indexOf("stg") >= 0) {
+          return sectionThemeTokens[5];
+        }
+        if (normalized.indexOf("pending deployment") >= 0 && normalized.indexOf("prod") >= 0) {
+          return sectionThemeTokens[6];
+        }
+        if (normalized.indexOf("qa testing") >= 0) {
+          return sectionThemeTokens[4];
+        }
+        if (normalized.indexOf("regression") >= 0) {
+          return sectionThemeTokens[3];
+        }
+
+        var hash = 0;
+        for (var index = 0; index < normalized.length; index += 1) {
+          hash = ((hash << 5) - hash) + normalized.charCodeAt(index);
+          hash |= 0;
+        }
+        return sectionThemeTokens[Math.abs(hash) % sectionThemeTokens.length];
+      }
+
+      function renderSectionThemeStyle(status) {
+        var theme = getSectionTheme(status);
+        return [
+          "--section-bg:" + theme.bg,
+          "--section-border:" + theme.border,
+          "--section-accent:" + theme.accent,
+          "--section-text:" + theme.text,
+          "--section-chip-bg:" + theme.chip,
+        ].join(";");
+      }
+
       function renderSection(status, statusCards) {
         var issueCount = statusCards.reduce(function (total, card) {
           return total + 1 + visibleSubtasksForCard(card).length;
         }, 0);
         var collapsed = state.collapsedStatuses.has(status);
+        var sectionStyle = renderSectionThemeStyle(status);
 
-        return "<section class=\\"section " + (collapsed ? "collapsed" : "") + "\\" data-status=\\"" + escape(status) + "\\">" +
+        return "<section class=\\"section " + (collapsed ? "collapsed" : "") + "\\" data-status=\\"" + escape(status) + "\\" style=\\"" + sectionStyle + "\\">" +
           "<button class=\\"section-toggle\\" type=\\"button\\" aria-expanded=\\"" + (!collapsed) + "\\" data-status=\\"" + escape(status) + "\\">" +
             "<span class=\\"title\\">" + escape(status) + "</span>" +
             "<span class=\\"count\\">" + issueCount + "</span>" +
