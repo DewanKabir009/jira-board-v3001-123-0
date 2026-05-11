@@ -3,7 +3,7 @@ const path = require("path");
 
 const workspace = __dirname;
 const siteUrl = "https://golfnow.atlassian.net";
-const dashboardVersion = "v1.10.5";
+const dashboardVersion = "v1.10.6";
 const repositorySlug = "DewanKabir009/jira-board-v3001-123-0";
 const dashboardUrl = "https://dewankabir009.github.io/jira-board-v3001-123-0/";
 const defaultAssigneeDispatchEndpoint = "https://jira-board-assignee-bridge.dfkabir253.workers.dev/assign";
@@ -2155,6 +2155,16 @@ function renderHtml(data) {
       box-shadow: 0 0 0 4px rgba(239, 68, 68, .14);
     }
 
+    .bridge-status.protected {
+      border-color: #fde68a;
+      background: #fffbeb;
+    }
+
+    .bridge-status.protected .bridge-dot {
+      background: #f59e0b;
+      box-shadow: 0 0 0 4px rgba(245, 158, 11, .16);
+    }
+
     @media (max-width: 760px) {
       header,
       .toolbar,
@@ -2506,12 +2516,16 @@ function renderHtml(data) {
           return;
         }
 
-        badge.classList.remove("online", "offline");
+        badge.classList.remove("online", "offline", "protected");
         if (mode) {
           badge.classList.add(mode);
         }
         textNode.textContent = message;
         badge.title = "Assignee Bridge Status: " + message;
+      }
+
+      function isHostedBridgeEndpoint() {
+        return /jira-board-assignee-bridge\\.dfkabir253\\.workers\\.dev/i.test(assigneeDispatchEndpoint);
       }
 
       function checkBridgeStatus() {
@@ -2531,6 +2545,10 @@ function renderHtml(data) {
             setBridgeStatus("online", "Ready");
           })
           .catch(function () {
+            if (isHostedBridgeEndpoint()) {
+              setBridgeStatus("protected", "Cloudflare Login");
+              return;
+            }
             setBridgeStatus("offline", "Offline");
           });
       }

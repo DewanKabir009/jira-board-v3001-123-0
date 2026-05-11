@@ -4,7 +4,7 @@ Interactive release dashboard for Jira fixVersion `v3001.123.0`.
 
 - Live dashboard: <https://dewankabir009.github.io/jira-board-v3001-123-0/>
 - Jira source: `fixVersion = "v3001.123.0" ORDER BY updated DESC`
-- Current dashboard version: `v1.10.5`
+- Current dashboard version: `v1.10.6`
 
 The board groups release tickets by workflow status, keeps component and QA filters at the top, tracks subtask relationships, and preserves a Data Pull history so status movement is visible over time.
 
@@ -162,6 +162,12 @@ The generator writes:
 Security note: the dashboard is static GitHub Pages, so it does not store Jira credentials. Assignee writes go through GitHub Actions, where Jira credentials stay private in repository secrets.
 
 ## Version History
+
+### v1.10.6 - Cloudflare Access Bridge Status
+
+- Changed hosted bridge health failures caused by Cloudflare Access from `Offline` to `Cloudflare Login`.
+- Added an amber protected status style so users can distinguish an auth gate from an actual bridge outage.
+- Kept the Cloudflare Worker as the default assignee and checklist bridge endpoint.
 
 ### v1.10.5 - Hosted Cloudflare Bridge Default
 
