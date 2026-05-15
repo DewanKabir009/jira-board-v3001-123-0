@@ -56,11 +56,25 @@ jobs:
       - name: Commit and push dashboard
         if: steps.assign.outputs.board_changed == 'true'
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase --autostash origin "$GITHUB_REF_NAME"
           git add index.html
+          if git diff --cached --quiet; then
+            echo "No dashboard changes remain after syncing with origin."
+            exit 0
+          fi
           git commit -m "Update Jira assignee ${{ steps.assign.outputs.issue_key }}"
-          git push
+          for attempt in 1 2 3; do
+            if git push origin "HEAD:$GITHUB_REF_NAME"; then
+              exit 0
+            fi
+            echo "Push failed on attempt ${attempt}; rebasing and retrying."
+            git pull --rebase --autostash origin "$GITHUB_REF_NAME"
+          done
+          echo "::error::Failed to push dashboard after 3 attempts."
+          exit 1
 
       - name: Send assignee notification
         if: steps.assign.outputs.success == 'true'
