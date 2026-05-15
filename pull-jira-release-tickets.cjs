@@ -1847,15 +1847,21 @@ function renderHtml(data) {
       font-weight: 700;
     }
 
-    .data-pull {
-      margin: 0 clamp(18px, 2.3vw, 30px) 24px;
+    .data-pull,
+    .board-directory {
+      margin: 0 clamp(18px, 2.3vw, 30px) 12px;
       border: 1px solid #dce3ef;
       border-radius: 8px;
       background: #fff;
       overflow: hidden;
     }
 
-    .data-pull > summary {
+    .board-directory {
+      margin-bottom: 24px;
+    }
+
+    .data-pull > summary,
+    .board-directory > summary {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
       align-items: center;
@@ -1866,7 +1872,8 @@ function renderHtml(data) {
       font-weight: 780;
     }
 
-    .data-pull > summary::-webkit-details-marker {
+    .data-pull > summary::-webkit-details-marker,
+    .board-directory > summary::-webkit-details-marker {
       display: none;
     }
 
@@ -1877,11 +1884,49 @@ function renderHtml(data) {
       text-align: right;
     }
 
-    .pull-body {
+    .pull-body,
+    .board-directory-body {
       display: grid;
       gap: 14px;
       padding: 14px;
       border-top: 1px solid var(--line);
+    }
+
+    .board-directory-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+    }
+
+    .board-directory-link {
+      display: grid;
+      gap: 4px;
+      min-width: 0;
+      border: 1px solid #dce3ef;
+      border-radius: 8px;
+      background: #fbfcff;
+      padding: 11px 12px;
+      color: #334968;
+      text-decoration: none;
+    }
+
+    .board-directory-link:hover,
+    .board-directory-link:focus-visible {
+      border-color: #8db8ff;
+      background: #f5f9ff;
+      outline: none;
+    }
+
+    .board-directory-link b {
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 850;
+    }
+
+    .board-directory-link span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 650;
     }
 
     .pull-snapshot,
@@ -2232,7 +2277,8 @@ function renderHtml(data) {
         grid-template-columns: 1fr;
       }
 
-      .data-pull > summary {
+      .data-pull > summary,
+      .board-directory > summary {
         grid-template-columns: 1fr;
       }
 
@@ -2334,6 +2380,25 @@ function renderHtml(data) {
           <span class="pull-meta" id="pull-meta"></span>
         </summary>
         <div class="pull-body" id="pull-body"></div>
+      </details>
+
+      <details class="board-directory" id="board-directory">
+        <summary>
+          <span>Boards</span>
+          <span class="pull-meta">2 boards</span>
+        </summary>
+        <div class="board-directory-body">
+          <div class="board-directory-list">
+            <a class="board-directory-link" href="https://dewankabir009.github.io/jira-board-v3001-122-0/" target="_blank" rel="noopener">
+              <b>v3001.122.0 board</b>
+              <span>Open the 122 release dashboard</span>
+            </a>
+            <a class="board-directory-link" href="https://dewankabir009.github.io/jira-board-v3001-123-0/" target="_blank" rel="noopener">
+              <b>v3001.123.0 board</b>
+              <span>Open the 123 release dashboard</span>
+            </a>
+          </div>
+        </div>
       </details>
 
       <div class="footer">
