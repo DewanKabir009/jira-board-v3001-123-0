@@ -15,7 +15,7 @@ on:
         options:
           - Dewan Kabir
           - Nicole Greer
-          - Alex Mcnay
+          - Alex McNay
           - Anton Yurkevich
 
 concurrency:
@@ -61,3 +61,21 @@ jobs:
           git add index.html
           git commit -m "Update Jira assignee ${{ steps.assign.outputs.issue_key }}"
           git push
+
+      - name: Send assignee notification
+        if: steps.assign.outputs.success == 'true'
+        env:
+          JIRA_FIX_VERSION: v3001.123.0
+          DASHBOARD_URL: ${{ steps.assign.outputs.dashboard_url }}
+          ASSIGNEE_ISSUE_KEY: ${{ steps.assign.outputs.issue_key }}
+          ASSIGNEE_DISPLAY_NAME: ${{ steps.assign.outputs.assignee_display_name }}
+          PREVIOUS_ASSIGNEE_DISPLAY_NAME: ${{ steps.assign.outputs.previous_assignee_display_name }}
+          ISSUE_SUMMARY: ${{ steps.assign.outputs.issue_summary }}
+          ISSUE_STATUS: ${{ steps.assign.outputs.issue_status }}
+          ISSUE_URL: ${{ steps.assign.outputs.issue_url }}
+          BOARD_CHANGED: ${{ steps.assign.outputs.board_changed }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL }}
+        run: node scripts/send-assignee-notification.cjs || echo "::warning::Assignee Slack notification failed; continuing."

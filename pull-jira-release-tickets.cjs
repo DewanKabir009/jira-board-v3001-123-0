@@ -12,7 +12,7 @@ const mediaAssetBasePath = "assets/jira-media";
 const assigneeOptions = [
   "Dewan Kabir",
   "Nicole Greer",
-  "Alex Mcnay",
+  "Alex McNay",
   "Anton Yurkevich",
 ];
 const cloudId = process.env.JIRA_CLOUD_ID || "24a77690-829a-4704-94eb-fafef6370d21";
@@ -2454,7 +2454,7 @@ function renderHtml(data) {
       var assigneeNames = data.assigneeOptions || [
         "Dewan Kabir",
         "Nicole Greer",
-        "Alex Mcnay",
+        "Alex McNay",
         "Anton Yurkevich"
       ];
       var qaNames = assigneeNames;

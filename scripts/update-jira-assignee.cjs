@@ -17,7 +17,7 @@ const indexPath = path.join(workspace, "index.html");
 const allowedAssignees = [
   "Dewan Kabir",
   "Nicole Greer",
-  "Alex Mcnay",
+  "Alex McNay",
   "Anton Yurkevich",
 ];
 
@@ -201,6 +201,11 @@ async function main() {
     writeOutput("success", "true");
     writeOutput("issue_key", request.issueKey);
     writeOutput("assignee_display_name", assignee.displayName);
+    writeOutput("previous_assignee_display_name", beforeIssue.fields?.assignee?.displayName || "Unassigned");
+    writeOutput("issue_summary", afterIssue.fields?.summary || beforeIssue.fields?.summary || "");
+    writeOutput("issue_status", afterIssue.fields?.status?.name || "");
+    writeOutput("issue_url", `${siteUrl}/browse/${request.issueKey}`);
+    writeOutput("dashboard_url", request.dashboardUrl || dashboardUrl);
     writeOutput("board_changed", refresh.boardChanged ? "true" : "false");
     writeSummary(comment);
   } catch (error) {

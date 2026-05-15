@@ -15,7 +15,7 @@ const allowedOrigins = new Set([
 const allowedAssignees = [
   "Dewan Kabir",
   "Nicole Greer",
-  "Alex Mcnay",
+  "Alex McNay",
   "Anton Yurkevich",
 ];
 
