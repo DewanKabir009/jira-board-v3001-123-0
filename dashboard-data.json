@@ -4,10 +4,43 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-19T21:51:02.492Z",
-  "pulledAtDisplay": "May 19, 2026, 5:51 PM",
+  "pulledAt": "2026-05-19T21:56:04.683Z",
+  "pulledAtDisplay": "May 19, 2026, 5:56 PM",
   "total": 26,
   "issues": [
+    {
+      "key": "CORE-14428",
+      "url": "https://golfnow.atlassian.net/browse/CORE-14428",
+      "summary": "Create Home Course ProductBenefit",
+      "description": "INSERT a new benefit into Product.Benefit\n\n- Name: Home Course Eligible\n\nINSERT this new BenefitId into Product.ProductBenefit\n\n- ProductIds IN (36,37,71)",
+      "descriptionHtml": "<p>INSERT a new benefit into Product.Benefit</p><ul><li><p>Name: Home Course Eligible</p></li></ul><p>INSERT this new BenefitId into Product.ProductBenefit</p><ul><li><p>ProductIds IN (36,37,71)</p></li></ul>",
+      "descriptionImageCount": 0,
+      "type": "Story",
+      "isSubtask": false,
+      "status": "Development",
+      "priority": "P1",
+      "assignee": "Luis Vallejo Mursuli",
+      "updated": "2026-05-19T17:52:39.324-0400",
+      "updatedDisplay": "May 19, 2026, 5:52 PM",
+      "created": "2026-04-30T09:47:17.923-0400",
+      "createdDisplay": "Apr 30, 2026, 9:47 AM",
+      "components": [
+        "Database"
+      ],
+      "fixVersions": [
+        "v3001.123.0"
+      ],
+      "resolution": "",
+      "parent": {
+        "key": "CORE-14301",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14301",
+        "summary": "GolfPass \"Home Course\": Phase I",
+        "description": "",
+        "type": "Epic",
+        "status": "Planning",
+        "priority": "None"
+      }
+    },
     {
       "key": "CORE-14487",
       "url": "https://golfnow.atlassian.net/browse/CORE-14487",
@@ -60,39 +93,6 @@
         "key": "CORE-14266",
         "url": "https://golfnow.atlassian.net/browse/CORE-14266",
         "summary": "Email Template Changes",
-        "description": "",
-        "type": "Epic",
-        "status": "Planning",
-        "priority": "None"
-      }
-    },
-    {
-      "key": "CORE-14428",
-      "url": "https://golfnow.atlassian.net/browse/CORE-14428",
-      "summary": "Create Home Course ProductBenefit",
-      "description": "INSERT a new benefit into Product.Benefit\n\n- Name: Home Course Eligible\n\nINSERT this new BenefitId into Product.ProductBenefit\n\n- ProductIds IN (36,37,71)",
-      "descriptionHtml": "<p>INSERT a new benefit into Product.Benefit</p><ul><li><p>Name: Home Course Eligible</p></li></ul><p>INSERT this new BenefitId into Product.ProductBenefit</p><ul><li><p>ProductIds IN (36,37,71)</p></li></ul>",
-      "descriptionImageCount": 0,
-      "type": "Story",
-      "isSubtask": false,
-      "status": "Development",
-      "priority": "P1",
-      "assignee": "Luis Vallejo Mursuli",
-      "updated": "2026-05-19T16:29:59.731-0400",
-      "updatedDisplay": "May 19, 2026, 4:29 PM",
-      "created": "2026-04-30T09:47:17.923-0400",
-      "createdDisplay": "Apr 30, 2026, 9:47 AM",
-      "components": [
-        "Database"
-      ],
-      "fixVersions": [
-        "v3001.123.0"
-      ],
-      "resolution": "",
-      "parent": {
-        "key": "CORE-14301",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14301",
-        "summary": "GolfPass \"Home Course\": Phase I",
         "description": "",
         "type": "Epic",
         "status": "Planning",
@@ -825,17 +825,82 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-19T21:45:59.900Z",
-    "previousPulledAtDisplay": "May 19, 2026, 5:45 PM",
-    "currentPulledAt": "2026-05-19T21:51:02.492Z",
-    "currentPulledAtDisplay": "May 19, 2026, 5:51 PM",
+    "previousPulledAt": "2026-05-19T21:51:02.492Z",
+    "previousPulledAtDisplay": "May 19, 2026, 5:51 PM",
+    "currentPulledAt": "2026-05-19T21:56:04.683Z",
+    "currentPulledAtDisplay": "May 19, 2026, 5:56 PM",
     "isBaseline": false,
     "added": [],
     "removed": [],
-    "updated": [],
+    "updated": [
+      {
+        "key": "CORE-14428",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14428",
+        "summary": "Create Home Course ProductBenefit",
+        "changes": [
+          {
+            "field": "updatedDisplay",
+            "label": "Jira updated",
+            "before": "May 19, 2026, 4:29 PM",
+            "after": "May 19, 2026, 5:52 PM"
+          }
+        ],
+        "type": "Story",
+        "isSubtask": false,
+        "assignee": "Luis Vallejo Mursuli",
+        "status": "Development",
+        "parent": {
+          "key": "CORE-14301",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14301",
+          "summary": "GolfPass \"Home Course\": Phase I",
+          "description": "",
+          "type": "Epic",
+          "status": "Planning",
+          "priority": "None"
+        }
+      }
+    ],
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-19T21:51:02.492Z",
+      "previousPulledAtDisplay": "May 19, 2026, 5:51 PM",
+      "currentPulledAt": "2026-05-19T21:56:04.683Z",
+      "currentPulledAtDisplay": "May 19, 2026, 5:56 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [
+        {
+          "key": "CORE-14428",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14428",
+          "summary": "Create Home Course ProductBenefit",
+          "changes": [
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "May 19, 2026, 4:29 PM",
+              "after": "May 19, 2026, 5:52 PM"
+            }
+          ],
+          "type": "Story",
+          "isSubtask": false,
+          "assignee": "Luis Vallejo Mursuli",
+          "status": "Development",
+          "parent": {
+            "key": "CORE-14301",
+            "url": "https://golfnow.atlassian.net/browse/CORE-14301",
+            "summary": "GolfPass \"Home Course\": Phase I",
+            "description": "",
+            "type": "Epic",
+            "status": "Planning",
+            "priority": "None"
+          }
+        }
+      ],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-19T21:45:59.900Z",
       "previousPulledAtDisplay": "May 19, 2026, 5:45 PM",
@@ -4594,17 +4659,6 @@
       "previousPulledAtDisplay": "May 15, 2026, 4:15 PM",
       "currentPulledAt": "2026-05-15T20:20:44.553Z",
       "currentPulledAtDisplay": "May 15, 2026, 4:20 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-15T19:06:45.221Z",
-      "previousPulledAtDisplay": "May 15, 2026, 3:06 PM",
-      "currentPulledAt": "2026-05-15T20:15:42.440Z",
-      "currentPulledAtDisplay": "May 15, 2026, 4:15 PM",
       "isBaseline": false,
       "added": [],
       "removed": [],
