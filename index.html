@@ -261,6 +261,144 @@
       font-weight: 720;
     }
 
+    .release-scan {
+      display: grid;
+      grid-template-columns: minmax(280px, 1.1fr) minmax(240px, .9fr) minmax(220px, .7fr);
+      gap: var(--space-6);
+      padding: var(--space-6) clamp(18px, 2.3vw, 30px);
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .scan-panel {
+      display: grid;
+      align-content: start;
+      gap: var(--space-5);
+      min-width: 0;
+      border: 1px solid var(--color-border-default);
+      border-radius: var(--radius-md);
+      background: var(--panel-soft);
+      padding: var(--space-6);
+    }
+
+    .scan-panel.primary {
+      background: linear-gradient(135deg, #fff, var(--color-accent-primary-soft));
+    }
+
+    .scan-kicker {
+      margin: 0;
+      color: var(--color-accent-primary);
+      font-size: 11px;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+
+    .scan-title {
+      margin: 0;
+      color: var(--ink);
+      font-size: 20px;
+      line-height: 1.15;
+    }
+
+    .scan-copy {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 620;
+    }
+
+    .scan-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+    }
+
+    .scan-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 32px;
+      border: 1px solid #cdd7e7;
+      border-radius: var(--radius-md);
+      background: #fff;
+      padding: 6px 10px;
+      color: #284263;
+      font-size: 12px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .scan-button.primary {
+      border-color: var(--color-accent-primary);
+      background: var(--color-accent-primary);
+      color: #fff;
+    }
+
+    .scan-button:hover,
+    .scan-button:focus-visible {
+      border-color: var(--color-accent-primary);
+      color: var(--color-accent-primary);
+      outline: none;
+    }
+
+    .scan-button.primary:hover,
+    .scan-button.primary:focus-visible {
+      background: var(--color-accent-primary-hover);
+      color: #fff;
+    }
+
+    .release-scan-stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-3);
+    }
+
+    .scan-stat {
+      display: grid;
+      gap: 2px;
+      min-width: 0;
+      border: 1px solid #dce3ef;
+      border-radius: var(--radius-md);
+      background: #fff;
+      padding: var(--space-4);
+    }
+
+    .scan-stat strong {
+      color: var(--ink);
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .scan-stat span {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 760;
+      text-transform: uppercase;
+    }
+
+    .scan-list {
+      display: grid;
+      gap: var(--space-3);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .scan-list li {
+      display: grid;
+      gap: 2px;
+      border-left: 3px solid var(--color-accent-success);
+      padding-left: var(--space-4);
+      color: #334968;
+      font-weight: 700;
+    }
+
+    .scan-list span {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 680;
+    }
+
     .toolbar {
       display: flex;
       align-items: center;
@@ -631,6 +769,31 @@
       font-size: 13px;
       font-weight: 680;
       overflow-wrap: anywhere;
+    }
+
+    .ticket-detail-hierarchy {
+      display: grid;
+      gap: var(--space-4);
+      margin-top: var(--space-4);
+    }
+
+    .ticket-detail-group {
+      display: grid;
+      gap: var(--space-2);
+      min-width: 0;
+    }
+
+    .ticket-detail-label {
+      color: #41506a;
+      font-size: 10px;
+      font-weight: 850;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .ticket-detail-group .description-shell,
+    .ticket-detail-group .ticket-actions {
+      margin-top: 0;
     }
 
     .meta {
@@ -1213,9 +1376,19 @@
       gap: 10px;
     }
 
+    .board-directory-note {
+      border-left: 3px solid var(--color-accent-primary);
+      border-radius: var(--radius-sm);
+      background: var(--color-accent-primary-soft);
+      padding: var(--space-4) var(--space-5);
+      color: #334968;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
     .board-directory-link {
       display: grid;
-      gap: 4px;
+      gap: 6px;
       min-width: 0;
       border: 1px solid #dce3ef;
       border-radius: 8px;
@@ -1242,6 +1415,17 @@
       color: var(--muted);
       font-size: 12px;
       font-weight: 650;
+    }
+
+    .board-directory-link em {
+      justify-self: start;
+      border-radius: var(--radius-pill);
+      background: var(--board-health-fresh-bg);
+      padding: 2px 8px;
+      color: var(--board-health-fresh-text);
+      font-size: 11px;
+      font-style: normal;
+      font-weight: 780;
     }
 
     .pull-snapshot,
@@ -1565,10 +1749,24 @@
     @media (max-width: 760px) {
       header,
       .toolbar,
+      .release-scan,
       .panel-title,
       .footer {
         flex-direction: column;
         align-items: stretch;
+      }
+
+      .release-scan {
+        grid-template-columns: 1fr;
+      }
+
+      .release-scan-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .scan-actions {
+        display: grid;
+        grid-template-columns: 1fr;
       }
 
       .stamp,
@@ -1645,6 +1843,31 @@
         </div>
       </header>
 
+      <section class="release-scan" aria-labelledby="release-scan-title">
+        <article class="scan-panel primary">
+          <p class="scan-kicker">Release scan</p>
+          <h2 class="scan-title" id="release-scan-title">v3001.123.0 QA command center</h2>
+          <p class="scan-copy">Changed tickets, QA-ready work, and ticket-local actions are grouped around the current Jira snapshot.</p>
+          <div class="scan-actions">
+            <a class="scan-button primary" href="#data-pull">Latest changes</a>
+            <a class="scan-button" href="#qa-chips">QA filters</a>
+            <a class="scan-button" href="#board-directory">Release boards</a>
+          </div>
+        </article>
+        <aside class="scan-panel" aria-label="Release scan metrics">
+          <p class="scan-kicker">Snapshot focus</p>
+          <div class="release-scan-stats" id="release-scan-stats"></div>
+        </aside>
+        <aside class="scan-panel" aria-label="Ticket detail order">
+          <p class="scan-kicker">Ticket flow</p>
+          <ul class="scan-list">
+            <li>Changes<span>Latest Jira pull delta</span></li>
+            <li>Filters<span>Assignee, component, and priority scan</span></li>
+            <li>Actions<span>Description, assignee, and Jira links</span></li>
+          </ul>
+        </aside>
+      </section>
+
       <section class="toolbar" aria-label="Board controls">
         <div class="toolbar-group">
           <button class="control-button" id="toggle-subtasks" type="button" aria-pressed="false">Expand all subtasks</button>
@@ -1699,18 +1922,21 @@
 
       <details class="board-directory" id="board-directory">
         <summary>
-          <span>Boards</span>
-          <span class="pull-meta">2 boards</span>
+          <span>Release Boards</span>
+          <span class="pull-meta">2 active boards</span>
         </summary>
         <div class="board-directory-body">
+          <div class="board-directory-note">Active release boards stay here while the historical and future board registry is prepared.</div>
           <div class="board-directory-list">
             <a class="board-directory-link" href="https://dewankabir009.github.io/jira-board-v3001-122-0/" target="_blank" rel="noopener">
               <b>v3001.122.0 board</b>
-              <span>Open the 122 release dashboard</span>
+              <span>Current 122 release dashboard</span>
+              <em>Active</em>
             </a>
             <a class="board-directory-link" href="https://dewankabir009.github.io/jira-board-v3001-123-0/" target="_blank" rel="noopener">
               <b>v3001.123.0 board</b>
-              <span>Open the 123 release dashboard</span>
+              <span>Current 123 release dashboard</span>
+              <em>Active</em>
             </a>
           </div>
         </div>
@@ -2240,6 +2466,34 @@
         }).join("");
       }
 
+      function renderReleaseScan() {
+        var diff = data.pullDiff || {};
+        var lists = getDiffLists(diff);
+        var changedCount = lists.added.length + lists.updated.length + lists.statusChanges.length + lists.removed.length;
+        var latestChangeValue = diff.isBaseline ? "Baseline" : (changedCount || "No Change");
+        var qaReadyCount = data.issues.filter(function (issue) {
+          return text(issue.status).toLowerCase().indexOf("qa testing") >= 0;
+        }).length;
+        var highPriorityCount = data.issues.filter(function (issue) {
+          var priority = priorityKey(issue.priority);
+          return priority === "P0" || priority === "P1";
+        }).length;
+        var unassignedCount = data.issues.filter(function (issue) {
+          return !issue.isSubtask && text(issue.assignee).toLowerCase() === "unassigned";
+        }).length;
+        var stats = [
+          { value: latestChangeValue, label: "Latest changes" },
+          { value: qaReadyCount, label: "QA testing" },
+          { value: highPriorityCount, label: "P0/P1" },
+          { value: unassignedCount, label: "Unassigned" },
+          { value: data.total, label: "Tracked" }
+        ];
+
+        document.getElementById("release-scan-stats").innerHTML = stats.map(function (stat) {
+          return "<div class=\"scan-stat\"><strong>" + escape(stat.value) + "</strong><span>" + escape(stat.label) + "</span></div>";
+        }).join("");
+      }
+
       function renderPrioritySummary() {
         document.getElementById("priority-summary").innerHTML = getPriorityCounts().map(function (entry) {
           return "<div class=\"priority-card\">" +
@@ -2428,6 +2682,17 @@
         "</div>";
       }
 
+      function renderTicketDetailGroup(label, body, className) {
+        if (!body) {
+          return "";
+        }
+
+        return "<section class=\"ticket-detail-group " + escape(className || "") + "\">" +
+          "<div class=\"ticket-detail-label\">" + escape(label) + "</div>" +
+          body +
+        "</section>";
+      }
+
       function renderSubtask(subtask) {
         return "<article class=\"subtask\">" +
           "<div class=\"topline\">" +
@@ -2435,9 +2700,11 @@
             "<span class=\"type\">" + escape(subtask.type) + "</span>" +
           "</div>" +
           "<p class=\"summary\">" + escape(subtask.summary) + "</p>" +
-          renderDescription(subtask) +
-          renderMeta(subtask, true) +
-          renderIssueActions(subtask) +
+          "<div class=\"ticket-detail-hierarchy\">" +
+            renderTicketDetailGroup("Description", renderDescription(subtask), "detail-description") +
+            renderTicketDetailGroup("Fields", renderMeta(subtask, true), "detail-fields") +
+            renderTicketDetailGroup("Actions", renderIssueActions(subtask), "detail-actions") +
+          "</div>" +
         "</article>";
       }
 
@@ -2468,9 +2735,11 @@
             "<span class=\"type\">" + escape(issue.type) + "</span>" +
           "</div>" +
           "<p class=\"summary\">" + escape(issue.summary) + "</p>" +
-          renderDescription(issue) +
-          renderMeta(issue, false) +
-          renderIssueActions(issue) +
+          "<div class=\"ticket-detail-hierarchy\">" +
+            renderTicketDetailGroup("Description", renderDescription(issue), "detail-description") +
+            renderTicketDetailGroup("Fields", renderMeta(issue, false), "detail-fields") +
+            renderTicketDetailGroup("Actions", renderIssueActions(issue), "detail-actions") +
+          "</div>" +
           subtaskBlock +
         "</article>";
       }
@@ -2866,6 +3135,7 @@
       }
 
       function renderAll() {
+        renderReleaseScan();
         renderFilterState();
         renderBoard();
         renderDataPull();
