@@ -2775,6 +2775,7 @@ function renderHtml(data) {
           <a class="bridge-login-link" id="bridge-login-link" href="${escapeHtml(assigneeDispatchEndpoint.replace(/\/assign$/, "/status"))}" target="_blank" rel="noopener" title="Open Cloudflare Access login to re-enable assign updates">Login / re-enable bridge</a>
           </span>
           <a href="${escapeHtml(data.dataArtifact?.fileName || dashboardDataFileName)}">Data artifact</a>
+          <a href="modern/">Astro preview</a>
           <a href="${escapeHtml(readmeUrl)}">Dashboard ${escapeHtml(dashboardVersion)} notes</a>
           <a href="${escapeHtml(data.jiraFilterUrl)}">Open Jira filter</a>
         </span>
