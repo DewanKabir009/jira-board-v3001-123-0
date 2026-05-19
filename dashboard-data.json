@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-19T18:26:30.354Z",
-  "pulledAtDisplay": "May 19, 2026, 2:26 PM",
+  "pulledAt": "2026-05-19T18:31:33.369Z",
+  "pulledAtDisplay": "May 19, 2026, 2:31 PM",
   "total": 26,
   "issues": [
     {
@@ -823,138 +823,28 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-19T16:50:36.347Z",
-    "previousPulledAtDisplay": "May 19, 2026, 12:50 PM",
-    "currentPulledAt": "2026-05-19T18:26:30.354Z",
-    "currentPulledAtDisplay": "May 19, 2026, 2:26 PM",
+    "previousPulledAt": "2026-05-19T18:26:30.354Z",
+    "previousPulledAtDisplay": "May 19, 2026, 2:26 PM",
+    "currentPulledAt": "2026-05-19T18:31:33.369Z",
+    "currentPulledAtDisplay": "May 19, 2026, 2:31 PM",
     "isBaseline": false,
-    "added": [
-      {
-        "key": "CORE-14444",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14444",
-        "summary": "FeeConfiguration - Create Columns for GP Waivability and Refundability",
-        "description": "Goal\n\nAdd explicit FeeConfiguration support for GolfPass waived-fee-credit waivability and refundability so each configured fee can independently define whether it can be waived by a GolfPass waived fee credit and whether it is refundable during cancellation/refund flows.\n\nThis is a foundational data/model ticket for the Customizable Transaction Fees epic. It should not attempt to build the full multi-fee framework, GNC UI revamp, fee messaging changes, tax handling, or revenue allocation behavior.\n\n---\nBackground\n\nThe Customizable Transaction Fees epic requires different fee types to behave differently. For example:\n\n- The standard GolfNow transaction/convenience fee may be waivable with a GolfPass waived fee credit.\n\n- A tourism, city, county, or other regulatory fee may need to be non-waivable.\n\n- Some fees may be refundable.\n\n- Some fees may be non-refundable.\n\nToday, FeeConfiguration does not have clear per-fee fields that let downstream systems determine these behaviors from configuration. We need to add those fields first so future tickets can safely apply waiver and refund behavior without hard-coding fee categories.\n\n---\nScope\n\nAdd new fields to the FeeConfiguration data model to support per-fee behavior:\n\n- GolfPass waivable flag\n\n- Indicates whether this fee can be waived by a GolfPass waived-fee-credit benefit.\n\n- Example values: true for standard GolfNow transaction fee, false for tourism/city/county fees.\n\n- Refundable flag\n\n- Indicates whether this fee is refundable when a reservation is cancelled/refunded.\n\n- Example values: true for refundable convenience fees, false for non-refundable tourism/city/county fees.\n\nImplementation should include the appropriate database/schema changes and any required data access/model/DTO updates so these values can be read by downstream API, Reservation Service, and future GNC configuration work.\n\n---\nDefaults / Backward Compatibility\n\nExisting production behavior must remain unchanged after the columns are added.\n\nDefault values for existing FeeConfiguration records should preserve current behavior (current behavior is that all fees and waivable and refundable).\n\n---\nAcceptance Criteria\n\n- FeeConfiguration schema supports a per-fee GolfPass waivable field.\n\n- FeeConfiguration schema supports a per-fee refundable field.\n\n- Existing FeeConfiguration records are backfilled/defaulted so current production behavior is preserved.\n\n- The new fields can be read wherever FeeConfiguration data is retrieved for API/Reservation Service use.\n\n- No customer-facing behavior changes unless explicitly required to preserve existing behavior.\n\n- No GNC UI changes are included in this ticket.\n\n- Engineering documents the chosen default values for existing fee records.",
-        "descriptionHtml": "<h3>Goal</h3><p>Add explicit FeeConfiguration support for <strong>GolfPass waived-fee-credit waivability</strong> and <strong>refundability</strong> so each configured fee can independently define whether it can be waived by a GolfPass waived fee credit and whether it is refundable during cancellation/refund flows.</p><p>This is a foundational data/model ticket for the Customizable Transaction Fees epic. It should not attempt to build the full multi-fee framework, GNC UI revamp, fee messaging changes, tax handling, or revenue allocation behavior.</p><hr><h3>Background</h3><p>The Customizable Transaction Fees epic requires different fee types to behave differently. For example:</p><ul><li><p>The standard GolfNow transaction/convenience fee may be waivable with a GolfPass waived fee credit.</p></li><li><p>A tourism, city, county, or other regulatory fee may need to be non-waivable.</p></li><li><p>Some fees may be refundable.</p></li><li><p>Some fees may be non-refundable.</p></li></ul><p>Today, FeeConfiguration does not have clear per-fee fields that let downstream systems determine these behaviors from configuration. We need to add those fields first so future tickets can safely apply waiver and refund behavior without hard-coding fee categories.</p><hr><h3>Scope</h3><p>Add new fields to the FeeConfiguration data model to support per-fee behavior:</p><ul><li><p><strong>GolfPass waivable flag</strong></p><ul><li><p>Indicates whether this fee can be waived by a GolfPass waived-fee-credit benefit.</p></li><li><p>Example values: <code>true</code> for standard GolfNow transaction fee, <code>false</code> for tourism/city/county fees.</p></li></ul></li><li><p><strong>Refundable flag</strong></p><ul><li><p>Indicates whether this fee is refundable when a reservation is cancelled/refunded.</p></li><li><p>Example values: <code>true</code> for refundable convenience fees, <code>false</code> for non-refundable tourism/city/county fees.</p></li></ul></li></ul><p>Implementation should include the appropriate database/schema changes and any required data access/model/DTO updates so these values can be read by downstream API, Reservation Service, and future GNC configuration work.</p><hr><h3>Defaults / Backward Compatibility</h3><p>Existing production behavior must remain unchanged after the columns are added.</p><p><strong>Default values for existing FeeConfiguration records should preserve current behavior (current behavior is that all fees and waivable and refundable).</strong></p><hr><h3>Acceptance Criteria</h3><ol><li><p>FeeConfiguration schema supports a per-fee GolfPass waivable field.</p></li><li><p>FeeConfiguration schema supports a per-fee refundable field.</p></li><li><p>Existing FeeConfiguration records are backfilled/defaulted so current production behavior is preserved.</p></li><li><p>The new fields can be read wherever FeeConfiguration data is retrieved for API/Reservation Service use.</p></li><li><p>No customer-facing behavior changes unless explicitly required to preserve existing behavior.</p></li><li><p>No GNC UI changes are included in this ticket.</p></li><li><p>Engineering documents the chosen default values for existing fee records.</p></li></ol>",
-        "descriptionImageCount": 0,
-        "type": "Story",
-        "isSubtask": false,
-        "status": "Development",
-        "priority": "P2",
-        "assignee": "Tyler Olechnowicz",
-        "updated": "2026-05-19T14:18:00.618-0400",
-        "updatedDisplay": "May 19, 2026, 2:18 PM",
-        "created": "2026-05-04T14:45:03.671-0400",
-        "createdDisplay": "May 4, 2026, 2:45 PM",
-        "components": [],
-        "fixVersions": [
-          "v3001.123.0"
-        ],
-        "resolution": "",
-        "parent": {
-          "key": "CORE-13901",
-          "url": "https://golfnow.atlassian.net/browse/CORE-13901",
-          "summary": "Customizable transaction fees",
-          "description": "",
-          "type": "Epic",
-          "status": "Planning",
-          "priority": "P1"
-        }
-      },
-      {
-        "key": "CORE-14487",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14487",
-        "summary": "[Commerce] Facility Closure / Update casing Tee Times to Fail in the Add to Cart process",
-        "description": "",
-        "descriptionHtml": "",
-        "descriptionImageCount": 0,
-        "type": "Bug",
-        "isSubtask": false,
-        "status": "Pre Planning",
-        "priority": "None",
-        "assignee": "Andrew Horvat",
-        "updated": "2026-05-19T14:15:48.217-0400",
-        "updatedDisplay": "May 19, 2026, 2:15 PM",
-        "created": "2026-05-19T14:14:47.543-0400",
-        "createdDisplay": "May 19, 2026, 2:14 PM",
-        "components": [],
-        "fixVersions": [
-          "v3001.123.0"
-        ],
-        "resolution": "",
-        "parent": null
-      },
-      {
-        "key": "CORE-14486",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14486",
-        "summary": "Database Changes",
-        "description": "",
-        "descriptionHtml": "",
-        "descriptionImageCount": 0,
-        "type": "Developer Task (sub task)",
-        "isSubtask": true,
-        "status": "Development",
-        "priority": "None",
-        "assignee": "Tyler Olechnowicz",
-        "updated": "2026-05-19T14:13:40.373-0400",
-        "updatedDisplay": "May 19, 2026, 2:13 PM",
-        "created": "2026-05-19T14:10:26.638-0400",
-        "createdDisplay": "May 19, 2026, 2:10 PM",
-        "components": [
-          "Database"
-        ],
-        "fixVersions": [
-          "v3001.123.0"
-        ],
-        "resolution": "",
-        "parent": {
-          "key": "CORE-14444",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14444",
-          "summary": "FeeConfiguration - Create Columns for GP Waivability and Refundability",
-          "description": "",
-          "type": "Story",
-          "status": "Development",
-          "priority": "P2"
-        }
-      }
-    ],
+    "added": [],
     "removed": [],
-    "updated": [
-      {
-        "key": "CORE-14427",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14427",
-        "summary": "Home Course Selection/Management",
-        "changes": [
-          {
-            "field": "updatedDisplay",
-            "label": "Jira updated",
-            "before": "May 19, 2026, 11:59 AM",
-            "after": "May 19, 2026, 1:58 PM"
-          },
-          {
-            "field": "description",
-            "label": "Description",
-            "before": "We need to create the ability to assign a Home Course for a user and manage the restrictions around Home Course changes. Requirements - O...",
-            "after": "We need to create the ability to assign a Home Course for a user and manage the restrictions around Home Course changes. Requirements - O..."
-          }
-        ],
-        "type": "Story",
-        "isSubtask": false,
-        "assignee": "Luis Vallejo Mursuli",
-        "status": "Analysis",
-        "parent": {
-          "key": "CORE-14301",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14301",
-          "summary": "GolfPass \"Home Course\": Phase I",
-          "description": "",
-          "type": "Epic",
-          "status": "Planning",
-          "priority": "None"
-        }
-      }
-    ],
+    "updated": [],
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-19T18:26:30.354Z",
+      "previousPulledAtDisplay": "May 19, 2026, 2:26 PM",
+      "currentPulledAt": "2026-05-19T18:31:33.369Z",
+      "currentPulledAtDisplay": "May 19, 2026, 2:31 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-19T16:50:36.347Z",
       "previousPulledAtDisplay": "May 19, 2026, 12:50 PM",
@@ -4588,17 +4478,6 @@
           }
         }
       ],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-15T17:20:04.102Z",
-      "previousPulledAtDisplay": "May 15, 2026, 1:20 PM",
-      "currentPulledAt": "2026-05-15T17:25:06.548Z",
-      "currentPulledAtDisplay": "May 15, 2026, 1:25 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
       "statusChanges": []
     }
   ],
