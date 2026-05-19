@@ -6,6 +6,7 @@ const workspace = path.resolve(__dirname, "..");
 const version = process.env.JIRA_FIX_VERSION || "v3001.123.0";
 const safeVersion = version.replace(/[^a-zA-Z0-9._-]/g, "_");
 const jsonPath = path.join(workspace, `jira-${safeVersion}-tickets.json`);
+const dashboardDataPath = path.join(workspace, "dashboard-data.json");
 const htmlPath = path.join(workspace, "jira-board-latest.html");
 const indexPath = path.join(workspace, "index.html");
 
@@ -55,11 +56,13 @@ const statusChanges = diff.statusChanges || [];
 const removed = diff.removed || [];
 const jiraChanged = hasChanges(diff);
 const previousIndex = fs.existsSync(indexPath) ? fs.readFileSync(indexPath, "utf8") : "";
+const previousDashboardData = fs.existsSync(dashboardDataPath) ? fs.readFileSync(dashboardDataPath, "utf8") : "";
 
 fs.copyFileSync(htmlPath, indexPath);
 
 const currentIndex = fs.existsSync(indexPath) ? fs.readFileSync(indexPath, "utf8") : "";
-const publish = previousIndex !== currentIndex;
+const currentDashboardData = fs.existsSync(dashboardDataPath) ? fs.readFileSync(dashboardDataPath, "utf8") : "";
+const publish = previousIndex !== currentIndex || previousDashboardData !== currentDashboardData;
 
 writeOutput("changed", jiraChanged ? "true" : "false");
 writeOutput("publish", publish ? "true" : "false");
@@ -75,6 +78,7 @@ const lines = [
   `- Updated: ${updated.length}`,
   `- Status moves: ${statusChanges.length}`,
   `- Removed: ${removed.length}`,
+  "- Data artifact: dashboard-data.json",
   `- Dashboard: https://dewankabir009.github.io/jira-board-v3001-123-0/`,
 ];
 
