@@ -4,10 +4,45 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-20T11:30:29.693Z",
-  "pulledAtDisplay": "May 20, 2026, 7:30 AM",
+  "pulledAt": "2026-05-20T14:03:54.278Z",
+  "pulledAtDisplay": "May 20, 2026, 10:03 AM",
   "total": 27,
   "issues": [
+    {
+      "key": "CORE-14442",
+      "url": "https://golfnow.atlassian.net/browse/CORE-14442",
+      "summary": "Mass Cancellation -  Include Trade Toggle Not Working as Intended",
+      "description": "The new GNC Mass Cancellation Tool has two issues around facility selection and trade inclusion behavior.\n\nFirst, the page currently allows mass cancellation behavior while a Master Facility / Trade Facility is selected in the facility dropdown. Mass cancellations should only be available from the play. If a Master Facility is selected, the page should prevent searching/cancelling and display a clear message that mass cancellations are not available for Master Facilities.\n\nSecond, when a Play Facility is selected, the Include Trade toggle is not working as expected. Enabling the toggle removes the course rounds from the results and also fails to show the trade rounds. The expected behavior is that the toggle expands the results, not replaces or clears them.\n\nSteps to Reproduce\n\n- Open the GNC Mass Cancellation Tool created under CORE-13954.\n\n- Select a Master Facility / Trade Facility in the facility dropdown.\n\n- Observe that the page still allows the mass cancellation workflow to continue.\n\n- Select a Play Facility that has course rounds in the selected date range.\n\n- Search with Include Trade disabled.\n\n- Confirm course rounds appear.\n\n- Enable Include Trade.\n\n- Search again.\n\n- Observe that course rounds disappear and trade rounds are not shown.\n\nActual Result\n\n- Master Facilities can be selected and used on the Mass Cancellation page.\n\n- When Include Trade is enabled from a Play Facility, the results no longer show the course rounds.\n\n- Trade rounds are also not returned, leaving the user with missing or incorrect results.\n\nExpected Result\n\n- If a Master Facility / Trade Facility is selected, the Mass Cancellation page should not allow the workflow to continue.\n\n- The UI should show this message:\n\nMass Cancellations are not available for Master Facilities.\n\n- When a Play Facility is selected:\n\n- Include Trade disabled: show only course rounds within the selected date range.\n\n- Include Trade enabled: show both course rounds and trade rounds within the selected date range together.\n\nAcceptance Criteria\n\n- When the selected facility is a Master Facility / Trade Facility, the page displays:\nMass Cancellations are not available for Master Facilities.\n\n- When a Master Facility / Trade Facility is selected, search and cancellation actions are disabled or otherwise blocked.\n\n- When a Play Facility is selected and Include Trade is disabled, only that facility’s course rounds in the selected date range are returned.\n\n- When a Play Facility is selected and Include Trade is enabled, both course rounds and trade rounds in the selected date range are returned in the same results table.\n\n- Enabling Include Trade must not remove course rounds from the result set.\n\n- If no trade rounds exist for the selected Play Facility/date range, enabling Include Trade should still show the course rounds.\n\n- Results should remain limited to the selected date range in both toggle states.",
+      "descriptionHtml": "<p>The new GNC Mass Cancellation Tool has two issues around facility selection and trade inclusion behavior.</p><p>First, the page currently allows mass cancellation behavior while a Master Facility / Trade Facility is selected in the facility dropdown. Mass cancellations should only be available from the play. If a Master Facility is selected, the page should prevent searching/cancelling and display a clear message that mass cancellations are not available for Master Facilities.</p><p>Second, when a Play Facility is selected, the <code>Include Trade</code> toggle is not working as expected. Enabling the toggle removes the course rounds from the results and also fails to show the trade rounds. The expected behavior is that the toggle expands the results, not replaces or clears them.</p><p><strong>Steps to Reproduce</strong></p><ol><li><p>Open the GNC Mass Cancellation Tool created under <code>CORE-13954</code>.</p></li><li><p>Select a Master Facility / Trade Facility in the facility dropdown.</p></li><li><p>Observe that the page still allows the mass cancellation workflow to continue.</p></li><li><p>Select a Play Facility that has course rounds in the selected date range.</p></li><li><p>Search with <code>Include Trade</code> disabled.</p></li><li><p>Confirm course rounds appear.</p></li><li><p>Enable <code>Include Trade</code>.</p></li><li><p>Search again.</p></li><li><p>Observe that course rounds disappear and trade rounds are not shown.</p></li></ol><p><strong>Actual Result</strong></p><ul><li><p>Master Facilities can be selected and used on the Mass Cancellation page.</p></li><li><p>When <code>Include Trade</code> is enabled from a Play Facility, the results no longer show the course rounds.</p></li><li><p>Trade rounds are also not returned, leaving the user with missing or incorrect results.</p></li></ul><p><strong>Expected Result</strong></p><ul><li><p>If a Master Facility / Trade Facility is selected, the Mass Cancellation page should not allow the workflow to continue.</p></li><li><p>The UI should show this message:</p></li></ul><p><code>Mass Cancellations are not available for Master Facilities.</code></p><ul><li><p>When a Play Facility is selected:</p><ul><li><p><code>Include Trade</code> disabled: show only course rounds within the selected date range.</p></li><li><p><code>Include Trade</code> enabled: show both course rounds and trade rounds within the selected date range together.</p></li></ul></li></ul><p><strong>Acceptance Criteria</strong></p><ol><li><p>When the selected facility is a Master Facility / Trade Facility, the page displays:<br><code>Mass Cancellations are not available for Master Facilities.</code></p></li><li><p>When a Master Facility / Trade Facility is selected, search and cancellation actions are disabled or otherwise blocked.</p></li><li><p>When a Play Facility is selected and <code>Include Trade</code> is disabled, only that facility’s course rounds in the selected date range are returned.</p></li><li><p>When a Play Facility is selected and <code>Include Trade</code> is enabled, both course rounds and trade rounds in the selected date range are returned in the same results table.</p></li><li><p>Enabling <code>Include Trade</code> must not remove course rounds from the result set.</p></li><li><p>If no trade rounds exist for the selected Play Facility/date range, enabling <code>Include Trade</code> should still show the course rounds.</p></li><li><p>Results should remain limited to the selected date range in both toggle states.</p></li></ol>",
+      "descriptionImageCount": 0,
+      "type": "Bug",
+      "isSubtask": false,
+      "status": "QA Testing (DEV)",
+      "priority": "P2",
+      "assignee": "Nicole Greer",
+      "updated": "2026-05-20T09:44:09.379-0400",
+      "updatedDisplay": "May 20, 2026, 9:44 AM",
+      "created": "2026-05-04T13:22:04.390-0400",
+      "createdDisplay": "May 4, 2026, 1:22 PM",
+      "components": [
+        "Database",
+        "GolfNow.Services.Reservation",
+        "GolfNowCentral"
+      ],
+      "fixVersions": [
+        "v3001.123.0"
+      ],
+      "resolution": "",
+      "parent": {
+        "key": "CORE-13890",
+        "url": "https://golfnow.atlassian.net/browse/CORE-13890",
+        "summary": "Customer Care - Mass Cancellation",
+        "description": "",
+        "type": "Epic",
+        "status": "Planning",
+        "priority": "P2"
+      }
+    },
     {
       "key": "CORE-14488",
       "url": "https://golfnow.atlassian.net/browse/CORE-14488",
@@ -695,41 +730,6 @@
       }
     },
     {
-      "key": "CORE-14442",
-      "url": "https://golfnow.atlassian.net/browse/CORE-14442",
-      "summary": "Mass Cancellation -  Include Trade Toggle Not Working as Intended",
-      "description": "The new GNC Mass Cancellation Tool has two issues around facility selection and trade inclusion behavior.\n\nFirst, the page currently allows mass cancellation behavior while a Master Facility / Trade Facility is selected in the facility dropdown. Mass cancellations should only be available from the play. If a Master Facility is selected, the page should prevent searching/cancelling and display a clear message that mass cancellations are not available for Master Facilities.\n\nSecond, when a Play Facility is selected, the Include Trade toggle is not working as expected. Enabling the toggle removes the course rounds from the results and also fails to show the trade rounds. The expected behavior is that the toggle expands the results, not replaces or clears them.\n\nSteps to Reproduce\n\n- Open the GNC Mass Cancellation Tool created under CORE-13954.\n\n- Select a Master Facility / Trade Facility in the facility dropdown.\n\n- Observe that the page still allows the mass cancellation workflow to continue.\n\n- Select a Play Facility that has course rounds in the selected date range.\n\n- Search with Include Trade disabled.\n\n- Confirm course rounds appear.\n\n- Enable Include Trade.\n\n- Search again.\n\n- Observe that course rounds disappear and trade rounds are not shown.\n\nActual Result\n\n- Master Facilities can be selected and used on the Mass Cancellation page.\n\n- When Include Trade is enabled from a Play Facility, the results no longer show the course rounds.\n\n- Trade rounds are also not returned, leaving the user with missing or incorrect results.\n\nExpected Result\n\n- If a Master Facility / Trade Facility is selected, the Mass Cancellation page should not allow the workflow to continue.\n\n- The UI should show this message:\n\nMass Cancellations are not available for Master Facilities.\n\n- When a Play Facility is selected:\n\n- Include Trade disabled: show only course rounds within the selected date range.\n\n- Include Trade enabled: show both course rounds and trade rounds within the selected date range together.\n\nAcceptance Criteria\n\n- When the selected facility is a Master Facility / Trade Facility, the page displays:\nMass Cancellations are not available for Master Facilities.\n\n- When a Master Facility / Trade Facility is selected, search and cancellation actions are disabled or otherwise blocked.\n\n- When a Play Facility is selected and Include Trade is disabled, only that facility’s course rounds in the selected date range are returned.\n\n- When a Play Facility is selected and Include Trade is enabled, both course rounds and trade rounds in the selected date range are returned in the same results table.\n\n- Enabling Include Trade must not remove course rounds from the result set.\n\n- If no trade rounds exist for the selected Play Facility/date range, enabling Include Trade should still show the course rounds.\n\n- Results should remain limited to the selected date range in both toggle states.",
-      "descriptionHtml": "<p>The new GNC Mass Cancellation Tool has two issues around facility selection and trade inclusion behavior.</p><p>First, the page currently allows mass cancellation behavior while a Master Facility / Trade Facility is selected in the facility dropdown. Mass cancellations should only be available from the play. If a Master Facility is selected, the page should prevent searching/cancelling and display a clear message that mass cancellations are not available for Master Facilities.</p><p>Second, when a Play Facility is selected, the <code>Include Trade</code> toggle is not working as expected. Enabling the toggle removes the course rounds from the results and also fails to show the trade rounds. The expected behavior is that the toggle expands the results, not replaces or clears them.</p><p><strong>Steps to Reproduce</strong></p><ol><li><p>Open the GNC Mass Cancellation Tool created under <code>CORE-13954</code>.</p></li><li><p>Select a Master Facility / Trade Facility in the facility dropdown.</p></li><li><p>Observe that the page still allows the mass cancellation workflow to continue.</p></li><li><p>Select a Play Facility that has course rounds in the selected date range.</p></li><li><p>Search with <code>Include Trade</code> disabled.</p></li><li><p>Confirm course rounds appear.</p></li><li><p>Enable <code>Include Trade</code>.</p></li><li><p>Search again.</p></li><li><p>Observe that course rounds disappear and trade rounds are not shown.</p></li></ol><p><strong>Actual Result</strong></p><ul><li><p>Master Facilities can be selected and used on the Mass Cancellation page.</p></li><li><p>When <code>Include Trade</code> is enabled from a Play Facility, the results no longer show the course rounds.</p></li><li><p>Trade rounds are also not returned, leaving the user with missing or incorrect results.</p></li></ul><p><strong>Expected Result</strong></p><ul><li><p>If a Master Facility / Trade Facility is selected, the Mass Cancellation page should not allow the workflow to continue.</p></li><li><p>The UI should show this message:</p></li></ul><p><code>Mass Cancellations are not available for Master Facilities.</code></p><ul><li><p>When a Play Facility is selected:</p><ul><li><p><code>Include Trade</code> disabled: show only course rounds within the selected date range.</p></li><li><p><code>Include Trade</code> enabled: show both course rounds and trade rounds within the selected date range together.</p></li></ul></li></ul><p><strong>Acceptance Criteria</strong></p><ol><li><p>When the selected facility is a Master Facility / Trade Facility, the page displays:<br><code>Mass Cancellations are not available for Master Facilities.</code></p></li><li><p>When a Master Facility / Trade Facility is selected, search and cancellation actions are disabled or otherwise blocked.</p></li><li><p>When a Play Facility is selected and <code>Include Trade</code> is disabled, only that facility’s course rounds in the selected date range are returned.</p></li><li><p>When a Play Facility is selected and <code>Include Trade</code> is enabled, both course rounds and trade rounds in the selected date range are returned in the same results table.</p></li><li><p>Enabling <code>Include Trade</code> must not remove course rounds from the result set.</p></li><li><p>If no trade rounds exist for the selected Play Facility/date range, enabling <code>Include Trade</code> should still show the course rounds.</p></li><li><p>Results should remain limited to the selected date range in both toggle states.</p></li></ol>",
-      "descriptionImageCount": 0,
-      "type": "Bug",
-      "isSubtask": false,
-      "status": "QA Testing (DEV)",
-      "priority": "P2",
-      "assignee": "Dewan Kabir",
-      "updated": "2026-05-18T14:01:08.601-0400",
-      "updatedDisplay": "May 18, 2026, 2:01 PM",
-      "created": "2026-05-04T13:22:04.390-0400",
-      "createdDisplay": "May 4, 2026, 1:22 PM",
-      "components": [
-        "Database",
-        "GolfNow.Services.Reservation",
-        "GolfNowCentral"
-      ],
-      "fixVersions": [
-        "v3001.123.0"
-      ],
-      "resolution": "",
-      "parent": {
-        "key": "CORE-13890",
-        "url": "https://golfnow.atlassian.net/browse/CORE-13890",
-        "summary": "Customer Care - Mass Cancellation",
-        "description": "",
-        "type": "Epic",
-        "status": "Planning",
-        "priority": "P2"
-      }
-    },
-    {
       "key": "CORE-14471",
       "url": "https://golfnow.atlassian.net/browse/CORE-14471",
       "summary": "Upgrade vulnerable NuGet package(s) identified by Snyk in Inventory Management API (gn-svc-inventorymanagement",
@@ -856,10 +856,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-20T11:25:27.554Z",
-    "previousPulledAtDisplay": "May 20, 2026, 7:25 AM",
-    "currentPulledAt": "2026-05-20T11:30:29.693Z",
-    "currentPulledAtDisplay": "May 20, 2026, 7:30 AM",
+    "previousPulledAt": "2026-05-20T13:44:10.447Z",
+    "previousPulledAtDisplay": "May 20, 2026, 9:44 AM",
+    "currentPulledAt": "2026-05-20T14:03:54.278Z",
+    "currentPulledAtDisplay": "May 20, 2026, 10:03 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -867,6 +867,61 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-20T13:44:10.447Z",
+      "previousPulledAtDisplay": "May 20, 2026, 9:44 AM",
+      "currentPulledAt": "2026-05-20T14:03:54.278Z",
+      "currentPulledAtDisplay": "May 20, 2026, 10:03 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
+    {
+      "previousPulledAt": "2026-05-20T11:30:29.693Z",
+      "previousPulledAtDisplay": "May 20, 2026, 7:30 AM",
+      "currentPulledAt": "2026-05-20T13:44:10.447Z",
+      "currentPulledAtDisplay": "May 20, 2026, 9:44 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [
+        {
+          "key": "CORE-14442",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14442",
+          "summary": "Mass Cancellation -  Include Trade Toggle Not Working as Intended",
+          "changes": [
+            {
+              "field": "assignee",
+              "label": "Assignee",
+              "before": "Dewan Kabir",
+              "after": "Nicole Greer"
+            },
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "May 18, 2026, 2:01 PM",
+              "after": "May 20, 2026, 9:44 AM"
+            }
+          ],
+          "type": "Bug",
+          "isSubtask": false,
+          "assignee": "Nicole Greer",
+          "status": "QA Testing (DEV)",
+          "parent": {
+            "key": "CORE-13890",
+            "url": "https://golfnow.atlassian.net/browse/CORE-13890",
+            "summary": "Customer Care - Mass Cancellation",
+            "description": "",
+            "type": "Epic",
+            "status": "Planning",
+            "priority": "P2"
+          }
+        }
+      ],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-20T11:25:27.554Z",
       "previousPulledAtDisplay": "May 20, 2026, 7:25 AM",
@@ -3208,7 +3263,7 @@
           ],
           "type": "Bug",
           "isSubtask": false,
-          "assignee": "Dewan Kabir",
+          "assignee": "Nicole Greer",
           "status": "QA Testing (DEV)",
           "parent": {
             "key": "CORE-13890",
@@ -4674,28 +4729,6 @@
       "previousPulledAtDisplay": "May 16, 2026, 12:59 AM",
       "currentPulledAt": "2026-05-16T07:12:12.137Z",
       "currentPulledAtDisplay": "May 16, 2026, 3:12 AM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-16T04:54:51.998Z",
-      "previousPulledAtDisplay": "May 16, 2026, 12:54 AM",
-      "currentPulledAt": "2026-05-16T04:59:53.625Z",
-      "currentPulledAtDisplay": "May 16, 2026, 12:59 AM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-16T04:49:50.307Z",
-      "previousPulledAtDisplay": "May 16, 2026, 12:49 AM",
-      "currentPulledAt": "2026-05-16T04:54:51.998Z",
-      "currentPulledAtDisplay": "May 16, 2026, 12:54 AM",
       "isBaseline": false,
       "added": [],
       "removed": [],
