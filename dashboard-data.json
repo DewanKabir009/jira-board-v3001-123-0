@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-20T00:06:30.498Z",
-  "pulledAtDisplay": "May 19, 2026, 8:06 PM",
+  "pulledAt": "2026-05-20T00:11:32.653Z",
+  "pulledAtDisplay": "May 19, 2026, 8:11 PM",
   "total": 27,
   "issues": [
     {
@@ -856,10 +856,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-20T00:01:27.703Z",
-    "previousPulledAtDisplay": "May 19, 2026, 8:01 PM",
-    "currentPulledAt": "2026-05-20T00:06:30.498Z",
-    "currentPulledAtDisplay": "May 19, 2026, 8:06 PM",
+    "previousPulledAt": "2026-05-20T00:06:30.498Z",
+    "previousPulledAtDisplay": "May 19, 2026, 8:06 PM",
+    "currentPulledAt": "2026-05-20T00:11:32.653Z",
+    "currentPulledAtDisplay": "May 19, 2026, 8:11 PM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -867,6 +867,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-20T00:06:30.498Z",
+      "previousPulledAtDisplay": "May 19, 2026, 8:06 PM",
+      "currentPulledAt": "2026-05-20T00:11:32.653Z",
+      "currentPulledAtDisplay": "May 19, 2026, 8:11 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-20T00:01:27.703Z",
       "previousPulledAtDisplay": "May 19, 2026, 8:01 PM",
@@ -4687,43 +4698,6 @@
       "currentPulledAtDisplay": "May 15, 2026, 6:36 PM",
       "isBaseline": false,
       "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-15T21:39:50.043Z",
-      "previousPulledAtDisplay": "May 15, 2026, 5:39 PM",
-      "currentPulledAt": "2026-05-15T22:31:31.041Z",
-      "currentPulledAtDisplay": "May 15, 2026, 6:31 PM",
-      "isBaseline": false,
-      "added": [
-        {
-          "key": "CORE-14474",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14474",
-          "summary": "Geosearch API - enable PPL FeatureCode locations",
-          "description": "Request from @Marcus Briggs to investigate these locations on our Geosearch dataset.\n\nahmeek, mi\nalto, mi\nanalomink, pa\naugres, mi\nbarto, pa\nbeallsville, pa\nbrimley, mi\nbrutus, mi\ncambra, pa\ncarmichaels, pa\ncasco-twp, mi\nconcordville, pa\ncranberry-twp, pa\ndavisburg, mi\ndistant, pa\nengadine, mi\netters, pa\neunola, pa\nfalls, pa\nfinleyville, pa\nfleetville, pa\nfoxburg, pa\ngagetown, mi\nglennie, mi\ngladwyne, pa\ngoodells, mi\nguys-mills, pa\nharborcreek, pa\nhavertown, pa\nhessel, mi\nhersey, mi\nhookstown, pa\nimler, pa\nkawkawlin, mi\nkossuth, pa\nkresgeville, pa\nkunkletown, pa\nlandenberg, pa\nlanse, mi\nlinfield, pa\nlupton, mi\nmc-connellsburg, pa\nmc-kean, pa\nmc-clure, pa\nmc-veytown, pa\nmears, mi\nmelvin, mi\nmesick, mi\nnew-era, mi\nnewtown-square, pa\n\nFinding\n\nThese location are FeatureCode : “PPL”, which are populated places but with population lower then 500 to show on the https://download.geonames.org/export/dump/cities500.zip, where we ingest and mark the location as searchable.\n\nThere are around 4516634 records of this FeatureCode type that current aren’t showing up in the search result.\n\nExamples:\n\nResolution\n\n- Migrate these locations with CountryCode : “US”, FeatureClass : 80, FeatureCode : “PPL”, and IsPostal : false into production database.\n\n- Set fields to IsCity : true and Searchable : true.",
-          "descriptionHtml": "<p>Request from @Marcus Briggs to investigate these locations on our Geosearch dataset.</p><pre><code>ahmeek, mi\nalto, mi\nanalomink, pa\naugres, mi\nbarto, pa\nbeallsville, pa\nbrimley, mi\nbrutus, mi\ncambra, pa\ncarmichaels, pa\ncasco-twp, mi\nconcordville, pa\ncranberry-twp, pa\ndavisburg, mi\ndistant, pa\nengadine, mi\netters, pa\neunola, pa\nfalls, pa\nfinleyville, pa\nfleetville, pa\nfoxburg, pa\ngagetown, mi\nglennie, mi\ngladwyne, pa\ngoodells, mi\nguys-mills, pa\nharborcreek, pa\nhavertown, pa\nhessel, mi\nhersey, mi\nhookstown, pa\nimler, pa\nkawkawlin, mi\nkossuth, pa\nkresgeville, pa\nkunkletown, pa\nlandenberg, pa\nlanse, mi\nlinfield, pa\nlupton, mi\nmc-connellsburg, pa\nmc-kean, pa\nmc-clure, pa\nmc-veytown, pa\nmears, mi\nmelvin, mi\nmesick, mi\nnew-era, mi\nnewtown-square, pa</code></pre><h3>Finding</h3><p>These location are FeatureCode : “PPL”, which are populated places but with population lower then 500 to show on the <a href=\"https://download.geonames.org/export/dump/cities500.zip\" target=\"_blank\" rel=\"noopener\">https://download.geonames.org/export/dump/cities500.zip</a>, where we ingest and mark the location as searchable.</p><p>There are around 4516634 records of this FeatureCode type that current aren’t showing up in the search result.</p><p>Examples:</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14474/727598-image-20260514-231532.png\" alt=\"image-20260514-231532.png\" loading=\"lazy\"><figcaption>image-20260514-231532.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14474/727600-image-20260514-231341.png\" alt=\"image-20260514-231341.png\" loading=\"lazy\"><figcaption>image-20260514-231341.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14474/727599-image-20260514-231454.png\" alt=\"image-20260514-231454.png\" loading=\"lazy\"><figcaption>image-20260514-231454.png</figcaption></figure></div><h3>Resolution</h3><ol><li><p>Migrate these locations with CountryCode : “US”, FeatureClass : 80, FeatureCode : “PPL”, and IsPostal : false into production database.</p></li><li><p>Set fields to IsCity : true and Searchable : true. </p></li></ol>",
-          "descriptionImageCount": 3,
-          "type": "Task",
-          "isSubtask": false,
-          "status": "QA Testing (DEV)",
-          "priority": "P0",
-          "assignee": "Yu-Sheng Tu",
-          "updated": "2026-05-15T17:41:12.306-0400",
-          "updatedDisplay": "May 15, 2026, 5:41 PM",
-          "created": "2026-05-14T19:06:23.473-0400",
-          "createdDisplay": "May 14, 2026, 7:06 PM",
-          "components": [
-            "Geoplaces.NET"
-          ],
-          "fixVersions": [
-            "v3001.123.0"
-          ],
-          "resolution": "",
-          "parent": null
-        }
-      ],
       "removed": [],
       "updated": [],
       "statusChanges": []
