@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-20T21:34:18.517Z",
-  "pulledAtDisplay": "May 20, 2026, 5:34 PM",
+  "pulledAt": "2026-05-20T22:51:11.225Z",
+  "pulledAtDisplay": "May 20, 2026, 6:51 PM",
   "total": 28,
   "issues": [
     {
@@ -937,50 +937,28 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-20T21:29:15.627Z",
-    "previousPulledAtDisplay": "May 20, 2026, 5:29 PM",
-    "currentPulledAt": "2026-05-20T21:34:18.517Z",
-    "currentPulledAtDisplay": "May 20, 2026, 5:34 PM",
+    "previousPulledAt": "2026-05-20T21:34:18.517Z",
+    "previousPulledAtDisplay": "May 20, 2026, 5:34 PM",
+    "currentPulledAt": "2026-05-20T22:51:11.225Z",
+    "currentPulledAtDisplay": "May 20, 2026, 6:51 PM",
     "isBaseline": false,
     "added": [],
     "removed": [],
-    "updated": [
-      {
-        "key": "CORE-14427",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14427",
-        "summary": "Home Course Selection/Management",
-        "changes": [
-          {
-            "field": "updatedDisplay",
-            "label": "Jira updated",
-            "before": "May 19, 2026, 7:25 PM",
-            "after": "May 20, 2026, 5:32 PM"
-          },
-          {
-            "field": "description",
-            "label": "Description",
-            "before": "We need to create the ability to assign a Home Course for a user and manage the restrictions around Home Course changes. Requirements - O...",
-            "after": "We need to create the ability to assign a Home Course for a user and manage the restrictions around Home Course changes. Requirements - O..."
-          }
-        ],
-        "type": "Story",
-        "isSubtask": false,
-        "assignee": "Luis Vallejo Mursuli",
-        "status": "Analysis",
-        "parent": {
-          "key": "CORE-14301",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14301",
-          "summary": "GolfPass \"Home Course\": Phase I",
-          "description": "",
-          "type": "Epic",
-          "status": "Planning",
-          "priority": "None"
-        }
-      }
-    ],
+    "updated": [],
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-20T21:34:18.517Z",
+      "previousPulledAtDisplay": "May 20, 2026, 5:34 PM",
+      "currentPulledAt": "2026-05-20T22:51:11.225Z",
+      "currentPulledAtDisplay": "May 20, 2026, 6:51 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-20T21:29:15.627Z",
       "previousPulledAtDisplay": "May 20, 2026, 5:29 PM",
@@ -5029,17 +5007,6 @@
       "previousPulledAtDisplay": "May 16, 2026, 8:44 AM",
       "currentPulledAt": "2026-05-16T12:49:54.203Z",
       "currentPulledAtDisplay": "May 16, 2026, 8:49 AM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-16T11:46:26.189Z",
-      "previousPulledAtDisplay": "May 16, 2026, 7:46 AM",
-      "currentPulledAt": "2026-05-16T12:44:52.141Z",
-      "currentPulledAtDisplay": "May 16, 2026, 8:44 AM",
       "isBaseline": false,
       "added": [],
       "removed": [],
