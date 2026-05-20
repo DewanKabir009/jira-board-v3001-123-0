@@ -4,10 +4,33 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-20T14:13:58.340Z",
-  "pulledAtDisplay": "May 20, 2026, 10:13 AM",
+  "pulledAt": "2026-05-20T17:28:28.135Z",
+  "pulledAtDisplay": "May 20, 2026, 1:28 PM",
   "total": 27,
   "issues": [
+    {
+      "key": "CORE-14487",
+      "url": "https://golfnow.atlassian.net/browse/CORE-14487",
+      "summary": "[Commerce] Facility Closure / Update casing Tee Times to Fail in the Add to Cart process",
+      "description": "",
+      "descriptionHtml": "",
+      "descriptionImageCount": 0,
+      "type": "Bug",
+      "isSubtask": false,
+      "status": "Pre Planning",
+      "priority": "None",
+      "assignee": "Andrew Horvat",
+      "updated": "2026-05-20T11:55:12.612-0400",
+      "updatedDisplay": "May 20, 2026, 11:55 AM",
+      "created": "2026-05-19T14:14:47.543-0400",
+      "createdDisplay": "May 19, 2026, 2:14 PM",
+      "components": [],
+      "fixVersions": [
+        "v3001.123.0"
+      ],
+      "resolution": "",
+      "parent": null
+    },
     {
       "key": "CORE-14428",
       "url": "https://golfnow.atlassian.net/browse/CORE-14428",
@@ -17,11 +40,11 @@
       "descriptionImageCount": 0,
       "type": "Story",
       "isSubtask": false,
-      "status": "Code Review",
+      "status": "Pending Deployment (DEV)",
       "priority": "P1",
-      "assignee": "Yoel Martin Pardo",
-      "updated": "2026-05-20T10:11:21.189-0400",
-      "updatedDisplay": "May 20, 2026, 10:11 AM",
+      "assignee": "Luis Vallejo Mursuli",
+      "updated": "2026-05-20T10:35:46.104-0400",
+      "updatedDisplay": "May 20, 2026, 10:35 AM",
       "created": "2026-04-30T09:47:17.923-0400",
       "createdDisplay": "Apr 30, 2026, 9:47 AM",
       "components": [
@@ -137,29 +160,6 @@
         "status": "Planning",
         "priority": "None"
       }
-    },
-    {
-      "key": "CORE-14487",
-      "url": "https://golfnow.atlassian.net/browse/CORE-14487",
-      "summary": "[Commerce] Facility Closure / Update casing Tee Times to Fail in the Add to Cart process",
-      "description": "",
-      "descriptionHtml": "",
-      "descriptionImageCount": 0,
-      "type": "Bug",
-      "isSubtask": false,
-      "status": "Pre Planning",
-      "priority": "None",
-      "assignee": "Andrew Horvat",
-      "updated": "2026-05-19T17:21:19.569-0400",
-      "updatedDisplay": "May 19, 2026, 5:21 PM",
-      "created": "2026-05-19T14:14:47.543-0400",
-      "createdDisplay": "May 19, 2026, 2:14 PM",
-      "components": [],
-      "fixVersions": [
-        "v3001.123.0"
-      ],
-      "resolution": "",
-      "parent": null
     },
     {
       "key": "CORE-14304",
@@ -856,14 +856,32 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-20T14:08:56.339Z",
-    "previousPulledAtDisplay": "May 20, 2026, 10:08 AM",
-    "currentPulledAt": "2026-05-20T14:13:58.340Z",
-    "currentPulledAtDisplay": "May 20, 2026, 10:13 AM",
+    "previousPulledAt": "2026-05-20T14:13:58.340Z",
+    "previousPulledAtDisplay": "May 20, 2026, 10:13 AM",
+    "currentPulledAt": "2026-05-20T17:28:28.135Z",
+    "currentPulledAtDisplay": "May 20, 2026, 1:28 PM",
     "isBaseline": false,
     "added": [],
     "removed": [],
     "updated": [
+      {
+        "key": "CORE-14487",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14487",
+        "summary": "[Commerce] Facility Closure / Update casing Tee Times to Fail in the Add to Cart process",
+        "changes": [
+          {
+            "field": "updatedDisplay",
+            "label": "Jira updated",
+            "before": "May 19, 2026, 5:21 PM",
+            "after": "May 20, 2026, 11:55 AM"
+          }
+        ],
+        "type": "Bug",
+        "isSubtask": false,
+        "assignee": "Andrew Horvat",
+        "status": "Pre Planning",
+        "parent": null
+      },
       {
         "key": "CORE-14428",
         "url": "https://golfnow.atlassian.net/browse/CORE-14428",
@@ -872,26 +890,26 @@
           {
             "field": "status",
             "label": "Status",
-            "before": "Development",
-            "after": "Code Review"
+            "before": "Code Review",
+            "after": "Pending Deployment (DEV)"
           },
           {
             "field": "assignee",
             "label": "Assignee",
-            "before": "Luis Vallejo Mursuli",
-            "after": "Yoel Martin Pardo"
+            "before": "Yoel Martin Pardo",
+            "after": "Luis Vallejo Mursuli"
           },
           {
             "field": "updatedDisplay",
             "label": "Jira updated",
-            "before": "May 19, 2026, 5:52 PM",
-            "after": "May 20, 2026, 10:11 AM"
+            "before": "May 20, 2026, 10:11 AM",
+            "after": "May 20, 2026, 10:35 AM"
           }
         ],
         "type": "Story",
         "isSubtask": false,
-        "assignee": "Yoel Martin Pardo",
-        "status": "Code Review",
+        "assignee": "Luis Vallejo Mursuli",
+        "status": "Pending Deployment (DEV)",
         "parent": {
           "key": "CORE-14301",
           "url": "https://golfnow.atlassian.net/browse/CORE-14301",
@@ -908,12 +926,12 @@
         "key": "CORE-14428",
         "url": "https://golfnow.atlassian.net/browse/CORE-14428",
         "summary": "Create Home Course ProductBenefit",
-        "before": "Development",
-        "after": "Code Review",
+        "before": "Code Review",
+        "after": "Pending Deployment (DEV)",
         "type": "Story",
         "isSubtask": false,
-        "assignee": "Yoel Martin Pardo",
-        "status": "Code Review",
+        "assignee": "Luis Vallejo Mursuli",
+        "status": "Pending Deployment (DEV)",
         "parent": {
           "key": "CORE-14301",
           "url": "https://golfnow.atlassian.net/browse/CORE-14301",
@@ -927,6 +945,95 @@
     ]
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-20T14:13:58.340Z",
+      "previousPulledAtDisplay": "May 20, 2026, 10:13 AM",
+      "currentPulledAt": "2026-05-20T17:28:28.135Z",
+      "currentPulledAtDisplay": "May 20, 2026, 1:28 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [
+        {
+          "key": "CORE-14487",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14487",
+          "summary": "[Commerce] Facility Closure / Update casing Tee Times to Fail in the Add to Cart process",
+          "changes": [
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "May 19, 2026, 5:21 PM",
+              "after": "May 20, 2026, 11:55 AM"
+            }
+          ],
+          "type": "Bug",
+          "isSubtask": false,
+          "assignee": "Andrew Horvat",
+          "status": "Pre Planning",
+          "parent": null
+        },
+        {
+          "key": "CORE-14428",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14428",
+          "summary": "Create Home Course ProductBenefit",
+          "changes": [
+            {
+              "field": "status",
+              "label": "Status",
+              "before": "Code Review",
+              "after": "Pending Deployment (DEV)"
+            },
+            {
+              "field": "assignee",
+              "label": "Assignee",
+              "before": "Yoel Martin Pardo",
+              "after": "Luis Vallejo Mursuli"
+            },
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "May 20, 2026, 10:11 AM",
+              "after": "May 20, 2026, 10:35 AM"
+            }
+          ],
+          "type": "Story",
+          "isSubtask": false,
+          "assignee": "Luis Vallejo Mursuli",
+          "status": "Pending Deployment (DEV)",
+          "parent": {
+            "key": "CORE-14301",
+            "url": "https://golfnow.atlassian.net/browse/CORE-14301",
+            "summary": "GolfPass \"Home Course\": Phase I",
+            "description": "",
+            "type": "Epic",
+            "status": "Planning",
+            "priority": "None"
+          }
+        }
+      ],
+      "statusChanges": [
+        {
+          "key": "CORE-14428",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14428",
+          "summary": "Create Home Course ProductBenefit",
+          "before": "Code Review",
+          "after": "Pending Deployment (DEV)",
+          "type": "Story",
+          "isSubtask": false,
+          "assignee": "Luis Vallejo Mursuli",
+          "status": "Pending Deployment (DEV)",
+          "parent": {
+            "key": "CORE-14301",
+            "url": "https://golfnow.atlassian.net/browse/CORE-14301",
+            "summary": "GolfPass \"Home Course\": Phase I",
+            "description": "",
+            "type": "Epic",
+            "status": "Planning",
+            "priority": "None"
+          }
+        }
+      ]
+    },
     {
       "previousPulledAt": "2026-05-20T14:08:56.339Z",
       "previousPulledAtDisplay": "May 20, 2026, 10:08 AM",
@@ -962,8 +1069,8 @@
           ],
           "type": "Story",
           "isSubtask": false,
-          "assignee": "Yoel Martin Pardo",
-          "status": "Code Review",
+          "assignee": "Luis Vallejo Mursuli",
+          "status": "Pending Deployment (DEV)",
           "parent": {
             "key": "CORE-14301",
             "url": "https://golfnow.atlassian.net/browse/CORE-14301",
@@ -984,8 +1091,8 @@
           "after": "Code Review",
           "type": "Story",
           "isSubtask": false,
-          "assignee": "Yoel Martin Pardo",
-          "status": "Code Review",
+          "assignee": "Luis Vallejo Mursuli",
+          "status": "Pending Deployment (DEV)",
           "parent": {
             "key": "CORE-14301",
             "url": "https://golfnow.atlassian.net/browse/CORE-14301",
@@ -1311,8 +1418,8 @@
           ],
           "type": "Story",
           "isSubtask": false,
-          "assignee": "Yoel Martin Pardo",
-          "status": "Code Review",
+          "assignee": "Luis Vallejo Mursuli",
+          "status": "Pending Deployment (DEV)",
           "parent": {
             "key": "CORE-14301",
             "url": "https://golfnow.atlassian.net/browse/CORE-14301",
@@ -1404,8 +1511,8 @@
           ],
           "type": "Story",
           "isSubtask": false,
-          "assignee": "Yoel Martin Pardo",
-          "status": "Code Review",
+          "assignee": "Luis Vallejo Mursuli",
+          "status": "Pending Deployment (DEV)",
           "parent": {
             "key": "CORE-14301",
             "url": "https://golfnow.atlassian.net/browse/CORE-14301",
@@ -1768,9 +1875,9 @@
           "descriptionImageCount": 0,
           "type": "Story",
           "isSubtask": false,
-          "status": "Code Review",
+          "status": "Pending Deployment (DEV)",
           "priority": "P1",
-          "assignee": "Yoel Martin Pardo",
+          "assignee": "Luis Vallejo Mursuli",
           "updated": "2026-05-19T12:16:06.715-0400",
           "updatedDisplay": "May 19, 2026, 12:16 PM",
           "created": "2026-04-30T09:47:17.923-0400",
@@ -4838,17 +4945,6 @@
       "previousPulledAtDisplay": "May 16, 2026, 3:22 AM",
       "currentPulledAt": "2026-05-16T09:01:31.921Z",
       "currentPulledAtDisplay": "May 16, 2026, 5:01 AM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-16T07:17:13.751Z",
-      "previousPulledAtDisplay": "May 16, 2026, 3:17 AM",
-      "currentPulledAt": "2026-05-16T07:22:15.338Z",
-      "currentPulledAtDisplay": "May 16, 2026, 3:22 AM",
       "isBaseline": false,
       "added": [],
       "removed": [],
