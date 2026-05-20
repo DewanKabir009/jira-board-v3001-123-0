@@ -527,6 +527,10 @@ async function fetchIssues() {
   return { jql, issues };
 }
 
+function avatarUrlForJiraUser(user) {
+  return user?.avatarUrls?.["32x32"] || user?.avatarUrls?.["48x48"] || user?.avatarUrls?.["24x24"] || user?.avatarUrls?.["16x16"] || "";
+}
+
 async function normalizeIssue(issue) {
   const issueFields = issue.fields || {};
   const issueType = issueFields.issuetype || {};
@@ -546,6 +550,8 @@ async function normalizeIssue(issue) {
     status: issueFields.status?.name || "",
     priority: issueFields.priority?.name || "None",
     assignee: issueFields.assignee?.displayName || "Unassigned",
+    assigneeAccountId: issueFields.assignee?.accountId || "",
+    assigneeAvatarUrl: avatarUrlForJiraUser(issueFields.assignee),
     updated: issueFields.updated || "",
     updatedDisplay: formatDate(issueFields.updated),
     created: issueFields.created || "",
