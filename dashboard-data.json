@@ -4,10 +4,35 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-20T17:38:32.618Z",
-  "pulledAtDisplay": "May 20, 2026, 1:38 PM",
-  "total": 27,
+  "pulledAt": "2026-05-20T19:40:15.781Z",
+  "pulledAtDisplay": "May 20, 2026, 3:40 PM",
+  "total": 28,
   "issues": [
+    {
+      "key": "CORE-14492",
+      "url": "https://golfnow.atlassian.net/browse/CORE-14492",
+      "summary": "Upgrade vulnerable and outdated NuGet package(s) identified by Snyk in Spark Task (golf-task-spark)",
+      "description": "A Snyk alert identified one or more vulnerable and/or outdated NuGet package dependencies in the Spark Task repository (`golf-task-spark`).\n\nThis work includes:\n\n- Reviewing impacted and outdated package version(s)\n\n- Upgrading vulnerable and outdated NuGet package(s) to supported versions\n\n- Validating build and runtime compatibility\n\n- Performing regression testing as needed",
+      "descriptionHtml": "<p>A Snyk alert identified one or more vulnerable and/or outdated NuGet package dependencies in the Spark Task repository (`golf-task-spark`).</p><p>This work includes:</p><ul><li><p>Reviewing impacted and outdated package version(s)</p></li><li><p>Upgrading vulnerable and outdated NuGet package(s) to supported versions</p></li><li><p>Validating build and runtime compatibility</p></li><li><p>Performing regression testing as needed</p></li></ul><p><br></p>",
+      "descriptionImageCount": 0,
+      "type": "Security Alert",
+      "isSubtask": false,
+      "status": "Pending Deployment (DEV)",
+      "priority": "P2",
+      "assignee": "Tyler Olechnowicz",
+      "updated": "2026-05-20T15:36:10.620-0400",
+      "updatedDisplay": "May 20, 2026, 3:36 PM",
+      "created": "2026-05-20T14:54:58.547-0400",
+      "createdDisplay": "May 20, 2026, 2:54 PM",
+      "components": [
+        "Golf.Task.Spark.GolfCourse.Sync"
+      ],
+      "fixVersions": [
+        "v3001.123.0"
+      ],
+      "resolution": "",
+      "parent": null
+    },
     {
       "key": "CORE-14487",
       "url": "https://golfnow.atlassian.net/browse/CORE-14487",
@@ -856,17 +881,80 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-20T17:33:30.506Z",
-    "previousPulledAtDisplay": "May 20, 2026, 1:33 PM",
-    "currentPulledAt": "2026-05-20T17:38:32.618Z",
-    "currentPulledAtDisplay": "May 20, 2026, 1:38 PM",
+    "previousPulledAt": "2026-05-20T17:38:32.618Z",
+    "previousPulledAtDisplay": "May 20, 2026, 1:38 PM",
+    "currentPulledAt": "2026-05-20T19:40:15.781Z",
+    "currentPulledAtDisplay": "May 20, 2026, 3:40 PM",
     "isBaseline": false,
-    "added": [],
+    "added": [
+      {
+        "key": "CORE-14492",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14492",
+        "summary": "Upgrade vulnerable and outdated NuGet package(s) identified by Snyk in Spark Task (golf-task-spark)",
+        "description": "A Snyk alert identified one or more vulnerable and/or outdated NuGet package dependencies in the Spark Task repository (`golf-task-spark`).\n\nThis work includes:\n\n- Reviewing impacted and outdated package version(s)\n\n- Upgrading vulnerable and outdated NuGet package(s) to supported versions\n\n- Validating build and runtime compatibility\n\n- Performing regression testing as needed",
+        "descriptionHtml": "<p>A Snyk alert identified one or more vulnerable and/or outdated NuGet package dependencies in the Spark Task repository (`golf-task-spark`).</p><p>This work includes:</p><ul><li><p>Reviewing impacted and outdated package version(s)</p></li><li><p>Upgrading vulnerable and outdated NuGet package(s) to supported versions</p></li><li><p>Validating build and runtime compatibility</p></li><li><p>Performing regression testing as needed</p></li></ul><p><br></p>",
+        "descriptionImageCount": 0,
+        "type": "Security Alert",
+        "isSubtask": false,
+        "status": "Pending Deployment (DEV)",
+        "priority": "P2",
+        "assignee": "Tyler Olechnowicz",
+        "updated": "2026-05-20T15:36:10.620-0400",
+        "updatedDisplay": "May 20, 2026, 3:36 PM",
+        "created": "2026-05-20T14:54:58.547-0400",
+        "createdDisplay": "May 20, 2026, 2:54 PM",
+        "components": [
+          "Golf.Task.Spark.GolfCourse.Sync"
+        ],
+        "fixVersions": [
+          "v3001.123.0"
+        ],
+        "resolution": "",
+        "parent": null
+      }
+    ],
     "removed": [],
     "updated": [],
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-20T17:38:32.618Z",
+      "previousPulledAtDisplay": "May 20, 2026, 1:38 PM",
+      "currentPulledAt": "2026-05-20T19:40:15.781Z",
+      "currentPulledAtDisplay": "May 20, 2026, 3:40 PM",
+      "isBaseline": false,
+      "added": [
+        {
+          "key": "CORE-14492",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14492",
+          "summary": "Upgrade vulnerable and outdated NuGet package(s) identified by Snyk in Spark Task (golf-task-spark)",
+          "description": "A Snyk alert identified one or more vulnerable and/or outdated NuGet package dependencies in the Spark Task repository (`golf-task-spark`).\n\nThis work includes:\n\n- Reviewing impacted and outdated package version(s)\n\n- Upgrading vulnerable and outdated NuGet package(s) to supported versions\n\n- Validating build and runtime compatibility\n\n- Performing regression testing as needed",
+          "descriptionHtml": "<p>A Snyk alert identified one or more vulnerable and/or outdated NuGet package dependencies in the Spark Task repository (`golf-task-spark`).</p><p>This work includes:</p><ul><li><p>Reviewing impacted and outdated package version(s)</p></li><li><p>Upgrading vulnerable and outdated NuGet package(s) to supported versions</p></li><li><p>Validating build and runtime compatibility</p></li><li><p>Performing regression testing as needed</p></li></ul><p><br></p>",
+          "descriptionImageCount": 0,
+          "type": "Security Alert",
+          "isSubtask": false,
+          "status": "Pending Deployment (DEV)",
+          "priority": "P2",
+          "assignee": "Tyler Olechnowicz",
+          "updated": "2026-05-20T15:36:10.620-0400",
+          "updatedDisplay": "May 20, 2026, 3:36 PM",
+          "created": "2026-05-20T14:54:58.547-0400",
+          "createdDisplay": "May 20, 2026, 2:54 PM",
+          "components": [
+            "Golf.Task.Spark.GolfCourse.Sync"
+          ],
+          "fixVersions": [
+            "v3001.123.0"
+          ],
+          "resolution": "",
+          "parent": null
+        }
+      ],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-20T17:33:30.506Z",
       "previousPulledAtDisplay": "May 20, 2026, 1:33 PM",
@@ -4856,17 +4944,6 @@
       "previousPulledAtDisplay": "May 16, 2026, 5:11 AM",
       "currentPulledAt": "2026-05-16T10:37:45.507Z",
       "currentPulledAtDisplay": "May 16, 2026, 6:37 AM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-16T09:06:34.068Z",
-      "previousPulledAtDisplay": "May 16, 2026, 5:06 AM",
-      "currentPulledAt": "2026-05-16T09:11:36.113Z",
-      "currentPulledAtDisplay": "May 16, 2026, 5:11 AM",
       "isBaseline": false,
       "added": [],
       "removed": [],
