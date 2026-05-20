@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "board-registry/v1",
+  "updatedAt": "2026-05-19",
+  "owner": "CORE QA",
+  "boards": [
+    {
+      "release": "v3001.122.0",
+      "fixVersion": "v3001.122.0",
+      "url": "https://dewankabir009.github.io/jira-board-v3001-122-0/",
+      "modernUrl": "https://dewankabir009.github.io/jira-board-v3001-122-0/modern/",
+      "repositorySlug": "DewanKabir009/jira-board-v3001-122-0",
+      "status": "active",
+      "owner": "CORE QA",
+      "notes": "Active 122 release dashboard with legacy actions and the modern Astro preview."
+    },
+    {
+      "release": "v3001.123.0",
+      "fixVersion": "v3001.123.0",
+      "url": "https://dewankabir009.github.io/jira-board-v3001-123-0/",
+      "modernUrl": "https://dewankabir009.github.io/jira-board-v3001-123-0/modern/",
+      "repositorySlug": "DewanKabir009/jira-board-v3001-123-0",
+      "status": "active",
+      "owner": "CORE QA",
+      "notes": "Active 123 release dashboard with legacy actions and the modern Astro preview."
+    }
+  ],
+  "automation": {
+    "source": "https://github.com/DewanKabir009/jira-board-template/blob/master/boards.json",
+    "hook": "Board spin-up should append the new release entry to boards.json before the first GitHub Pages publish.",
+    "provisioner": "https://jira-board-provisioner.dfkabir253.workers.dev/provision"
+  }
+}
