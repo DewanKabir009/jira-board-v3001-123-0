@@ -4,10 +4,43 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-20T14:08:56.339Z",
-  "pulledAtDisplay": "May 20, 2026, 10:08 AM",
+  "pulledAt": "2026-05-20T14:13:58.340Z",
+  "pulledAtDisplay": "May 20, 2026, 10:13 AM",
   "total": 27,
   "issues": [
+    {
+      "key": "CORE-14428",
+      "url": "https://golfnow.atlassian.net/browse/CORE-14428",
+      "summary": "Create Home Course ProductBenefit",
+      "description": "INSERT a new benefit into Product.Benefit\n\n- Name: Home Course Eligible\n\nINSERT this new BenefitId into Product.ProductBenefit\n\n- ProductIds IN (36,37,71)",
+      "descriptionHtml": "<p>INSERT a new benefit into Product.Benefit</p><ul><li><p>Name: Home Course Eligible</p></li></ul><p>INSERT this new BenefitId into Product.ProductBenefit</p><ul><li><p>ProductIds IN (36,37,71)</p></li></ul>",
+      "descriptionImageCount": 0,
+      "type": "Story",
+      "isSubtask": false,
+      "status": "Code Review",
+      "priority": "P1",
+      "assignee": "Yoel Martin Pardo",
+      "updated": "2026-05-20T10:11:21.189-0400",
+      "updatedDisplay": "May 20, 2026, 10:11 AM",
+      "created": "2026-04-30T09:47:17.923-0400",
+      "createdDisplay": "Apr 30, 2026, 9:47 AM",
+      "components": [
+        "Database"
+      ],
+      "fixVersions": [
+        "v3001.123.0"
+      ],
+      "resolution": "",
+      "parent": {
+        "key": "CORE-14301",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14301",
+        "summary": "GolfPass \"Home Course\": Phase I",
+        "description": "",
+        "type": "Epic",
+        "status": "Planning",
+        "priority": "None"
+      }
+    },
     {
       "key": "CORE-14442",
       "url": "https://golfnow.atlassian.net/browse/CORE-14442",
@@ -91,39 +124,6 @@
       "created": "2026-04-30T09:20:28.579-0400",
       "createdDisplay": "Apr 30, 2026, 9:20 AM",
       "components": [],
-      "fixVersions": [
-        "v3001.123.0"
-      ],
-      "resolution": "",
-      "parent": {
-        "key": "CORE-14301",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14301",
-        "summary": "GolfPass \"Home Course\": Phase I",
-        "description": "",
-        "type": "Epic",
-        "status": "Planning",
-        "priority": "None"
-      }
-    },
-    {
-      "key": "CORE-14428",
-      "url": "https://golfnow.atlassian.net/browse/CORE-14428",
-      "summary": "Create Home Course ProductBenefit",
-      "description": "INSERT a new benefit into Product.Benefit\n\n- Name: Home Course Eligible\n\nINSERT this new BenefitId into Product.ProductBenefit\n\n- ProductIds IN (36,37,71)",
-      "descriptionHtml": "<p>INSERT a new benefit into Product.Benefit</p><ul><li><p>Name: Home Course Eligible</p></li></ul><p>INSERT this new BenefitId into Product.ProductBenefit</p><ul><li><p>ProductIds IN (36,37,71)</p></li></ul>",
-      "descriptionImageCount": 0,
-      "type": "Story",
-      "isSubtask": false,
-      "status": "Development",
-      "priority": "P1",
-      "assignee": "Luis Vallejo Mursuli",
-      "updated": "2026-05-19T17:52:39.324-0400",
-      "updatedDisplay": "May 19, 2026, 5:52 PM",
-      "created": "2026-04-30T09:47:17.923-0400",
-      "createdDisplay": "Apr 30, 2026, 9:47 AM",
-      "components": [
-        "Database"
-      ],
       "fixVersions": [
         "v3001.123.0"
       ],
@@ -856,17 +856,148 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-20T14:03:54.278Z",
-    "previousPulledAtDisplay": "May 20, 2026, 10:03 AM",
-    "currentPulledAt": "2026-05-20T14:08:56.339Z",
-    "currentPulledAtDisplay": "May 20, 2026, 10:08 AM",
+    "previousPulledAt": "2026-05-20T14:08:56.339Z",
+    "previousPulledAtDisplay": "May 20, 2026, 10:08 AM",
+    "currentPulledAt": "2026-05-20T14:13:58.340Z",
+    "currentPulledAtDisplay": "May 20, 2026, 10:13 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
-    "updated": [],
-    "statusChanges": []
+    "updated": [
+      {
+        "key": "CORE-14428",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14428",
+        "summary": "Create Home Course ProductBenefit",
+        "changes": [
+          {
+            "field": "status",
+            "label": "Status",
+            "before": "Development",
+            "after": "Code Review"
+          },
+          {
+            "field": "assignee",
+            "label": "Assignee",
+            "before": "Luis Vallejo Mursuli",
+            "after": "Yoel Martin Pardo"
+          },
+          {
+            "field": "updatedDisplay",
+            "label": "Jira updated",
+            "before": "May 19, 2026, 5:52 PM",
+            "after": "May 20, 2026, 10:11 AM"
+          }
+        ],
+        "type": "Story",
+        "isSubtask": false,
+        "assignee": "Yoel Martin Pardo",
+        "status": "Code Review",
+        "parent": {
+          "key": "CORE-14301",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14301",
+          "summary": "GolfPass \"Home Course\": Phase I",
+          "description": "",
+          "type": "Epic",
+          "status": "Planning",
+          "priority": "None"
+        }
+      }
+    ],
+    "statusChanges": [
+      {
+        "key": "CORE-14428",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14428",
+        "summary": "Create Home Course ProductBenefit",
+        "before": "Development",
+        "after": "Code Review",
+        "type": "Story",
+        "isSubtask": false,
+        "assignee": "Yoel Martin Pardo",
+        "status": "Code Review",
+        "parent": {
+          "key": "CORE-14301",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14301",
+          "summary": "GolfPass \"Home Course\": Phase I",
+          "description": "",
+          "type": "Epic",
+          "status": "Planning",
+          "priority": "None"
+        }
+      }
+    ]
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-20T14:08:56.339Z",
+      "previousPulledAtDisplay": "May 20, 2026, 10:08 AM",
+      "currentPulledAt": "2026-05-20T14:13:58.340Z",
+      "currentPulledAtDisplay": "May 20, 2026, 10:13 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [
+        {
+          "key": "CORE-14428",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14428",
+          "summary": "Create Home Course ProductBenefit",
+          "changes": [
+            {
+              "field": "status",
+              "label": "Status",
+              "before": "Development",
+              "after": "Code Review"
+            },
+            {
+              "field": "assignee",
+              "label": "Assignee",
+              "before": "Luis Vallejo Mursuli",
+              "after": "Yoel Martin Pardo"
+            },
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "May 19, 2026, 5:52 PM",
+              "after": "May 20, 2026, 10:11 AM"
+            }
+          ],
+          "type": "Story",
+          "isSubtask": false,
+          "assignee": "Yoel Martin Pardo",
+          "status": "Code Review",
+          "parent": {
+            "key": "CORE-14301",
+            "url": "https://golfnow.atlassian.net/browse/CORE-14301",
+            "summary": "GolfPass \"Home Course\": Phase I",
+            "description": "",
+            "type": "Epic",
+            "status": "Planning",
+            "priority": "None"
+          }
+        }
+      ],
+      "statusChanges": [
+        {
+          "key": "CORE-14428",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14428",
+          "summary": "Create Home Course ProductBenefit",
+          "before": "Development",
+          "after": "Code Review",
+          "type": "Story",
+          "isSubtask": false,
+          "assignee": "Yoel Martin Pardo",
+          "status": "Code Review",
+          "parent": {
+            "key": "CORE-14301",
+            "url": "https://golfnow.atlassian.net/browse/CORE-14301",
+            "summary": "GolfPass \"Home Course\": Phase I",
+            "description": "",
+            "type": "Epic",
+            "status": "Planning",
+            "priority": "None"
+          }
+        }
+      ]
+    },
     {
       "previousPulledAt": "2026-05-20T14:03:54.278Z",
       "previousPulledAtDisplay": "May 20, 2026, 10:03 AM",
@@ -1180,8 +1311,8 @@
           ],
           "type": "Story",
           "isSubtask": false,
-          "assignee": "Luis Vallejo Mursuli",
-          "status": "Development",
+          "assignee": "Yoel Martin Pardo",
+          "status": "Code Review",
           "parent": {
             "key": "CORE-14301",
             "url": "https://golfnow.atlassian.net/browse/CORE-14301",
@@ -1273,8 +1404,8 @@
           ],
           "type": "Story",
           "isSubtask": false,
-          "assignee": "Luis Vallejo Mursuli",
-          "status": "Development",
+          "assignee": "Yoel Martin Pardo",
+          "status": "Code Review",
           "parent": {
             "key": "CORE-14301",
             "url": "https://golfnow.atlassian.net/browse/CORE-14301",
@@ -1637,9 +1768,9 @@
           "descriptionImageCount": 0,
           "type": "Story",
           "isSubtask": false,
-          "status": "Development",
+          "status": "Code Review",
           "priority": "P1",
-          "assignee": "Luis Vallejo Mursuli",
+          "assignee": "Yoel Martin Pardo",
           "updated": "2026-05-19T12:16:06.715-0400",
           "updatedDisplay": "May 19, 2026, 12:16 PM",
           "created": "2026-04-30T09:47:17.923-0400",
@@ -4718,17 +4849,6 @@
       "previousPulledAtDisplay": "May 16, 2026, 3:17 AM",
       "currentPulledAt": "2026-05-16T07:22:15.338Z",
       "currentPulledAtDisplay": "May 16, 2026, 3:22 AM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-16T07:12:12.137Z",
-      "previousPulledAtDisplay": "May 16, 2026, 3:12 AM",
-      "currentPulledAt": "2026-05-16T07:17:13.751Z",
-      "currentPulledAtDisplay": "May 16, 2026, 3:17 AM",
       "isBaseline": false,
       "added": [],
       "removed": [],
