@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-21T21:51:19.880Z",
-  "pulledAtDisplay": "May 21, 2026, 5:51 PM",
+  "pulledAt": "2026-05-21T21:56:21.893Z",
+  "pulledAtDisplay": "May 21, 2026, 5:56 PM",
   "total": 30,
   "issues": [
     {
@@ -1009,10 +1009,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-21T21:46:17.872Z",
-    "previousPulledAtDisplay": "May 21, 2026, 5:46 PM",
-    "currentPulledAt": "2026-05-21T21:51:19.880Z",
-    "currentPulledAtDisplay": "May 21, 2026, 5:51 PM",
+    "previousPulledAt": "2026-05-21T21:51:19.880Z",
+    "previousPulledAtDisplay": "May 21, 2026, 5:51 PM",
+    "currentPulledAt": "2026-05-21T21:56:21.893Z",
+    "currentPulledAtDisplay": "May 21, 2026, 5:56 PM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -1020,6 +1020,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-21T21:51:19.880Z",
+      "previousPulledAtDisplay": "May 21, 2026, 5:51 PM",
+      "currentPulledAt": "2026-05-21T21:56:21.893Z",
+      "currentPulledAtDisplay": "May 21, 2026, 5:56 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-21T21:46:17.872Z",
       "previousPulledAtDisplay": "May 21, 2026, 5:46 PM",
@@ -5306,96 +5317,6 @@
       "added": [],
       "removed": [],
       "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-18T22:39:26.926Z",
-      "previousPulledAtDisplay": "May 18, 2026, 6:39 PM",
-      "currentPulledAt": "2026-05-18T22:44:29.693Z",
-      "currentPulledAtDisplay": "May 18, 2026, 6:44 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [
-        {
-          "key": "CORE-14481",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14481",
-          "summary": "Database changes.",
-          "changes": [
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "May 18, 2026, 6:25 PM",
-              "after": "May 18, 2026, 6:42 PM"
-            }
-          ],
-          "type": "Developer Task (sub task)",
-          "isSubtask": true,
-          "assignee": "Unassigned",
-          "status": "QA Testing (DEV)",
-          "parent": {
-            "key": "CORE-14476",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14476",
-            "summary": "Add two new fields to /get-eligible-promo-codes API",
-            "description": "",
-            "type": "Story",
-            "status": "QA Testing (DEV)",
-            "priority": "None"
-          }
-        },
-        {
-          "key": "CORE-14482",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14482",
-          "summary": "Code changes.",
-          "changes": [
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "May 18, 2026, 6:33 PM",
-              "after": "May 18, 2026, 6:42 PM"
-            }
-          ],
-          "type": "Developer Task (sub task)",
-          "isSubtask": true,
-          "assignee": "Dewan Kabir",
-          "status": "QA Testing (DEV)",
-          "parent": {
-            "key": "CORE-14476",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14476",
-            "summary": "Add two new fields to /get-eligible-promo-codes API",
-            "description": "",
-            "type": "Story",
-            "status": "QA Testing (DEV)",
-            "priority": "None"
-          }
-        },
-        {
-          "key": "CORE-14476",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14476",
-          "summary": "Add two new fields to /get-eligible-promo-codes API",
-          "changes": [
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "May 18, 2026, 6:33 PM",
-              "after": "May 18, 2026, 6:41 PM"
-            }
-          ],
-          "type": "Story",
-          "isSubtask": false,
-          "assignee": "Dewan Kabir",
-          "status": "QA Testing (DEV)",
-          "parent": {
-            "key": "APP-7093",
-            "url": "https://golfnow.atlassian.net/browse/APP-7093",
-            "summary": "2026 Checkout Redesign",
-            "description": "",
-            "type": "Epic",
-            "status": "Planning",
-            "priority": "None"
-          }
-        }
-      ],
       "statusChanges": []
     }
   ],
