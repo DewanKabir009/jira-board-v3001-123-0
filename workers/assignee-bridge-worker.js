@@ -344,6 +344,9 @@ export default {
 
     const url = new URL(request.url);
     try {
+      if (request.method === "GET" && url.pathname === "/") {
+        return Response.redirect(new URL("/status", url).toString(), 302);
+      }
       if (request.method === "GET" && url.pathname.endsWith("/status")) {
         return handleStatus(request, env);
       }
