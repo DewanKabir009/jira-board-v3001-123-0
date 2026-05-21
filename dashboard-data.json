@@ -4,10 +4,45 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-21T15:52:49.279Z",
-  "pulledAtDisplay": "May 21, 2026, 11:52 AM",
+  "pulledAt": "2026-05-21T15:57:51.356Z",
+  "pulledAtDisplay": "May 21, 2026, 11:57 AM",
   "total": 28,
   "issues": [
+    {
+      "key": "CORE-14481",
+      "url": "https://golfnow.atlassian.net/browse/CORE-14481",
+      "summary": "Database changes.",
+      "description": "",
+      "descriptionHtml": "",
+      "descriptionImageCount": 0,
+      "type": "Developer Task (sub task)",
+      "isSubtask": true,
+      "status": "QA Testing (DEV)",
+      "priority": "None",
+      "assignee": "Unassigned",
+      "assigneeAccountId": "",
+      "assigneeAvatarUrl": "",
+      "updated": "2026-05-21T11:56:24.555-0400",
+      "updatedDisplay": "May 21, 2026, 11:56 AM",
+      "created": "2026-05-18T18:18:03.543-0400",
+      "createdDisplay": "May 18, 2026, 6:18 PM",
+      "components": [
+        "Database"
+      ],
+      "fixVersions": [
+        "v3001.123.0"
+      ],
+      "resolution": "",
+      "parent": {
+        "key": "CORE-14476",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14476",
+        "summary": "Add two new fields to /get-eligible-promo-codes API",
+        "description": "",
+        "type": "Story",
+        "status": "QA Testing (DEV)",
+        "priority": "None"
+      }
+    },
     {
       "key": "CORE-14487",
       "url": "https://golfnow.atlassian.net/browse/CORE-14487",
@@ -637,41 +672,6 @@
       "parent": null
     },
     {
-      "key": "CORE-14481",
-      "url": "https://golfnow.atlassian.net/browse/CORE-14481",
-      "summary": "Database changes.",
-      "description": "",
-      "descriptionHtml": "",
-      "descriptionImageCount": 0,
-      "type": "Developer Task (sub task)",
-      "isSubtask": true,
-      "status": "Pending Deployment (DEV)",
-      "priority": "None",
-      "assignee": "Yoel Martin Pardo",
-      "assigneeAccountId": "625571809e7380006fb29599",
-      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
-      "updated": "2026-05-19T09:44:20.186-0400",
-      "updatedDisplay": "May 19, 2026, 9:44 AM",
-      "created": "2026-05-18T18:18:03.543-0400",
-      "createdDisplay": "May 18, 2026, 6:18 PM",
-      "components": [
-        "Database"
-      ],
-      "fixVersions": [
-        "v3001.123.0"
-      ],
-      "resolution": "",
-      "parent": {
-        "key": "CORE-14476",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14476",
-        "summary": "Add two new fields to /get-eligible-promo-codes API",
-        "description": "",
-        "type": "Story",
-        "status": "QA Testing (DEV)",
-        "priority": "None"
-      }
-    },
-    {
       "key": "CORE-14440",
       "url": "https://golfnow.atlassian.net/browse/CORE-14440",
       "summary": "Modify New EZL API workflow to Account for Partial Prepaid to GN - 2",
@@ -939,17 +939,148 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-21T15:47:47.349Z",
-    "previousPulledAtDisplay": "May 21, 2026, 11:47 AM",
-    "currentPulledAt": "2026-05-21T15:52:49.279Z",
-    "currentPulledAtDisplay": "May 21, 2026, 11:52 AM",
+    "previousPulledAt": "2026-05-21T15:52:49.279Z",
+    "previousPulledAtDisplay": "May 21, 2026, 11:52 AM",
+    "currentPulledAt": "2026-05-21T15:57:51.356Z",
+    "currentPulledAtDisplay": "May 21, 2026, 11:57 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
-    "updated": [],
-    "statusChanges": []
+    "updated": [
+      {
+        "key": "CORE-14481",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14481",
+        "summary": "Database changes.",
+        "changes": [
+          {
+            "field": "status",
+            "label": "Status",
+            "before": "Pending Deployment (DEV)",
+            "after": "QA Testing (DEV)"
+          },
+          {
+            "field": "assignee",
+            "label": "Assignee",
+            "before": "Yoel Martin Pardo",
+            "after": "Unassigned"
+          },
+          {
+            "field": "updatedDisplay",
+            "label": "Jira updated",
+            "before": "May 19, 2026, 9:44 AM",
+            "after": "May 21, 2026, 11:56 AM"
+          }
+        ],
+        "type": "Developer Task (sub task)",
+        "isSubtask": true,
+        "assignee": "Unassigned",
+        "status": "QA Testing (DEV)",
+        "parent": {
+          "key": "CORE-14476",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14476",
+          "summary": "Add two new fields to /get-eligible-promo-codes API",
+          "description": "",
+          "type": "Story",
+          "status": "QA Testing (DEV)",
+          "priority": "None"
+        }
+      }
+    ],
+    "statusChanges": [
+      {
+        "key": "CORE-14481",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14481",
+        "summary": "Database changes.",
+        "before": "Pending Deployment (DEV)",
+        "after": "QA Testing (DEV)",
+        "type": "Developer Task (sub task)",
+        "isSubtask": true,
+        "assignee": "Unassigned",
+        "status": "QA Testing (DEV)",
+        "parent": {
+          "key": "CORE-14476",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14476",
+          "summary": "Add two new fields to /get-eligible-promo-codes API",
+          "description": "",
+          "type": "Story",
+          "status": "QA Testing (DEV)",
+          "priority": "None"
+        }
+      }
+    ]
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-21T15:52:49.279Z",
+      "previousPulledAtDisplay": "May 21, 2026, 11:52 AM",
+      "currentPulledAt": "2026-05-21T15:57:51.356Z",
+      "currentPulledAtDisplay": "May 21, 2026, 11:57 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [
+        {
+          "key": "CORE-14481",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14481",
+          "summary": "Database changes.",
+          "changes": [
+            {
+              "field": "status",
+              "label": "Status",
+              "before": "Pending Deployment (DEV)",
+              "after": "QA Testing (DEV)"
+            },
+            {
+              "field": "assignee",
+              "label": "Assignee",
+              "before": "Yoel Martin Pardo",
+              "after": "Unassigned"
+            },
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "May 19, 2026, 9:44 AM",
+              "after": "May 21, 2026, 11:56 AM"
+            }
+          ],
+          "type": "Developer Task (sub task)",
+          "isSubtask": true,
+          "assignee": "Unassigned",
+          "status": "QA Testing (DEV)",
+          "parent": {
+            "key": "CORE-14476",
+            "url": "https://golfnow.atlassian.net/browse/CORE-14476",
+            "summary": "Add two new fields to /get-eligible-promo-codes API",
+            "description": "",
+            "type": "Story",
+            "status": "QA Testing (DEV)",
+            "priority": "None"
+          }
+        }
+      ],
+      "statusChanges": [
+        {
+          "key": "CORE-14481",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14481",
+          "summary": "Database changes.",
+          "before": "Pending Deployment (DEV)",
+          "after": "QA Testing (DEV)",
+          "type": "Developer Task (sub task)",
+          "isSubtask": true,
+          "assignee": "Unassigned",
+          "status": "QA Testing (DEV)",
+          "parent": {
+            "key": "CORE-14476",
+            "url": "https://golfnow.atlassian.net/browse/CORE-14476",
+            "summary": "Add two new fields to /get-eligible-promo-codes API",
+            "description": "",
+            "type": "Story",
+            "status": "QA Testing (DEV)",
+            "priority": "None"
+          }
+        }
+      ]
+    },
     {
       "previousPulledAt": "2026-05-21T15:47:47.349Z",
       "previousPulledAtDisplay": "May 21, 2026, 11:47 AM",
@@ -3086,8 +3217,8 @@
           ],
           "type": "Developer Task (sub task)",
           "isSubtask": true,
-          "assignee": "Yoel Martin Pardo",
-          "status": "Pending Deployment (DEV)",
+          "assignee": "Unassigned",
+          "status": "QA Testing (DEV)",
           "parent": {
             "key": "CORE-14476",
             "url": "https://golfnow.atlassian.net/browse/CORE-14476",
@@ -3148,8 +3279,8 @@
           "after": "Pending Deployment (DEV)",
           "type": "Developer Task (sub task)",
           "isSubtask": true,
-          "assignee": "Yoel Martin Pardo",
-          "status": "Pending Deployment (DEV)",
+          "assignee": "Unassigned",
+          "status": "QA Testing (DEV)",
           "parent": {
             "key": "CORE-14476",
             "url": "https://golfnow.atlassian.net/browse/CORE-14476",
@@ -3599,8 +3730,8 @@
           ],
           "type": "Developer Task (sub task)",
           "isSubtask": true,
-          "assignee": "Yoel Martin Pardo",
-          "status": "Pending Deployment (DEV)",
+          "assignee": "Unassigned",
+          "status": "QA Testing (DEV)",
           "parent": {
             "key": "CORE-14476",
             "url": "https://golfnow.atlassian.net/browse/CORE-14476",
@@ -3750,9 +3881,9 @@
           "descriptionImageCount": 0,
           "type": "Developer Task (sub task)",
           "isSubtask": true,
-          "status": "Pending Deployment (DEV)",
+          "status": "QA Testing (DEV)",
           "priority": "None",
-          "assignee": "Yoel Martin Pardo",
+          "assignee": "Unassigned",
           "updated": "2026-05-18T18:25:17.265-0400",
           "updatedDisplay": "May 18, 2026, 6:25 PM",
           "created": "2026-05-18T18:18:03.543-0400",
@@ -5267,17 +5398,6 @@
       "previousPulledAtDisplay": "May 17, 2026, 12:21 AM",
       "currentPulledAt": "2026-05-17T04:26:54.225Z",
       "currentPulledAtDisplay": "May 17, 2026, 12:26 AM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-17T00:17:55.745Z",
-      "previousPulledAtDisplay": "May 16, 2026, 8:17 PM",
-      "currentPulledAt": "2026-05-17T04:21:51.925Z",
-      "currentPulledAtDisplay": "May 17, 2026, 12:21 AM",
       "isBaseline": false,
       "added": [],
       "removed": [],
