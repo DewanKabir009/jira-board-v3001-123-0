@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-21T23:16:21.796Z",
-  "pulledAtDisplay": "May 21, 2026, 7:16 PM",
+  "pulledAt": "2026-05-21T23:21:24.114Z",
+  "pulledAtDisplay": "May 21, 2026, 7:21 PM",
   "total": 30,
   "issues": [
     {
@@ -1009,10 +1009,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-21T23:11:19.536Z",
-    "previousPulledAtDisplay": "May 21, 2026, 7:11 PM",
-    "currentPulledAt": "2026-05-21T23:16:21.796Z",
-    "currentPulledAtDisplay": "May 21, 2026, 7:16 PM",
+    "previousPulledAt": "2026-05-21T23:16:21.796Z",
+    "previousPulledAtDisplay": "May 21, 2026, 7:16 PM",
+    "currentPulledAt": "2026-05-21T23:21:24.114Z",
+    "currentPulledAtDisplay": "May 21, 2026, 7:21 PM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -1020,6 +1020,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-21T23:16:21.796Z",
+      "previousPulledAtDisplay": "May 21, 2026, 7:16 PM",
+      "currentPulledAt": "2026-05-21T23:21:24.114Z",
+      "currentPulledAtDisplay": "May 21, 2026, 7:21 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-21T23:11:19.536Z",
       "previousPulledAtDisplay": "May 21, 2026, 7:11 PM",
@@ -5174,61 +5185,6 @@
             "status": "QA Testing (DEV)",
             "priority": "None"
           }
-        }
-      ]
-    },
-    {
-      "previousPulledAt": "2026-05-19T13:36:14.895Z",
-      "previousPulledAtDisplay": "May 19, 2026, 9:36 AM",
-      "currentPulledAt": "2026-05-19T13:41:17.601Z",
-      "currentPulledAtDisplay": "May 19, 2026, 9:41 AM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [
-        {
-          "key": "CORE-14480",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14480",
-          "summary": "Upgrade vulnerable and outdated NuGet package(s) identified by Snyk in Logging Service (golf-svc-logging)",
-          "changes": [
-            {
-              "field": "status",
-              "label": "Status",
-              "before": "Pending Deployment (DEV)",
-              "after": "QA Testing (DEV)"
-            },
-            {
-              "field": "assignee",
-              "label": "Assignee",
-              "before": "Tyler Olechnowicz",
-              "after": "Dewan Kabir"
-            },
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "May 18, 2026, 4:41 PM",
-              "after": "May 19, 2026, 9:36 AM"
-            }
-          ],
-          "type": "Security Alert",
-          "isSubtask": false,
-          "assignee": "Dewan Kabir",
-          "status": "QA Testing (DEV)",
-          "parent": null
-        }
-      ],
-      "statusChanges": [
-        {
-          "key": "CORE-14480",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14480",
-          "summary": "Upgrade vulnerable and outdated NuGet package(s) identified by Snyk in Logging Service (golf-svc-logging)",
-          "before": "Pending Deployment (DEV)",
-          "after": "QA Testing (DEV)",
-          "type": "Security Alert",
-          "isSubtask": false,
-          "assignee": "Dewan Kabir",
-          "status": "QA Testing (DEV)",
-          "parent": null
         }
       ]
     }
