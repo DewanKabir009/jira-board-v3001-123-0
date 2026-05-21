@@ -8,7 +8,7 @@ on:
 
 concurrency:
   group: refresh-jira-board
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 permissions:
   contents: write
@@ -17,10 +17,10 @@ jobs:
   refresh:
     name: Pull Jira and publish dashboard
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 190
     env:
       MANUAL_REFRESH_ITERATIONS: 1
-      SCHEDULE_REFRESH_ITERATIONS: 3
+      SCHEDULE_REFRESH_ITERATIONS: 36
       REFRESH_INTERVAL_SECONDS: 300
 
     steps:
