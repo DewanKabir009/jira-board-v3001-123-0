@@ -4,10 +4,107 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-21T11:54:53.580Z",
-  "pulledAtDisplay": "May 21, 2026, 7:54 AM",
+  "pulledAt": "2026-05-21T14:04:06.329Z",
+  "pulledAtDisplay": "May 21, 2026, 10:04 AM",
   "total": 28,
   "issues": [
+    {
+      "key": "CORE-14428",
+      "url": "https://golfnow.atlassian.net/browse/CORE-14428",
+      "summary": "Create Home Course ProductBenefit",
+      "description": "INSERT a new benefit into Product.Benefit\n\n- Name: Home Course Eligible\n\nINSERT this new BenefitId into Product.ProductBenefit\n\n- ProductIds IN (36,37,71)",
+      "descriptionHtml": "<p>INSERT a new benefit into Product.Benefit</p><ul><li><p>Name: Home Course Eligible</p></li></ul><p>INSERT this new BenefitId into Product.ProductBenefit</p><ul><li><p>ProductIds IN (36,37,71)</p></li></ul>",
+      "descriptionImageCount": 0,
+      "type": "Story",
+      "isSubtask": false,
+      "status": "QA Testing (DEV)",
+      "priority": "P1",
+      "assignee": "Dewan Kabir",
+      "assigneeAccountId": "630fb06bb433b060db559bdb",
+      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
+      "updated": "2026-05-21T09:09:55.789-0400",
+      "updatedDisplay": "May 21, 2026, 9:09 AM",
+      "created": "2026-04-30T09:47:17.923-0400",
+      "createdDisplay": "Apr 30, 2026, 9:47 AM",
+      "components": [
+        "Database"
+      ],
+      "fixVersions": [
+        "v3001.123.0"
+      ],
+      "resolution": "",
+      "parent": {
+        "key": "CORE-14301",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14301",
+        "summary": "GolfPass \"Home Course\": Phase I",
+        "description": "",
+        "type": "Epic",
+        "status": "Planning",
+        "priority": "None"
+      }
+    },
+    {
+      "key": "CORE-14487",
+      "url": "https://golfnow.atlassian.net/browse/CORE-14487",
+      "summary": "[Commerce] Facility Closure / Update casing Tee Times to Fail in the Add to Cart process",
+      "description": "When adding Tee Times to cart when the course has an update (such as reducing to 9 holes from 18 holes) it fails with an error message stating the Tee Time could not be found. Root cause is that the store procedure that gets the tee times only filters facilities if they have an active closure. This needs to be updated so it also looks at if Disable\n\nInventory is true and allow facilities that are active but don’t have disable inventory set to true.",
+      "descriptionHtml": "<p>When adding Tee Times to cart when the course has an update (such as reducing to 9 holes from 18 holes) it fails with an error message stating the Tee Time could not be found. Root cause is that the store procedure that gets the tee times only filters facilities if they have an active closure. This needs to be updated so it also looks at if Disable</p><p> Inventory is true and allow facilities that are active but don’t have disable inventory set to true.</p>",
+      "descriptionImageCount": 0,
+      "type": "Bug",
+      "isSubtask": false,
+      "status": "Code Review",
+      "priority": "P1",
+      "assignee": "Tyler Olechnowicz",
+      "assigneeAccountId": "5d2396c1ea26c40c2043fc92",
+      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5d2396c1ea26c40c2043fc92/1647fb84-acea-4c3f-b1e8-9a79aa120f8f/32",
+      "updated": "2026-05-21T08:45:17.676-0400",
+      "updatedDisplay": "May 21, 2026, 8:45 AM",
+      "created": "2026-05-19T14:14:47.543-0400",
+      "createdDisplay": "May 19, 2026, 2:14 PM",
+      "components": [
+        "Database"
+      ],
+      "fixVersions": [
+        "v3001.123.0"
+      ],
+      "resolution": "",
+      "parent": null
+    },
+    {
+      "key": "CORE-14485",
+      "url": "https://golfnow.atlassian.net/browse/CORE-14485",
+      "summary": "gn-svc-commerceproxy changes",
+      "description": "",
+      "descriptionHtml": "",
+      "descriptionImageCount": 0,
+      "type": "Developer Task (sub task)",
+      "isSubtask": true,
+      "status": "Development",
+      "priority": "P1",
+      "assignee": "Tyler Olechnowicz",
+      "assigneeAccountId": "5d2396c1ea26c40c2043fc92",
+      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5d2396c1ea26c40c2043fc92/1647fb84-acea-4c3f-b1e8-9a79aa120f8f/32",
+      "updated": "2026-05-21T08:23:15.688-0400",
+      "updatedDisplay": "May 21, 2026, 8:23 AM",
+      "created": "2026-05-19T09:01:33.296-0400",
+      "createdDisplay": "May 19, 2026, 9:01 AM",
+      "components": [
+        "GolfNow.Services.CommerceProxy"
+      ],
+      "fixVersions": [
+        "v3001.123.0"
+      ],
+      "resolution": "",
+      "parent": {
+        "key": "CORE-14397",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14397",
+        "summary": "CLONE - Update to allow No Payment Methods when $0 due now for BE",
+        "description": "",
+        "type": "Story",
+        "status": "Code Review",
+        "priority": "P1"
+      }
+    },
     {
       "key": "CORE-14158",
       "url": "https://golfnow.atlassian.net/browse/CORE-14158",
@@ -139,66 +236,6 @@
       ],
       "resolution": "",
       "parent": null
-    },
-    {
-      "key": "CORE-14487",
-      "url": "https://golfnow.atlassian.net/browse/CORE-14487",
-      "summary": "[Commerce] Facility Closure / Update casing Tee Times to Fail in the Add to Cart process",
-      "description": "",
-      "descriptionHtml": "",
-      "descriptionImageCount": 0,
-      "type": "Bug",
-      "isSubtask": false,
-      "status": "Pre Planning",
-      "priority": "None",
-      "assignee": "Andrew Horvat",
-      "assigneeAccountId": "712020:d714b2a6-3491-46da-89f1-9777e2d1ab70",
-      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:d714b2a6-3491-46da-89f1-9777e2d1ab70/25dedc4a-09d9-4ec9-945c-34d31d771711/32",
-      "updated": "2026-05-20T11:55:12.612-0400",
-      "updatedDisplay": "May 20, 2026, 11:55 AM",
-      "created": "2026-05-19T14:14:47.543-0400",
-      "createdDisplay": "May 19, 2026, 2:14 PM",
-      "components": [],
-      "fixVersions": [
-        "v3001.123.0"
-      ],
-      "resolution": "",
-      "parent": null
-    },
-    {
-      "key": "CORE-14428",
-      "url": "https://golfnow.atlassian.net/browse/CORE-14428",
-      "summary": "Create Home Course ProductBenefit",
-      "description": "INSERT a new benefit into Product.Benefit\n\n- Name: Home Course Eligible\n\nINSERT this new BenefitId into Product.ProductBenefit\n\n- ProductIds IN (36,37,71)",
-      "descriptionHtml": "<p>INSERT a new benefit into Product.Benefit</p><ul><li><p>Name: Home Course Eligible</p></li></ul><p>INSERT this new BenefitId into Product.ProductBenefit</p><ul><li><p>ProductIds IN (36,37,71)</p></li></ul>",
-      "descriptionImageCount": 0,
-      "type": "Story",
-      "isSubtask": false,
-      "status": "Pending Deployment (DEV)",
-      "priority": "P1",
-      "assignee": "Luis Vallejo Mursuli",
-      "assigneeAccountId": "712020:2e637bb4-c610-467b-839d-9a5b84f75f01",
-      "assigneeAvatarUrl": "https://secure.gravatar.com/avatar/1c3d02bf24eb2441de8789b026687214?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FLM-1.png",
-      "updated": "2026-05-20T10:35:46.104-0400",
-      "updatedDisplay": "May 20, 2026, 10:35 AM",
-      "created": "2026-04-30T09:47:17.923-0400",
-      "createdDisplay": "Apr 30, 2026, 9:47 AM",
-      "components": [
-        "Database"
-      ],
-      "fixVersions": [
-        "v3001.123.0"
-      ],
-      "resolution": "",
-      "parent": {
-        "key": "CORE-14301",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14301",
-        "summary": "GolfPass \"Home Course\": Phase I",
-        "description": "",
-        "type": "Epic",
-        "status": "Planning",
-        "priority": "None"
-      }
     },
     {
       "key": "CORE-14488",
@@ -573,41 +610,6 @@
       }
     },
     {
-      "key": "CORE-14485",
-      "url": "https://golfnow.atlassian.net/browse/CORE-14485",
-      "summary": "gn-svc-commerceproxy changes",
-      "description": "",
-      "descriptionHtml": "",
-      "descriptionImageCount": 0,
-      "type": "Developer Task (sub task)",
-      "isSubtask": true,
-      "status": "Code Review",
-      "priority": "P1",
-      "assignee": "Tyler Olechnowicz",
-      "assigneeAccountId": "5d2396c1ea26c40c2043fc92",
-      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5d2396c1ea26c40c2043fc92/1647fb84-acea-4c3f-b1e8-9a79aa120f8f/32",
-      "updated": "2026-05-19T10:00:08.504-0400",
-      "updatedDisplay": "May 19, 2026, 10:00 AM",
-      "created": "2026-05-19T09:01:33.296-0400",
-      "createdDisplay": "May 19, 2026, 9:01 AM",
-      "components": [
-        "GolfNow.Services.CommerceProxy"
-      ],
-      "fixVersions": [
-        "v3001.123.0"
-      ],
-      "resolution": "",
-      "parent": {
-        "key": "CORE-14397",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14397",
-        "summary": "CLONE - Update to allow No Payment Methods when $0 due now for BE",
-        "description": "",
-        "type": "Story",
-        "status": "Code Review",
-        "priority": "P1"
-      }
-    },
-    {
       "key": "CORE-14466",
       "url": "https://golfnow.atlassian.net/browse/CORE-14466",
       "summary": "Latency issue with Product.CustomerSubscriptionList stored procedure.",
@@ -937,17 +939,372 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-21T11:49:51.635Z",
-    "previousPulledAtDisplay": "May 21, 2026, 7:49 AM",
-    "currentPulledAt": "2026-05-21T11:54:53.580Z",
-    "currentPulledAtDisplay": "May 21, 2026, 7:54 AM",
+    "previousPulledAt": "2026-05-21T11:54:53.580Z",
+    "previousPulledAtDisplay": "May 21, 2026, 7:54 AM",
+    "currentPulledAt": "2026-05-21T14:04:06.329Z",
+    "currentPulledAtDisplay": "May 21, 2026, 10:04 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
-    "updated": [],
-    "statusChanges": []
+    "updated": [
+      {
+        "key": "CORE-14428",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14428",
+        "summary": "Create Home Course ProductBenefit",
+        "changes": [
+          {
+            "field": "status",
+            "label": "Status",
+            "before": "Pending Deployment (DEV)",
+            "after": "QA Testing (DEV)"
+          },
+          {
+            "field": "assignee",
+            "label": "Assignee",
+            "before": "Luis Vallejo Mursuli",
+            "after": "Dewan Kabir"
+          },
+          {
+            "field": "updatedDisplay",
+            "label": "Jira updated",
+            "before": "May 20, 2026, 10:35 AM",
+            "after": "May 21, 2026, 9:09 AM"
+          }
+        ],
+        "type": "Story",
+        "isSubtask": false,
+        "assignee": "Dewan Kabir",
+        "status": "QA Testing (DEV)",
+        "parent": {
+          "key": "CORE-14301",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14301",
+          "summary": "GolfPass \"Home Course\": Phase I",
+          "description": "",
+          "type": "Epic",
+          "status": "Planning",
+          "priority": "None"
+        }
+      },
+      {
+        "key": "CORE-14487",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14487",
+        "summary": "[Commerce] Facility Closure / Update casing Tee Times to Fail in the Add to Cart process",
+        "changes": [
+          {
+            "field": "status",
+            "label": "Status",
+            "before": "Pre Planning",
+            "after": "Code Review"
+          },
+          {
+            "field": "priority",
+            "label": "Priority",
+            "before": "None",
+            "after": "P1"
+          },
+          {
+            "field": "assignee",
+            "label": "Assignee",
+            "before": "Andrew Horvat",
+            "after": "Tyler Olechnowicz"
+          },
+          {
+            "field": "updatedDisplay",
+            "label": "Jira updated",
+            "before": "May 20, 2026, 11:55 AM",
+            "after": "May 21, 2026, 8:45 AM"
+          },
+          {
+            "field": "components",
+            "label": "Components",
+            "before": "None",
+            "after": "Database"
+          },
+          {
+            "field": "description",
+            "label": "Description",
+            "before": "None",
+            "after": "When adding Tee Times to cart when the course has an update (such as reducing to 9 holes from 18 holes) it fails with an error message st..."
+          }
+        ],
+        "type": "Bug",
+        "isSubtask": false,
+        "assignee": "Tyler Olechnowicz",
+        "status": "Code Review",
+        "parent": null
+      },
+      {
+        "key": "CORE-14485",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14485",
+        "summary": "gn-svc-commerceproxy changes",
+        "changes": [
+          {
+            "field": "status",
+            "label": "Status",
+            "before": "Code Review",
+            "after": "Development"
+          },
+          {
+            "field": "updatedDisplay",
+            "label": "Jira updated",
+            "before": "May 19, 2026, 10:00 AM",
+            "after": "May 21, 2026, 8:23 AM"
+          }
+        ],
+        "type": "Developer Task (sub task)",
+        "isSubtask": true,
+        "assignee": "Tyler Olechnowicz",
+        "status": "Development",
+        "parent": {
+          "key": "CORE-14397",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14397",
+          "summary": "CLONE - Update to allow No Payment Methods when $0 due now for BE",
+          "description": "",
+          "type": "Story",
+          "status": "Code Review",
+          "priority": "P1"
+        }
+      }
+    ],
+    "statusChanges": [
+      {
+        "key": "CORE-14428",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14428",
+        "summary": "Create Home Course ProductBenefit",
+        "before": "Pending Deployment (DEV)",
+        "after": "QA Testing (DEV)",
+        "type": "Story",
+        "isSubtask": false,
+        "assignee": "Dewan Kabir",
+        "status": "QA Testing (DEV)",
+        "parent": {
+          "key": "CORE-14301",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14301",
+          "summary": "GolfPass \"Home Course\": Phase I",
+          "description": "",
+          "type": "Epic",
+          "status": "Planning",
+          "priority": "None"
+        }
+      },
+      {
+        "key": "CORE-14487",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14487",
+        "summary": "[Commerce] Facility Closure / Update casing Tee Times to Fail in the Add to Cart process",
+        "before": "Pre Planning",
+        "after": "Code Review",
+        "type": "Bug",
+        "isSubtask": false,
+        "assignee": "Tyler Olechnowicz",
+        "status": "Code Review",
+        "parent": null
+      },
+      {
+        "key": "CORE-14485",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14485",
+        "summary": "gn-svc-commerceproxy changes",
+        "before": "Code Review",
+        "after": "Development",
+        "type": "Developer Task (sub task)",
+        "isSubtask": true,
+        "assignee": "Tyler Olechnowicz",
+        "status": "Development",
+        "parent": {
+          "key": "CORE-14397",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14397",
+          "summary": "CLONE - Update to allow No Payment Methods when $0 due now for BE",
+          "description": "",
+          "type": "Story",
+          "status": "Code Review",
+          "priority": "P1"
+        }
+      }
+    ]
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-21T11:54:53.580Z",
+      "previousPulledAtDisplay": "May 21, 2026, 7:54 AM",
+      "currentPulledAt": "2026-05-21T14:04:06.329Z",
+      "currentPulledAtDisplay": "May 21, 2026, 10:04 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [
+        {
+          "key": "CORE-14428",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14428",
+          "summary": "Create Home Course ProductBenefit",
+          "changes": [
+            {
+              "field": "status",
+              "label": "Status",
+              "before": "Pending Deployment (DEV)",
+              "after": "QA Testing (DEV)"
+            },
+            {
+              "field": "assignee",
+              "label": "Assignee",
+              "before": "Luis Vallejo Mursuli",
+              "after": "Dewan Kabir"
+            },
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "May 20, 2026, 10:35 AM",
+              "after": "May 21, 2026, 9:09 AM"
+            }
+          ],
+          "type": "Story",
+          "isSubtask": false,
+          "assignee": "Dewan Kabir",
+          "status": "QA Testing (DEV)",
+          "parent": {
+            "key": "CORE-14301",
+            "url": "https://golfnow.atlassian.net/browse/CORE-14301",
+            "summary": "GolfPass \"Home Course\": Phase I",
+            "description": "",
+            "type": "Epic",
+            "status": "Planning",
+            "priority": "None"
+          }
+        },
+        {
+          "key": "CORE-14487",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14487",
+          "summary": "[Commerce] Facility Closure / Update casing Tee Times to Fail in the Add to Cart process",
+          "changes": [
+            {
+              "field": "status",
+              "label": "Status",
+              "before": "Pre Planning",
+              "after": "Code Review"
+            },
+            {
+              "field": "priority",
+              "label": "Priority",
+              "before": "None",
+              "after": "P1"
+            },
+            {
+              "field": "assignee",
+              "label": "Assignee",
+              "before": "Andrew Horvat",
+              "after": "Tyler Olechnowicz"
+            },
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "May 20, 2026, 11:55 AM",
+              "after": "May 21, 2026, 8:45 AM"
+            },
+            {
+              "field": "components",
+              "label": "Components",
+              "before": "None",
+              "after": "Database"
+            },
+            {
+              "field": "description",
+              "label": "Description",
+              "before": "None",
+              "after": "When adding Tee Times to cart when the course has an update (such as reducing to 9 holes from 18 holes) it fails with an error message st..."
+            }
+          ],
+          "type": "Bug",
+          "isSubtask": false,
+          "assignee": "Tyler Olechnowicz",
+          "status": "Code Review",
+          "parent": null
+        },
+        {
+          "key": "CORE-14485",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14485",
+          "summary": "gn-svc-commerceproxy changes",
+          "changes": [
+            {
+              "field": "status",
+              "label": "Status",
+              "before": "Code Review",
+              "after": "Development"
+            },
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "May 19, 2026, 10:00 AM",
+              "after": "May 21, 2026, 8:23 AM"
+            }
+          ],
+          "type": "Developer Task (sub task)",
+          "isSubtask": true,
+          "assignee": "Tyler Olechnowicz",
+          "status": "Development",
+          "parent": {
+            "key": "CORE-14397",
+            "url": "https://golfnow.atlassian.net/browse/CORE-14397",
+            "summary": "CLONE - Update to allow No Payment Methods when $0 due now for BE",
+            "description": "",
+            "type": "Story",
+            "status": "Code Review",
+            "priority": "P1"
+          }
+        }
+      ],
+      "statusChanges": [
+        {
+          "key": "CORE-14428",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14428",
+          "summary": "Create Home Course ProductBenefit",
+          "before": "Pending Deployment (DEV)",
+          "after": "QA Testing (DEV)",
+          "type": "Story",
+          "isSubtask": false,
+          "assignee": "Dewan Kabir",
+          "status": "QA Testing (DEV)",
+          "parent": {
+            "key": "CORE-14301",
+            "url": "https://golfnow.atlassian.net/browse/CORE-14301",
+            "summary": "GolfPass \"Home Course\": Phase I",
+            "description": "",
+            "type": "Epic",
+            "status": "Planning",
+            "priority": "None"
+          }
+        },
+        {
+          "key": "CORE-14487",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14487",
+          "summary": "[Commerce] Facility Closure / Update casing Tee Times to Fail in the Add to Cart process",
+          "before": "Pre Planning",
+          "after": "Code Review",
+          "type": "Bug",
+          "isSubtask": false,
+          "assignee": "Tyler Olechnowicz",
+          "status": "Code Review",
+          "parent": null
+        },
+        {
+          "key": "CORE-14485",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14485",
+          "summary": "gn-svc-commerceproxy changes",
+          "before": "Code Review",
+          "after": "Development",
+          "type": "Developer Task (sub task)",
+          "isSubtask": true,
+          "assignee": "Tyler Olechnowicz",
+          "status": "Development",
+          "parent": {
+            "key": "CORE-14397",
+            "url": "https://golfnow.atlassian.net/browse/CORE-14397",
+            "summary": "CLONE - Update to allow No Payment Methods when $0 due now for BE",
+            "description": "",
+            "type": "Story",
+            "status": "Code Review",
+            "priority": "P1"
+          }
+        }
+      ]
+    },
     {
       "previousPulledAt": "2026-05-21T11:49:51.635Z",
       "previousPulledAtDisplay": "May 21, 2026, 7:49 AM",
@@ -1358,8 +1715,8 @@
           ],
           "type": "Bug",
           "isSubtask": false,
-          "assignee": "Andrew Horvat",
-          "status": "Pre Planning",
+          "assignee": "Tyler Olechnowicz",
+          "status": "Code Review",
           "parent": null
         },
         {
@@ -1388,8 +1745,8 @@
           ],
           "type": "Story",
           "isSubtask": false,
-          "assignee": "Luis Vallejo Mursuli",
-          "status": "Pending Deployment (DEV)",
+          "assignee": "Dewan Kabir",
+          "status": "QA Testing (DEV)",
           "parent": {
             "key": "CORE-14301",
             "url": "https://golfnow.atlassian.net/browse/CORE-14301",
@@ -1410,8 +1767,8 @@
           "after": "Pending Deployment (DEV)",
           "type": "Story",
           "isSubtask": false,
-          "assignee": "Luis Vallejo Mursuli",
-          "status": "Pending Deployment (DEV)",
+          "assignee": "Dewan Kabir",
+          "status": "QA Testing (DEV)",
           "parent": {
             "key": "CORE-14301",
             "url": "https://golfnow.atlassian.net/browse/CORE-14301",
@@ -1459,8 +1816,8 @@
           ],
           "type": "Story",
           "isSubtask": false,
-          "assignee": "Luis Vallejo Mursuli",
-          "status": "Pending Deployment (DEV)",
+          "assignee": "Dewan Kabir",
+          "status": "QA Testing (DEV)",
           "parent": {
             "key": "CORE-14301",
             "url": "https://golfnow.atlassian.net/browse/CORE-14301",
@@ -1481,8 +1838,8 @@
           "after": "Code Review",
           "type": "Story",
           "isSubtask": false,
-          "assignee": "Luis Vallejo Mursuli",
-          "status": "Pending Deployment (DEV)",
+          "assignee": "Dewan Kabir",
+          "status": "QA Testing (DEV)",
           "parent": {
             "key": "CORE-14301",
             "url": "https://golfnow.atlassian.net/browse/CORE-14301",
@@ -1808,8 +2165,8 @@
           ],
           "type": "Story",
           "isSubtask": false,
-          "assignee": "Luis Vallejo Mursuli",
-          "status": "Pending Deployment (DEV)",
+          "assignee": "Dewan Kabir",
+          "status": "QA Testing (DEV)",
           "parent": {
             "key": "CORE-14301",
             "url": "https://golfnow.atlassian.net/browse/CORE-14301",
@@ -1857,8 +2214,8 @@
           ],
           "type": "Bug",
           "isSubtask": false,
-          "assignee": "Andrew Horvat",
-          "status": "Pre Planning",
+          "assignee": "Tyler Olechnowicz",
+          "status": "Code Review",
           "parent": null
         },
         {
@@ -1901,8 +2258,8 @@
           ],
           "type": "Story",
           "isSubtask": false,
-          "assignee": "Luis Vallejo Mursuli",
-          "status": "Pending Deployment (DEV)",
+          "assignee": "Dewan Kabir",
+          "status": "QA Testing (DEV)",
           "parent": {
             "key": "CORE-14301",
             "url": "https://golfnow.atlassian.net/browse/CORE-14301",
@@ -2142,9 +2499,9 @@
           "descriptionImageCount": 0,
           "type": "Bug",
           "isSubtask": false,
-          "status": "Pre Planning",
+          "status": "Code Review",
           "priority": "None",
-          "assignee": "Andrew Horvat",
+          "assignee": "Tyler Olechnowicz",
           "updated": "2026-05-19T14:15:48.217-0400",
           "updatedDisplay": "May 19, 2026, 2:15 PM",
           "created": "2026-05-19T14:14:47.543-0400",
@@ -2265,9 +2622,9 @@
           "descriptionImageCount": 0,
           "type": "Story",
           "isSubtask": false,
-          "status": "Pending Deployment (DEV)",
+          "status": "QA Testing (DEV)",
           "priority": "P1",
-          "assignee": "Luis Vallejo Mursuli",
+          "assignee": "Dewan Kabir",
           "updated": "2026-05-19T12:16:06.715-0400",
           "updatedDisplay": "May 19, 2026, 12:16 PM",
           "created": "2026-04-30T09:47:17.923-0400",
@@ -2365,7 +2722,7 @@
           "descriptionImageCount": 0,
           "type": "Developer Task (sub task)",
           "isSubtask": true,
-          "status": "Code Review",
+          "status": "Development",
           "priority": "P1",
           "assignee": "Tyler Olechnowicz",
           "updated": "2026-05-19T10:00:08.504-0400",
@@ -5049,17 +5406,6 @@
       "previousPulledAtDisplay": "May 16, 2026, 2:12 PM",
       "currentPulledAt": "2026-05-16T18:17:45.520Z",
       "currentPulledAtDisplay": "May 16, 2026, 2:17 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-16T18:07:41.505Z",
-      "previousPulledAtDisplay": "May 16, 2026, 2:07 PM",
-      "currentPulledAt": "2026-05-16T18:12:43.519Z",
-      "currentPulledAtDisplay": "May 16, 2026, 2:12 PM",
       "isBaseline": false,
       "added": [],
       "removed": [],
