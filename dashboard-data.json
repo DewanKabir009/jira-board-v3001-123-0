@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-21T23:06:17.136Z",
-  "pulledAtDisplay": "May 21, 2026, 7:06 PM",
+  "pulledAt": "2026-05-21T23:11:19.536Z",
+  "pulledAtDisplay": "May 21, 2026, 7:11 PM",
   "total": 30,
   "issues": [
     {
@@ -1009,10 +1009,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-21T23:01:14.735Z",
-    "previousPulledAtDisplay": "May 21, 2026, 7:01 PM",
-    "currentPulledAt": "2026-05-21T23:06:17.136Z",
-    "currentPulledAtDisplay": "May 21, 2026, 7:06 PM",
+    "previousPulledAt": "2026-05-21T23:06:17.136Z",
+    "previousPulledAtDisplay": "May 21, 2026, 7:06 PM",
+    "currentPulledAt": "2026-05-21T23:11:19.536Z",
+    "currentPulledAtDisplay": "May 21, 2026, 7:11 PM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -1020,6 +1020,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-21T23:06:17.136Z",
+      "previousPulledAtDisplay": "May 21, 2026, 7:06 PM",
+      "currentPulledAt": "2026-05-21T23:11:19.536Z",
+      "currentPulledAtDisplay": "May 21, 2026, 7:11 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-21T23:01:14.735Z",
       "previousPulledAtDisplay": "May 21, 2026, 7:01 PM",
@@ -5245,61 +5256,6 @@
         }
       ],
       "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-19T10:17:14.960Z",
-      "previousPulledAtDisplay": "May 19, 2026, 6:17 AM",
-      "currentPulledAt": "2026-05-19T13:31:12.271Z",
-      "currentPulledAtDisplay": "May 19, 2026, 9:31 AM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [
-        {
-          "key": "CORE-14390",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14390",
-          "summary": "New Booking API – Pass is_hotdeal Value in correct location",
-          "changes": [
-            {
-              "field": "status",
-              "label": "Status",
-              "before": "Code Review",
-              "after": "QA Testing (DEV)"
-            },
-            {
-              "field": "assignee",
-              "label": "Assignee",
-              "before": "Raghav Kancherla",
-              "after": "Dewan Kabir"
-            },
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "May 18, 2026, 2:01 PM",
-              "after": "May 19, 2026, 9:30 AM"
-            }
-          ],
-          "type": "Task",
-          "isSubtask": false,
-          "assignee": "Dewan Kabir",
-          "status": "QA Testing (DEV)",
-          "parent": null
-        }
-      ],
-      "statusChanges": [
-        {
-          "key": "CORE-14390",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14390",
-          "summary": "New Booking API – Pass is_hotdeal Value in correct location",
-          "before": "Code Review",
-          "after": "QA Testing (DEV)",
-          "type": "Task",
-          "isSubtask": false,
-          "assignee": "Dewan Kabir",
-          "status": "QA Testing (DEV)",
-          "parent": null
-        }
-      ]
     }
   ],
   "schemaVersionNumber": 1,
