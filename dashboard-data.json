@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-21T21:46:17.872Z",
-  "pulledAtDisplay": "May 21, 2026, 5:46 PM",
+  "pulledAt": "2026-05-21T21:51:19.880Z",
+  "pulledAtDisplay": "May 21, 2026, 5:51 PM",
   "total": 30,
   "issues": [
     {
@@ -1009,10 +1009,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-21T21:41:14.277Z",
-    "previousPulledAtDisplay": "May 21, 2026, 5:41 PM",
-    "currentPulledAt": "2026-05-21T21:46:17.872Z",
-    "currentPulledAtDisplay": "May 21, 2026, 5:46 PM",
+    "previousPulledAt": "2026-05-21T21:46:17.872Z",
+    "previousPulledAtDisplay": "May 21, 2026, 5:46 PM",
+    "currentPulledAt": "2026-05-21T21:51:19.880Z",
+    "currentPulledAtDisplay": "May 21, 2026, 5:51 PM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -1020,6 +1020,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-21T21:46:17.872Z",
+      "previousPulledAtDisplay": "May 21, 2026, 5:46 PM",
+      "currentPulledAt": "2026-05-21T21:51:19.880Z",
+      "currentPulledAtDisplay": "May 21, 2026, 5:51 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-21T21:41:14.277Z",
       "previousPulledAtDisplay": "May 21, 2026, 5:41 PM",
@@ -5385,119 +5396,6 @@
           }
         }
       ],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-18T21:49:51.835Z",
-      "previousPulledAtDisplay": "May 18, 2026, 5:49 PM",
-      "currentPulledAt": "2026-05-18T22:39:26.926Z",
-      "currentPulledAtDisplay": "May 18, 2026, 6:39 PM",
-      "isBaseline": false,
-      "added": [
-        {
-          "key": "CORE-14476",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14476",
-          "summary": "Add two new fields to /get-eligible-promo-codes API",
-          "description": "- API: https://api.gnsvc.com/GolfNowAPI.svc/rest/channel/5151/customers/{{EmailAddress}}/get-eligible-promo-codes?teeTimeRateId=67973919&playerCount=1\n\n- Current Response\n\n[\n{\n\"Code\": \"yfz2zMbj7\",\n\"ExpirationDate\": \"/Date(1805295695000+0000)/\",\n\"IsPromotedCampaign\": false,\n\"ShortDescription\": \"$10 Monthly Tee Time Credit\",\n\"StackableType\": 2\n},\n{\n\"Code\": \"yfz2zMaa6\",\n\"ExpirationDate\": \"/Date(1805295695000+0000)/\",\n\"IsPromotedCampaign\": false,\n\"ShortDescription\": \"$10 Monthly Tee Time Credit\",\n\"StackableType\": 2\n}\n]\n\n- We would like to add two new fields to each object in the array\n\n- CouponId- This is the PromotionId from GNC\n\n- PromoTypeId - This is the Promotion Type from GNC\n\n- This can be NULL\n\n- Expected Response:\n\n[\n{\n\"Code\": \"yfz2zMbj7\",\n\"ExpirationDate\": \"/Date(1805295695000+0000)/\",\n\"IsPromotedCampaign\": false,\n\"ShortDescription\": \"$10 Monthly Tee Time Credit\",\n\"StackableType\": 2,\n\"CouponId\": 6375,\n\"PromoTypeId\": 1\n},\n{\n\"Code\": \"yfz2zMaa6\",\n\"ExpirationDate\": \"/Date(1805295695000+0000)/\",\n\"IsPromotedCampaign\": false,\n\"ShortDescription\": \"$10 Monthly Tee Time Credit\",\n\"StackableType\": 2,\n\"CouponId\": 6375,\n\"PromoTypeId\": 1\n}\n]\n\n- These two fields are already returned on https://api.gnsvc.com/GolfNowAPI.svc/rest/customers/{{EmailAddress}}/loyalty/promoCodes?promoTypeIds=1&activeOnly=true, we just need them to also be returned on the endpoint listed on #1 above\n\n- For reference, these are the two GNC fields where that is controlled",
-          "descriptionHtml": "<ol><li><p>API: <code>https://api.gnsvc.com/GolfNowAPI.svc/rest/channel/5151/customers/{{EmailAddress}}/get-eligible-promo-codes?teeTimeRateId=67973919&amp;playerCount=1</code></p><ol><li><p>Current Response</p><pre><code>[\n    {\n        &quot;Code&quot;: &quot;yfz2zMbj7&quot;,\n        &quot;ExpirationDate&quot;: &quot;/Date(1805295695000+0000)/&quot;,\n        &quot;IsPromotedCampaign&quot;: false,\n        &quot;ShortDescription&quot;: &quot;$10 Monthly Tee Time Credit&quot;,\n        &quot;StackableType&quot;: 2\n    },\n        {\n        &quot;Code&quot;: &quot;yfz2zMaa6&quot;,\n        &quot;ExpirationDate&quot;: &quot;/Date(1805295695000+0000)/&quot;,\n        &quot;IsPromotedCampaign&quot;: false,\n        &quot;ShortDescription&quot;: &quot;$10 Monthly Tee Time Credit&quot;,\n        &quot;StackableType&quot;: 2\n    }\n]</code></pre></li></ol></li><li><p>We would like to add two new fields to each object in the array</p><ol><li><p><code>CouponId</code>- This is the PromotionId from GNC</p></li><li><p><code>PromoTypeId</code> - This is the Promotion Type from GNC</p><ol><li><p>This can be NULL</p></li></ol></li><li><p>Expected Response:</p><pre><code>[\n    {\n        &quot;Code&quot;: &quot;yfz2zMbj7&quot;,\n        &quot;ExpirationDate&quot;: &quot;/Date(1805295695000+0000)/&quot;,\n        &quot;IsPromotedCampaign&quot;: false,\n        &quot;ShortDescription&quot;: &quot;$10 Monthly Tee Time Credit&quot;,\n        &quot;StackableType&quot;: 2,\n        &quot;CouponId&quot;: 6375,\n        &quot;PromoTypeId&quot;: 1\n    },\n        {\n        &quot;Code&quot;: &quot;yfz2zMaa6&quot;,\n        &quot;ExpirationDate&quot;: &quot;/Date(1805295695000+0000)/&quot;,\n        &quot;IsPromotedCampaign&quot;: false,\n        &quot;ShortDescription&quot;: &quot;$10 Monthly Tee Time Credit&quot;,\n        &quot;StackableType&quot;: 2,\n        &quot;CouponId&quot;: 6375,\n        &quot;PromoTypeId&quot;: 1\n    }\n]</code></pre></li><li><p>These two fields are already returned on <code>https://api.gnsvc.com/GolfNowAPI.svc/rest/customers/{{EmailAddress}}/loyalty/promoCodes?promoTypeIds=1&amp;activeOnly=true</code>, we just need them to also be returned on the endpoint listed on #1 above </p></li><li><p>For reference, these are the two GNC fields where that is controlled</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14476/727812-image-20260515-171538.png\" alt=\"image-20260515-171538.png\" loading=\"lazy\"><figcaption>image-20260515-171538.png</figcaption></figure></div></li></ol></li></ol>",
-          "descriptionImageCount": 1,
-          "type": "Story",
-          "isSubtask": false,
-          "status": "QA Testing (DEV)",
-          "priority": "None",
-          "assignee": "Dewan Kabir",
-          "updated": "2026-05-18T18:33:51.615-0400",
-          "updatedDisplay": "May 18, 2026, 6:33 PM",
-          "created": "2026-05-15T13:12:52.763-0400",
-          "createdDisplay": "May 15, 2026, 1:12 PM",
-          "components": [
-            "GolfNow.Services.Reservation",
-            "GolfNowAPI"
-          ],
-          "fixVersions": [
-            "v3001.123.0"
-          ],
-          "resolution": "",
-          "parent": {
-            "key": "APP-7093",
-            "url": "https://golfnow.atlassian.net/browse/APP-7093",
-            "summary": "2026 Checkout Redesign",
-            "description": "",
-            "type": "Epic",
-            "status": "Planning",
-            "priority": "None"
-          }
-        },
-        {
-          "key": "CORE-14482",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14482",
-          "summary": "Code changes.",
-          "description": "",
-          "descriptionHtml": "",
-          "descriptionImageCount": 0,
-          "type": "Developer Task (sub task)",
-          "isSubtask": true,
-          "status": "QA Testing (DEV)",
-          "priority": "None",
-          "assignee": "Dewan Kabir",
-          "updated": "2026-05-18T18:33:23.538-0400",
-          "updatedDisplay": "May 18, 2026, 6:33 PM",
-          "created": "2026-05-18T18:18:10.889-0400",
-          "createdDisplay": "May 18, 2026, 6:18 PM",
-          "components": [
-            "GolfNow.Services.Reservation",
-            "GolfNowAPI"
-          ],
-          "fixVersions": [
-            "v3001.123.0"
-          ],
-          "resolution": "",
-          "parent": {
-            "key": "CORE-14476",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14476",
-            "summary": "Add two new fields to /get-eligible-promo-codes API",
-            "description": "",
-            "type": "Story",
-            "status": "QA Testing (DEV)",
-            "priority": "None"
-          }
-        },
-        {
-          "key": "CORE-14481",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14481",
-          "summary": "Database changes.",
-          "description": "",
-          "descriptionHtml": "",
-          "descriptionImageCount": 0,
-          "type": "Developer Task (sub task)",
-          "isSubtask": true,
-          "status": "QA Testing (DEV)",
-          "priority": "None",
-          "assignee": "Unassigned",
-          "updated": "2026-05-18T18:25:17.265-0400",
-          "updatedDisplay": "May 18, 2026, 6:25 PM",
-          "created": "2026-05-18T18:18:03.543-0400",
-          "createdDisplay": "May 18, 2026, 6:18 PM",
-          "components": [
-            "Database"
-          ],
-          "fixVersions": [
-            "v3001.123.0"
-          ],
-          "resolution": "",
-          "parent": {
-            "key": "CORE-14476",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14476",
-            "summary": "Add two new fields to /get-eligible-promo-codes API",
-            "description": "",
-            "type": "Story",
-            "status": "QA Testing (DEV)",
-            "priority": "None"
-          }
-        }
-      ],
-      "removed": [],
-      "updated": [],
       "statusChanges": []
     }
   ],
