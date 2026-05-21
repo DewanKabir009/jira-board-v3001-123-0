@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-21T21:31:10.194Z",
-  "pulledAtDisplay": "May 21, 2026, 5:31 PM",
+  "pulledAt": "2026-05-21T21:36:12.286Z",
+  "pulledAtDisplay": "May 21, 2026, 5:36 PM",
   "total": 30,
   "issues": [
     {
@@ -1009,10 +1009,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-21T21:26:08.056Z",
-    "previousPulledAtDisplay": "May 21, 2026, 5:26 PM",
-    "currentPulledAt": "2026-05-21T21:31:10.194Z",
-    "currentPulledAtDisplay": "May 21, 2026, 5:31 PM",
+    "previousPulledAt": "2026-05-21T21:31:10.194Z",
+    "previousPulledAtDisplay": "May 21, 2026, 5:31 PM",
+    "currentPulledAt": "2026-05-21T21:36:12.286Z",
+    "currentPulledAtDisplay": "May 21, 2026, 5:36 PM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -1020,6 +1020,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-21T21:31:10.194Z",
+      "previousPulledAtDisplay": "May 21, 2026, 5:31 PM",
+      "currentPulledAt": "2026-05-21T21:36:12.286Z",
+      "currentPulledAtDisplay": "May 21, 2026, 5:36 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-21T21:26:08.056Z",
       "previousPulledAtDisplay": "May 21, 2026, 5:26 PM",
@@ -5488,119 +5499,6 @@
       "removed": [],
       "updated": [],
       "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-18T20:25:16.042Z",
-      "previousPulledAtDisplay": "May 18, 2026, 4:25 PM",
-      "currentPulledAt": "2026-05-18T21:39:46.892Z",
-      "currentPulledAtDisplay": "May 18, 2026, 5:39 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [
-        {
-          "key": "CORE-14480",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14480",
-          "summary": "Upgrade vulnerable and outdated NuGet package(s) identified by Snyk in Logging Service (golf-svc-logging)",
-          "changes": [
-            {
-              "field": "status",
-              "label": "Status",
-              "before": "Code Review",
-              "after": "Pending Deployment (DEV)"
-            },
-            {
-              "field": "assignee",
-              "label": "Assignee",
-              "before": "Yoel Martin Pardo",
-              "after": "Tyler Olechnowicz"
-            },
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "May 18, 2026, 4:20 PM",
-              "after": "May 18, 2026, 4:41 PM"
-            }
-          ],
-          "type": "Security Alert",
-          "isSubtask": false,
-          "assignee": "Dewan Kabir",
-          "status": "QA Testing (DEV)",
-          "parent": null
-        },
-        {
-          "key": "CORE-14469",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14469",
-          "summary": "Code changes for [CORE - 14440]",
-          "changes": [
-            {
-              "field": "status",
-              "label": "Status",
-              "before": "Pending Deployment (DEV)",
-              "after": "QA Testing (DEV)"
-            },
-            {
-              "field": "assignee",
-              "label": "Assignee",
-              "before": "Luis Vallejo Mursuli",
-              "after": "Unassigned"
-            },
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "May 18, 2026, 4:24 PM",
-              "after": "May 18, 2026, 4:35 PM"
-            }
-          ],
-          "type": "Developer Task (sub task)",
-          "isSubtask": true,
-          "assignee": "Dewan Kabir",
-          "status": "QA Testing (DEV)",
-          "parent": {
-            "key": "CORE-14440",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14440",
-            "summary": "Modify New EZL API workflow to Account for Partial Prepaid to GN - 2",
-            "description": "",
-            "type": "Bug",
-            "status": "QA Testing (DEV)",
-            "priority": "P1"
-          }
-        }
-      ],
-      "statusChanges": [
-        {
-          "key": "CORE-14480",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14480",
-          "summary": "Upgrade vulnerable and outdated NuGet package(s) identified by Snyk in Logging Service (golf-svc-logging)",
-          "before": "Code Review",
-          "after": "Pending Deployment (DEV)",
-          "type": "Security Alert",
-          "isSubtask": false,
-          "assignee": "Dewan Kabir",
-          "status": "QA Testing (DEV)",
-          "parent": null
-        },
-        {
-          "key": "CORE-14469",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14469",
-          "summary": "Code changes for [CORE - 14440]",
-          "before": "Pending Deployment (DEV)",
-          "after": "QA Testing (DEV)",
-          "type": "Developer Task (sub task)",
-          "isSubtask": true,
-          "assignee": "Dewan Kabir",
-          "status": "QA Testing (DEV)",
-          "parent": {
-            "key": "CORE-14440",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14440",
-            "summary": "Modify New EZL API workflow to Account for Partial Prepaid to GN - 2",
-            "description": "",
-            "type": "Bug",
-            "status": "QA Testing (DEV)",
-            "priority": "P1"
-          }
-        }
-      ]
     }
   ],
   "schemaVersionNumber": 1,
