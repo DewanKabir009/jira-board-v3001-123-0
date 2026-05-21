@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-21T22:06:26.034Z",
-  "pulledAtDisplay": "May 21, 2026, 6:06 PM",
+  "pulledAt": "2026-05-21T22:11:28.496Z",
+  "pulledAtDisplay": "May 21, 2026, 6:11 PM",
   "total": 30,
   "issues": [
     {
@@ -1009,113 +1009,28 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-21T22:01:23.979Z",
-    "previousPulledAtDisplay": "May 21, 2026, 6:01 PM",
-    "currentPulledAt": "2026-05-21T22:06:26.034Z",
-    "currentPulledAtDisplay": "May 21, 2026, 6:06 PM",
+    "previousPulledAt": "2026-05-21T22:06:26.034Z",
+    "previousPulledAtDisplay": "May 21, 2026, 6:06 PM",
+    "currentPulledAt": "2026-05-21T22:11:28.496Z",
+    "currentPulledAtDisplay": "May 21, 2026, 6:11 PM",
     "isBaseline": false,
     "added": [],
     "removed": [],
-    "updated": [
-      {
-        "key": "CORE-14497",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14497",
-        "summary": "Upgrade Subscription Renewal Reminder Task to .NET 10",
-        "changes": [
-          {
-            "field": "status",
-            "label": "Status",
-            "before": "Code Review",
-            "after": "Pending Deployment (DEV)"
-          },
-          {
-            "field": "updatedDisplay",
-            "label": "Jira updated",
-            "before": "May 21, 2026, 4:28 PM",
-            "after": "May 21, 2026, 6:02 PM"
-          }
-        ],
-        "type": "Story",
-        "isSubtask": false,
-        "assignee": "Yoel Martin Pardo",
-        "status": "Pending Deployment (DEV)",
-        "parent": null
-      },
-      {
-        "key": "CORE-14498",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14498",
-        "summary": "Code Changes",
-        "changes": [
-          {
-            "field": "status",
-            "label": "Status",
-            "before": "Code Review",
-            "after": "Pending Deployment (DEV)"
-          },
-          {
-            "field": "assignee",
-            "label": "Assignee",
-            "before": "Yoel Martin Pardo",
-            "after": "Tyler Olechnowicz"
-          },
-          {
-            "field": "updatedDisplay",
-            "label": "Jira updated",
-            "before": "May 21, 2026, 4:27 PM",
-            "after": "May 21, 2026, 6:02 PM"
-          }
-        ],
-        "type": "Developer Task (sub task)",
-        "isSubtask": true,
-        "assignee": "Tyler Olechnowicz",
-        "status": "Pending Deployment (DEV)",
-        "parent": {
-          "key": "CORE-14497",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14497",
-          "summary": "Upgrade Subscription Renewal Reminder Task to .NET 10",
-          "description": "",
-          "type": "Story",
-          "status": "Pending Deployment (DEV)",
-          "priority": "P2"
-        }
-      }
-    ],
-    "statusChanges": [
-      {
-        "key": "CORE-14497",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14497",
-        "summary": "Upgrade Subscription Renewal Reminder Task to .NET 10",
-        "before": "Code Review",
-        "after": "Pending Deployment (DEV)",
-        "type": "Story",
-        "isSubtask": false,
-        "assignee": "Yoel Martin Pardo",
-        "status": "Pending Deployment (DEV)",
-        "parent": null
-      },
-      {
-        "key": "CORE-14498",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14498",
-        "summary": "Code Changes",
-        "before": "Code Review",
-        "after": "Pending Deployment (DEV)",
-        "type": "Developer Task (sub task)",
-        "isSubtask": true,
-        "assignee": "Tyler Olechnowicz",
-        "status": "Pending Deployment (DEV)",
-        "parent": {
-          "key": "CORE-14497",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14497",
-          "summary": "Upgrade Subscription Renewal Reminder Task to .NET 10",
-          "description": "",
-          "type": "Story",
-          "status": "Pending Deployment (DEV)",
-          "priority": "P2"
-        }
-      }
-    ]
+    "updated": [],
+    "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-21T22:06:26.034Z",
+      "previousPulledAtDisplay": "May 21, 2026, 6:06 PM",
+      "currentPulledAt": "2026-05-21T22:11:28.496Z",
+      "currentPulledAtDisplay": "May 21, 2026, 6:11 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-21T22:01:23.979Z",
       "previousPulledAtDisplay": "May 21, 2026, 6:01 PM",
@@ -5454,36 +5369,6 @@
       "added": [],
       "removed": [],
       "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-18T23:01:48.224Z",
-      "previousPulledAtDisplay": "May 18, 2026, 7:01 PM",
-      "currentPulledAt": "2026-05-18T23:45:09.844Z",
-      "currentPulledAtDisplay": "May 18, 2026, 7:45 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [
-        {
-          "key": "CORE-14440",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14440",
-          "summary": "Modify New EZL API workflow to Account for Partial Prepaid to GN - 2",
-          "changes": [
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "May 18, 2026, 7:01 PM",
-              "after": "May 18, 2026, 7:16 PM"
-            }
-          ],
-          "type": "Bug",
-          "isSubtask": false,
-          "assignee": "Nicole Greer",
-          "status": "QA Testing (DEV)",
-          "parent": null
-        }
-      ],
       "statusChanges": []
     }
   ],
