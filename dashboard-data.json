@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-21T14:12:48.122Z",
-  "pulledAtDisplay": "May 21, 2026, 10:12 AM",
+  "pulledAt": "2026-05-21T14:27:09.503Z",
+  "pulledAtDisplay": "May 21, 2026, 10:27 AM",
   "total": 28,
   "issues": [
     {
@@ -939,61 +939,28 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-21T14:04:06.329Z",
-    "previousPulledAtDisplay": "May 21, 2026, 10:04 AM",
-    "currentPulledAt": "2026-05-21T14:12:48.122Z",
-    "currentPulledAtDisplay": "May 21, 2026, 10:12 AM",
+    "previousPulledAt": "2026-05-21T14:12:48.122Z",
+    "previousPulledAtDisplay": "May 21, 2026, 10:12 AM",
+    "currentPulledAt": "2026-05-21T14:27:09.503Z",
+    "currentPulledAtDisplay": "May 21, 2026, 10:27 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
-    "updated": [
-      {
-        "key": "CORE-14487",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14487",
-        "summary": "[Commerce] Facility Closure / Update casing Tee Times to Fail in the Add to Cart process",
-        "changes": [
-          {
-            "field": "status",
-            "label": "Status",
-            "before": "Code Review",
-            "after": "Pending Deployment (DEV)"
-          },
-          {
-            "field": "assignee",
-            "label": "Assignee",
-            "before": "Tyler Olechnowicz",
-            "after": "Andrew Horvat"
-          },
-          {
-            "field": "updatedDisplay",
-            "label": "Jira updated",
-            "before": "May 21, 2026, 8:45 AM",
-            "after": "May 21, 2026, 10:05 AM"
-          }
-        ],
-        "type": "Bug",
-        "isSubtask": false,
-        "assignee": "Andrew Horvat",
-        "status": "Pending Deployment (DEV)",
-        "parent": null
-      }
-    ],
-    "statusChanges": [
-      {
-        "key": "CORE-14487",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14487",
-        "summary": "[Commerce] Facility Closure / Update casing Tee Times to Fail in the Add to Cart process",
-        "before": "Code Review",
-        "after": "Pending Deployment (DEV)",
-        "type": "Bug",
-        "isSubtask": false,
-        "assignee": "Andrew Horvat",
-        "status": "Pending Deployment (DEV)",
-        "parent": null
-      }
-    ]
+    "updated": [],
+    "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-21T14:12:48.122Z",
+      "previousPulledAtDisplay": "May 21, 2026, 10:12 AM",
+      "currentPulledAt": "2026-05-21T14:27:09.503Z",
+      "currentPulledAtDisplay": "May 21, 2026, 10:27 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-21T14:04:06.329Z",
       "previousPulledAtDisplay": "May 21, 2026, 10:04 AM",
@@ -5311,17 +5278,6 @@
       "previousPulledAtDisplay": "May 16, 2026, 3:32 PM",
       "currentPulledAt": "2026-05-16T19:37:24.763Z",
       "currentPulledAtDisplay": "May 16, 2026, 3:37 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-16T18:17:45.520Z",
-      "previousPulledAtDisplay": "May 16, 2026, 2:17 PM",
-      "currentPulledAt": "2026-05-16T19:32:23.062Z",
-      "currentPulledAtDisplay": "May 16, 2026, 3:32 PM",
       "isBaseline": false,
       "added": [],
       "removed": [],
