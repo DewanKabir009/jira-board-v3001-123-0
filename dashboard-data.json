@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-22T04:06:46.244Z",
-  "pulledAtDisplay": "May 22, 2026, 12:06 AM",
+  "pulledAt": "2026-05-22T04:11:48.628Z",
+  "pulledAtDisplay": "May 22, 2026, 12:11 AM",
   "total": 30,
   "issues": [
     {
@@ -1009,10 +1009,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-22T04:01:43.481Z",
-    "previousPulledAtDisplay": "May 22, 2026, 12:01 AM",
-    "currentPulledAt": "2026-05-22T04:06:46.244Z",
-    "currentPulledAtDisplay": "May 22, 2026, 12:06 AM",
+    "previousPulledAt": "2026-05-22T04:06:46.244Z",
+    "previousPulledAtDisplay": "May 22, 2026, 12:06 AM",
+    "currentPulledAt": "2026-05-22T04:11:48.628Z",
+    "currentPulledAtDisplay": "May 22, 2026, 12:11 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -1020,6 +1020,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-22T04:06:46.244Z",
+      "previousPulledAtDisplay": "May 22, 2026, 12:06 AM",
+      "currentPulledAt": "2026-05-22T04:11:48.628Z",
+      "currentPulledAtDisplay": "May 22, 2026, 12:11 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-22T04:01:43.481Z",
       "previousPulledAtDisplay": "May 22, 2026, 12:01 AM",
@@ -3866,205 +3877,6 @@
             "type": "Epic",
             "status": "Planning",
             "priority": "None"
-          }
-        }
-      ]
-    },
-    {
-      "previousPulledAt": "2026-05-21T11:54:53.580Z",
-      "previousPulledAtDisplay": "May 21, 2026, 7:54 AM",
-      "currentPulledAt": "2026-05-21T14:04:06.329Z",
-      "currentPulledAtDisplay": "May 21, 2026, 10:04 AM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [
-        {
-          "key": "CORE-14428",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14428",
-          "summary": "Create Home Course ProductBenefit",
-          "changes": [
-            {
-              "field": "status",
-              "label": "Status",
-              "before": "Pending Deployment (DEV)",
-              "after": "QA Testing (DEV)"
-            },
-            {
-              "field": "assignee",
-              "label": "Assignee",
-              "before": "Luis Vallejo Mursuli",
-              "after": "Dewan Kabir"
-            },
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "May 20, 2026, 10:35 AM",
-              "after": "May 21, 2026, 9:09 AM"
-            }
-          ],
-          "type": "Story",
-          "isSubtask": false,
-          "assignee": "Dewan Kabir",
-          "status": "QA Testing (DEV)",
-          "parent": {
-            "key": "CORE-14301",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14301",
-            "summary": "GolfPass \"Home Course\": Phase I",
-            "description": "",
-            "type": "Epic",
-            "status": "Planning",
-            "priority": "None"
-          }
-        },
-        {
-          "key": "CORE-14487",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14487",
-          "summary": "[Commerce] Facility Closure / Update casing Tee Times to Fail in the Add to Cart process",
-          "changes": [
-            {
-              "field": "status",
-              "label": "Status",
-              "before": "Pre Planning",
-              "after": "Code Review"
-            },
-            {
-              "field": "priority",
-              "label": "Priority",
-              "before": "None",
-              "after": "P1"
-            },
-            {
-              "field": "assignee",
-              "label": "Assignee",
-              "before": "Andrew Horvat",
-              "after": "Tyler Olechnowicz"
-            },
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "May 20, 2026, 11:55 AM",
-              "after": "May 21, 2026, 8:45 AM"
-            },
-            {
-              "field": "components",
-              "label": "Components",
-              "before": "None",
-              "after": "Database"
-            },
-            {
-              "field": "description",
-              "label": "Description",
-              "before": "None",
-              "after": "When adding Tee Times to cart when the course has an update (such as reducing to 9 holes from 18 holes) it fails with an error message st..."
-            }
-          ],
-          "type": "Bug",
-          "isSubtask": false,
-          "assignee": "Dewan Kabir",
-          "status": "QA Testing (DEV)",
-          "parent": {
-            "key": "CORE-13172",
-            "url": "https://golfnow.atlassian.net/browse/CORE-13172",
-            "summary": "Commerce Proxy API",
-            "description": "",
-            "type": "Epic",
-            "status": "Planning",
-            "priority": "None"
-          }
-        },
-        {
-          "key": "CORE-14485",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14485",
-          "summary": "gn-svc-commerceproxy changes",
-          "changes": [
-            {
-              "field": "status",
-              "label": "Status",
-              "before": "Code Review",
-              "after": "Development"
-            },
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "May 19, 2026, 10:00 AM",
-              "after": "May 21, 2026, 8:23 AM"
-            }
-          ],
-          "type": "Developer Task (sub task)",
-          "isSubtask": true,
-          "assignee": "Dewan Kabir",
-          "status": "QA Testing (DEV)",
-          "parent": {
-            "key": "CORE-14397",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14397",
-            "summary": "CLONE - Update to allow No Payment Methods when $0 due now for BE",
-            "description": "",
-            "type": "Story",
-            "status": "QA Testing (DEV)",
-            "priority": "P1"
-          }
-        }
-      ],
-      "statusChanges": [
-        {
-          "key": "CORE-14428",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14428",
-          "summary": "Create Home Course ProductBenefit",
-          "before": "Pending Deployment (DEV)",
-          "after": "QA Testing (DEV)",
-          "type": "Story",
-          "isSubtask": false,
-          "assignee": "Dewan Kabir",
-          "status": "QA Testing (DEV)",
-          "parent": {
-            "key": "CORE-14301",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14301",
-            "summary": "GolfPass \"Home Course\": Phase I",
-            "description": "",
-            "type": "Epic",
-            "status": "Planning",
-            "priority": "None"
-          }
-        },
-        {
-          "key": "CORE-14487",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14487",
-          "summary": "[Commerce] Facility Closure / Update casing Tee Times to Fail in the Add to Cart process",
-          "before": "Pre Planning",
-          "after": "Code Review",
-          "type": "Bug",
-          "isSubtask": false,
-          "assignee": "Dewan Kabir",
-          "status": "QA Testing (DEV)",
-          "parent": {
-            "key": "CORE-13172",
-            "url": "https://golfnow.atlassian.net/browse/CORE-13172",
-            "summary": "Commerce Proxy API",
-            "description": "",
-            "type": "Epic",
-            "status": "Planning",
-            "priority": "None"
-          }
-        },
-        {
-          "key": "CORE-14485",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14485",
-          "summary": "gn-svc-commerceproxy changes",
-          "before": "Code Review",
-          "after": "Development",
-          "type": "Developer Task (sub task)",
-          "isSubtask": true,
-          "assignee": "Dewan Kabir",
-          "status": "QA Testing (DEV)",
-          "parent": {
-            "key": "CORE-14397",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14397",
-            "summary": "CLONE - Update to allow No Payment Methods when $0 due now for BE",
-            "description": "",
-            "type": "Story",
-            "status": "QA Testing (DEV)",
-            "priority": "P1"
           }
         }
       ]
