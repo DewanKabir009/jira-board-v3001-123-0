@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-22T02:10:50.567Z",
-  "pulledAtDisplay": "May 21, 2026, 10:10 PM",
+  "pulledAt": "2026-05-22T02:15:52.800Z",
+  "pulledAtDisplay": "May 21, 2026, 10:15 PM",
   "total": 30,
   "issues": [
     {
@@ -1009,10 +1009,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-22T02:05:48.251Z",
-    "previousPulledAtDisplay": "May 21, 2026, 10:05 PM",
-    "currentPulledAt": "2026-05-22T02:10:50.567Z",
-    "currentPulledAtDisplay": "May 21, 2026, 10:10 PM",
+    "previousPulledAt": "2026-05-22T02:10:50.567Z",
+    "previousPulledAtDisplay": "May 21, 2026, 10:10 PM",
+    "currentPulledAt": "2026-05-22T02:15:52.800Z",
+    "currentPulledAtDisplay": "May 21, 2026, 10:15 PM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -1020,6 +1020,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-22T02:10:50.567Z",
+      "previousPulledAtDisplay": "May 21, 2026, 10:10 PM",
+      "currentPulledAt": "2026-05-22T02:15:52.800Z",
+      "currentPulledAtDisplay": "May 21, 2026, 10:15 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-22T02:05:48.251Z",
       "previousPulledAtDisplay": "May 21, 2026, 10:05 PM",
@@ -4086,43 +4097,6 @@
       "currentPulledAtDisplay": "May 20, 2026, 3:45 PM",
       "isBaseline": false,
       "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-20T17:38:32.618Z",
-      "previousPulledAtDisplay": "May 20, 2026, 1:38 PM",
-      "currentPulledAt": "2026-05-20T19:40:15.781Z",
-      "currentPulledAtDisplay": "May 20, 2026, 3:40 PM",
-      "isBaseline": false,
-      "added": [
-        {
-          "key": "CORE-14492",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14492",
-          "summary": "Upgrade vulnerable and outdated NuGet package(s) identified by Snyk in Spark Task (golf-task-spark)",
-          "description": "A Snyk alert identified one or more vulnerable and/or outdated NuGet package dependencies in the Spark Task repository (`golf-task-spark`).\n\nThis work includes:\n\n- Reviewing impacted and outdated package version(s)\n\n- Upgrading vulnerable and outdated NuGet package(s) to supported versions\n\n- Validating build and runtime compatibility\n\n- Performing regression testing as needed",
-          "descriptionHtml": "<p>A Snyk alert identified one or more vulnerable and/or outdated NuGet package dependencies in the Spark Task repository (`golf-task-spark`).</p><p>This work includes:</p><ul><li><p>Reviewing impacted and outdated package version(s)</p></li><li><p>Upgrading vulnerable and outdated NuGet package(s) to supported versions</p></li><li><p>Validating build and runtime compatibility</p></li><li><p>Performing regression testing as needed</p></li></ul><p><br></p>",
-          "descriptionImageCount": 0,
-          "type": "Security Alert",
-          "isSubtask": false,
-          "status": "QA Testing (DEV)",
-          "priority": "P2",
-          "assignee": "Dewan Kabir",
-          "updated": "2026-05-20T15:36:10.620-0400",
-          "updatedDisplay": "May 20, 2026, 3:36 PM",
-          "created": "2026-05-20T14:54:58.547-0400",
-          "createdDisplay": "May 20, 2026, 2:54 PM",
-          "components": [
-            "Golf.Task.Spark.GolfCourse.Sync"
-          ],
-          "fixVersions": [
-            "v3001.123.0"
-          ],
-          "resolution": "",
-          "parent": null
-        }
-      ],
       "removed": [],
       "updated": [],
       "statusChanges": []
