@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-22T07:05:15.019Z",
-  "pulledAtDisplay": "May 22, 2026, 3:05 AM",
+  "pulledAt": "2026-05-22T07:10:17.041Z",
+  "pulledAtDisplay": "May 22, 2026, 3:10 AM",
   "total": 30,
   "issues": [
     {
@@ -1009,10 +1009,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-22T07:00:13.051Z",
-    "previousPulledAtDisplay": "May 22, 2026, 3:00 AM",
-    "currentPulledAt": "2026-05-22T07:05:15.019Z",
-    "currentPulledAtDisplay": "May 22, 2026, 3:05 AM",
+    "previousPulledAt": "2026-05-22T07:05:15.019Z",
+    "previousPulledAtDisplay": "May 22, 2026, 3:05 AM",
+    "currentPulledAt": "2026-05-22T07:10:17.041Z",
+    "currentPulledAtDisplay": "May 22, 2026, 3:10 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -1020,6 +1020,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-22T07:05:15.019Z",
+      "previousPulledAtDisplay": "May 22, 2026, 3:05 AM",
+      "currentPulledAt": "2026-05-22T07:10:17.041Z",
+      "currentPulledAtDisplay": "May 22, 2026, 3:10 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-22T07:00:13.051Z",
       "previousPulledAtDisplay": "May 22, 2026, 3:00 AM",
@@ -3443,77 +3454,6 @@
       "removed": [],
       "updated": [],
       "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-21T16:12:58.776Z",
-      "previousPulledAtDisplay": "May 21, 2026, 12:12 PM",
-      "currentPulledAt": "2026-05-21T16:18:00.849Z",
-      "currentPulledAtDisplay": "May 21, 2026, 12:18 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [
-        {
-          "key": "CORE-14484",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14484",
-          "summary": "gn-main changes",
-          "changes": [
-            {
-              "field": "status",
-              "label": "Status",
-              "before": "Pending Deployment (DEV)",
-              "after": "QA Testing (DEV)"
-            },
-            {
-              "field": "assignee",
-              "label": "Assignee",
-              "before": "Andrew Horvat",
-              "after": "Unassigned"
-            },
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "May 21, 2026, 12:03 PM",
-              "after": "May 21, 2026, 12:14 PM"
-            }
-          ],
-          "type": "Developer Task (sub task)",
-          "isSubtask": true,
-          "assignee": "Dewan Kabir",
-          "status": "QA Testing (DEV)",
-          "parent": {
-            "key": "CORE-14397",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14397",
-            "summary": "CLONE - Update to allow No Payment Methods when $0 due now for BE",
-            "description": "",
-            "type": "Story",
-            "status": "QA Testing (DEV)",
-            "priority": "P1"
-          }
-        }
-      ],
-      "statusChanges": [
-        {
-          "key": "CORE-14484",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14484",
-          "summary": "gn-main changes",
-          "before": "Pending Deployment (DEV)",
-          "after": "QA Testing (DEV)",
-          "type": "Developer Task (sub task)",
-          "isSubtask": true,
-          "assignee": "Dewan Kabir",
-          "status": "QA Testing (DEV)",
-          "parent": {
-            "key": "CORE-14397",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14397",
-            "summary": "CLONE - Update to allow No Payment Methods when $0 due now for BE",
-            "description": "",
-            "type": "Story",
-            "status": "QA Testing (DEV)",
-            "priority": "P1"
-          }
-        }
-      ]
     }
   ],
   "schemaVersionNumber": 1,
