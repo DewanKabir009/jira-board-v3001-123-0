@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-22T11:22:54.170Z",
-  "pulledAtDisplay": "May 22, 2026, 7:22 AM",
+  "pulledAt": "2026-05-22T11:27:56.046Z",
+  "pulledAtDisplay": "May 22, 2026, 7:27 AM",
   "total": 30,
   "issues": [
     {
@@ -1009,10 +1009,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-22T11:17:52.129Z",
-    "previousPulledAtDisplay": "May 22, 2026, 7:17 AM",
-    "currentPulledAt": "2026-05-22T11:22:54.170Z",
-    "currentPulledAtDisplay": "May 22, 2026, 7:22 AM",
+    "previousPulledAt": "2026-05-22T11:22:54.170Z",
+    "previousPulledAtDisplay": "May 22, 2026, 7:22 AM",
+    "currentPulledAt": "2026-05-22T11:27:56.046Z",
+    "currentPulledAtDisplay": "May 22, 2026, 7:27 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -1020,6 +1020,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-22T11:22:54.170Z",
+      "previousPulledAtDisplay": "May 22, 2026, 7:22 AM",
+      "currentPulledAt": "2026-05-22T11:27:56.046Z",
+      "currentPulledAtDisplay": "May 22, 2026, 7:27 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-22T11:17:52.129Z",
       "previousPulledAtDisplay": "May 22, 2026, 7:17 AM",
@@ -3114,78 +3125,6 @@
           }
         }
       ]
-    },
-    {
-      "previousPulledAt": "2026-05-21T20:18:41.727Z",
-      "previousPulledAtDisplay": "May 21, 2026, 4:18 PM",
-      "currentPulledAt": "2026-05-21T20:23:43.609Z",
-      "currentPulledAtDisplay": "May 21, 2026, 4:23 PM",
-      "isBaseline": false,
-      "added": [
-        {
-          "key": "CORE-14498",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14498",
-          "summary": "Code Changes",
-          "description": "",
-          "descriptionHtml": "",
-          "descriptionImageCount": 0,
-          "type": "Developer Task (sub task)",
-          "isSubtask": true,
-          "status": "Pending Deployment (DEV)",
-          "priority": "P2",
-          "assignee": "Tyler Olechnowicz",
-          "assigneeAccountId": "5d2396c1ea26c40c2043fc92",
-          "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5d2396c1ea26c40c2043fc92/1647fb84-acea-4c3f-b1e8-9a79aa120f8f/32",
-          "updated": "2026-05-21T16:23:03.573-0400",
-          "updatedDisplay": "May 21, 2026, 4:23 PM",
-          "created": "2026-05-21T16:22:04.079-0400",
-          "createdDisplay": "May 21, 2026, 4:22 PM",
-          "components": [],
-          "fixVersions": [
-            "v3001.123.0"
-          ],
-          "resolution": "",
-          "parent": {
-            "key": "CORE-14497",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14497",
-            "summary": "Upgrade Subscription Renewal Reminder Task to .NET 10",
-            "description": "",
-            "type": "Story",
-            "status": "Pending Deployment (DEV)",
-            "priority": "P2"
-          }
-        },
-        {
-          "key": "CORE-14497",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14497",
-          "summary": "Upgrade Subscription Renewal Reminder Task to .NET 10",
-          "description": "Upgraded the Subscription Renewal Reminder Task to .NET 10 and modernized the application startup, configuration, and dependency management patterns.\n\nChanges include:\n\n- Migrated the project to SDK-style .NET 10\n\n- Replaced App.config with appsettings.json\n\n- Added support for runtime secret substitution and user secrets\n\n- Introduced Host.CreateDefaultBuilder and dependency injection\n\n- Configured WCF connected service clients through code instead of configuration files\n\n- Added centralized application logging abstraction and improved console logging behavior\n\n- Updated service registrations and application configuration handling\n\n- Removed legacy packages folder usage and aligned the project with modern PackageReference conventions\n\n- Cleaned up project structure and modernized startup/configuration patterns",
-          "descriptionHtml": "<p>Upgraded the Subscription Renewal Reminder Task to .NET 10 and modernized the application startup, configuration, and dependency management patterns.</p><p>Changes include:</p><ul><li><p>Migrated the project to SDK-style .NET 10</p></li><li><p>Replaced <code>App.config</code> with <code>appsettings.json</code></p></li><li><p>Added support for runtime secret substitution and user secrets</p></li><li><p>Introduced <code>Host.CreateDefaultBuilder</code> and dependency injection</p></li><li><p>Configured WCF connected service clients through code instead of configuration files</p></li><li><p>Added centralized application logging abstraction and improved console logging behavior</p></li><li><p>Updated service registrations and application configuration handling</p></li><li><p>Removed legacy <code>packages</code> folder usage and aligned the project with modern <code>PackageReference</code> conventions</p></li><li><p>Cleaned up project structure and modernized startup/configuration patterns</p></li></ul>",
-          "descriptionImageCount": 0,
-          "type": "Story",
-          "isSubtask": false,
-          "status": "Pending Deployment (DEV)",
-          "priority": "P2",
-          "assignee": "Yoel Martin Pardo",
-          "assigneeAccountId": "5d2396c1ea26c40c2043fc92",
-          "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5d2396c1ea26c40c2043fc92/1647fb84-acea-4c3f-b1e8-9a79aa120f8f/32",
-          "updated": "2026-05-21T16:20:57.889-0400",
-          "updatedDisplay": "May 21, 2026, 4:20 PM",
-          "created": "2026-05-21T16:18:58.570-0400",
-          "createdDisplay": "May 21, 2026, 4:18 PM",
-          "components": [
-            "GolfNow.SubscriptionRenewalReminder"
-          ],
-          "fixVersions": [
-            "v3001.123.0"
-          ],
-          "resolution": "",
-          "parent": null
-        }
-      ],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
     }
   ],
   "schemaVersionNumber": 1,
