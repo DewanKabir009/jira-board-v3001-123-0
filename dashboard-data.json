@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-22T06:45:07.178Z",
-  "pulledAtDisplay": "May 22, 2026, 2:45 AM",
+  "pulledAt": "2026-05-22T06:50:09.153Z",
+  "pulledAtDisplay": "May 22, 2026, 2:50 AM",
   "total": 30,
   "issues": [
     {
@@ -1009,10 +1009,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-22T06:40:04.947Z",
-    "previousPulledAtDisplay": "May 22, 2026, 2:40 AM",
-    "currentPulledAt": "2026-05-22T06:45:07.178Z",
-    "currentPulledAtDisplay": "May 22, 2026, 2:45 AM",
+    "previousPulledAt": "2026-05-22T06:45:07.178Z",
+    "previousPulledAtDisplay": "May 22, 2026, 2:45 AM",
+    "currentPulledAt": "2026-05-22T06:50:09.153Z",
+    "currentPulledAtDisplay": "May 22, 2026, 2:50 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -1020,6 +1020,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-22T06:45:07.178Z",
+      "previousPulledAtDisplay": "May 22, 2026, 2:45 AM",
+      "currentPulledAt": "2026-05-22T06:50:09.153Z",
+      "currentPulledAtDisplay": "May 22, 2026, 2:50 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-22T06:40:04.947Z",
       "previousPulledAtDisplay": "May 22, 2026, 2:40 AM",
@@ -3746,77 +3757,6 @@
             "type": "Story",
             "status": "QA Testing (DEV)",
             "priority": "P1"
-          }
-        }
-      ]
-    },
-    {
-      "previousPulledAt": "2026-05-21T15:52:49.279Z",
-      "previousPulledAtDisplay": "May 21, 2026, 11:52 AM",
-      "currentPulledAt": "2026-05-21T15:57:51.356Z",
-      "currentPulledAtDisplay": "May 21, 2026, 11:57 AM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [
-        {
-          "key": "CORE-14481",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14481",
-          "summary": "Database changes.",
-          "changes": [
-            {
-              "field": "status",
-              "label": "Status",
-              "before": "Pending Deployment (DEV)",
-              "after": "QA Testing (DEV)"
-            },
-            {
-              "field": "assignee",
-              "label": "Assignee",
-              "before": "Yoel Martin Pardo",
-              "after": "Unassigned"
-            },
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "May 19, 2026, 9:44 AM",
-              "after": "May 21, 2026, 11:56 AM"
-            }
-          ],
-          "type": "Developer Task (sub task)",
-          "isSubtask": true,
-          "assignee": "Unassigned",
-          "status": "QA Testing (DEV)",
-          "parent": {
-            "key": "CORE-14476",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14476",
-            "summary": "Add two new fields to /get-eligible-promo-codes API",
-            "description": "",
-            "type": "Story",
-            "status": "QA Testing (DEV)",
-            "priority": "None"
-          }
-        }
-      ],
-      "statusChanges": [
-        {
-          "key": "CORE-14481",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14481",
-          "summary": "Database changes.",
-          "before": "Pending Deployment (DEV)",
-          "after": "QA Testing (DEV)",
-          "type": "Developer Task (sub task)",
-          "isSubtask": true,
-          "assignee": "Unassigned",
-          "status": "QA Testing (DEV)",
-          "parent": {
-            "key": "CORE-14476",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14476",
-            "summary": "Add two new fields to /get-eligible-promo-codes API",
-            "description": "",
-            "type": "Story",
-            "status": "QA Testing (DEV)",
-            "priority": "None"
           }
         }
       ]
