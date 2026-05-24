@@ -11,6 +11,7 @@ const dashboardUrl = "https://dewankabir009.github.io/jira-board-v3001-123-0/";
 const defaultAssigneeDispatchEndpoint = "https://jira-board-assignee-bridge.dfkabir253.workers.dev/assign";
 const assigneeDispatchEndpoint = process.env.ASSIGNEE_DISPATCH_ENDPOINT || defaultAssigneeDispatchEndpoint;
 const mediaAssetBasePath = "assets/jira-media";
+const issueCommentLimit = 25;
 const assigneeOptions = [
   "Dewan Kabir",
   "Nicole Greer",
@@ -182,6 +183,14 @@ function isImageAttachment(attachment) {
   return /^image\//i.test(attachment?.mimeType || "");
 }
 
+function isVideoAttachment(attachment) {
+  return /^video\//i.test(attachment?.mimeType || "");
+}
+
+function isDescriptionMediaAttachment(attachment) {
+  return isImageAttachment(attachment) || isVideoAttachment(attachment);
+}
+
 function collectDescriptionMedia(node, output = []) {
   if (!node) {
     return output;
@@ -236,6 +245,7 @@ function assetForAttachment(issueKey, attachment) {
     id: attachment.id,
     filename: attachment.filename || filename,
     mimeType: attachment.mimeType || "",
+    mediaType: isVideoAttachment(attachment) ? "video" : "image",
     contentUrl: attachment.content,
     relativePath: assetRelativePath,
     filePath: path.join(workspace, assetRelativePath),
@@ -260,7 +270,7 @@ async function downloadMediaAsset(asset) {
   });
 
   if (!response.ok) {
-    console.warn(`Could not download Jira description image ${asset.filename}: HTTP ${response.status}`);
+    console.warn(`Could not download Jira description media ${asset.filename}: HTTP ${response.status}`);
     return false;
   }
 
@@ -271,15 +281,15 @@ async function downloadMediaAsset(asset) {
 
 function buildDescriptionMedia(description, attachments, issueKey) {
   const mediaNodes = collectDescriptionMedia(description);
-  const imageAttachments = (attachments || []).filter(isImageAttachment);
-  const attachmentQueues = buildAttachmentQueues(imageAttachments);
+  const mediaAttachments = (attachments || []).filter(isDescriptionMediaAttachment);
+  const attachmentQueues = buildAttachmentQueues(mediaAttachments);
   const usedAttachmentIds = new Set();
 
   return mediaNodes.map((media, index) => {
-    const attachment = attachmentForMedia(media, attachmentQueues, imageAttachments, index);
+    const attachment = attachmentForMedia(media, attachmentQueues, mediaAttachments, index);
     if (!attachment || usedAttachmentIds.has(attachment.id)) {
       return {
-        alt: media.alt || "Jira description image",
+        alt: media.alt || "Jira description media",
         width: media.width || null,
         height: media.height || null,
         missing: true,
@@ -289,7 +299,7 @@ function buildDescriptionMedia(description, attachments, issueKey) {
     usedAttachmentIds.add(attachment.id);
     return {
       ...assetForAttachment(issueKey, attachment),
-      alt: media.alt || attachment.filename || "Jira description image",
+      alt: media.alt || attachment.filename || "Jira description media",
       width: media.width || null,
       height: media.height || null,
       missing: false,
@@ -335,10 +345,17 @@ function renderAdfChildren(node, context) {
 
 function renderMediaNode(media, context) {
   const asset = context.mediaAssets[context.mediaIndex++] || {};
-  const alt = asset.alt || media.attrs?.alt || "Jira description image";
+  const alt = asset.alt || media.attrs?.alt || "Jira description media";
 
   if (!asset.relativePath || asset.missing) {
     return `<div class="description-media-missing">${escapeHtml(alt)} could not be embedded.</div>`;
+  }
+
+  if (asset.mediaType === "video") {
+    return `<figure class="description-media description-video">` +
+      `<video src="${escapeHtml(asset.relativePath)}" controls preload="metadata"></video>` +
+      `<figcaption>${escapeHtml(alt)}</figcaption>` +
+    `</figure>`;
   }
 
   return `<figure class="description-media">` +
@@ -439,7 +456,9 @@ async function buildRichDescription(issueKey, description, attachments) {
   return {
     text: descriptionToText(description),
     html: descriptionToHtml(description, availableMediaAssets),
-    imageCount: availableMediaAssets.filter((asset) => !asset.missing && asset.relativePath).length,
+    imageCount: availableMediaAssets.filter((asset) => asset.mediaType !== "video" && !asset.missing && asset.relativePath).length,
+    videoCount: availableMediaAssets.filter((asset) => asset.mediaType === "video" && !asset.missing && asset.relativePath).length,
+    mediaCount: availableMediaAssets.filter((asset) => !asset.missing && asset.relativePath).length,
   };
 }
 
@@ -528,8 +547,69 @@ async function fetchIssues() {
   return { jql, issues };
 }
 
+async function jiraJson(apiPath, options = {}) {
+  const response = await fetch(`https://api.atlassian.com/ex/jira/${cloudId}/rest/api/3${apiPath}`, {
+    ...options,
+    headers: {
+      Authorization: authHeader,
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      ...(options.headers || {}),
+    },
+  });
+  const text = await response.text();
+
+  if (!response.ok) {
+    throw new Error(`Jira API failed: HTTP ${response.status} ${response.statusText}\n${text}`);
+  }
+
+  return text ? JSON.parse(text) : null;
+}
+
+async function fetchIssueComments(issueKey) {
+  const comments = [];
+  let startAt = 0;
+  let total = 0;
+
+  do {
+    const payload = await jiraJson(
+      `/issue/${encodeURIComponent(issueKey)}/comment?maxResults=100&startAt=${startAt}&expand=renderedBody`,
+    );
+    comments.push(...(payload.comments || []));
+    total = Number(payload.total || comments.length);
+    startAt += Number(payload.maxResults || 100);
+  } while (comments.length < total);
+
+  return comments;
+}
+
 function avatarUrlForJiraUser(user) {
   return user?.avatarUrls?.["32x32"] || user?.avatarUrls?.["48x48"] || user?.avatarUrls?.["24x24"] || user?.avatarUrls?.["16x16"] || "";
+}
+
+function serializeIssueComments(comments) {
+  const sortedComments = [...(comments || [])].sort((left, right) => {
+    return new Date(left.created || 0).getTime() - new Date(right.created || 0).getTime();
+  });
+
+  return sortedComments.slice(-issueCommentLimit).map((comment) => {
+    const author = comment.author || {};
+    const bodyText = descriptionToText(comment.body);
+    const bodyHtml = descriptionToHtml(comment.body);
+
+    return {
+      id: comment.id || "",
+      author: author.displayName || author.name || "Unknown",
+      authorAccountId: author.accountId || "",
+      authorAvatarUrl: avatarUrlForJiraUser(author),
+      created: comment.created || "",
+      createdDisplay: formatDate(comment.created),
+      updated: comment.updated || "",
+      updatedDisplay: comment.updated && comment.updated !== comment.created ? formatDate(comment.updated) : "",
+      body: bodyText,
+      bodyHtml,
+    };
+  });
 }
 
 function normalizeJiraUserField(value) {
@@ -553,8 +633,10 @@ async function normalizeIssue(issue) {
   const issueType = issueFields.issuetype || {};
   const parentFields = issueFields.parent?.fields || {};
   const richDescription = await buildRichDescription(issue.key, issueFields.description, issueFields.attachment || []);
+  const issueComments = await fetchIssueComments(issue.key);
   const parentDescription = descriptionToText(parentFields.description);
   const assignedDeveloper = normalizeJiraUserField(issueFields.customfield_11800);
+  const serializedComments = serializeIssueComments(issueComments);
 
   return {
     key: issue.key,
@@ -563,6 +645,10 @@ async function normalizeIssue(issue) {
     description: richDescription.text,
     descriptionHtml: richDescription.html,
     descriptionImageCount: richDescription.imageCount,
+    descriptionVideoCount: richDescription.videoCount,
+    descriptionMediaCount: richDescription.mediaCount,
+    commentCount: issueComments.length,
+    comments: serializedComments,
     type: issueType.name || "",
     isSubtask: Boolean(issueType.subtask),
     status: issueFields.status?.name || "",
@@ -1846,13 +1932,18 @@ function renderHtml(data) {
       padding: 8px;
     }
 
-    .description-media img {
+    .description-media img,
+    .description-media video {
       display: block;
       width: 100%;
       max-height: 560px;
       object-fit: contain;
       border-radius: 6px;
       background: #f7f9fc;
+    }
+
+    .description-media video {
+      background: #071827;
     }
 
     .description-media figcaption,
@@ -2023,7 +2114,8 @@ function renderHtml(data) {
       background: #f8fafc;
     }
 
-    .description-modal-body .description-media img {
+    .description-modal-body .description-media img,
+    .description-modal-body .description-media video {
       max-height: min(72vh, 760px);
       border-radius: 6px;
       background: #fff;
@@ -3236,6 +3328,10 @@ function renderHtml(data) {
                 description: issue.parent && issue.parent.description ? issue.parent.description : "",
                 descriptionHtml: "",
                 descriptionImageCount: 0,
+                descriptionVideoCount: 0,
+                descriptionMediaCount: 0,
+                commentCount: 0,
+                comments: [],
                 isSubtask: false
               },
               subtasks: [],
@@ -3423,7 +3519,7 @@ function renderHtml(data) {
       function hasDescription(issue) {
         return text(issue.description).trim().length > 0 ||
           text(issue.descriptionHtml).trim().length > 0 ||
-          Number(issue.descriptionImageCount || 0) > 0;
+          Number(issue.descriptionMediaCount || issue.descriptionImageCount || 0) > 0;
       }
 
       function renderDescriptionContent(issue) {
@@ -3437,9 +3533,11 @@ function renderHtml(data) {
       function renderDescription(issue) {
         var hasIssueDescription = hasDescription(issue);
         var imageCount = Number(issue.descriptionImageCount || 0);
+        var videoCount = Number(issue.descriptionVideoCount || 0);
+        var mediaCount = Number(issue.descriptionMediaCount || imageCount + videoCount);
         var stateLabel = !hasIssueDescription
           ? "Empty"
-          : (imageCount ? imageCount + " image" + (imageCount === 1 ? "" : "s") : "View");
+          : (mediaCount ? mediaCount + " media" : "View");
 
         return "<div class=\\"description-shell" + (hasIssueDescription ? "" : " is-empty") + "\\">" +
           "<button class=\\"description-toggle\\" type=\\"button\\" aria-haspopup=\\"dialog\\" data-description-for=\\"" + escape(issue.key) + "\\">" +
@@ -3485,7 +3583,7 @@ function renderHtml(data) {
           "<span>Status: " + escape(issue.status || "No status") + "</span>" +
           "<span>Priority: " + escape(priorityLabel(issue.priority)) + "</span>" +
           "<span>Updated: " + escape(issue.updatedDisplay || "Unknown") + "</span>" +
-          "<span>Images: " + escape(Number(issue.descriptionImageCount || 0)) + "</span>" +
+          "<span>Media: " + escape(Number(issue.descriptionMediaCount || issue.descriptionImageCount || 0)) + "</span>" +
           "<a href=\\"" + escape(issue.url) + "\\" target=\\"_blank\\" rel=\\"noopener\\">Open Jira</a>";
         document.getElementById("description-modal-content").innerHTML = renderDescriptionContent(issue);
         document.getElementById("description-modal").hidden = false;
