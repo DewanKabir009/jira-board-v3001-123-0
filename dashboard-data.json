@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-24T20:45:51.566Z",
-  "pulledAtDisplay": "May 24, 2026, 4:45 PM",
+  "pulledAt": "2026-05-24T20:49:45.910Z",
+  "pulledAtDisplay": "May 24, 2026, 4:49 PM",
   "total": 30,
   "issues": [
     {
@@ -19,6 +19,9 @@
       "descriptionMediaCount": 0,
       "commentCount": 0,
       "comments": [],
+      "lastCommentUrl": "",
+      "lastCommentDisplay": "",
+      "lastCommentAuthor": "",
       "type": "Developer Task (sub task)",
       "isSubtask": true,
       "status": "Analysis",
@@ -61,6 +64,7 @@
       "comments": [
         {
           "id": "1173537",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14497?focusedCommentId=1173537",
           "author": "Tyler Olechnowicz",
           "authorAccountId": "5d2396c1ea26c40c2043fc92",
           "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5d2396c1ea26c40c2043fc92/1647fb84-acea-4c3f-b1e8-9a79aa120f8f/32",
@@ -68,10 +72,15 @@
           "createdDisplay": "May 21, 2026, 4:28 PM",
           "updated": "2026-05-21T16:28:36.035-0400",
           "updatedDisplay": "",
+          "hasMedia": false,
+          "mediaCount": 0,
           "body": "Testing Instructions\n\nPlease regression test the Subscription Renewal Reminder Task",
           "bodyHtml": "<h3>Testing Instructions</h3><p>Please regression test the Subscription Renewal Reminder Task</p>"
         }
       ],
+      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14497?focusedCommentId=1173537",
+      "lastCommentDisplay": "May 21, 2026, 4:28 PM",
+      "lastCommentAuthor": "Tyler Olechnowicz",
       "type": "Story",
       "isSubtask": false,
       "status": "Pending Deployment (DEV)",
@@ -106,6 +115,9 @@
       "descriptionMediaCount": 0,
       "commentCount": 0,
       "comments": [],
+      "lastCommentUrl": "",
+      "lastCommentDisplay": "",
+      "lastCommentAuthor": "",
       "type": "Developer Task (sub task)",
       "isSubtask": true,
       "status": "Pending Deployment (DEV)",
@@ -150,6 +162,7 @@
       "comments": [
         {
           "id": "1168683",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14304?focusedCommentId=1168683",
           "author": "Luis Vallejo Mursuli",
           "authorAccountId": "712020:2e637bb4-c610-467b-839d-9a5b84f75f01",
           "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:2e637bb4-c610-467b-839d-9a5b84f75f01/4dca1d1b-3faa-4d03-90b8-2b3e0cc02887/32",
@@ -157,11 +170,14 @@
           "createdDisplay": "May 12, 2026, 4:18 PM",
           "updated": "2026-05-12T16:18:53.914-0400",
           "updatedDisplay": "",
+          "hasMedia": false,
+          "mediaCount": 0,
           "body": "QA,\n\nHere are the instructions to test this ticket. Contact me if you have questions.\n\nThanks!",
           "bodyHtml": "<p>QA,<br><br>Here are the instructions to test this ticket. Contact me if you have questions.<br><br>Thanks!<br><br> </p>"
         },
         {
           "id": "1173480",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14304?focusedCommentId=1173480",
           "author": "Nicole Greer",
           "authorAccountId": "712020:8fa0be04-9400-422d-8c63-61e7d7b54669",
           "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:8fa0be04-9400-422d-8c63-61e7d7b54669/01136d3f-e8cd-4bac-9ba8-24e390f7c07e/32",
@@ -169,10 +185,15 @@
           "createdDisplay": "May 21, 2026, 2:38 PM",
           "updated": "2026-05-21T14:38:18.544-0400",
           "updatedDisplay": "",
+          "hasMedia": true,
+          "mediaCount": 2,
           "body": "This one is good! Email received when using productPriceID with correct values isEmployee and isComplimentary",
-          "bodyHtml": "<p>This one is good! Email received when using productPriceID with correct values isEmployee and isComplimentary</p><div class=\"description-media-group\"><div class=\"description-media-missing\">emailWorkingTest.png could not be embedded.</div></div><div class=\"description-media-group\"><div class=\"description-media-missing\">productPricingemailTest.png could not be embedded.</div></div>"
+          "bodyHtml": "<p>This one is good! Email received when using productPriceID with correct values isEmployee and isComplimentary</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14304/comments/1173480/730130-emailWorkingTest.png\" alt=\"emailWorkingTest.png\" loading=\"lazy\"><figcaption>emailWorkingTest.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14304/comments/1173480/730129-productPricingemailTest.png\" alt=\"productPricingemailTest.png\" loading=\"lazy\"><figcaption>productPricingemailTest.png</figcaption></figure></div>"
         }
       ],
+      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14304?focusedCommentId=1173480",
+      "lastCommentDisplay": "May 21, 2026, 2:38 PM",
+      "lastCommentAuthor": "Nicole Greer",
       "type": "Task",
       "isSubtask": false,
       "status": "QA Testing (DEV)",
@@ -217,6 +238,9 @@
       "descriptionMediaCount": 0,
       "commentCount": 0,
       "comments": [],
+      "lastCommentUrl": "",
+      "lastCommentDisplay": "",
+      "lastCommentAuthor": "",
       "type": "Bug",
       "isSubtask": false,
       "status": "QA Testing (DEV)",
@@ -259,6 +283,9 @@
       "descriptionMediaCount": 0,
       "commentCount": 0,
       "comments": [],
+      "lastCommentUrl": "",
+      "lastCommentDisplay": "",
+      "lastCommentAuthor": "",
       "type": "Story",
       "isSubtask": false,
       "status": "QA Testing (DEV)",
@@ -302,6 +329,9 @@
       "descriptionMediaCount": 0,
       "commentCount": 0,
       "comments": [],
+      "lastCommentUrl": "",
+      "lastCommentDisplay": "",
+      "lastCommentAuthor": "",
       "type": "Developer Task (sub task)",
       "isSubtask": true,
       "status": "QA Testing (DEV)",
@@ -344,6 +374,9 @@
       "descriptionMediaCount": 0,
       "commentCount": 0,
       "comments": [],
+      "lastCommentUrl": "",
+      "lastCommentDisplay": "",
+      "lastCommentAuthor": "",
       "type": "Developer Task (sub task)",
       "isSubtask": true,
       "status": "QA Testing (DEV)",
@@ -388,6 +421,7 @@
       "comments": [
         {
           "id": "1173347",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14492?focusedCommentId=1173347",
           "author": "Tyler Olechnowicz",
           "authorAccountId": "5d2396c1ea26c40c2043fc92",
           "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5d2396c1ea26c40c2043fc92/1647fb84-acea-4c3f-b1e8-9a79aa120f8f/32",
@@ -395,10 +429,15 @@
           "createdDisplay": "May 21, 2026, 12:04 PM",
           "updated": "2026-05-21T12:04:41.401-0400",
           "updatedDisplay": "",
+          "hasMedia": false,
+          "mediaCount": 0,
           "body": "Testing Instructions\n\nPlease regression test the Spark task.",
           "bodyHtml": "<h3>Testing Instructions</h3><p>Please regression test the Spark task.</p>"
         }
       ],
+      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14492?focusedCommentId=1173347",
+      "lastCommentDisplay": "May 21, 2026, 12:04 PM",
+      "lastCommentAuthor": "Tyler Olechnowicz",
       "type": "Security Alert",
       "isSubtask": false,
       "status": "QA Testing (DEV)",
@@ -433,6 +472,9 @@
       "descriptionMediaCount": 0,
       "commentCount": 0,
       "comments": [],
+      "lastCommentUrl": "",
+      "lastCommentDisplay": "",
+      "lastCommentAuthor": "",
       "type": "Story",
       "isSubtask": false,
       "status": "QA Testing (DEV)",
@@ -477,6 +519,7 @@
       "comments": [
         {
           "id": "1171733",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14481?focusedCommentId=1171733",
           "author": "Yoel Martin Pardo",
           "authorAccountId": "625571809e7380006fb29599",
           "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
@@ -484,10 +527,15 @@
           "createdDisplay": "May 18, 2026, 6:42 PM",
           "updated": "2026-05-18T18:42:39.516-0400",
           "updatedDisplay": "",
+          "hasMedia": false,
+          "mediaCount": 0,
           "body": "PR: https://github.com/GolfNowEng/gn-main-db/pull/641",
           "bodyHtml": "<p>PR: <a href=\"https://github.com/GolfNowEng/gn-main-db/pull/641\" target=\"_blank\" rel=\"noopener\">https://github.com/GolfNowEng/gn-main-db/pull/641</a> </p>"
         }
       ],
+      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14481?focusedCommentId=1171733",
+      "lastCommentDisplay": "May 18, 2026, 6:42 PM",
+      "lastCommentAuthor": "Yoel Martin Pardo",
       "type": "Developer Task (sub task)",
       "isSubtask": true,
       "status": "QA Testing (DEV)",
@@ -532,6 +580,7 @@
       "comments": [
         {
           "id": "1122764",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14158?focusedCommentId=1122764",
           "author": "Nicole Greer",
           "authorAccountId": "712020:8fa0be04-9400-422d-8c63-61e7d7b54669",
           "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:8fa0be04-9400-422d-8c63-61e7d7b54669/01136d3f-e8cd-4bac-9ba8-24e390f7c07e/32",
@@ -539,11 +588,14 @@
           "createdDisplay": "Feb 10, 2026, 1:37 PM",
           "updated": "2026-02-10T13:37:54.723-0500",
           "updatedDisplay": "",
+          "hasMedia": true,
+          "mediaCount": 1,
           "body": "The ExecuteFufillment endpoint is no longer working. Tried with various tee times and channelIDs. Running GenerateDistributions again does not fix the issue.",
-          "bodyHtml": "<p>The ExecuteFufillment endpoint is no longer working. Tried with various tee times and channelIDs. Running GenerateDistributions again does not fix the issue. </p><div class=\"description-media-group\"><div class=\"description-media-missing\">noLongerWorkingExecuteFulfillment.png could not be embedded.</div></div>"
+          "bodyHtml": "<p>The ExecuteFufillment endpoint is no longer working. Tried with various tee times and channelIDs. Running GenerateDistributions again does not fix the issue. </p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14158/comments/1122764/689088-noLongerWorkingExecuteFulfillment.png\" alt=\"noLongerWorkingExecuteFulfillment.png\" loading=\"lazy\"><figcaption>noLongerWorkingExecuteFulfillment.png</figcaption></figure></div>"
         },
         {
           "id": "1170683",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14158?focusedCommentId=1170683",
           "author": "Andrew Horvat",
           "authorAccountId": "712020:d714b2a6-3491-46da-89f1-9777e2d1ab70",
           "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:d714b2a6-3491-46da-89f1-9777e2d1ab70/25dedc4a-09d9-4ec9-945c-34d31d771711/32",
@@ -551,11 +603,14 @@
           "createdDisplay": "May 14, 2026, 10:51 AM",
           "updated": "2026-05-14T10:51:43.753-0400",
           "updatedDisplay": "",
+          "hasMedia": false,
+          "mediaCount": 0,
           "body": "No code changes were required, it appeared the time being tested was an invalid rack time.",
           "bodyHtml": "<p>No code changes were required, it appeared the time being tested was an invalid rack time.</p>"
         },
         {
           "id": "1173039",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14158?focusedCommentId=1173039",
           "author": "Nicole Greer",
           "authorAccountId": "712020:8fa0be04-9400-422d-8c63-61e7d7b54669",
           "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:8fa0be04-9400-422d-8c63-61e7d7b54669/01136d3f-e8cd-4bac-9ba8-24e390f7c07e/32",
@@ -563,10 +618,15 @@
           "createdDisplay": "May 21, 2026, 2:11 AM",
           "updated": "2026-05-21T02:11:51.491-0400",
           "updatedDisplay": "",
+          "hasMedia": true,
+          "mediaCount": 4,
           "body": "ExecuteFulfillment is tested working with Hot Deal Tee Times! Looks good.",
-          "bodyHtml": "<p>ExecuteFulfillment is tested working with Hot Deal Tee Times! Looks good.</p><div class=\"description-media-group\"><div class=\"description-media-missing\">46e1e6c0-1929-4827-b503-fe5ac3a0e779.png could not be embedded.</div></div><div class=\"description-media-group\"><div class=\"description-media-missing\">hotDealTeeTime.png could not be embedded.</div></div><div class=\"description-media-group\"><div class=\"description-media-missing\">hotDealWorkingExecuteFullfillment.png could not be embedded.</div></div><div class=\"description-media-group\"><div class=\"description-media-missing\">hotDealTimeonSite.png could not be embedded.</div></div>"
+          "bodyHtml": "<p>ExecuteFulfillment is tested working with Hot Deal Tee Times! Looks good.</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14158/comments/1173039/729712-46e1e6c0-1929-4827-b503-fe5ac3a0e779.png\" alt=\"46e1e6c0-1929-4827-b503-fe5ac3a0e779.png\" loading=\"lazy\"><figcaption>46e1e6c0-1929-4827-b503-fe5ac3a0e779.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14158/comments/1173039/729711-hotDealTeeTime.png\" alt=\"hotDealTeeTime.png\" loading=\"lazy\"><figcaption>hotDealTeeTime.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14158/comments/1173039/729709-hotDealWorkingExecuteFullfillment.png\" alt=\"hotDealWorkingExecuteFullfillment.png\" loading=\"lazy\"><figcaption>hotDealWorkingExecuteFullfillment.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14158/comments/1173039/729710-hotDealTimeonSite.png\" alt=\"hotDealTimeonSite.png\" loading=\"lazy\"><figcaption>hotDealTimeonSite.png</figcaption></figure></div>"
         }
       ],
+      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14158?focusedCommentId=1173039",
+      "lastCommentDisplay": "May 21, 2026, 2:11 AM",
+      "lastCommentAuthor": "Nicole Greer",
       "type": "Bug",
       "isSubtask": false,
       "status": "QA Testing (DEV)",
@@ -611,6 +671,7 @@
       "comments": [
         {
           "id": "1170819",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14442?focusedCommentId=1170819",
           "author": "Yoel Martin Pardo",
           "authorAccountId": "625571809e7380006fb29599",
           "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
@@ -618,11 +679,14 @@
           "createdDisplay": "May 14, 2026, 1:59 PM",
           "updated": "2026-05-14T13:59:24.612-0400",
           "updatedDisplay": "",
+          "hasMedia": true,
+          "mediaCount": 1,
           "body": "QA: We have fixed the two issues reported into this ticket. Please follow the issues reported on the ticket description and test accordingly. Please make sure to test the entire flow. We also removed the RateSet dropdown from the page since this is not being used.",
-          "bodyHtml": "<p>QA: We have fixed the two issues reported into this ticket. Please follow the issues reported on the ticket description and test accordingly. Please make sure to test the entire flow. We also removed the RateSet dropdown from the page since this is not being used. </p><div class=\"description-media-group\"><div class=\"description-media-missing\">image-20260514-175725.png could not be embedded.</div></div>"
+          "bodyHtml": "<p>QA: We have fixed the two issues reported into this ticket. Please follow the issues reported on the ticket description and test accordingly. Please make sure to test the entire flow. We also removed the RateSet dropdown from the page since this is not being used. </p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14442/comments/1170819/727502-image-20260514-175725.png\" alt=\"image-20260514-175725.png\" loading=\"lazy\"><figcaption>image-20260514-175725.png</figcaption></figure></div>"
         },
         {
           "id": "1173037",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14442?focusedCommentId=1173037",
           "author": "Nicole Greer",
           "authorAccountId": "712020:8fa0be04-9400-422d-8c63-61e7d7b54669",
           "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:8fa0be04-9400-422d-8c63-61e7d7b54669/01136d3f-e8cd-4bac-9ba8-24e390f7c07e/32",
@@ -630,10 +694,15 @@
           "createdDisplay": "May 21, 2026, 1:15 AM",
           "updated": "2026-05-21T01:15:52.946-0400",
           "updatedDisplay": "",
+          "hasMedia": true,
+          "mediaCount": 3,
           "body": "Tested multiple courses in DEV. Master Courses showed correct message 'Mass Cancellations are not available for Master Facilities.”\nTrade not being toggled showed only Course Types while having Trade toggled showed both Trade and Course Types. No Course reservations disappeared between toggling.\nHaving a list of only Course Type reservations with no Trade rounds existing still showed all the Course reservations with Trade toggled on.",
-          "bodyHtml": "<p>Tested multiple courses in DEV. Master Courses showed correct message 'Mass Cancellations are not available for Master Facilities.”<br>Trade not being toggled showed only Course Types while having Trade toggled showed both Trade and Course Types. No Course reservations disappeared between toggling. <br>Having a list of only Course Type reservations with no Trade rounds existing still showed all the Course reservations with Trade toggled on. </p><div class=\"description-media-group\"><div class=\"description-media-missing\">tradeVsNonTradeToggled.jpg could not be embedded.</div></div><div class=\"description-media-group\"><div class=\"description-media-missing\">massCancellationsNotAllowed.png could not be embedded.</div></div><div class=\"description-media-group\"><div class=\"description-media-missing\">Screenshot 2026-05-21 011023.png could not be embedded.</div></div>"
+          "bodyHtml": "<p>Tested multiple courses in DEV. Master Courses showed correct message 'Mass Cancellations are not available for Master Facilities.”<br>Trade not being toggled showed only Course Types while having Trade toggled showed both Trade and Course Types. No Course reservations disappeared between toggling. <br>Having a list of only Course Type reservations with no Trade rounds existing still showed all the Course reservations with Trade toggled on. </p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14442/comments/1173037/729705-tradeVsNonTradeToggled.jpg\" alt=\"tradeVsNonTradeToggled.jpg\" loading=\"lazy\"><figcaption>tradeVsNonTradeToggled.jpg</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14442/comments/1173037/729707-massCancellationsNotAllowed.png\" alt=\"massCancellationsNotAllowed.png\" loading=\"lazy\"><figcaption>massCancellationsNotAllowed.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14442/comments/1173037/729706-Screenshot-2026-05-21-011023.png\" alt=\"Screenshot 2026-05-21 011023.png\" loading=\"lazy\"><figcaption>Screenshot 2026-05-21 011023.png</figcaption></figure></div>"
         }
       ],
+      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14442?focusedCommentId=1173037",
+      "lastCommentDisplay": "May 21, 2026, 1:15 AM",
+      "lastCommentAuthor": "Nicole Greer",
       "type": "Bug",
       "isSubtask": false,
       "status": "QA Testing (DEV)",
@@ -680,6 +749,7 @@
       "comments": [
         {
           "id": "1168780",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14427?focusedCommentId=1168780",
           "author": "Luis Vallejo Mursuli",
           "authorAccountId": "712020:2e637bb4-c610-467b-839d-9a5b84f75f01",
           "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:2e637bb4-c610-467b-839d-9a5b84f75f01/4dca1d1b-3faa-4d03-90b8-2b3e0cc02887/32",
@@ -687,10 +757,15 @@
           "createdDisplay": "May 12, 2026, 6:04 PM",
           "updated": "2026-05-12T18:06:13.976-0400",
           "updatedDisplay": "May 12, 2026, 6:06 PM",
+          "hasMedia": false,
+          "mediaCount": 0,
           "body": "Hi @Brian Pugh  and @Daniel McNaughton ,\n\nI’ve been reviewing CORE-14427 in detail to prepare for implementation, and I want to make sure we align on a few areas where the requirements are currently ambiguous or open-ended. Clarifying these upfront will help avoid rework and ensure the APIs and data model are designed correctly for both launch and future extensibility.\n\n---\n1. Data Model / ReferenceId\n\n- The ticket mentions ReferenceId = CustomerSubscriptionId for members, and possibly 1 (or another value) for non-members to avoid nulls.\n\n- Should ReferenceId be nullable for non-members, or do we want a sentinel value?\n\n- If using a sentinel, should we instead model this explicitly (e.g., IsMember flag or ReferenceType) to avoid overloading semantics?\n\n---\n2. Benefit Eligibility\n\nSince I’m also assigned to CORE-14428, and it needs to be implemented in the same sprint, I want to clarify the eligibility rule before wiring it into CORE-14427.\n\nCORE-14428 asks us to insert the new \"Home Course Eligible\" benefit and associate it with the applicable products. Should CORE-14427 rely only on that new benefit to determine whether a user is eligible for member-based Home Course behavior, or are there any other existing/current benefits that should also be considered?\n\n---\n3. Selection / Modification Limits\n\nThere appears to be a potential inconsistency:\n\n- Non-member:\n\n- “Two selections/modifications in a 365-day period” (initial + 1 modification)\n\n- Member:\n\n- “Two selections per subscription period” (initial + 1 modification)\n\n- Later:\n\n- “You are allowed two modifications with the new period”\n\nCan we confirm:\n\n- Is the total allowance 2 actions per period (initial + 1 modification)?\n\n- Or initial selection + 2 modifications (3 total actions) after rollover?\n\n---\n4. Rollover Behavior\n\n- When a user renews or crosses the 365-day mark:\n\n- A new Home Course record is created and previous selection “rolls over”\n\nQuestions:\n\n- What event triggers the rollover? (subscription renewal event, scheduled job, lazy creation on next request, etc.)\n\n- Does the rollover count as the initial selection of the new period?\n\n- If a user does nothing (no modification), do they still retain full modification allowance?\n\n---\n5. Future-Dated Memberships\n\n- Users cannot modify Home Course for a future subscription until it starts\n\nQuestions:\n\n- How do we determine the active subscription context when multiple exist?\n\n- What happens if:\n\n- Current subscription is active and future one exists → user modifies now?\n\n- Future subscription starts → do we automatically create a new record?\n\n- What is the expected error response when trying to modify a future-dated record?\n\n---\n6. Multiple Home Courses (Future Support)\n\n- Configurable max is 1 at launch, but should support >1 in future\n\nQuestions:\n\n- Should we design APIs and DB to support multiple Home Courses now (array-based), even if config = 1?\n\n- Are modification limits:\n\n- Per customer globally, or\n\n- Per Home Course slot, or\n\n- Per subscription period regardless of count?\n\n---\n7. GNC Override Behavior\n\n- GNC can override “at any time”\n\nQuestions:\n\n- Does override bypass:\n\n- Modification limits?\n\n- Future membership restrictions?\n\n- Exclusion list?\n\n- Master facility restriction?\n\n- Should overrides:\n\n- Require a reason?\n\n- Reset modification counters?\n\n- Be flagged differently in audit/history?\n\n---\n8. Exclusion List\n\nI already know how to identify whether a facility is a Master Facility, so the main open question here is around the exclusion list.\n\nShould the exclusion list of GolfFacilityIds already exist somewhere, or do we need to include it as part of the data model/configuration changes for this work?\n\nAdditionally, should this exclusion list be managed through database/configuration only, or should there eventually be an admin/GNC management path for it?\n\n---\n9. Audit / History Logging\n\n- We log Created/Modified timestamps and “LastModifiedBy”\n\nQuestions:\n\n- Should we standardize LastModifiedBy as a single identifier type (e.g., always CustomerId or SystemUserId)?\n\n- Should history include:\n\n- Old value vs new value\n\n- Reason (if provided)\n\n- Source (frontend vs GNC)\n\n- ReferenceId / period context?\n\n---\n10. API Contracts\n\nThe ticket lists APIs but does not define contracts.\n\nWe need clarity on:\n\n- Request/response structure for:\n\n- Set Home Course\n\n- Modify Home Course\n\n- Idempotency:\n\n- If user selects the same course again → does it count as modification?\n\n- Error responses:\n\n- Modification limit reached\n\n- Future membership restriction\n\n- Invalid facility (master/excluded)\n\n---\n11. Integration with Existing APIs\n\n- Question raised: should GetCustomer and GetCustomerSubscription return Home Course?\n\nCan we confirm:\n\n- Is this required for launch?\n\n- Should we return:\n\n- Single GolfFacilityId, or\n\n- Full Home Course object(s)?\n\n---\n12. Acceptance Criteria / Edge Cases\n\nTo ensure completeness, we should confirm expected behavior for:\n\n- 3rd modification attempt → error\n\n- Rollover without user interaction\n\n- Switching from non-member → member\n\n- Membership expiration → non-member behavior\n\n- Stacked memberships with overlapping dates\n\n---\nIf we can align on these points, I can proceed with a concrete design (data model + API contracts + validation flow) and avoid rework later.\n\nThanks!",
           "bodyHtml": "<p>Hi @Brian Pugh  and @Daniel McNaughton ,</p><p>I’ve been reviewing CORE-14427 in detail to prepare for implementation, and I want to make sure we align on a few areas where the requirements are currently ambiguous or open-ended. Clarifying these upfront will help avoid rework and ensure the APIs and data model are designed correctly for both launch and future extensibility.</p><hr><h3>1. Data Model / ReferenceId</h3><ul><li><p>The ticket mentions <code>ReferenceId = CustomerSubscriptionId</code> for members, and possibly <code>1</code> (or another value) for non-members to avoid nulls.</p><ul><li><p>Should <code>ReferenceId</code> be nullable for non-members, or do we want a sentinel value?</p></li><li><p>If using a sentinel, should we instead model this explicitly (e.g., <code>IsMember</code> flag or <code>ReferenceType</code>) to avoid overloading semantics?</p></li></ul></li></ul><hr><h3>2. Benefit Eligibility</h3><p>Since I’m also assigned to CORE-14428, and it needs to be implemented in the same sprint, I want to clarify the eligibility rule before wiring it into CORE-14427.</p><p>CORE-14428 asks us to insert the new &quot;Home Course Eligible&quot; benefit and associate it with the applicable products. Should CORE-14427 rely only on that new benefit to determine whether a user is eligible for member-based Home Course behavior, or are there any other existing/current benefits that should also be considered?</p><hr><h3>3. Selection / Modification Limits</h3><p>There appears to be a potential inconsistency:</p><ul><li><p>Non-member:</p><ul><li><p>“Two selections/modifications in a 365-day period” (initial + 1 modification)</p></li></ul></li><li><p>Member:</p><ul><li><p>“Two selections per subscription period” (initial + 1 modification)</p></li></ul></li><li><p>Later:</p><ul><li><p>“You are allowed two modifications with the new period”</p></li></ul></li></ul><p>Can we confirm:</p><ul><li><p>Is the total allowance 2 actions per period (initial + 1 modification)?</p></li><li><p>Or initial selection + 2 modifications (3 total actions) after rollover?</p></li></ul><hr><h3>4. Rollover Behavior</h3><ul><li><p>When a user renews or crosses the 365-day mark:</p><ul><li><p>A new Home Course record is created and previous selection “rolls over”</p></li></ul></li></ul><p>Questions:</p><ul><li><p>What event triggers the rollover? (subscription renewal event, scheduled job, lazy creation on next request, etc.)</p></li><li><p>Does the rollover count as the initial selection of the new period?</p></li><li><p>If a user does nothing (no modification), do they still retain full modification allowance?</p></li></ul><hr><h3>5. Future-Dated Memberships</h3><ul><li><p>Users cannot modify Home Course for a future subscription until it starts</p></li></ul><p>Questions:</p><ul><li><p>How do we determine the active subscription context when multiple exist?</p></li><li><p>What happens if:</p><ul><li><p>Current subscription is active and future one exists → user modifies now?</p></li><li><p>Future subscription starts → do we automatically create a new record?</p></li></ul></li><li><p>What is the expected error response when trying to modify a future-dated record?</p></li></ul><hr><h3>6. Multiple Home Courses (Future Support)</h3><ul><li><p>Configurable max is 1 at launch, but should support &gt;1 in future</p></li></ul><p>Questions:</p><ul><li><p>Should we design APIs and DB to support multiple Home Courses now (array-based), even if config = 1?</p></li><li><p>Are modification limits:</p><ul><li><p>Per customer globally, or</p></li><li><p>Per Home Course slot, or</p></li><li><p>Per subscription period regardless of count?</p></li></ul></li></ul><hr><h3>7. GNC Override Behavior</h3><ul><li><p>GNC can override “at any time”</p></li></ul><p>Questions:</p><ul><li><p>Does override bypass:</p><ul><li><p>Modification limits?</p></li><li><p>Future membership restrictions?</p></li><li><p>Exclusion list?</p></li><li><p>Master facility restriction?</p></li></ul></li><li><p>Should overrides:</p><ul><li><p>Require a reason?</p></li><li><p>Reset modification counters?</p></li><li><p>Be flagged differently in audit/history?</p></li></ul></li></ul><hr><h3>8. Exclusion List</h3><p>I already know how to identify whether a facility is a Master Facility, so the main open question here is around the exclusion list.</p><p>Should the exclusion list of <code>GolfFacilityIds</code> already exist somewhere, or do we need to include it as part of the data model/configuration changes for this work?</p><p>Additionally, should this exclusion list be managed through database/configuration only, or should there eventually be an admin/GNC management path for it?</p><hr><h3>9. Audit / History Logging</h3><ul><li><p>We log Created/Modified timestamps and “LastModifiedBy”</p></li></ul><p>Questions:</p><ul><li><p>Should we standardize <code>LastModifiedBy</code> as a single identifier type (e.g., always CustomerId or SystemUserId)?</p></li><li><p>Should history include:</p><ul><li><p>Old value vs new value</p></li><li><p>Reason (if provided)</p></li><li><p>Source (frontend vs GNC)</p></li><li><p>ReferenceId / period context?</p></li></ul></li></ul><hr><h3>10. API Contracts</h3><p>The ticket lists APIs but does not define contracts.</p><p>We need clarity on:</p><ul><li><p>Request/response structure for:</p><ul><li><p>Set Home Course</p></li><li><p>Modify Home Course</p></li></ul></li><li><p>Idempotency:</p><ul><li><p>If user selects the same course again → does it count as modification?</p></li></ul></li><li><p>Error responses:</p><ul><li><p>Modification limit reached</p></li><li><p>Future membership restriction</p></li><li><p>Invalid facility (master/excluded)</p></li></ul></li></ul><hr><h3>11. Integration with Existing APIs</h3><ul><li><p>Question raised: should GetCustomer and GetCustomerSubscription return Home Course?</p></li></ul><p>Can we confirm:</p><ul><li><p>Is this required for launch?</p></li><li><p>Should we return:</p><ul><li><p>Single GolfFacilityId, or</p></li><li><p>Full Home Course object(s)?</p></li></ul></li></ul><hr><h3>12. Acceptance Criteria / Edge Cases</h3><p>To ensure completeness, we should confirm expected behavior for:</p><ul><li><p>3rd modification attempt → error</p></li><li><p>Rollover without user interaction</p></li><li><p>Switching from non-member → member</p></li><li><p>Membership expiration → non-member behavior</p></li><li><p>Stacked memberships with overlapping dates</p></li></ul><hr><p>If we can align on these points, I can proceed with a concrete design (data model + API contracts + validation flow) and avoid rework later.</p><p>Thanks!</p>"
         }
       ],
+      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14427?focusedCommentId=1168780",
+      "lastCommentDisplay": "May 12, 2026, 6:04 PM",
+      "lastCommentAuthor": "Luis Vallejo Mursuli",
       "type": "Story",
       "isSubtask": false,
       "status": "Analysis",
@@ -733,6 +808,7 @@
       "comments": [
         {
           "id": "1172172",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14444?focusedCommentId=1172172",
           "author": "Tyler Olechnowicz",
           "authorAccountId": "5d2396c1ea26c40c2043fc92",
           "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5d2396c1ea26c40c2043fc92/1647fb84-acea-4c3f-b1e8-9a79aa120f8f/32",
@@ -740,11 +816,14 @@
           "createdDisplay": "May 19, 2026, 2:18 PM",
           "updated": "2026-05-19T14:18:00.532-0400",
           "updatedDisplay": "",
+          "hasMedia": false,
+          "mediaCount": 0,
           "body": "@Joshua Marquess I recommend limiting this change to the database work for now. The Revenue.FeeConfiguration table is referenced in several places, including a Tee Time Pricing-related stored procedure. It would be safer to defer the application-layer changes and data ingestion updates until we begin implementing the actual logic tied to these new columns in the codebase.",
           "bodyHtml": "<p>@Joshua Marquess I recommend limiting this change to the database work for now. The <code>Revenue.FeeConfiguration</code> table is referenced in several places, including a Tee Time Pricing-related stored procedure. It would be safer to defer the application-layer changes and data ingestion updates until we begin implementing the actual logic tied to these new columns in the codebase.</p>"
         },
         {
           "id": "1172219",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14444?focusedCommentId=1172219",
           "author": "Tyler Olechnowicz",
           "authorAccountId": "5d2396c1ea26c40c2043fc92",
           "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5d2396c1ea26c40c2043fc92/1647fb84-acea-4c3f-b1e8-9a79aa120f8f/32",
@@ -752,10 +831,15 @@
           "createdDisplay": "May 19, 2026, 3:08 PM",
           "updated": "2026-05-19T15:10:22.659-0400",
           "updatedDisplay": "May 19, 2026, 3:10 PM",
+          "hasMedia": true,
+          "mediaCount": 1,
           "body": "Testing Instructions\n\n- Verify the database deployment script runs successfully against the CRM database.\n\n- Confirm the following columns were added to Revenue.FeeConfiguration:\n\n- IsWaivable\n\n- IsRefundable\n\n- Confirm both columns are BIT, NOT NULL, and default to 1 / true.\n\n- Confirm the following named default constraints exist:\n\n- DF_FeeConfiguration_IsWaivable\n\n- DF_FeeConfiguration_IsRefundable\n\n- Insert or create a new Revenue.FeeConfiguration record without explicitly setting IsWaivable or IsRefundable, if safely testable in the QA environment.\n\n- Confirm the new record defaults both values to true.\n\n- Confirm existing Revenue.FeeConfiguration records have both IsWaivable and IsRefundable populated as true.",
-          "bodyHtml": "<h3><strong>Testing Instructions</strong></h3><ol><li><p>Verify the database deployment script runs successfully against the CRM database.</p></li><li><p>Confirm the following columns were added to <code>Revenue.FeeConfiguration</code>:</p><ol><li><p><code>IsWaivable</code></p></li><li><p><code>IsRefundable</code></p></li></ol></li><li><p>Confirm both columns are BIT, NOT NULL, and default to 1 / true.</p></li><li><p>Confirm the following named default constraints exist:</p><ol><li><p><code>DF_FeeConfiguration_IsWaivable</code></p></li><li><p><code>DF_FeeConfiguration_IsRefundable</code></p></li></ol></li><li><p>Insert or create a new <code>Revenue.FeeConfiguration</code> record without explicitly setting <code>IsWaivable</code> or <code>IsRefundable</code>, if safely testable in the QA environment.</p></li><li><p>Confirm the new record defaults both values to true.</p></li><li><p>Confirm existing <code>Revenue.FeeConfiguration</code> records have both <code>IsWaivable</code> and <code>IsRefundable</code> populated as true.</p></li></ol><div class=\"description-media-group\"><div class=\"description-media-missing\">image-20260519-191016.png could not be embedded.</div></div>"
+          "bodyHtml": "<h3><strong>Testing Instructions</strong></h3><ol><li><p>Verify the database deployment script runs successfully against the CRM database.</p></li><li><p>Confirm the following columns were added to <code>Revenue.FeeConfiguration</code>:</p><ol><li><p><code>IsWaivable</code></p></li><li><p><code>IsRefundable</code></p></li></ol></li><li><p>Confirm both columns are BIT, NOT NULL, and default to 1 / true.</p></li><li><p>Confirm the following named default constraints exist:</p><ol><li><p><code>DF_FeeConfiguration_IsWaivable</code></p></li><li><p><code>DF_FeeConfiguration_IsRefundable</code></p></li></ol></li><li><p>Insert or create a new <code>Revenue.FeeConfiguration</code> record without explicitly setting <code>IsWaivable</code> or <code>IsRefundable</code>, if safely testable in the QA environment.</p></li><li><p>Confirm the new record defaults both values to true.</p></li><li><p>Confirm existing <code>Revenue.FeeConfiguration</code> records have both <code>IsWaivable</code> and <code>IsRefundable</code> populated as true.</p></li></ol><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14444/comments/1172219/728914-image-20260519-191016.png\" alt=\"image-20260519-191016.png\" loading=\"lazy\"><figcaption>image-20260519-191016.png</figcaption></figure></div>"
         }
       ],
+      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14444?focusedCommentId=1172219",
+      "lastCommentDisplay": "May 19, 2026, 3:08 PM",
+      "lastCommentAuthor": "Tyler Olechnowicz",
       "type": "Story",
       "isSubtask": false,
       "status": "QA Testing (DEV)",
@@ -798,6 +882,9 @@
       "descriptionMediaCount": 0,
       "commentCount": 0,
       "comments": [],
+      "lastCommentUrl": "",
+      "lastCommentDisplay": "",
+      "lastCommentAuthor": "",
       "type": "Developer Task (sub task)",
       "isSubtask": true,
       "status": "QA Testing (DEV)",
@@ -842,6 +929,7 @@
       "comments": [
         {
           "id": "1170913",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14474?focusedCommentId=1170913",
           "author": "Yu-Sheng Tu",
           "authorAccountId": "60d0cfa7d5dde8007174dd0b",
           "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/60d0cfa7d5dde8007174dd0b/25cdd204-3aea-49fd-97fb-2f563849c2ed/32",
@@ -849,11 +937,14 @@
           "createdDisplay": "May 14, 2026, 7:19 PM",
           "updated": "2026-05-14T19:19:33.633-0400",
           "updatedDisplay": "",
+          "hasMedia": false,
+          "mediaCount": 0,
           "body": "@Brian Pugh when you have the chance, can you review this request? if we are good to surface these locations on Geosearch.\ncc @Sebastian Calzadilla Gonzalez",
           "bodyHtml": "<p>@Brian Pugh when you have the chance, can you review this request? if we are good to surface these locations on Geosearch.<br>cc @Sebastian Calzadilla Gonzalez </p>"
         },
         {
           "id": "1170977",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14474?focusedCommentId=1170977",
           "author": "Yu-Sheng Tu",
           "authorAccountId": "60d0cfa7d5dde8007174dd0b",
           "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/60d0cfa7d5dde8007174dd0b/25cdd204-3aea-49fd-97fb-2f563849c2ed/32",
@@ -861,11 +952,14 @@
           "createdDisplay": "May 15, 2026, 8:21 AM",
           "updated": "2026-05-15T08:21:18.953-0400",
           "updatedDisplay": "",
+          "hasMedia": false,
+          "mediaCount": 0,
           "body": "Escalating this for @Marcus Briggs to complete by end of week.",
           "bodyHtml": "<p>Escalating this for @Marcus Briggs to complete by end of week. </p>"
         },
         {
           "id": "1171152",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14474?focusedCommentId=1171152",
           "author": "Yu-Sheng Tu",
           "authorAccountId": "60d0cfa7d5dde8007174dd0b",
           "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/60d0cfa7d5dde8007174dd0b/25cdd204-3aea-49fd-97fb-2f563849c2ed/32",
@@ -873,11 +967,14 @@
           "createdDisplay": "May 15, 2026, 5:39 PM",
           "updated": "2026-05-15T17:39:56.393-0400",
           "updatedDisplay": "May 15, 2026, 5:39 PM",
+          "hasMedia": false,
+          "mediaCount": 0,
           "body": "1. Confirm the affected set first\n\nuse POI\n\ndb.GeoLocation.countDocuments({\nFeatureClass: 80,\nFeatureCode:  \"PPL\",\nIsPostal:     false,\nSearchable:   false,\nCountryCode:  \"US\"\n})\nShould return 148768 count\n\n2. Update\n\ndb.GeoLocation.updateMany(\n{\nFeatureClass: 80,\nFeatureCode:  \"PPL\",\nIsPostal:     false,\nSearchable:   false,\nCountryCode:  \"US\"\n},\n{\n$set: { IsCity: true, Searchable: true }\n}\n)\n\nshould return :\n{\nacknowledged: true,\ninsertedId: null,\nmatchedCount: 148768,\nmodifiedCount: 148768,\nupsertedCount: 0\n}",
           "bodyHtml": "<pre><code>1. Confirm the affected set first\n\n  use POI\n\n  db.GeoLocation.countDocuments({\n    FeatureClass: 80,\n    FeatureCode:  &quot;PPL&quot;,\n    IsPostal:     false,\n    Searchable:   false,\n    CountryCode:  &quot;US&quot;\n  })\n  Should return 148768 count\n\n  2. Update\n\n  db.GeoLocation.updateMany(\n    {\n      FeatureClass: 80,\n      FeatureCode:  &quot;PPL&quot;,\n      IsPostal:     false,\n      Searchable:   false,\n      CountryCode:  &quot;US&quot;\n    },\n    {\n      $set: { IsCity: true, Searchable: true }\n    }\n  )\n\n  should return :\n  {\n    acknowledged: true,\n    insertedId: null,\n    matchedCount: 148768,\n    modifiedCount: 148768,\n    upsertedCount: 0\n  }</code></pre>"
         },
         {
           "id": "1171558",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14474?focusedCommentId=1171558",
           "author": "Marcus Briggs",
           "authorAccountId": "557058:5a91a61f-c689-46bf-ad3b-c7291bcdbf7b",
           "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/initials/MB-4.png",
@@ -885,11 +982,14 @@
           "createdDisplay": "May 18, 2026, 12:42 PM",
           "updated": "2026-05-18T12:42:23.148-0400",
           "updatedDisplay": "",
+          "hasMedia": false,
+          "mediaCount": 0,
           "body": "@Yu-Sheng Tu the items listed above are now passing. I now have another list, these are mostly international items:\n\n- Aberlour — Aberdeenshire, SCT\n\n- Abu Dhabi — Abu Dhabi, AE\n\n- Acapulco — Guerrero, MX\n\n- Acme — Alberta, CA\n\n- Alexandria — New South Wales, AU\n\n- Ardagh — County Limerick, IE\n\n- Ariss — Ontario, CA\n\n- Arundel — Queensland, AU\n\n- Ashton — Ontario, CA\n\n- Aspendale — Victoria, AU\n\n- Aubazine — Nouvelle Aquitaine, FR\n\n- Baden — Ontario, CA\n\n- Baldwin — Ontario, CA\n\n- Balgowlah — New South Wales, AU\n\n- Ballyboughal — County Dublin, IE\n\n- Bavaro — La Altagracia, DO\n\n- Bellewstown — County Meath, IE\n\n- Ben Eoin — Nova Scotia, CA\n\n- Berwick On Tweed — Northumberland, ENG\n\n- Biot — Provence Alpes Cote Dazur, FR\n\n- Black Creek — British Columbia, CA\n\n- Blackheath — New South Wales, AU\n\n- Blainroe — County Wicklow, IE\n\n- Blind Bay — British Columbia, CA\n\n- Boneo — Victoria, AU\n\n- Bossey — Auvergne Rhone Alpes, FR\n\n- Bowden — Alberta, CA\n\n- Bradford — Ontario, CA\n\n- Bresson — Auvergne Rhone Alpes, FR\n\n- Brookfield — Nova Scotia, CA\n\n- Caistor Centre — Ontario, CA\n\n- Caledon East — Ontario, CA\n\n- Caledonia — Ontario, CA\n\n- Cambridge — Tasmania, AU\n\n- Campbell — Australian Capital Territory, AU\n\n- Cancun — Quintana Roo, MX\n\n- Carrara — Queensland, AU\n\n- Casco Twp — MI\n\n- Castlegregory — County Kerry, IE\n\n- Cavan Monaghan — Ontario, CA\n\n- Central Mangrove — New South Wales, AU\n\n- Centre Wellington — Ontario, CA\n\n- Centreville — Nova Scotia, CA\n\n- Ceredigion — Dyfed, WLS\n\n- Chassieu — Auvergne Rhone Alpes, FR\n\n- Chassy — Auvergne Rhne Alpes, FR\n\n- Chassy — Auvergne Rhone Alpes, FR\n\n- Church Point — Nova Scotia, CA\n\n- Clinton — Ontario, CA\n\n- Cloughey — County Down, NIR\n\n- Comox — British Columbia, CA\n\n- Condeissiat — Auvergne Rhone Alpes, FR\n\n- Copetown — Ontario, CA\n\n- Corbyville — Ontario, CA\n\n- Cranberry Twp — PA\n\n- Crossagalla — County Limerick, IE\n\n- Cullyhanna — County Down, NIR\n\n- Cumberland — Ontario, CA\n\n- Daceyville — New South Wales, AU\n\n- Dagnall — Hertfordshire, ENG\n\n- Denbighshire — Clwyd, WLS\n\n- Devonshire Parish — Devonshire, BM\n\n- Doonbeg — County Clare, IE\n\n- Dorset — England, GB\n\n- Dunmurry — County Antrim, NIR\n\n- Durham Bridge — New Brunswick, CA\n\n- Dutton — Ontario, CA\n\n- East Riding Of Yorkshire — Yorkshire, ENG\n\n- East Sussex — Sussex, ENG\n\n- Edithvale — Victoria, AU\n\n- Eganville — Ontario, CA\n\n- Elsham — Lincolnshire, ENG\n\n- Endeavour Hills — Victoria, AU\n\n- Ennismore — Ontario, CA\n\n- Erin — Ontario, CA\n\n- Essex — England, GB\n\n- Ettrickbridge — Selkirkshire, SCT\n\n- Fairmont Hot Springs — British Columbia, CA\n\n- Fairview — Prince Edward Island, CA\n\n- Fallis — Alberta, CA\n\n- Fenelon Falls — Ontario, CA\n\n- Fenwick — Ontario, CA\n\n- Five Dock — New South Wales, AU\n\n- Flintshire — Clwyd, WLS\n\n- Forest — Ontario, CA\n\n- Fuveau — Provence Alpes Cote Dazur, FR\n\n- Georges Hall — New South Wales, AU\n\n- Georgetown — Ontario, CA\n\n- Georgina — Ontario, CA\n\n- Gledswood Hills — New South Wales, AU\n\n- Gosford — New South Wales, AU\n\n- Grange Over Sands — Cumberland, ENG\n\n- Grasse — Provence Alpes Cote Dazur, FR\n\n- Greenore — County Louth, IE\n\n- Haliburton — Ontario, CA\n\n- Harrison Hot Springs — British Columbia, CA\n\n- Harrison Hot Springs — British Columbia\n\n- High Wych — Hertfordshire, ENG\n\n- Hope Island — Queensland, AU\n\n- Hornby — Ontario, CA\n\n- Hornby — Ontario\n\n- Innisfail — Alberta, CA\n\n- Karana Downs — Queensland, AU\n\n- Keene — Ontario, CA\n\n- Kent — England, GB\n\n- Kettleby — Ontario, CA\n\n- Kew — Victoria, AU\n\n- Kilrush — County Clare\n\n- Kilternan — County Dublin, IE\n\n- Kincasslagh — County Donegal, IE\n\n- Kings Lynn — Norfolk, ENG\n\n- Kingsgrove — New South Wales, AU\n\n- La Garde — Provence Alpes Cote Dazur, FR\n\n- La Motte — Provence Alpes Cote Dazur, FR\n\n- La Salle — Bourgogne Franche Comt, FR\n\n- La Salle — Bourgogne Franche Comte, FR\n\n- Lambeg — County Antrim, NIR\n\n- Lancaster — Ontario, CA\n\n- Land O Lakes — WI\n\n- Les Rousses — Bourgogne Franche Comte, FR\n\n- Loughgall — County Armagh, NIR\n\n- Luddenham — New South Wales, AU\n\n- Lunenburg County — Nova Scotia, CA\n\n- Lyndhurst — Hampshire, ENG\n\n- Lytham — Lancashire, ENG\n\n- Macquarie Links — New South Wales, AU\n\n- Magheragallon — County Donegal, IE\n\n- Maidstone — Victoria, AU\n\n- Manoora — Queensland, AU\n\n- Maple — Ontario, CA\n\n- Marseille — Provence Alpes Cote Dazur, FR\n\n- Marysville — Victoria, AU\n\n- Mawson Lakes — South Australia, AU\n\n- Mc Clure — PA\n\n- Mc Connellsburg — PA\n\n- Mc Kean — PA\n\n- Mc Veytown — PA\n\n- Mcgregor — Ontario, CA\n\n- Mionnay — Auvergne Rhone Alpes, FR\n\n- Monestier — Nouvelle Aquitaine, FR\n\n- Monmouthshire — Gwent, WLS\n\n- Monmouthshire — Wales, GB\n\n- Mono — Ontario, CA\n\n- Mont Tremblant — Quebec, CA\n\n- Monthieux — Auvergne Rhone Alpes, FR\n\n- Moorooduc — Victoria, AU\n\n- Mougins — Provence Alpes Cote Dazur, FR\n\n- Mount Garnet — Queensland, AU\n\n- Mount Osmond — South Australia, AU\n\n- Moyvalley — County Kildare, IE\n\n- Mt Macedon — Victoria, AU\n\n- Mt Martha — Victoria, AU\n\n- Mulgannon — County Wexford, IE\n\n- Mullingar — County Westmeath, IE\n\n- Neckarwestheim — Baden Wrttemberg\n\n- New Dundee — Ontario, CA\n\n- New Minas — Nova Scotia, CA\n\n- Niagara On The Lake — Ontario, CA\n\n- North Ayrshire — Ayrshire, SCT\n\n- North Bondi — New South Wales, AU\n\n- Northbridge — New South Wales, AU\n\n- Nottawa — Ontario, CA\n\n- Opio — Provence Alpes Cote Dazur, FR\n\n- Oranjestad — Aruba\n\n- Palm Beach — New South Wales, AU\n\n- Parcey — Bourgogne Franche Comte, FR\n\n- Paris — Ile De France, FR\n\n- Pembrokeshire — Dyfed, WLS\n\n- Pender Island — British Columbia, CA\n\n- Peregian Springs — Queensland, AU\n\n- Petersburg — Ontario, CA\n\n- Pierrevert — Provence Alpes Cote Dazur, FR\n\n- Pine Lake — Alberta, CA\n\n- Playa Herradura — Guanacaste, CR\n\n- Poissy — Ile De France, FR\n\n- Port Dover — Ontario, CA\n\n- Port Elgin — Ontario, CA\n\n- Port Severn — Ontario, CA\n\n- Port Stephens — New South Wales, AU\n\n- Portballintrae — County Antrim, NIR\n\n- Puerto Penasco — Sonora, MX\n\n- Qualicum Beach — British Columbia, CA\n\n- Quetigny — Bourgogne Franche Comte, FR\n\n- Rathanny — County Tipperary, IE\n\n- Raymond Terrace — New South Wales, AU\n\n- Rhondda Cynon Taf — Mid Glamorgan, WLS\n\n- Ringwood — Hampshire, ENG\n\n- Riviera Maya — Quintana Roo, MX\n\n- Roberts Creek — British Columbia, CA\n\n- Rockland — Ontario, CA\n\n- Rockyview — Alberta, CA\n\n- Rowville — Victoria, AU\n\n- Roxburgh — Roxburghshire, SCT\n\n- Rush — County Dublin, IE\n\n- Ryde — Hampshire, ENG\n\n- Saint Cloud — Le De France, FR\n\n- Saint Marys — New South Wales, AU\n\n- Sault Sainte Marie — MI\n\n- Seaton — South Australia, AU\n\n- Seyssins — Auvergne Rhone Alpes, FR\n\n- Sharon — Ontario, CA\n\n- Shepton Mallett — Somerset, ENG\n\n- Shillelagh — County Wicklow, IE\n\n- Shiskine — Ayrshire, SCT\n\n- Shorncliffe — Queensland, AU\n\n- Southampton Parish — Southhampton, BM\n\n- Southampton — Hampshire, ENG\n\n- Spey Bay — Morayshire, SCT\n\n- St Andrews — Fife, SCT\n\n- St Margarets — County Dublin, IE\n\n- Strathfield — New South Wales, AU\n\n- Sturgeon County — Alberta, CA\n\n- Sunbury — Victoria, AU\n\n- Surprise — Alberta, CA\n\n- Tallebudgera — Queensland, AU\n\n- Tamborine — Queensland, AU\n\n- Teulon — Manitoba, CA\n\n- Thamesford — Ontario, CA\n\n- Thornton — Ontario, CA\n\n- Tooleybuc — New South Wales, AU\n\n- Toukley — New South Wales, AU\n\n- Tramore — County Waterford, IE\n\n- Troy — Ontario, CA\n\n- Tubbercurry — County Sligo, IE\n\n- Tullamarine — Victoria, AU\n\n- Tyrrellspass — County Westmeath, IE\n\n- Vale Of Glamorgan — South Glamorgan, WLS\n\n- Vale Of Glamorgan — Wales, GB\n\n- Verona — Ontario, CA\n\n- Wacol — Queensland, AU\n\n- Wainfleet — Ontario, CA\n\n- Walmersley — Lancashire, ENG\n\n- Wanze — Liege, BE\n\n- Warwick Parish — Warwick, BM\n\n- Warwickshire — England, GB\n\n- Westerose — Alberta, CA\n\n- Whiteley — Hampshire, ENG\n\n- Windaroo — Queensland, AU\n\n- Woodcroft — South Australia, AU\n\n- Woodstock — Prince Edward Island, CA\n\n- Woy Woy — New South Wales, AU\n\n- Yering — Victoria, AU\n\n- Yorkeys Knob — Queensland, AU\n\ncc: @Brianna Strouse @Brian Pugh",
           "bodyHtml": "<p>@Yu-Sheng Tu the items listed above are now passing. I now have another list, these are mostly international items:</p><ul><li><p>Aberlour — Aberdeenshire, SCT</p></li><li><p>Abu Dhabi — Abu Dhabi, AE</p></li><li><p>Acapulco — Guerrero, MX</p></li><li><p>Acme — Alberta, CA</p></li><li><p>Alexandria — New South Wales, AU</p></li><li><p>Ardagh — County Limerick, IE</p></li><li><p>Ariss — Ontario, CA</p></li><li><p>Arundel — Queensland, AU</p></li><li><p>Ashton — Ontario, CA</p></li><li><p>Aspendale — Victoria, AU</p></li><li><p>Aubazine — Nouvelle Aquitaine, FR</p></li><li><p>Baden — Ontario, CA</p></li><li><p>Baldwin — Ontario, CA</p></li><li><p>Balgowlah — New South Wales, AU</p></li><li><p>Ballyboughal — County Dublin, IE</p></li><li><p>Bavaro — La Altagracia, DO</p></li><li><p>Bellewstown — County Meath, IE</p></li><li><p>Ben Eoin — Nova Scotia, CA</p></li><li><p>Berwick On Tweed — Northumberland, ENG</p></li><li><p>Biot — Provence Alpes Cote Dazur, FR</p></li><li><p>Black Creek — British Columbia, CA</p></li><li><p>Blackheath — New South Wales, AU</p></li><li><p>Blainroe — County Wicklow, IE</p></li><li><p>Blind Bay — British Columbia, CA</p></li><li><p>Boneo — Victoria, AU</p></li><li><p>Bossey — Auvergne Rhone Alpes, FR</p></li><li><p>Bowden — Alberta, CA</p></li><li><p>Bradford — Ontario, CA</p></li><li><p>Bresson — Auvergne Rhone Alpes, FR</p></li><li><p>Brookfield — Nova Scotia, CA</p></li><li><p>Caistor Centre — Ontario, CA</p></li><li><p>Caledon East — Ontario, CA</p></li><li><p>Caledonia — Ontario, CA</p></li><li><p>Cambridge — Tasmania, AU</p></li><li><p>Campbell — Australian Capital Territory, AU</p></li><li><p>Cancun — Quintana Roo, MX</p></li><li><p>Carrara — Queensland, AU</p></li><li><p>Casco Twp — MI</p></li><li><p>Castlegregory — County Kerry, IE</p></li><li><p>Cavan Monaghan — Ontario, CA</p></li><li><p>Central Mangrove — New South Wales, AU</p></li><li><p>Centre Wellington — Ontario, CA</p></li><li><p>Centreville — Nova Scotia, CA</p></li><li><p>Ceredigion — Dyfed, WLS</p></li><li><p>Chassieu — Auvergne Rhone Alpes, FR</p></li><li><p>Chassy — Auvergne Rhne Alpes, FR</p></li><li><p>Chassy — Auvergne Rhone Alpes, FR</p></li><li><p>Church Point — Nova Scotia, CA</p></li><li><p>Clinton — Ontario, CA</p></li><li><p>Cloughey — County Down, NIR</p></li><li><p>Comox — British Columbia, CA</p></li><li><p>Condeissiat — Auvergne Rhone Alpes, FR</p></li><li><p>Copetown — Ontario, CA</p></li><li><p>Corbyville — Ontario, CA</p></li><li><p>Cranberry Twp — PA</p></li><li><p>Crossagalla — County Limerick, IE</p></li><li><p>Cullyhanna — County Down, NIR</p></li><li><p>Cumberland — Ontario, CA</p></li><li><p>Daceyville — New South Wales, AU</p></li><li><p>Dagnall — Hertfordshire, ENG</p></li><li><p>Denbighshire — Clwyd, WLS</p></li><li><p>Devonshire Parish — Devonshire, BM</p></li><li><p>Doonbeg — County Clare, IE</p></li><li><p>Dorset — England, GB</p></li><li><p>Dunmurry — County Antrim, NIR</p></li><li><p>Durham Bridge — New Brunswick, CA</p></li><li><p>Dutton — Ontario, CA</p></li><li><p>East Riding Of Yorkshire — Yorkshire, ENG</p></li><li><p>East Sussex — Sussex, ENG</p></li><li><p>Edithvale — Victoria, AU</p></li><li><p>Eganville — Ontario, CA</p></li><li><p>Elsham — Lincolnshire, ENG</p></li><li><p>Endeavour Hills — Victoria, AU</p></li><li><p>Ennismore — Ontario, CA</p></li><li><p>Erin — Ontario, CA</p></li><li><p>Essex — England, GB</p></li><li><p>Ettrickbridge — Selkirkshire, SCT</p></li><li><p>Fairmont Hot Springs — British Columbia, CA</p></li><li><p>Fairview — Prince Edward Island, CA</p></li><li><p>Fallis — Alberta, CA</p></li><li><p>Fenelon Falls — Ontario, CA</p></li><li><p>Fenwick — Ontario, CA</p></li><li><p>Five Dock — New South Wales, AU</p></li><li><p>Flintshire — Clwyd, WLS</p></li><li><p>Forest — Ontario, CA</p></li><li><p>Fuveau — Provence Alpes Cote Dazur, FR</p></li><li><p>Georges Hall — New South Wales, AU</p></li><li><p>Georgetown — Ontario, CA</p></li><li><p>Georgina — Ontario, CA</p></li><li><p>Gledswood Hills — New South Wales, AU</p></li><li><p>Gosford — New South Wales, AU</p></li><li><p>Grange Over Sands — Cumberland, ENG</p></li><li><p>Grasse — Provence Alpes Cote Dazur, FR</p></li><li><p>Greenore — County Louth, IE</p></li><li><p>Haliburton — Ontario, CA</p></li><li><p>Harrison Hot Springs — British Columbia, CA</p></li><li><p>Harrison Hot Springs — British Columbia</p></li><li><p>High Wych — Hertfordshire, ENG</p></li><li><p>Hope Island — Queensland, AU</p></li><li><p>Hornby — Ontario, CA</p></li><li><p>Hornby — Ontario</p></li><li><p>Innisfail — Alberta, CA</p></li><li><p>Karana Downs — Queensland, AU</p></li><li><p>Keene — Ontario, CA</p></li><li><p>Kent — England, GB</p></li><li><p>Kettleby — Ontario, CA</p></li><li><p>Kew — Victoria, AU</p></li><li><p>Kilrush — County Clare</p></li><li><p>Kilternan — County Dublin, IE</p></li><li><p>Kincasslagh — County Donegal, IE</p></li><li><p>Kings Lynn — Norfolk, ENG</p></li><li><p>Kingsgrove — New South Wales, AU</p></li><li><p>La Garde — Provence Alpes Cote Dazur, FR</p></li><li><p>La Motte — Provence Alpes Cote Dazur, FR</p></li><li><p>La Salle — Bourgogne Franche Comt, FR</p></li><li><p>La Salle — Bourgogne Franche Comte, FR</p></li><li><p>Lambeg — County Antrim, NIR</p></li><li><p>Lancaster — Ontario, CA</p></li><li><p>Land O Lakes — WI</p></li><li><p>Les Rousses — Bourgogne Franche Comte, FR</p></li><li><p>Loughgall — County Armagh, NIR</p></li><li><p>Luddenham — New South Wales, AU</p></li><li><p>Lunenburg County — Nova Scotia, CA</p></li><li><p>Lyndhurst — Hampshire, ENG</p></li><li><p>Lytham — Lancashire, ENG</p></li><li><p>Macquarie Links — New South Wales, AU</p></li><li><p>Magheragallon — County Donegal, IE</p></li><li><p>Maidstone — Victoria, AU</p></li><li><p>Manoora — Queensland, AU</p></li><li><p>Maple — Ontario, CA</p></li><li><p>Marseille — Provence Alpes Cote Dazur, FR</p></li><li><p>Marysville — Victoria, AU</p></li><li><p>Mawson Lakes — South Australia, AU</p></li><li><p>Mc Clure — PA</p></li><li><p>Mc Connellsburg — PA</p></li><li><p>Mc Kean — PA</p></li><li><p>Mc Veytown — PA</p></li><li><p>Mcgregor — Ontario, CA</p></li><li><p>Mionnay — Auvergne Rhone Alpes, FR</p></li><li><p>Monestier — Nouvelle Aquitaine, FR</p></li><li><p>Monmouthshire — Gwent, WLS</p></li><li><p>Monmouthshire — Wales, GB</p></li><li><p>Mono — Ontario, CA</p></li><li><p>Mont Tremblant — Quebec, CA</p></li><li><p>Monthieux — Auvergne Rhone Alpes, FR</p></li><li><p>Moorooduc — Victoria, AU</p></li><li><p>Mougins — Provence Alpes Cote Dazur, FR</p></li><li><p>Mount Garnet — Queensland, AU</p></li><li><p>Mount Osmond — South Australia, AU</p></li><li><p>Moyvalley — County Kildare, IE</p></li><li><p>Mt Macedon — Victoria, AU</p></li><li><p>Mt Martha — Victoria, AU</p></li><li><p>Mulgannon — County Wexford, IE</p></li><li><p>Mullingar — County Westmeath, IE</p></li><li><p>Neckarwestheim — Baden Wrttemberg</p></li><li><p>New Dundee — Ontario, CA</p></li><li><p>New Minas — Nova Scotia, CA</p></li><li><p>Niagara On The Lake — Ontario, CA</p></li><li><p>North Ayrshire — Ayrshire, SCT</p></li><li><p>North Bondi — New South Wales, AU</p></li><li><p>Northbridge — New South Wales, AU</p></li><li><p>Nottawa — Ontario, CA</p></li><li><p>Opio — Provence Alpes Cote Dazur, FR</p></li><li><p>Oranjestad — Aruba</p></li><li><p>Palm Beach — New South Wales, AU</p></li><li><p>Parcey — Bourgogne Franche Comte, FR</p></li><li><p>Paris — Ile De France, FR</p></li><li><p>Pembrokeshire — Dyfed, WLS</p></li><li><p>Pender Island — British Columbia, CA</p></li><li><p>Peregian Springs — Queensland, AU</p></li><li><p>Petersburg — Ontario, CA</p></li><li><p>Pierrevert — Provence Alpes Cote Dazur, FR</p></li><li><p>Pine Lake — Alberta, CA</p></li><li><p>Playa Herradura — Guanacaste, CR</p></li><li><p>Poissy — Ile De France, FR</p></li><li><p>Port Dover — Ontario, CA</p></li><li><p>Port Elgin — Ontario, CA</p></li><li><p>Port Severn — Ontario, CA</p></li><li><p>Port Stephens — New South Wales, AU</p></li><li><p>Portballintrae — County Antrim, NIR</p></li><li><p>Puerto Penasco — Sonora, MX</p></li><li><p>Qualicum Beach — British Columbia, CA</p></li><li><p>Quetigny — Bourgogne Franche Comte, FR</p></li><li><p>Rathanny — County Tipperary, IE</p></li><li><p>Raymond Terrace — New South Wales, AU</p></li><li><p>Rhondda Cynon Taf — Mid Glamorgan, WLS</p></li><li><p>Ringwood — Hampshire, ENG</p></li><li><p>Riviera Maya — Quintana Roo, MX</p></li><li><p>Roberts Creek — British Columbia, CA</p></li><li><p>Rockland — Ontario, CA</p></li><li><p>Rockyview — Alberta, CA</p></li><li><p>Rowville — Victoria, AU</p></li><li><p>Roxburgh — Roxburghshire, SCT</p></li><li><p>Rush — County Dublin, IE</p></li><li><p>Ryde — Hampshire, ENG</p></li><li><p>Saint Cloud — Le De France, FR</p></li><li><p>Saint Marys — New South Wales, AU</p></li><li><p>Sault Sainte Marie — MI</p></li><li><p>Seaton — South Australia, AU</p></li><li><p>Seyssins — Auvergne Rhone Alpes, FR</p></li><li><p>Sharon — Ontario, CA</p></li><li><p>Shepton Mallett — Somerset, ENG</p></li><li><p>Shillelagh — County Wicklow, IE</p></li><li><p>Shiskine — Ayrshire, SCT</p></li><li><p>Shorncliffe — Queensland, AU</p></li><li><p>Southampton Parish — Southhampton, BM</p></li><li><p>Southampton — Hampshire, ENG</p></li><li><p>Spey Bay — Morayshire, SCT</p></li><li><p>St Andrews — Fife, SCT</p></li><li><p>St Margarets — County Dublin, IE</p></li><li><p>Strathfield — New South Wales, AU</p></li><li><p>Sturgeon County — Alberta, CA</p></li><li><p>Sunbury — Victoria, AU</p></li><li><p>Surprise — Alberta, CA</p></li><li><p>Tallebudgera — Queensland, AU</p></li><li><p>Tamborine — Queensland, AU</p></li><li><p>Teulon — Manitoba, CA</p></li><li><p>Thamesford — Ontario, CA</p></li><li><p>Thornton — Ontario, CA</p></li><li><p>Tooleybuc — New South Wales, AU</p></li><li><p>Toukley — New South Wales, AU</p></li><li><p>Tramore — County Waterford, IE</p></li><li><p>Troy — Ontario, CA</p></li><li><p>Tubbercurry — County Sligo, IE</p></li><li><p>Tullamarine — Victoria, AU</p></li><li><p>Tyrrellspass — County Westmeath, IE</p></li><li><p>Vale Of Glamorgan — South Glamorgan, WLS</p></li><li><p>Vale Of Glamorgan — Wales, GB</p></li><li><p>Verona — Ontario, CA</p></li><li><p>Wacol — Queensland, AU</p></li><li><p>Wainfleet — Ontario, CA</p></li><li><p>Walmersley — Lancashire, ENG</p></li><li><p>Wanze — Liege, BE</p></li><li><p>Warwick Parish — Warwick, BM</p></li><li><p>Warwickshire — England, GB</p></li><li><p>Westerose — Alberta, CA</p></li><li><p>Whiteley — Hampshire, ENG</p></li><li><p>Windaroo — Queensland, AU</p></li><li><p>Woodcroft — South Australia, AU</p></li><li><p>Woodstock — Prince Edward Island, CA</p></li><li><p>Woy Woy — New South Wales, AU</p></li><li><p>Yering — Victoria, AU</p></li><li><p>Yorkeys Knob — Queensland, AU</p></li></ul><p>cc: @Brianna Strouse @Brian Pugh </p>"
         },
         {
           "id": "1171968",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14474?focusedCommentId=1171968",
           "author": "Sebastian Calzadilla Gonzalez",
           "authorAccountId": "712020:99d14cf5-150b-43f9-9207-31630f8747f0",
           "authorAvatarUrl": "https://secure.gravatar.com/avatar/4bc51cc1e5078afe30e9a981c8f3cd62?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FSG-3.png",
@@ -897,11 +997,14 @@
           "createdDisplay": "May 19, 2026, 10:14 AM",
           "updated": "2026-05-19T10:14:43.985-0400",
           "updatedDisplay": "",
+          "hasMedia": false,
+          "mediaCount": 0,
           "body": "Running following script on STG to enable the list below to appear on geosearch\n\ndb.GeoLocation.updateMany(\n{\nFeatureClass: 80,\nFeatureCode: \"PPL\",\nIsPostal: false,\nSearchable: false,\n$or: [\n{\nCountryCode: {\n$in: [\n\"AU\",\n\"CA\",\n\"FR\",\n\"GB\",\n\"IE\",\n\"MX\",\n\"US\"\n]\n}\n},\n{\n\"Ids.GeoNameId\": {\n$in: [\"292968\", \"3511632\", \"3572972\", \"12362529\"]\n}\n}\n]\n},\n{\n$set: { IsCity: true, Searchable: true }\n}\n)\n\nInserted documents for the following two records as they are not PPL type\n\n12362529 - Playa Herradura, CR\n3572972  - Warwick Parish, BM",
           "bodyHtml": "<p>Running following script on STG to enable the list below to appear on geosearch<br><br></p><pre><code>db.GeoLocation.updateMany(\n  {\n    FeatureClass: 80,\n    FeatureCode: &quot;PPL&quot;,\n    IsPostal: false,\n    Searchable: false,\n    $or: [\n      {\n        CountryCode: {\n          $in: [\n            &quot;AU&quot;,\n            &quot;CA&quot;,\n            &quot;FR&quot;,\n            &quot;GB&quot;,\n            &quot;IE&quot;,\n            &quot;MX&quot;,\n            &quot;US&quot;\n          ]\n        }\n      },\n      {\n        &quot;Ids.GeoNameId&quot;: {\n          $in: [&quot;292968&quot;, &quot;3511632&quot;, &quot;3572972&quot;, &quot;12362529&quot;]\n        }\n      }\n    ]\n  },\n  {\n    $set: { IsCity: true, Searchable: true }\n  }\n)</code></pre><p>Inserted documents for the following two records as they are not PPL type<br><br>12362529 - Playa Herradura, CR<br>3572972  - Warwick Parish, BM</p>"
         },
         {
           "id": "1171979",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14474?focusedCommentId=1171979",
           "author": "Sebastian Calzadilla Gonzalez",
           "authorAccountId": "712020:99d14cf5-150b-43f9-9207-31630f8747f0",
           "authorAvatarUrl": "https://secure.gravatar.com/avatar/4bc51cc1e5078afe30e9a981c8f3cd62?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FSG-3.png",
@@ -909,10 +1012,15 @@
           "createdDisplay": "May 19, 2026, 10:22 AM",
           "updated": "2026-05-19T10:24:07.244-0400",
           "updatedDisplay": "May 19, 2026, 10:24 AM",
+          "hasMedia": false,
+          "mediaCount": 0,
           "body": "@Marcus Briggs Hi I’m helping populate the records on GeoSearch while Yu-Sheng is OoO. Just ran the below script on STG env GolfNow - Book Golf Course Tee Times Online. Please verify and confirm changes so I can run this on prod to enable these records to surface on GeoSearch.\n\ncc. @Brian Pugh @Yu-Sheng Tu",
           "bodyHtml": "<p>@Marcus Briggs Hi I’m helping populate the records on GeoSearch while Yu-Sheng is OoO. Just ran the below script on STG env <a href=\"https://stg.golfnow.io/\" target=\"_blank\" rel=\"noopener\">GolfNow - Book Golf Course Tee Times Online</a>. Please verify and confirm changes so I can run this on prod to enable these records to surface on GeoSearch.</p><p>cc. @Brian Pugh @Yu-Sheng Tu </p>"
         }
       ],
+      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14474?focusedCommentId=1171979",
+      "lastCommentDisplay": "May 19, 2026, 10:22 AM",
+      "lastCommentAuthor": "Sebastian Calzadilla Gonzalez",
       "type": "Task",
       "isSubtask": false,
       "status": "QA Testing (DEV)",
@@ -949,6 +1057,7 @@
       "comments": [
         {
           "id": "1152853",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14390?focusedCommentId=1152853",
           "author": "Jacob Radford",
           "authorAccountId": "6181a59bf6da6a006a76a905",
           "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/6181a59bf6da6a006a76a905/5efc54d9-fd13-41bb-b058-4f6cfdcb4f74/32",
@@ -956,11 +1065,14 @@
           "createdDisplay": "Apr 16, 2026, 4:33 PM",
           "updated": "2026-04-16T16:33:17.630-0400",
           "updatedDisplay": "",
+          "hasMedia": false,
+          "mediaCount": 0,
           "body": "@Joshua Marquess @Brian Pugh Hi guys, I’ve created this ticket to update the location of the is_hotdeal value used in the New Booking API. It’s currently coming over in an unexpected location and causing the GolfNow Hot Deal Green Fee behavior on the tee sheet to not work properly when testing a course using the new booking API for trade rate sets.\n\nHappy to provide any other details that may be needed here. Can we fit this one into an upcoming sprint?\n\ncc: @Jeff Sykes @Dewan Kabir",
           "bodyHtml": "<p>@Joshua Marquess @Brian Pugh Hi guys, I’ve created this ticket to update the location of the is_hotdeal value used in the New Booking API. It’s currently coming over in an unexpected location and causing the GolfNow Hot Deal Green Fee behavior on the tee sheet to not work properly when testing a course using the new booking API for trade rate sets. </p><p>Happy to provide any other details that may be needed here. Can we fit this one into an upcoming sprint? </p><p>cc: @Jeff Sykes @Dewan Kabir </p>"
         },
         {
           "id": "1170900",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14390?focusedCommentId=1170900",
           "author": "Yoel Martin Pardo",
           "authorAccountId": "625571809e7380006fb29599",
           "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
@@ -968,10 +1080,15 @@
           "createdDisplay": "May 14, 2026, 5:51 PM",
           "updated": "2026-05-14T17:51:24.925-0400",
           "updatedDisplay": "",
+          "hasMedia": true,
+          "mediaCount": 3,
           "body": "QA: Please validate with EZL team that they are receiving \"is_hotdeal\": true in the correct location this time.\n\nInternal note: We confirmed with Juan Gonzalez that they are now receiving that info in the correct place and they were able to see the info into the database and EZL teesheet.",
-          "bodyHtml": "<p>QA: Please validate with EZL team that they are receiving <code>&quot;is_hotdeal&quot;: true</code> in the correct location this time.</p><p>Internal note: We confirmed with Juan Gonzalez that they are now receiving that info in the correct place and they were able to see the info into the database and EZL teesheet.</p><div class=\"description-media-group\"><div class=\"description-media-missing\">image-20260514-215101.png could not be embedded.</div></div><div class=\"description-media-group\"><div class=\"description-media-missing\">image-20260514-215111.png could not be embedded.</div></div><div class=\"description-media-group\"><div class=\"description-media-missing\">image-20260514-215121.png could not be embedded.</div></div>"
+          "bodyHtml": "<p>QA: Please validate with EZL team that they are receiving <code>&quot;is_hotdeal&quot;: true</code> in the correct location this time.</p><p>Internal note: We confirmed with Juan Gonzalez that they are now receiving that info in the correct place and they were able to see the info into the database and EZL teesheet.</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1170900/727592-image-20260514-215101.png\" alt=\"image-20260514-215101.png\" loading=\"lazy\"><figcaption>image-20260514-215101.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1170900/727590-image-20260514-215111.png\" alt=\"image-20260514-215111.png\" loading=\"lazy\"><figcaption>image-20260514-215111.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1170900/727591-image-20260514-215121.png\" alt=\"image-20260514-215121.png\" loading=\"lazy\"><figcaption>image-20260514-215121.png</figcaption></figure></div>"
         }
       ],
+      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14390?focusedCommentId=1170900",
+      "lastCommentDisplay": "May 14, 2026, 5:51 PM",
+      "lastCommentAuthor": "Yoel Martin Pardo",
       "type": "Task",
       "isSubtask": false,
       "status": "QA Testing (DEV)",
@@ -1009,6 +1126,7 @@
       "comments": [
         {
           "id": "1171732",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14482?focusedCommentId=1171732",
           "author": "Yoel Martin Pardo",
           "authorAccountId": "625571809e7380006fb29599",
           "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
@@ -1016,10 +1134,15 @@
           "createdDisplay": "May 18, 2026, 6:42 PM",
           "updated": "2026-05-18T18:42:15.714-0400",
           "updatedDisplay": "",
+          "hasMedia": false,
+          "mediaCount": 0,
           "body": "PR: https://github.com/GolfNowEng/gn-main/pull/2153",
           "bodyHtml": "<p>PR: <a href=\"https://github.com/GolfNowEng/gn-main/pull/2153\" target=\"_blank\" rel=\"noopener\">https://github.com/GolfNowEng/gn-main/pull/2153</a> </p>"
         }
       ],
+      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14482?focusedCommentId=1171732",
+      "lastCommentDisplay": "May 18, 2026, 6:42 PM",
+      "lastCommentAuthor": "Yoel Martin Pardo",
       "type": "Developer Task (sub task)",
       "isSubtask": true,
       "status": "QA Testing (DEV)",
@@ -1068,6 +1191,7 @@
       "comments": [
         {
           "id": "1171731",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14476?focusedCommentId=1171731",
           "author": "Yoel Martin Pardo",
           "authorAccountId": "625571809e7380006fb29599",
           "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
@@ -1075,10 +1199,15 @@
           "createdDisplay": "May 18, 2026, 6:41 PM",
           "updated": "2026-05-18T18:41:21.525-0400",
           "updatedDisplay": "",
+          "hasMedia": true,
+          "mediaCount": 1,
           "body": "QA: Here is an example of the change. Please make sure to test both endpoints listed on the description on the ticket and also try to do regression with everything related to Promo Code. Purchasing a subscription, TeeTime, side cart using Promo code, just to make sure that the changes introduced are not breaking anytihing.",
-          "bodyHtml": "<p>QA: Here is an example of the change. Please make sure to test both endpoints listed on the description on the ticket and also try to do regression with everything related to Promo Code. Purchasing a subscription, TeeTime, side cart using Promo code, just to make sure that the changes introduced are not breaking anytihing.</p><div class=\"description-media-group\"><div class=\"description-media-missing\">image-20260518-223956.png could not be embedded.</div></div>"
+          "bodyHtml": "<p>QA: Here is an example of the change. Please make sure to test both endpoints listed on the description on the ticket and also try to do regression with everything related to Promo Code. Purchasing a subscription, TeeTime, side cart using Promo code, just to make sure that the changes introduced are not breaking anytihing.</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14476/comments/1171731/728476-image-20260518-223956.png\" alt=\"image-20260518-223956.png\" loading=\"lazy\"><figcaption>image-20260518-223956.png</figcaption></figure></div>"
         }
       ],
+      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14476?focusedCommentId=1171731",
+      "lastCommentDisplay": "May 18, 2026, 6:41 PM",
+      "lastCommentAuthor": "Yoel Martin Pardo",
       "type": "Story",
       "isSubtask": false,
       "status": "QA Testing (DEV)",
@@ -1126,6 +1255,9 @@
       "descriptionMediaCount": 0,
       "commentCount": 0,
       "comments": [],
+      "lastCommentUrl": "",
+      "lastCommentDisplay": "",
+      "lastCommentAuthor": "",
       "type": "Security Alert",
       "isSubtask": false,
       "status": "QA Testing (DEV)",
@@ -1162,6 +1294,7 @@
       "comments": [
         {
           "id": "1170475",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14466?focusedCommentId=1170475",
           "author": "Yoel Martin Pardo",
           "authorAccountId": "625571809e7380006fb29599",
           "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
@@ -1169,10 +1302,15 @@
           "createdDisplay": "May 13, 2026, 4:57 PM",
           "updated": "2026-05-13T16:57:48.974-0400",
           "updatedDisplay": "",
+          "hasMedia": true,
+          "mediaCount": 1,
           "body": "This issue happened on prod after today’s release 3001.122.0. This was already deployed to prod from the BDA ticket linked to this.",
-          "bodyHtml": "<p>This issue happened on prod after today’s release 3001.122.0. This was already deployed to prod from the BDA ticket linked to this.</p><div class=\"description-media-group\"><div class=\"description-media-missing\">image-20260513-205744.png could not be embedded.</div></div>"
+          "bodyHtml": "<p>This issue happened on prod after today’s release 3001.122.0. This was already deployed to prod from the BDA ticket linked to this.</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14466/comments/1170475/726996-image-20260513-205744.png\" alt=\"image-20260513-205744.png\" loading=\"lazy\"><figcaption>image-20260513-205744.png</figcaption></figure></div>"
         }
       ],
+      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14466?focusedCommentId=1170475",
+      "lastCommentDisplay": "May 13, 2026, 4:57 PM",
+      "lastCommentAuthor": "Yoel Martin Pardo",
       "type": "Bug",
       "isSubtask": false,
       "status": "QA Testing (DEV)",
@@ -1209,6 +1347,7 @@
       "comments": [
         {
           "id": "1171744",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14440?focusedCommentId=1171744",
           "author": "Luis Vallejo Mursuli",
           "authorAccountId": "712020:2e637bb4-c610-467b-839d-9a5b84f75f01",
           "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:2e637bb4-c610-467b-839d-9a5b84f75f01/4dca1d1b-3faa-4d03-90b8-2b3e0cc02887/32",
@@ -1216,10 +1355,15 @@
           "createdDisplay": "May 18, 2026, 8:10 PM",
           "updated": "2026-05-18T20:10:27.028-0400",
           "updatedDisplay": "",
+          "hasMedia": false,
+          "mediaCount": 0,
           "body": "QA,\n\nHere are the instructions to test this ticket. Contact me if you have questions.\n\nThanks!",
           "bodyHtml": "<p>QA,</p><p>Here are the instructions to test this ticket. Contact me if you have questions.</p><p>Thanks!<br><br> </p>"
         }
       ],
+      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14440?focusedCommentId=1171744",
+      "lastCommentDisplay": "May 18, 2026, 8:10 PM",
+      "lastCommentAuthor": "Luis Vallejo Mursuli",
       "type": "Bug",
       "isSubtask": false,
       "status": "QA Testing (DEV)",
@@ -1254,6 +1398,9 @@
       "descriptionMediaCount": 0,
       "commentCount": 0,
       "comments": [],
+      "lastCommentUrl": "",
+      "lastCommentDisplay": "",
+      "lastCommentAuthor": "",
       "type": "Developer Task (sub task)",
       "isSubtask": true,
       "status": "QA Testing (DEV)",
@@ -1296,6 +1443,9 @@
       "descriptionMediaCount": 0,
       "commentCount": 0,
       "comments": [],
+      "lastCommentUrl": "",
+      "lastCommentDisplay": "",
+      "lastCommentAuthor": "",
       "type": "Developer Task (sub task)",
       "isSubtask": true,
       "status": "QA Testing (DEV)",
@@ -1338,6 +1488,9 @@
       "descriptionMediaCount": 0,
       "commentCount": 0,
       "comments": [],
+      "lastCommentUrl": "",
+      "lastCommentDisplay": "",
+      "lastCommentAuthor": "",
       "type": "Developer Task (sub task)",
       "isSubtask": true,
       "status": "QA Testing (DEV)",
@@ -1383,6 +1536,7 @@
       "comments": [
         {
           "id": "1170691",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14464?focusedCommentId=1170691",
           "author": "Yoel Martin Pardo",
           "authorAccountId": "625571809e7380006fb29599",
           "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
@@ -1390,10 +1544,15 @@
           "createdDisplay": "May 14, 2026, 10:57 AM",
           "updated": "2026-05-14T10:57:19.825-0400",
           "updatedDisplay": "",
+          "hasMedia": false,
+          "mediaCount": 0,
           "body": "PR: https://github.com/GolfNowEng/gn-main-db/pull/638",
           "bodyHtml": "<p>PR: <a href=\"https://github.com/GolfNowEng/gn-main-db/pull/638\" target=\"_blank\" rel=\"noopener\">https://github.com/GolfNowEng/gn-main-db/pull/638</a> </p>"
         }
       ],
+      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14464?focusedCommentId=1170691",
+      "lastCommentDisplay": "May 14, 2026, 10:57 AM",
+      "lastCommentAuthor": "Yoel Martin Pardo",
       "type": "Developer Task (sub task)",
       "isSubtask": true,
       "status": "QA Testing (DEV)",
@@ -1436,6 +1595,9 @@
       "descriptionMediaCount": 0,
       "commentCount": 0,
       "comments": [],
+      "lastCommentUrl": "",
+      "lastCommentDisplay": "",
+      "lastCommentAuthor": "",
       "type": "Security Alert",
       "isSubtask": false,
       "status": "QA Testing (DEV)",
@@ -1470,6 +1632,9 @@
       "descriptionMediaCount": 0,
       "commentCount": 0,
       "comments": [],
+      "lastCommentUrl": "",
+      "lastCommentDisplay": "",
+      "lastCommentAuthor": "",
       "type": "Story",
       "isSubtask": false,
       "status": "Pending Deployment (DEV)",
@@ -1514,6 +1679,7 @@
       "comments": [
         {
           "id": "1170688",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14463?focusedCommentId=1170688",
           "author": "Yoel Martin Pardo",
           "authorAccountId": "625571809e7380006fb29599",
           "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
@@ -1521,10 +1687,15 @@
           "createdDisplay": "May 14, 2026, 10:56 AM",
           "updated": "2026-05-14T10:56:42.094-0400",
           "updatedDisplay": "",
+          "hasMedia": false,
+          "mediaCount": 0,
           "body": "PR: https://github.com/GolfNowEng/gn-main/pull/2150",
           "bodyHtml": "<p>PR: <a href=\"https://github.com/GolfNowEng/gn-main/pull/2150\" target=\"_blank\" rel=\"noopener\">https://github.com/GolfNowEng/gn-main/pull/2150</a> </p>"
         }
       ],
+      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14463?focusedCommentId=1170688",
+      "lastCommentDisplay": "May 14, 2026, 10:56 AM",
+      "lastCommentAuthor": "Yoel Martin Pardo",
       "type": "Developer Task (sub task)",
       "isSubtask": true,
       "status": "QA Testing (DEV)",
@@ -1559,10 +1730,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-24T20:40:49.581Z",
-    "previousPulledAtDisplay": "May 24, 2026, 4:40 PM",
-    "currentPulledAt": "2026-05-24T20:45:51.566Z",
-    "currentPulledAtDisplay": "May 24, 2026, 4:45 PM",
+    "previousPulledAt": "2026-05-24T20:45:51.566Z",
+    "previousPulledAtDisplay": "May 24, 2026, 4:45 PM",
+    "currentPulledAt": "2026-05-24T20:49:45.910Z",
+    "currentPulledAtDisplay": "May 24, 2026, 4:49 PM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -1570,6 +1741,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-24T20:45:51.566Z",
+      "previousPulledAtDisplay": "May 24, 2026, 4:45 PM",
+      "currentPulledAt": "2026-05-24T20:49:45.910Z",
+      "currentPulledAtDisplay": "May 24, 2026, 4:49 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-24T20:40:49.581Z",
       "previousPulledAtDisplay": "May 24, 2026, 4:40 PM",
@@ -3401,17 +3583,6 @@
       "previousPulledAtDisplay": "May 24, 2026, 3:18 AM",
       "currentPulledAt": "2026-05-24T07:23:13.809Z",
       "currentPulledAtDisplay": "May 24, 2026, 3:23 AM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-24T07:13:10.390Z",
-      "previousPulledAtDisplay": "May 24, 2026, 3:13 AM",
-      "currentPulledAt": "2026-05-24T07:18:12.098Z",
-      "currentPulledAtDisplay": "May 24, 2026, 3:18 AM",
       "isBaseline": false,
       "added": [],
       "removed": [],

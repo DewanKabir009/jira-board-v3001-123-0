@@ -287,6 +287,11 @@ function jiraConfig(env) {
   return { cloudId, email, token, siteUrl };
 }
 
+function jiraCommentUrl(config, issueKey, commentId) {
+  const base = `${config.siteUrl}/browse/${issueKey}`;
+  return commentId ? `${base}?focusedCommentId=${encodeURIComponent(commentId)}` : base;
+}
+
 async function jiraFetch(env, apiPath) {
   const config = jiraConfig(env);
   const response = await fetch(`https://api.atlassian.com/ex/jira/${config.cloudId}/rest/api/3${apiPath}`, {
@@ -490,19 +495,66 @@ function countDescriptionMedia(node) {
   return selfCount + childCount;
 }
 
-function serializeIssueComments(comments = []) {
+function collectAdfMediaNodes(node, output = []) {
+  if (!node || typeof node !== "object") {
+    return output;
+  }
+
+  if (Array.isArray(node)) {
+    node.forEach((child) => collectAdfMediaNodes(child, output));
+    return output;
+  }
+
+  if (node.type === "media") {
+    output.push(node);
+  }
+
+  if (Array.isArray(node.content)) {
+    node.content.forEach((child) => collectAdfMediaNodes(child, output));
+  }
+
+  return output;
+}
+
+function attachmentsForAdfMedia(node, attachments = []) {
+  const mediaNodes = collectAdfMediaNodes(node);
+  if (!mediaNodes.length) {
+    return [];
+  }
+
+  const mediaLabels = new Set(mediaNodes.map((media) => String(media.attrs?.alt || "").toLowerCase()).filter(Boolean));
+  return attachments.filter((attachment) => {
+    const filename = String(attachment?.filename || "").toLowerCase();
+    return filename && mediaLabels.has(filename);
+  });
+}
+
+function latestIssueComment(comments = []) {
+  const sortedComments = [...comments].sort((left, right) => {
+    return new Date(left.created || 0).getTime() - new Date(right.created || 0).getTime();
+  });
+  return sortedComments[sortedComments.length - 1] || null;
+}
+
+function serializeIssueComments(comments = [], issueKey = "", attachments = [], request = null, config = null) {
   return comments.map((comment) => {
     const author = comment.author || {};
+    const mediaCount = collectAdfMediaNodes(comment.body).length;
+    const commentUrl = config && issueKey ? jiraCommentUrl(config, issueKey, comment.id || "") : "";
+    const mediaAttachments = attachmentsForAdfMedia(comment.body, attachments);
     return {
       id: comment.id || "",
+      url: commentUrl,
       author: personName(author) || "Unknown",
       authorAvatarUrl: personAvatar(author),
       created: comment.created || "",
       createdDisplay: formatDate(comment.created),
       updated: comment.updated || "",
       updatedDisplay: comment.updated && comment.updated !== comment.created ? formatDate(comment.updated) : "",
+      hasMedia: mediaCount > 0,
+      mediaCount,
       body: descriptionText(comment.body),
-      bodyHtml: descriptionHtml(comment.body),
+      bodyHtml: descriptionHtml(comment.body, mediaAttachments, request),
     };
   });
 }
@@ -516,6 +568,7 @@ function normalizeJiraIssue(rawIssue, env, request, comments = []) {
   const imageCount = attachments.filter(isImageAttachment).length;
   const videoCount = attachments.filter(isVideoAttachment).length;
   const mediaCount = imageCount + videoCount || countDescriptionMedia(fields.description);
+  const latestComment = latestIssueComment(comments);
 
   return {
     key: rawIssue.key,
@@ -548,7 +601,10 @@ function normalizeJiraIssue(rawIssue, env, request, comments = []) {
     descriptionVideoCount: videoCount,
     descriptionMediaCount: mediaCount,
     commentCount: comments.length,
-    comments: serializeIssueComments(comments),
+    comments: serializeIssueComments(comments, rawIssue.key, attachments, request, config),
+    lastCommentUrl: latestComment ? jiraCommentUrl(config, rawIssue.key, latestComment.id || "") : "",
+    lastCommentDisplay: latestComment ? formatDate(latestComment.created) : "",
+    lastCommentAuthor: personName(latestComment?.author) || "",
   };
 }
 
