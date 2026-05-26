@@ -4,10 +4,257 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-26T19:32:29.409Z",
-  "pulledAtDisplay": "May 26, 2026, 3:32 PM",
+  "pulledAt": "2026-05-26T19:37:31.568Z",
+  "pulledAtDisplay": "May 26, 2026, 3:37 PM",
   "total": 31,
   "issues": [
+    {
+      "key": "CORE-14442",
+      "url": "https://golfnow.atlassian.net/browse/CORE-14442",
+      "summary": "Mass Cancellation -  Include Trade Toggle Not Working as Intended",
+      "description": "The new GNC Mass Cancellation Tool has two issues around facility selection and trade inclusion behavior.\n\nFirst, the page currently allows mass cancellation behavior while a Master Facility / Trade Facility is selected in the facility dropdown. Mass cancellations should only be available from the play. If a Master Facility is selected, the page should prevent searching/cancelling and display a clear message that mass cancellations are not available for Master Facilities.\n\nSecond, when a Play Facility is selected, the Include Trade toggle is not working as expected. Enabling the toggle removes the course rounds from the results and also fails to show the trade rounds. The expected behavior is that the toggle expands the results, not replaces or clears them.\n\nSteps to Reproduce\n\n- Open the GNC Mass Cancellation Tool created under CORE-13954.\n\n- Select a Master Facility / Trade Facility in the facility dropdown.\n\n- Observe that the page still allows the mass cancellation workflow to continue.\n\n- Select a Play Facility that has course rounds in the selected date range.\n\n- Search with Include Trade disabled.\n\n- Confirm course rounds appear.\n\n- Enable Include Trade.\n\n- Search again.\n\n- Observe that course rounds disappear and trade rounds are not shown.\n\nActual Result\n\n- Master Facilities can be selected and used on the Mass Cancellation page.\n\n- When Include Trade is enabled from a Play Facility, the results no longer show the course rounds.\n\n- Trade rounds are also not returned, leaving the user with missing or incorrect results.\n\nExpected Result\n\n- If a Master Facility / Trade Facility is selected, the Mass Cancellation page should not allow the workflow to continue.\n\n- The UI should show this message:\n\nMass Cancellations are not available for Master Facilities.\n\n- When a Play Facility is selected:\n\n- Include Trade disabled: show only course rounds within the selected date range.\n\n- Include Trade enabled: show both course rounds and trade rounds within the selected date range together.\n\nAcceptance Criteria\n\n- When the selected facility is a Master Facility / Trade Facility, the page displays:\nMass Cancellations are not available for Master Facilities.\n\n- When a Master Facility / Trade Facility is selected, search and cancellation actions are disabled or otherwise blocked.\n\n- When a Play Facility is selected and Include Trade is disabled, only that facility’s course rounds in the selected date range are returned.\n\n- When a Play Facility is selected and Include Trade is enabled, both course rounds and trade rounds in the selected date range are returned in the same results table.\n\n- Enabling Include Trade must not remove course rounds from the result set.\n\n- If no trade rounds exist for the selected Play Facility/date range, enabling Include Trade should still show the course rounds.\n\n- Results should remain limited to the selected date range in both toggle states.",
+      "descriptionHtml": "<p>The new GNC Mass Cancellation Tool has two issues around facility selection and trade inclusion behavior.</p><p>First, the page currently allows mass cancellation behavior while a Master Facility / Trade Facility is selected in the facility dropdown. Mass cancellations should only be available from the play. If a Master Facility is selected, the page should prevent searching/cancelling and display a clear message that mass cancellations are not available for Master Facilities.</p><p>Second, when a Play Facility is selected, the <code>Include Trade</code> toggle is not working as expected. Enabling the toggle removes the course rounds from the results and also fails to show the trade rounds. The expected behavior is that the toggle expands the results, not replaces or clears them.</p><p><strong>Steps to Reproduce</strong></p><ol><li><p>Open the GNC Mass Cancellation Tool created under <code>CORE-13954</code>.</p></li><li><p>Select a Master Facility / Trade Facility in the facility dropdown.</p></li><li><p>Observe that the page still allows the mass cancellation workflow to continue.</p></li><li><p>Select a Play Facility that has course rounds in the selected date range.</p></li><li><p>Search with <code>Include Trade</code> disabled.</p></li><li><p>Confirm course rounds appear.</p></li><li><p>Enable <code>Include Trade</code>.</p></li><li><p>Search again.</p></li><li><p>Observe that course rounds disappear and trade rounds are not shown.</p></li></ol><p><strong>Actual Result</strong></p><ul><li><p>Master Facilities can be selected and used on the Mass Cancellation page.</p></li><li><p>When <code>Include Trade</code> is enabled from a Play Facility, the results no longer show the course rounds.</p></li><li><p>Trade rounds are also not returned, leaving the user with missing or incorrect results.</p></li></ul><p><strong>Expected Result</strong></p><ul><li><p>If a Master Facility / Trade Facility is selected, the Mass Cancellation page should not allow the workflow to continue.</p></li><li><p>The UI should show this message:</p></li></ul><p><code>Mass Cancellations are not available for Master Facilities.</code></p><ul><li><p>When a Play Facility is selected:</p><ul><li><p><code>Include Trade</code> disabled: show only course rounds within the selected date range.</p></li><li><p><code>Include Trade</code> enabled: show both course rounds and trade rounds within the selected date range together.</p></li></ul></li></ul><p><strong>Acceptance Criteria</strong></p><ol><li><p>When the selected facility is a Master Facility / Trade Facility, the page displays:<br><code>Mass Cancellations are not available for Master Facilities.</code></p></li><li><p>When a Master Facility / Trade Facility is selected, search and cancellation actions are disabled or otherwise blocked.</p></li><li><p>When a Play Facility is selected and <code>Include Trade</code> is disabled, only that facility’s course rounds in the selected date range are returned.</p></li><li><p>When a Play Facility is selected and <code>Include Trade</code> is enabled, both course rounds and trade rounds in the selected date range are returned in the same results table.</p></li><li><p>Enabling <code>Include Trade</code> must not remove course rounds from the result set.</p></li><li><p>If no trade rounds exist for the selected Play Facility/date range, enabling <code>Include Trade</code> should still show the course rounds.</p></li><li><p>Results should remain limited to the selected date range in both toggle states.</p></li></ol>",
+      "descriptionImageCount": 0,
+      "descriptionVideoCount": 0,
+      "descriptionMediaCount": 0,
+      "commentCount": 2,
+      "comments": [
+        {
+          "id": "1170819",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14442?focusedCommentId=1170819",
+          "author": "Yoel Martin Pardo",
+          "authorAccountId": "625571809e7380006fb29599",
+          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
+          "created": "2026-05-14T13:59:24.612-0400",
+          "createdDisplay": "May 14, 2026, 1:59 PM",
+          "updated": "2026-05-14T13:59:24.612-0400",
+          "updatedDisplay": "",
+          "hasMedia": true,
+          "mediaCount": 1,
+          "body": "QA: We have fixed the two issues reported into this ticket. Please follow the issues reported on the ticket description and test accordingly. Please make sure to test the entire flow. We also removed the RateSet dropdown from the page since this is not being used.",
+          "bodyHtml": "<p>QA: We have fixed the two issues reported into this ticket. Please follow the issues reported on the ticket description and test accordingly. Please make sure to test the entire flow. We also removed the RateSet dropdown from the page since this is not being used. </p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14442/comments/1170819/727502-image-20260514-175725.png\" alt=\"image-20260514-175725.png\" loading=\"lazy\"><figcaption>image-20260514-175725.png</figcaption></figure></div>"
+        },
+        {
+          "id": "1173037",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14442?focusedCommentId=1173037",
+          "author": "Nicole Greer",
+          "authorAccountId": "712020:8fa0be04-9400-422d-8c63-61e7d7b54669",
+          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:8fa0be04-9400-422d-8c63-61e7d7b54669/01136d3f-e8cd-4bac-9ba8-24e390f7c07e/32",
+          "created": "2026-05-21T01:15:52.946-0400",
+          "createdDisplay": "May 21, 2026, 1:15 AM",
+          "updated": "2026-05-21T01:15:52.946-0400",
+          "updatedDisplay": "",
+          "hasMedia": true,
+          "mediaCount": 3,
+          "body": "Tested multiple courses in DEV. Master Courses showed correct message 'Mass Cancellations are not available for Master Facilities.”\nTrade not being toggled showed only Course Types while having Trade toggled showed both Trade and Course Types. No Course reservations disappeared between toggling.\nHaving a list of only Course Type reservations with no Trade rounds existing still showed all the Course reservations with Trade toggled on.",
+          "bodyHtml": "<p>Tested multiple courses in DEV. Master Courses showed correct message 'Mass Cancellations are not available for Master Facilities.”<br>Trade not being toggled showed only Course Types while having Trade toggled showed both Trade and Course Types. No Course reservations disappeared between toggling. <br>Having a list of only Course Type reservations with no Trade rounds existing still showed all the Course reservations with Trade toggled on. </p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14442/comments/1173037/729705-tradeVsNonTradeToggled.jpg\" alt=\"tradeVsNonTradeToggled.jpg\" loading=\"lazy\"><figcaption>tradeVsNonTradeToggled.jpg</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14442/comments/1173037/729707-massCancellationsNotAllowed.png\" alt=\"massCancellationsNotAllowed.png\" loading=\"lazy\"><figcaption>massCancellationsNotAllowed.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14442/comments/1173037/729706-Screenshot-2026-05-21-011023.png\" alt=\"Screenshot 2026-05-21 011023.png\" loading=\"lazy\"><figcaption>Screenshot 2026-05-21 011023.png</figcaption></figure></div>"
+        }
+      ],
+      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14442?focusedCommentId=1173037",
+      "lastCommentDisplay": "May 21, 2026, 1:15 AM",
+      "lastCommentAuthor": "Nicole Greer",
+      "type": "Bug",
+      "isSubtask": false,
+      "status": "Pending Deployment (STG)",
+      "priority": "P2",
+      "assignee": "Nicole Greer",
+      "assigneeAccountId": "712020:8fa0be04-9400-422d-8c63-61e7d7b54669",
+      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:8fa0be04-9400-422d-8c63-61e7d7b54669/01136d3f-e8cd-4bac-9ba8-24e390f7c07e/32",
+      "assignedDeveloper": "Yoel Martin Pardo",
+      "assignedDeveloperAccountId": "625571809e7380006fb29599",
+      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
+      "updated": "2026-05-26T15:36:29.105-0400",
+      "updatedDisplay": "May 26, 2026, 3:36 PM",
+      "created": "2026-05-04T13:22:04.390-0400",
+      "createdDisplay": "May 4, 2026, 1:22 PM",
+      "components": [
+        "Database",
+        "GolfNow.Services.Reservation",
+        "GolfNowCentral"
+      ],
+      "fixVersions": [
+        "v3001.123.0"
+      ],
+      "resolution": "",
+      "parent": {
+        "key": "CORE-13890",
+        "url": "https://golfnow.atlassian.net/browse/CORE-13890",
+        "summary": "Customer Care - Mass Cancellation",
+        "description": "",
+        "type": "Epic",
+        "status": "Planning",
+        "priority": "P2"
+      }
+    },
+    {
+      "key": "CORE-14304",
+      "url": "https://golfnow.atlassian.net/browse/CORE-14304",
+      "summary": "Update GolfPass Terms for Employee Comp Email Template",
+      "description": "We need to change T&Cs language for the GolfPass+ confirmation email for the employee/complimentary products\n\nCurrent Copy:\n\nRequest\n\nChange the language for renewal T&Cs at the bottom of the email for Cancellation Policy ONLY for the logic listed below:\n\nYour GolfPass+ Employee Complimentary subscription will not auto-renew. You may cancel your complimentary membership at any time, if you choose. Employees must redeem complimentary subscriptions manually for the next period of service through the Employee Perks portal. You can view your benefits on the Manage Memberships page on GolfPass.com.\n\nBy subscribing, you agree to our Terms of Use and Privacy Policy.\n\nLogic:\n\n- Use the above T&Cs copy for PPIDs that have ProductPricingTags = IsComplimentary AND IsEmployee",
+      "descriptionHtml": "<p>We need to change T&amp;Cs language for the GolfPass+ confirmation email for the <strong>employee/complimentary products</strong></p><p><strong>Current Copy:</strong></p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14304/703248-image-20260317-151140.png\" alt=\"image-20260317-151140.png\" loading=\"lazy\"><figcaption>image-20260317-151140.png</figcaption></figure></div><p><strong>Request</strong></p><p>Change the language for renewal T&amp;Cs at the bottom of the email for Cancellation Policy ONLY for the logic listed below:</p><p><em>Your GolfPass+ Employee Complimentary subscription will not auto-renew. You may cancel your complimentary membership at any time, if you choose. Employees must redeem complimentary subscriptions manually for the next period of service through the Employee Perks portal. You can view your benefits on the </em><em><a href=\"https://membership.golfpass.com/account/manage?site-code=331&amp;site-theme=golfpass\" target=\"_blank\" rel=\"noopener\">Manage Memberships page</a></em><em> on </em><em><a href=\"http://Golfpass.com\" target=\"_blank\" rel=\"noopener\">GolfPass.com</a></em><em>.</em></p><p><em>By subscribing, you agree to our </em><em><a href=\"https://www.golfpass.com/terms-of-use\" target=\"_blank\" rel=\"noopener\">Terms of Use</a></em><em> and </em><em><a href=\"https://www.versantprivacy.com/privacy\" target=\"_blank\" rel=\"noopener\">Privacy Policy</a></em><em>.</em></p><p><strong>Logic:</strong></p><ul><li><p>Use the above T&amp;Cs copy for PPIDs that have <code>ProductPricingTags</code> = <code>IsComplimentary</code> <strong>AND</strong> <code>IsEmployee</code></p></li></ul><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14304/703247-image-20260317-151825.png\" alt=\"image-20260317-151825.png\" loading=\"lazy\"><figcaption>image-20260317-151825.png</figcaption></figure></div>",
+      "descriptionImageCount": 2,
+      "descriptionVideoCount": 0,
+      "descriptionMediaCount": 2,
+      "commentCount": 2,
+      "comments": [
+        {
+          "id": "1168683",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14304?focusedCommentId=1168683",
+          "author": "Luis Vallejo Mursuli",
+          "authorAccountId": "712020:2e637bb4-c610-467b-839d-9a5b84f75f01",
+          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:2e637bb4-c610-467b-839d-9a5b84f75f01/4dca1d1b-3faa-4d03-90b8-2b3e0cc02887/32",
+          "created": "2026-05-12T16:18:53.914-0400",
+          "createdDisplay": "May 12, 2026, 4:18 PM",
+          "updated": "2026-05-12T16:18:53.914-0400",
+          "updatedDisplay": "",
+          "hasMedia": false,
+          "mediaCount": 0,
+          "body": "QA,\n\nHere are the instructions to test this ticket. Contact me if you have questions.\n\nThanks!",
+          "bodyHtml": "<p>QA,<br><br>Here are the instructions to test this ticket. Contact me if you have questions.<br><br>Thanks!<br><br> </p>"
+        },
+        {
+          "id": "1173480",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14304?focusedCommentId=1173480",
+          "author": "Nicole Greer",
+          "authorAccountId": "712020:8fa0be04-9400-422d-8c63-61e7d7b54669",
+          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:8fa0be04-9400-422d-8c63-61e7d7b54669/01136d3f-e8cd-4bac-9ba8-24e390f7c07e/32",
+          "created": "2026-05-21T14:38:18.544-0400",
+          "createdDisplay": "May 21, 2026, 2:38 PM",
+          "updated": "2026-05-21T14:38:18.544-0400",
+          "updatedDisplay": "",
+          "hasMedia": true,
+          "mediaCount": 2,
+          "body": "This one is good! Email received when using productPriceID with correct values isEmployee and isComplimentary",
+          "bodyHtml": "<p>This one is good! Email received when using productPriceID with correct values isEmployee and isComplimentary</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14304/comments/1173480/730130-emailWorkingTest.png\" alt=\"emailWorkingTest.png\" loading=\"lazy\"><figcaption>emailWorkingTest.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14304/comments/1173480/730129-productPricingemailTest.png\" alt=\"productPricingemailTest.png\" loading=\"lazy\"><figcaption>productPricingemailTest.png</figcaption></figure></div>"
+        }
+      ],
+      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14304?focusedCommentId=1173480",
+      "lastCommentDisplay": "May 21, 2026, 2:38 PM",
+      "lastCommentAuthor": "Nicole Greer",
+      "type": "Task",
+      "isSubtask": false,
+      "status": "Pending Deployment (STG)",
+      "priority": "P2",
+      "assignee": "Nicole Greer",
+      "assigneeAccountId": "712020:8fa0be04-9400-422d-8c63-61e7d7b54669",
+      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:8fa0be04-9400-422d-8c63-61e7d7b54669/01136d3f-e8cd-4bac-9ba8-24e390f7c07e/32",
+      "assignedDeveloper": "Luis Vallejo Mursuli",
+      "assignedDeveloperAccountId": "712020:2e637bb4-c610-467b-839d-9a5b84f75f01",
+      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:2e637bb4-c610-467b-839d-9a5b84f75f01/4dca1d1b-3faa-4d03-90b8-2b3e0cc02887/32",
+      "updated": "2026-05-26T15:36:24.044-0400",
+      "updatedDisplay": "May 26, 2026, 3:36 PM",
+      "created": "2026-03-17T09:36:23.223-0400",
+      "createdDisplay": "Mar 17, 2026, 9:36 AM",
+      "components": [
+        "Database",
+        "GolfNow.Notification (Windows Service)",
+        "GolfNow.Services.Product"
+      ],
+      "fixVersions": [
+        "v3001.123.0"
+      ],
+      "resolution": "",
+      "parent": {
+        "key": "CORE-14266",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14266",
+        "summary": "Email Template Changes",
+        "description": "",
+        "type": "Epic",
+        "status": "Planning",
+        "priority": "None"
+      }
+    },
+    {
+      "key": "CORE-14158",
+      "url": "https://golfnow.atlassian.net/browse/CORE-14158",
+      "summary": "Follow up from CORE-14094: Bug found in payment during execute fullfillment",
+      "description": "Bug found during the payment step when testing CORE-14094\n\nThis bug was found during processing payment for a hot deal.  During payment process commerce sends the following request to the execute fulfillment endpoint for the fulfillment  proxy. The endpoint is https://apiv2.tn000.stg.golfnowone.dev/commerce/fulfillment/execute  Here is the request body sent to the proxy\n\nThe context for this bug is after we corrected the product code used for the hot deals there have been issues with the metadata that is being passed from commerce to the proxies.  The first issue was the flag for sending to the point of sale tee sheet.  Now we are getting past that step; but have the issue with the execute fulfillment step which is later in the process payment workflow.",
+      "descriptionHtml": "<p>Bug found during the payment step when testing CORE-14094<br><br>This bug was found during processing payment for a hot deal.  During payment process commerce sends the following request to the execute fulfillment endpoint for the fulfillment  proxy. The endpoint is <code>https://apiv2.tn000.stg.golfnowone.dev/commerce/fulfillment/execute</code>  Here is the request body sent to the proxy <br> <br><br>The context for this bug is after we corrected the product code used for the hot deals there have been issues with the metadata that is being passed from commerce to the proxies.  The first issue was the flag for sending to the point of sale tee sheet.  Now we are getting past that step; but have the issue with the execute fulfillment step which is later in the process payment workflow.   </p>",
+      "descriptionImageCount": 0,
+      "descriptionVideoCount": 0,
+      "descriptionMediaCount": 0,
+      "commentCount": 3,
+      "comments": [
+        {
+          "id": "1122764",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14158?focusedCommentId=1122764",
+          "author": "Nicole Greer",
+          "authorAccountId": "712020:8fa0be04-9400-422d-8c63-61e7d7b54669",
+          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:8fa0be04-9400-422d-8c63-61e7d7b54669/01136d3f-e8cd-4bac-9ba8-24e390f7c07e/32",
+          "created": "2026-02-10T13:37:54.723-0500",
+          "createdDisplay": "Feb 10, 2026, 1:37 PM",
+          "updated": "2026-02-10T13:37:54.723-0500",
+          "updatedDisplay": "",
+          "hasMedia": true,
+          "mediaCount": 1,
+          "body": "The ExecuteFufillment endpoint is no longer working. Tried with various tee times and channelIDs. Running GenerateDistributions again does not fix the issue.",
+          "bodyHtml": "<p>The ExecuteFufillment endpoint is no longer working. Tried with various tee times and channelIDs. Running GenerateDistributions again does not fix the issue. </p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14158/comments/1122764/689088-noLongerWorkingExecuteFulfillment.png\" alt=\"noLongerWorkingExecuteFulfillment.png\" loading=\"lazy\"><figcaption>noLongerWorkingExecuteFulfillment.png</figcaption></figure></div>"
+        },
+        {
+          "id": "1170683",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14158?focusedCommentId=1170683",
+          "author": "Andrew Horvat",
+          "authorAccountId": "712020:d714b2a6-3491-46da-89f1-9777e2d1ab70",
+          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:d714b2a6-3491-46da-89f1-9777e2d1ab70/25dedc4a-09d9-4ec9-945c-34d31d771711/32",
+          "created": "2026-05-14T10:51:43.753-0400",
+          "createdDisplay": "May 14, 2026, 10:51 AM",
+          "updated": "2026-05-14T10:51:43.753-0400",
+          "updatedDisplay": "",
+          "hasMedia": false,
+          "mediaCount": 0,
+          "body": "No code changes were required, it appeared the time being tested was an invalid rack time.",
+          "bodyHtml": "<p>No code changes were required, it appeared the time being tested was an invalid rack time.</p>"
+        },
+        {
+          "id": "1173039",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14158?focusedCommentId=1173039",
+          "author": "Nicole Greer",
+          "authorAccountId": "712020:8fa0be04-9400-422d-8c63-61e7d7b54669",
+          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:8fa0be04-9400-422d-8c63-61e7d7b54669/01136d3f-e8cd-4bac-9ba8-24e390f7c07e/32",
+          "created": "2026-05-21T02:11:51.491-0400",
+          "createdDisplay": "May 21, 2026, 2:11 AM",
+          "updated": "2026-05-21T02:11:51.491-0400",
+          "updatedDisplay": "",
+          "hasMedia": true,
+          "mediaCount": 4,
+          "body": "ExecuteFulfillment is tested working with Hot Deal Tee Times! Looks good.",
+          "bodyHtml": "<p>ExecuteFulfillment is tested working with Hot Deal Tee Times! Looks good.</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14158/comments/1173039/729712-46e1e6c0-1929-4827-b503-fe5ac3a0e779.png\" alt=\"46e1e6c0-1929-4827-b503-fe5ac3a0e779.png\" loading=\"lazy\"><figcaption>46e1e6c0-1929-4827-b503-fe5ac3a0e779.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14158/comments/1173039/729711-hotDealTeeTime.png\" alt=\"hotDealTeeTime.png\" loading=\"lazy\"><figcaption>hotDealTeeTime.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14158/comments/1173039/729709-hotDealWorkingExecuteFullfillment.png\" alt=\"hotDealWorkingExecuteFullfillment.png\" loading=\"lazy\"><figcaption>hotDealWorkingExecuteFullfillment.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14158/comments/1173039/729710-hotDealTimeonSite.png\" alt=\"hotDealTimeonSite.png\" loading=\"lazy\"><figcaption>hotDealTimeonSite.png</figcaption></figure></div>"
+        }
+      ],
+      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14158?focusedCommentId=1173039",
+      "lastCommentDisplay": "May 21, 2026, 2:11 AM",
+      "lastCommentAuthor": "Nicole Greer",
+      "type": "Bug",
+      "isSubtask": false,
+      "status": "Pending Deployment (STG)",
+      "priority": "P1",
+      "assignee": "Nicole Greer",
+      "assigneeAccountId": "712020:8fa0be04-9400-422d-8c63-61e7d7b54669",
+      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:8fa0be04-9400-422d-8c63-61e7d7b54669/01136d3f-e8cd-4bac-9ba8-24e390f7c07e/32",
+      "assignedDeveloper": "Andrew Horvat",
+      "assignedDeveloperAccountId": "712020:d714b2a6-3491-46da-89f1-9777e2d1ab70",
+      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:d714b2a6-3491-46da-89f1-9777e2d1ab70/25dedc4a-09d9-4ec9-945c-34d31d771711/32",
+      "updated": "2026-05-26T15:36:14.983-0400",
+      "updatedDisplay": "May 26, 2026, 3:36 PM",
+      "created": "2026-02-10T07:56:50.334-0500",
+      "createdDisplay": "Feb 10, 2026, 7:56 AM",
+      "components": [
+        "GolfNow.Services.CommerceProxy"
+      ],
+      "fixVersions": [
+        "v3001.123.0"
+      ],
+      "resolution": "",
+      "parent": {
+        "key": "GNCBE-9647",
+        "url": "https://golfnow.atlassian.net/browse/GNCBE-9647",
+        "summary": "External Commerce API Bugs",
+        "description": "",
+        "type": "Epic",
+        "status": "Planning",
+        "priority": "None"
+      }
+    },
     {
       "key": "CORE-14482",
       "url": "https://golfnow.atlassian.net/browse/CORE-14482",
@@ -802,84 +1049,6 @@
       }
     },
     {
-      "key": "CORE-14304",
-      "url": "https://golfnow.atlassian.net/browse/CORE-14304",
-      "summary": "Update GolfPass Terms for Employee Comp Email Template",
-      "description": "We need to change T&Cs language for the GolfPass+ confirmation email for the employee/complimentary products\n\nCurrent Copy:\n\nRequest\n\nChange the language for renewal T&Cs at the bottom of the email for Cancellation Policy ONLY for the logic listed below:\n\nYour GolfPass+ Employee Complimentary subscription will not auto-renew. You may cancel your complimentary membership at any time, if you choose. Employees must redeem complimentary subscriptions manually for the next period of service through the Employee Perks portal. You can view your benefits on the Manage Memberships page on GolfPass.com.\n\nBy subscribing, you agree to our Terms of Use and Privacy Policy.\n\nLogic:\n\n- Use the above T&Cs copy for PPIDs that have ProductPricingTags = IsComplimentary AND IsEmployee",
-      "descriptionHtml": "<p>We need to change T&amp;Cs language for the GolfPass+ confirmation email for the <strong>employee/complimentary products</strong></p><p><strong>Current Copy:</strong></p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14304/703248-image-20260317-151140.png\" alt=\"image-20260317-151140.png\" loading=\"lazy\"><figcaption>image-20260317-151140.png</figcaption></figure></div><p><strong>Request</strong></p><p>Change the language for renewal T&amp;Cs at the bottom of the email for Cancellation Policy ONLY for the logic listed below:</p><p><em>Your GolfPass+ Employee Complimentary subscription will not auto-renew. You may cancel your complimentary membership at any time, if you choose. Employees must redeem complimentary subscriptions manually for the next period of service through the Employee Perks portal. You can view your benefits on the </em><em><a href=\"https://membership.golfpass.com/account/manage?site-code=331&amp;site-theme=golfpass\" target=\"_blank\" rel=\"noopener\">Manage Memberships page</a></em><em> on </em><em><a href=\"http://Golfpass.com\" target=\"_blank\" rel=\"noopener\">GolfPass.com</a></em><em>.</em></p><p><em>By subscribing, you agree to our </em><em><a href=\"https://www.golfpass.com/terms-of-use\" target=\"_blank\" rel=\"noopener\">Terms of Use</a></em><em> and </em><em><a href=\"https://www.versantprivacy.com/privacy\" target=\"_blank\" rel=\"noopener\">Privacy Policy</a></em><em>.</em></p><p><strong>Logic:</strong></p><ul><li><p>Use the above T&amp;Cs copy for PPIDs that have <code>ProductPricingTags</code> = <code>IsComplimentary</code> <strong>AND</strong> <code>IsEmployee</code></p></li></ul><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14304/703247-image-20260317-151825.png\" alt=\"image-20260317-151825.png\" loading=\"lazy\"><figcaption>image-20260317-151825.png</figcaption></figure></div>",
-      "descriptionImageCount": 2,
-      "descriptionVideoCount": 0,
-      "descriptionMediaCount": 2,
-      "commentCount": 2,
-      "comments": [
-        {
-          "id": "1168683",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14304?focusedCommentId=1168683",
-          "author": "Luis Vallejo Mursuli",
-          "authorAccountId": "712020:2e637bb4-c610-467b-839d-9a5b84f75f01",
-          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:2e637bb4-c610-467b-839d-9a5b84f75f01/4dca1d1b-3faa-4d03-90b8-2b3e0cc02887/32",
-          "created": "2026-05-12T16:18:53.914-0400",
-          "createdDisplay": "May 12, 2026, 4:18 PM",
-          "updated": "2026-05-12T16:18:53.914-0400",
-          "updatedDisplay": "",
-          "hasMedia": false,
-          "mediaCount": 0,
-          "body": "QA,\n\nHere are the instructions to test this ticket. Contact me if you have questions.\n\nThanks!",
-          "bodyHtml": "<p>QA,<br><br>Here are the instructions to test this ticket. Contact me if you have questions.<br><br>Thanks!<br><br> </p>"
-        },
-        {
-          "id": "1173480",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14304?focusedCommentId=1173480",
-          "author": "Nicole Greer",
-          "authorAccountId": "712020:8fa0be04-9400-422d-8c63-61e7d7b54669",
-          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:8fa0be04-9400-422d-8c63-61e7d7b54669/01136d3f-e8cd-4bac-9ba8-24e390f7c07e/32",
-          "created": "2026-05-21T14:38:18.544-0400",
-          "createdDisplay": "May 21, 2026, 2:38 PM",
-          "updated": "2026-05-21T14:38:18.544-0400",
-          "updatedDisplay": "",
-          "hasMedia": true,
-          "mediaCount": 2,
-          "body": "This one is good! Email received when using productPriceID with correct values isEmployee and isComplimentary",
-          "bodyHtml": "<p>This one is good! Email received when using productPriceID with correct values isEmployee and isComplimentary</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14304/comments/1173480/730130-emailWorkingTest.png\" alt=\"emailWorkingTest.png\" loading=\"lazy\"><figcaption>emailWorkingTest.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14304/comments/1173480/730129-productPricingemailTest.png\" alt=\"productPricingemailTest.png\" loading=\"lazy\"><figcaption>productPricingemailTest.png</figcaption></figure></div>"
-        }
-      ],
-      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14304?focusedCommentId=1173480",
-      "lastCommentDisplay": "May 21, 2026, 2:38 PM",
-      "lastCommentAuthor": "Nicole Greer",
-      "type": "Task",
-      "isSubtask": false,
-      "status": "QA Testing (DEV)",
-      "priority": "P2",
-      "assignee": "Nicole Greer",
-      "assigneeAccountId": "712020:8fa0be04-9400-422d-8c63-61e7d7b54669",
-      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:8fa0be04-9400-422d-8c63-61e7d7b54669/01136d3f-e8cd-4bac-9ba8-24e390f7c07e/32",
-      "assignedDeveloper": "Luis Vallejo Mursuli",
-      "assignedDeveloperAccountId": "712020:2e637bb4-c610-467b-839d-9a5b84f75f01",
-      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:2e637bb4-c610-467b-839d-9a5b84f75f01/4dca1d1b-3faa-4d03-90b8-2b3e0cc02887/32",
-      "updated": "2026-05-21T14:38:46.960-0400",
-      "updatedDisplay": "May 21, 2026, 2:38 PM",
-      "created": "2026-03-17T09:36:23.223-0400",
-      "createdDisplay": "Mar 17, 2026, 9:36 AM",
-      "components": [
-        "Database",
-        "GolfNow.Notification (Windows Service)",
-        "GolfNow.Services.Product"
-      ],
-      "fixVersions": [
-        "v3001.123.0"
-      ],
-      "resolution": "",
-      "parent": {
-        "key": "CORE-14266",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14266",
-        "summary": "Email Template Changes",
-        "description": "",
-        "type": "Epic",
-        "status": "Planning",
-        "priority": "None"
-      }
-    },
-    {
       "key": "CORE-14397",
       "url": "https://golfnow.atlassian.net/browse/CORE-14397",
       "summary": "CLONE - Update to allow No Payment Methods when $0 due now for BE",
@@ -1067,175 +1236,6 @@
       ],
       "resolution": "",
       "parent": null
-    },
-    {
-      "key": "CORE-14158",
-      "url": "https://golfnow.atlassian.net/browse/CORE-14158",
-      "summary": "Follow up from CORE-14094: Bug found in payment during execute fullfillment",
-      "description": "Bug found during the payment step when testing CORE-14094\n\nThis bug was found during processing payment for a hot deal.  During payment process commerce sends the following request to the execute fulfillment endpoint for the fulfillment  proxy. The endpoint is https://apiv2.tn000.stg.golfnowone.dev/commerce/fulfillment/execute  Here is the request body sent to the proxy\n\nThe context for this bug is after we corrected the product code used for the hot deals there have been issues with the metadata that is being passed from commerce to the proxies.  The first issue was the flag for sending to the point of sale tee sheet.  Now we are getting past that step; but have the issue with the execute fulfillment step which is later in the process payment workflow.",
-      "descriptionHtml": "<p>Bug found during the payment step when testing CORE-14094<br><br>This bug was found during processing payment for a hot deal.  During payment process commerce sends the following request to the execute fulfillment endpoint for the fulfillment  proxy. The endpoint is <code>https://apiv2.tn000.stg.golfnowone.dev/commerce/fulfillment/execute</code>  Here is the request body sent to the proxy <br> <br><br>The context for this bug is after we corrected the product code used for the hot deals there have been issues with the metadata that is being passed from commerce to the proxies.  The first issue was the flag for sending to the point of sale tee sheet.  Now we are getting past that step; but have the issue with the execute fulfillment step which is later in the process payment workflow.   </p>",
-      "descriptionImageCount": 0,
-      "descriptionVideoCount": 0,
-      "descriptionMediaCount": 0,
-      "commentCount": 3,
-      "comments": [
-        {
-          "id": "1122764",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14158?focusedCommentId=1122764",
-          "author": "Nicole Greer",
-          "authorAccountId": "712020:8fa0be04-9400-422d-8c63-61e7d7b54669",
-          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:8fa0be04-9400-422d-8c63-61e7d7b54669/01136d3f-e8cd-4bac-9ba8-24e390f7c07e/32",
-          "created": "2026-02-10T13:37:54.723-0500",
-          "createdDisplay": "Feb 10, 2026, 1:37 PM",
-          "updated": "2026-02-10T13:37:54.723-0500",
-          "updatedDisplay": "",
-          "hasMedia": true,
-          "mediaCount": 1,
-          "body": "The ExecuteFufillment endpoint is no longer working. Tried with various tee times and channelIDs. Running GenerateDistributions again does not fix the issue.",
-          "bodyHtml": "<p>The ExecuteFufillment endpoint is no longer working. Tried with various tee times and channelIDs. Running GenerateDistributions again does not fix the issue. </p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14158/comments/1122764/689088-noLongerWorkingExecuteFulfillment.png\" alt=\"noLongerWorkingExecuteFulfillment.png\" loading=\"lazy\"><figcaption>noLongerWorkingExecuteFulfillment.png</figcaption></figure></div>"
-        },
-        {
-          "id": "1170683",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14158?focusedCommentId=1170683",
-          "author": "Andrew Horvat",
-          "authorAccountId": "712020:d714b2a6-3491-46da-89f1-9777e2d1ab70",
-          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:d714b2a6-3491-46da-89f1-9777e2d1ab70/25dedc4a-09d9-4ec9-945c-34d31d771711/32",
-          "created": "2026-05-14T10:51:43.753-0400",
-          "createdDisplay": "May 14, 2026, 10:51 AM",
-          "updated": "2026-05-14T10:51:43.753-0400",
-          "updatedDisplay": "",
-          "hasMedia": false,
-          "mediaCount": 0,
-          "body": "No code changes were required, it appeared the time being tested was an invalid rack time.",
-          "bodyHtml": "<p>No code changes were required, it appeared the time being tested was an invalid rack time.</p>"
-        },
-        {
-          "id": "1173039",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14158?focusedCommentId=1173039",
-          "author": "Nicole Greer",
-          "authorAccountId": "712020:8fa0be04-9400-422d-8c63-61e7d7b54669",
-          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:8fa0be04-9400-422d-8c63-61e7d7b54669/01136d3f-e8cd-4bac-9ba8-24e390f7c07e/32",
-          "created": "2026-05-21T02:11:51.491-0400",
-          "createdDisplay": "May 21, 2026, 2:11 AM",
-          "updated": "2026-05-21T02:11:51.491-0400",
-          "updatedDisplay": "",
-          "hasMedia": true,
-          "mediaCount": 4,
-          "body": "ExecuteFulfillment is tested working with Hot Deal Tee Times! Looks good.",
-          "bodyHtml": "<p>ExecuteFulfillment is tested working with Hot Deal Tee Times! Looks good.</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14158/comments/1173039/729712-46e1e6c0-1929-4827-b503-fe5ac3a0e779.png\" alt=\"46e1e6c0-1929-4827-b503-fe5ac3a0e779.png\" loading=\"lazy\"><figcaption>46e1e6c0-1929-4827-b503-fe5ac3a0e779.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14158/comments/1173039/729711-hotDealTeeTime.png\" alt=\"hotDealTeeTime.png\" loading=\"lazy\"><figcaption>hotDealTeeTime.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14158/comments/1173039/729709-hotDealWorkingExecuteFullfillment.png\" alt=\"hotDealWorkingExecuteFullfillment.png\" loading=\"lazy\"><figcaption>hotDealWorkingExecuteFullfillment.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14158/comments/1173039/729710-hotDealTimeonSite.png\" alt=\"hotDealTimeonSite.png\" loading=\"lazy\"><figcaption>hotDealTimeonSite.png</figcaption></figure></div>"
-        }
-      ],
-      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14158?focusedCommentId=1173039",
-      "lastCommentDisplay": "May 21, 2026, 2:11 AM",
-      "lastCommentAuthor": "Nicole Greer",
-      "type": "Bug",
-      "isSubtask": false,
-      "status": "QA Testing (DEV)",
-      "priority": "P1",
-      "assignee": "Nicole Greer",
-      "assigneeAccountId": "712020:8fa0be04-9400-422d-8c63-61e7d7b54669",
-      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:8fa0be04-9400-422d-8c63-61e7d7b54669/01136d3f-e8cd-4bac-9ba8-24e390f7c07e/32",
-      "assignedDeveloper": "Andrew Horvat",
-      "assignedDeveloperAccountId": "712020:d714b2a6-3491-46da-89f1-9777e2d1ab70",
-      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:d714b2a6-3491-46da-89f1-9777e2d1ab70/25dedc4a-09d9-4ec9-945c-34d31d771711/32",
-      "updated": "2026-05-21T02:12:12.127-0400",
-      "updatedDisplay": "May 21, 2026, 2:12 AM",
-      "created": "2026-02-10T07:56:50.334-0500",
-      "createdDisplay": "Feb 10, 2026, 7:56 AM",
-      "components": [
-        "GolfNow.Services.CommerceProxy"
-      ],
-      "fixVersions": [
-        "v3001.123.0"
-      ],
-      "resolution": "",
-      "parent": {
-        "key": "GNCBE-9647",
-        "url": "https://golfnow.atlassian.net/browse/GNCBE-9647",
-        "summary": "External Commerce API Bugs",
-        "description": "",
-        "type": "Epic",
-        "status": "Planning",
-        "priority": "None"
-      }
-    },
-    {
-      "key": "CORE-14442",
-      "url": "https://golfnow.atlassian.net/browse/CORE-14442",
-      "summary": "Mass Cancellation -  Include Trade Toggle Not Working as Intended",
-      "description": "The new GNC Mass Cancellation Tool has two issues around facility selection and trade inclusion behavior.\n\nFirst, the page currently allows mass cancellation behavior while a Master Facility / Trade Facility is selected in the facility dropdown. Mass cancellations should only be available from the play. If a Master Facility is selected, the page should prevent searching/cancelling and display a clear message that mass cancellations are not available for Master Facilities.\n\nSecond, when a Play Facility is selected, the Include Trade toggle is not working as expected. Enabling the toggle removes the course rounds from the results and also fails to show the trade rounds. The expected behavior is that the toggle expands the results, not replaces or clears them.\n\nSteps to Reproduce\n\n- Open the GNC Mass Cancellation Tool created under CORE-13954.\n\n- Select a Master Facility / Trade Facility in the facility dropdown.\n\n- Observe that the page still allows the mass cancellation workflow to continue.\n\n- Select a Play Facility that has course rounds in the selected date range.\n\n- Search with Include Trade disabled.\n\n- Confirm course rounds appear.\n\n- Enable Include Trade.\n\n- Search again.\n\n- Observe that course rounds disappear and trade rounds are not shown.\n\nActual Result\n\n- Master Facilities can be selected and used on the Mass Cancellation page.\n\n- When Include Trade is enabled from a Play Facility, the results no longer show the course rounds.\n\n- Trade rounds are also not returned, leaving the user with missing or incorrect results.\n\nExpected Result\n\n- If a Master Facility / Trade Facility is selected, the Mass Cancellation page should not allow the workflow to continue.\n\n- The UI should show this message:\n\nMass Cancellations are not available for Master Facilities.\n\n- When a Play Facility is selected:\n\n- Include Trade disabled: show only course rounds within the selected date range.\n\n- Include Trade enabled: show both course rounds and trade rounds within the selected date range together.\n\nAcceptance Criteria\n\n- When the selected facility is a Master Facility / Trade Facility, the page displays:\nMass Cancellations are not available for Master Facilities.\n\n- When a Master Facility / Trade Facility is selected, search and cancellation actions are disabled or otherwise blocked.\n\n- When a Play Facility is selected and Include Trade is disabled, only that facility’s course rounds in the selected date range are returned.\n\n- When a Play Facility is selected and Include Trade is enabled, both course rounds and trade rounds in the selected date range are returned in the same results table.\n\n- Enabling Include Trade must not remove course rounds from the result set.\n\n- If no trade rounds exist for the selected Play Facility/date range, enabling Include Trade should still show the course rounds.\n\n- Results should remain limited to the selected date range in both toggle states.",
-      "descriptionHtml": "<p>The new GNC Mass Cancellation Tool has two issues around facility selection and trade inclusion behavior.</p><p>First, the page currently allows mass cancellation behavior while a Master Facility / Trade Facility is selected in the facility dropdown. Mass cancellations should only be available from the play. If a Master Facility is selected, the page should prevent searching/cancelling and display a clear message that mass cancellations are not available for Master Facilities.</p><p>Second, when a Play Facility is selected, the <code>Include Trade</code> toggle is not working as expected. Enabling the toggle removes the course rounds from the results and also fails to show the trade rounds. The expected behavior is that the toggle expands the results, not replaces or clears them.</p><p><strong>Steps to Reproduce</strong></p><ol><li><p>Open the GNC Mass Cancellation Tool created under <code>CORE-13954</code>.</p></li><li><p>Select a Master Facility / Trade Facility in the facility dropdown.</p></li><li><p>Observe that the page still allows the mass cancellation workflow to continue.</p></li><li><p>Select a Play Facility that has course rounds in the selected date range.</p></li><li><p>Search with <code>Include Trade</code> disabled.</p></li><li><p>Confirm course rounds appear.</p></li><li><p>Enable <code>Include Trade</code>.</p></li><li><p>Search again.</p></li><li><p>Observe that course rounds disappear and trade rounds are not shown.</p></li></ol><p><strong>Actual Result</strong></p><ul><li><p>Master Facilities can be selected and used on the Mass Cancellation page.</p></li><li><p>When <code>Include Trade</code> is enabled from a Play Facility, the results no longer show the course rounds.</p></li><li><p>Trade rounds are also not returned, leaving the user with missing or incorrect results.</p></li></ul><p><strong>Expected Result</strong></p><ul><li><p>If a Master Facility / Trade Facility is selected, the Mass Cancellation page should not allow the workflow to continue.</p></li><li><p>The UI should show this message:</p></li></ul><p><code>Mass Cancellations are not available for Master Facilities.</code></p><ul><li><p>When a Play Facility is selected:</p><ul><li><p><code>Include Trade</code> disabled: show only course rounds within the selected date range.</p></li><li><p><code>Include Trade</code> enabled: show both course rounds and trade rounds within the selected date range together.</p></li></ul></li></ul><p><strong>Acceptance Criteria</strong></p><ol><li><p>When the selected facility is a Master Facility / Trade Facility, the page displays:<br><code>Mass Cancellations are not available for Master Facilities.</code></p></li><li><p>When a Master Facility / Trade Facility is selected, search and cancellation actions are disabled or otherwise blocked.</p></li><li><p>When a Play Facility is selected and <code>Include Trade</code> is disabled, only that facility’s course rounds in the selected date range are returned.</p></li><li><p>When a Play Facility is selected and <code>Include Trade</code> is enabled, both course rounds and trade rounds in the selected date range are returned in the same results table.</p></li><li><p>Enabling <code>Include Trade</code> must not remove course rounds from the result set.</p></li><li><p>If no trade rounds exist for the selected Play Facility/date range, enabling <code>Include Trade</code> should still show the course rounds.</p></li><li><p>Results should remain limited to the selected date range in both toggle states.</p></li></ol>",
-      "descriptionImageCount": 0,
-      "descriptionVideoCount": 0,
-      "descriptionMediaCount": 0,
-      "commentCount": 2,
-      "comments": [
-        {
-          "id": "1170819",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14442?focusedCommentId=1170819",
-          "author": "Yoel Martin Pardo",
-          "authorAccountId": "625571809e7380006fb29599",
-          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
-          "created": "2026-05-14T13:59:24.612-0400",
-          "createdDisplay": "May 14, 2026, 1:59 PM",
-          "updated": "2026-05-14T13:59:24.612-0400",
-          "updatedDisplay": "",
-          "hasMedia": true,
-          "mediaCount": 1,
-          "body": "QA: We have fixed the two issues reported into this ticket. Please follow the issues reported on the ticket description and test accordingly. Please make sure to test the entire flow. We also removed the RateSet dropdown from the page since this is not being used.",
-          "bodyHtml": "<p>QA: We have fixed the two issues reported into this ticket. Please follow the issues reported on the ticket description and test accordingly. Please make sure to test the entire flow. We also removed the RateSet dropdown from the page since this is not being used. </p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14442/comments/1170819/727502-image-20260514-175725.png\" alt=\"image-20260514-175725.png\" loading=\"lazy\"><figcaption>image-20260514-175725.png</figcaption></figure></div>"
-        },
-        {
-          "id": "1173037",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14442?focusedCommentId=1173037",
-          "author": "Nicole Greer",
-          "authorAccountId": "712020:8fa0be04-9400-422d-8c63-61e7d7b54669",
-          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:8fa0be04-9400-422d-8c63-61e7d7b54669/01136d3f-e8cd-4bac-9ba8-24e390f7c07e/32",
-          "created": "2026-05-21T01:15:52.946-0400",
-          "createdDisplay": "May 21, 2026, 1:15 AM",
-          "updated": "2026-05-21T01:15:52.946-0400",
-          "updatedDisplay": "",
-          "hasMedia": true,
-          "mediaCount": 3,
-          "body": "Tested multiple courses in DEV. Master Courses showed correct message 'Mass Cancellations are not available for Master Facilities.”\nTrade not being toggled showed only Course Types while having Trade toggled showed both Trade and Course Types. No Course reservations disappeared between toggling.\nHaving a list of only Course Type reservations with no Trade rounds existing still showed all the Course reservations with Trade toggled on.",
-          "bodyHtml": "<p>Tested multiple courses in DEV. Master Courses showed correct message 'Mass Cancellations are not available for Master Facilities.”<br>Trade not being toggled showed only Course Types while having Trade toggled showed both Trade and Course Types. No Course reservations disappeared between toggling. <br>Having a list of only Course Type reservations with no Trade rounds existing still showed all the Course reservations with Trade toggled on. </p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14442/comments/1173037/729705-tradeVsNonTradeToggled.jpg\" alt=\"tradeVsNonTradeToggled.jpg\" loading=\"lazy\"><figcaption>tradeVsNonTradeToggled.jpg</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14442/comments/1173037/729707-massCancellationsNotAllowed.png\" alt=\"massCancellationsNotAllowed.png\" loading=\"lazy\"><figcaption>massCancellationsNotAllowed.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14442/comments/1173037/729706-Screenshot-2026-05-21-011023.png\" alt=\"Screenshot 2026-05-21 011023.png\" loading=\"lazy\"><figcaption>Screenshot 2026-05-21 011023.png</figcaption></figure></div>"
-        }
-      ],
-      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14442?focusedCommentId=1173037",
-      "lastCommentDisplay": "May 21, 2026, 1:15 AM",
-      "lastCommentAuthor": "Nicole Greer",
-      "type": "Bug",
-      "isSubtask": false,
-      "status": "QA Testing (DEV)",
-      "priority": "P2",
-      "assignee": "Nicole Greer",
-      "assigneeAccountId": "712020:8fa0be04-9400-422d-8c63-61e7d7b54669",
-      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:8fa0be04-9400-422d-8c63-61e7d7b54669/01136d3f-e8cd-4bac-9ba8-24e390f7c07e/32",
-      "assignedDeveloper": "Yoel Martin Pardo",
-      "assignedDeveloperAccountId": "625571809e7380006fb29599",
-      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
-      "updated": "2026-05-21T01:16:11.647-0400",
-      "updatedDisplay": "May 21, 2026, 1:16 AM",
-      "created": "2026-05-04T13:22:04.390-0400",
-      "createdDisplay": "May 4, 2026, 1:22 PM",
-      "components": [
-        "Database",
-        "GolfNow.Services.Reservation",
-        "GolfNowCentral"
-      ],
-      "fixVersions": [
-        "v3001.123.0"
-      ],
-      "resolution": "",
-      "parent": {
-        "key": "CORE-13890",
-        "url": "https://golfnow.atlassian.net/browse/CORE-13890",
-        "summary": "Customer Care - Mass Cancellation",
-        "description": "",
-        "type": "Epic",
-        "status": "Planning",
-        "priority": "P2"
-      }
     },
     {
       "key": "CORE-14427",
@@ -1594,7 +1594,7 @@
         "summary": "Update GolfPass Terms for Employee Comp Email Template",
         "description": "",
         "type": "Task",
-        "status": "QA Testing (DEV)",
+        "status": "Pending Deployment (STG)",
         "priority": "P2"
       }
     },
@@ -1640,7 +1640,7 @@
         "summary": "Update GolfPass Terms for Employee Comp Email Template",
         "description": "",
         "type": "Task",
-        "status": "QA Testing (DEV)",
+        "status": "Pending Deployment (STG)",
         "priority": "P2"
       }
     },
@@ -1701,7 +1701,7 @@
         "summary": "Mass Cancellation -  Include Trade Toggle Not Working as Intended",
         "description": "",
         "type": "Bug",
-        "status": "QA Testing (DEV)",
+        "status": "Pending Deployment (STG)",
         "priority": "P2"
       }
     },
@@ -1845,23 +1845,362 @@
         "summary": "Mass Cancellation -  Include Trade Toggle Not Working as Intended",
         "description": "",
         "type": "Bug",
-        "status": "QA Testing (DEV)",
+        "status": "Pending Deployment (STG)",
         "priority": "P2"
       }
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-26T19:27:26.778Z",
-    "previousPulledAtDisplay": "May 26, 2026, 3:27 PM",
-    "currentPulledAt": "2026-05-26T19:32:29.409Z",
-    "currentPulledAtDisplay": "May 26, 2026, 3:32 PM",
+    "previousPulledAt": "2026-05-26T19:32:29.409Z",
+    "previousPulledAtDisplay": "May 26, 2026, 3:32 PM",
+    "currentPulledAt": "2026-05-26T19:37:31.568Z",
+    "currentPulledAtDisplay": "May 26, 2026, 3:37 PM",
     "isBaseline": false,
     "added": [],
     "removed": [],
-    "updated": [],
-    "statusChanges": []
+    "updated": [
+      {
+        "key": "CORE-14442",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14442",
+        "summary": "Mass Cancellation -  Include Trade Toggle Not Working as Intended",
+        "changes": [
+          {
+            "field": "status",
+            "label": "Status",
+            "before": "QA Testing (DEV)",
+            "after": "Pending Deployment (STG)"
+          },
+          {
+            "field": "updatedDisplay",
+            "label": "Jira updated",
+            "before": "May 21, 2026, 1:16 AM",
+            "after": "May 26, 2026, 3:36 PM"
+          }
+        ],
+        "type": "Bug",
+        "isSubtask": false,
+        "assignee": "Nicole Greer",
+        "assignedDeveloper": "Yoel Martin Pardo",
+        "status": "Pending Deployment (STG)",
+        "parent": {
+          "key": "CORE-13890",
+          "url": "https://golfnow.atlassian.net/browse/CORE-13890",
+          "summary": "Customer Care - Mass Cancellation",
+          "description": "",
+          "type": "Epic",
+          "status": "Planning",
+          "priority": "P2"
+        }
+      },
+      {
+        "key": "CORE-14304",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14304",
+        "summary": "Update GolfPass Terms for Employee Comp Email Template",
+        "changes": [
+          {
+            "field": "status",
+            "label": "Status",
+            "before": "QA Testing (DEV)",
+            "after": "Pending Deployment (STG)"
+          },
+          {
+            "field": "updatedDisplay",
+            "label": "Jira updated",
+            "before": "May 21, 2026, 2:38 PM",
+            "after": "May 26, 2026, 3:36 PM"
+          }
+        ],
+        "type": "Task",
+        "isSubtask": false,
+        "assignee": "Nicole Greer",
+        "assignedDeveloper": "Luis Vallejo Mursuli",
+        "status": "Pending Deployment (STG)",
+        "parent": {
+          "key": "CORE-14266",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14266",
+          "summary": "Email Template Changes",
+          "description": "",
+          "type": "Epic",
+          "status": "Planning",
+          "priority": "None"
+        }
+      },
+      {
+        "key": "CORE-14158",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14158",
+        "summary": "Follow up from CORE-14094: Bug found in payment during execute fullfillment",
+        "changes": [
+          {
+            "field": "status",
+            "label": "Status",
+            "before": "QA Testing (DEV)",
+            "after": "Pending Deployment (STG)"
+          },
+          {
+            "field": "updatedDisplay",
+            "label": "Jira updated",
+            "before": "May 21, 2026, 2:12 AM",
+            "after": "May 26, 2026, 3:36 PM"
+          }
+        ],
+        "type": "Bug",
+        "isSubtask": false,
+        "assignee": "Nicole Greer",
+        "assignedDeveloper": "Andrew Horvat",
+        "status": "Pending Deployment (STG)",
+        "parent": {
+          "key": "GNCBE-9647",
+          "url": "https://golfnow.atlassian.net/browse/GNCBE-9647",
+          "summary": "External Commerce API Bugs",
+          "description": "",
+          "type": "Epic",
+          "status": "Planning",
+          "priority": "None"
+        }
+      }
+    ],
+    "statusChanges": [
+      {
+        "key": "CORE-14442",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14442",
+        "summary": "Mass Cancellation -  Include Trade Toggle Not Working as Intended",
+        "before": "QA Testing (DEV)",
+        "after": "Pending Deployment (STG)",
+        "type": "Bug",
+        "isSubtask": false,
+        "assignee": "Nicole Greer",
+        "assignedDeveloper": "Yoel Martin Pardo",
+        "status": "Pending Deployment (STG)",
+        "parent": {
+          "key": "CORE-13890",
+          "url": "https://golfnow.atlassian.net/browse/CORE-13890",
+          "summary": "Customer Care - Mass Cancellation",
+          "description": "",
+          "type": "Epic",
+          "status": "Planning",
+          "priority": "P2"
+        }
+      },
+      {
+        "key": "CORE-14304",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14304",
+        "summary": "Update GolfPass Terms for Employee Comp Email Template",
+        "before": "QA Testing (DEV)",
+        "after": "Pending Deployment (STG)",
+        "type": "Task",
+        "isSubtask": false,
+        "assignee": "Nicole Greer",
+        "assignedDeveloper": "Luis Vallejo Mursuli",
+        "status": "Pending Deployment (STG)",
+        "parent": {
+          "key": "CORE-14266",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14266",
+          "summary": "Email Template Changes",
+          "description": "",
+          "type": "Epic",
+          "status": "Planning",
+          "priority": "None"
+        }
+      },
+      {
+        "key": "CORE-14158",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14158",
+        "summary": "Follow up from CORE-14094: Bug found in payment during execute fullfillment",
+        "before": "QA Testing (DEV)",
+        "after": "Pending Deployment (STG)",
+        "type": "Bug",
+        "isSubtask": false,
+        "assignee": "Nicole Greer",
+        "assignedDeveloper": "Andrew Horvat",
+        "status": "Pending Deployment (STG)",
+        "parent": {
+          "key": "GNCBE-9647",
+          "url": "https://golfnow.atlassian.net/browse/GNCBE-9647",
+          "summary": "External Commerce API Bugs",
+          "description": "",
+          "type": "Epic",
+          "status": "Planning",
+          "priority": "None"
+        }
+      }
+    ]
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-26T19:32:29.409Z",
+      "previousPulledAtDisplay": "May 26, 2026, 3:32 PM",
+      "currentPulledAt": "2026-05-26T19:37:31.568Z",
+      "currentPulledAtDisplay": "May 26, 2026, 3:37 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [
+        {
+          "key": "CORE-14442",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14442",
+          "summary": "Mass Cancellation -  Include Trade Toggle Not Working as Intended",
+          "changes": [
+            {
+              "field": "status",
+              "label": "Status",
+              "before": "QA Testing (DEV)",
+              "after": "Pending Deployment (STG)"
+            },
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "May 21, 2026, 1:16 AM",
+              "after": "May 26, 2026, 3:36 PM"
+            }
+          ],
+          "type": "Bug",
+          "isSubtask": false,
+          "assignee": "Nicole Greer",
+          "assignedDeveloper": "Yoel Martin Pardo",
+          "status": "Pending Deployment (STG)",
+          "parent": {
+            "key": "CORE-13890",
+            "url": "https://golfnow.atlassian.net/browse/CORE-13890",
+            "summary": "Customer Care - Mass Cancellation",
+            "description": "",
+            "type": "Epic",
+            "status": "Planning",
+            "priority": "P2"
+          }
+        },
+        {
+          "key": "CORE-14304",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14304",
+          "summary": "Update GolfPass Terms for Employee Comp Email Template",
+          "changes": [
+            {
+              "field": "status",
+              "label": "Status",
+              "before": "QA Testing (DEV)",
+              "after": "Pending Deployment (STG)"
+            },
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "May 21, 2026, 2:38 PM",
+              "after": "May 26, 2026, 3:36 PM"
+            }
+          ],
+          "type": "Task",
+          "isSubtask": false,
+          "assignee": "Nicole Greer",
+          "assignedDeveloper": "Luis Vallejo Mursuli",
+          "status": "Pending Deployment (STG)",
+          "parent": {
+            "key": "CORE-14266",
+            "url": "https://golfnow.atlassian.net/browse/CORE-14266",
+            "summary": "Email Template Changes",
+            "description": "",
+            "type": "Epic",
+            "status": "Planning",
+            "priority": "None"
+          }
+        },
+        {
+          "key": "CORE-14158",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14158",
+          "summary": "Follow up from CORE-14094: Bug found in payment during execute fullfillment",
+          "changes": [
+            {
+              "field": "status",
+              "label": "Status",
+              "before": "QA Testing (DEV)",
+              "after": "Pending Deployment (STG)"
+            },
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "May 21, 2026, 2:12 AM",
+              "after": "May 26, 2026, 3:36 PM"
+            }
+          ],
+          "type": "Bug",
+          "isSubtask": false,
+          "assignee": "Nicole Greer",
+          "assignedDeveloper": "Andrew Horvat",
+          "status": "Pending Deployment (STG)",
+          "parent": {
+            "key": "GNCBE-9647",
+            "url": "https://golfnow.atlassian.net/browse/GNCBE-9647",
+            "summary": "External Commerce API Bugs",
+            "description": "",
+            "type": "Epic",
+            "status": "Planning",
+            "priority": "None"
+          }
+        }
+      ],
+      "statusChanges": [
+        {
+          "key": "CORE-14442",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14442",
+          "summary": "Mass Cancellation -  Include Trade Toggle Not Working as Intended",
+          "before": "QA Testing (DEV)",
+          "after": "Pending Deployment (STG)",
+          "type": "Bug",
+          "isSubtask": false,
+          "assignee": "Nicole Greer",
+          "assignedDeveloper": "Yoel Martin Pardo",
+          "status": "Pending Deployment (STG)",
+          "parent": {
+            "key": "CORE-13890",
+            "url": "https://golfnow.atlassian.net/browse/CORE-13890",
+            "summary": "Customer Care - Mass Cancellation",
+            "description": "",
+            "type": "Epic",
+            "status": "Planning",
+            "priority": "P2"
+          }
+        },
+        {
+          "key": "CORE-14304",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14304",
+          "summary": "Update GolfPass Terms for Employee Comp Email Template",
+          "before": "QA Testing (DEV)",
+          "after": "Pending Deployment (STG)",
+          "type": "Task",
+          "isSubtask": false,
+          "assignee": "Nicole Greer",
+          "assignedDeveloper": "Luis Vallejo Mursuli",
+          "status": "Pending Deployment (STG)",
+          "parent": {
+            "key": "CORE-14266",
+            "url": "https://golfnow.atlassian.net/browse/CORE-14266",
+            "summary": "Email Template Changes",
+            "description": "",
+            "type": "Epic",
+            "status": "Planning",
+            "priority": "None"
+          }
+        },
+        {
+          "key": "CORE-14158",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14158",
+          "summary": "Follow up from CORE-14094: Bug found in payment during execute fullfillment",
+          "before": "QA Testing (DEV)",
+          "after": "Pending Deployment (STG)",
+          "type": "Bug",
+          "isSubtask": false,
+          "assignee": "Nicole Greer",
+          "assignedDeveloper": "Andrew Horvat",
+          "status": "Pending Deployment (STG)",
+          "parent": {
+            "key": "GNCBE-9647",
+            "url": "https://golfnow.atlassian.net/browse/GNCBE-9647",
+            "summary": "External Commerce API Bugs",
+            "description": "",
+            "type": "Epic",
+            "status": "Planning",
+            "priority": "None"
+          }
+        }
+      ]
+    },
     {
       "previousPulledAt": "2026-05-26T19:27:26.778Z",
       "previousPulledAtDisplay": "May 26, 2026, 3:27 PM",
@@ -4404,17 +4743,6 @@
       "previousPulledAtDisplay": "May 25, 2026, 7:48 PM",
       "currentPulledAt": "2026-05-25T23:53:29.887Z",
       "currentPulledAtDisplay": "May 25, 2026, 7:53 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-25T23:43:24.777Z",
-      "previousPulledAtDisplay": "May 25, 2026, 7:43 PM",
-      "currentPulledAt": "2026-05-25T23:48:27.301Z",
-      "currentPulledAtDisplay": "May 25, 2026, 7:48 PM",
       "isBaseline": false,
       "added": [],
       "removed": [],
