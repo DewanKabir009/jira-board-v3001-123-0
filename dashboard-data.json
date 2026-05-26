@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-26T18:09:59.325Z",
-  "pulledAtDisplay": "May 26, 2026, 2:09 PM",
+  "pulledAt": "2026-05-26T18:15:02.038Z",
+  "pulledAtDisplay": "May 26, 2026, 2:15 PM",
   "total": 31,
   "issues": [
     {
@@ -1836,73 +1836,28 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-26T18:04:56.551Z",
-    "previousPulledAtDisplay": "May 26, 2026, 2:04 PM",
-    "currentPulledAt": "2026-05-26T18:09:59.325Z",
-    "currentPulledAtDisplay": "May 26, 2026, 2:09 PM",
+    "previousPulledAt": "2026-05-26T18:09:59.325Z",
+    "previousPulledAtDisplay": "May 26, 2026, 2:09 PM",
+    "currentPulledAt": "2026-05-26T18:15:02.038Z",
+    "currentPulledAtDisplay": "May 26, 2026, 2:15 PM",
     "isBaseline": false,
     "added": [],
     "removed": [],
-    "updated": [
-      {
-        "key": "CORE-14444",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14444",
-        "summary": "FeeConfiguration - Create Columns for GP Waivability and Refundability",
-        "changes": [
-          {
-            "field": "status",
-            "label": "Status",
-            "before": "QA Testing (DEV)",
-            "after": "Pending Deployment (STG)"
-          },
-          {
-            "field": "updatedDisplay",
-            "label": "Jira updated",
-            "before": "May 26, 2026, 11:41 AM",
-            "after": "May 26, 2026, 2:07 PM"
-          }
-        ],
-        "type": "Story",
-        "isSubtask": false,
-        "assignee": "Dewan Kabir",
-        "assignedDeveloper": "Tyler Olechnowicz",
-        "status": "Pending Deployment (STG)",
-        "parent": {
-          "key": "CORE-13901",
-          "url": "https://golfnow.atlassian.net/browse/CORE-13901",
-          "summary": "Customizable transaction fees",
-          "description": "",
-          "type": "Epic",
-          "status": "Planning",
-          "priority": "P1"
-        }
-      }
-    ],
-    "statusChanges": [
-      {
-        "key": "CORE-14444",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14444",
-        "summary": "FeeConfiguration - Create Columns for GP Waivability and Refundability",
-        "before": "QA Testing (DEV)",
-        "after": "Pending Deployment (STG)",
-        "type": "Story",
-        "isSubtask": false,
-        "assignee": "Dewan Kabir",
-        "assignedDeveloper": "Tyler Olechnowicz",
-        "status": "Pending Deployment (STG)",
-        "parent": {
-          "key": "CORE-13901",
-          "url": "https://golfnow.atlassian.net/browse/CORE-13901",
-          "summary": "Customizable transaction fees",
-          "description": "",
-          "type": "Epic",
-          "status": "Planning",
-          "priority": "P1"
-        }
-      }
-    ]
+    "updated": [],
+    "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-26T18:09:59.325Z",
+      "previousPulledAtDisplay": "May 26, 2026, 2:09 PM",
+      "currentPulledAt": "2026-05-26T18:15:02.038Z",
+      "currentPulledAtDisplay": "May 26, 2026, 2:15 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-26T18:04:56.551Z",
       "previousPulledAtDisplay": "May 26, 2026, 2:04 PM",
@@ -4223,17 +4178,6 @@
       "previousPulledAtDisplay": "May 25, 2026, 6:23 PM",
       "currentPulledAt": "2026-05-25T22:28:24.854Z",
       "currentPulledAtDisplay": "May 25, 2026, 6:28 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-25T22:18:20.545Z",
-      "previousPulledAtDisplay": "May 25, 2026, 6:18 PM",
-      "currentPulledAt": "2026-05-25T22:23:22.694Z",
-      "currentPulledAtDisplay": "May 25, 2026, 6:23 PM",
       "isBaseline": false,
       "added": [],
       "removed": [],
