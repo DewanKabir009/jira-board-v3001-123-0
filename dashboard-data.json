@@ -4,10 +4,101 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-26T18:04:56.551Z",
-  "pulledAtDisplay": "May 26, 2026, 2:04 PM",
+  "pulledAt": "2026-05-26T18:09:59.325Z",
+  "pulledAtDisplay": "May 26, 2026, 2:09 PM",
   "total": 31,
   "issues": [
+    {
+      "key": "CORE-14444",
+      "url": "https://golfnow.atlassian.net/browse/CORE-14444",
+      "summary": "FeeConfiguration - Create Columns for GP Waivability and Refundability",
+      "description": "Goal\n\nAdd explicit FeeConfiguration support for GolfPass waived-fee-credit waivability and refundability so each configured fee can independently define whether it can be waived by a GolfPass waived fee credit and whether it is refundable during cancellation/refund flows.\n\nThis is a foundational data/model ticket for the Customizable Transaction Fees epic. It should not attempt to build the full multi-fee framework, GNC UI revamp, fee messaging changes, tax handling, or revenue allocation behavior.\n\n---\nBackground\n\nThe Customizable Transaction Fees epic requires different fee types to behave differently. For example:\n\n- The standard GolfNow transaction/convenience fee may be waivable with a GolfPass waived fee credit.\n\n- A tourism, city, county, or other regulatory fee may need to be non-waivable.\n\n- Some fees may be refundable.\n\n- Some fees may be non-refundable.\n\nToday, FeeConfiguration does not have clear per-fee fields that let downstream systems determine these behaviors from configuration. We need to add those fields first so future tickets can safely apply waiver and refund behavior without hard-coding fee categories.\n\n---\nScope\n\nAdd new fields to the FeeConfiguration data model to support per-fee behavior:\n\n- GolfPass waivable flag\n\n- Indicates whether this fee can be waived by a GolfPass waived-fee-credit benefit.\n\n- Example values: true for standard GolfNow transaction fee, false for tourism/city/county fees.\n\n- Refundable flag\n\n- Indicates whether this fee is refundable when a reservation is cancelled/refunded.\n\n- Example values: true for refundable convenience fees, false for non-refundable tourism/city/county fees.\n\nImplementation should include the appropriate database/schema changes and any required data access/model/DTO updates so these values can be read by downstream API, Reservation Service, and future GNC configuration work.\n\n---\nDefaults / Backward Compatibility\n\nExisting production behavior must remain unchanged after the columns are added.\n\nDefault values for existing FeeConfiguration records should preserve current behavior (current behavior is that all fees and waivable and refundable).\n\n---\nAcceptance Criteria\n\n- FeeConfiguration schema supports a per-fee GolfPass waivable field.\n\n- FeeConfiguration schema supports a per-fee refundable field.\n\n- Existing FeeConfiguration records are backfilled/defaulted so current production behavior is preserved.\n\n- The new fields can be read wherever FeeConfiguration data is retrieved for API/Reservation Service use.\n\n- No customer-facing behavior changes unless explicitly required to preserve existing behavior.\n\n- No GNC UI changes are included in this ticket.\n\n- Engineering documents the chosen default values for existing fee records.",
+      "descriptionHtml": "<h3>Goal</h3><p>Add explicit FeeConfiguration support for <strong>GolfPass waived-fee-credit waivability</strong> and <strong>refundability</strong> so each configured fee can independently define whether it can be waived by a GolfPass waived fee credit and whether it is refundable during cancellation/refund flows.</p><p>This is a foundational data/model ticket for the Customizable Transaction Fees epic. It should not attempt to build the full multi-fee framework, GNC UI revamp, fee messaging changes, tax handling, or revenue allocation behavior.</p><hr><h3>Background</h3><p>The Customizable Transaction Fees epic requires different fee types to behave differently. For example:</p><ul><li><p>The standard GolfNow transaction/convenience fee may be waivable with a GolfPass waived fee credit.</p></li><li><p>A tourism, city, county, or other regulatory fee may need to be non-waivable.</p></li><li><p>Some fees may be refundable.</p></li><li><p>Some fees may be non-refundable.</p></li></ul><p>Today, FeeConfiguration does not have clear per-fee fields that let downstream systems determine these behaviors from configuration. We need to add those fields first so future tickets can safely apply waiver and refund behavior without hard-coding fee categories.</p><hr><h3>Scope</h3><p>Add new fields to the FeeConfiguration data model to support per-fee behavior:</p><ul><li><p><strong>GolfPass waivable flag</strong></p><ul><li><p>Indicates whether this fee can be waived by a GolfPass waived-fee-credit benefit.</p></li><li><p>Example values: <code>true</code> for standard GolfNow transaction fee, <code>false</code> for tourism/city/county fees.</p></li></ul></li><li><p><strong>Refundable flag</strong></p><ul><li><p>Indicates whether this fee is refundable when a reservation is cancelled/refunded.</p></li><li><p>Example values: <code>true</code> for refundable convenience fees, <code>false</code> for non-refundable tourism/city/county fees.</p></li></ul></li></ul><p>Implementation should include the appropriate database/schema changes and any required data access/model/DTO updates so these values can be read by downstream API, Reservation Service, and future GNC configuration work.</p><hr><h3>Defaults / Backward Compatibility</h3><p>Existing production behavior must remain unchanged after the columns are added.</p><p><strong>Default values for existing FeeConfiguration records should preserve current behavior (current behavior is that all fees and waivable and refundable).</strong></p><hr><h3>Acceptance Criteria</h3><ol><li><p>FeeConfiguration schema supports a per-fee GolfPass waivable field.</p></li><li><p>FeeConfiguration schema supports a per-fee refundable field.</p></li><li><p>Existing FeeConfiguration records are backfilled/defaulted so current production behavior is preserved.</p></li><li><p>The new fields can be read wherever FeeConfiguration data is retrieved for API/Reservation Service use.</p></li><li><p>No customer-facing behavior changes unless explicitly required to preserve existing behavior.</p></li><li><p>No GNC UI changes are included in this ticket.</p></li><li><p>Engineering documents the chosen default values for existing fee records.</p></li></ol>",
+      "descriptionImageCount": 0,
+      "descriptionVideoCount": 0,
+      "descriptionMediaCount": 0,
+      "commentCount": 3,
+      "comments": [
+        {
+          "id": "1172172",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14444?focusedCommentId=1172172",
+          "author": "Tyler Olechnowicz",
+          "authorAccountId": "5d2396c1ea26c40c2043fc92",
+          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5d2396c1ea26c40c2043fc92/1647fb84-acea-4c3f-b1e8-9a79aa120f8f/32",
+          "created": "2026-05-19T14:18:00.532-0400",
+          "createdDisplay": "May 19, 2026, 2:18 PM",
+          "updated": "2026-05-19T14:18:00.532-0400",
+          "updatedDisplay": "",
+          "hasMedia": false,
+          "mediaCount": 0,
+          "body": "@Joshua Marquess I recommend limiting this change to the database work for now. The Revenue.FeeConfiguration table is referenced in several places, including a Tee Time Pricing-related stored procedure. It would be safer to defer the application-layer changes and data ingestion updates until we begin implementing the actual logic tied to these new columns in the codebase.",
+          "bodyHtml": "<p>@Joshua Marquess I recommend limiting this change to the database work for now. The <code>Revenue.FeeConfiguration</code> table is referenced in several places, including a Tee Time Pricing-related stored procedure. It would be safer to defer the application-layer changes and data ingestion updates until we begin implementing the actual logic tied to these new columns in the codebase.</p>"
+        },
+        {
+          "id": "1172219",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14444?focusedCommentId=1172219",
+          "author": "Tyler Olechnowicz",
+          "authorAccountId": "5d2396c1ea26c40c2043fc92",
+          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5d2396c1ea26c40c2043fc92/1647fb84-acea-4c3f-b1e8-9a79aa120f8f/32",
+          "created": "2026-05-19T15:08:11.075-0400",
+          "createdDisplay": "May 19, 2026, 3:08 PM",
+          "updated": "2026-05-19T15:10:22.659-0400",
+          "updatedDisplay": "May 19, 2026, 3:10 PM",
+          "hasMedia": true,
+          "mediaCount": 1,
+          "body": "Testing Instructions\n\n- Verify the database deployment script runs successfully against the CRM database.\n\n- Confirm the following columns were added to Revenue.FeeConfiguration:\n\n- IsWaivable\n\n- IsRefundable\n\n- Confirm both columns are BIT, NOT NULL, and default to 1 / true.\n\n- Confirm the following named default constraints exist:\n\n- DF_FeeConfiguration_IsWaivable\n\n- DF_FeeConfiguration_IsRefundable\n\n- Insert or create a new Revenue.FeeConfiguration record without explicitly setting IsWaivable or IsRefundable, if safely testable in the QA environment.\n\n- Confirm the new record defaults both values to true.\n\n- Confirm existing Revenue.FeeConfiguration records have both IsWaivable and IsRefundable populated as true.",
+          "bodyHtml": "<h3><strong>Testing Instructions</strong></h3><ol><li><p>Verify the database deployment script runs successfully against the CRM database.</p></li><li><p>Confirm the following columns were added to <code>Revenue.FeeConfiguration</code>:</p><ol><li><p><code>IsWaivable</code></p></li><li><p><code>IsRefundable</code></p></li></ol></li><li><p>Confirm both columns are BIT, NOT NULL, and default to 1 / true.</p></li><li><p>Confirm the following named default constraints exist:</p><ol><li><p><code>DF_FeeConfiguration_IsWaivable</code></p></li><li><p><code>DF_FeeConfiguration_IsRefundable</code></p></li></ol></li><li><p>Insert or create a new <code>Revenue.FeeConfiguration</code> record without explicitly setting <code>IsWaivable</code> or <code>IsRefundable</code>, if safely testable in the QA environment.</p></li><li><p>Confirm the new record defaults both values to true.</p></li><li><p>Confirm existing <code>Revenue.FeeConfiguration</code> records have both <code>IsWaivable</code> and <code>IsRefundable</code> populated as true.</p></li></ol><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14444/comments/1172219/728914-image-20260519-191016.png\" alt=\"image-20260519-191016.png\" loading=\"lazy\"><figcaption>image-20260519-191016.png</figcaption></figure></div>"
+        },
+        {
+          "id": "1174582",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14444?focusedCommentId=1174582",
+          "author": "Dewan Kabir",
+          "authorAccountId": "630fb06bb433b060db559bdb",
+          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
+          "created": "2026-05-26T11:41:51.227-0400",
+          "createdDisplay": "May 26, 2026, 11:41 AM",
+          "updated": "2026-05-26T11:41:51.227-0400",
+          "updatedDisplay": "",
+          "hasMedia": true,
+          "mediaCount": 6,
+          "body": "VALIDATE IN AWS DEV :\n\n- Confirm the following columns were added to Revenue.FeeConfiguration:\nIsWaivable\nIsRefundable\n\n- Confirm both columns are BIT, NOT NULL, and default to 1 / true.\n\n- Confirm the following named default constraints exist:\n\n- DF_FeeConfiguration_IsWaivable\n\n- DF_FeeConfiguration_IsRefundable\n\n- Insert or create a new Revenue.FeeConfiguration record without explicitly setting IsWaivable or IsRefundable, if safely testable in the QA environment.\nConfirm the new record defaults both values to true.\n\n- Confirm existing Revenue.FeeConfiguration records have both IsWaivable and IsRefundable populated as true.",
+          "bodyHtml": "<p><strong>VALIDATE IN AWS DEV : </strong></p><ul><li><p>Confirm the following columns were added to <code>Revenue.FeeConfiguration</code>:<br><code>IsWaivable</code><br><code>IsRefundable</code></p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14444/comments/1174582/731176-image-20260526-151427.png\" alt=\"image-20260526-151427.png\" loading=\"lazy\"><figcaption>image-20260526-151427.png</figcaption></figure></div></li></ul><ul><li><p>Confirm both columns are BIT, NOT NULL, and default to 1 / true.</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14444/comments/1174582/731175-image-20260526-152747.png\" alt=\"image-20260526-152747.png\" loading=\"lazy\"><figcaption>image-20260526-152747.png</figcaption></figure></div></li></ul><ul><li><p>Confirm the following named default constraints exist:</p><ol><li><p><code>DF_FeeConfiguration_IsWaivable</code></p></li><li><p><code>DF_FeeConfiguration_IsRefundable</code></p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14444/comments/1174582/731178-image-20260526-152834.png\" alt=\"image-20260526-152834.png\" loading=\"lazy\"><figcaption>image-20260526-152834.png</figcaption></figure></div></li></ol></li></ul><ul><li><p>Insert or create a new <code>Revenue.FeeConfiguration</code> record without explicitly setting <code>IsWaivable</code> or <code>IsRefundable</code>, if safely testable in the QA environment.<br>Confirm the new record defaults both values to true.</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14444/comments/1174582/731179-image-20260526-153948.png\" alt=\"image-20260526-153948.png\" loading=\"lazy\"><figcaption>image-20260526-153948.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14444/comments/1174582/731177-image-20260526-154106.png\" alt=\"image-20260526-154106.png\" loading=\"lazy\"><figcaption>image-20260526-154106.png</figcaption></figure></div></li></ul><ul><li><p>Confirm existing <code>Revenue.FeeConfiguration</code> records have both <code>IsWaivable</code> and <code>IsRefundable</code> populated as true.</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14444/comments/1174582/731180-image-20260526-154145.png\" alt=\"image-20260526-154145.png\" loading=\"lazy\"><figcaption>image-20260526-154145.png</figcaption></figure></div></li></ul>"
+        }
+      ],
+      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14444?focusedCommentId=1174582",
+      "lastCommentDisplay": "May 26, 2026, 11:41 AM",
+      "lastCommentAuthor": "Dewan Kabir",
+      "type": "Story",
+      "isSubtask": false,
+      "status": "Pending Deployment (STG)",
+      "priority": "P2",
+      "assignee": "Dewan Kabir",
+      "assigneeAccountId": "630fb06bb433b060db559bdb",
+      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
+      "assignedDeveloper": "Tyler Olechnowicz",
+      "assignedDeveloperAccountId": "5d2396c1ea26c40c2043fc92",
+      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5d2396c1ea26c40c2043fc92/1647fb84-acea-4c3f-b1e8-9a79aa120f8f/32",
+      "updated": "2026-05-26T14:07:40.773-0400",
+      "updatedDisplay": "May 26, 2026, 2:07 PM",
+      "created": "2026-05-04T14:45:03.671-0400",
+      "createdDisplay": "May 4, 2026, 2:45 PM",
+      "components": [
+        "Database"
+      ],
+      "fixVersions": [
+        "v3001.123.0"
+      ],
+      "resolution": "",
+      "parent": {
+        "key": "CORE-13901",
+        "url": "https://golfnow.atlassian.net/browse/CORE-13901",
+        "summary": "Customizable transaction fees",
+        "description": "",
+        "type": "Epic",
+        "status": "Planning",
+        "priority": "P1"
+      }
+    },
     {
       "key": "CORE-14476",
       "url": "https://golfnow.atlassian.net/browse/CORE-14476",
@@ -444,99 +535,8 @@
         "summary": "FeeConfiguration - Create Columns for GP Waivability and Refundability",
         "description": "",
         "type": "Story",
-        "status": "QA Testing (DEV)",
+        "status": "Pending Deployment (STG)",
         "priority": "P2"
-      }
-    },
-    {
-      "key": "CORE-14444",
-      "url": "https://golfnow.atlassian.net/browse/CORE-14444",
-      "summary": "FeeConfiguration - Create Columns for GP Waivability and Refundability",
-      "description": "Goal\n\nAdd explicit FeeConfiguration support for GolfPass waived-fee-credit waivability and refundability so each configured fee can independently define whether it can be waived by a GolfPass waived fee credit and whether it is refundable during cancellation/refund flows.\n\nThis is a foundational data/model ticket for the Customizable Transaction Fees epic. It should not attempt to build the full multi-fee framework, GNC UI revamp, fee messaging changes, tax handling, or revenue allocation behavior.\n\n---\nBackground\n\nThe Customizable Transaction Fees epic requires different fee types to behave differently. For example:\n\n- The standard GolfNow transaction/convenience fee may be waivable with a GolfPass waived fee credit.\n\n- A tourism, city, county, or other regulatory fee may need to be non-waivable.\n\n- Some fees may be refundable.\n\n- Some fees may be non-refundable.\n\nToday, FeeConfiguration does not have clear per-fee fields that let downstream systems determine these behaviors from configuration. We need to add those fields first so future tickets can safely apply waiver and refund behavior without hard-coding fee categories.\n\n---\nScope\n\nAdd new fields to the FeeConfiguration data model to support per-fee behavior:\n\n- GolfPass waivable flag\n\n- Indicates whether this fee can be waived by a GolfPass waived-fee-credit benefit.\n\n- Example values: true for standard GolfNow transaction fee, false for tourism/city/county fees.\n\n- Refundable flag\n\n- Indicates whether this fee is refundable when a reservation is cancelled/refunded.\n\n- Example values: true for refundable convenience fees, false for non-refundable tourism/city/county fees.\n\nImplementation should include the appropriate database/schema changes and any required data access/model/DTO updates so these values can be read by downstream API, Reservation Service, and future GNC configuration work.\n\n---\nDefaults / Backward Compatibility\n\nExisting production behavior must remain unchanged after the columns are added.\n\nDefault values for existing FeeConfiguration records should preserve current behavior (current behavior is that all fees and waivable and refundable).\n\n---\nAcceptance Criteria\n\n- FeeConfiguration schema supports a per-fee GolfPass waivable field.\n\n- FeeConfiguration schema supports a per-fee refundable field.\n\n- Existing FeeConfiguration records are backfilled/defaulted so current production behavior is preserved.\n\n- The new fields can be read wherever FeeConfiguration data is retrieved for API/Reservation Service use.\n\n- No customer-facing behavior changes unless explicitly required to preserve existing behavior.\n\n- No GNC UI changes are included in this ticket.\n\n- Engineering documents the chosen default values for existing fee records.",
-      "descriptionHtml": "<h3>Goal</h3><p>Add explicit FeeConfiguration support for <strong>GolfPass waived-fee-credit waivability</strong> and <strong>refundability</strong> so each configured fee can independently define whether it can be waived by a GolfPass waived fee credit and whether it is refundable during cancellation/refund flows.</p><p>This is a foundational data/model ticket for the Customizable Transaction Fees epic. It should not attempt to build the full multi-fee framework, GNC UI revamp, fee messaging changes, tax handling, or revenue allocation behavior.</p><hr><h3>Background</h3><p>The Customizable Transaction Fees epic requires different fee types to behave differently. For example:</p><ul><li><p>The standard GolfNow transaction/convenience fee may be waivable with a GolfPass waived fee credit.</p></li><li><p>A tourism, city, county, or other regulatory fee may need to be non-waivable.</p></li><li><p>Some fees may be refundable.</p></li><li><p>Some fees may be non-refundable.</p></li></ul><p>Today, FeeConfiguration does not have clear per-fee fields that let downstream systems determine these behaviors from configuration. We need to add those fields first so future tickets can safely apply waiver and refund behavior without hard-coding fee categories.</p><hr><h3>Scope</h3><p>Add new fields to the FeeConfiguration data model to support per-fee behavior:</p><ul><li><p><strong>GolfPass waivable flag</strong></p><ul><li><p>Indicates whether this fee can be waived by a GolfPass waived-fee-credit benefit.</p></li><li><p>Example values: <code>true</code> for standard GolfNow transaction fee, <code>false</code> for tourism/city/county fees.</p></li></ul></li><li><p><strong>Refundable flag</strong></p><ul><li><p>Indicates whether this fee is refundable when a reservation is cancelled/refunded.</p></li><li><p>Example values: <code>true</code> for refundable convenience fees, <code>false</code> for non-refundable tourism/city/county fees.</p></li></ul></li></ul><p>Implementation should include the appropriate database/schema changes and any required data access/model/DTO updates so these values can be read by downstream API, Reservation Service, and future GNC configuration work.</p><hr><h3>Defaults / Backward Compatibility</h3><p>Existing production behavior must remain unchanged after the columns are added.</p><p><strong>Default values for existing FeeConfiguration records should preserve current behavior (current behavior is that all fees and waivable and refundable).</strong></p><hr><h3>Acceptance Criteria</h3><ol><li><p>FeeConfiguration schema supports a per-fee GolfPass waivable field.</p></li><li><p>FeeConfiguration schema supports a per-fee refundable field.</p></li><li><p>Existing FeeConfiguration records are backfilled/defaulted so current production behavior is preserved.</p></li><li><p>The new fields can be read wherever FeeConfiguration data is retrieved for API/Reservation Service use.</p></li><li><p>No customer-facing behavior changes unless explicitly required to preserve existing behavior.</p></li><li><p>No GNC UI changes are included in this ticket.</p></li><li><p>Engineering documents the chosen default values for existing fee records.</p></li></ol>",
-      "descriptionImageCount": 0,
-      "descriptionVideoCount": 0,
-      "descriptionMediaCount": 0,
-      "commentCount": 3,
-      "comments": [
-        {
-          "id": "1172172",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14444?focusedCommentId=1172172",
-          "author": "Tyler Olechnowicz",
-          "authorAccountId": "5d2396c1ea26c40c2043fc92",
-          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5d2396c1ea26c40c2043fc92/1647fb84-acea-4c3f-b1e8-9a79aa120f8f/32",
-          "created": "2026-05-19T14:18:00.532-0400",
-          "createdDisplay": "May 19, 2026, 2:18 PM",
-          "updated": "2026-05-19T14:18:00.532-0400",
-          "updatedDisplay": "",
-          "hasMedia": false,
-          "mediaCount": 0,
-          "body": "@Joshua Marquess I recommend limiting this change to the database work for now. The Revenue.FeeConfiguration table is referenced in several places, including a Tee Time Pricing-related stored procedure. It would be safer to defer the application-layer changes and data ingestion updates until we begin implementing the actual logic tied to these new columns in the codebase.",
-          "bodyHtml": "<p>@Joshua Marquess I recommend limiting this change to the database work for now. The <code>Revenue.FeeConfiguration</code> table is referenced in several places, including a Tee Time Pricing-related stored procedure. It would be safer to defer the application-layer changes and data ingestion updates until we begin implementing the actual logic tied to these new columns in the codebase.</p>"
-        },
-        {
-          "id": "1172219",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14444?focusedCommentId=1172219",
-          "author": "Tyler Olechnowicz",
-          "authorAccountId": "5d2396c1ea26c40c2043fc92",
-          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5d2396c1ea26c40c2043fc92/1647fb84-acea-4c3f-b1e8-9a79aa120f8f/32",
-          "created": "2026-05-19T15:08:11.075-0400",
-          "createdDisplay": "May 19, 2026, 3:08 PM",
-          "updated": "2026-05-19T15:10:22.659-0400",
-          "updatedDisplay": "May 19, 2026, 3:10 PM",
-          "hasMedia": true,
-          "mediaCount": 1,
-          "body": "Testing Instructions\n\n- Verify the database deployment script runs successfully against the CRM database.\n\n- Confirm the following columns were added to Revenue.FeeConfiguration:\n\n- IsWaivable\n\n- IsRefundable\n\n- Confirm both columns are BIT, NOT NULL, and default to 1 / true.\n\n- Confirm the following named default constraints exist:\n\n- DF_FeeConfiguration_IsWaivable\n\n- DF_FeeConfiguration_IsRefundable\n\n- Insert or create a new Revenue.FeeConfiguration record without explicitly setting IsWaivable or IsRefundable, if safely testable in the QA environment.\n\n- Confirm the new record defaults both values to true.\n\n- Confirm existing Revenue.FeeConfiguration records have both IsWaivable and IsRefundable populated as true.",
-          "bodyHtml": "<h3><strong>Testing Instructions</strong></h3><ol><li><p>Verify the database deployment script runs successfully against the CRM database.</p></li><li><p>Confirm the following columns were added to <code>Revenue.FeeConfiguration</code>:</p><ol><li><p><code>IsWaivable</code></p></li><li><p><code>IsRefundable</code></p></li></ol></li><li><p>Confirm both columns are BIT, NOT NULL, and default to 1 / true.</p></li><li><p>Confirm the following named default constraints exist:</p><ol><li><p><code>DF_FeeConfiguration_IsWaivable</code></p></li><li><p><code>DF_FeeConfiguration_IsRefundable</code></p></li></ol></li><li><p>Insert or create a new <code>Revenue.FeeConfiguration</code> record without explicitly setting <code>IsWaivable</code> or <code>IsRefundable</code>, if safely testable in the QA environment.</p></li><li><p>Confirm the new record defaults both values to true.</p></li><li><p>Confirm existing <code>Revenue.FeeConfiguration</code> records have both <code>IsWaivable</code> and <code>IsRefundable</code> populated as true.</p></li></ol><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14444/comments/1172219/728914-image-20260519-191016.png\" alt=\"image-20260519-191016.png\" loading=\"lazy\"><figcaption>image-20260519-191016.png</figcaption></figure></div>"
-        },
-        {
-          "id": "1174582",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14444?focusedCommentId=1174582",
-          "author": "Dewan Kabir",
-          "authorAccountId": "630fb06bb433b060db559bdb",
-          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
-          "created": "2026-05-26T11:41:51.227-0400",
-          "createdDisplay": "May 26, 2026, 11:41 AM",
-          "updated": "2026-05-26T11:41:51.227-0400",
-          "updatedDisplay": "",
-          "hasMedia": true,
-          "mediaCount": 6,
-          "body": "VALIDATE IN AWS DEV :\n\n- Confirm the following columns were added to Revenue.FeeConfiguration:\nIsWaivable\nIsRefundable\n\n- Confirm both columns are BIT, NOT NULL, and default to 1 / true.\n\n- Confirm the following named default constraints exist:\n\n- DF_FeeConfiguration_IsWaivable\n\n- DF_FeeConfiguration_IsRefundable\n\n- Insert or create a new Revenue.FeeConfiguration record without explicitly setting IsWaivable or IsRefundable, if safely testable in the QA environment.\nConfirm the new record defaults both values to true.\n\n- Confirm existing Revenue.FeeConfiguration records have both IsWaivable and IsRefundable populated as true.",
-          "bodyHtml": "<p><strong>VALIDATE IN AWS DEV : </strong></p><ul><li><p>Confirm the following columns were added to <code>Revenue.FeeConfiguration</code>:<br><code>IsWaivable</code><br><code>IsRefundable</code></p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14444/comments/1174582/731176-image-20260526-151427.png\" alt=\"image-20260526-151427.png\" loading=\"lazy\"><figcaption>image-20260526-151427.png</figcaption></figure></div></li></ul><ul><li><p>Confirm both columns are BIT, NOT NULL, and default to 1 / true.</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14444/comments/1174582/731175-image-20260526-152747.png\" alt=\"image-20260526-152747.png\" loading=\"lazy\"><figcaption>image-20260526-152747.png</figcaption></figure></div></li></ul><ul><li><p>Confirm the following named default constraints exist:</p><ol><li><p><code>DF_FeeConfiguration_IsWaivable</code></p></li><li><p><code>DF_FeeConfiguration_IsRefundable</code></p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14444/comments/1174582/731178-image-20260526-152834.png\" alt=\"image-20260526-152834.png\" loading=\"lazy\"><figcaption>image-20260526-152834.png</figcaption></figure></div></li></ol></li></ul><ul><li><p>Insert or create a new <code>Revenue.FeeConfiguration</code> record without explicitly setting <code>IsWaivable</code> or <code>IsRefundable</code>, if safely testable in the QA environment.<br>Confirm the new record defaults both values to true.</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14444/comments/1174582/731179-image-20260526-153948.png\" alt=\"image-20260526-153948.png\" loading=\"lazy\"><figcaption>image-20260526-153948.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14444/comments/1174582/731177-image-20260526-154106.png\" alt=\"image-20260526-154106.png\" loading=\"lazy\"><figcaption>image-20260526-154106.png</figcaption></figure></div></li></ul><ul><li><p>Confirm existing <code>Revenue.FeeConfiguration</code> records have both <code>IsWaivable</code> and <code>IsRefundable</code> populated as true.</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14444/comments/1174582/731180-image-20260526-154145.png\" alt=\"image-20260526-154145.png\" loading=\"lazy\"><figcaption>image-20260526-154145.png</figcaption></figure></div></li></ul>"
-        }
-      ],
-      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14444?focusedCommentId=1174582",
-      "lastCommentDisplay": "May 26, 2026, 11:41 AM",
-      "lastCommentAuthor": "Dewan Kabir",
-      "type": "Story",
-      "isSubtask": false,
-      "status": "QA Testing (DEV)",
-      "priority": "P2",
-      "assignee": "Dewan Kabir",
-      "assigneeAccountId": "630fb06bb433b060db559bdb",
-      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
-      "assignedDeveloper": "Tyler Olechnowicz",
-      "assignedDeveloperAccountId": "5d2396c1ea26c40c2043fc92",
-      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5d2396c1ea26c40c2043fc92/1647fb84-acea-4c3f-b1e8-9a79aa120f8f/32",
-      "updated": "2026-05-26T11:41:51.518-0400",
-      "updatedDisplay": "May 26, 2026, 11:41 AM",
-      "created": "2026-05-04T14:45:03.671-0400",
-      "createdDisplay": "May 4, 2026, 2:45 PM",
-      "components": [
-        "Database"
-      ],
-      "fixVersions": [
-        "v3001.123.0"
-      ],
-      "resolution": "",
-      "parent": {
-        "key": "CORE-13901",
-        "url": "https://golfnow.atlassian.net/browse/CORE-13901",
-        "summary": "Customizable transaction fees",
-        "description": "",
-        "type": "Epic",
-        "status": "Planning",
-        "priority": "P1"
       }
     },
     {
@@ -1836,17 +1836,140 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-26T17:59:54.148Z",
-    "previousPulledAtDisplay": "May 26, 2026, 1:59 PM",
-    "currentPulledAt": "2026-05-26T18:04:56.551Z",
-    "currentPulledAtDisplay": "May 26, 2026, 2:04 PM",
+    "previousPulledAt": "2026-05-26T18:04:56.551Z",
+    "previousPulledAtDisplay": "May 26, 2026, 2:04 PM",
+    "currentPulledAt": "2026-05-26T18:09:59.325Z",
+    "currentPulledAtDisplay": "May 26, 2026, 2:09 PM",
     "isBaseline": false,
     "added": [],
     "removed": [],
-    "updated": [],
-    "statusChanges": []
+    "updated": [
+      {
+        "key": "CORE-14444",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14444",
+        "summary": "FeeConfiguration - Create Columns for GP Waivability and Refundability",
+        "changes": [
+          {
+            "field": "status",
+            "label": "Status",
+            "before": "QA Testing (DEV)",
+            "after": "Pending Deployment (STG)"
+          },
+          {
+            "field": "updatedDisplay",
+            "label": "Jira updated",
+            "before": "May 26, 2026, 11:41 AM",
+            "after": "May 26, 2026, 2:07 PM"
+          }
+        ],
+        "type": "Story",
+        "isSubtask": false,
+        "assignee": "Dewan Kabir",
+        "assignedDeveloper": "Tyler Olechnowicz",
+        "status": "Pending Deployment (STG)",
+        "parent": {
+          "key": "CORE-13901",
+          "url": "https://golfnow.atlassian.net/browse/CORE-13901",
+          "summary": "Customizable transaction fees",
+          "description": "",
+          "type": "Epic",
+          "status": "Planning",
+          "priority": "P1"
+        }
+      }
+    ],
+    "statusChanges": [
+      {
+        "key": "CORE-14444",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14444",
+        "summary": "FeeConfiguration - Create Columns for GP Waivability and Refundability",
+        "before": "QA Testing (DEV)",
+        "after": "Pending Deployment (STG)",
+        "type": "Story",
+        "isSubtask": false,
+        "assignee": "Dewan Kabir",
+        "assignedDeveloper": "Tyler Olechnowicz",
+        "status": "Pending Deployment (STG)",
+        "parent": {
+          "key": "CORE-13901",
+          "url": "https://golfnow.atlassian.net/browse/CORE-13901",
+          "summary": "Customizable transaction fees",
+          "description": "",
+          "type": "Epic",
+          "status": "Planning",
+          "priority": "P1"
+        }
+      }
+    ]
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-26T18:04:56.551Z",
+      "previousPulledAtDisplay": "May 26, 2026, 2:04 PM",
+      "currentPulledAt": "2026-05-26T18:09:59.325Z",
+      "currentPulledAtDisplay": "May 26, 2026, 2:09 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [
+        {
+          "key": "CORE-14444",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14444",
+          "summary": "FeeConfiguration - Create Columns for GP Waivability and Refundability",
+          "changes": [
+            {
+              "field": "status",
+              "label": "Status",
+              "before": "QA Testing (DEV)",
+              "after": "Pending Deployment (STG)"
+            },
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "May 26, 2026, 11:41 AM",
+              "after": "May 26, 2026, 2:07 PM"
+            }
+          ],
+          "type": "Story",
+          "isSubtask": false,
+          "assignee": "Dewan Kabir",
+          "assignedDeveloper": "Tyler Olechnowicz",
+          "status": "Pending Deployment (STG)",
+          "parent": {
+            "key": "CORE-13901",
+            "url": "https://golfnow.atlassian.net/browse/CORE-13901",
+            "summary": "Customizable transaction fees",
+            "description": "",
+            "type": "Epic",
+            "status": "Planning",
+            "priority": "P1"
+          }
+        }
+      ],
+      "statusChanges": [
+        {
+          "key": "CORE-14444",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14444",
+          "summary": "FeeConfiguration - Create Columns for GP Waivability and Refundability",
+          "before": "QA Testing (DEV)",
+          "after": "Pending Deployment (STG)",
+          "type": "Story",
+          "isSubtask": false,
+          "assignee": "Dewan Kabir",
+          "assignedDeveloper": "Tyler Olechnowicz",
+          "status": "Pending Deployment (STG)",
+          "parent": {
+            "key": "CORE-13901",
+            "url": "https://golfnow.atlassian.net/browse/CORE-13901",
+            "summary": "Customizable transaction fees",
+            "description": "",
+            "type": "Epic",
+            "status": "Planning",
+            "priority": "P1"
+          }
+        }
+      ]
+    },
     {
       "previousPulledAt": "2026-05-26T17:59:54.148Z",
       "previousPulledAtDisplay": "May 26, 2026, 1:59 PM",
@@ -2384,7 +2507,7 @@
             "summary": "FeeConfiguration - Create Columns for GP Waivability and Refundability",
             "description": "",
             "type": "Story",
-            "status": "QA Testing (DEV)",
+            "status": "Pending Deployment (STG)",
             "priority": "P2"
           }
         },
@@ -2404,7 +2527,7 @@
           "isSubtask": false,
           "assignee": "Dewan Kabir",
           "assignedDeveloper": "Tyler Olechnowicz",
-          "status": "QA Testing (DEV)",
+          "status": "Pending Deployment (STG)",
           "parent": {
             "key": "CORE-13901",
             "url": "https://golfnow.atlassian.net/browse/CORE-13901",
@@ -2434,7 +2557,7 @@
             "summary": "FeeConfiguration - Create Columns for GP Waivability and Refundability",
             "description": "",
             "type": "Story",
-            "status": "QA Testing (DEV)",
+            "status": "Pending Deployment (STG)",
             "priority": "P2"
           }
         }
@@ -4111,17 +4234,6 @@
       "previousPulledAtDisplay": "May 25, 2026, 6:18 PM",
       "currentPulledAt": "2026-05-25T22:23:22.694Z",
       "currentPulledAtDisplay": "May 25, 2026, 6:23 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-25T22:14:16.981Z",
-      "previousPulledAtDisplay": "May 25, 2026, 6:14 PM",
-      "currentPulledAt": "2026-05-25T22:18:20.545Z",
-      "currentPulledAtDisplay": "May 25, 2026, 6:18 PM",
       "isBaseline": false,
       "added": [],
       "removed": [],
