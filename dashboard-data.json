@@ -4,10 +4,75 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-26T19:17:21.056Z",
-  "pulledAtDisplay": "May 26, 2026, 3:17 PM",
+  "pulledAt": "2026-05-26T19:22:23.347Z",
+  "pulledAtDisplay": "May 26, 2026, 3:22 PM",
   "total": 31,
   "issues": [
+    {
+      "key": "CORE-14482",
+      "url": "https://golfnow.atlassian.net/browse/CORE-14482",
+      "summary": "Code changes.",
+      "description": "",
+      "descriptionHtml": "",
+      "descriptionImageCount": 0,
+      "descriptionVideoCount": 0,
+      "descriptionMediaCount": 0,
+      "commentCount": 1,
+      "comments": [
+        {
+          "id": "1171732",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14482?focusedCommentId=1171732",
+          "author": "Yoel Martin Pardo",
+          "authorAccountId": "625571809e7380006fb29599",
+          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
+          "created": "2026-05-18T18:42:15.714-0400",
+          "createdDisplay": "May 18, 2026, 6:42 PM",
+          "updated": "2026-05-18T18:42:15.714-0400",
+          "updatedDisplay": "",
+          "hasMedia": false,
+          "mediaCount": 0,
+          "body": "PR: https://github.com/GolfNowEng/gn-main/pull/2153",
+          "bodyHtml": "<p>PR: <a href=\"https://github.com/GolfNowEng/gn-main/pull/2153\" target=\"_blank\" rel=\"noopener\">https://github.com/GolfNowEng/gn-main/pull/2153</a> </p>"
+        }
+      ],
+      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14482?focusedCommentId=1171732",
+      "lastCommentDisplay": "May 18, 2026, 6:42 PM",
+      "lastCommentAuthor": "Yoel Martin Pardo",
+      "type": "Developer Task (sub task)",
+      "isSubtask": true,
+      "status": "Regression Testing (STG)",
+      "priority": "None",
+      "assignee": "Unassigned",
+      "assigneeAccountId": "",
+      "assigneeAvatarUrl": "",
+      "assignedDeveloper": "Yoel Martin Pardo",
+      "assignedDeveloperAccountId": "625571809e7380006fb29599",
+      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
+      "updated": "2026-05-26T15:19:01.955-0400",
+      "updatedDisplay": "May 26, 2026, 3:19 PM",
+      "created": "2026-05-18T18:18:10.889-0400",
+      "createdDisplay": "May 18, 2026, 6:18 PM",
+      "components": [
+        "GolfNow.API.TR",
+        "GolfNow.Services.Product",
+        "GolfNow.Services.Reservation",
+        "GolfNowAPI",
+        "GolfNowCentral"
+      ],
+      "fixVersions": [
+        "v3001.123.0"
+      ],
+      "resolution": "",
+      "parent": {
+        "key": "CORE-14476",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14476",
+        "summary": "Add two new fields to /get-eligible-promo-codes API",
+        "description": "",
+        "type": "Story",
+        "status": "Pending Deployment (STG)",
+        "priority": "None"
+      }
+    },
     {
       "key": "CORE-14498",
       "url": "https://golfnow.atlassian.net/browse/CORE-14498",
@@ -433,71 +498,6 @@
         "description": "",
         "type": "Epic",
         "status": "Planning",
-        "priority": "None"
-      }
-    },
-    {
-      "key": "CORE-14482",
-      "url": "https://golfnow.atlassian.net/browse/CORE-14482",
-      "summary": "Code changes.",
-      "description": "",
-      "descriptionHtml": "",
-      "descriptionImageCount": 0,
-      "descriptionVideoCount": 0,
-      "descriptionMediaCount": 0,
-      "commentCount": 1,
-      "comments": [
-        {
-          "id": "1171732",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14482?focusedCommentId=1171732",
-          "author": "Yoel Martin Pardo",
-          "authorAccountId": "625571809e7380006fb29599",
-          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
-          "created": "2026-05-18T18:42:15.714-0400",
-          "createdDisplay": "May 18, 2026, 6:42 PM",
-          "updated": "2026-05-18T18:42:15.714-0400",
-          "updatedDisplay": "",
-          "hasMedia": false,
-          "mediaCount": 0,
-          "body": "PR: https://github.com/GolfNowEng/gn-main/pull/2153",
-          "bodyHtml": "<p>PR: <a href=\"https://github.com/GolfNowEng/gn-main/pull/2153\" target=\"_blank\" rel=\"noopener\">https://github.com/GolfNowEng/gn-main/pull/2153</a> </p>"
-        }
-      ],
-      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14482?focusedCommentId=1171732",
-      "lastCommentDisplay": "May 18, 2026, 6:42 PM",
-      "lastCommentAuthor": "Yoel Martin Pardo",
-      "type": "Developer Task (sub task)",
-      "isSubtask": true,
-      "status": "Pending Deployment (STG)",
-      "priority": "None",
-      "assignee": "Dewan Kabir",
-      "assigneeAccountId": "630fb06bb433b060db559bdb",
-      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
-      "assignedDeveloper": "Yoel Martin Pardo",
-      "assignedDeveloperAccountId": "625571809e7380006fb29599",
-      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
-      "updated": "2026-05-26T13:29:22.938-0400",
-      "updatedDisplay": "May 26, 2026, 1:29 PM",
-      "created": "2026-05-18T18:18:10.889-0400",
-      "createdDisplay": "May 18, 2026, 6:18 PM",
-      "components": [
-        "GolfNow.API.TR",
-        "GolfNow.Services.Product",
-        "GolfNow.Services.Reservation",
-        "GolfNowAPI",
-        "GolfNowCentral"
-      ],
-      "fixVersions": [
-        "v3001.123.0"
-      ],
-      "resolution": "",
-      "parent": {
-        "key": "CORE-14476",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14476",
-        "summary": "Add two new fields to /get-eligible-promo-codes API",
-        "description": "",
-        "type": "Story",
-        "status": "Pending Deployment (STG)",
         "priority": "None"
       }
     },
@@ -1851,17 +1851,152 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-26T19:12:18.657Z",
-    "previousPulledAtDisplay": "May 26, 2026, 3:12 PM",
-    "currentPulledAt": "2026-05-26T19:17:21.056Z",
-    "currentPulledAtDisplay": "May 26, 2026, 3:17 PM",
+    "previousPulledAt": "2026-05-26T19:17:21.056Z",
+    "previousPulledAtDisplay": "May 26, 2026, 3:17 PM",
+    "currentPulledAt": "2026-05-26T19:22:23.347Z",
+    "currentPulledAtDisplay": "May 26, 2026, 3:22 PM",
     "isBaseline": false,
     "added": [],
     "removed": [],
-    "updated": [],
-    "statusChanges": []
+    "updated": [
+      {
+        "key": "CORE-14482",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14482",
+        "summary": "Code changes.",
+        "changes": [
+          {
+            "field": "status",
+            "label": "Status",
+            "before": "Pending Deployment (STG)",
+            "after": "Regression Testing (STG)"
+          },
+          {
+            "field": "assignee",
+            "label": "Assignee",
+            "before": "Dewan Kabir",
+            "after": "Unassigned"
+          },
+          {
+            "field": "updatedDisplay",
+            "label": "Jira updated",
+            "before": "May 26, 2026, 1:29 PM",
+            "after": "May 26, 2026, 3:19 PM"
+          }
+        ],
+        "type": "Developer Task (sub task)",
+        "isSubtask": true,
+        "assignee": "Unassigned",
+        "assignedDeveloper": "Yoel Martin Pardo",
+        "status": "Regression Testing (STG)",
+        "parent": {
+          "key": "CORE-14476",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14476",
+          "summary": "Add two new fields to /get-eligible-promo-codes API",
+          "description": "",
+          "type": "Story",
+          "status": "Pending Deployment (STG)",
+          "priority": "None"
+        }
+      }
+    ],
+    "statusChanges": [
+      {
+        "key": "CORE-14482",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14482",
+        "summary": "Code changes.",
+        "before": "Pending Deployment (STG)",
+        "after": "Regression Testing (STG)",
+        "type": "Developer Task (sub task)",
+        "isSubtask": true,
+        "assignee": "Unassigned",
+        "assignedDeveloper": "Yoel Martin Pardo",
+        "status": "Regression Testing (STG)",
+        "parent": {
+          "key": "CORE-14476",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14476",
+          "summary": "Add two new fields to /get-eligible-promo-codes API",
+          "description": "",
+          "type": "Story",
+          "status": "Pending Deployment (STG)",
+          "priority": "None"
+        }
+      }
+    ]
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-26T19:17:21.056Z",
+      "previousPulledAtDisplay": "May 26, 2026, 3:17 PM",
+      "currentPulledAt": "2026-05-26T19:22:23.347Z",
+      "currentPulledAtDisplay": "May 26, 2026, 3:22 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [
+        {
+          "key": "CORE-14482",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14482",
+          "summary": "Code changes.",
+          "changes": [
+            {
+              "field": "status",
+              "label": "Status",
+              "before": "Pending Deployment (STG)",
+              "after": "Regression Testing (STG)"
+            },
+            {
+              "field": "assignee",
+              "label": "Assignee",
+              "before": "Dewan Kabir",
+              "after": "Unassigned"
+            },
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "May 26, 2026, 1:29 PM",
+              "after": "May 26, 2026, 3:19 PM"
+            }
+          ],
+          "type": "Developer Task (sub task)",
+          "isSubtask": true,
+          "assignee": "Unassigned",
+          "assignedDeveloper": "Yoel Martin Pardo",
+          "status": "Regression Testing (STG)",
+          "parent": {
+            "key": "CORE-14476",
+            "url": "https://golfnow.atlassian.net/browse/CORE-14476",
+            "summary": "Add two new fields to /get-eligible-promo-codes API",
+            "description": "",
+            "type": "Story",
+            "status": "Pending Deployment (STG)",
+            "priority": "None"
+          }
+        }
+      ],
+      "statusChanges": [
+        {
+          "key": "CORE-14482",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14482",
+          "summary": "Code changes.",
+          "before": "Pending Deployment (STG)",
+          "after": "Regression Testing (STG)",
+          "type": "Developer Task (sub task)",
+          "isSubtask": true,
+          "assignee": "Unassigned",
+          "assignedDeveloper": "Yoel Martin Pardo",
+          "status": "Regression Testing (STG)",
+          "parent": {
+            "key": "CORE-14476",
+            "url": "https://golfnow.atlassian.net/browse/CORE-14476",
+            "summary": "Add two new fields to /get-eligible-promo-codes API",
+            "description": "",
+            "type": "Story",
+            "status": "Pending Deployment (STG)",
+            "priority": "None"
+          }
+        }
+      ]
+    },
     {
       "previousPulledAt": "2026-05-26T19:12:18.657Z",
       "previousPulledAtDisplay": "May 26, 2026, 3:12 PM",
@@ -2382,9 +2517,9 @@
           ],
           "type": "Developer Task (sub task)",
           "isSubtask": true,
-          "assignee": "Dewan Kabir",
+          "assignee": "Unassigned",
           "assignedDeveloper": "Yoel Martin Pardo",
-          "status": "Pending Deployment (STG)",
+          "status": "Regression Testing (STG)",
           "parent": {
             "key": "CORE-14476",
             "url": "https://golfnow.atlassian.net/browse/CORE-14476",
@@ -2465,9 +2600,9 @@
           "after": "Pending Deployment (STG)",
           "type": "Developer Task (sub task)",
           "isSubtask": true,
-          "assignee": "Dewan Kabir",
+          "assignee": "Unassigned",
           "assignedDeveloper": "Yoel Martin Pardo",
-          "status": "Pending Deployment (STG)",
+          "status": "Regression Testing (STG)",
           "parent": {
             "key": "CORE-14476",
             "url": "https://golfnow.atlassian.net/browse/CORE-14476",
@@ -4342,17 +4477,6 @@
       "previousPulledAtDisplay": "May 25, 2026, 7:33 PM",
       "currentPulledAt": "2026-05-25T23:38:22.178Z",
       "currentPulledAtDisplay": "May 25, 2026, 7:38 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-25T23:28:51.161Z",
-      "previousPulledAtDisplay": "May 25, 2026, 7:28 PM",
-      "currentPulledAt": "2026-05-25T23:33:53.287Z",
-      "currentPulledAtDisplay": "May 25, 2026, 7:33 PM",
       "isBaseline": false,
       "added": [],
       "removed": [],
