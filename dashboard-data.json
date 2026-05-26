@@ -4,10 +4,116 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-26T21:43:13.046Z",
+  "pulledAt": "2026-05-26T21:43:47.563Z",
   "pulledAtDisplay": "May 26, 2026, 5:43 PM",
   "total": 31,
   "issues": [
+    {
+      "key": "CORE-14464",
+      "url": "https://golfnow.atlassian.net/browse/CORE-14464",
+      "summary": "Database changes",
+      "description": "",
+      "descriptionHtml": "",
+      "descriptionImageCount": 0,
+      "descriptionVideoCount": 0,
+      "descriptionMediaCount": 0,
+      "commentCount": 1,
+      "comments": [
+        {
+          "id": "1170691",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14464?focusedCommentId=1170691",
+          "author": "Yoel Martin Pardo",
+          "authorAccountId": "625571809e7380006fb29599",
+          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
+          "created": "2026-05-14T10:57:19.825-0400",
+          "createdDisplay": "May 14, 2026, 10:57 AM",
+          "updated": "2026-05-14T10:57:19.825-0400",
+          "updatedDisplay": "",
+          "hasMedia": false,
+          "mediaCount": 0,
+          "body": "PR: https://github.com/GolfNowEng/gn-main-db/pull/638",
+          "bodyHtml": "<p>PR: <a href=\"https://github.com/GolfNowEng/gn-main-db/pull/638\" target=\"_blank\" rel=\"noopener\">https://github.com/GolfNowEng/gn-main-db/pull/638</a> </p>"
+        }
+      ],
+      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14464?focusedCommentId=1170691",
+      "lastCommentDisplay": "May 14, 2026, 10:57 AM",
+      "lastCommentAuthor": "Yoel Martin Pardo",
+      "type": "Developer Task (sub task)",
+      "isSubtask": true,
+      "status": "QA Testing (DEV)",
+      "priority": "None",
+      "assignee": "Nicole Greer",
+      "assigneeAccountId": "712020:8fa0be04-9400-422d-8c63-61e7d7b54669",
+      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:8fa0be04-9400-422d-8c63-61e7d7b54669/01136d3f-e8cd-4bac-9ba8-24e390f7c07e/32",
+      "assignedDeveloper": "Yoel Martin Pardo",
+      "assignedDeveloperAccountId": "625571809e7380006fb29599",
+      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
+      "updated": "2026-05-26T17:43:30.209-0400",
+      "updatedDisplay": "May 26, 2026, 5:43 PM",
+      "created": "2026-05-12T18:06:19.813-0400",
+      "createdDisplay": "May 12, 2026, 6:06 PM",
+      "components": [
+        "Database"
+      ],
+      "fixVersions": [
+        "v3001.123.0"
+      ],
+      "resolution": "",
+      "parent": {
+        "key": "CORE-14442",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14442",
+        "summary": "Mass Cancellation -  Include Trade Toggle Not Working as Intended",
+        "description": "",
+        "type": "Bug",
+        "status": "Pending Deployment (STG)",
+        "priority": "P2"
+      }
+    },
+    {
+      "key": "CORE-14456",
+      "url": "https://golfnow.atlassian.net/browse/CORE-14456",
+      "summary": "SQL code changes for [CORE - 14304]",
+      "description": "",
+      "descriptionHtml": "",
+      "descriptionImageCount": 0,
+      "descriptionVideoCount": 0,
+      "descriptionMediaCount": 0,
+      "commentCount": 0,
+      "comments": [],
+      "lastCommentUrl": "",
+      "lastCommentDisplay": "",
+      "lastCommentAuthor": "",
+      "type": "Developer Task (sub task)",
+      "isSubtask": true,
+      "status": "QA Testing (DEV)",
+      "priority": "None",
+      "assignee": "Nicole Greer",
+      "assigneeAccountId": "712020:8fa0be04-9400-422d-8c63-61e7d7b54669",
+      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:8fa0be04-9400-422d-8c63-61e7d7b54669/01136d3f-e8cd-4bac-9ba8-24e390f7c07e/32",
+      "assignedDeveloper": "Luis Vallejo Mursuli",
+      "assignedDeveloperAccountId": "712020:2e637bb4-c610-467b-839d-9a5b84f75f01",
+      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:2e637bb4-c610-467b-839d-9a5b84f75f01/4dca1d1b-3faa-4d03-90b8-2b3e0cc02887/32",
+      "updated": "2026-05-26T17:43:11.291-0400",
+      "updatedDisplay": "May 26, 2026, 5:43 PM",
+      "created": "2026-05-11T14:46:34.940-0400",
+      "createdDisplay": "May 11, 2026, 2:46 PM",
+      "components": [
+        "Database"
+      ],
+      "fixVersions": [
+        "v3001.123.0"
+      ],
+      "resolution": "",
+      "parent": {
+        "key": "CORE-14304",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14304",
+        "summary": "Update GolfPass Terms for Employee Comp Email Template",
+        "description": "",
+        "type": "Task",
+        "status": "Pending Deployment (STG)",
+        "priority": "P2"
+      }
+    },
     {
       "key": "CORE-14469",
       "url": "https://golfnow.atlassian.net/browse/CORE-14469",
@@ -1554,51 +1660,6 @@
       "parent": null
     },
     {
-      "key": "CORE-14456",
-      "url": "https://golfnow.atlassian.net/browse/CORE-14456",
-      "summary": "SQL code changes for [CORE - 14304]",
-      "description": "",
-      "descriptionHtml": "",
-      "descriptionImageCount": 0,
-      "descriptionVideoCount": 0,
-      "descriptionMediaCount": 0,
-      "commentCount": 0,
-      "comments": [],
-      "lastCommentUrl": "",
-      "lastCommentDisplay": "",
-      "lastCommentAuthor": "",
-      "type": "Developer Task (sub task)",
-      "isSubtask": true,
-      "status": "QA Testing (DEV)",
-      "priority": "None",
-      "assignee": "Nicole Greer",
-      "assigneeAccountId": "712020:8fa0be04-9400-422d-8c63-61e7d7b54669",
-      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:8fa0be04-9400-422d-8c63-61e7d7b54669/01136d3f-e8cd-4bac-9ba8-24e390f7c07e/32",
-      "assignedDeveloper": "Luis Vallejo Mursuli",
-      "assignedDeveloperAccountId": "712020:2e637bb4-c610-467b-839d-9a5b84f75f01",
-      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:2e637bb4-c610-467b-839d-9a5b84f75f01/4dca1d1b-3faa-4d03-90b8-2b3e0cc02887/32",
-      "updated": "2026-05-26T17:43:11.291-0400",
-      "updatedDisplay": "May 26, 2026, 5:43 PM",
-      "created": "2026-05-11T14:46:34.940-0400",
-      "createdDisplay": "May 11, 2026, 2:46 PM",
-      "components": [
-        "Database"
-      ],
-      "fixVersions": [
-        "v3001.123.0"
-      ],
-      "resolution": "",
-      "parent": {
-        "key": "CORE-14304",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14304",
-        "summary": "Update GolfPass Terms for Employee Comp Email Template",
-        "description": "",
-        "type": "Task",
-        "status": "Pending Deployment (STG)",
-        "priority": "P2"
-      }
-    },
-    {
       "key": "CORE-14436",
       "url": "https://golfnow.atlassian.net/browse/CORE-14436",
       "summary": "Code changes for [CORE - 14304]",
@@ -1640,67 +1701,6 @@
         "summary": "Update GolfPass Terms for Employee Comp Email Template",
         "description": "",
         "type": "Task",
-        "status": "Pending Deployment (STG)",
-        "priority": "P2"
-      }
-    },
-    {
-      "key": "CORE-14464",
-      "url": "https://golfnow.atlassian.net/browse/CORE-14464",
-      "summary": "Database changes",
-      "description": "",
-      "descriptionHtml": "",
-      "descriptionImageCount": 0,
-      "descriptionVideoCount": 0,
-      "descriptionMediaCount": 0,
-      "commentCount": 1,
-      "comments": [
-        {
-          "id": "1170691",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14464?focusedCommentId=1170691",
-          "author": "Yoel Martin Pardo",
-          "authorAccountId": "625571809e7380006fb29599",
-          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
-          "created": "2026-05-14T10:57:19.825-0400",
-          "createdDisplay": "May 14, 2026, 10:57 AM",
-          "updated": "2026-05-14T10:57:19.825-0400",
-          "updatedDisplay": "",
-          "hasMedia": false,
-          "mediaCount": 0,
-          "body": "PR: https://github.com/GolfNowEng/gn-main-db/pull/638",
-          "bodyHtml": "<p>PR: <a href=\"https://github.com/GolfNowEng/gn-main-db/pull/638\" target=\"_blank\" rel=\"noopener\">https://github.com/GolfNowEng/gn-main-db/pull/638</a> </p>"
-        }
-      ],
-      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14464?focusedCommentId=1170691",
-      "lastCommentDisplay": "May 14, 2026, 10:57 AM",
-      "lastCommentAuthor": "Yoel Martin Pardo",
-      "type": "Developer Task (sub task)",
-      "isSubtask": true,
-      "status": "QA Testing (DEV)",
-      "priority": "None",
-      "assignee": "Dewan Kabir",
-      "assigneeAccountId": "630fb06bb433b060db559bdb",
-      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
-      "assignedDeveloper": "Yoel Martin Pardo",
-      "assignedDeveloperAccountId": "625571809e7380006fb29599",
-      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
-      "updated": "2026-05-18T14:01:08.607-0400",
-      "updatedDisplay": "May 18, 2026, 2:01 PM",
-      "created": "2026-05-12T18:06:19.813-0400",
-      "createdDisplay": "May 12, 2026, 6:06 PM",
-      "components": [
-        "Database"
-      ],
-      "fixVersions": [
-        "v3001.123.0"
-      ],
-      "resolution": "",
-      "parent": {
-        "key": "CORE-14442",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14442",
-        "summary": "Mass Cancellation -  Include Trade Toggle Not Working as Intended",
-        "description": "",
-        "type": "Bug",
         "status": "Pending Deployment (STG)",
         "priority": "P2"
       }
@@ -1821,14 +1821,14 @@
       "isSubtask": true,
       "status": "QA Testing (DEV)",
       "priority": "None",
-      "assignee": "Dewan Kabir",
-      "assigneeAccountId": "630fb06bb433b060db559bdb",
-      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
+      "assignee": "Nicole Greer",
+      "assigneeAccountId": "712020:8fa0be04-9400-422d-8c63-61e7d7b54669",
+      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:8fa0be04-9400-422d-8c63-61e7d7b54669/01136d3f-e8cd-4bac-9ba8-24e390f7c07e/32",
       "assignedDeveloper": "Yoel Martin Pardo",
       "assignedDeveloperAccountId": "625571809e7380006fb29599",
       "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
-      "updated": "2026-05-18T14:01:08.530-0400",
-      "updatedDisplay": "May 18, 2026, 2:01 PM",
+      "updated": "2026-05-26T17:43:46.047-0400",
+      "updatedDisplay": "May 26, 2026, 5:43 PM",
       "created": "2026-05-12T18:06:12.032-0400",
       "createdDisplay": "May 12, 2026, 6:06 PM",
       "components": [
@@ -1851,51 +1851,18 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-26T21:42:21.995Z",
-    "previousPulledAtDisplay": "May 26, 2026, 5:42 PM",
-    "currentPulledAt": "2026-05-26T21:43:13.046Z",
+    "previousPulledAt": "2026-05-26T21:43:13.046Z",
+    "previousPulledAtDisplay": "May 26, 2026, 5:43 PM",
+    "currentPulledAt": "2026-05-26T21:43:47.563Z",
     "currentPulledAtDisplay": "May 26, 2026, 5:43 PM",
     "isBaseline": false,
     "added": [],
     "removed": [],
     "updated": [
       {
-        "key": "CORE-14469",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14469",
-        "summary": "Code changes for [CORE - 14440]",
-        "changes": [
-          {
-            "field": "assignee",
-            "label": "Assignee",
-            "before": "Dewan Kabir",
-            "after": "Nicole Greer"
-          },
-          {
-            "field": "updatedDisplay",
-            "label": "Jira updated",
-            "before": "May 18, 2026, 8:11 PM",
-            "after": "May 26, 2026, 5:42 PM"
-          }
-        ],
-        "type": "Developer Task (sub task)",
-        "isSubtask": true,
-        "assignee": "Nicole Greer",
-        "assignedDeveloper": "Luis Vallejo Mursuli",
-        "status": "QA Testing (DEV)",
-        "parent": {
-          "key": "CORE-14440",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14440",
-          "summary": "Modify New EZL API workflow to Account for Partial Prepaid to GN - 2",
-          "description": "",
-          "type": "Bug",
-          "status": "QA Testing (DEV)",
-          "priority": "P1"
-        }
-      },
-      {
-        "key": "CORE-14456",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14456",
-        "summary": "SQL code changes for [CORE - 14304]",
+        "key": "CORE-14464",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14464",
+        "summary": "Database changes",
         "changes": [
           {
             "field": "assignee",
@@ -1913,14 +1880,47 @@
         "type": "Developer Task (sub task)",
         "isSubtask": true,
         "assignee": "Nicole Greer",
-        "assignedDeveloper": "Luis Vallejo Mursuli",
+        "assignedDeveloper": "Yoel Martin Pardo",
         "status": "QA Testing (DEV)",
         "parent": {
-          "key": "CORE-14304",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14304",
-          "summary": "Update GolfPass Terms for Employee Comp Email Template",
+          "key": "CORE-14442",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14442",
+          "summary": "Mass Cancellation -  Include Trade Toggle Not Working as Intended",
           "description": "",
-          "type": "Task",
+          "type": "Bug",
+          "status": "Pending Deployment (STG)",
+          "priority": "P2"
+        }
+      },
+      {
+        "key": "CORE-14463",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14463",
+        "summary": "Code changes.",
+        "changes": [
+          {
+            "field": "assignee",
+            "label": "Assignee",
+            "before": "Dewan Kabir",
+            "after": "Nicole Greer"
+          },
+          {
+            "field": "updatedDisplay",
+            "label": "Jira updated",
+            "before": "May 18, 2026, 2:01 PM",
+            "after": "May 26, 2026, 5:43 PM"
+          }
+        ],
+        "type": "Developer Task (sub task)",
+        "isSubtask": true,
+        "assignee": "Nicole Greer",
+        "assignedDeveloper": "Yoel Martin Pardo",
+        "status": "QA Testing (DEV)",
+        "parent": {
+          "key": "CORE-14442",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14442",
+          "summary": "Mass Cancellation -  Include Trade Toggle Not Working as Intended",
+          "description": "",
+          "type": "Bug",
           "status": "Pending Deployment (STG)",
           "priority": "P2"
         }
@@ -1929,6 +1929,84 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-26T21:43:13.046Z",
+      "previousPulledAtDisplay": "May 26, 2026, 5:43 PM",
+      "currentPulledAt": "2026-05-26T21:43:47.563Z",
+      "currentPulledAtDisplay": "May 26, 2026, 5:43 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [
+        {
+          "key": "CORE-14464",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14464",
+          "summary": "Database changes",
+          "changes": [
+            {
+              "field": "assignee",
+              "label": "Assignee",
+              "before": "Dewan Kabir",
+              "after": "Nicole Greer"
+            },
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "May 18, 2026, 2:01 PM",
+              "after": "May 26, 2026, 5:43 PM"
+            }
+          ],
+          "type": "Developer Task (sub task)",
+          "isSubtask": true,
+          "assignee": "Nicole Greer",
+          "assignedDeveloper": "Yoel Martin Pardo",
+          "status": "QA Testing (DEV)",
+          "parent": {
+            "key": "CORE-14442",
+            "url": "https://golfnow.atlassian.net/browse/CORE-14442",
+            "summary": "Mass Cancellation -  Include Trade Toggle Not Working as Intended",
+            "description": "",
+            "type": "Bug",
+            "status": "Pending Deployment (STG)",
+            "priority": "P2"
+          }
+        },
+        {
+          "key": "CORE-14463",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14463",
+          "summary": "Code changes.",
+          "changes": [
+            {
+              "field": "assignee",
+              "label": "Assignee",
+              "before": "Dewan Kabir",
+              "after": "Nicole Greer"
+            },
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "May 18, 2026, 2:01 PM",
+              "after": "May 26, 2026, 5:43 PM"
+            }
+          ],
+          "type": "Developer Task (sub task)",
+          "isSubtask": true,
+          "assignee": "Nicole Greer",
+          "assignedDeveloper": "Yoel Martin Pardo",
+          "status": "QA Testing (DEV)",
+          "parent": {
+            "key": "CORE-14442",
+            "url": "https://golfnow.atlassian.net/browse/CORE-14442",
+            "summary": "Mass Cancellation -  Include Trade Toggle Not Working as Intended",
+            "description": "",
+            "type": "Bug",
+            "status": "Pending Deployment (STG)",
+            "priority": "P2"
+          }
+        }
+      ],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-26T21:42:21.995Z",
       "previousPulledAtDisplay": "May 26, 2026, 5:42 PM",
@@ -4702,17 +4780,6 @@
       "previousPulledAtDisplay": "May 25, 2026, 10:00 PM",
       "currentPulledAt": "2026-05-26T02:05:19.314Z",
       "currentPulledAtDisplay": "May 25, 2026, 10:05 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-26T01:55:13.533Z",
-      "previousPulledAtDisplay": "May 25, 2026, 9:55 PM",
-      "currentPulledAt": "2026-05-26T02:00:16.464Z",
-      "currentPulledAtDisplay": "May 25, 2026, 10:00 PM",
       "isBaseline": false,
       "added": [],
       "removed": [],
