@@ -4,10 +4,55 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-26T18:47:06.066Z",
-  "pulledAtDisplay": "May 26, 2026, 2:47 PM",
+  "pulledAt": "2026-05-26T18:52:08.667Z",
+  "pulledAtDisplay": "May 26, 2026, 2:52 PM",
   "total": 31,
   "issues": [
+    {
+      "key": "CORE-14498",
+      "url": "https://golfnow.atlassian.net/browse/CORE-14498",
+      "summary": "Code Changes",
+      "description": "",
+      "descriptionHtml": "",
+      "descriptionImageCount": 0,
+      "descriptionVideoCount": 0,
+      "descriptionMediaCount": 0,
+      "commentCount": 0,
+      "comments": [],
+      "lastCommentUrl": "",
+      "lastCommentDisplay": "",
+      "lastCommentAuthor": "",
+      "type": "Developer Task (sub task)",
+      "isSubtask": true,
+      "status": "QA Testing (DEV)",
+      "priority": "P2",
+      "assignee": "Dewan Kabir",
+      "assigneeAccountId": "630fb06bb433b060db559bdb",
+      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
+      "assignedDeveloper": "Tyler Olechnowicz",
+      "assignedDeveloperAccountId": "5d2396c1ea26c40c2043fc92",
+      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5d2396c1ea26c40c2043fc92/1647fb84-acea-4c3f-b1e8-9a79aa120f8f/32",
+      "updated": "2026-05-26T14:48:04.115-0400",
+      "updatedDisplay": "May 26, 2026, 2:48 PM",
+      "created": "2026-05-21T16:22:04.079-0400",
+      "createdDisplay": "May 21, 2026, 4:22 PM",
+      "components": [
+        "GolfNow.SubscriptionRenewalReminder"
+      ],
+      "fixVersions": [
+        "v3001.123.0"
+      ],
+      "resolution": "",
+      "parent": {
+        "key": "CORE-14497",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14497",
+        "summary": "Upgrade Subscription Renewal Reminder Task to .NET 10",
+        "description": "",
+        "type": "Story",
+        "status": "QA Testing (DEV)",
+        "priority": "P2"
+      }
+    },
     {
       "key": "CORE-14497",
       "url": "https://golfnow.atlassian.net/browse/CORE-14497",
@@ -48,7 +93,7 @@
       "assignedDeveloper": "Tyler Olechnowicz",
       "assignedDeveloperAccountId": "5d2396c1ea26c40c2043fc92",
       "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5d2396c1ea26c40c2043fc92/1647fb84-acea-4c3f-b1e8-9a79aa120f8f/32",
-      "updated": "2026-05-26T14:47:00.718-0400",
+      "updated": "2026-05-26T14:47:49.370-0400",
       "updatedDisplay": "May 26, 2026, 2:47 PM",
       "created": "2026-05-21T16:18:58.570-0400",
       "createdDisplay": "May 21, 2026, 4:18 PM",
@@ -60,51 +105,6 @@
       ],
       "resolution": "",
       "parent": null
-    },
-    {
-      "key": "CORE-14498",
-      "url": "https://golfnow.atlassian.net/browse/CORE-14498",
-      "summary": "Code Changes",
-      "description": "",
-      "descriptionHtml": "",
-      "descriptionImageCount": 0,
-      "descriptionVideoCount": 0,
-      "descriptionMediaCount": 0,
-      "commentCount": 0,
-      "comments": [],
-      "lastCommentUrl": "",
-      "lastCommentDisplay": "",
-      "lastCommentAuthor": "",
-      "type": "Developer Task (sub task)",
-      "isSubtask": true,
-      "status": "QA Testing (DEV)",
-      "priority": "P2",
-      "assignee": "Unassigned",
-      "assigneeAccountId": "",
-      "assigneeAvatarUrl": "",
-      "assignedDeveloper": "Tyler Olechnowicz",
-      "assignedDeveloperAccountId": "5d2396c1ea26c40c2043fc92",
-      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5d2396c1ea26c40c2043fc92/1647fb84-acea-4c3f-b1e8-9a79aa120f8f/32",
-      "updated": "2026-05-26T14:43:12.785-0400",
-      "updatedDisplay": "May 26, 2026, 2:43 PM",
-      "created": "2026-05-21T16:22:04.079-0400",
-      "createdDisplay": "May 21, 2026, 4:22 PM",
-      "components": [
-        "GolfNow.SubscriptionRenewalReminder"
-      ],
-      "fixVersions": [
-        "v3001.123.0"
-      ],
-      "resolution": "",
-      "parent": {
-        "key": "CORE-14497",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14497",
-        "summary": "Upgrade Subscription Renewal Reminder Task to .NET 10",
-        "description": "",
-        "type": "Story",
-        "status": "QA Testing (DEV)",
-        "priority": "P2"
-      }
     },
     {
       "key": "CORE-14474",
@@ -1851,72 +1851,35 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-26T18:42:03.543Z",
-    "previousPulledAtDisplay": "May 26, 2026, 2:42 PM",
-    "currentPulledAt": "2026-05-26T18:47:06.066Z",
-    "currentPulledAtDisplay": "May 26, 2026, 2:47 PM",
+    "previousPulledAt": "2026-05-26T18:47:06.066Z",
+    "previousPulledAtDisplay": "May 26, 2026, 2:47 PM",
+    "currentPulledAt": "2026-05-26T18:52:08.667Z",
+    "currentPulledAtDisplay": "May 26, 2026, 2:52 PM",
     "isBaseline": false,
     "added": [],
     "removed": [],
     "updated": [
-      {
-        "key": "CORE-14497",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14497",
-        "summary": "Upgrade Subscription Renewal Reminder Task to .NET 10",
-        "changes": [
-          {
-            "field": "status",
-            "label": "Status",
-            "before": "Pending Deployment (DEV)",
-            "after": "QA Testing (DEV)"
-          },
-          {
-            "field": "assignee",
-            "label": "Assignee",
-            "before": "Tyler Olechnowicz",
-            "after": "Dewan Kabir"
-          },
-          {
-            "field": "updatedDisplay",
-            "label": "Jira updated",
-            "before": "May 26, 2026, 8:34 AM",
-            "after": "May 26, 2026, 2:47 PM"
-          }
-        ],
-        "type": "Story",
-        "isSubtask": false,
-        "assignee": "Dewan Kabir",
-        "assignedDeveloper": "Tyler Olechnowicz",
-        "status": "QA Testing (DEV)",
-        "parent": null
-      },
       {
         "key": "CORE-14498",
         "url": "https://golfnow.atlassian.net/browse/CORE-14498",
         "summary": "Code Changes",
         "changes": [
           {
-            "field": "status",
-            "label": "Status",
-            "before": "Pending Deployment (DEV)",
-            "after": "QA Testing (DEV)"
-          },
-          {
             "field": "assignee",
             "label": "Assignee",
-            "before": "Tyler Olechnowicz",
-            "after": "Unassigned"
+            "before": "Unassigned",
+            "after": "Dewan Kabir"
           },
           {
             "field": "updatedDisplay",
             "label": "Jira updated",
-            "before": "May 21, 2026, 6:02 PM",
-            "after": "May 26, 2026, 2:43 PM"
+            "before": "May 26, 2026, 2:43 PM",
+            "after": "May 26, 2026, 2:48 PM"
           }
         ],
         "type": "Developer Task (sub task)",
         "isSubtask": true,
-        "assignee": "Unassigned",
+        "assignee": "Dewan Kabir",
         "assignedDeveloper": "Tyler Olechnowicz",
         "status": "QA Testing (DEV)",
         "parent": {
@@ -1930,44 +1893,54 @@
         }
       }
     ],
-    "statusChanges": [
-      {
-        "key": "CORE-14497",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14497",
-        "summary": "Upgrade Subscription Renewal Reminder Task to .NET 10",
-        "before": "Pending Deployment (DEV)",
-        "after": "QA Testing (DEV)",
-        "type": "Story",
-        "isSubtask": false,
-        "assignee": "Dewan Kabir",
-        "assignedDeveloper": "Tyler Olechnowicz",
-        "status": "QA Testing (DEV)",
-        "parent": null
-      },
-      {
-        "key": "CORE-14498",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14498",
-        "summary": "Code Changes",
-        "before": "Pending Deployment (DEV)",
-        "after": "QA Testing (DEV)",
-        "type": "Developer Task (sub task)",
-        "isSubtask": true,
-        "assignee": "Unassigned",
-        "assignedDeveloper": "Tyler Olechnowicz",
-        "status": "QA Testing (DEV)",
-        "parent": {
-          "key": "CORE-14497",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14497",
-          "summary": "Upgrade Subscription Renewal Reminder Task to .NET 10",
-          "description": "",
-          "type": "Story",
-          "status": "QA Testing (DEV)",
-          "priority": "P2"
-        }
-      }
-    ]
+    "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-26T18:47:06.066Z",
+      "previousPulledAtDisplay": "May 26, 2026, 2:47 PM",
+      "currentPulledAt": "2026-05-26T18:52:08.667Z",
+      "currentPulledAtDisplay": "May 26, 2026, 2:52 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [
+        {
+          "key": "CORE-14498",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14498",
+          "summary": "Code Changes",
+          "changes": [
+            {
+              "field": "assignee",
+              "label": "Assignee",
+              "before": "Unassigned",
+              "after": "Dewan Kabir"
+            },
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "May 26, 2026, 2:43 PM",
+              "after": "May 26, 2026, 2:48 PM"
+            }
+          ],
+          "type": "Developer Task (sub task)",
+          "isSubtask": true,
+          "assignee": "Dewan Kabir",
+          "assignedDeveloper": "Tyler Olechnowicz",
+          "status": "QA Testing (DEV)",
+          "parent": {
+            "key": "CORE-14497",
+            "url": "https://golfnow.atlassian.net/browse/CORE-14497",
+            "summary": "Upgrade Subscription Renewal Reminder Task to .NET 10",
+            "description": "",
+            "type": "Story",
+            "status": "QA Testing (DEV)",
+            "priority": "P2"
+          }
+        }
+      ],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-26T18:42:03.543Z",
       "previousPulledAtDisplay": "May 26, 2026, 2:42 PM",
@@ -2034,7 +2007,7 @@
           ],
           "type": "Developer Task (sub task)",
           "isSubtask": true,
-          "assignee": "Unassigned",
+          "assignee": "Dewan Kabir",
           "assignedDeveloper": "Tyler Olechnowicz",
           "status": "QA Testing (DEV)",
           "parent": {
@@ -2070,7 +2043,7 @@
           "after": "QA Testing (DEV)",
           "type": "Developer Task (sub task)",
           "isSubtask": true,
-          "assignee": "Unassigned",
+          "assignee": "Dewan Kabir",
           "assignedDeveloper": "Tyler Olechnowicz",
           "status": "QA Testing (DEV)",
           "parent": {
@@ -4414,17 +4387,6 @@
       "previousPulledAtDisplay": "May 25, 2026, 7:03 PM",
       "currentPulledAt": "2026-05-25T23:08:42.504Z",
       "currentPulledAtDisplay": "May 25, 2026, 7:08 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-25T22:58:37.359Z",
-      "previousPulledAtDisplay": "May 25, 2026, 6:58 PM",
-      "currentPulledAt": "2026-05-25T23:03:40.075Z",
-      "currentPulledAtDisplay": "May 25, 2026, 7:03 PM",
       "isBaseline": false,
       "added": [],
       "removed": [],
