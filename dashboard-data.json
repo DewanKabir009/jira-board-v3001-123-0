@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-26T16:06:07.970Z",
-  "pulledAtDisplay": "May 26, 2026, 12:06 PM",
+  "pulledAt": "2026-05-26T16:08:57.980Z",
+  "pulledAtDisplay": "May 26, 2026, 12:08 PM",
   "total": 30,
   "issues": [
     {
@@ -1776,119 +1776,28 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-26T15:41:04.436Z",
-    "previousPulledAtDisplay": "May 26, 2026, 11:41 AM",
-    "currentPulledAt": "2026-05-26T16:06:07.970Z",
-    "currentPulledAtDisplay": "May 26, 2026, 12:06 PM",
+    "previousPulledAt": "2026-05-26T16:06:07.970Z",
+    "previousPulledAtDisplay": "May 26, 2026, 12:06 PM",
+    "currentPulledAt": "2026-05-26T16:08:57.980Z",
+    "currentPulledAtDisplay": "May 26, 2026, 12:08 PM",
     "isBaseline": false,
     "added": [],
     "removed": [],
-    "updated": [
-      {
-        "key": "CORE-14474",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14474",
-        "summary": "Geosearch API - enable PPL FeatureCode locations",
-        "changes": [
-          {
-            "field": "updatedDisplay",
-            "label": "Jira updated",
-            "before": "May 19, 2026, 10:24 AM",
-            "after": "May 26, 2026, 11:46 AM"
-          }
-        ],
-        "type": "Task",
-        "isSubtask": false,
-        "assignee": "Yu-Sheng Tu",
-        "assignedDeveloper": "Yu-Sheng Tu",
-        "status": "QA Testing (DEV)",
-        "parent": null
-      },
-      {
-        "key": "CORE-14486",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14486",
-        "summary": "Database Changes",
-        "changes": [
-          {
-            "field": "status",
-            "label": "Status",
-            "before": "QA Testing (DEV)",
-            "after": "Pending Deployment (STG)"
-          },
-          {
-            "field": "updatedDisplay",
-            "label": "Jira updated",
-            "before": "May 19, 2026, 3:09 PM",
-            "after": "May 26, 2026, 11:42 AM"
-          }
-        ],
-        "type": "Developer Task (sub task)",
-        "isSubtask": true,
-        "assignee": "Dewan Kabir",
-        "assignedDeveloper": "Tyler Olechnowicz",
-        "status": "Pending Deployment (STG)",
-        "parent": {
-          "key": "CORE-14444",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14444",
-          "summary": "FeeConfiguration - Create Columns for GP Waivability and Refundability",
-          "description": "",
-          "type": "Story",
-          "status": "QA Testing (DEV)",
-          "priority": "P2"
-        }
-      },
-      {
-        "key": "CORE-14444",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14444",
-        "summary": "FeeConfiguration - Create Columns for GP Waivability and Refundability",
-        "changes": [
-          {
-            "field": "updatedDisplay",
-            "label": "Jira updated",
-            "before": "May 19, 2026, 3:10 PM",
-            "after": "May 26, 2026, 11:41 AM"
-          }
-        ],
-        "type": "Story",
-        "isSubtask": false,
-        "assignee": "Dewan Kabir",
-        "assignedDeveloper": "Tyler Olechnowicz",
-        "status": "QA Testing (DEV)",
-        "parent": {
-          "key": "CORE-13901",
-          "url": "https://golfnow.atlassian.net/browse/CORE-13901",
-          "summary": "Customizable transaction fees",
-          "description": "",
-          "type": "Epic",
-          "status": "Planning",
-          "priority": "P1"
-        }
-      }
-    ],
-    "statusChanges": [
-      {
-        "key": "CORE-14486",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14486",
-        "summary": "Database Changes",
-        "before": "QA Testing (DEV)",
-        "after": "Pending Deployment (STG)",
-        "type": "Developer Task (sub task)",
-        "isSubtask": true,
-        "assignee": "Dewan Kabir",
-        "assignedDeveloper": "Tyler Olechnowicz",
-        "status": "Pending Deployment (STG)",
-        "parent": {
-          "key": "CORE-14444",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14444",
-          "summary": "FeeConfiguration - Create Columns for GP Waivability and Refundability",
-          "description": "",
-          "type": "Story",
-          "status": "QA Testing (DEV)",
-          "priority": "P2"
-        }
-      }
-    ]
+    "updated": [],
+    "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-26T16:06:07.970Z",
+      "previousPulledAtDisplay": "May 26, 2026, 12:06 PM",
+      "currentPulledAt": "2026-05-26T16:08:57.980Z",
+      "currentPulledAtDisplay": "May 26, 2026, 12:08 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-26T15:41:04.436Z",
       "previousPulledAtDisplay": "May 26, 2026, 11:41 AM",
@@ -3937,17 +3846,6 @@
       "previousPulledAtDisplay": "May 25, 2026, 4:19 PM",
       "currentPulledAt": "2026-05-25T20:24:03.330Z",
       "currentPulledAtDisplay": "May 25, 2026, 4:24 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-25T20:13:59.015Z",
-      "previousPulledAtDisplay": "May 25, 2026, 4:13 PM",
-      "currentPulledAt": "2026-05-25T20:19:01.215Z",
-      "currentPulledAtDisplay": "May 25, 2026, 4:19 PM",
       "isBaseline": false,
       "added": [],
       "removed": [],
