@@ -4,10 +4,217 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-26T17:24:37.268Z",
-  "pulledAtDisplay": "May 26, 2026, 1:24 PM",
+  "pulledAt": "2026-05-26T17:29:39.831Z",
+  "pulledAtDisplay": "May 26, 2026, 1:29 PM",
   "total": 31,
   "issues": [
+    {
+      "key": "CORE-14476",
+      "url": "https://golfnow.atlassian.net/browse/CORE-14476",
+      "summary": "Add two new fields to /get-eligible-promo-codes API",
+      "description": "- API: https://api.gnsvc.com/GolfNowAPI.svc/rest/channel/5151/customers/{{EmailAddress}}/get-eligible-promo-codes?teeTimeRateId=67973919&playerCount=1\n\n- Current Response\n\n[\n{\n\"Code\": \"yfz2zMbj7\",\n\"ExpirationDate\": \"/Date(1805295695000+0000)/\",\n\"IsPromotedCampaign\": false,\n\"ShortDescription\": \"$10 Monthly Tee Time Credit\",\n\"StackableType\": 2\n},\n{\n\"Code\": \"yfz2zMaa6\",\n\"ExpirationDate\": \"/Date(1805295695000+0000)/\",\n\"IsPromotedCampaign\": false,\n\"ShortDescription\": \"$10 Monthly Tee Time Credit\",\n\"StackableType\": 2\n}\n]\n\n- We would like to add two new fields to each object in the array\n\n- CouponId- This is the PromotionId from GNC\n\n- PromoTypeId - This is the Promotion Type from GNC\n\n- This can be NULL\n\n- Expected Response:\n\n[\n{\n\"Code\": \"yfz2zMbj7\",\n\"ExpirationDate\": \"/Date(1805295695000+0000)/\",\n\"IsPromotedCampaign\": false,\n\"ShortDescription\": \"$10 Monthly Tee Time Credit\",\n\"StackableType\": 2,\n\"CouponId\": 6375,\n\"PromoTypeId\": 1\n},\n{\n\"Code\": \"yfz2zMaa6\",\n\"ExpirationDate\": \"/Date(1805295695000+0000)/\",\n\"IsPromotedCampaign\": false,\n\"ShortDescription\": \"$10 Monthly Tee Time Credit\",\n\"StackableType\": 2,\n\"CouponId\": 6375,\n\"PromoTypeId\": 1\n}\n]\n\n- These two fields are already returned on https://api.gnsvc.com/GolfNowAPI.svc/rest/customers/{{EmailAddress}}/loyalty/promoCodes?promoTypeIds=1&activeOnly=true, we just need them to also be returned on the endpoint listed on #1 above\n\n- For reference, these are the two GNC fields where that is controlled",
+      "descriptionHtml": "<ol><li><p>API: <code>https://api.gnsvc.com/GolfNowAPI.svc/rest/channel/5151/customers/{{EmailAddress}}/get-eligible-promo-codes?teeTimeRateId=67973919&amp;playerCount=1</code></p><ol><li><p>Current Response</p><pre><code>[\n    {\n        &quot;Code&quot;: &quot;yfz2zMbj7&quot;,\n        &quot;ExpirationDate&quot;: &quot;/Date(1805295695000+0000)/&quot;,\n        &quot;IsPromotedCampaign&quot;: false,\n        &quot;ShortDescription&quot;: &quot;$10 Monthly Tee Time Credit&quot;,\n        &quot;StackableType&quot;: 2\n    },\n        {\n        &quot;Code&quot;: &quot;yfz2zMaa6&quot;,\n        &quot;ExpirationDate&quot;: &quot;/Date(1805295695000+0000)/&quot;,\n        &quot;IsPromotedCampaign&quot;: false,\n        &quot;ShortDescription&quot;: &quot;$10 Monthly Tee Time Credit&quot;,\n        &quot;StackableType&quot;: 2\n    }\n]</code></pre></li></ol></li><li><p>We would like to add two new fields to each object in the array</p><ol><li><p><code>CouponId</code>- This is the PromotionId from GNC</p></li><li><p><code>PromoTypeId</code> - This is the Promotion Type from GNC</p><ol><li><p>This can be NULL</p></li></ol></li><li><p>Expected Response:</p><pre><code>[\n    {\n        &quot;Code&quot;: &quot;yfz2zMbj7&quot;,\n        &quot;ExpirationDate&quot;: &quot;/Date(1805295695000+0000)/&quot;,\n        &quot;IsPromotedCampaign&quot;: false,\n        &quot;ShortDescription&quot;: &quot;$10 Monthly Tee Time Credit&quot;,\n        &quot;StackableType&quot;: 2,\n        &quot;CouponId&quot;: 6375,\n        &quot;PromoTypeId&quot;: 1\n    },\n        {\n        &quot;Code&quot;: &quot;yfz2zMaa6&quot;,\n        &quot;ExpirationDate&quot;: &quot;/Date(1805295695000+0000)/&quot;,\n        &quot;IsPromotedCampaign&quot;: false,\n        &quot;ShortDescription&quot;: &quot;$10 Monthly Tee Time Credit&quot;,\n        &quot;StackableType&quot;: 2,\n        &quot;CouponId&quot;: 6375,\n        &quot;PromoTypeId&quot;: 1\n    }\n]</code></pre></li><li><p>These two fields are already returned on <code>https://api.gnsvc.com/GolfNowAPI.svc/rest/customers/{{EmailAddress}}/loyalty/promoCodes?promoTypeIds=1&amp;activeOnly=true</code>, we just need them to also be returned on the endpoint listed on #1 above </p></li><li><p>For reference, these are the two GNC fields where that is controlled</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14476/727812-image-20260515-171538.png\" alt=\"image-20260515-171538.png\" loading=\"lazy\"><figcaption>image-20260515-171538.png</figcaption></figure></div></li></ol></li></ol>",
+      "descriptionImageCount": 1,
+      "descriptionVideoCount": 0,
+      "descriptionMediaCount": 1,
+      "commentCount": 2,
+      "comments": [
+        {
+          "id": "1171731",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14476?focusedCommentId=1171731",
+          "author": "Yoel Martin Pardo",
+          "authorAccountId": "625571809e7380006fb29599",
+          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
+          "created": "2026-05-18T18:41:21.525-0400",
+          "createdDisplay": "May 18, 2026, 6:41 PM",
+          "updated": "2026-05-18T18:41:21.525-0400",
+          "updatedDisplay": "",
+          "hasMedia": true,
+          "mediaCount": 1,
+          "body": "QA: Here is an example of the change. Please make sure to test both endpoints listed on the description on the ticket and also try to do regression with everything related to Promo Code. Purchasing a subscription, TeeTime, side cart using Promo code, just to make sure that the changes introduced are not breaking anytihing.",
+          "bodyHtml": "<p>QA: Here is an example of the change. Please make sure to test both endpoints listed on the description on the ticket and also try to do regression with everything related to Promo Code. Purchasing a subscription, TeeTime, side cart using Promo code, just to make sure that the changes introduced are not breaking anytihing.</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14476/comments/1171731/728476-image-20260518-223956.png\" alt=\"image-20260518-223956.png\" loading=\"lazy\"><figcaption>image-20260518-223956.png</figcaption></figure></div>"
+        },
+        {
+          "id": "1174648",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14476?focusedCommentId=1174648",
+          "author": "Dewan Kabir",
+          "authorAccountId": "630fb06bb433b060db559bdb",
+          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
+          "created": "2026-05-26T13:29:14.036-0400",
+          "createdDisplay": "May 26, 2026, 1:29 PM",
+          "updated": "2026-05-26T13:29:14.036-0400",
+          "updatedDisplay": "",
+          "hasMedia": true,
+          "mediaCount": 6,
+          "body": "VALIDATE IN AWS DEV :\n\nRegular Flow : For a Trade Tee Time , where a Promoted Campaign is setup :\n\nSubscription Item Processor Flow : To Award Customers $10 Hot Deal Promo Codes : Trade Tee Time :\n\nCourse Tee Time :",
+          "bodyHtml": "<p><strong>VALIDATE IN AWS DEV : </strong></p><p><strong>Regular Flow </strong>: For a Trade Tee Time , where a <strong>Promoted Campaign</strong> is setup : </p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14476/comments/1174648/731221-image-20260526-172318.png\" alt=\"image-20260526-172318.png\" loading=\"lazy\"><figcaption>image-20260526-172318.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14476/comments/1174648/731218-image-20260526-172415.png\" alt=\"image-20260526-172415.png\" loading=\"lazy\"><figcaption>image-20260526-172415.png</figcaption></figure></div><p><strong>Subscription Item Processor Flow :</strong> To Award Customers $10 Hot Deal Promo Codes : <strong>Trade Tee Time : </strong></p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14476/comments/1174648/731220-image-20260526-172524.png\" alt=\"image-20260526-172524.png\" loading=\"lazy\"><figcaption>image-20260526-172524.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14476/comments/1174648/731217-image-20260526-172648.png\" alt=\"image-20260526-172648.png\" loading=\"lazy\"><figcaption>image-20260526-172648.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14476/comments/1174648/731222-image-20260526-172740.png\" alt=\"image-20260526-172740.png\" loading=\"lazy\"><figcaption>image-20260526-172740.png</figcaption></figure></div><p><strong>Course Tee Time : </strong></p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14476/comments/1174648/731219-image-20260526-172845.png\" alt=\"image-20260526-172845.png\" loading=\"lazy\"><figcaption>image-20260526-172845.png</figcaption></figure></div>"
+        }
+      ],
+      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14476?focusedCommentId=1174648",
+      "lastCommentDisplay": "May 26, 2026, 1:29 PM",
+      "lastCommentAuthor": "Dewan Kabir",
+      "type": "Story",
+      "isSubtask": false,
+      "status": "Pending Deployment (STG)",
+      "priority": "None",
+      "assignee": "Dewan Kabir",
+      "assigneeAccountId": "630fb06bb433b060db559bdb",
+      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
+      "assignedDeveloper": "Yoel Martin Pardo",
+      "assignedDeveloperAccountId": "625571809e7380006fb29599",
+      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
+      "updated": "2026-05-26T13:29:25.233-0400",
+      "updatedDisplay": "May 26, 2026, 1:29 PM",
+      "created": "2026-05-15T13:12:52.763-0400",
+      "createdDisplay": "May 15, 2026, 1:12 PM",
+      "components": [
+        "Database",
+        "GolfNow.API.TR",
+        "GolfNow.Services.Product",
+        "GolfNow.Services.Reservation",
+        "GolfNowAPI",
+        "GolfNowCentral"
+      ],
+      "fixVersions": [
+        "v3001.123.0"
+      ],
+      "resolution": "",
+      "parent": {
+        "key": "APP-7093",
+        "url": "https://golfnow.atlassian.net/browse/APP-7093",
+        "summary": "2026 Checkout Redesign",
+        "description": "",
+        "type": "Epic",
+        "status": "Planning",
+        "priority": "None"
+      }
+    },
+    {
+      "key": "CORE-14482",
+      "url": "https://golfnow.atlassian.net/browse/CORE-14482",
+      "summary": "Code changes.",
+      "description": "",
+      "descriptionHtml": "",
+      "descriptionImageCount": 0,
+      "descriptionVideoCount": 0,
+      "descriptionMediaCount": 0,
+      "commentCount": 1,
+      "comments": [
+        {
+          "id": "1171732",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14482?focusedCommentId=1171732",
+          "author": "Yoel Martin Pardo",
+          "authorAccountId": "625571809e7380006fb29599",
+          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
+          "created": "2026-05-18T18:42:15.714-0400",
+          "createdDisplay": "May 18, 2026, 6:42 PM",
+          "updated": "2026-05-18T18:42:15.714-0400",
+          "updatedDisplay": "",
+          "hasMedia": false,
+          "mediaCount": 0,
+          "body": "PR: https://github.com/GolfNowEng/gn-main/pull/2153",
+          "bodyHtml": "<p>PR: <a href=\"https://github.com/GolfNowEng/gn-main/pull/2153\" target=\"_blank\" rel=\"noopener\">https://github.com/GolfNowEng/gn-main/pull/2153</a> </p>"
+        }
+      ],
+      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14482?focusedCommentId=1171732",
+      "lastCommentDisplay": "May 18, 2026, 6:42 PM",
+      "lastCommentAuthor": "Yoel Martin Pardo",
+      "type": "Developer Task (sub task)",
+      "isSubtask": true,
+      "status": "Pending Deployment (STG)",
+      "priority": "None",
+      "assignee": "Dewan Kabir",
+      "assigneeAccountId": "630fb06bb433b060db559bdb",
+      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
+      "assignedDeveloper": "Yoel Martin Pardo",
+      "assignedDeveloperAccountId": "625571809e7380006fb29599",
+      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
+      "updated": "2026-05-26T13:29:22.938-0400",
+      "updatedDisplay": "May 26, 2026, 1:29 PM",
+      "created": "2026-05-18T18:18:10.889-0400",
+      "createdDisplay": "May 18, 2026, 6:18 PM",
+      "components": [
+        "GolfNow.API.TR",
+        "GolfNow.Services.Product",
+        "GolfNow.Services.Reservation",
+        "GolfNowAPI",
+        "GolfNowCentral"
+      ],
+      "fixVersions": [
+        "v3001.123.0"
+      ],
+      "resolution": "",
+      "parent": {
+        "key": "CORE-14476",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14476",
+        "summary": "Add two new fields to /get-eligible-promo-codes API",
+        "description": "",
+        "type": "Story",
+        "status": "Pending Deployment (STG)",
+        "priority": "None"
+      }
+    },
+    {
+      "key": "CORE-14481",
+      "url": "https://golfnow.atlassian.net/browse/CORE-14481",
+      "summary": "Database changes.",
+      "description": "",
+      "descriptionHtml": "",
+      "descriptionImageCount": 0,
+      "descriptionVideoCount": 0,
+      "descriptionMediaCount": 0,
+      "commentCount": 1,
+      "comments": [
+        {
+          "id": "1171733",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14481?focusedCommentId=1171733",
+          "author": "Yoel Martin Pardo",
+          "authorAccountId": "625571809e7380006fb29599",
+          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
+          "created": "2026-05-18T18:42:39.516-0400",
+          "createdDisplay": "May 18, 2026, 6:42 PM",
+          "updated": "2026-05-18T18:42:39.516-0400",
+          "updatedDisplay": "",
+          "hasMedia": false,
+          "mediaCount": 0,
+          "body": "PR: https://github.com/GolfNowEng/gn-main-db/pull/641",
+          "bodyHtml": "<p>PR: <a href=\"https://github.com/GolfNowEng/gn-main-db/pull/641\" target=\"_blank\" rel=\"noopener\">https://github.com/GolfNowEng/gn-main-db/pull/641</a> </p>"
+        }
+      ],
+      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14481?focusedCommentId=1171733",
+      "lastCommentDisplay": "May 18, 2026, 6:42 PM",
+      "lastCommentAuthor": "Yoel Martin Pardo",
+      "type": "Developer Task (sub task)",
+      "isSubtask": true,
+      "status": "Pending Deployment (STG)",
+      "priority": "None",
+      "assignee": "Dewan Kabir",
+      "assigneeAccountId": "630fb06bb433b060db559bdb",
+      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
+      "assignedDeveloper": "Yoel Martin Pardo",
+      "assignedDeveloperAccountId": "625571809e7380006fb29599",
+      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
+      "updated": "2026-05-26T13:29:20.741-0400",
+      "updatedDisplay": "May 26, 2026, 1:29 PM",
+      "created": "2026-05-18T18:18:03.543-0400",
+      "createdDisplay": "May 18, 2026, 6:18 PM",
+      "components": [
+        "Database"
+      ],
+      "fixVersions": [
+        "v3001.123.0"
+      ],
+      "resolution": "",
+      "parent": {
+        "key": "CORE-14476",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14476",
+        "summary": "Add two new fields to /get-eligible-promo-codes API",
+        "description": "",
+        "type": "Story",
+        "status": "Pending Deployment (STG)",
+        "priority": "None"
+      }
+    },
     {
       "key": "CORE-14423",
       "url": "https://golfnow.atlassian.net/browse/CORE-14423",
@@ -847,67 +1054,6 @@
       "parent": null
     },
     {
-      "key": "CORE-14481",
-      "url": "https://golfnow.atlassian.net/browse/CORE-14481",
-      "summary": "Database changes.",
-      "description": "",
-      "descriptionHtml": "",
-      "descriptionImageCount": 0,
-      "descriptionVideoCount": 0,
-      "descriptionMediaCount": 0,
-      "commentCount": 1,
-      "comments": [
-        {
-          "id": "1171733",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14481?focusedCommentId=1171733",
-          "author": "Yoel Martin Pardo",
-          "authorAccountId": "625571809e7380006fb29599",
-          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
-          "created": "2026-05-18T18:42:39.516-0400",
-          "createdDisplay": "May 18, 2026, 6:42 PM",
-          "updated": "2026-05-18T18:42:39.516-0400",
-          "updatedDisplay": "",
-          "hasMedia": false,
-          "mediaCount": 0,
-          "body": "PR: https://github.com/GolfNowEng/gn-main-db/pull/641",
-          "bodyHtml": "<p>PR: <a href=\"https://github.com/GolfNowEng/gn-main-db/pull/641\" target=\"_blank\" rel=\"noopener\">https://github.com/GolfNowEng/gn-main-db/pull/641</a> </p>"
-        }
-      ],
-      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14481?focusedCommentId=1171733",
-      "lastCommentDisplay": "May 18, 2026, 6:42 PM",
-      "lastCommentAuthor": "Yoel Martin Pardo",
-      "type": "Developer Task (sub task)",
-      "isSubtask": true,
-      "status": "QA Testing (DEV)",
-      "priority": "None",
-      "assignee": "Unassigned",
-      "assigneeAccountId": "",
-      "assigneeAvatarUrl": "",
-      "assignedDeveloper": "Yoel Martin Pardo",
-      "assignedDeveloperAccountId": "625571809e7380006fb29599",
-      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
-      "updated": "2026-05-21T11:56:24.555-0400",
-      "updatedDisplay": "May 21, 2026, 11:56 AM",
-      "created": "2026-05-18T18:18:03.543-0400",
-      "createdDisplay": "May 18, 2026, 6:18 PM",
-      "components": [
-        "Database"
-      ],
-      "fixVersions": [
-        "v3001.123.0"
-      ],
-      "resolution": "",
-      "parent": {
-        "key": "CORE-14476",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14476",
-        "summary": "Add two new fields to /get-eligible-promo-codes API",
-        "description": "",
-        "type": "Story",
-        "status": "QA Testing (DEV)",
-        "priority": "None"
-      }
-    },
-    {
       "key": "CORE-14158",
       "url": "https://golfnow.atlassian.net/browse/CORE-14158",
       "summary": "Follow up from CORE-14094: Bug found in payment during execute fullfillment",
@@ -1203,137 +1349,6 @@
       ],
       "resolution": "",
       "parent": null
-    },
-    {
-      "key": "CORE-14482",
-      "url": "https://golfnow.atlassian.net/browse/CORE-14482",
-      "summary": "Code changes.",
-      "description": "",
-      "descriptionHtml": "",
-      "descriptionImageCount": 0,
-      "descriptionVideoCount": 0,
-      "descriptionMediaCount": 0,
-      "commentCount": 1,
-      "comments": [
-        {
-          "id": "1171732",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14482?focusedCommentId=1171732",
-          "author": "Yoel Martin Pardo",
-          "authorAccountId": "625571809e7380006fb29599",
-          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
-          "created": "2026-05-18T18:42:15.714-0400",
-          "createdDisplay": "May 18, 2026, 6:42 PM",
-          "updated": "2026-05-18T18:42:15.714-0400",
-          "updatedDisplay": "",
-          "hasMedia": false,
-          "mediaCount": 0,
-          "body": "PR: https://github.com/GolfNowEng/gn-main/pull/2153",
-          "bodyHtml": "<p>PR: <a href=\"https://github.com/GolfNowEng/gn-main/pull/2153\" target=\"_blank\" rel=\"noopener\">https://github.com/GolfNowEng/gn-main/pull/2153</a> </p>"
-        }
-      ],
-      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14482?focusedCommentId=1171732",
-      "lastCommentDisplay": "May 18, 2026, 6:42 PM",
-      "lastCommentAuthor": "Yoel Martin Pardo",
-      "type": "Developer Task (sub task)",
-      "isSubtask": true,
-      "status": "QA Testing (DEV)",
-      "priority": "None",
-      "assignee": "Dewan Kabir",
-      "assigneeAccountId": "630fb06bb433b060db559bdb",
-      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
-      "assignedDeveloper": "Yoel Martin Pardo",
-      "assignedDeveloperAccountId": "625571809e7380006fb29599",
-      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
-      "updated": "2026-05-19T10:07:25.748-0400",
-      "updatedDisplay": "May 19, 2026, 10:07 AM",
-      "created": "2026-05-18T18:18:10.889-0400",
-      "createdDisplay": "May 18, 2026, 6:18 PM",
-      "components": [
-        "GolfNow.API.TR",
-        "GolfNow.Services.Product",
-        "GolfNow.Services.Reservation",
-        "GolfNowAPI",
-        "GolfNowCentral"
-      ],
-      "fixVersions": [
-        "v3001.123.0"
-      ],
-      "resolution": "",
-      "parent": {
-        "key": "CORE-14476",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14476",
-        "summary": "Add two new fields to /get-eligible-promo-codes API",
-        "description": "",
-        "type": "Story",
-        "status": "QA Testing (DEV)",
-        "priority": "None"
-      }
-    },
-    {
-      "key": "CORE-14476",
-      "url": "https://golfnow.atlassian.net/browse/CORE-14476",
-      "summary": "Add two new fields to /get-eligible-promo-codes API",
-      "description": "- API: https://api.gnsvc.com/GolfNowAPI.svc/rest/channel/5151/customers/{{EmailAddress}}/get-eligible-promo-codes?teeTimeRateId=67973919&playerCount=1\n\n- Current Response\n\n[\n{\n\"Code\": \"yfz2zMbj7\",\n\"ExpirationDate\": \"/Date(1805295695000+0000)/\",\n\"IsPromotedCampaign\": false,\n\"ShortDescription\": \"$10 Monthly Tee Time Credit\",\n\"StackableType\": 2\n},\n{\n\"Code\": \"yfz2zMaa6\",\n\"ExpirationDate\": \"/Date(1805295695000+0000)/\",\n\"IsPromotedCampaign\": false,\n\"ShortDescription\": \"$10 Monthly Tee Time Credit\",\n\"StackableType\": 2\n}\n]\n\n- We would like to add two new fields to each object in the array\n\n- CouponId- This is the PromotionId from GNC\n\n- PromoTypeId - This is the Promotion Type from GNC\n\n- This can be NULL\n\n- Expected Response:\n\n[\n{\n\"Code\": \"yfz2zMbj7\",\n\"ExpirationDate\": \"/Date(1805295695000+0000)/\",\n\"IsPromotedCampaign\": false,\n\"ShortDescription\": \"$10 Monthly Tee Time Credit\",\n\"StackableType\": 2,\n\"CouponId\": 6375,\n\"PromoTypeId\": 1\n},\n{\n\"Code\": \"yfz2zMaa6\",\n\"ExpirationDate\": \"/Date(1805295695000+0000)/\",\n\"IsPromotedCampaign\": false,\n\"ShortDescription\": \"$10 Monthly Tee Time Credit\",\n\"StackableType\": 2,\n\"CouponId\": 6375,\n\"PromoTypeId\": 1\n}\n]\n\n- These two fields are already returned on https://api.gnsvc.com/GolfNowAPI.svc/rest/customers/{{EmailAddress}}/loyalty/promoCodes?promoTypeIds=1&activeOnly=true, we just need them to also be returned on the endpoint listed on #1 above\n\n- For reference, these are the two GNC fields where that is controlled",
-      "descriptionHtml": "<ol><li><p>API: <code>https://api.gnsvc.com/GolfNowAPI.svc/rest/channel/5151/customers/{{EmailAddress}}/get-eligible-promo-codes?teeTimeRateId=67973919&amp;playerCount=1</code></p><ol><li><p>Current Response</p><pre><code>[\n    {\n        &quot;Code&quot;: &quot;yfz2zMbj7&quot;,\n        &quot;ExpirationDate&quot;: &quot;/Date(1805295695000+0000)/&quot;,\n        &quot;IsPromotedCampaign&quot;: false,\n        &quot;ShortDescription&quot;: &quot;$10 Monthly Tee Time Credit&quot;,\n        &quot;StackableType&quot;: 2\n    },\n        {\n        &quot;Code&quot;: &quot;yfz2zMaa6&quot;,\n        &quot;ExpirationDate&quot;: &quot;/Date(1805295695000+0000)/&quot;,\n        &quot;IsPromotedCampaign&quot;: false,\n        &quot;ShortDescription&quot;: &quot;$10 Monthly Tee Time Credit&quot;,\n        &quot;StackableType&quot;: 2\n    }\n]</code></pre></li></ol></li><li><p>We would like to add two new fields to each object in the array</p><ol><li><p><code>CouponId</code>- This is the PromotionId from GNC</p></li><li><p><code>PromoTypeId</code> - This is the Promotion Type from GNC</p><ol><li><p>This can be NULL</p></li></ol></li><li><p>Expected Response:</p><pre><code>[\n    {\n        &quot;Code&quot;: &quot;yfz2zMbj7&quot;,\n        &quot;ExpirationDate&quot;: &quot;/Date(1805295695000+0000)/&quot;,\n        &quot;IsPromotedCampaign&quot;: false,\n        &quot;ShortDescription&quot;: &quot;$10 Monthly Tee Time Credit&quot;,\n        &quot;StackableType&quot;: 2,\n        &quot;CouponId&quot;: 6375,\n        &quot;PromoTypeId&quot;: 1\n    },\n        {\n        &quot;Code&quot;: &quot;yfz2zMaa6&quot;,\n        &quot;ExpirationDate&quot;: &quot;/Date(1805295695000+0000)/&quot;,\n        &quot;IsPromotedCampaign&quot;: false,\n        &quot;ShortDescription&quot;: &quot;$10 Monthly Tee Time Credit&quot;,\n        &quot;StackableType&quot;: 2,\n        &quot;CouponId&quot;: 6375,\n        &quot;PromoTypeId&quot;: 1\n    }\n]</code></pre></li><li><p>These two fields are already returned on <code>https://api.gnsvc.com/GolfNowAPI.svc/rest/customers/{{EmailAddress}}/loyalty/promoCodes?promoTypeIds=1&amp;activeOnly=true</code>, we just need them to also be returned on the endpoint listed on #1 above </p></li><li><p>For reference, these are the two GNC fields where that is controlled</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14476/727812-image-20260515-171538.png\" alt=\"image-20260515-171538.png\" loading=\"lazy\"><figcaption>image-20260515-171538.png</figcaption></figure></div></li></ol></li></ol>",
-      "descriptionImageCount": 1,
-      "descriptionVideoCount": 0,
-      "descriptionMediaCount": 1,
-      "commentCount": 1,
-      "comments": [
-        {
-          "id": "1171731",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14476?focusedCommentId=1171731",
-          "author": "Yoel Martin Pardo",
-          "authorAccountId": "625571809e7380006fb29599",
-          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
-          "created": "2026-05-18T18:41:21.525-0400",
-          "createdDisplay": "May 18, 2026, 6:41 PM",
-          "updated": "2026-05-18T18:41:21.525-0400",
-          "updatedDisplay": "",
-          "hasMedia": true,
-          "mediaCount": 1,
-          "body": "QA: Here is an example of the change. Please make sure to test both endpoints listed on the description on the ticket and also try to do regression with everything related to Promo Code. Purchasing a subscription, TeeTime, side cart using Promo code, just to make sure that the changes introduced are not breaking anytihing.",
-          "bodyHtml": "<p>QA: Here is an example of the change. Please make sure to test both endpoints listed on the description on the ticket and also try to do regression with everything related to Promo Code. Purchasing a subscription, TeeTime, side cart using Promo code, just to make sure that the changes introduced are not breaking anytihing.</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14476/comments/1171731/728476-image-20260518-223956.png\" alt=\"image-20260518-223956.png\" loading=\"lazy\"><figcaption>image-20260518-223956.png</figcaption></figure></div>"
-        }
-      ],
-      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14476?focusedCommentId=1171731",
-      "lastCommentDisplay": "May 18, 2026, 6:41 PM",
-      "lastCommentAuthor": "Yoel Martin Pardo",
-      "type": "Story",
-      "isSubtask": false,
-      "status": "QA Testing (DEV)",
-      "priority": "None",
-      "assignee": "Dewan Kabir",
-      "assigneeAccountId": "630fb06bb433b060db559bdb",
-      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
-      "assignedDeveloper": "Yoel Martin Pardo",
-      "assignedDeveloperAccountId": "625571809e7380006fb29599",
-      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
-      "updated": "2026-05-19T10:07:16.332-0400",
-      "updatedDisplay": "May 19, 2026, 10:07 AM",
-      "created": "2026-05-15T13:12:52.763-0400",
-      "createdDisplay": "May 15, 2026, 1:12 PM",
-      "components": [
-        "Database",
-        "GolfNow.API.TR",
-        "GolfNow.Services.Product",
-        "GolfNow.Services.Reservation",
-        "GolfNowAPI",
-        "GolfNowCentral"
-      ],
-      "fixVersions": [
-        "v3001.123.0"
-      ],
-      "resolution": "",
-      "parent": {
-        "key": "APP-7093",
-        "url": "https://golfnow.atlassian.net/browse/APP-7093",
-        "summary": "2026 Checkout Redesign",
-        "description": "",
-        "type": "Epic",
-        "status": "Planning",
-        "priority": "None"
-      }
     },
     {
       "key": "CORE-14480",
@@ -1821,17 +1836,368 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-26T17:19:34.903Z",
-    "previousPulledAtDisplay": "May 26, 2026, 1:19 PM",
-    "currentPulledAt": "2026-05-26T17:24:37.268Z",
-    "currentPulledAtDisplay": "May 26, 2026, 1:24 PM",
+    "previousPulledAt": "2026-05-26T17:24:37.268Z",
+    "previousPulledAtDisplay": "May 26, 2026, 1:24 PM",
+    "currentPulledAt": "2026-05-26T17:29:39.831Z",
+    "currentPulledAtDisplay": "May 26, 2026, 1:29 PM",
     "isBaseline": false,
     "added": [],
     "removed": [],
-    "updated": [],
-    "statusChanges": []
+    "updated": [
+      {
+        "key": "CORE-14476",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14476",
+        "summary": "Add two new fields to /get-eligible-promo-codes API",
+        "changes": [
+          {
+            "field": "status",
+            "label": "Status",
+            "before": "QA Testing (DEV)",
+            "after": "Pending Deployment (STG)"
+          },
+          {
+            "field": "updatedDisplay",
+            "label": "Jira updated",
+            "before": "May 19, 2026, 10:07 AM",
+            "after": "May 26, 2026, 1:29 PM"
+          }
+        ],
+        "type": "Story",
+        "isSubtask": false,
+        "assignee": "Dewan Kabir",
+        "assignedDeveloper": "Yoel Martin Pardo",
+        "status": "Pending Deployment (STG)",
+        "parent": {
+          "key": "APP-7093",
+          "url": "https://golfnow.atlassian.net/browse/APP-7093",
+          "summary": "2026 Checkout Redesign",
+          "description": "",
+          "type": "Epic",
+          "status": "Planning",
+          "priority": "None"
+        }
+      },
+      {
+        "key": "CORE-14482",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14482",
+        "summary": "Code changes.",
+        "changes": [
+          {
+            "field": "status",
+            "label": "Status",
+            "before": "QA Testing (DEV)",
+            "after": "Pending Deployment (STG)"
+          },
+          {
+            "field": "updatedDisplay",
+            "label": "Jira updated",
+            "before": "May 19, 2026, 10:07 AM",
+            "after": "May 26, 2026, 1:29 PM"
+          }
+        ],
+        "type": "Developer Task (sub task)",
+        "isSubtask": true,
+        "assignee": "Dewan Kabir",
+        "assignedDeveloper": "Yoel Martin Pardo",
+        "status": "Pending Deployment (STG)",
+        "parent": {
+          "key": "CORE-14476",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14476",
+          "summary": "Add two new fields to /get-eligible-promo-codes API",
+          "description": "",
+          "type": "Story",
+          "status": "Pending Deployment (STG)",
+          "priority": "None"
+        }
+      },
+      {
+        "key": "CORE-14481",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14481",
+        "summary": "Database changes.",
+        "changes": [
+          {
+            "field": "status",
+            "label": "Status",
+            "before": "QA Testing (DEV)",
+            "after": "Pending Deployment (STG)"
+          },
+          {
+            "field": "assignee",
+            "label": "Assignee",
+            "before": "Unassigned",
+            "after": "Dewan Kabir"
+          },
+          {
+            "field": "updatedDisplay",
+            "label": "Jira updated",
+            "before": "May 21, 2026, 11:56 AM",
+            "after": "May 26, 2026, 1:29 PM"
+          }
+        ],
+        "type": "Developer Task (sub task)",
+        "isSubtask": true,
+        "assignee": "Dewan Kabir",
+        "assignedDeveloper": "Yoel Martin Pardo",
+        "status": "Pending Deployment (STG)",
+        "parent": {
+          "key": "CORE-14476",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14476",
+          "summary": "Add two new fields to /get-eligible-promo-codes API",
+          "description": "",
+          "type": "Story",
+          "status": "Pending Deployment (STG)",
+          "priority": "None"
+        }
+      }
+    ],
+    "statusChanges": [
+      {
+        "key": "CORE-14476",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14476",
+        "summary": "Add two new fields to /get-eligible-promo-codes API",
+        "before": "QA Testing (DEV)",
+        "after": "Pending Deployment (STG)",
+        "type": "Story",
+        "isSubtask": false,
+        "assignee": "Dewan Kabir",
+        "assignedDeveloper": "Yoel Martin Pardo",
+        "status": "Pending Deployment (STG)",
+        "parent": {
+          "key": "APP-7093",
+          "url": "https://golfnow.atlassian.net/browse/APP-7093",
+          "summary": "2026 Checkout Redesign",
+          "description": "",
+          "type": "Epic",
+          "status": "Planning",
+          "priority": "None"
+        }
+      },
+      {
+        "key": "CORE-14482",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14482",
+        "summary": "Code changes.",
+        "before": "QA Testing (DEV)",
+        "after": "Pending Deployment (STG)",
+        "type": "Developer Task (sub task)",
+        "isSubtask": true,
+        "assignee": "Dewan Kabir",
+        "assignedDeveloper": "Yoel Martin Pardo",
+        "status": "Pending Deployment (STG)",
+        "parent": {
+          "key": "CORE-14476",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14476",
+          "summary": "Add two new fields to /get-eligible-promo-codes API",
+          "description": "",
+          "type": "Story",
+          "status": "Pending Deployment (STG)",
+          "priority": "None"
+        }
+      },
+      {
+        "key": "CORE-14481",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14481",
+        "summary": "Database changes.",
+        "before": "QA Testing (DEV)",
+        "after": "Pending Deployment (STG)",
+        "type": "Developer Task (sub task)",
+        "isSubtask": true,
+        "assignee": "Dewan Kabir",
+        "assignedDeveloper": "Yoel Martin Pardo",
+        "status": "Pending Deployment (STG)",
+        "parent": {
+          "key": "CORE-14476",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14476",
+          "summary": "Add two new fields to /get-eligible-promo-codes API",
+          "description": "",
+          "type": "Story",
+          "status": "Pending Deployment (STG)",
+          "priority": "None"
+        }
+      }
+    ]
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-26T17:24:37.268Z",
+      "previousPulledAtDisplay": "May 26, 2026, 1:24 PM",
+      "currentPulledAt": "2026-05-26T17:29:39.831Z",
+      "currentPulledAtDisplay": "May 26, 2026, 1:29 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [
+        {
+          "key": "CORE-14476",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14476",
+          "summary": "Add two new fields to /get-eligible-promo-codes API",
+          "changes": [
+            {
+              "field": "status",
+              "label": "Status",
+              "before": "QA Testing (DEV)",
+              "after": "Pending Deployment (STG)"
+            },
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "May 19, 2026, 10:07 AM",
+              "after": "May 26, 2026, 1:29 PM"
+            }
+          ],
+          "type": "Story",
+          "isSubtask": false,
+          "assignee": "Dewan Kabir",
+          "assignedDeveloper": "Yoel Martin Pardo",
+          "status": "Pending Deployment (STG)",
+          "parent": {
+            "key": "APP-7093",
+            "url": "https://golfnow.atlassian.net/browse/APP-7093",
+            "summary": "2026 Checkout Redesign",
+            "description": "",
+            "type": "Epic",
+            "status": "Planning",
+            "priority": "None"
+          }
+        },
+        {
+          "key": "CORE-14482",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14482",
+          "summary": "Code changes.",
+          "changes": [
+            {
+              "field": "status",
+              "label": "Status",
+              "before": "QA Testing (DEV)",
+              "after": "Pending Deployment (STG)"
+            },
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "May 19, 2026, 10:07 AM",
+              "after": "May 26, 2026, 1:29 PM"
+            }
+          ],
+          "type": "Developer Task (sub task)",
+          "isSubtask": true,
+          "assignee": "Dewan Kabir",
+          "assignedDeveloper": "Yoel Martin Pardo",
+          "status": "Pending Deployment (STG)",
+          "parent": {
+            "key": "CORE-14476",
+            "url": "https://golfnow.atlassian.net/browse/CORE-14476",
+            "summary": "Add two new fields to /get-eligible-promo-codes API",
+            "description": "",
+            "type": "Story",
+            "status": "Pending Deployment (STG)",
+            "priority": "None"
+          }
+        },
+        {
+          "key": "CORE-14481",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14481",
+          "summary": "Database changes.",
+          "changes": [
+            {
+              "field": "status",
+              "label": "Status",
+              "before": "QA Testing (DEV)",
+              "after": "Pending Deployment (STG)"
+            },
+            {
+              "field": "assignee",
+              "label": "Assignee",
+              "before": "Unassigned",
+              "after": "Dewan Kabir"
+            },
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "May 21, 2026, 11:56 AM",
+              "after": "May 26, 2026, 1:29 PM"
+            }
+          ],
+          "type": "Developer Task (sub task)",
+          "isSubtask": true,
+          "assignee": "Dewan Kabir",
+          "assignedDeveloper": "Yoel Martin Pardo",
+          "status": "Pending Deployment (STG)",
+          "parent": {
+            "key": "CORE-14476",
+            "url": "https://golfnow.atlassian.net/browse/CORE-14476",
+            "summary": "Add two new fields to /get-eligible-promo-codes API",
+            "description": "",
+            "type": "Story",
+            "status": "Pending Deployment (STG)",
+            "priority": "None"
+          }
+        }
+      ],
+      "statusChanges": [
+        {
+          "key": "CORE-14476",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14476",
+          "summary": "Add two new fields to /get-eligible-promo-codes API",
+          "before": "QA Testing (DEV)",
+          "after": "Pending Deployment (STG)",
+          "type": "Story",
+          "isSubtask": false,
+          "assignee": "Dewan Kabir",
+          "assignedDeveloper": "Yoel Martin Pardo",
+          "status": "Pending Deployment (STG)",
+          "parent": {
+            "key": "APP-7093",
+            "url": "https://golfnow.atlassian.net/browse/APP-7093",
+            "summary": "2026 Checkout Redesign",
+            "description": "",
+            "type": "Epic",
+            "status": "Planning",
+            "priority": "None"
+          }
+        },
+        {
+          "key": "CORE-14482",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14482",
+          "summary": "Code changes.",
+          "before": "QA Testing (DEV)",
+          "after": "Pending Deployment (STG)",
+          "type": "Developer Task (sub task)",
+          "isSubtask": true,
+          "assignee": "Dewan Kabir",
+          "assignedDeveloper": "Yoel Martin Pardo",
+          "status": "Pending Deployment (STG)",
+          "parent": {
+            "key": "CORE-14476",
+            "url": "https://golfnow.atlassian.net/browse/CORE-14476",
+            "summary": "Add two new fields to /get-eligible-promo-codes API",
+            "description": "",
+            "type": "Story",
+            "status": "Pending Deployment (STG)",
+            "priority": "None"
+          }
+        },
+        {
+          "key": "CORE-14481",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14481",
+          "summary": "Database changes.",
+          "before": "QA Testing (DEV)",
+          "after": "Pending Deployment (STG)",
+          "type": "Developer Task (sub task)",
+          "isSubtask": true,
+          "assignee": "Dewan Kabir",
+          "assignedDeveloper": "Yoel Martin Pardo",
+          "status": "Pending Deployment (STG)",
+          "parent": {
+            "key": "CORE-14476",
+            "url": "https://golfnow.atlassian.net/browse/CORE-14476",
+            "summary": "Add two new fields to /get-eligible-promo-codes API",
+            "description": "",
+            "type": "Story",
+            "status": "Pending Deployment (STG)",
+            "priority": "None"
+          }
+        }
+      ]
+    },
     {
       "previousPulledAt": "2026-05-26T17:19:34.903Z",
       "previousPulledAtDisplay": "May 26, 2026, 1:19 PM",
@@ -3926,17 +4292,6 @@
       "previousPulledAtDisplay": "May 25, 2026, 5:38 PM",
       "currentPulledAt": "2026-05-25T21:44:00.189Z",
       "currentPulledAtDisplay": "May 25, 2026, 5:44 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-25T21:33:54.786Z",
-      "previousPulledAtDisplay": "May 25, 2026, 5:33 PM",
-      "currentPulledAt": "2026-05-25T21:38:57.473Z",
-      "currentPulledAtDisplay": "May 25, 2026, 5:38 PM",
       "isBaseline": false,
       "added": [],
       "removed": [],
