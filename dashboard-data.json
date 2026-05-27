@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-27T10:36:49.400Z",
-  "pulledAtDisplay": "May 27, 2026, 6:36 AM",
+  "pulledAt": "2026-05-27T10:41:51.658Z",
+  "pulledAtDisplay": "May 27, 2026, 6:41 AM",
   "total": 31,
   "issues": [
     {
@@ -1851,10 +1851,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-27T10:25:54.508Z",
-    "previousPulledAtDisplay": "May 27, 2026, 6:25 AM",
-    "currentPulledAt": "2026-05-27T10:36:49.400Z",
-    "currentPulledAtDisplay": "May 27, 2026, 6:36 AM",
+    "previousPulledAt": "2026-05-27T10:36:49.400Z",
+    "previousPulledAtDisplay": "May 27, 2026, 6:36 AM",
+    "currentPulledAt": "2026-05-27T10:41:51.658Z",
+    "currentPulledAtDisplay": "May 27, 2026, 6:41 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -1862,6 +1862,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-27T10:36:49.400Z",
+      "previousPulledAtDisplay": "May 27, 2026, 6:36 AM",
+      "currentPulledAt": "2026-05-27T10:41:51.658Z",
+      "currentPulledAtDisplay": "May 27, 2026, 6:41 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-27T10:25:54.508Z",
       "previousPulledAtDisplay": "May 27, 2026, 6:25 AM",
@@ -4126,123 +4137,6 @@
         }
       ],
       "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-26T18:42:03.543Z",
-      "previousPulledAtDisplay": "May 26, 2026, 2:42 PM",
-      "currentPulledAt": "2026-05-26T18:47:06.066Z",
-      "currentPulledAtDisplay": "May 26, 2026, 2:47 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [
-        {
-          "key": "CORE-14497",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14497",
-          "summary": "Upgrade Subscription Renewal Reminder Task to .NET 10",
-          "changes": [
-            {
-              "field": "status",
-              "label": "Status",
-              "before": "Pending Deployment (DEV)",
-              "after": "QA Testing (DEV)"
-            },
-            {
-              "field": "assignee",
-              "label": "Assignee",
-              "before": "Tyler Olechnowicz",
-              "after": "Dewan Kabir"
-            },
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "May 26, 2026, 8:34 AM",
-              "after": "May 26, 2026, 2:47 PM"
-            }
-          ],
-          "type": "Story",
-          "isSubtask": false,
-          "assignee": "Dewan Kabir",
-          "assignedDeveloper": "Tyler Olechnowicz",
-          "status": "QA Testing (DEV)",
-          "parent": null
-        },
-        {
-          "key": "CORE-14498",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14498",
-          "summary": "Code Changes",
-          "changes": [
-            {
-              "field": "status",
-              "label": "Status",
-              "before": "Pending Deployment (DEV)",
-              "after": "QA Testing (DEV)"
-            },
-            {
-              "field": "assignee",
-              "label": "Assignee",
-              "before": "Tyler Olechnowicz",
-              "after": "Unassigned"
-            },
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "May 21, 2026, 6:02 PM",
-              "after": "May 26, 2026, 2:43 PM"
-            }
-          ],
-          "type": "Developer Task (sub task)",
-          "isSubtask": true,
-          "assignee": "Dewan Kabir",
-          "assignedDeveloper": "Tyler Olechnowicz",
-          "status": "QA Testing (DEV)",
-          "parent": {
-            "key": "CORE-14497",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14497",
-            "summary": "Upgrade Subscription Renewal Reminder Task to .NET 10",
-            "description": "",
-            "type": "Story",
-            "status": "QA Testing (DEV)",
-            "priority": "P2"
-          }
-        }
-      ],
-      "statusChanges": [
-        {
-          "key": "CORE-14497",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14497",
-          "summary": "Upgrade Subscription Renewal Reminder Task to .NET 10",
-          "before": "Pending Deployment (DEV)",
-          "after": "QA Testing (DEV)",
-          "type": "Story",
-          "isSubtask": false,
-          "assignee": "Dewan Kabir",
-          "assignedDeveloper": "Tyler Olechnowicz",
-          "status": "QA Testing (DEV)",
-          "parent": null
-        },
-        {
-          "key": "CORE-14498",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14498",
-          "summary": "Code Changes",
-          "before": "Pending Deployment (DEV)",
-          "after": "QA Testing (DEV)",
-          "type": "Developer Task (sub task)",
-          "isSubtask": true,
-          "assignee": "Dewan Kabir",
-          "assignedDeveloper": "Tyler Olechnowicz",
-          "status": "QA Testing (DEV)",
-          "parent": {
-            "key": "CORE-14497",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14497",
-            "summary": "Upgrade Subscription Renewal Reminder Task to .NET 10",
-            "description": "",
-            "type": "Story",
-            "status": "QA Testing (DEV)",
-            "priority": "P2"
-          }
-        }
-      ]
     }
   ],
   "schemaVersionNumber": 1,
