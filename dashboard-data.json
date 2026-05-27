@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-27T15:44:09.658Z",
-  "pulledAtDisplay": "May 27, 2026, 11:44 AM",
+  "pulledAt": "2026-05-27T15:49:12.559Z",
+  "pulledAtDisplay": "May 27, 2026, 11:49 AM",
   "total": 31,
   "issues": [
     {
@@ -17,7 +17,7 @@
       "descriptionImageCount": 1,
       "descriptionVideoCount": 0,
       "descriptionMediaCount": 1,
-      "commentCount": 3,
+      "commentCount": 4,
       "comments": [
         {
           "id": "1152853",
@@ -63,14 +63,29 @@
           "mediaCount": 8,
           "body": "VALIDATE IN AWS DEV\n\nTest on Dubsdread 877\nMaster - 249 - 39821\n\nInterface Configuration : EZRTS : nj_atlantis - 3014 - 2479\n\nLook up a loaded Trade time : ishotdeal: false and IsHidden: true\n\nValidated with EZL QA : With data from thier side :",
           "bodyHtml": "<p><strong>VALIDATE IN AWS DEV </strong></p><p><strong>Test on Dubsdread 877</strong><br>Master - 249 - 39821<br><br>Interface Configuration : EZRTS : nj_atlantis - 3014 - 2479</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731583-image-20260527-142600.png\" alt=\"image-20260527-142600.png\" loading=\"lazy\"><figcaption>image-20260527-142600.png</figcaption></figure></div><p>Look up a loaded Trade time :<strong> ishotdeal: false and IsHidden: true</strong></p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731586-image-20260527-142850.png\" alt=\"image-20260527-142850.png\" loading=\"lazy\"><figcaption>image-20260527-142850.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731585-image-20260527-143106.png\" alt=\"image-20260527-143106.png\" loading=\"lazy\"><figcaption>image-20260527-143106.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731584-image-20260527-143151.png\" alt=\"image-20260527-143151.png\" loading=\"lazy\"><figcaption>image-20260527-143151.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731587-image-20260527-143921.png\" alt=\"image-20260527-143921.png\" loading=\"lazy\"><figcaption>image-20260527-143921.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731589-image-20260527-144006.png\" alt=\"image-20260527-144006.png\" loading=\"lazy\"><figcaption>image-20260527-144006.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731588-image-20260527-144356.png\" alt=\"image-20260527-144356.png\" loading=\"lazy\"><figcaption>image-20260527-144356.png</figcaption></figure></div><p><strong>Validated with EZL QA : With data from thier side : </strong></p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731590-image-20260527-150312.png\" alt=\"image-20260527-150312.png\" loading=\"lazy\"><figcaption>image-20260527-150312.png</figcaption></figure></div>"
+        },
+        {
+          "id": "1175101",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14390?focusedCommentId=1175101",
+          "author": "Dewan Kabir",
+          "authorAccountId": "630fb06bb433b060db559bdb",
+          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
+          "created": "2026-05-27T11:48:29.217-0400",
+          "createdDisplay": "May 27, 2026, 11:48 AM",
+          "updated": "2026-05-27T11:48:29.217-0400",
+          "updatedDisplay": "",
+          "hasMedia": true,
+          "mediaCount": 8,
+          "body": "VALIDATE IN AWS STG  :\n\nTest on Dubsdread 877\nMaster - 249 - 39821\n\nInterface Configuration : EZRTS : nj_atlantis - 3014 - 2479\n\nValidated with EZL QA : With data from their side :",
+          "bodyHtml": "<p><strong>VALIDATE IN AWS STG  : </strong></p><p><strong>Test on Dubsdread 877</strong><br>Master - 249 - 39821</p><p>Interface Configuration : EZRTS : nj_atlantis - 3014 - 2479</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175101/731617-image-20260527-151642.png\" alt=\"image-20260527-151642.png\" loading=\"lazy\"><figcaption>image-20260527-151642.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175101/731615-image-20260527-151449.png\" alt=\"image-20260527-151449.png\" loading=\"lazy\"><figcaption>image-20260527-151449.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175101/731612-image-20260527-151846.png\" alt=\"image-20260527-151846.png\" loading=\"lazy\"><figcaption>image-20260527-151846.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175101/731618-image-20260527-151920.png\" alt=\"image-20260527-151920.png\" loading=\"lazy\"><figcaption>image-20260527-151920.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175101/731614-image-20260527-152200.png\" alt=\"image-20260527-152200.png\" loading=\"lazy\"><figcaption>image-20260527-152200.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175101/731616-image-20260527-152236.png\" alt=\"image-20260527-152236.png\" loading=\"lazy\"><figcaption>image-20260527-152236.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175101/731619-image-20260527-154337.png\" alt=\"image-20260527-154337.png\" loading=\"lazy\"><figcaption>image-20260527-154337.png</figcaption></figure></div><p><strong>Validated with EZL QA : With data from their side :</strong></p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175101/731613-image-20260527-154816.png\" alt=\"image-20260527-154816.png\" loading=\"lazy\"><figcaption>image-20260527-154816.png</figcaption></figure></div>"
         }
       ],
-      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14390?focusedCommentId=1175064",
-      "lastCommentDisplay": "May 27, 2026, 11:03 AM",
+      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14390?focusedCommentId=1175101",
+      "lastCommentDisplay": "May 27, 2026, 11:48 AM",
       "lastCommentAuthor": "Dewan Kabir",
       "type": "Task",
       "isSubtask": false,
-      "status": "QA Testing (DEV)",
+      "status": "Pending Deployment (STG)",
       "priority": "P2",
       "assignee": "Dewan Kabir",
       "assigneeAccountId": "630fb06bb433b060db559bdb",
@@ -78,8 +93,8 @@
       "assignedDeveloper": "Yoel Martin Pardo",
       "assignedDeveloperAccountId": "625571809e7380006fb29599",
       "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
-      "updated": "2026-05-27T11:09:56.193-0400",
-      "updatedDisplay": "May 27, 2026, 11:09 AM",
+      "updated": "2026-05-27T11:48:39.649-0400",
+      "updatedDisplay": "May 27, 2026, 11:48 AM",
       "created": "2026-04-16T16:22:13.692-0400",
       "createdDisplay": "Apr 16, 2026, 4:22 PM",
       "components": [
@@ -1866,17 +1881,108 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-27T15:39:07.173Z",
-    "previousPulledAtDisplay": "May 27, 2026, 11:39 AM",
-    "currentPulledAt": "2026-05-27T15:44:09.658Z",
-    "currentPulledAtDisplay": "May 27, 2026, 11:44 AM",
+    "previousPulledAt": "2026-05-27T15:44:09.658Z",
+    "previousPulledAtDisplay": "May 27, 2026, 11:44 AM",
+    "currentPulledAt": "2026-05-27T15:49:12.559Z",
+    "currentPulledAtDisplay": "May 27, 2026, 11:49 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
-    "updated": [],
-    "statusChanges": []
+    "updated": [
+      {
+        "key": "CORE-14390",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14390",
+        "summary": "New Booking API – Pass is_hotdeal Value in correct location",
+        "changes": [
+          {
+            "field": "status",
+            "label": "Status",
+            "before": "QA Testing (DEV)",
+            "after": "Pending Deployment (STG)"
+          },
+          {
+            "field": "updatedDisplay",
+            "label": "Jira updated",
+            "before": "May 27, 2026, 11:09 AM",
+            "after": "May 27, 2026, 11:48 AM"
+          }
+        ],
+        "type": "Task",
+        "isSubtask": false,
+        "assignee": "Dewan Kabir",
+        "assignedDeveloper": "Yoel Martin Pardo",
+        "status": "Pending Deployment (STG)",
+        "parent": null
+      }
+    ],
+    "statusChanges": [
+      {
+        "key": "CORE-14390",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14390",
+        "summary": "New Booking API – Pass is_hotdeal Value in correct location",
+        "before": "QA Testing (DEV)",
+        "after": "Pending Deployment (STG)",
+        "type": "Task",
+        "isSubtask": false,
+        "assignee": "Dewan Kabir",
+        "assignedDeveloper": "Yoel Martin Pardo",
+        "status": "Pending Deployment (STG)",
+        "parent": null
+      }
+    ]
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-27T15:44:09.658Z",
+      "previousPulledAtDisplay": "May 27, 2026, 11:44 AM",
+      "currentPulledAt": "2026-05-27T15:49:12.559Z",
+      "currentPulledAtDisplay": "May 27, 2026, 11:49 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [
+        {
+          "key": "CORE-14390",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14390",
+          "summary": "New Booking API – Pass is_hotdeal Value in correct location",
+          "changes": [
+            {
+              "field": "status",
+              "label": "Status",
+              "before": "QA Testing (DEV)",
+              "after": "Pending Deployment (STG)"
+            },
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "May 27, 2026, 11:09 AM",
+              "after": "May 27, 2026, 11:48 AM"
+            }
+          ],
+          "type": "Task",
+          "isSubtask": false,
+          "assignee": "Dewan Kabir",
+          "assignedDeveloper": "Yoel Martin Pardo",
+          "status": "Pending Deployment (STG)",
+          "parent": null
+        }
+      ],
+      "statusChanges": [
+        {
+          "key": "CORE-14390",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14390",
+          "summary": "New Booking API – Pass is_hotdeal Value in correct location",
+          "before": "QA Testing (DEV)",
+          "after": "Pending Deployment (STG)",
+          "type": "Task",
+          "isSubtask": false,
+          "assignee": "Dewan Kabir",
+          "assignedDeveloper": "Yoel Martin Pardo",
+          "status": "Pending Deployment (STG)",
+          "parent": null
+        }
+      ]
+    },
     {
       "previousPulledAt": "2026-05-27T15:39:07.173Z",
       "previousPulledAtDisplay": "May 27, 2026, 11:39 AM",
@@ -1968,7 +2074,7 @@
           "isSubtask": false,
           "assignee": "Dewan Kabir",
           "assignedDeveloper": "Yoel Martin Pardo",
-          "status": "QA Testing (DEV)",
+          "status": "Pending Deployment (STG)",
           "parent": null
         }
       ],
@@ -2010,7 +2116,7 @@
           "isSubtask": false,
           "assignee": "Dewan Kabir",
           "assignedDeveloper": "Yoel Martin Pardo",
-          "status": "QA Testing (DEV)",
+          "status": "Pending Deployment (STG)",
           "parent": null
         }
       ],
@@ -3874,51 +3980,6 @@
       "added": [],
       "removed": [],
       "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-26T21:43:47.563Z",
-      "previousPulledAtDisplay": "May 26, 2026, 5:43 PM",
-      "currentPulledAt": "2026-05-26T21:44:49.673Z",
-      "currentPulledAtDisplay": "May 26, 2026, 5:44 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [
-        {
-          "key": "CORE-14436",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14436",
-          "summary": "Code changes for [CORE - 14304]",
-          "changes": [
-            {
-              "field": "assignee",
-              "label": "Assignee",
-              "before": "Dewan Kabir",
-              "after": "Nicole Greer"
-            },
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "May 18, 2026, 2:01 PM",
-              "after": "May 26, 2026, 5:44 PM"
-            }
-          ],
-          "type": "Developer Task (sub task)",
-          "isSubtask": true,
-          "assignee": "Nicole Greer",
-          "assignedDeveloper": "Luis Vallejo Mursuli",
-          "status": "QA Testing (DEV)",
-          "parent": {
-            "key": "CORE-14304",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14304",
-            "summary": "Update GolfPass Terms for Employee Comp Email Template",
-            "description": "",
-            "type": "Task",
-            "status": "Pending Deployment (STG)",
-            "priority": "P2"
-          }
-        }
-      ],
       "statusChanges": []
     }
   ],
