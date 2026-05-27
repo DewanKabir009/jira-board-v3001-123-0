@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-27T11:27:12.709Z",
-  "pulledAtDisplay": "May 27, 2026, 7:27 AM",
+  "pulledAt": "2026-05-27T11:32:15.616Z",
+  "pulledAtDisplay": "May 27, 2026, 7:32 AM",
   "total": 31,
   "issues": [
     {
@@ -1851,10 +1851,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-27T11:22:10.199Z",
-    "previousPulledAtDisplay": "May 27, 2026, 7:22 AM",
-    "currentPulledAt": "2026-05-27T11:27:12.709Z",
-    "currentPulledAtDisplay": "May 27, 2026, 7:27 AM",
+    "previousPulledAt": "2026-05-27T11:27:12.709Z",
+    "previousPulledAtDisplay": "May 27, 2026, 7:27 AM",
+    "currentPulledAt": "2026-05-27T11:32:15.616Z",
+    "currentPulledAtDisplay": "May 27, 2026, 7:32 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -1862,6 +1862,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-27T11:27:12.709Z",
+      "previousPulledAtDisplay": "May 27, 2026, 7:27 AM",
+      "currentPulledAt": "2026-05-27T11:32:15.616Z",
+      "currentPulledAtDisplay": "May 27, 2026, 7:32 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-27T11:22:10.199Z",
       "previousPulledAtDisplay": "May 27, 2026, 7:22 AM",
@@ -3866,181 +3877,6 @@
       "removed": [],
       "updated": [],
       "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-26T19:32:29.409Z",
-      "previousPulledAtDisplay": "May 26, 2026, 3:32 PM",
-      "currentPulledAt": "2026-05-26T19:37:31.568Z",
-      "currentPulledAtDisplay": "May 26, 2026, 3:37 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [
-        {
-          "key": "CORE-14442",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14442",
-          "summary": "Mass Cancellation -  Include Trade Toggle Not Working as Intended",
-          "changes": [
-            {
-              "field": "status",
-              "label": "Status",
-              "before": "QA Testing (DEV)",
-              "after": "Pending Deployment (STG)"
-            },
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "May 21, 2026, 1:16 AM",
-              "after": "May 26, 2026, 3:36 PM"
-            }
-          ],
-          "type": "Bug",
-          "isSubtask": false,
-          "assignee": "Nicole Greer",
-          "assignedDeveloper": "Yoel Martin Pardo",
-          "status": "Pending Deployment (STG)",
-          "parent": {
-            "key": "CORE-13890",
-            "url": "https://golfnow.atlassian.net/browse/CORE-13890",
-            "summary": "Customer Care - Mass Cancellation",
-            "description": "",
-            "type": "Epic",
-            "status": "Planning",
-            "priority": "P2"
-          }
-        },
-        {
-          "key": "CORE-14304",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14304",
-          "summary": "Update GolfPass Terms for Employee Comp Email Template",
-          "changes": [
-            {
-              "field": "status",
-              "label": "Status",
-              "before": "QA Testing (DEV)",
-              "after": "Pending Deployment (STG)"
-            },
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "May 21, 2026, 2:38 PM",
-              "after": "May 26, 2026, 3:36 PM"
-            }
-          ],
-          "type": "Task",
-          "isSubtask": false,
-          "assignee": "Nicole Greer",
-          "assignedDeveloper": "Luis Vallejo Mursuli",
-          "status": "Pending Deployment (STG)",
-          "parent": {
-            "key": "CORE-14266",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14266",
-            "summary": "Email Template Changes",
-            "description": "",
-            "type": "Epic",
-            "status": "Planning",
-            "priority": "None"
-          }
-        },
-        {
-          "key": "CORE-14158",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14158",
-          "summary": "Follow up from CORE-14094: Bug found in payment during execute fullfillment",
-          "changes": [
-            {
-              "field": "status",
-              "label": "Status",
-              "before": "QA Testing (DEV)",
-              "after": "Pending Deployment (STG)"
-            },
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "May 21, 2026, 2:12 AM",
-              "after": "May 26, 2026, 3:36 PM"
-            }
-          ],
-          "type": "Bug",
-          "isSubtask": false,
-          "assignee": "Nicole Greer",
-          "assignedDeveloper": "Andrew Horvat",
-          "status": "Pending Deployment (STG)",
-          "parent": {
-            "key": "GNCBE-9647",
-            "url": "https://golfnow.atlassian.net/browse/GNCBE-9647",
-            "summary": "External Commerce API Bugs",
-            "description": "",
-            "type": "Epic",
-            "status": "Planning",
-            "priority": "None"
-          }
-        }
-      ],
-      "statusChanges": [
-        {
-          "key": "CORE-14442",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14442",
-          "summary": "Mass Cancellation -  Include Trade Toggle Not Working as Intended",
-          "before": "QA Testing (DEV)",
-          "after": "Pending Deployment (STG)",
-          "type": "Bug",
-          "isSubtask": false,
-          "assignee": "Nicole Greer",
-          "assignedDeveloper": "Yoel Martin Pardo",
-          "status": "Pending Deployment (STG)",
-          "parent": {
-            "key": "CORE-13890",
-            "url": "https://golfnow.atlassian.net/browse/CORE-13890",
-            "summary": "Customer Care - Mass Cancellation",
-            "description": "",
-            "type": "Epic",
-            "status": "Planning",
-            "priority": "P2"
-          }
-        },
-        {
-          "key": "CORE-14304",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14304",
-          "summary": "Update GolfPass Terms for Employee Comp Email Template",
-          "before": "QA Testing (DEV)",
-          "after": "Pending Deployment (STG)",
-          "type": "Task",
-          "isSubtask": false,
-          "assignee": "Nicole Greer",
-          "assignedDeveloper": "Luis Vallejo Mursuli",
-          "status": "Pending Deployment (STG)",
-          "parent": {
-            "key": "CORE-14266",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14266",
-            "summary": "Email Template Changes",
-            "description": "",
-            "type": "Epic",
-            "status": "Planning",
-            "priority": "None"
-          }
-        },
-        {
-          "key": "CORE-14158",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14158",
-          "summary": "Follow up from CORE-14094: Bug found in payment during execute fullfillment",
-          "before": "QA Testing (DEV)",
-          "after": "Pending Deployment (STG)",
-          "type": "Bug",
-          "isSubtask": false,
-          "assignee": "Nicole Greer",
-          "assignedDeveloper": "Andrew Horvat",
-          "status": "Pending Deployment (STG)",
-          "parent": {
-            "key": "GNCBE-9647",
-            "url": "https://golfnow.atlassian.net/browse/GNCBE-9647",
-            "summary": "External Commerce API Bugs",
-            "description": "",
-            "type": "Epic",
-            "status": "Planning",
-            "priority": "None"
-          }
-        }
-      ]
     }
   ],
   "schemaVersionNumber": 1,
