@@ -803,6 +803,16 @@ function textToAdf(text) {
   };
 }
 
+function isJiraAdfDocument(value) {
+  return Boolean(
+    value
+    && value.type === "doc"
+    && value.version === 1
+    && Array.isArray(value.content)
+    && value.content.length > 0
+  );
+}
+
 async function handlePlainComment(request, env) {
   const auth = await authorizeMutation(request, env);
   if (!auth.ok) {
@@ -823,8 +833,9 @@ async function handlePlainComment(request, env) {
     return json(request, env, 400, { ok: false, message: "Comment text is too long for this dashboard composer." });
   }
 
+  const adfBody = isJiraAdfDocument(payload.adf) ? payload.adf : textToAdf(body);
   const comment = await jiraJsonMutation(env, `/issue/${encodeURIComponent(issueKey)}/comment`, "POST", {
-    body: textToAdf(body),
+    body: adfBody,
   });
   const config = jiraConfig(env);
   const commentId = comment.id || "";
