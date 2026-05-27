@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-27T07:13:07.314Z",
-  "pulledAtDisplay": "May 27, 2026, 3:13 AM",
+  "pulledAt": "2026-05-27T07:18:09.636Z",
+  "pulledAtDisplay": "May 27, 2026, 3:18 AM",
   "total": 31,
   "issues": [
     {
@@ -1851,10 +1851,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-27T07:08:05.102Z",
-    "previousPulledAtDisplay": "May 27, 2026, 3:08 AM",
-    "currentPulledAt": "2026-05-27T07:13:07.314Z",
-    "currentPulledAtDisplay": "May 27, 2026, 3:13 AM",
+    "previousPulledAt": "2026-05-27T07:13:07.314Z",
+    "previousPulledAtDisplay": "May 27, 2026, 3:13 AM",
+    "currentPulledAt": "2026-05-27T07:18:09.636Z",
+    "currentPulledAtDisplay": "May 27, 2026, 3:18 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -1862,6 +1862,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-27T07:13:07.314Z",
+      "previousPulledAtDisplay": "May 27, 2026, 3:13 AM",
+      "currentPulledAt": "2026-05-27T07:18:09.636Z",
+      "currentPulledAtDisplay": "May 27, 2026, 3:18 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-27T07:08:05.102Z",
       "previousPulledAtDisplay": "May 27, 2026, 3:08 AM",
@@ -4475,63 +4486,6 @@
       "currentPulledAtDisplay": "May 26, 2026, 12:34 PM",
       "isBaseline": false,
       "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-26T16:24:05.634Z",
-      "previousPulledAtDisplay": "May 26, 2026, 12:24 PM",
-      "currentPulledAt": "2026-05-26T16:29:09.210Z",
-      "currentPulledAtDisplay": "May 26, 2026, 12:29 PM",
-      "isBaseline": false,
-      "added": [
-        {
-          "key": "CORE-14423",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14423",
-          "summary": "Troubleshoot Warden setup in DEV",
-          "description": "",
-          "descriptionHtml": "",
-          "descriptionImageCount": 0,
-          "descriptionVideoCount": 0,
-          "descriptionMediaCount": 0,
-          "commentCount": 0,
-          "comments": [],
-          "lastCommentUrl": "",
-          "lastCommentDisplay": "",
-          "lastCommentAuthor": "",
-          "type": "Story",
-          "isSubtask": false,
-          "status": "Code Review",
-          "priority": "P1",
-          "assignee": "Yoel Martin Pardo",
-          "assigneeAccountId": "625571809e7380006fb29599",
-          "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
-          "assignedDeveloper": "Raghav Kancherla",
-          "assignedDeveloperAccountId": "557058:24f78684-6276-42b4-9860-f81502d6d45e",
-          "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/initials/RK-4.png",
-          "updated": "2026-05-26T12:28:34.895-0400",
-          "updatedDisplay": "May 26, 2026, 12:28 PM",
-          "created": "2026-04-29T16:56:12.343-0400",
-          "createdDisplay": "Apr 29, 2026, 4:56 PM",
-          "components": [
-            "Golf.OpenAI"
-          ],
-          "fixVersions": [
-            "v3001.123.0"
-          ],
-          "resolution": "",
-          "parent": {
-            "key": "CORE-14096",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14096",
-            "summary": "ChatGPT - OpenAI Apps",
-            "description": "",
-            "type": "Epic",
-            "status": "Planning",
-            "priority": "None"
-          }
-        }
-      ],
       "removed": [],
       "updated": [],
       "statusChanges": []
