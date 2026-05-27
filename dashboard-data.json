@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-27T23:02:55.285Z",
-  "pulledAtDisplay": "May 27, 2026, 7:02 PM",
+  "pulledAt": "2026-05-27T23:07:58.198Z",
+  "pulledAtDisplay": "May 27, 2026, 7:07 PM",
   "total": 32,
   "issues": [
     {
@@ -1949,63 +1949,28 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-27T22:57:53.227Z",
-    "previousPulledAtDisplay": "May 27, 2026, 6:57 PM",
-    "currentPulledAt": "2026-05-27T23:02:55.285Z",
-    "currentPulledAtDisplay": "May 27, 2026, 7:02 PM",
+    "previousPulledAt": "2026-05-27T23:02:55.285Z",
+    "previousPulledAtDisplay": "May 27, 2026, 7:02 PM",
+    "currentPulledAt": "2026-05-27T23:07:58.198Z",
+    "currentPulledAtDisplay": "May 27, 2026, 7:07 PM",
     "isBaseline": false,
     "added": [],
     "removed": [],
-    "updated": [
-      {
-        "key": "CORE-14501",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14501",
-        "summary": "Standardize Commerce Proxy API NuGet and build configuration across environments",
-        "changes": [
-          {
-            "field": "status",
-            "label": "Status",
-            "before": "Code Review",
-            "after": "Pending Deployment (DEV)"
-          },
-          {
-            "field": "assignee",
-            "label": "Assignee",
-            "before": "Andrew Horvat",
-            "after": "Tyler Olechnowicz"
-          },
-          {
-            "field": "updatedDisplay",
-            "label": "Jira updated",
-            "before": "May 27, 2026, 4:07 PM",
-            "after": "May 27, 2026, 6:59 PM"
-          }
-        ],
-        "type": "Task",
-        "isSubtask": false,
-        "assignee": "Tyler Olechnowicz",
-        "assignedDeveloper": "Tyler Olechnowicz",
-        "status": "Pending Deployment (DEV)",
-        "parent": null
-      }
-    ],
-    "statusChanges": [
-      {
-        "key": "CORE-14501",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14501",
-        "summary": "Standardize Commerce Proxy API NuGet and build configuration across environments",
-        "before": "Code Review",
-        "after": "Pending Deployment (DEV)",
-        "type": "Task",
-        "isSubtask": false,
-        "assignee": "Tyler Olechnowicz",
-        "assignedDeveloper": "Tyler Olechnowicz",
-        "status": "Pending Deployment (DEV)",
-        "parent": null
-      }
-    ]
+    "updated": [],
+    "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-27T23:02:55.285Z",
+      "previousPulledAtDisplay": "May 27, 2026, 7:02 PM",
+      "currentPulledAt": "2026-05-27T23:07:58.198Z",
+      "currentPulledAtDisplay": "May 27, 2026, 7:07 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-27T22:57:53.227Z",
       "previousPulledAtDisplay": "May 27, 2026, 6:57 PM",
@@ -4623,17 +4588,6 @@
       "previousPulledAtDisplay": "May 27, 2026, 12:32 AM",
       "currentPulledAt": "2026-05-27T04:37:41.355Z",
       "currentPulledAtDisplay": "May 27, 2026, 12:37 AM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-27T04:27:36.929Z",
-      "previousPulledAtDisplay": "May 27, 2026, 12:27 AM",
-      "currentPulledAt": "2026-05-27T04:32:39.232Z",
-      "currentPulledAtDisplay": "May 27, 2026, 12:32 AM",
       "isBaseline": false,
       "added": [],
       "removed": [],
