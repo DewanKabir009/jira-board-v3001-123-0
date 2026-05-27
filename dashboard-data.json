@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-27T15:08:50.931Z",
-  "pulledAtDisplay": "May 27, 2026, 11:08 AM",
+  "pulledAt": "2026-05-27T15:13:53.920Z",
+  "pulledAtDisplay": "May 27, 2026, 11:13 AM",
   "total": 31,
   "issues": [
     {
@@ -57,12 +57,12 @@
           "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
           "created": "2026-05-27T11:03:40.035-0400",
           "createdDisplay": "May 27, 2026, 11:03 AM",
-          "updated": "2026-05-27T11:03:40.035-0400",
-          "updatedDisplay": "",
+          "updated": "2026-05-27T11:09:56.165-0400",
+          "updatedDisplay": "May 27, 2026, 11:09 AM",
           "hasMedia": true,
           "mediaCount": 8,
           "body": "VALIDATE IN AWS DEV\n\nTest on Dubsdread 877\nMaster - 249 - 39821\n\nInterface Configuration : EZRTS : nj_atlantis - 3014 - 2479\n\nLook up a loaded Trade time : ishotdeal: false and IsHidden: true\n\nValidated with EZL QA : With data from thier side :",
-          "bodyHtml": "<p><strong>VALIDATE IN AWS DEV </strong></p><p>Test on Dubsdread 877<br>Master - 249 - 39821<br><br>Interface Configuration : EZRTS : nj_atlantis - 3014 - 2479</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731583-image-20260527-142600.png\" alt=\"image-20260527-142600.png\" loading=\"lazy\"><figcaption>image-20260527-142600.png</figcaption></figure></div><p>Look up a loaded Trade time :<strong> ishotdeal: false and IsHidden: true</strong></p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731586-image-20260527-142850.png\" alt=\"image-20260527-142850.png\" loading=\"lazy\"><figcaption>image-20260527-142850.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731585-image-20260527-143106.png\" alt=\"image-20260527-143106.png\" loading=\"lazy\"><figcaption>image-20260527-143106.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731584-image-20260527-143151.png\" alt=\"image-20260527-143151.png\" loading=\"lazy\"><figcaption>image-20260527-143151.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731587-image-20260527-143921.png\" alt=\"image-20260527-143921.png\" loading=\"lazy\"><figcaption>image-20260527-143921.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731589-image-20260527-144006.png\" alt=\"image-20260527-144006.png\" loading=\"lazy\"><figcaption>image-20260527-144006.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731588-image-20260527-144356.png\" alt=\"image-20260527-144356.png\" loading=\"lazy\"><figcaption>image-20260527-144356.png</figcaption></figure></div><p><strong>Validated with EZL QA : With data from thier side : </strong></p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731590-image-20260527-150312.png\" alt=\"image-20260527-150312.png\" loading=\"lazy\"><figcaption>image-20260527-150312.png</figcaption></figure></div>"
+          "bodyHtml": "<p><strong>VALIDATE IN AWS DEV </strong></p><p><strong>Test on Dubsdread 877</strong><br>Master - 249 - 39821<br><br>Interface Configuration : EZRTS : nj_atlantis - 3014 - 2479</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731583-image-20260527-142600.png\" alt=\"image-20260527-142600.png\" loading=\"lazy\"><figcaption>image-20260527-142600.png</figcaption></figure></div><p>Look up a loaded Trade time :<strong> ishotdeal: false and IsHidden: true</strong></p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731586-image-20260527-142850.png\" alt=\"image-20260527-142850.png\" loading=\"lazy\"><figcaption>image-20260527-142850.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731585-image-20260527-143106.png\" alt=\"image-20260527-143106.png\" loading=\"lazy\"><figcaption>image-20260527-143106.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731584-image-20260527-143151.png\" alt=\"image-20260527-143151.png\" loading=\"lazy\"><figcaption>image-20260527-143151.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731587-image-20260527-143921.png\" alt=\"image-20260527-143921.png\" loading=\"lazy\"><figcaption>image-20260527-143921.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731589-image-20260527-144006.png\" alt=\"image-20260527-144006.png\" loading=\"lazy\"><figcaption>image-20260527-144006.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731588-image-20260527-144356.png\" alt=\"image-20260527-144356.png\" loading=\"lazy\"><figcaption>image-20260527-144356.png</figcaption></figure></div><p><strong>Validated with EZL QA : With data from thier side : </strong></p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731590-image-20260527-150312.png\" alt=\"image-20260527-150312.png\" loading=\"lazy\"><figcaption>image-20260527-150312.png</figcaption></figure></div>"
         }
       ],
       "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14390?focusedCommentId=1175064",
@@ -78,8 +78,8 @@
       "assignedDeveloper": "Yoel Martin Pardo",
       "assignedDeveloperAccountId": "625571809e7380006fb29599",
       "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
-      "updated": "2026-05-27T11:03:40.242-0400",
-      "updatedDisplay": "May 27, 2026, 11:03 AM",
+      "updated": "2026-05-27T11:09:56.193-0400",
+      "updatedDisplay": "May 27, 2026, 11:09 AM",
       "created": "2026-04-16T16:22:13.692-0400",
       "createdDisplay": "Apr 16, 2026, 4:22 PM",
       "components": [
@@ -1866,17 +1866,68 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-27T15:03:47.183Z",
-    "previousPulledAtDisplay": "May 27, 2026, 11:03 AM",
-    "currentPulledAt": "2026-05-27T15:08:50.931Z",
-    "currentPulledAtDisplay": "May 27, 2026, 11:08 AM",
+    "previousPulledAt": "2026-05-27T15:08:50.931Z",
+    "previousPulledAtDisplay": "May 27, 2026, 11:08 AM",
+    "currentPulledAt": "2026-05-27T15:13:53.920Z",
+    "currentPulledAtDisplay": "May 27, 2026, 11:13 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
-    "updated": [],
+    "updated": [
+      {
+        "key": "CORE-14390",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14390",
+        "summary": "New Booking API – Pass is_hotdeal Value in correct location",
+        "changes": [
+          {
+            "field": "updatedDisplay",
+            "label": "Jira updated",
+            "before": "May 27, 2026, 11:03 AM",
+            "after": "May 27, 2026, 11:09 AM"
+          }
+        ],
+        "type": "Task",
+        "isSubtask": false,
+        "assignee": "Dewan Kabir",
+        "assignedDeveloper": "Yoel Martin Pardo",
+        "status": "QA Testing (DEV)",
+        "parent": null
+      }
+    ],
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-27T15:08:50.931Z",
+      "previousPulledAtDisplay": "May 27, 2026, 11:08 AM",
+      "currentPulledAt": "2026-05-27T15:13:53.920Z",
+      "currentPulledAtDisplay": "May 27, 2026, 11:13 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [
+        {
+          "key": "CORE-14390",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14390",
+          "summary": "New Booking API – Pass is_hotdeal Value in correct location",
+          "changes": [
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "May 27, 2026, 11:03 AM",
+              "after": "May 27, 2026, 11:09 AM"
+            }
+          ],
+          "type": "Task",
+          "isSubtask": false,
+          "assignee": "Dewan Kabir",
+          "assignedDeveloper": "Yoel Martin Pardo",
+          "status": "QA Testing (DEV)",
+          "parent": null
+        }
+      ],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-27T15:03:47.183Z",
       "previousPulledAtDisplay": "May 27, 2026, 11:03 AM",
@@ -4018,17 +4069,6 @@
       "previousPulledAtDisplay": "May 26, 2026, 5:22 PM",
       "currentPulledAt": "2026-05-26T21:27:14.936Z",
       "currentPulledAtDisplay": "May 26, 2026, 5:27 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-26T21:17:10.126Z",
-      "previousPulledAtDisplay": "May 26, 2026, 5:17 PM",
-      "currentPulledAt": "2026-05-26T21:22:12.439Z",
-      "currentPulledAtDisplay": "May 26, 2026, 5:22 PM",
       "isBaseline": false,
       "added": [],
       "removed": [],
