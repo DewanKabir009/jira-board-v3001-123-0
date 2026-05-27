@@ -4,10 +4,55 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-27T19:30:14.555Z",
-  "pulledAtDisplay": "May 27, 2026, 3:30 PM",
+  "pulledAt": "2026-05-27T19:35:17.287Z",
+  "pulledAtDisplay": "May 27, 2026, 3:35 PM",
   "total": 32,
   "issues": [
+    {
+      "key": "CORE-14422",
+      "url": "https://golfnow.atlassian.net/browse/CORE-14422",
+      "summary": "Add .well-known challenge for OpenAI app",
+      "description": "Need to expose .well-known/openai-apps-challenge to OpenAI in order to validate domain during app submission\n\napp.MapGet(\".well-known/openai-apps-challenge\", (IConfiguration config) =>\n{\nvar token = config[\"ChallengeToken\"] ?? string.Empty;\nreturn Results.Text(token, \"text/plain\");\n});",
+      "descriptionHtml": "<p>Need to expose .well-known/openai-apps-challenge to OpenAI in order to validate domain during app submission</p><pre><code>app.MapGet(&quot;.well-known/openai-apps-challenge&quot;, (IConfiguration config) =&gt;\n{\n    var token = config[&quot;ChallengeToken&quot;] ?? string.Empty;\n    return Results.Text(token, &quot;text/plain&quot;);\n});</code></pre>",
+      "descriptionImageCount": 0,
+      "descriptionVideoCount": 0,
+      "descriptionMediaCount": 0,
+      "commentCount": 0,
+      "comments": [],
+      "lastCommentUrl": "",
+      "lastCommentDisplay": "",
+      "lastCommentAuthor": "",
+      "type": "Story",
+      "isSubtask": false,
+      "status": "QA Testing (DEV)",
+      "priority": "P1",
+      "assignee": "Dewan Kabir",
+      "assigneeAccountId": "630fb06bb433b060db559bdb",
+      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
+      "assignedDeveloper": "Raghav Kancherla",
+      "assignedDeveloperAccountId": "557058:24f78684-6276-42b4-9860-f81502d6d45e",
+      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/initials/RK-4.png",
+      "updated": "2026-05-27T15:33:20.376-0400",
+      "updatedDisplay": "May 27, 2026, 3:33 PM",
+      "created": "2026-04-29T16:54:53.099-0400",
+      "createdDisplay": "Apr 29, 2026, 4:54 PM",
+      "components": [
+        "Golf.OpenAI"
+      ],
+      "fixVersions": [
+        "v3001.123.0"
+      ],
+      "resolution": "",
+      "parent": {
+        "key": "CORE-14096",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14096",
+        "summary": "ChatGPT - OpenAI Apps",
+        "description": "",
+        "type": "Epic",
+        "status": "Planning",
+        "priority": "None"
+      }
+    },
     {
       "key": "CORE-14501",
       "url": "https://golfnow.atlassian.net/browse/CORE-14501",
@@ -1885,65 +1930,155 @@
       ],
       "resolution": "",
       "parent": null
-    },
-    {
-      "key": "CORE-14422",
-      "url": "https://golfnow.atlassian.net/browse/CORE-14422",
-      "summary": "Add .well-known challenge for OpenAI app",
-      "description": "Need to expose .well-known/openai-apps-challenge to OpenAI in order to validate domain during app submission\n\napp.MapGet(\".well-known/openai-apps-challenge\", (IConfiguration config) =>\n{\nvar token = config[\"ChallengeToken\"] ?? string.Empty;\nreturn Results.Text(token, \"text/plain\");\n});",
-      "descriptionHtml": "<p>Need to expose .well-known/openai-apps-challenge to OpenAI in order to validate domain during app submission</p><pre><code>app.MapGet(&quot;.well-known/openai-apps-challenge&quot;, (IConfiguration config) =&gt;\n{\n    var token = config[&quot;ChallengeToken&quot;] ?? string.Empty;\n    return Results.Text(token, &quot;text/plain&quot;);\n});</code></pre>",
-      "descriptionImageCount": 0,
-      "descriptionVideoCount": 0,
-      "descriptionMediaCount": 0,
-      "commentCount": 0,
-      "comments": [],
-      "lastCommentUrl": "",
-      "lastCommentDisplay": "",
-      "lastCommentAuthor": "",
-      "type": "Story",
-      "isSubtask": false,
-      "status": "Pending Deployment (DEV)",
-      "priority": "P1",
-      "assignee": "Raghav Kancherla",
-      "assigneeAccountId": "557058:24f78684-6276-42b4-9860-f81502d6d45e",
-      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/initials/RK-4.png",
-      "assignedDeveloper": "Raghav Kancherla",
-      "assignedDeveloperAccountId": "557058:24f78684-6276-42b4-9860-f81502d6d45e",
-      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/initials/RK-4.png",
-      "updated": "2026-05-18T14:01:08.553-0400",
-      "updatedDisplay": "May 18, 2026, 2:01 PM",
-      "created": "2026-04-29T16:54:53.099-0400",
-      "createdDisplay": "Apr 29, 2026, 4:54 PM",
-      "components": [
-        "Golf.OpenAI"
-      ],
-      "fixVersions": [
-        "v3001.123.0"
-      ],
-      "resolution": "",
-      "parent": {
-        "key": "CORE-14096",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14096",
-        "summary": "ChatGPT - OpenAI Apps",
-        "description": "",
-        "type": "Epic",
-        "status": "Planning",
-        "priority": "None"
-      }
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-27T19:25:11.545Z",
-    "previousPulledAtDisplay": "May 27, 2026, 3:25 PM",
-    "currentPulledAt": "2026-05-27T19:30:14.555Z",
-    "currentPulledAtDisplay": "May 27, 2026, 3:30 PM",
+    "previousPulledAt": "2026-05-27T19:30:14.555Z",
+    "previousPulledAtDisplay": "May 27, 2026, 3:30 PM",
+    "currentPulledAt": "2026-05-27T19:35:17.287Z",
+    "currentPulledAtDisplay": "May 27, 2026, 3:35 PM",
     "isBaseline": false,
     "added": [],
     "removed": [],
-    "updated": [],
-    "statusChanges": []
+    "updated": [
+      {
+        "key": "CORE-14422",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14422",
+        "summary": "Add .well-known challenge for OpenAI app",
+        "changes": [
+          {
+            "field": "status",
+            "label": "Status",
+            "before": "Pending Deployment (DEV)",
+            "after": "QA Testing (DEV)"
+          },
+          {
+            "field": "assignee",
+            "label": "Assignee",
+            "before": "Raghav Kancherla",
+            "after": "Dewan Kabir"
+          },
+          {
+            "field": "updatedDisplay",
+            "label": "Jira updated",
+            "before": "May 18, 2026, 2:01 PM",
+            "after": "May 27, 2026, 3:33 PM"
+          }
+        ],
+        "type": "Story",
+        "isSubtask": false,
+        "assignee": "Dewan Kabir",
+        "assignedDeveloper": "Raghav Kancherla",
+        "status": "QA Testing (DEV)",
+        "parent": {
+          "key": "CORE-14096",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14096",
+          "summary": "ChatGPT - OpenAI Apps",
+          "description": "",
+          "type": "Epic",
+          "status": "Planning",
+          "priority": "None"
+        }
+      }
+    ],
+    "statusChanges": [
+      {
+        "key": "CORE-14422",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14422",
+        "summary": "Add .well-known challenge for OpenAI app",
+        "before": "Pending Deployment (DEV)",
+        "after": "QA Testing (DEV)",
+        "type": "Story",
+        "isSubtask": false,
+        "assignee": "Dewan Kabir",
+        "assignedDeveloper": "Raghav Kancherla",
+        "status": "QA Testing (DEV)",
+        "parent": {
+          "key": "CORE-14096",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14096",
+          "summary": "ChatGPT - OpenAI Apps",
+          "description": "",
+          "type": "Epic",
+          "status": "Planning",
+          "priority": "None"
+        }
+      }
+    ]
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-27T19:30:14.555Z",
+      "previousPulledAtDisplay": "May 27, 2026, 3:30 PM",
+      "currentPulledAt": "2026-05-27T19:35:17.287Z",
+      "currentPulledAtDisplay": "May 27, 2026, 3:35 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [
+        {
+          "key": "CORE-14422",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14422",
+          "summary": "Add .well-known challenge for OpenAI app",
+          "changes": [
+            {
+              "field": "status",
+              "label": "Status",
+              "before": "Pending Deployment (DEV)",
+              "after": "QA Testing (DEV)"
+            },
+            {
+              "field": "assignee",
+              "label": "Assignee",
+              "before": "Raghav Kancherla",
+              "after": "Dewan Kabir"
+            },
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "May 18, 2026, 2:01 PM",
+              "after": "May 27, 2026, 3:33 PM"
+            }
+          ],
+          "type": "Story",
+          "isSubtask": false,
+          "assignee": "Dewan Kabir",
+          "assignedDeveloper": "Raghav Kancherla",
+          "status": "QA Testing (DEV)",
+          "parent": {
+            "key": "CORE-14096",
+            "url": "https://golfnow.atlassian.net/browse/CORE-14096",
+            "summary": "ChatGPT - OpenAI Apps",
+            "description": "",
+            "type": "Epic",
+            "status": "Planning",
+            "priority": "None"
+          }
+        }
+      ],
+      "statusChanges": [
+        {
+          "key": "CORE-14422",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14422",
+          "summary": "Add .well-known challenge for OpenAI app",
+          "before": "Pending Deployment (DEV)",
+          "after": "QA Testing (DEV)",
+          "type": "Story",
+          "isSubtask": false,
+          "assignee": "Dewan Kabir",
+          "assignedDeveloper": "Raghav Kancherla",
+          "status": "QA Testing (DEV)",
+          "parent": {
+            "key": "CORE-14096",
+            "url": "https://golfnow.atlassian.net/browse/CORE-14096",
+            "summary": "ChatGPT - OpenAI Apps",
+            "description": "",
+            "type": "Epic",
+            "status": "Planning",
+            "priority": "None"
+          }
+        }
+      ]
+    },
     {
       "previousPulledAt": "2026-05-27T19:25:11.545Z",
       "previousPulledAtDisplay": "May 27, 2026, 3:25 PM",
@@ -4097,17 +4232,6 @@
       "previousPulledAtDisplay": "May 26, 2026, 8:59 PM",
       "currentPulledAt": "2026-05-27T01:04:29.148Z",
       "currentPulledAtDisplay": "May 26, 2026, 9:04 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-27T00:54:22.605Z",
-      "previousPulledAtDisplay": "May 26, 2026, 8:54 PM",
-      "currentPulledAt": "2026-05-27T00:59:25.399Z",
-      "currentPulledAtDisplay": "May 26, 2026, 8:59 PM",
       "isBaseline": false,
       "added": [],
       "removed": [],
