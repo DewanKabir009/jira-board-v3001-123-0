@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-27T05:35:59.275Z",
-  "pulledAtDisplay": "May 27, 2026, 1:35 AM",
+  "pulledAt": "2026-05-27T06:01:10.630Z",
+  "pulledAtDisplay": "May 27, 2026, 2:01 AM",
   "total": 31,
   "issues": [
     {
@@ -1851,10 +1851,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-27T05:11:03.293Z",
-    "previousPulledAtDisplay": "May 27, 2026, 1:11 AM",
-    "currentPulledAt": "2026-05-27T05:35:59.275Z",
-    "currentPulledAtDisplay": "May 27, 2026, 1:35 AM",
+    "previousPulledAt": "2026-05-27T05:35:59.275Z",
+    "previousPulledAtDisplay": "May 27, 2026, 1:35 AM",
+    "currentPulledAt": "2026-05-27T06:01:10.630Z",
+    "currentPulledAtDisplay": "May 27, 2026, 2:01 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -1862,6 +1862,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-27T05:35:59.275Z",
+      "previousPulledAtDisplay": "May 27, 2026, 1:35 AM",
+      "currentPulledAt": "2026-05-27T06:01:10.630Z",
+      "currentPulledAtDisplay": "May 27, 2026, 2:01 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-27T05:11:03.293Z",
       "previousPulledAtDisplay": "May 27, 2026, 1:11 AM",
@@ -4714,43 +4725,6 @@
       "added": [],
       "removed": [],
       "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-26T10:37:19.591Z",
-      "previousPulledAtDisplay": "May 26, 2026, 6:37 AM",
-      "currentPulledAt": "2026-05-26T12:46:04.558Z",
-      "currentPulledAtDisplay": "May 26, 2026, 8:46 AM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [
-        {
-          "key": "CORE-14497",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14497",
-          "summary": "Upgrade Subscription Renewal Reminder Task to .NET 10",
-          "changes": [
-            {
-              "field": "assignee",
-              "label": "Assignee",
-              "before": "Yoel Martin Pardo",
-              "after": "Tyler Olechnowicz"
-            },
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "May 21, 2026, 6:02 PM",
-              "after": "May 26, 2026, 8:34 AM"
-            }
-          ],
-          "type": "Story",
-          "isSubtask": false,
-          "assignee": "Dewan Kabir",
-          "assignedDeveloper": "Tyler Olechnowicz",
-          "status": "QA Testing (DEV)",
-          "parent": null
-        }
-      ],
       "statusChanges": []
     }
   ],
