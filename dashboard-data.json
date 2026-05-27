@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-27T06:37:51.801Z",
-  "pulledAtDisplay": "May 27, 2026, 2:37 AM",
+  "pulledAt": "2026-05-27T06:42:53.791Z",
+  "pulledAtDisplay": "May 27, 2026, 2:42 AM",
   "total": 31,
   "issues": [
     {
@@ -1851,10 +1851,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-27T06:32:49.682Z",
-    "previousPulledAtDisplay": "May 27, 2026, 2:32 AM",
-    "currentPulledAt": "2026-05-27T06:37:51.801Z",
-    "currentPulledAtDisplay": "May 27, 2026, 2:37 AM",
+    "previousPulledAt": "2026-05-27T06:37:51.801Z",
+    "previousPulledAtDisplay": "May 27, 2026, 2:37 AM",
+    "currentPulledAt": "2026-05-27T06:42:53.791Z",
+    "currentPulledAtDisplay": "May 27, 2026, 2:42 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -1862,6 +1862,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-27T06:37:51.801Z",
+      "previousPulledAtDisplay": "May 27, 2026, 2:37 AM",
+      "currentPulledAt": "2026-05-27T06:42:53.791Z",
+      "currentPulledAtDisplay": "May 27, 2026, 2:42 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-27T06:32:49.682Z",
       "previousPulledAtDisplay": "May 27, 2026, 2:32 AM",
@@ -4626,106 +4637,6 @@
       "removed": [],
       "updated": [],
       "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-26T14:51:05.363Z",
-      "previousPulledAtDisplay": "May 26, 2026, 10:51 AM",
-      "currentPulledAt": "2026-05-26T15:16:08.805Z",
-      "currentPulledAtDisplay": "May 26, 2026, 11:16 AM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [
-        {
-          "key": "CORE-14428",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14428",
-          "summary": "Create Home Course ProductBenefit",
-          "changes": [
-            {
-              "field": "status",
-              "label": "Status",
-              "before": "QA Testing (DEV)",
-              "after": "Pending Deployment (STG)"
-            },
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "May 21, 2026, 12:04 PM",
-              "after": "May 26, 2026, 11:08 AM"
-            }
-          ],
-          "type": "Story",
-          "isSubtask": false,
-          "assignee": "Dewan Kabir",
-          "assignedDeveloper": "Luis Vallejo Mursuli",
-          "status": "Pending Deployment (STG)",
-          "parent": {
-            "key": "CORE-14301",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14301",
-            "summary": "GolfPass \"Home Course\": Phase I",
-            "description": "",
-            "type": "Epic",
-            "status": "Planning",
-            "priority": "None"
-          }
-        },
-        {
-          "key": "CORE-14487",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14487",
-          "summary": "[Commerce] Facility Closure / Update casing Tee Times to Fail in the Add to Cart process",
-          "changes": [
-            {
-              "field": "assignedDeveloper",
-              "label": "Assigned Developer",
-              "before": "Unassigned",
-              "after": "Andrew Horvat"
-            },
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "May 21, 2026, 1:27 PM",
-              "after": "May 26, 2026, 11:00 AM"
-            }
-          ],
-          "type": "Bug",
-          "isSubtask": false,
-          "assignee": "Dewan Kabir",
-          "assignedDeveloper": "Andrew Horvat",
-          "status": "QA Testing (DEV)",
-          "parent": {
-            "key": "CORE-13172",
-            "url": "https://golfnow.atlassian.net/browse/CORE-13172",
-            "summary": "Commerce Proxy API",
-            "description": "",
-            "type": "Epic",
-            "status": "Planning",
-            "priority": "None"
-          }
-        }
-      ],
-      "statusChanges": [
-        {
-          "key": "CORE-14428",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14428",
-          "summary": "Create Home Course ProductBenefit",
-          "before": "QA Testing (DEV)",
-          "after": "Pending Deployment (STG)",
-          "type": "Story",
-          "isSubtask": false,
-          "assignee": "Dewan Kabir",
-          "assignedDeveloper": "Luis Vallejo Mursuli",
-          "status": "Pending Deployment (STG)",
-          "parent": {
-            "key": "CORE-14301",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14301",
-            "summary": "GolfPass \"Home Course\": Phase I",
-            "description": "",
-            "type": "Epic",
-            "status": "Planning",
-            "priority": "None"
-          }
-        }
-      ]
     }
   ],
   "schemaVersionNumber": 1,
