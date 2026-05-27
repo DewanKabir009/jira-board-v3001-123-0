@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-27T21:09:44.725Z",
-  "pulledAtDisplay": "May 27, 2026, 5:09 PM",
+  "pulledAt": "2026-05-27T21:14:47.653Z",
+  "pulledAtDisplay": "May 27, 2026, 5:14 PM",
   "total": 32,
   "issues": [
     {
@@ -1949,73 +1949,28 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-27T21:04:42.276Z",
-    "previousPulledAtDisplay": "May 27, 2026, 5:04 PM",
-    "currentPulledAt": "2026-05-27T21:09:44.725Z",
-    "currentPulledAtDisplay": "May 27, 2026, 5:09 PM",
+    "previousPulledAt": "2026-05-27T21:09:44.725Z",
+    "previousPulledAtDisplay": "May 27, 2026, 5:09 PM",
+    "currentPulledAt": "2026-05-27T21:14:47.653Z",
+    "currentPulledAtDisplay": "May 27, 2026, 5:14 PM",
     "isBaseline": false,
     "added": [],
     "removed": [],
-    "updated": [
-      {
-        "key": "CORE-14423",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14423",
-        "summary": "Troubleshoot Warden setup in DEV",
-        "changes": [
-          {
-            "field": "status",
-            "label": "Status",
-            "before": "Pending Deployment (DEV)",
-            "after": "QA Testing (DEV)"
-          },
-          {
-            "field": "updatedDisplay",
-            "label": "Jira updated",
-            "before": "May 27, 2026, 1:32 PM",
-            "after": "May 27, 2026, 5:06 PM"
-          }
-        ],
-        "type": "Story",
-        "isSubtask": false,
-        "assignee": "Raghav Kancherla",
-        "assignedDeveloper": "Raghav Kancherla",
-        "status": "QA Testing (DEV)",
-        "parent": {
-          "key": "CORE-14096",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14096",
-          "summary": "ChatGPT - OpenAI Apps",
-          "description": "",
-          "type": "Epic",
-          "status": "Planning",
-          "priority": "None"
-        }
-      }
-    ],
-    "statusChanges": [
-      {
-        "key": "CORE-14423",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14423",
-        "summary": "Troubleshoot Warden setup in DEV",
-        "before": "Pending Deployment (DEV)",
-        "after": "QA Testing (DEV)",
-        "type": "Story",
-        "isSubtask": false,
-        "assignee": "Raghav Kancherla",
-        "assignedDeveloper": "Raghav Kancherla",
-        "status": "QA Testing (DEV)",
-        "parent": {
-          "key": "CORE-14096",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14096",
-          "summary": "ChatGPT - OpenAI Apps",
-          "description": "",
-          "type": "Epic",
-          "status": "Planning",
-          "priority": "None"
-        }
-      }
-    ]
+    "updated": [],
+    "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-27T21:09:44.725Z",
+      "previousPulledAtDisplay": "May 27, 2026, 5:09 PM",
+      "currentPulledAt": "2026-05-27T21:14:47.653Z",
+      "currentPulledAtDisplay": "May 27, 2026, 5:14 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-27T21:04:42.276Z",
       "previousPulledAtDisplay": "May 27, 2026, 5:04 PM",
@@ -4587,17 +4542,6 @@
       "previousPulledAtDisplay": "May 26, 2026, 10:36 PM",
       "currentPulledAt": "2026-05-27T02:41:52.637Z",
       "currentPulledAtDisplay": "May 26, 2026, 10:41 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-27T02:31:48.159Z",
-      "previousPulledAtDisplay": "May 26, 2026, 10:31 PM",
-      "currentPulledAt": "2026-05-27T02:36:50.572Z",
-      "currentPulledAtDisplay": "May 26, 2026, 10:36 PM",
       "isBaseline": false,
       "added": [],
       "removed": [],
