@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-27T20:09:14.867Z",
-  "pulledAtDisplay": "May 27, 2026, 4:09 PM",
+  "pulledAt": "2026-05-27T20:14:18.001Z",
+  "pulledAtDisplay": "May 27, 2026, 4:14 PM",
   "total": 32,
   "issues": [
     {
@@ -1949,285 +1949,28 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-27T20:04:11.956Z",
-    "previousPulledAtDisplay": "May 27, 2026, 4:04 PM",
-    "currentPulledAt": "2026-05-27T20:09:14.867Z",
-    "currentPulledAtDisplay": "May 27, 2026, 4:09 PM",
+    "previousPulledAt": "2026-05-27T20:09:14.867Z",
+    "previousPulledAtDisplay": "May 27, 2026, 4:09 PM",
+    "currentPulledAt": "2026-05-27T20:14:18.001Z",
+    "currentPulledAtDisplay": "May 27, 2026, 4:14 PM",
     "isBaseline": false,
     "added": [],
     "removed": [],
-    "updated": [
-      {
-        "key": "CORE-14456",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14456",
-        "summary": "SQL code changes for [CORE - 14304]",
-        "changes": [
-          {
-            "field": "status",
-            "label": "Status",
-            "before": "QA Testing (DEV)",
-            "after": "Pending Deployment (STG)"
-          },
-          {
-            "field": "updatedDisplay",
-            "label": "Jira updated",
-            "before": "May 26, 2026, 5:43 PM",
-            "after": "May 27, 2026, 4:07 PM"
-          }
-        ],
-        "type": "Developer Task (sub task)",
-        "isSubtask": true,
-        "assignee": "Nicole Greer",
-        "assignedDeveloper": "Luis Vallejo Mursuli",
-        "status": "Pending Deployment (STG)",
-        "parent": {
-          "key": "CORE-14304",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14304",
-          "summary": "Update GolfPass Terms for Employee Comp Email Template",
-          "description": "",
-          "type": "Task",
-          "status": "Pending Deployment (STG)",
-          "priority": "P2"
-        }
-      },
-      {
-        "key": "CORE-14436",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14436",
-        "summary": "Code changes for [CORE - 14304]",
-        "changes": [
-          {
-            "field": "status",
-            "label": "Status",
-            "before": "QA Testing (DEV)",
-            "after": "Pending Deployment (STG)"
-          },
-          {
-            "field": "updatedDisplay",
-            "label": "Jira updated",
-            "before": "May 26, 2026, 5:44 PM",
-            "after": "May 27, 2026, 4:07 PM"
-          }
-        ],
-        "type": "Developer Task (sub task)",
-        "isSubtask": true,
-        "assignee": "Nicole Greer",
-        "assignedDeveloper": "Luis Vallejo Mursuli",
-        "status": "Pending Deployment (STG)",
-        "parent": {
-          "key": "CORE-14304",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14304",
-          "summary": "Update GolfPass Terms for Employee Comp Email Template",
-          "description": "",
-          "type": "Task",
-          "status": "Pending Deployment (STG)",
-          "priority": "P2"
-        }
-      },
-      {
-        "key": "CORE-14464",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14464",
-        "summary": "Database changes",
-        "changes": [
-          {
-            "field": "status",
-            "label": "Status",
-            "before": "QA Testing (DEV)",
-            "after": "Pending Deployment (STG)"
-          },
-          {
-            "field": "updatedDisplay",
-            "label": "Jira updated",
-            "before": "May 26, 2026, 5:43 PM",
-            "after": "May 27, 2026, 4:07 PM"
-          }
-        ],
-        "type": "Developer Task (sub task)",
-        "isSubtask": true,
-        "assignee": "Nicole Greer",
-        "assignedDeveloper": "Yoel Martin Pardo",
-        "status": "Pending Deployment (STG)",
-        "parent": {
-          "key": "CORE-14442",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14442",
-          "summary": "Mass Cancellation -  Include Trade Toggle Not Working as Intended",
-          "description": "",
-          "type": "Bug",
-          "status": "Pending Deployment (STG)",
-          "priority": "P2"
-        }
-      },
-      {
-        "key": "CORE-14463",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14463",
-        "summary": "Code changes.",
-        "changes": [
-          {
-            "field": "status",
-            "label": "Status",
-            "before": "QA Testing (DEV)",
-            "after": "Pending Deployment (STG)"
-          },
-          {
-            "field": "updatedDisplay",
-            "label": "Jira updated",
-            "before": "May 26, 2026, 5:43 PM",
-            "after": "May 27, 2026, 4:07 PM"
-          }
-        ],
-        "type": "Developer Task (sub task)",
-        "isSubtask": true,
-        "assignee": "Nicole Greer",
-        "assignedDeveloper": "Yoel Martin Pardo",
-        "status": "Pending Deployment (STG)",
-        "parent": {
-          "key": "CORE-14442",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14442",
-          "summary": "Mass Cancellation -  Include Trade Toggle Not Working as Intended",
-          "description": "",
-          "type": "Bug",
-          "status": "Pending Deployment (STG)",
-          "priority": "P2"
-        }
-      },
-      {
-        "key": "CORE-14501",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14501",
-        "summary": "Standardize Commerce Proxy API NuGet and build configuration across environments",
-        "changes": [
-          {
-            "field": "status",
-            "label": "Status",
-            "before": "Pre Planning",
-            "after": "Code Review"
-          },
-          {
-            "field": "priority",
-            "label": "Priority",
-            "before": "None",
-            "after": "P0"
-          },
-          {
-            "field": "assignee",
-            "label": "Assignee",
-            "before": "Tyler Olechnowicz",
-            "after": "Andrew Horvat"
-          },
-          {
-            "field": "updatedDisplay",
-            "label": "Jira updated",
-            "before": "May 27, 2026, 4:03 PM",
-            "after": "May 27, 2026, 4:07 PM"
-          }
-        ],
-        "type": "Task",
-        "isSubtask": false,
-        "assignee": "Andrew Horvat",
-        "assignedDeveloper": "Tyler Olechnowicz",
-        "status": "Code Review",
-        "parent": null
-      }
-    ],
-    "statusChanges": [
-      {
-        "key": "CORE-14456",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14456",
-        "summary": "SQL code changes for [CORE - 14304]",
-        "before": "QA Testing (DEV)",
-        "after": "Pending Deployment (STG)",
-        "type": "Developer Task (sub task)",
-        "isSubtask": true,
-        "assignee": "Nicole Greer",
-        "assignedDeveloper": "Luis Vallejo Mursuli",
-        "status": "Pending Deployment (STG)",
-        "parent": {
-          "key": "CORE-14304",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14304",
-          "summary": "Update GolfPass Terms for Employee Comp Email Template",
-          "description": "",
-          "type": "Task",
-          "status": "Pending Deployment (STG)",
-          "priority": "P2"
-        }
-      },
-      {
-        "key": "CORE-14436",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14436",
-        "summary": "Code changes for [CORE - 14304]",
-        "before": "QA Testing (DEV)",
-        "after": "Pending Deployment (STG)",
-        "type": "Developer Task (sub task)",
-        "isSubtask": true,
-        "assignee": "Nicole Greer",
-        "assignedDeveloper": "Luis Vallejo Mursuli",
-        "status": "Pending Deployment (STG)",
-        "parent": {
-          "key": "CORE-14304",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14304",
-          "summary": "Update GolfPass Terms for Employee Comp Email Template",
-          "description": "",
-          "type": "Task",
-          "status": "Pending Deployment (STG)",
-          "priority": "P2"
-        }
-      },
-      {
-        "key": "CORE-14464",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14464",
-        "summary": "Database changes",
-        "before": "QA Testing (DEV)",
-        "after": "Pending Deployment (STG)",
-        "type": "Developer Task (sub task)",
-        "isSubtask": true,
-        "assignee": "Nicole Greer",
-        "assignedDeveloper": "Yoel Martin Pardo",
-        "status": "Pending Deployment (STG)",
-        "parent": {
-          "key": "CORE-14442",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14442",
-          "summary": "Mass Cancellation -  Include Trade Toggle Not Working as Intended",
-          "description": "",
-          "type": "Bug",
-          "status": "Pending Deployment (STG)",
-          "priority": "P2"
-        }
-      },
-      {
-        "key": "CORE-14463",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14463",
-        "summary": "Code changes.",
-        "before": "QA Testing (DEV)",
-        "after": "Pending Deployment (STG)",
-        "type": "Developer Task (sub task)",
-        "isSubtask": true,
-        "assignee": "Nicole Greer",
-        "assignedDeveloper": "Yoel Martin Pardo",
-        "status": "Pending Deployment (STG)",
-        "parent": {
-          "key": "CORE-14442",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14442",
-          "summary": "Mass Cancellation -  Include Trade Toggle Not Working as Intended",
-          "description": "",
-          "type": "Bug",
-          "status": "Pending Deployment (STG)",
-          "priority": "P2"
-        }
-      },
-      {
-        "key": "CORE-14501",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14501",
-        "summary": "Standardize Commerce Proxy API NuGet and build configuration across environments",
-        "before": "Pre Planning",
-        "after": "Code Review",
-        "type": "Task",
-        "isSubtask": false,
-        "assignee": "Andrew Horvat",
-        "assignedDeveloper": "Tyler Olechnowicz",
-        "status": "Code Review",
-        "parent": null
-      }
-    ]
+    "updated": [],
+    "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-27T20:09:14.867Z",
+      "previousPulledAtDisplay": "May 27, 2026, 4:09 PM",
+      "currentPulledAt": "2026-05-27T20:14:18.001Z",
+      "currentPulledAtDisplay": "May 27, 2026, 4:14 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-27T20:04:11.956Z",
       "previousPulledAtDisplay": "May 27, 2026, 4:04 PM",
@@ -4743,17 +4486,6 @@
       "previousPulledAtDisplay": "May 26, 2026, 9:39 PM",
       "currentPulledAt": "2026-05-27T01:44:52.148Z",
       "currentPulledAtDisplay": "May 26, 2026, 9:44 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-27T01:34:46.596Z",
-      "previousPulledAtDisplay": "May 26, 2026, 9:34 PM",
-      "currentPulledAt": "2026-05-27T01:39:49.576Z",
-      "currentPulledAtDisplay": "May 26, 2026, 9:39 PM",
       "isBaseline": false,
       "added": [],
       "removed": [],
