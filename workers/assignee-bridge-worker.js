@@ -6,14 +6,10 @@ const DEFAULT_ALLOWED_ASSIGNEES = [
 ];
 
 const DEFAULT_REPOSITORIES = [
-  "DewanKabir009/jira-board-v3001-122-0",
-  "DewanKabir009/jira-board-v3001-123-0",
+  "DewanKabir009/jira-board-template",
 ];
 
-const VERSION_REPOSITORIES = {
-  "v3001.122.0": "DewanKabir009/jira-board-v3001-122-0",
-  "v3001.123.0": "DewanKabir009/jira-board-v3001-123-0",
-};
+const VERSION_REPOSITORIES = {};
 
 const JIRA_FIELDS = [
   "summary",
@@ -309,6 +305,29 @@ async function jiraFetch(env, apiPath) {
   }
 
   return response.json();
+}
+
+async function jiraJsonMutation(env, apiPath, method, payload) {
+  const config = jiraConfig(env);
+  const response = await fetch(`https://api.atlassian.com/ex/jira/${config.cloudId}/rest/api/3${apiPath}`, {
+    method,
+    headers: {
+      Accept: "application/json",
+      Authorization: `Basic ${btoa(`${config.email}:${config.token}`)}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
+
+  const body = await response.json().catch(async () => ({ message: await response.text().catch(() => "") }));
+  if (!response.ok) {
+    const details = JSON.stringify(body).slice(0, 500);
+    const error = new Error(`Jira mutation failed (${response.status}): ${details}`);
+    error.status = response.status;
+    throw error;
+  }
+
+  return body;
 }
 
 async function jiraBinaryFetch(env, apiPath) {
@@ -762,6 +781,64 @@ async function handleChecklistComment(request, env) {
   });
 }
 
+function textToAdf(text) {
+  const normalized = String(text || "").replace(/\r\n/g, "\n").trim();
+  const paragraphs = normalized.split(/\n{2,}/).map((paragraph) => paragraph.trim()).filter(Boolean);
+  return {
+    type: "doc",
+    version: 1,
+    content: (paragraphs.length ? paragraphs : [normalized || " "]).map((paragraph) => ({
+      type: "paragraph",
+      content: paragraph.split(/\n/).flatMap((line, index) => {
+        const nodes = [];
+        if (index > 0) {
+          nodes.push({ type: "hardBreak" });
+        }
+        if (line) {
+          nodes.push({ type: "text", text: line });
+        }
+        return nodes;
+      }),
+    })),
+  };
+}
+
+async function handlePlainComment(request, env) {
+  const auth = await authorizeMutation(request, env);
+  if (!auth.ok) {
+    return json(request, env, auth.status, { ok: false, message: auth.message });
+  }
+
+  const payload = await readJson(request);
+  const issueKey = String(payload.issueKey || payload.issue_key || "").trim().toUpperCase();
+  const body = String(payload.body || payload.comment || "").trim();
+
+  if (!/^[A-Z][A-Z0-9]+-\d+$/.test(issueKey)) {
+    return json(request, env, 400, { ok: false, message: "A valid Jira issue key is required." });
+  }
+  if (!body) {
+    return json(request, env, 400, { ok: false, message: "Comment text is required." });
+  }
+  if (body.length > 32000) {
+    return json(request, env, 400, { ok: false, message: "Comment text is too long for this dashboard composer." });
+  }
+
+  const comment = await jiraJsonMutation(env, `/issue/${encodeURIComponent(issueKey)}/comment`, "POST", {
+    body: textToAdf(body),
+  });
+  const config = jiraConfig(env);
+  const commentId = comment.id || "";
+
+  return json(request, env, 201, {
+    ok: true,
+    bridge: "hosted",
+    issueKey,
+    commentId,
+    commentUrl: jiraCommentUrl(config, issueKey, commentId),
+    message: "Jira comment posted.",
+  });
+}
+
 export default {
   async fetch(request, env) {
     if (request.method === "OPTIONS") {
@@ -795,6 +872,9 @@ export default {
       }
       if (request.method === "POST" && url.pathname.endsWith("/comment-checklist")) {
         return handleChecklistComment(request, env);
+      }
+      if (request.method === "POST" && url.pathname.endsWith("/comment")) {
+        return handlePlainComment(request, env);
       }
       return json(request, env, 404, { ok: false, message: "Unknown bridge route." });
     } catch (error) {
