@@ -4,10 +4,94 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-27T15:03:47.183Z",
-  "pulledAtDisplay": "May 27, 2026, 11:03 AM",
+  "pulledAt": "2026-05-27T15:08:50.931Z",
+  "pulledAtDisplay": "May 27, 2026, 11:08 AM",
   "total": 31,
   "issues": [
+    {
+      "key": "CORE-14390",
+      "url": "https://golfnow.atlassian.net/browse/CORE-14390",
+      "summary": "New Booking API – Pass is_hotdeal Value in correct location",
+      "description": "Description:\nThe is_hotdeal flag in the New Booking API request is not functioning as expected for EZRTS courses using trade rate sets.\n\nThis issue is caused by CORE sending the is_hotdeal value in an incorrect location within the request payload. As a result, the ETN REST API does not recognize the flag, and GolfNow Hot Deal pricing logic is not applied correctly.\n\nExpected Behavior (ETN REST API Contract):\nThe ETN /v1/tee-time/book endpoint expects is_hotdeal to be nested under the golfnow object within each slot:\n\n\"slots\": [\n{\n\"golfnow\": {\n\"is_hotdeal\": true\n}\n}\n]\n\nActual Behavior (CORE Request):\nCORE is currently sending is_hotdeal outside of the expected golfnow object, resulting in the value being ignored by ETN.\n\nImpact:\n\n-  Hot Deal tee times are not processed correctly\n\n-  Incorrect green fee logic applied for GolfNow Hot Deals\n\n-  Affects EZRTS courses using the New Booking API with trade rate sets\n\n---\nReference API Contract:\nETN Booking Endpoint: /v1/tee-time/book\nSwagger: https://api.ezlinksgolf.com/swagger/index.html\n\n{\n\"sponsor_id\": 0,\n\"course_id\": 0,\n\"tee_time_date_time\": \"2026-04-16T20:16:52.822Z\",\n\"reservation_type_id\": 0,\n\"slots\": [\n{\n\"player\": {\n\"slot_name\": \"string\",\n\"contact_id\": 0,\n\"g1_customer_id\": \"string\",\n\"common_id\": \"string\"\n},\n\"green_fee\": {\n\"fee_id\": 0,\n\"fee_amount\": 0,\n\"prepaid_amount\": 0,\n\"cancel_amount\": 0\n},\n\"golfnow\": {\n\"is_hotdeal\": true\n}\n}\n],\n\"reservation_note\": \"string\",\n\"payment\": {\n\"token\": \"string\",\n\"card_type\": \"string\",\n\"expiration\": \"string\",\n\"last4\": \"string\",\n\"charge_on_book\": true\n},\n\"promo_code\": \"string\",\n\"distribution_amount_to_course\": 0,\n\"distribution_amount_to_golfnow\": 0,\n\"distribution_percentage_to_golfnow\": 0\n}\n\n---\nAcceptance Criteria:\n\n- Request Structure Correction\n\n- is_hotdeal must be passed under slots[].golfnow.is_hotdeal in the New Booking API request.\n\n- Functional Validation\n\n-  When is_hotdeal = true, ETN correctly applies GolfNow Hot Deal green fee logic.\n\n-  When is_hotdeal = false, standard pricing logic is applied.\n\n- Backward Compatibility\n\n-  No impact to non–Hot Deal bookings or existing booking flows.\n\n- Testing Coverage\n\n-  Validate behavior for:\n\n-  Hot Deal tee times (true)\n\n-  Non–Hot Deal tee times (false)\n\nQA TEST: Test on Dubsdread\ntee sheet should receive isHotDeal: true\n\nour api returns ishotdeal: false and IsHidden: true",
+      "descriptionHtml": "<p><strong>Description:</strong><br>The <code>is_hotdeal</code> flag in the New Booking API request is not functioning as expected for EZRTS courses using trade rate sets.</p><p>This issue is caused by CORE sending the <code>is_hotdeal</code> value in an incorrect location within the request payload. As a result, the ETN REST API does not recognize the flag, and GolfNow Hot Deal pricing logic is not applied correctly.</p><p><strong>Expected Behavior (ETN REST API Contract):</strong><br>The ETN <code>/v1/tee-time/book</code> endpoint expects <code>is_hotdeal</code> to be nested under the <code>golfnow</code> object within each slot:</p><pre><code>&quot;slots&quot;: [\n  {\n    &quot;golfnow&quot;: {\n      &quot;is_hotdeal&quot;: true\n    }\n  }\n]</code></pre><p><strong>Actual Behavior (CORE Request):</strong><br> CORE is currently sending <code>is_hotdeal</code> outside of the expected <code>golfnow</code> object, resulting in the value being ignored by ETN.</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/714912-image-20260416-201920.png\" alt=\"image-20260416-201920.png\" loading=\"lazy\"><figcaption>image-20260416-201920.png</figcaption></figure></div><p><strong>Impact:</strong></p><ul><li><p> Hot Deal tee times are not processed correctly </p></li><li><p> Incorrect green fee logic applied for GolfNow Hot Deals </p></li><li><p> Affects EZRTS courses using the New Booking API with trade rate sets </p></li></ul><hr><p><strong>Reference API Contract:</strong><br> ETN Booking Endpoint: <code>/v1/tee-time/book</code><br> Swagger: <a href=\"https://api.ezlinksgolf.com/swagger/index.html\" target=\"_blank\" rel=\"noopener\">https://api.ezlinksgolf.com/swagger/index.html</a></p><pre><code>{\n  &quot;sponsor_id&quot;: 0,\n  &quot;course_id&quot;: 0,\n  &quot;tee_time_date_time&quot;: &quot;2026-04-16T20:16:52.822Z&quot;,\n  &quot;reservation_type_id&quot;: 0,\n  &quot;slots&quot;: [\n    {\n      &quot;player&quot;: {\n        &quot;slot_name&quot;: &quot;string&quot;,\n        &quot;contact_id&quot;: 0,\n        &quot;g1_customer_id&quot;: &quot;string&quot;,\n        &quot;common_id&quot;: &quot;string&quot;\n      },\n      &quot;green_fee&quot;: {\n        &quot;fee_id&quot;: 0,\n        &quot;fee_amount&quot;: 0,\n        &quot;prepaid_amount&quot;: 0,\n        &quot;cancel_amount&quot;: 0\n      },\n      &quot;golfnow&quot;: {\n        &quot;is_hotdeal&quot;: true\n      }\n    }\n  ],\n  &quot;reservation_note&quot;: &quot;string&quot;,\n  &quot;payment&quot;: {\n    &quot;token&quot;: &quot;string&quot;,\n    &quot;card_type&quot;: &quot;string&quot;,\n    &quot;expiration&quot;: &quot;string&quot;,\n    &quot;last4&quot;: &quot;string&quot;,\n    &quot;charge_on_book&quot;: true\n  },\n  &quot;promo_code&quot;: &quot;string&quot;,\n  &quot;distribution_amount_to_course&quot;: 0,\n  &quot;distribution_amount_to_golfnow&quot;: 0,\n  &quot;distribution_percentage_to_golfnow&quot;: 0\n}</code></pre><hr><p><strong>Acceptance Criteria:</strong></p><ol><li><p><strong>Request Structure Correction</strong> </p><ul><li><p><code>is_hotdeal</code> must be passed under <code>slots[].golfnow.is_hotdeal</code> in the New Booking API request. </p></li></ul></li><li><p><strong>Functional Validation</strong> </p><ul><li><p> When <code>is_hotdeal = true</code>, ETN correctly applies GolfNow Hot Deal green fee logic. </p></li><li><p> When <code>is_hotdeal = false</code>, standard pricing logic is applied. </p></li></ul></li><li><p><strong>Backward Compatibility</strong> </p><ul><li><p> No impact to non–Hot Deal bookings or existing booking flows. </p></li></ul></li><li><p><strong>Testing Coverage</strong> </p><ul><li><p> Validate behavior for: </p><ul><li><p> Hot Deal tee times (true) </p></li><li><p> Non–Hot Deal tee times (false) </p></li></ul></li></ul></li></ol><p>QA TEST: Test on Dubsdread <br>tee sheet should receive isHotDeal: true<br><br>our api returns ishotdeal: false and IsHidden: true</p>",
+      "descriptionImageCount": 1,
+      "descriptionVideoCount": 0,
+      "descriptionMediaCount": 1,
+      "commentCount": 3,
+      "comments": [
+        {
+          "id": "1152853",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14390?focusedCommentId=1152853",
+          "author": "Jacob Radford",
+          "authorAccountId": "6181a59bf6da6a006a76a905",
+          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/6181a59bf6da6a006a76a905/5efc54d9-fd13-41bb-b058-4f6cfdcb4f74/32",
+          "created": "2026-04-16T16:33:17.630-0400",
+          "createdDisplay": "Apr 16, 2026, 4:33 PM",
+          "updated": "2026-04-16T16:33:17.630-0400",
+          "updatedDisplay": "",
+          "hasMedia": false,
+          "mediaCount": 0,
+          "body": "@Joshua Marquess @Brian Pugh Hi guys, I’ve created this ticket to update the location of the is_hotdeal value used in the New Booking API. It’s currently coming over in an unexpected location and causing the GolfNow Hot Deal Green Fee behavior on the tee sheet to not work properly when testing a course using the new booking API for trade rate sets.\n\nHappy to provide any other details that may be needed here. Can we fit this one into an upcoming sprint?\n\ncc: @Jeff Sykes @Dewan Kabir",
+          "bodyHtml": "<p>@Joshua Marquess @Brian Pugh Hi guys, I’ve created this ticket to update the location of the is_hotdeal value used in the New Booking API. It’s currently coming over in an unexpected location and causing the GolfNow Hot Deal Green Fee behavior on the tee sheet to not work properly when testing a course using the new booking API for trade rate sets. </p><p>Happy to provide any other details that may be needed here. Can we fit this one into an upcoming sprint? </p><p>cc: @Jeff Sykes @Dewan Kabir </p>"
+        },
+        {
+          "id": "1170900",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14390?focusedCommentId=1170900",
+          "author": "Yoel Martin Pardo",
+          "authorAccountId": "625571809e7380006fb29599",
+          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
+          "created": "2026-05-14T17:51:24.925-0400",
+          "createdDisplay": "May 14, 2026, 5:51 PM",
+          "updated": "2026-05-14T17:51:24.925-0400",
+          "updatedDisplay": "",
+          "hasMedia": true,
+          "mediaCount": 3,
+          "body": "QA: Please validate with EZL team that they are receiving \"is_hotdeal\": true in the correct location this time.\n\nInternal note: We confirmed with Juan Gonzalez that they are now receiving that info in the correct place and they were able to see the info into the database and EZL teesheet.",
+          "bodyHtml": "<p>QA: Please validate with EZL team that they are receiving <code>&quot;is_hotdeal&quot;: true</code> in the correct location this time.</p><p>Internal note: We confirmed with Juan Gonzalez that they are now receiving that info in the correct place and they were able to see the info into the database and EZL teesheet.</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1170900/727592-image-20260514-215101.png\" alt=\"image-20260514-215101.png\" loading=\"lazy\"><figcaption>image-20260514-215101.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1170900/727590-image-20260514-215111.png\" alt=\"image-20260514-215111.png\" loading=\"lazy\"><figcaption>image-20260514-215111.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1170900/727591-image-20260514-215121.png\" alt=\"image-20260514-215121.png\" loading=\"lazy\"><figcaption>image-20260514-215121.png</figcaption></figure></div>"
+        },
+        {
+          "id": "1175064",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14390?focusedCommentId=1175064",
+          "author": "Dewan Kabir",
+          "authorAccountId": "630fb06bb433b060db559bdb",
+          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
+          "created": "2026-05-27T11:03:40.035-0400",
+          "createdDisplay": "May 27, 2026, 11:03 AM",
+          "updated": "2026-05-27T11:03:40.035-0400",
+          "updatedDisplay": "",
+          "hasMedia": true,
+          "mediaCount": 8,
+          "body": "VALIDATE IN AWS DEV\n\nTest on Dubsdread 877\nMaster - 249 - 39821\n\nInterface Configuration : EZRTS : nj_atlantis - 3014 - 2479\n\nLook up a loaded Trade time : ishotdeal: false and IsHidden: true\n\nValidated with EZL QA : With data from thier side :",
+          "bodyHtml": "<p><strong>VALIDATE IN AWS DEV </strong></p><p>Test on Dubsdread 877<br>Master - 249 - 39821<br><br>Interface Configuration : EZRTS : nj_atlantis - 3014 - 2479</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731583-image-20260527-142600.png\" alt=\"image-20260527-142600.png\" loading=\"lazy\"><figcaption>image-20260527-142600.png</figcaption></figure></div><p>Look up a loaded Trade time :<strong> ishotdeal: false and IsHidden: true</strong></p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731586-image-20260527-142850.png\" alt=\"image-20260527-142850.png\" loading=\"lazy\"><figcaption>image-20260527-142850.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731585-image-20260527-143106.png\" alt=\"image-20260527-143106.png\" loading=\"lazy\"><figcaption>image-20260527-143106.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731584-image-20260527-143151.png\" alt=\"image-20260527-143151.png\" loading=\"lazy\"><figcaption>image-20260527-143151.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731587-image-20260527-143921.png\" alt=\"image-20260527-143921.png\" loading=\"lazy\"><figcaption>image-20260527-143921.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731589-image-20260527-144006.png\" alt=\"image-20260527-144006.png\" loading=\"lazy\"><figcaption>image-20260527-144006.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731588-image-20260527-144356.png\" alt=\"image-20260527-144356.png\" loading=\"lazy\"><figcaption>image-20260527-144356.png</figcaption></figure></div><p><strong>Validated with EZL QA : With data from thier side : </strong></p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731590-image-20260527-150312.png\" alt=\"image-20260527-150312.png\" loading=\"lazy\"><figcaption>image-20260527-150312.png</figcaption></figure></div>"
+        }
+      ],
+      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14390?focusedCommentId=1175064",
+      "lastCommentDisplay": "May 27, 2026, 11:03 AM",
+      "lastCommentAuthor": "Dewan Kabir",
+      "type": "Task",
+      "isSubtask": false,
+      "status": "QA Testing (DEV)",
+      "priority": "P2",
+      "assignee": "Dewan Kabir",
+      "assigneeAccountId": "630fb06bb433b060db559bdb",
+      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
+      "assignedDeveloper": "Yoel Martin Pardo",
+      "assignedDeveloperAccountId": "625571809e7380006fb29599",
+      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
+      "updated": "2026-05-27T11:03:40.242-0400",
+      "updatedDisplay": "May 27, 2026, 11:03 AM",
+      "created": "2026-04-16T16:22:13.692-0400",
+      "createdDisplay": "Apr 16, 2026, 4:22 PM",
+      "components": [
+        "GolfNow.Services.Reservation",
+        "GolfNow.Services.TeeSheet"
+      ],
+      "fixVersions": [
+        "v3001.123.0"
+      ],
+      "resolution": "",
+      "parent": null
+    },
     {
       "key": "CORE-14486",
       "url": "https://golfnow.atlassian.net/browse/CORE-14486",
@@ -1556,90 +1640,6 @@
       }
     },
     {
-      "key": "CORE-14390",
-      "url": "https://golfnow.atlassian.net/browse/CORE-14390",
-      "summary": "New Booking API – Pass is_hotdeal Value in correct location",
-      "description": "Description:\nThe is_hotdeal flag in the New Booking API request is not functioning as expected for EZRTS courses using trade rate sets.\n\nThis issue is caused by CORE sending the is_hotdeal value in an incorrect location within the request payload. As a result, the ETN REST API does not recognize the flag, and GolfNow Hot Deal pricing logic is not applied correctly.\n\nExpected Behavior (ETN REST API Contract):\nThe ETN /v1/tee-time/book endpoint expects is_hotdeal to be nested under the golfnow object within each slot:\n\n\"slots\": [\n{\n\"golfnow\": {\n\"is_hotdeal\": true\n}\n}\n]\n\nActual Behavior (CORE Request):\nCORE is currently sending is_hotdeal outside of the expected golfnow object, resulting in the value being ignored by ETN.\n\nImpact:\n\n-  Hot Deal tee times are not processed correctly\n\n-  Incorrect green fee logic applied for GolfNow Hot Deals\n\n-  Affects EZRTS courses using the New Booking API with trade rate sets\n\n---\nReference API Contract:\nETN Booking Endpoint: /v1/tee-time/book\nSwagger: https://api.ezlinksgolf.com/swagger/index.html\n\n{\n\"sponsor_id\": 0,\n\"course_id\": 0,\n\"tee_time_date_time\": \"2026-04-16T20:16:52.822Z\",\n\"reservation_type_id\": 0,\n\"slots\": [\n{\n\"player\": {\n\"slot_name\": \"string\",\n\"contact_id\": 0,\n\"g1_customer_id\": \"string\",\n\"common_id\": \"string\"\n},\n\"green_fee\": {\n\"fee_id\": 0,\n\"fee_amount\": 0,\n\"prepaid_amount\": 0,\n\"cancel_amount\": 0\n},\n\"golfnow\": {\n\"is_hotdeal\": true\n}\n}\n],\n\"reservation_note\": \"string\",\n\"payment\": {\n\"token\": \"string\",\n\"card_type\": \"string\",\n\"expiration\": \"string\",\n\"last4\": \"string\",\n\"charge_on_book\": true\n},\n\"promo_code\": \"string\",\n\"distribution_amount_to_course\": 0,\n\"distribution_amount_to_golfnow\": 0,\n\"distribution_percentage_to_golfnow\": 0\n}\n\n---\nAcceptance Criteria:\n\n- Request Structure Correction\n\n- is_hotdeal must be passed under slots[].golfnow.is_hotdeal in the New Booking API request.\n\n- Functional Validation\n\n-  When is_hotdeal = true, ETN correctly applies GolfNow Hot Deal green fee logic.\n\n-  When is_hotdeal = false, standard pricing logic is applied.\n\n- Backward Compatibility\n\n-  No impact to non–Hot Deal bookings or existing booking flows.\n\n- Testing Coverage\n\n-  Validate behavior for:\n\n-  Hot Deal tee times (true)\n\n-  Non–Hot Deal tee times (false)\n\nQA TEST: Test on Dubsdread\ntee sheet should receive isHotDeal: true\n\nour api returns ishotdeal: false and IsHidden: true",
-      "descriptionHtml": "<p><strong>Description:</strong><br>The <code>is_hotdeal</code> flag in the New Booking API request is not functioning as expected for EZRTS courses using trade rate sets.</p><p>This issue is caused by CORE sending the <code>is_hotdeal</code> value in an incorrect location within the request payload. As a result, the ETN REST API does not recognize the flag, and GolfNow Hot Deal pricing logic is not applied correctly.</p><p><strong>Expected Behavior (ETN REST API Contract):</strong><br>The ETN <code>/v1/tee-time/book</code> endpoint expects <code>is_hotdeal</code> to be nested under the <code>golfnow</code> object within each slot:</p><pre><code>&quot;slots&quot;: [\n  {\n    &quot;golfnow&quot;: {\n      &quot;is_hotdeal&quot;: true\n    }\n  }\n]</code></pre><p><strong>Actual Behavior (CORE Request):</strong><br> CORE is currently sending <code>is_hotdeal</code> outside of the expected <code>golfnow</code> object, resulting in the value being ignored by ETN.</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/714912-image-20260416-201920.png\" alt=\"image-20260416-201920.png\" loading=\"lazy\"><figcaption>image-20260416-201920.png</figcaption></figure></div><p><strong>Impact:</strong></p><ul><li><p> Hot Deal tee times are not processed correctly </p></li><li><p> Incorrect green fee logic applied for GolfNow Hot Deals </p></li><li><p> Affects EZRTS courses using the New Booking API with trade rate sets </p></li></ul><hr><p><strong>Reference API Contract:</strong><br> ETN Booking Endpoint: <code>/v1/tee-time/book</code><br> Swagger: <a href=\"https://api.ezlinksgolf.com/swagger/index.html\" target=\"_blank\" rel=\"noopener\">https://api.ezlinksgolf.com/swagger/index.html</a></p><pre><code>{\n  &quot;sponsor_id&quot;: 0,\n  &quot;course_id&quot;: 0,\n  &quot;tee_time_date_time&quot;: &quot;2026-04-16T20:16:52.822Z&quot;,\n  &quot;reservation_type_id&quot;: 0,\n  &quot;slots&quot;: [\n    {\n      &quot;player&quot;: {\n        &quot;slot_name&quot;: &quot;string&quot;,\n        &quot;contact_id&quot;: 0,\n        &quot;g1_customer_id&quot;: &quot;string&quot;,\n        &quot;common_id&quot;: &quot;string&quot;\n      },\n      &quot;green_fee&quot;: {\n        &quot;fee_id&quot;: 0,\n        &quot;fee_amount&quot;: 0,\n        &quot;prepaid_amount&quot;: 0,\n        &quot;cancel_amount&quot;: 0\n      },\n      &quot;golfnow&quot;: {\n        &quot;is_hotdeal&quot;: true\n      }\n    }\n  ],\n  &quot;reservation_note&quot;: &quot;string&quot;,\n  &quot;payment&quot;: {\n    &quot;token&quot;: &quot;string&quot;,\n    &quot;card_type&quot;: &quot;string&quot;,\n    &quot;expiration&quot;: &quot;string&quot;,\n    &quot;last4&quot;: &quot;string&quot;,\n    &quot;charge_on_book&quot;: true\n  },\n  &quot;promo_code&quot;: &quot;string&quot;,\n  &quot;distribution_amount_to_course&quot;: 0,\n  &quot;distribution_amount_to_golfnow&quot;: 0,\n  &quot;distribution_percentage_to_golfnow&quot;: 0\n}</code></pre><hr><p><strong>Acceptance Criteria:</strong></p><ol><li><p><strong>Request Structure Correction</strong> </p><ul><li><p><code>is_hotdeal</code> must be passed under <code>slots[].golfnow.is_hotdeal</code> in the New Booking API request. </p></li></ul></li><li><p><strong>Functional Validation</strong> </p><ul><li><p> When <code>is_hotdeal = true</code>, ETN correctly applies GolfNow Hot Deal green fee logic. </p></li><li><p> When <code>is_hotdeal = false</code>, standard pricing logic is applied. </p></li></ul></li><li><p><strong>Backward Compatibility</strong> </p><ul><li><p> No impact to non–Hot Deal bookings or existing booking flows. </p></li></ul></li><li><p><strong>Testing Coverage</strong> </p><ul><li><p> Validate behavior for: </p><ul><li><p> Hot Deal tee times (true) </p></li><li><p> Non–Hot Deal tee times (false) </p></li></ul></li></ul></li></ol><p>QA TEST: Test on Dubsdread <br>tee sheet should receive isHotDeal: true<br><br>our api returns ishotdeal: false and IsHidden: true</p>",
-      "descriptionImageCount": 1,
-      "descriptionVideoCount": 0,
-      "descriptionMediaCount": 1,
-      "commentCount": 3,
-      "comments": [
-        {
-          "id": "1152853",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14390?focusedCommentId=1152853",
-          "author": "Jacob Radford",
-          "authorAccountId": "6181a59bf6da6a006a76a905",
-          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/6181a59bf6da6a006a76a905/5efc54d9-fd13-41bb-b058-4f6cfdcb4f74/32",
-          "created": "2026-04-16T16:33:17.630-0400",
-          "createdDisplay": "Apr 16, 2026, 4:33 PM",
-          "updated": "2026-04-16T16:33:17.630-0400",
-          "updatedDisplay": "",
-          "hasMedia": false,
-          "mediaCount": 0,
-          "body": "@Joshua Marquess @Brian Pugh Hi guys, I’ve created this ticket to update the location of the is_hotdeal value used in the New Booking API. It’s currently coming over in an unexpected location and causing the GolfNow Hot Deal Green Fee behavior on the tee sheet to not work properly when testing a course using the new booking API for trade rate sets.\n\nHappy to provide any other details that may be needed here. Can we fit this one into an upcoming sprint?\n\ncc: @Jeff Sykes @Dewan Kabir",
-          "bodyHtml": "<p>@Joshua Marquess @Brian Pugh Hi guys, I’ve created this ticket to update the location of the is_hotdeal value used in the New Booking API. It’s currently coming over in an unexpected location and causing the GolfNow Hot Deal Green Fee behavior on the tee sheet to not work properly when testing a course using the new booking API for trade rate sets. </p><p>Happy to provide any other details that may be needed here. Can we fit this one into an upcoming sprint? </p><p>cc: @Jeff Sykes @Dewan Kabir </p>"
-        },
-        {
-          "id": "1170900",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14390?focusedCommentId=1170900",
-          "author": "Yoel Martin Pardo",
-          "authorAccountId": "625571809e7380006fb29599",
-          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
-          "created": "2026-05-14T17:51:24.925-0400",
-          "createdDisplay": "May 14, 2026, 5:51 PM",
-          "updated": "2026-05-14T17:51:24.925-0400",
-          "updatedDisplay": "",
-          "hasMedia": true,
-          "mediaCount": 3,
-          "body": "QA: Please validate with EZL team that they are receiving \"is_hotdeal\": true in the correct location this time.\n\nInternal note: We confirmed with Juan Gonzalez that they are now receiving that info in the correct place and they were able to see the info into the database and EZL teesheet.",
-          "bodyHtml": "<p>QA: Please validate with EZL team that they are receiving <code>&quot;is_hotdeal&quot;: true</code> in the correct location this time.</p><p>Internal note: We confirmed with Juan Gonzalez that they are now receiving that info in the correct place and they were able to see the info into the database and EZL teesheet.</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1170900/727592-image-20260514-215101.png\" alt=\"image-20260514-215101.png\" loading=\"lazy\"><figcaption>image-20260514-215101.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1170900/727590-image-20260514-215111.png\" alt=\"image-20260514-215111.png\" loading=\"lazy\"><figcaption>image-20260514-215111.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1170900/727591-image-20260514-215121.png\" alt=\"image-20260514-215121.png\" loading=\"lazy\"><figcaption>image-20260514-215121.png</figcaption></figure></div>"
-        },
-        {
-          "id": "1175064",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14390?focusedCommentId=1175064",
-          "author": "Dewan Kabir",
-          "authorAccountId": "630fb06bb433b060db559bdb",
-          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
-          "created": "2026-05-27T11:03:40.035-0400",
-          "createdDisplay": "May 27, 2026, 11:03 AM",
-          "updated": "2026-05-27T11:03:40.035-0400",
-          "updatedDisplay": "",
-          "hasMedia": true,
-          "mediaCount": 8,
-          "body": "VALIDATE IN AWS DEV\n\nTest on Dubsdread 877\nMaster - 249 - 39821\n\nInterface Configuration : EZRTS : nj_atlantis - 3014 - 2479\n\nLook up a loaded Trade time : ishotdeal: false and IsHidden: true\n\nValidated with EZL QA : With data from thier side :",
-          "bodyHtml": "<p><strong>VALIDATE IN AWS DEV </strong></p><p>Test on Dubsdread 877<br>Master - 249 - 39821<br><br>Interface Configuration : EZRTS : nj_atlantis - 3014 - 2479</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731583-image-20260527-142600.png\" alt=\"image-20260527-142600.png\" loading=\"lazy\"><figcaption>image-20260527-142600.png</figcaption></figure></div><p>Look up a loaded Trade time :<strong> ishotdeal: false and IsHidden: true</strong></p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731586-image-20260527-142850.png\" alt=\"image-20260527-142850.png\" loading=\"lazy\"><figcaption>image-20260527-142850.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731585-image-20260527-143106.png\" alt=\"image-20260527-143106.png\" loading=\"lazy\"><figcaption>image-20260527-143106.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731584-image-20260527-143151.png\" alt=\"image-20260527-143151.png\" loading=\"lazy\"><figcaption>image-20260527-143151.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731587-image-20260527-143921.png\" alt=\"image-20260527-143921.png\" loading=\"lazy\"><figcaption>image-20260527-143921.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731589-image-20260527-144006.png\" alt=\"image-20260527-144006.png\" loading=\"lazy\"><figcaption>image-20260527-144006.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731588-image-20260527-144356.png\" alt=\"image-20260527-144356.png\" loading=\"lazy\"><figcaption>image-20260527-144356.png</figcaption></figure></div><p><strong>Validated with EZL QA : With data from thier side : </strong></p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14390/comments/1175064/731590-image-20260527-150312.png\" alt=\"image-20260527-150312.png\" loading=\"lazy\"><figcaption>image-20260527-150312.png</figcaption></figure></div>"
-        }
-      ],
-      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14390?focusedCommentId=1175064",
-      "lastCommentDisplay": "May 27, 2026, 11:03 AM",
-      "lastCommentAuthor": "Dewan Kabir",
-      "type": "Task",
-      "isSubtask": false,
-      "status": "QA Testing (DEV)",
-      "priority": "P2",
-      "assignee": "Dewan Kabir",
-      "assigneeAccountId": "630fb06bb433b060db559bdb",
-      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
-      "assignedDeveloper": "Yoel Martin Pardo",
-      "assignedDeveloperAccountId": "625571809e7380006fb29599",
-      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
-      "updated": "2026-05-27T11:03:40.242-0400",
-      "updatedDisplay": "May 27, 2026, 11:03 AM",
-      "created": "2026-04-16T16:22:13.692-0400",
-      "createdDisplay": "Apr 16, 2026, 4:22 PM",
-      "components": [
-        "GolfNow.Services.Reservation",
-        "GolfNow.Services.TeeSheet"
-      ],
-      "fixVersions": [
-        "v3001.123.0"
-      ],
-      "resolution": "",
-      "parent": null
-    },
-    {
       "key": "CORE-14480",
       "url": "https://golfnow.atlassian.net/browse/CORE-14480",
       "summary": "Upgrade vulnerable and outdated NuGet package(s) identified by Snyk in Logging Service (golf-svc-logging)",
@@ -1866,37 +1866,28 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-27T14:58:44.296Z",
-    "previousPulledAtDisplay": "May 27, 2026, 10:58 AM",
-    "currentPulledAt": "2026-05-27T15:03:47.183Z",
-    "currentPulledAtDisplay": "May 27, 2026, 11:03 AM",
+    "previousPulledAt": "2026-05-27T15:03:47.183Z",
+    "previousPulledAtDisplay": "May 27, 2026, 11:03 AM",
+    "currentPulledAt": "2026-05-27T15:08:50.931Z",
+    "currentPulledAtDisplay": "May 27, 2026, 11:08 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
-    "updated": [
-      {
-        "key": "CORE-14390",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14390",
-        "summary": "New Booking API – Pass is_hotdeal Value in correct location",
-        "changes": [
-          {
-            "field": "updatedDisplay",
-            "label": "Jira updated",
-            "before": "May 19, 2026, 10:19 AM",
-            "after": "May 27, 2026, 11:03 AM"
-          }
-        ],
-        "type": "Task",
-        "isSubtask": false,
-        "assignee": "Dewan Kabir",
-        "assignedDeveloper": "Yoel Martin Pardo",
-        "status": "QA Testing (DEV)",
-        "parent": null
-      }
-    ],
+    "updated": [],
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-27T15:03:47.183Z",
+      "previousPulledAtDisplay": "May 27, 2026, 11:03 AM",
+      "currentPulledAt": "2026-05-27T15:08:50.931Z",
+      "currentPulledAtDisplay": "May 27, 2026, 11:08 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-27T14:58:44.296Z",
       "previousPulledAtDisplay": "May 27, 2026, 10:58 AM",
@@ -4038,17 +4029,6 @@
       "previousPulledAtDisplay": "May 26, 2026, 5:17 PM",
       "currentPulledAt": "2026-05-26T21:22:12.439Z",
       "currentPulledAtDisplay": "May 26, 2026, 5:22 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-26T21:12:07.649Z",
-      "previousPulledAtDisplay": "May 26, 2026, 5:12 PM",
-      "currentPulledAt": "2026-05-26T21:17:10.126Z",
-      "currentPulledAtDisplay": "May 26, 2026, 5:17 PM",
       "isBaseline": false,
       "added": [],
       "removed": [],
