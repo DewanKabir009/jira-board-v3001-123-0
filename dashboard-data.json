@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-27T15:49:12.559Z",
-  "pulledAtDisplay": "May 27, 2026, 11:49 AM",
+  "pulledAt": "2026-05-27T15:54:16.383Z",
+  "pulledAtDisplay": "May 27, 2026, 11:54 AM",
   "total": 31,
   "issues": [
     {
@@ -1881,57 +1881,28 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-27T15:44:09.658Z",
-    "previousPulledAtDisplay": "May 27, 2026, 11:44 AM",
-    "currentPulledAt": "2026-05-27T15:49:12.559Z",
-    "currentPulledAtDisplay": "May 27, 2026, 11:49 AM",
+    "previousPulledAt": "2026-05-27T15:49:12.559Z",
+    "previousPulledAtDisplay": "May 27, 2026, 11:49 AM",
+    "currentPulledAt": "2026-05-27T15:54:16.383Z",
+    "currentPulledAtDisplay": "May 27, 2026, 11:54 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
-    "updated": [
-      {
-        "key": "CORE-14390",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14390",
-        "summary": "New Booking API – Pass is_hotdeal Value in correct location",
-        "changes": [
-          {
-            "field": "status",
-            "label": "Status",
-            "before": "QA Testing (DEV)",
-            "after": "Pending Deployment (STG)"
-          },
-          {
-            "field": "updatedDisplay",
-            "label": "Jira updated",
-            "before": "May 27, 2026, 11:09 AM",
-            "after": "May 27, 2026, 11:48 AM"
-          }
-        ],
-        "type": "Task",
-        "isSubtask": false,
-        "assignee": "Dewan Kabir",
-        "assignedDeveloper": "Yoel Martin Pardo",
-        "status": "Pending Deployment (STG)",
-        "parent": null
-      }
-    ],
-    "statusChanges": [
-      {
-        "key": "CORE-14390",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14390",
-        "summary": "New Booking API – Pass is_hotdeal Value in correct location",
-        "before": "QA Testing (DEV)",
-        "after": "Pending Deployment (STG)",
-        "type": "Task",
-        "isSubtask": false,
-        "assignee": "Dewan Kabir",
-        "assignedDeveloper": "Yoel Martin Pardo",
-        "status": "Pending Deployment (STG)",
-        "parent": null
-      }
-    ]
+    "updated": [],
+    "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-27T15:49:12.559Z",
+      "previousPulledAtDisplay": "May 27, 2026, 11:49 AM",
+      "currentPulledAt": "2026-05-27T15:54:16.383Z",
+      "currentPulledAtDisplay": "May 27, 2026, 11:54 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-27T15:44:09.658Z",
       "previousPulledAtDisplay": "May 27, 2026, 11:44 AM",
@@ -3965,17 +3936,6 @@
       "previousPulledAtDisplay": "May 26, 2026, 5:47 PM",
       "currentPulledAt": "2026-05-26T21:52:27.073Z",
       "currentPulledAtDisplay": "May 26, 2026, 5:52 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-26T21:44:49.673Z",
-      "previousPulledAtDisplay": "May 26, 2026, 5:44 PM",
-      "currentPulledAt": "2026-05-26T21:47:24.724Z",
-      "currentPulledAtDisplay": "May 26, 2026, 5:47 PM",
       "isBaseline": false,
       "added": [],
       "removed": [],
