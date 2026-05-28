@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-28T05:33:15.463Z",
-  "pulledAtDisplay": "May 28, 2026, 1:33 AM",
+  "pulledAt": "2026-05-28T05:38:17.982Z",
+  "pulledAtDisplay": "May 28, 2026, 1:38 AM",
   "total": 32,
   "issues": [
     {
@@ -1949,10 +1949,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-28T05:28:12.949Z",
-    "previousPulledAtDisplay": "May 28, 2026, 1:28 AM",
-    "currentPulledAt": "2026-05-28T05:33:15.463Z",
-    "currentPulledAtDisplay": "May 28, 2026, 1:33 AM",
+    "previousPulledAt": "2026-05-28T05:33:15.463Z",
+    "previousPulledAtDisplay": "May 28, 2026, 1:33 AM",
+    "currentPulledAt": "2026-05-28T05:38:17.982Z",
+    "currentPulledAtDisplay": "May 28, 2026, 1:38 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -1960,6 +1960,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-28T05:33:15.463Z",
+      "previousPulledAtDisplay": "May 28, 2026, 1:33 AM",
+      "currentPulledAt": "2026-05-28T05:38:17.982Z",
+      "currentPulledAtDisplay": "May 28, 2026, 1:38 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-28T05:28:12.949Z",
       "previousPulledAtDisplay": "May 28, 2026, 1:28 AM",
@@ -4460,139 +4471,6 @@
       "removed": [],
       "updated": [],
       "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-27T14:03:16.183Z",
-      "previousPulledAtDisplay": "May 27, 2026, 10:03 AM",
-      "currentPulledAt": "2026-05-27T14:08:18.773Z",
-      "currentPulledAtDisplay": "May 27, 2026, 10:08 AM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [
-        {
-          "key": "CORE-14486",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14486",
-          "summary": "Database Changes",
-          "changes": [
-            {
-              "field": "status",
-              "label": "Status",
-              "before": "Pending Deployment (STG)",
-              "after": "Regression Testing (STG)"
-            },
-            {
-              "field": "assignee",
-              "label": "Assignee",
-              "before": "Dewan Kabir",
-              "after": "Unassigned"
-            },
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "May 26, 2026, 11:42 AM",
-              "after": "May 27, 2026, 10:04 AM"
-            }
-          ],
-          "type": "Developer Task (sub task)",
-          "isSubtask": true,
-          "assignee": "Unassigned",
-          "assignedDeveloper": "Tyler Olechnowicz",
-          "status": "Regression Testing (STG)",
-          "parent": {
-            "key": "CORE-14444",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14444",
-            "summary": "FeeConfiguration - Create Columns for GP Waivability and Refundability",
-            "description": "",
-            "type": "Story",
-            "status": "Pending Deployment (STG)",
-            "priority": "P2"
-          }
-        },
-        {
-          "key": "CORE-14481",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14481",
-          "summary": "Database changes.",
-          "changes": [
-            {
-              "field": "status",
-              "label": "Status",
-              "before": "Pending Deployment (STG)",
-              "after": "Regression Testing (STG)"
-            },
-            {
-              "field": "assignee",
-              "label": "Assignee",
-              "before": "Dewan Kabir",
-              "after": "Unassigned"
-            },
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "May 26, 2026, 1:29 PM",
-              "after": "May 27, 2026, 10:04 AM"
-            }
-          ],
-          "type": "Developer Task (sub task)",
-          "isSubtask": true,
-          "assignee": "Unassigned",
-          "assignedDeveloper": "Yoel Martin Pardo",
-          "status": "Regression Testing (STG)",
-          "parent": {
-            "key": "CORE-14476",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14476",
-            "summary": "Add two new fields to /get-eligible-promo-codes API",
-            "description": "",
-            "type": "Story",
-            "status": "Pending Deployment (STG)",
-            "priority": "None"
-          }
-        }
-      ],
-      "statusChanges": [
-        {
-          "key": "CORE-14486",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14486",
-          "summary": "Database Changes",
-          "before": "Pending Deployment (STG)",
-          "after": "Regression Testing (STG)",
-          "type": "Developer Task (sub task)",
-          "isSubtask": true,
-          "assignee": "Unassigned",
-          "assignedDeveloper": "Tyler Olechnowicz",
-          "status": "Regression Testing (STG)",
-          "parent": {
-            "key": "CORE-14444",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14444",
-            "summary": "FeeConfiguration - Create Columns for GP Waivability and Refundability",
-            "description": "",
-            "type": "Story",
-            "status": "Pending Deployment (STG)",
-            "priority": "P2"
-          }
-        },
-        {
-          "key": "CORE-14481",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14481",
-          "summary": "Database changes.",
-          "before": "Pending Deployment (STG)",
-          "after": "Regression Testing (STG)",
-          "type": "Developer Task (sub task)",
-          "isSubtask": true,
-          "assignee": "Unassigned",
-          "assignedDeveloper": "Yoel Martin Pardo",
-          "status": "Regression Testing (STG)",
-          "parent": {
-            "key": "CORE-14476",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14476",
-            "summary": "Add two new fields to /get-eligible-promo-codes API",
-            "description": "",
-            "type": "Story",
-            "status": "Pending Deployment (STG)",
-            "priority": "None"
-          }
-        }
-      ]
     }
   ],
   "schemaVersionNumber": 1,
