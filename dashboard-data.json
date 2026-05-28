@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-28T10:59:12.115Z",
-  "pulledAtDisplay": "May 28, 2026, 6:59 AM",
+  "pulledAt": "2026-05-28T11:04:14.907Z",
+  "pulledAtDisplay": "May 28, 2026, 7:04 AM",
   "total": 32,
   "issues": [
     {
@@ -1949,10 +1949,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-28T10:54:09.247Z",
-    "previousPulledAtDisplay": "May 28, 2026, 6:54 AM",
-    "currentPulledAt": "2026-05-28T10:59:12.115Z",
-    "currentPulledAtDisplay": "May 28, 2026, 6:59 AM",
+    "previousPulledAt": "2026-05-28T10:59:12.115Z",
+    "previousPulledAtDisplay": "May 28, 2026, 6:59 AM",
+    "currentPulledAt": "2026-05-28T11:04:14.907Z",
+    "currentPulledAtDisplay": "May 28, 2026, 7:04 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -1960,6 +1960,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-28T10:59:12.115Z",
+      "previousPulledAtDisplay": "May 28, 2026, 6:59 AM",
+      "currentPulledAt": "2026-05-28T11:04:14.907Z",
+      "currentPulledAtDisplay": "May 28, 2026, 7:04 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-28T10:54:09.247Z",
       "previousPulledAtDisplay": "May 28, 2026, 6:54 AM",
@@ -4257,55 +4268,6 @@
       "currentPulledAtDisplay": "May 27, 2026, 3:25 PM",
       "isBaseline": false,
       "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-27T19:15:04.659Z",
-      "previousPulledAtDisplay": "May 27, 2026, 3:15 PM",
-      "currentPulledAt": "2026-05-27T19:20:07.883Z",
-      "currentPulledAtDisplay": "May 27, 2026, 3:20 PM",
-      "isBaseline": false,
-      "added": [
-        {
-          "key": "CORE-14501",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14501",
-          "summary": "Standardize Commerce Proxy API NuGet.config across environments",
-          "description": "Update the Commerce Proxy API NuGet.config to align with the standardized package source configuration used across newer applications in order to improve package restore consistency across all environments.\n\nChanges include:\n\n- Add <clear /> to prevent inherited machine/user-level NuGet package sources from affecting restore behavior\n\n- Standardize the GolfNow Nexus package source configuration\n\n- Add packageSourceMapping configuration to explicitly route internal GolfNow packages through the Nexus feed\n\n- Remove NuGet configuration sections that are not required for package restore behavior in the current application:\n\n- defaultPushSource\n\n- bindingRedirects\n\n- packageManagement\n\n- Add inline documentation describing package source mapping behavior and dependency confusion protection\n\nThis change is intended to improve package resolution consistency and reduce environment-specific restore/build issues by ensuring the application uses a deterministic NuGet package source configuration across local development and AWS-hosted environments.",
-          "descriptionHtml": "<p>Update the Commerce Proxy API <code>NuGet.config</code> to align with the standardized package source configuration used across newer applications in order to improve package restore consistency across all environments.</p><p>Changes include:</p><ul><li><p>Add <code>&lt;clear /&gt;</code> to prevent inherited machine/user-level NuGet package sources from affecting restore behavior</p></li><li><p>Standardize the GolfNow Nexus package source configuration</p></li><li><p>Add <code>packageSourceMapping</code> configuration to explicitly route internal GolfNow packages through the Nexus feed</p></li><li><p>Remove NuGet configuration sections that are not required for package restore behavior in the current application:</p><ul><li><p><code>defaultPushSource</code></p></li><li><p><code>bindingRedirects</code></p></li><li><p><code>packageManagement</code></p></li></ul></li><li><p>Add inline documentation describing package source mapping behavior and dependency confusion protection</p></li></ul><p>This change is intended to improve package resolution consistency and reduce environment-specific restore/build issues by ensuring the application uses a deterministic NuGet package source configuration across local development and AWS-hosted environments.</p>",
-          "descriptionImageCount": 0,
-          "descriptionVideoCount": 0,
-          "descriptionMediaCount": 0,
-          "commentCount": 0,
-          "comments": [],
-          "lastCommentUrl": "",
-          "lastCommentDisplay": "",
-          "lastCommentAuthor": "",
-          "type": "Task",
-          "isSubtask": false,
-          "status": "Pending Deployment (DEV)",
-          "priority": "None",
-          "assignee": "Tyler Olechnowicz",
-          "assigneeAccountId": "5d2396c1ea26c40c2043fc92",
-          "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5d2396c1ea26c40c2043fc92/1647fb84-acea-4c3f-b1e8-9a79aa120f8f/32",
-          "assignedDeveloper": "Tyler Olechnowicz",
-          "assignedDeveloperAccountId": "5d2396c1ea26c40c2043fc92",
-          "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5d2396c1ea26c40c2043fc92/1647fb84-acea-4c3f-b1e8-9a79aa120f8f/32",
-          "updated": "2026-05-27T15:16:01.058-0400",
-          "updatedDisplay": "May 27, 2026, 3:16 PM",
-          "created": "2026-05-27T15:15:57.565-0400",
-          "createdDisplay": "May 27, 2026, 3:15 PM",
-          "components": [
-            "GolfNow.Services.CommerceProxy"
-          ],
-          "fixVersions": [
-            "v3001.123.0"
-          ],
-          "resolution": "",
-          "parent": null
-        }
-      ],
       "removed": [],
       "updated": [],
       "statusChanges": []
