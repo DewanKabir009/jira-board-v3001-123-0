@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-28T12:11:31.615Z",
-  "pulledAtDisplay": "May 28, 2026, 8:11 AM",
+  "pulledAt": "2026-05-28T12:16:34.640Z",
+  "pulledAtDisplay": "May 28, 2026, 8:16 AM",
   "total": 32,
   "issues": [
     {
@@ -1949,10 +1949,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-28T12:06:28.726Z",
-    "previousPulledAtDisplay": "May 28, 2026, 8:06 AM",
-    "currentPulledAt": "2026-05-28T12:11:31.615Z",
-    "currentPulledAtDisplay": "May 28, 2026, 8:11 AM",
+    "previousPulledAt": "2026-05-28T12:11:31.615Z",
+    "previousPulledAtDisplay": "May 28, 2026, 8:11 AM",
+    "currentPulledAt": "2026-05-28T12:16:34.640Z",
+    "currentPulledAtDisplay": "May 28, 2026, 8:16 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -1960,6 +1960,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-28T12:11:31.615Z",
+      "previousPulledAtDisplay": "May 28, 2026, 8:11 AM",
+      "currentPulledAt": "2026-05-28T12:16:34.640Z",
+      "currentPulledAtDisplay": "May 28, 2026, 8:16 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-28T12:06:28.726Z",
       "previousPulledAtDisplay": "May 28, 2026, 8:06 AM",
@@ -4166,49 +4177,6 @@
           "parent": null
         }
       ]
-    },
-    {
-      "previousPulledAt": "2026-05-27T19:59:09.346Z",
-      "previousPulledAtDisplay": "May 27, 2026, 3:59 PM",
-      "currentPulledAt": "2026-05-27T20:04:11.956Z",
-      "currentPulledAtDisplay": "May 27, 2026, 4:04 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [
-        {
-          "key": "CORE-14501",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14501",
-          "summary": "Standardize Commerce Proxy API NuGet and build configuration across environments",
-          "changes": [
-            {
-              "field": "summary",
-              "label": "Summary",
-              "before": "Standardize Commerce Proxy API NuGet.config across environments",
-              "after": "Standardize Commerce Proxy API NuGet and build configuration across environments"
-            },
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "May 27, 2026, 3:16 PM",
-              "after": "May 27, 2026, 4:03 PM"
-            },
-            {
-              "field": "description",
-              "label": "Description",
-              "before": "Update the Commerce Proxy API NuGet.config to align with the standardized package source configuration used across newer applications in ...",
-              "after": "Update the Commerce Proxy API NuGet and build configuration to align with the standardized configuration used across newer applications i..."
-            }
-          ],
-          "type": "Task",
-          "isSubtask": false,
-          "assignee": "Tyler Olechnowicz",
-          "assignedDeveloper": "Tyler Olechnowicz",
-          "status": "Pending Deployment (DEV)",
-          "parent": null
-        }
-      ],
-      "statusChanges": []
     }
   ],
   "schemaVersionNumber": 1,
