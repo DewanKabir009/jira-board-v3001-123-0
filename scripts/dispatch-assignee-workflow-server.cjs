@@ -6,6 +6,7 @@ const host = process.env.ASSIGNEE_DISPATCH_HOST || "127.0.0.1";
 const port = Number(process.env.ASSIGNEE_DISPATCH_PORT || 3992);
 const repo = process.env.GITHUB_REPOSITORY || "DewanKabir009/jira-board-v3001-123-0";
 const workflow = process.env.ASSIGNEE_WORKFLOW || "update-jira-assignee.yml";
+const refreshWorkflow = process.env.REFRESH_WORKFLOW || "refresh-jira-board.yml";
 const allowedOrigins = new Set([
   "https://dewankabir009.github.io",
   "http://127.0.0.1:3992",
@@ -141,6 +142,26 @@ function dispatchWorkflow({ issueKey, assigneeDisplayName }) {
   });
 }
 
+function dispatchRefreshWorkflow() {
+  const gh = findGh();
+  if (!gh) {
+    throw new Error("GitHub CLI was not found. Install gh or set GH_PATH.");
+  }
+
+  cp.execFileSync(gh, [
+    "workflow",
+    "run",
+    refreshWorkflow,
+    "--repo",
+    repo,
+    "--ref",
+    "master",
+  ], {
+    stdio: "pipe",
+    windowsHide: true,
+  });
+}
+
 function updateAssigneeDirect({ issueKey, assigneeDisplayName }) {
   cp.execFileSync(process.execPath, [
     "scripts\\update-jira-assignee.cjs",
@@ -171,7 +192,7 @@ const server = http.createServer(async (request, response) => {
     return;
   }
 
-  if (request.method !== "POST" || request.url !== "/assign") {
+  if (request.method !== "POST" || !["/assign", "/refresh"].includes(request.url)) {
     writeJson(response, 404, { ok: false, error: "Not found." }, origin);
     return;
   }
@@ -183,6 +204,18 @@ const server = http.createServer(async (request, response) => {
 
   try {
     const payload = JSON.parse(await readBody(request) || "{}");
+    if (request.url === "/refresh") {
+      dispatchRefreshWorkflow();
+      writeJson(response, 202, {
+        ok: true,
+        repositorySlug: repo,
+        workflowFile: refreshWorkflow,
+        actionsUrl: `https://github.com/${repo}/actions/workflows/${refreshWorkflow}`,
+        message: "Jira ticket refresh workflow started.",
+      }, origin);
+      return;
+    }
+
     const requestPayload = validate(payload);
     if (process.env.JIRA_MCP_TOKEN) {
       updateAssigneeDirect(requestPayload);
@@ -212,5 +245,5 @@ const server = http.createServer(async (request, response) => {
 });
 
 server.listen(port, host, () => {
-  console.log(`Assignee workflow dispatch bridge listening on http://${host}:${port}/assign`);
+  console.log(`Assignee workflow dispatch bridge listening on http://${host}:${port}/assign and /refresh`);
 });

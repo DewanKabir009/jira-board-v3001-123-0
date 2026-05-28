@@ -720,6 +720,28 @@ async function handleStatus(request, env) {
   });
 }
 
+async function handleRefresh(request, env) {
+  const auth = await authorizeMutation(request, env);
+  if (!auth.ok) {
+    return json(request, env, auth.status, { ok: false, message: auth.message });
+  }
+
+  const payload = await readJson(request);
+  const repositorySlug = resolveRepositorySlug(payload, env);
+  const workflowFile = env.REFRESH_WORKFLOW || "refresh-jira-board.yml";
+
+  await dispatchWorkflow(env, repositorySlug, workflowFile, {});
+
+  return json(request, env, 202, {
+    ok: true,
+    bridge: "hosted",
+    repositorySlug,
+    workflowFile,
+    actionsUrl: `https://github.com/${repositorySlug}/actions/workflows/${workflowFile}`,
+    message: "Jira ticket refresh workflow started.",
+  });
+}
+
 async function handleAssign(request, env) {
   const auth = await authorizeMutation(request, env);
   if (!auth.ok) {
@@ -877,6 +899,9 @@ export default {
       }
       if (request.method === "GET" && url.pathname.endsWith("/media")) {
         return handleMediaProxy(request, env);
+      }
+      if (request.method === "POST" && url.pathname.endsWith("/refresh")) {
+        return handleRefresh(request, env);
       }
       if (request.method === "POST" && url.pathname.endsWith("/assign")) {
         return handleAssign(request, env);
