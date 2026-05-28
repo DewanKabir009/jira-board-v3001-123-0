@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-28T06:38:52.735Z",
-  "pulledAtDisplay": "May 28, 2026, 2:38 AM",
+  "pulledAt": "2026-05-28T06:43:55.428Z",
+  "pulledAtDisplay": "May 28, 2026, 2:43 AM",
   "total": 32,
   "issues": [
     {
@@ -1949,10 +1949,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-28T06:33:49.948Z",
-    "previousPulledAtDisplay": "May 28, 2026, 2:33 AM",
-    "currentPulledAt": "2026-05-28T06:38:52.735Z",
-    "currentPulledAtDisplay": "May 28, 2026, 2:38 AM",
+    "previousPulledAt": "2026-05-28T06:38:52.735Z",
+    "previousPulledAtDisplay": "May 28, 2026, 2:38 AM",
+    "currentPulledAt": "2026-05-28T06:43:55.428Z",
+    "currentPulledAtDisplay": "May 28, 2026, 2:43 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -1960,6 +1960,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-28T06:38:52.735Z",
+      "previousPulledAtDisplay": "May 28, 2026, 2:38 AM",
+      "currentPulledAt": "2026-05-28T06:43:55.428Z",
+      "currentPulledAtDisplay": "May 28, 2026, 2:43 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-28T06:33:49.948Z",
       "previousPulledAtDisplay": "May 28, 2026, 2:33 AM",
@@ -4419,37 +4430,6 @@
       "added": [],
       "removed": [],
       "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-27T15:08:50.931Z",
-      "previousPulledAtDisplay": "May 27, 2026, 11:08 AM",
-      "currentPulledAt": "2026-05-27T15:13:53.920Z",
-      "currentPulledAtDisplay": "May 27, 2026, 11:13 AM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [
-        {
-          "key": "CORE-14390",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14390",
-          "summary": "New Booking API – Pass is_hotdeal Value in correct location",
-          "changes": [
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "May 27, 2026, 11:03 AM",
-              "after": "May 27, 2026, 11:09 AM"
-            }
-          ],
-          "type": "Task",
-          "isSubtask": false,
-          "assignee": "Dewan Kabir",
-          "assignedDeveloper": "Yoel Martin Pardo",
-          "status": "Pending Deployment (STG)",
-          "parent": null
-        }
-      ],
       "statusChanges": []
     }
   ],
