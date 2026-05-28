@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-28T17:45:27.507Z",
-  "pulledAtDisplay": "May 28, 2026, 1:45 PM",
+  "pulledAt": "2026-05-28T18:06:18.849Z",
+  "pulledAtDisplay": "May 28, 2026, 2:06 PM",
   "total": 33,
   "issues": [
     {
@@ -1986,55 +1986,28 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-28T17:31:24.178Z",
-    "previousPulledAtDisplay": "May 28, 2026, 1:31 PM",
-    "currentPulledAt": "2026-05-28T17:45:27.507Z",
-    "currentPulledAtDisplay": "May 28, 2026, 1:45 PM",
+    "previousPulledAt": "2026-05-28T17:45:27.507Z",
+    "previousPulledAtDisplay": "May 28, 2026, 1:45 PM",
+    "currentPulledAt": "2026-05-28T18:06:18.849Z",
+    "currentPulledAtDisplay": "May 28, 2026, 2:06 PM",
     "isBaseline": false,
-    "added": [
-      {
-        "key": "CORE-14504",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14504",
-        "summary": "Standardize Logging Service NuGet.config and add package source mapping",
-        "description": "Updated the Logging Service NuGet.config to align with current repository standards and modern .NET package management practices.\n\nChanges Made\n\n- Added <clear /> to ensure repository-defined package sources are used consistently across environments\n\n- Added Package Source Mapping configuration to:\n\n- Route internal Golf.* and GolfNow.* packages through the GolfNow Nexus feed\n\n- Route all other packages through nuget.org\n\n- Added documentation comments explaining the purpose of Package Source Mapping and dependency confusion protection\n\n- Removed legacy/unnecessary NuGet configuration settings not needed for a modern .NET 10 API:\n\n- bindingRedirects\n\n- packageManagement\n\n- protocolVersion=\"2\" from the GolfNow feed\n\nBenefits\n\n- Improves dependency security by pinning internal packages to the correct source\n\n- Prevents NU1507 warnings when using Central Package Management\n\n- Simplifies and modernizes the repository NuGet configuration\n\n- Aligns the Logging Service with current repository standards",
-        "descriptionHtml": "<p>Updated the Logging Service <code>NuGet.config</code> to align with current repository standards and modern .NET package management practices.</p><h3>Changes Made</h3><ul><li><p>Added <code>&lt;clear /&gt;</code> to ensure repository-defined package sources are used consistently across environments</p></li><li><p>Added Package Source Mapping configuration to:</p><ul><li><p>Route internal <code>Golf.*</code> and <code>GolfNow.*</code> packages through the GolfNow Nexus feed</p></li><li><p>Route all other packages through <code>nuget.org</code></p></li></ul></li><li><p>Added documentation comments explaining the purpose of Package Source Mapping and dependency confusion protection</p></li><li><p>Removed legacy/unnecessary NuGet configuration settings not needed for a modern .NET 10 API:</p><ul><li><p><code>bindingRedirects</code></p></li><li><p><code>packageManagement</code></p></li><li><p><code>protocolVersion=&quot;2&quot;</code> from the GolfNow feed</p></li></ul></li></ul><h3>Benefits</h3><ul><li><p>Improves dependency security by pinning internal packages to the correct source</p></li><li><p>Prevents NU1507 warnings when using Central Package Management</p></li><li><p>Simplifies and modernizes the repository NuGet configuration</p></li><li><p>Aligns the Logging Service with current repository standards</p></li></ul>",
-        "descriptionImageCount": 0,
-        "descriptionVideoCount": 0,
-        "descriptionMediaCount": 0,
-        "commentCount": 0,
-        "comments": [],
-        "lastCommentUrl": "",
-        "lastCommentDisplay": "",
-        "lastCommentAuthor": "",
-        "type": "Task",
-        "isSubtask": false,
-        "status": "Pre Planning",
-        "priority": "None",
-        "assignee": "Tyler Olechnowicz",
-        "assigneeAccountId": "5d2396c1ea26c40c2043fc92",
-        "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5d2396c1ea26c40c2043fc92/1647fb84-acea-4c3f-b1e8-9a79aa120f8f/32",
-        "assignedDeveloper": "Tyler Olechnowicz",
-        "assignedDeveloperAccountId": "5d2396c1ea26c40c2043fc92",
-        "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5d2396c1ea26c40c2043fc92/1647fb84-acea-4c3f-b1e8-9a79aa120f8f/32",
-        "updated": "2026-05-28T13:42:40.735-0400",
-        "updatedDisplay": "May 28, 2026, 1:42 PM",
-        "created": "2026-05-28T13:42:37.674-0400",
-        "createdDisplay": "May 28, 2026, 1:42 PM",
-        "components": [
-          "Golf.Svc.Logging"
-        ],
-        "fixVersions": [
-          "v3001.123.0"
-        ],
-        "resolution": "",
-        "parent": null
-      }
-    ],
+    "added": [],
     "removed": [],
     "updated": [],
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-28T17:45:27.507Z",
+      "previousPulledAtDisplay": "May 28, 2026, 1:45 PM",
+      "currentPulledAt": "2026-05-28T18:06:18.849Z",
+      "currentPulledAtDisplay": "May 28, 2026, 2:06 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-28T17:31:24.178Z",
       "previousPulledAtDisplay": "May 28, 2026, 1:31 PM",
@@ -3949,17 +3922,6 @@
       "previousPulledAt": "2026-05-28T00:15:06.652Z",
       "previousPulledAtDisplay": "May 27, 2026, 8:15 PM",
       "currentPulledAt": "2026-05-28T00:15:53.852Z",
-      "currentPulledAtDisplay": "May 27, 2026, 8:15 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-28T00:10:04.405Z",
-      "previousPulledAtDisplay": "May 27, 2026, 8:10 PM",
-      "currentPulledAt": "2026-05-28T00:15:06.652Z",
       "currentPulledAtDisplay": "May 27, 2026, 8:15 PM",
       "isBaseline": false,
       "added": [],
