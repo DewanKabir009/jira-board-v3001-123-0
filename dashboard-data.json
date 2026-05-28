@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-28T11:14:20.977Z",
-  "pulledAtDisplay": "May 28, 2026, 7:14 AM",
+  "pulledAt": "2026-05-28T11:19:23.855Z",
+  "pulledAtDisplay": "May 28, 2026, 7:19 AM",
   "total": 32,
   "issues": [
     {
@@ -1949,10 +1949,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-28T11:09:17.754Z",
-    "previousPulledAtDisplay": "May 28, 2026, 7:09 AM",
-    "currentPulledAt": "2026-05-28T11:14:20.977Z",
-    "currentPulledAtDisplay": "May 28, 2026, 7:14 AM",
+    "previousPulledAt": "2026-05-28T11:14:20.977Z",
+    "previousPulledAtDisplay": "May 28, 2026, 7:14 AM",
+    "currentPulledAt": "2026-05-28T11:19:23.855Z",
+    "currentPulledAtDisplay": "May 28, 2026, 7:19 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -1960,6 +1960,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-28T11:14:20.977Z",
+      "previousPulledAtDisplay": "May 28, 2026, 7:14 AM",
+      "currentPulledAt": "2026-05-28T11:19:23.855Z",
+      "currentPulledAtDisplay": "May 28, 2026, 7:19 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-28T11:09:17.754Z",
       "previousPulledAtDisplay": "May 28, 2026, 7:09 AM",
@@ -4198,79 +4209,6 @@
       "removed": [],
       "updated": [],
       "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-27T19:30:14.555Z",
-      "previousPulledAtDisplay": "May 27, 2026, 3:30 PM",
-      "currentPulledAt": "2026-05-27T19:35:17.287Z",
-      "currentPulledAtDisplay": "May 27, 2026, 3:35 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [
-        {
-          "key": "CORE-14422",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14422",
-          "summary": "Add .well-known challenge for OpenAI app",
-          "changes": [
-            {
-              "field": "status",
-              "label": "Status",
-              "before": "Pending Deployment (DEV)",
-              "after": "QA Testing (DEV)"
-            },
-            {
-              "field": "assignee",
-              "label": "Assignee",
-              "before": "Raghav Kancherla",
-              "after": "Dewan Kabir"
-            },
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "May 18, 2026, 2:01 PM",
-              "after": "May 27, 2026, 3:33 PM"
-            }
-          ],
-          "type": "Story",
-          "isSubtask": false,
-          "assignee": "Dewan Kabir",
-          "assignedDeveloper": "Raghav Kancherla",
-          "status": "QA Testing (DEV)",
-          "parent": {
-            "key": "CORE-14096",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14096",
-            "summary": "ChatGPT - OpenAI Apps",
-            "description": "",
-            "type": "Epic",
-            "status": "Planning",
-            "priority": "None"
-          }
-        }
-      ],
-      "statusChanges": [
-        {
-          "key": "CORE-14422",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14422",
-          "summary": "Add .well-known challenge for OpenAI app",
-          "before": "Pending Deployment (DEV)",
-          "after": "QA Testing (DEV)",
-          "type": "Story",
-          "isSubtask": false,
-          "assignee": "Dewan Kabir",
-          "assignedDeveloper": "Raghav Kancherla",
-          "status": "QA Testing (DEV)",
-          "parent": {
-            "key": "CORE-14096",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14096",
-            "summary": "ChatGPT - OpenAI Apps",
-            "description": "",
-            "type": "Epic",
-            "status": "Planning",
-            "priority": "None"
-          }
-        }
-      ]
     }
   ],
   "schemaVersionNumber": 1,
