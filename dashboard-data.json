@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-28T13:17:13.487Z",
-  "pulledAtDisplay": "May 28, 2026, 9:17 AM",
+  "pulledAt": "2026-05-28T13:22:16.783Z",
+  "pulledAtDisplay": "May 28, 2026, 9:22 AM",
   "total": 32,
   "issues": [
     {
@@ -1949,10 +1949,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-28T13:12:10.465Z",
-    "previousPulledAtDisplay": "May 28, 2026, 9:12 AM",
-    "currentPulledAt": "2026-05-28T13:17:13.487Z",
-    "currentPulledAtDisplay": "May 28, 2026, 9:17 AM",
+    "previousPulledAt": "2026-05-28T13:17:13.487Z",
+    "previousPulledAtDisplay": "May 28, 2026, 9:17 AM",
+    "currentPulledAt": "2026-05-28T13:22:16.783Z",
+    "currentPulledAtDisplay": "May 28, 2026, 9:22 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -1960,6 +1960,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-28T13:17:13.487Z",
+      "previousPulledAtDisplay": "May 28, 2026, 9:17 AM",
+      "currentPulledAt": "2026-05-28T13:22:16.783Z",
+      "currentPulledAtDisplay": "May 28, 2026, 9:22 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-28T13:12:10.465Z",
       "previousPulledAtDisplay": "May 28, 2026, 9:12 AM",
@@ -3842,73 +3853,6 @@
       "removed": [],
       "updated": [],
       "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-27T21:04:42.276Z",
-      "previousPulledAtDisplay": "May 27, 2026, 5:04 PM",
-      "currentPulledAt": "2026-05-27T21:09:44.725Z",
-      "currentPulledAtDisplay": "May 27, 2026, 5:09 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [
-        {
-          "key": "CORE-14423",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14423",
-          "summary": "Troubleshoot Warden setup in DEV",
-          "changes": [
-            {
-              "field": "status",
-              "label": "Status",
-              "before": "Pending Deployment (DEV)",
-              "after": "QA Testing (DEV)"
-            },
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "May 27, 2026, 1:32 PM",
-              "after": "May 27, 2026, 5:06 PM"
-            }
-          ],
-          "type": "Story",
-          "isSubtask": false,
-          "assignee": "Raghav Kancherla",
-          "assignedDeveloper": "Raghav Kancherla",
-          "status": "QA Testing (DEV)",
-          "parent": {
-            "key": "CORE-14096",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14096",
-            "summary": "ChatGPT - OpenAI Apps",
-            "description": "",
-            "type": "Epic",
-            "status": "Planning",
-            "priority": "None"
-          }
-        }
-      ],
-      "statusChanges": [
-        {
-          "key": "CORE-14423",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14423",
-          "summary": "Troubleshoot Warden setup in DEV",
-          "before": "Pending Deployment (DEV)",
-          "after": "QA Testing (DEV)",
-          "type": "Story",
-          "isSubtask": false,
-          "assignee": "Raghav Kancherla",
-          "assignedDeveloper": "Raghav Kancherla",
-          "status": "QA Testing (DEV)",
-          "parent": {
-            "key": "CORE-14096",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14096",
-            "summary": "ChatGPT - OpenAI Apps",
-            "description": "",
-            "type": "Epic",
-            "status": "Planning",
-            "priority": "None"
-          }
-        }
-      ]
     }
   ],
   "schemaVersionNumber": 1,
