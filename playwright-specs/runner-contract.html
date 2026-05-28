@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PW-01 Runner Contract</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --blue: #005fcc;
+        --green: #007a4d;
+        --orange: #f58220;
+        --surface: #ffffff;
+        --line: #b7d8e4;
+        --text: #071b25;
+        --muted: #536a78;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background:
+          linear-gradient(125deg, rgba(0, 95, 204, 0.13), transparent 38%),
+          linear-gradient(245deg, rgba(0, 122, 77, 0.15), transparent 44%),
+          #f5fbff;
+        color: var(--text);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+      main {
+        display: grid;
+        gap: 18px;
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 28px;
+      }
+      section, header {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.94);
+        box-shadow: 0 18px 48px rgba(0, 84, 122, 0.12);
+        padding: 22px;
+      }
+      header {
+        background: linear-gradient(135deg, #ffffff, #e8fff1 58%, rgba(245, 130, 32, 0.14));
+      }
+      p, li {
+        color: var(--muted);
+        line-height: 1.55;
+      }
+      h1, h2, h3, p { margin: 0; }
+      h1 { font-size: clamp(2rem, 4vw, 4rem); line-height: 1; }
+      h2 { font-size: 1.25rem; }
+      h3 { font-size: 1rem; }
+      .eyebrow {
+        color: var(--blue);
+        font-size: 0.78rem;
+        font-weight: 900;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+        padding: 14px;
+      }
+      .pill {
+        display: inline-flex;
+        border-radius: 999px;
+        background: var(--orange);
+        color: #fff;
+        font-weight: 900;
+        padding: 5px 10px;
+      }
+      code, pre {
+        border-radius: 8px;
+        background: #eef8ff;
+        color: #08334a;
+      }
+      code { padding: 2px 5px; }
+      pre {
+        overflow: auto;
+        padding: 14px;
+      }
+      a {
+        color: var(--blue);
+        font-weight: 850;
+      }
+      @media (max-width: 860px) {
+        main { padding: 16px; }
+        .grid { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">PW-01</p>
+        <h1>Playwright runner contract</h1>
+        <p>First implementation spec for the v3001.123.0 dashboard automation pilot.</p>
+      </header>
+
+      <section>
+        <h2>Goal</h2>
+        <p>The dashboard can request approved Playwright jobs, but it cannot run browser automation directly. A protected hosted runner owns execution, logs, screenshots, videos, traces, and final evidence.</p>
+      </section>
+
+      <section>
+        <h2>Contract</h2>
+        <div class="grid">
+          <article class="card">
+            <span class="pill">Input</span>
+            <h3>Job request</h3>
+            <p>Must match <a href="job-contract.schema.json">job-contract.schema.json</a>. The request includes script id, ticket key, environment, user, parameters, and artifact plan.</p>
+          </article>
+          <article class="card">
+            <span class="pill">Control</span>
+            <h3>Script registry</h3>
+            <p>Only scripts listed in <a href="script-registry.json">script-registry.json</a> can run. The dashboard never accepts arbitrary code.</p>
+          </article>
+          <article class="card">
+            <span class="pill">Output</span>
+            <h3>Job record</h3>
+            <p>The runner returns job id, status, current step, artifact links, failure reason, and timestamps.</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>Required endpoints</h2>
+        <pre><code>POST /playwright/jobs
+GET  /playwright/jobs/{jobId}
+GET  /playwright/jobs/{jobId}/events
+POST /playwright/jobs/{jobId}/cancel</code></pre>
+      </section>
+
+      <section>
+        <h2>Acceptance</h2>
+        <ul>
+          <li>The 123 board links to this contract above the Data Pull section.</li>
+          <li>A job request cannot be created without an approved script id and ticket key.</li>
+          <li>Every job produces at least logs and a summary JSON artifact.</li>
+          <li>Video and trace are enabled for browser runs unless the script registry marks them unavailable.</li>
+          <li>Failed jobs keep enough evidence to debug without rerunning blind.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Next spec</h2>
+        <p>PW-02 will create the protected hosted runner skeleton and wire job storage behind Cloudflare Access.</p>
+      </section>
+    </main>
+  </body>
+</html>

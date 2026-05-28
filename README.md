@@ -8,6 +8,17 @@ Interactive release dashboard for Jira fixVersion `v3001.123.0`.
 
 The board groups release tickets by workflow status, keeps component and QA filters at the top, tracks subtask relationships, and preserves a Data Pull history so status movement is visible over time.
 
+## Playwright Automation Pilot
+
+This board now hosts the 123-only Playwright automation specs under `playwright-specs/`.
+
+- Spec home: `playwright-specs/index.html`
+- Runner contract: `playwright-specs/runner-contract.html`
+- Job schema: `playwright-specs/job-contract.schema.json`
+- Script registry: `playwright-specs/script-registry.json`
+
+The modern dashboard links to these specs from the Playwright automation playbook above Data Pull. Execution remains planned for a protected hosted runner; the static GitHub Pages board will not run arbitrary browser automation code.
+
 ## GitHub Actions Refresh
 
 The repo includes `.github/workflows/refresh-jira-board.yml`.

@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Playwright Automation Specs</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --blue: #005fcc;
+        --green: #007a4d;
+        --orange: #f58220;
+        --line: #b7d8e4;
+        --text: #071b25;
+        --muted: #536a78;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background:
+          linear-gradient(125deg, rgba(0, 95, 204, 0.13), transparent 38%),
+          linear-gradient(245deg, rgba(215, 255, 47, 0.22), transparent 44%),
+          #f6fcff;
+        color: var(--text);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+      main {
+        display: grid;
+        gap: 18px;
+        max-width: 1220px;
+        margin: 0 auto;
+        padding: 28px;
+      }
+      header, section {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.94);
+        box-shadow: 0 18px 48px rgba(0, 84, 122, 0.12);
+        padding: 22px;
+      }
+      header {
+        background: linear-gradient(135deg, #ffffff, #e7fff0 58%, rgba(245, 130, 32, 0.18));
+      }
+      h1, h2, h3, p { margin: 0; }
+      h1 { font-size: clamp(2rem, 4vw, 4.2rem); line-height: 1; }
+      h2 { font-size: 1.25rem; }
+      h3 { font-size: 1rem; }
+      p, li { color: var(--muted); line-height: 1.55; }
+      a { color: var(--blue); font-weight: 850; }
+      .eyebrow {
+        color: var(--blue);
+        font-size: 0.78rem;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+      .links, .spec-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+      .link-card, .spec-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+        padding: 14px;
+      }
+      .status {
+        display: inline-flex;
+        border-radius: 999px;
+        background: var(--green);
+        color: #fff;
+        font-size: 0.72rem;
+        font-weight: 900;
+        padding: 5px 9px;
+      }
+      .status.planned { background: var(--orange); }
+      @media (max-width: 900px) {
+        main { padding: 16px; }
+        .links, .spec-grid { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">v3001.123.0 pilot</p>
+        <h1>Playwright automation specs</h1>
+        <p>A spec-driven path for letting the dashboard start approved browser automations while a protected runner handles the dangerous parts.</p>
+      </header>
+
+      <section>
+        <h2>Spec resources</h2>
+        <div class="links">
+          <article class="link-card">
+            <h3>Runner contract</h3>
+            <p>Defines the request, runner, and artifact contract for PW-01.</p>
+            <p><a href="runner-contract.html">Open runner contract</a></p>
+          </article>
+          <article class="link-card">
+            <h3>Job schema</h3>
+            <p>JSON schema for requests sent from the dashboard to the runner bridge.</p>
+            <p><a href="job-contract.schema.json">Open schema</a></p>
+          </article>
+          <article class="link-card">
+            <h3>Script registry</h3>
+            <p>Approved scripts and artifact expectations for the pilot runner.</p>
+            <p><a href="script-registry.json">Open registry</a></p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>Implementation checklist</h2>
+        <div class="spec-grid">
+          <article class="spec-card" id="pw-01">
+            <span class="status">In progress</span>
+            <h3>PW-01 Runner contract</h3>
+            <p>Define payload schema, script registry, endpoint shape, artifact rules, and failure behavior.</p>
+          </article>
+          <article class="spec-card" id="pw-02">
+            <span class="status planned">Planned</span>
+            <h3>PW-02 Protected runner</h3>
+            <p>Create the hosted Node runner skeleton behind Cloudflare Access with locked scripts only.</p>
+          </article>
+          <article class="spec-card" id="pw-03">
+            <span class="status planned">Planned</span>
+            <h3>PW-03 Dashboard queue</h3>
+            <p>Add a 123-only run control that creates a job and keeps the job id visible.</p>
+          </article>
+          <article class="spec-card" id="pw-04">
+            <span class="status planned">Planned</span>
+            <h3>PW-04 Live progress</h3>
+            <p>Show status, current step, logs, screenshots, and failure reason in the board.</p>
+          </article>
+          <article class="spec-card" id="pw-05">
+            <span class="status planned">Planned</span>
+            <h3>PW-05 Evidence publishing</h3>
+            <p>Publish final screenshots, video, trace, logs, and summary JSON back to the job record.</p>
+          </article>
+          <article class="spec-card" id="pw-06">
+            <span class="status planned">Planned</span>
+            <h3>PW-06 Production gates</h3>
+            <p>Add named-user controls, environment restrictions, rate limits, rollback notes, and audit review.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

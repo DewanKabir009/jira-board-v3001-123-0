@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dewankabir009.github.io/jira-board-v3001-123-0/playwright-specs/job-contract.schema.json",
+  "title": "Jira Board Playwright Job Request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "scriptId",
+    "ticketKey",
+    "environment",
+    "requestedBy",
+    "artifactPlan"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "playwright-job/v1"
+    },
+    "scriptId": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]{2,80}$"
+    },
+    "ticketKey": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9]+-[0-9]+$"
+    },
+    "release": {
+      "type": "string",
+      "examples": ["v3001.123.0"]
+    },
+    "environment": {
+      "type": "string",
+      "enum": ["dev", "stg", "prod-readonly"]
+    },
+    "requestedBy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["displayName"],
+      "properties": {
+        "displayName": { "type": "string", "minLength": 1 },
+        "email": { "type": "string", "format": "email" }
+      }
+    },
+    "parameters": {
+      "type": "object",
+      "additionalProperties": {
+        "type": ["string", "number", "boolean", "array", "object", "null"]
+      }
+    },
+    "artifactPlan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["screenshots", "video", "trace", "logs"],
+      "properties": {
+        "screenshots": { "type": "boolean" },
+        "video": { "type": "boolean" },
+        "trace": { "type": "boolean" },
+        "logs": { "type": "boolean" }
+      }
+    },
+    "jiraCommentMode": {
+      "type": "string",
+      "enum": ["none", "draft", "post-after-review"],
+      "default": "draft"
+    }
+  }
+}
