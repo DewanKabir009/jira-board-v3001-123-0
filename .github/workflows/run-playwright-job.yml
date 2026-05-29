@@ -55,6 +55,61 @@ jobs:
         if: always()
         run: |
           set -euo pipefail
+          node - <<'NODE'
+          const fs = require("fs");
+          const path = require("path");
+          const payload = (() => {
+            try { return JSON.parse(process.env.PLAYWRIGHT_JOB_PAYLOAD || "{}"); }
+            catch { return {}; }
+          })();
+          const safeId = (value) => String(value || "")
+            .trim()
+            .toLowerCase()
+            .replace(/[^a-z0-9._-]+/g, "-")
+            .replace(/^-+|-+$/g, "")
+            .slice(0, 120);
+          const jobsRoot = path.join(process.cwd(), "playwright-jobs");
+          const marker = path.join(jobsRoot, ".latest-job-id");
+          if (!fs.existsSync(marker)) {
+            const ticketKey = String(payload.ticketKey || "workflow").trim().toUpperCase();
+            const jobId = safeId(payload.jobId || `${ticketKey}-${Date.now().toString(36)}-workflow-failed`);
+            const jobDir = path.join(jobsRoot, jobId);
+            const publicBase = "https://dewankabir009.github.io/jira-board-v3001-123-0/playwright-jobs";
+            const actionsUrl = `${process.env.GITHUB_SERVER_URL || "https://github.com"}/${process.env.GITHUB_REPOSITORY || "DewanKabir009/jira-board-v3001-123-0"}/actions/runs/${process.env.GITHUB_RUN_ID || ""}`;
+            const failureReason = "GitHub Actions failed before the Playwright runner created its normal job record.";
+            const failureLog = `${failureReason}\nOpen the Actions run for the exact failing setup or publish step.`;
+            const summary = {
+              schemaVersion: "playwright-job-summary/v1",
+              jobId,
+              status: "failed",
+              message: "Playwright workflow failed.",
+              currentStep: "Workflow failure",
+              ticketKey,
+              scriptId: String(payload.scriptId || "unknown"),
+              scriptLabel: "Approved Playwright script",
+              environment: String(payload.environment || "unknown"),
+              repositorySlug: payload.repositorySlug || process.env.GITHUB_REPOSITORY,
+              requestedBy: payload.requestedBy || {},
+              requestedAt: new Date().toISOString(),
+              startedAt: "",
+              completedAt: new Date().toISOString(),
+              durationMs: 0,
+              actionsUrl,
+              statusUrl: `${publicBase}/${jobId}/summary.json`,
+              jobUrl: `${publicBase}/${jobId}/`,
+              artifacts: [
+                { type: "logs", label: "Logs", href: `${publicBase}/${jobId}/logs.txt` }
+              ],
+              failureReason,
+              failureLog
+            };
+            fs.mkdirSync(jobDir, { recursive: true });
+            fs.writeFileSync(marker, jobId);
+            fs.writeFileSync(path.join(jobDir, "summary.json"), `${JSON.stringify(summary, null, 2)}\n`);
+            fs.writeFileSync(path.join(jobDir, "logs.txt"), `${failureLog}\n`);
+            fs.writeFileSync(path.join(jobDir, "index.html"), `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>${jobId} Playwright failure</title><style>body{font-family:system-ui,sans-serif;margin:32px;background:#fff7f7;color:#3b0a18}.card{max-width:860px;border:1px solid #fecdd3;border-radius:12px;background:#fff;padding:24px;box-shadow:0 20px 50px rgba(190,18,60,.12)}a{color:#005fcc;font-weight:800}</style></head><body><main class="card"><p>Playwright job</p><h1>${jobId}</h1><h2>Workflow failed</h2><p>${failureReason}</p><pre>${failureLog}</pre><p><a href="${actionsUrl}">Open Actions run</a></p></main></body></html>`);
+          }
+          NODE
           job_id="$(node -e 'const fs=require("fs"); const path=require("path"); const marker=path.join("playwright-jobs",".latest-job-id"); process.stdout.write(fs.existsSync(marker)?fs.readFileSync(marker,"utf8").trim():"unknown-job")')"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

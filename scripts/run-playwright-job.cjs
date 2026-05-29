@@ -63,6 +63,15 @@ function makeJobId(payload, ticketKey) {
   return safeId(`${ticketKey}-${Date.now().toString(36)}-${crypto.randomUUID().slice(0, 8)}`);
 }
 
+function logTail(filePath, maxLines = 28) {
+  try {
+    const lines = fs.readFileSync(filePath, "utf8").split(/\r?\n/).filter(Boolean);
+    return lines.slice(-maxLines).join("\n");
+  } catch {
+    return "";
+  }
+}
+
 function createWriter(jobId, payload, validated) {
   const jobDir = path.join(jobsRoot, jobId);
   const logPath = path.join(jobDir, "logs.txt");
@@ -90,7 +99,8 @@ function createWriter(jobId, payload, validated) {
     statusUrl: `${publicBase}/${jobId}/summary.json`,
     jobUrl: `${publicBase}/${jobId}/`,
     artifacts: [],
-    failureReason: ""
+    failureReason: "",
+    failureLog: ""
   };
   const startTime = Date.now();
 
@@ -147,6 +157,7 @@ function createWriter(jobId, payload, validated) {
     state.failureReason = error instanceof Error ? error.message : String(error);
     state.completedAt = new Date().toISOString();
     event("failed", state.failureReason);
+    state.failureLog = logTail(logPath);
     writeSummary();
   }
 
@@ -399,6 +410,8 @@ async function main() {
       });
     }
     writer.fail(error);
+    writer.artifact("logs", "Logs", "logs.txt");
+    writer.artifact("events", "Events", "events.ndjson");
     process.exitCode = 1;
   }
 }
