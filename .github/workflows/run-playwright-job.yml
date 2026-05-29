@@ -34,8 +34,7 @@ jobs:
 
       - name: Install Playwright
         run: |
-          npm init -y
-          npm install --no-save playwright
+          npm install --no-save --no-package-lock playwright
           npx playwright install chromium
 
       - name: Run approved script
@@ -48,7 +47,7 @@ jobs:
           job_id="$(node -e 'const fs=require("fs"); const path=require("path"); const marker=path.join("playwright-jobs",".latest-job-id"); process.stdout.write(fs.existsSync(marker)?fs.readFileSync(marker,"utf8").trim():"unknown-job")')"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git pull --rebase origin "$GITHUB_REF_NAME"
           git add "playwright-jobs/${job_id}" "playwright-jobs/.latest-job-id"
           git commit -m "Record Playwright job ${job_id}" || echo "No Playwright evidence changes to commit."
+          git pull --rebase origin "$GITHUB_REF_NAME"
           git push
