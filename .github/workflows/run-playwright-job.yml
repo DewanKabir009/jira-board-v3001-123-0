@@ -58,10 +58,19 @@ jobs:
           job_id="$(node -e 'const fs=require("fs"); const path=require("path"); const marker=path.join("playwright-jobs",".latest-job-id"); process.stdout.write(fs.existsSync(marker)?fs.readFileSync(marker,"utf8").trim():"unknown-job")')"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add "playwright-jobs/${job_id}" "playwright-jobs/.latest-job-id"
-          git commit -m "Record Playwright job ${job_id}" || echo "No Playwright evidence changes to commit."
+          git restore --worktree --staged "playwright-jobs/.latest-job-id" || true
           git pull --rebase origin "$GITHUB_REF_NAME"
-          git push
+          git add "playwright-jobs/${job_id}"
+          git commit -m "Record Playwright job ${job_id}" || echo "No Playwright evidence changes to commit."
+          for attempt in 1 2 3; do
+            if git push; then
+              exit 0
+            fi
+            echo "Push raced with another publisher; rebasing and retrying (${attempt}/3)."
+            git pull --rebase origin "$GITHUB_REF_NAME"
+          done
+          echo "Unable to publish Playwright evidence after retries."
+          exit 1
 
       - name: Report automation outcome
         if: always()
