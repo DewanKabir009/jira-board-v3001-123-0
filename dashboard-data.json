@@ -4,10 +4,63 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-29T01:19:35.394Z",
-  "pulledAtDisplay": "May 28, 2026, 9:19 PM",
+  "pulledAt": "2026-05-29T01:24:38.330Z",
+  "pulledAtDisplay": "May 28, 2026, 9:24 PM",
   "total": 33,
   "issues": [
+    {
+      "key": "CORE-14440",
+      "url": "https://golfnow.atlassian.net/browse/CORE-14440",
+      "summary": "Modify New EZL API workflow to Account for Partial Prepaid to GN - 2",
+      "description": "Currently, we are have an issue whenever a tee time is partially paid online with revenue due to GN, we send this over in the API and its not included in the due online to the course so it gets added to the due at course amount. At checkin, the golfer is being charged the amount they already paid to us.\n\nNOTE: This work was already completed in CORE-13898 but was rolled back due to a downstream cart fee issue. We need to look into this issue and find out why touched cart fees for this and also how we can update this without introducing the same issue.\n\nGreen Fee vs Prepaid requirements:\n\n- “green_fee”:  due at course amount\n\n- ”prepaid_amount” - should omit $ due to GN and be only prepaid due to golf course\n\n- “green_fee” should also omit $ due to GN and should only show due at course amount\n\n---\nWhenever the revenue allocation source goes to GolfNow, we should be sure to omit this from being sent through API\n\n},\n\"green_fee\": {\n\"fee_id\": 0,\n\"fee_amount\": 0,\n\"prepaid_amount\": 0,   -- This should omit $ due to GN\n\"cancel_amount\": 0\n}\n\nNOTE: For New EZL API\n\nQA: Please be sure to connect with the RTS QA team to coordinate this testing effort",
+      "descriptionHtml": "<p>Currently, we are have an issue whenever a tee time is partially paid online with revenue due to GN, we send this over in the API and its not included in the due online to the course so it gets added to the due at course amount. At checkin, the golfer is being charged the amount they already paid to us.</p><p><strong>NOTE: This work was already completed in CORE-13898 but was rolled back due to a downstream cart fee issue. We need to look into this issue and find out why touched cart fees for this and also how we can update this without introducing the same issue.</strong></p><p>Green Fee vs Prepaid requirements:</p><ul><li><p><code>“green_fee”:</code>  due at course amount</p></li><li><p><code>”prepaid_amount”</code> - should omit $ due to GN and be only prepaid due to golf course</p></li><li><p><code>“green_fee”</code> should also omit $ due to GN and should only show due at course amount</p></li></ul><hr><p>Whenever the revenue allocation source goes to GolfNow, we should be sure to omit this from being sent through API</p><pre><code>},   \n &quot;green_fee&quot;: {   \n &quot;fee_id&quot;: 0,   \n &quot;fee_amount&quot;: 0,   \n &quot;prepaid_amount&quot;: 0,   -- This should omit $ due to GN\n &quot;cancel_amount&quot;: 0   \n }</code></pre><p><strong>NOTE: For New EZL API</strong><br><br>QA: Please be sure to connect with the RTS QA team to coordinate this testing effort</p>",
+      "descriptionImageCount": 0,
+      "descriptionVideoCount": 0,
+      "descriptionMediaCount": 0,
+      "commentCount": 1,
+      "comments": [
+        {
+          "id": "1171744",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14440?focusedCommentId=1171744",
+          "author": "Luis Vallejo Mursuli",
+          "authorAccountId": "712020:2e637bb4-c610-467b-839d-9a5b84f75f01",
+          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:2e637bb4-c610-467b-839d-9a5b84f75f01/4dca1d1b-3faa-4d03-90b8-2b3e0cc02887/32",
+          "created": "2026-05-18T20:10:27.028-0400",
+          "createdDisplay": "May 18, 2026, 8:10 PM",
+          "updated": "2026-05-18T20:10:27.028-0400",
+          "updatedDisplay": "",
+          "hasMedia": false,
+          "mediaCount": 0,
+          "body": "QA,\n\nHere are the instructions to test this ticket. Contact me if you have questions.\n\nThanks!",
+          "bodyHtml": "<p>QA,</p><p>Here are the instructions to test this ticket. Contact me if you have questions.</p><p>Thanks!<br><br> </p>"
+        }
+      ],
+      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14440?focusedCommentId=1171744",
+      "lastCommentDisplay": "May 18, 2026, 8:10 PM",
+      "lastCommentAuthor": "Luis Vallejo Mursuli",
+      "type": "Bug",
+      "isSubtask": false,
+      "status": "QA Testing (DEV)",
+      "priority": "P1",
+      "assignee": "Nicole Greer",
+      "assigneeAccountId": "712020:8fa0be04-9400-422d-8c63-61e7d7b54669",
+      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:8fa0be04-9400-422d-8c63-61e7d7b54669/01136d3f-e8cd-4bac-9ba8-24e390f7c07e/32",
+      "assignedDeveloper": "Luis Vallejo Mursuli",
+      "assignedDeveloperAccountId": "712020:2e637bb4-c610-467b-839d-9a5b84f75f01",
+      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:2e637bb4-c610-467b-839d-9a5b84f75f01/4dca1d1b-3faa-4d03-90b8-2b3e0cc02887/32",
+      "updated": "2026-05-28T21:24:21.489-0400",
+      "updatedDisplay": "May 28, 2026, 9:24 PM",
+      "created": "2026-05-04T10:20:20.822-0400",
+      "createdDisplay": "May 4, 2026, 10:20 AM",
+      "components": [
+        "GolfNow.Services.Reservation"
+      ],
+      "fixVersions": [
+        "v3001.123.0"
+      ],
+      "resolution": "",
+      "parent": null
+    },
     {
       "key": "CORE-14504",
       "url": "https://golfnow.atlassian.net/browse/CORE-14504",
@@ -1911,59 +1964,6 @@
       "parent": null
     },
     {
-      "key": "CORE-14440",
-      "url": "https://golfnow.atlassian.net/browse/CORE-14440",
-      "summary": "Modify New EZL API workflow to Account for Partial Prepaid to GN - 2",
-      "description": "Currently, we are have an issue whenever a tee time is partially paid online with revenue due to GN, we send this over in the API and its not included in the due online to the course so it gets added to the due at course amount. At checkin, the golfer is being charged the amount they already paid to us.\n\nNOTE: This work was already completed in CORE-13898 but was rolled back due to a downstream cart fee issue. We need to look into this issue and find out why touched cart fees for this and also how we can update this without introducing the same issue.\n\nGreen Fee vs Prepaid requirements:\n\n- “green_fee”:  due at course amount\n\n- ”prepaid_amount” - should omit $ due to GN and be only prepaid due to golf course\n\n- “green_fee” should also omit $ due to GN and should only show due at course amount\n\n---\nWhenever the revenue allocation source goes to GolfNow, we should be sure to omit this from being sent through API\n\n},\n\"green_fee\": {\n\"fee_id\": 0,\n\"fee_amount\": 0,\n\"prepaid_amount\": 0,   -- This should omit $ due to GN\n\"cancel_amount\": 0\n}\n\nNOTE: For New EZL API\n\nQA: Please be sure to connect with the RTS QA team to coordinate this testing effort",
-      "descriptionHtml": "<p>Currently, we are have an issue whenever a tee time is partially paid online with revenue due to GN, we send this over in the API and its not included in the due online to the course so it gets added to the due at course amount. At checkin, the golfer is being charged the amount they already paid to us.</p><p><strong>NOTE: This work was already completed in CORE-13898 but was rolled back due to a downstream cart fee issue. We need to look into this issue and find out why touched cart fees for this and also how we can update this without introducing the same issue.</strong></p><p>Green Fee vs Prepaid requirements:</p><ul><li><p><code>“green_fee”:</code>  due at course amount</p></li><li><p><code>”prepaid_amount”</code> - should omit $ due to GN and be only prepaid due to golf course</p></li><li><p><code>“green_fee”</code> should also omit $ due to GN and should only show due at course amount</p></li></ul><hr><p>Whenever the revenue allocation source goes to GolfNow, we should be sure to omit this from being sent through API</p><pre><code>},   \n &quot;green_fee&quot;: {   \n &quot;fee_id&quot;: 0,   \n &quot;fee_amount&quot;: 0,   \n &quot;prepaid_amount&quot;: 0,   -- This should omit $ due to GN\n &quot;cancel_amount&quot;: 0   \n }</code></pre><p><strong>NOTE: For New EZL API</strong><br><br>QA: Please be sure to connect with the RTS QA team to coordinate this testing effort</p>",
-      "descriptionImageCount": 0,
-      "descriptionVideoCount": 0,
-      "descriptionMediaCount": 0,
-      "commentCount": 1,
-      "comments": [
-        {
-          "id": "1171744",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14440?focusedCommentId=1171744",
-          "author": "Luis Vallejo Mursuli",
-          "authorAccountId": "712020:2e637bb4-c610-467b-839d-9a5b84f75f01",
-          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:2e637bb4-c610-467b-839d-9a5b84f75f01/4dca1d1b-3faa-4d03-90b8-2b3e0cc02887/32",
-          "created": "2026-05-18T20:10:27.028-0400",
-          "createdDisplay": "May 18, 2026, 8:10 PM",
-          "updated": "2026-05-18T20:10:27.028-0400",
-          "updatedDisplay": "",
-          "hasMedia": false,
-          "mediaCount": 0,
-          "body": "QA,\n\nHere are the instructions to test this ticket. Contact me if you have questions.\n\nThanks!",
-          "bodyHtml": "<p>QA,</p><p>Here are the instructions to test this ticket. Contact me if you have questions.</p><p>Thanks!<br><br> </p>"
-        }
-      ],
-      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14440?focusedCommentId=1171744",
-      "lastCommentDisplay": "May 18, 2026, 8:10 PM",
-      "lastCommentAuthor": "Luis Vallejo Mursuli",
-      "type": "Bug",
-      "isSubtask": false,
-      "status": "QA Testing (DEV)",
-      "priority": "P1",
-      "assignee": "Nicole Greer",
-      "assigneeAccountId": "712020:8fa0be04-9400-422d-8c63-61e7d7b54669",
-      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:8fa0be04-9400-422d-8c63-61e7d7b54669/01136d3f-e8cd-4bac-9ba8-24e390f7c07e/32",
-      "assignedDeveloper": "Luis Vallejo Mursuli",
-      "assignedDeveloperAccountId": "712020:2e637bb4-c610-467b-839d-9a5b84f75f01",
-      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:2e637bb4-c610-467b-839d-9a5b84f75f01/4dca1d1b-3faa-4d03-90b8-2b3e0cc02887/32",
-      "updated": "2026-05-19T09:35:54.283-0400",
-      "updatedDisplay": "May 19, 2026, 9:35 AM",
-      "created": "2026-05-04T10:20:20.822-0400",
-      "createdDisplay": "May 4, 2026, 10:20 AM",
-      "components": [
-        "GolfNow.Services.Reservation"
-      ],
-      "fixVersions": [
-        "v3001.123.0"
-      ],
-      "resolution": "",
-      "parent": null
-    },
-    {
       "key": "CORE-14471",
       "url": "https://golfnow.atlassian.net/browse/CORE-14471",
       "summary": "Upgrade vulnerable NuGet package(s) identified by Snyk in Inventory Management API (gn-svc-inventorymanagement",
@@ -2002,17 +2002,68 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-29T01:14:32.744Z",
-    "previousPulledAtDisplay": "May 28, 2026, 9:14 PM",
-    "currentPulledAt": "2026-05-29T01:19:35.394Z",
-    "currentPulledAtDisplay": "May 28, 2026, 9:19 PM",
+    "previousPulledAt": "2026-05-29T01:19:35.394Z",
+    "previousPulledAtDisplay": "May 28, 2026, 9:19 PM",
+    "currentPulledAt": "2026-05-29T01:24:38.330Z",
+    "currentPulledAtDisplay": "May 28, 2026, 9:24 PM",
     "isBaseline": false,
     "added": [],
     "removed": [],
-    "updated": [],
+    "updated": [
+      {
+        "key": "CORE-14440",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14440",
+        "summary": "Modify New EZL API workflow to Account for Partial Prepaid to GN - 2",
+        "changes": [
+          {
+            "field": "updatedDisplay",
+            "label": "Jira updated",
+            "before": "May 19, 2026, 9:35 AM",
+            "after": "May 28, 2026, 9:24 PM"
+          }
+        ],
+        "type": "Bug",
+        "isSubtask": false,
+        "assignee": "Nicole Greer",
+        "assignedDeveloper": "Luis Vallejo Mursuli",
+        "status": "QA Testing (DEV)",
+        "parent": null
+      }
+    ],
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-29T01:19:35.394Z",
+      "previousPulledAtDisplay": "May 28, 2026, 9:19 PM",
+      "currentPulledAt": "2026-05-29T01:24:38.330Z",
+      "currentPulledAtDisplay": "May 28, 2026, 9:24 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [
+        {
+          "key": "CORE-14440",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14440",
+          "summary": "Modify New EZL API workflow to Account for Partial Prepaid to GN - 2",
+          "changes": [
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "May 19, 2026, 9:35 AM",
+              "after": "May 28, 2026, 9:24 PM"
+            }
+          ],
+          "type": "Bug",
+          "isSubtask": false,
+          "assignee": "Nicole Greer",
+          "assignedDeveloper": "Luis Vallejo Mursuli",
+          "status": "QA Testing (DEV)",
+          "parent": null
+        }
+      ],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-29T01:14:32.744Z",
       "previousPulledAtDisplay": "May 28, 2026, 9:14 PM",
@@ -4045,17 +4096,6 @@
       "previousPulledAtDisplay": "May 28, 2026, 4:01 AM",
       "currentPulledAt": "2026-05-28T08:26:14.820Z",
       "currentPulledAtDisplay": "May 28, 2026, 4:26 AM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-28T07:39:27.029Z",
-      "previousPulledAtDisplay": "May 28, 2026, 3:39 AM",
-      "currentPulledAt": "2026-05-28T08:01:14.963Z",
-      "currentPulledAtDisplay": "May 28, 2026, 4:01 AM",
       "isBaseline": false,
       "added": [],
       "removed": [],
