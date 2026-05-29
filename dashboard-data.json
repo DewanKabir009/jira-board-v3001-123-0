@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-29T07:23:54.832Z",
-  "pulledAtDisplay": "May 29, 2026, 3:23 AM",
+  "pulledAt": "2026-05-29T07:28:57.517Z",
+  "pulledAtDisplay": "May 29, 2026, 3:28 AM",
   "total": 33,
   "issues": [
     {
@@ -2002,10 +2002,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-29T07:18:52.101Z",
-    "previousPulledAtDisplay": "May 29, 2026, 3:18 AM",
-    "currentPulledAt": "2026-05-29T07:23:54.832Z",
-    "currentPulledAtDisplay": "May 29, 2026, 3:23 AM",
+    "previousPulledAt": "2026-05-29T07:23:54.832Z",
+    "previousPulledAtDisplay": "May 29, 2026, 3:23 AM",
+    "currentPulledAt": "2026-05-29T07:28:57.517Z",
+    "currentPulledAtDisplay": "May 29, 2026, 3:28 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -2013,6 +2013,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-29T07:23:54.832Z",
+      "previousPulledAtDisplay": "May 29, 2026, 3:23 AM",
+      "currentPulledAt": "2026-05-29T07:28:57.517Z",
+      "currentPulledAtDisplay": "May 29, 2026, 3:28 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-29T07:18:52.101Z",
       "previousPulledAtDisplay": "May 29, 2026, 3:18 AM",
@@ -4024,63 +4035,6 @@
       "removed": [],
       "updated": [],
       "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-28T13:32:24.098Z",
-      "previousPulledAtDisplay": "May 28, 2026, 9:32 AM",
-      "currentPulledAt": "2026-05-28T13:37:27.511Z",
-      "currentPulledAtDisplay": "May 28, 2026, 9:37 AM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [
-        {
-          "key": "CORE-14501",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14501",
-          "summary": "Standardize Commerce Proxy API NuGet and build configuration across environments",
-          "changes": [
-            {
-              "field": "status",
-              "label": "Status",
-              "before": "Pending Deployment (DEV)",
-              "after": "QA Testing (DEV)"
-            },
-            {
-              "field": "assignee",
-              "label": "Assignee",
-              "before": "Tyler Olechnowicz",
-              "after": "Dewan Kabir"
-            },
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "May 27, 2026, 6:59 PM",
-              "after": "May 28, 2026, 9:35 AM"
-            }
-          ],
-          "type": "Task",
-          "isSubtask": false,
-          "assignee": "Dewan Kabir",
-          "assignedDeveloper": "Tyler Olechnowicz",
-          "status": "QA Testing (DEV)",
-          "parent": null
-        }
-      ],
-      "statusChanges": [
-        {
-          "key": "CORE-14501",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14501",
-          "summary": "Standardize Commerce Proxy API NuGet and build configuration across environments",
-          "before": "Pending Deployment (DEV)",
-          "after": "QA Testing (DEV)",
-          "type": "Task",
-          "isSubtask": false,
-          "assignee": "Dewan Kabir",
-          "assignedDeveloper": "Tyler Olechnowicz",
-          "status": "QA Testing (DEV)",
-          "parent": null
-        }
-      ]
     }
   ],
   "schemaVersionNumber": 1,
