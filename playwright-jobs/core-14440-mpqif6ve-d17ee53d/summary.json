@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "playwright-job-summary/v1",
+  "jobId": "core-14440-mpqif6ve-d17ee53d",
+  "status": "completed",
+  "message": "Playwright job completed and evidence was published.",
+  "currentStep": "Complete",
+  "ticketKey": "CORE-14440",
+  "scriptId": "golfnow-central-smoke",
+  "scriptLabel": "GolfNow Central smoke check",
+  "environment": "dev",
+  "repositorySlug": "DewanKabir009/jira-board-v3001-123-0",
+  "requestedBy": {
+    "displayName": "Dashboard user"
+  },
+  "requestedAt": "2026-05-29T05:57:36.290Z",
+  "startedAt": "2026-05-29T05:57:36.291Z",
+  "completedAt": "2026-05-29T05:57:41.260Z",
+  "durationMs": 4970,
+  "actionsUrl": "https://github.com/DewanKabir009/jira-board-v3001-123-0/actions/runs/26620861770",
+  "statusUrl": "https://dewankabir009.github.io/jira-board-v3001-123-0/playwright-jobs/core-14440-mpqif6ve-d17ee53d/summary.json",
+  "jobUrl": "https://dewankabir009.github.io/jira-board-v3001-123-0/playwright-jobs/core-14440-mpqif6ve-d17ee53d/",
+  "artifacts": [
+    {
+      "type": "screenshot",
+      "label": "Screenshot",
+      "href": "https://dewankabir009.github.io/jira-board-v3001-123-0/playwright-jobs/core-14440-mpqif6ve-d17ee53d/screenshot.png"
+    },
+    {
+      "type": "trace",
+      "label": "Trace",
+      "href": "https://dewankabir009.github.io/jira-board-v3001-123-0/playwright-jobs/core-14440-mpqif6ve-d17ee53d/trace.zip"
+    },
+    {
+      "type": "video",
+      "label": "Video",
+      "href": "https://dewankabir009.github.io/jira-board-v3001-123-0/playwright-jobs/core-14440-mpqif6ve-d17ee53d/video.webm"
+    },
+    {
+      "type": "logs",
+      "label": "Logs",
+      "href": "https://dewankabir009.github.io/jira-board-v3001-123-0/playwright-jobs/core-14440-mpqif6ve-d17ee53d/logs.txt"
+    },
+    {
+      "type": "events",
+      "label": "Events",
+      "href": "https://dewankabir009.github.io/jira-board-v3001-123-0/playwright-jobs/core-14440-mpqif6ve-d17ee53d/events.ndjson"
+    }
+  ],
+  "failureReason": ""
+}
