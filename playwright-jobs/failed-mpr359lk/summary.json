@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "playwright-job-summary/v1",
+  "jobId": "failed-mpr359lk",
+  "status": "failed",
+  "message": "Playwright job failed.",
+  "currentStep": "Queued",
+  "ticketKey": "CORE-0",
+  "scriptId": "validation",
+  "scriptLabel": "Validation",
+  "environment": "dev",
+  "repositorySlug": "DewanKabir009/jira-board-v3001-123-0",
+  "requestedBy": {},
+  "requestedAt": "2026-05-29T15:37:19.832Z",
+  "startedAt": "",
+  "completedAt": "2026-05-29T15:37:19.833Z",
+  "durationMs": 1,
+  "actionsUrl": "https://github.com/DewanKabir009/jira-board-v3001-123-0/actions/runs/26646581306",
+  "statusUrl": "https://dewankabir009.github.io/jira-board-v3001-123-0/playwright-jobs/failed-mpr359lk/summary.json",
+  "jobUrl": "https://dewankabir009.github.io/jira-board-v3001-123-0/playwright-jobs/failed-mpr359lk/",
+  "artifacts": [],
+  "failureReason": "PLAYWRIGHT_JOB_PAYLOAD must be valid JSON."
+}
