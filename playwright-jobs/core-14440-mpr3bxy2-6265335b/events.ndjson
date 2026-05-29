@@ -1,0 +1,6 @@
+{"at":"2026-05-29T15:42:31.324Z","type":"step","detail":"Starting browser runner"}
+{"at":"2026-05-29T15:42:32.569Z","type":"step","detail":"Opening https://dewankabir009.github.io/jira-board-v3001-123-0/modern/"}
+{"at":"2026-05-29T15:42:34.643Z","type":"step","detail":"Checking dashboard controls"}
+{"at":"2026-05-29T15:42:35.091Z","type":"step","detail":"Capturing screenshot"}
+{"at":"2026-05-29T15:42:37.868Z","type":"step","detail":"Saving trace"}
+{"at":"2026-05-29T15:42:38.568Z","type":"complete","detail":"Playwright job completed and evidence was published."}

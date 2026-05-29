@@ -1,0 +1,6 @@
+[2026-05-29T15:42:31.324Z] step: Starting browser runner
+[2026-05-29T15:42:32.569Z] step: Opening https://dewankabir009.github.io/jira-board-v3001-123-0/modern/
+[2026-05-29T15:42:34.643Z] step: Checking dashboard controls
+[2026-05-29T15:42:35.091Z] step: Capturing screenshot
+[2026-05-29T15:42:37.868Z] step: Saving trace
+[2026-05-29T15:42:38.568Z] complete: Playwright job completed and evidence was published.
