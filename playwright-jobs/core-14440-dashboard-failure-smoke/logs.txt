@@ -1,0 +1,2 @@
+[2026-05-29T16:37:44.285Z] step: Starting browser runner
+[2026-05-29T16:37:45.110Z] failed: GolfNow Central smoke script only accepts golfnow.io targets.

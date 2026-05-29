@@ -1,0 +1,2 @@
+{"at":"2026-05-29T16:37:44.285Z","type":"step","detail":"Starting browser runner"}
+{"at":"2026-05-29T16:37:45.110Z","type":"failed","detail":"GolfNow Central smoke script only accepts golfnow.io targets."}
