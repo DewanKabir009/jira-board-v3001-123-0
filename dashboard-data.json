@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-29T11:11:53.978Z",
-  "pulledAtDisplay": "May 29, 2026, 7:11 AM",
+  "pulledAt": "2026-05-29T11:16:57.100Z",
+  "pulledAtDisplay": "May 29, 2026, 7:16 AM",
   "total": 33,
   "issues": [
     {
@@ -2002,10 +2002,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-29T11:06:50.852Z",
-    "previousPulledAtDisplay": "May 29, 2026, 7:06 AM",
-    "currentPulledAt": "2026-05-29T11:11:53.978Z",
-    "currentPulledAtDisplay": "May 29, 2026, 7:11 AM",
+    "previousPulledAt": "2026-05-29T11:11:53.978Z",
+    "previousPulledAtDisplay": "May 29, 2026, 7:11 AM",
+    "currentPulledAt": "2026-05-29T11:16:57.100Z",
+    "currentPulledAtDisplay": "May 29, 2026, 7:16 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -2013,6 +2013,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-29T11:11:53.978Z",
+      "previousPulledAtDisplay": "May 29, 2026, 7:11 AM",
+      "currentPulledAt": "2026-05-29T11:16:57.100Z",
+      "currentPulledAtDisplay": "May 29, 2026, 7:16 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-29T11:06:50.852Z",
       "previousPulledAtDisplay": "May 29, 2026, 7:06 AM",
@@ -3869,63 +3880,6 @@
       "removed": [],
       "updated": [],
       "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-28T18:56:16.754Z",
-      "previousPulledAtDisplay": "May 28, 2026, 2:56 PM",
-      "currentPulledAt": "2026-05-28T19:21:05.987Z",
-      "currentPulledAtDisplay": "May 28, 2026, 3:21 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [
-        {
-          "key": "CORE-14504",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14504",
-          "summary": "Standardize Logging Service NuGet.config and add package source mapping",
-          "changes": [
-            {
-              "field": "status",
-              "label": "Status",
-              "before": "Code Review",
-              "after": "QA Testing (DEV)"
-            },
-            {
-              "field": "assignee",
-              "label": "Assignee",
-              "before": "Yoel Martin Pardo",
-              "after": "Dewan Kabir"
-            },
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "May 28, 2026, 2:39 PM",
-              "after": "May 28, 2026, 3:09 PM"
-            }
-          ],
-          "type": "Task",
-          "isSubtask": false,
-          "assignee": "Dewan Kabir",
-          "assignedDeveloper": "Tyler Olechnowicz",
-          "status": "QA Testing (DEV)",
-          "parent": null
-        }
-      ],
-      "statusChanges": [
-        {
-          "key": "CORE-14504",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14504",
-          "summary": "Standardize Logging Service NuGet.config and add package source mapping",
-          "before": "Code Review",
-          "after": "QA Testing (DEV)",
-          "type": "Task",
-          "isSubtask": false,
-          "assignee": "Dewan Kabir",
-          "assignedDeveloper": "Tyler Olechnowicz",
-          "status": "QA Testing (DEV)",
-          "parent": null
-        }
-      ]
     }
   ],
   "schemaVersionNumber": 1,
