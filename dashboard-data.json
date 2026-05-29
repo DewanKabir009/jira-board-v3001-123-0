@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-29T01:24:38.330Z",
-  "pulledAtDisplay": "May 28, 2026, 9:24 PM",
+  "pulledAt": "2026-05-29T01:29:41.284Z",
+  "pulledAtDisplay": "May 28, 2026, 9:29 PM",
   "total": 33,
   "issues": [
     {
@@ -2002,37 +2002,28 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-29T01:19:35.394Z",
-    "previousPulledAtDisplay": "May 28, 2026, 9:19 PM",
-    "currentPulledAt": "2026-05-29T01:24:38.330Z",
-    "currentPulledAtDisplay": "May 28, 2026, 9:24 PM",
+    "previousPulledAt": "2026-05-29T01:24:38.330Z",
+    "previousPulledAtDisplay": "May 28, 2026, 9:24 PM",
+    "currentPulledAt": "2026-05-29T01:29:41.284Z",
+    "currentPulledAtDisplay": "May 28, 2026, 9:29 PM",
     "isBaseline": false,
     "added": [],
     "removed": [],
-    "updated": [
-      {
-        "key": "CORE-14440",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14440",
-        "summary": "Modify New EZL API workflow to Account for Partial Prepaid to GN - 2",
-        "changes": [
-          {
-            "field": "updatedDisplay",
-            "label": "Jira updated",
-            "before": "May 19, 2026, 9:35 AM",
-            "after": "May 28, 2026, 9:24 PM"
-          }
-        ],
-        "type": "Bug",
-        "isSubtask": false,
-        "assignee": "Nicole Greer",
-        "assignedDeveloper": "Luis Vallejo Mursuli",
-        "status": "QA Testing (DEV)",
-        "parent": null
-      }
-    ],
+    "updated": [],
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-29T01:24:38.330Z",
+      "previousPulledAtDisplay": "May 28, 2026, 9:24 PM",
+      "currentPulledAt": "2026-05-29T01:29:41.284Z",
+      "currentPulledAtDisplay": "May 28, 2026, 9:29 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-29T01:19:35.394Z",
       "previousPulledAtDisplay": "May 28, 2026, 9:19 PM",
@@ -4085,17 +4076,6 @@
       "previousPulledAtDisplay": "May 28, 2026, 4:26 AM",
       "currentPulledAt": "2026-05-28T08:32:42.132Z",
       "currentPulledAtDisplay": "May 28, 2026, 4:32 AM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-28T08:01:14.963Z",
-      "previousPulledAtDisplay": "May 28, 2026, 4:01 AM",
-      "currentPulledAt": "2026-05-28T08:26:14.820Z",
-      "currentPulledAtDisplay": "May 28, 2026, 4:26 AM",
       "isBaseline": false,
       "added": [],
       "removed": [],
