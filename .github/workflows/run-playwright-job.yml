@@ -12,6 +12,9 @@ concurrency:
   group: playwright-job-${{ github.run_id }}
   cancel-in-progress: false
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 permissions:
   contents: write
 
@@ -30,7 +33,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "24"
 
       - name: Install Playwright
         run: |
@@ -38,7 +41,15 @@ jobs:
           npx playwright install chromium
 
       - name: Run approved script
-        run: node scripts/run-playwright-job.cjs
+        run: |
+          set +e
+          node scripts/run-playwright-job.cjs
+          script_exit=$?
+          echo "PLAYWRIGHT_SCRIPT_EXIT=${script_exit}" >> "$GITHUB_ENV"
+          if [ "$script_exit" -ne 0 ]; then
+            echo "::warning::Playwright script completed with exit code ${script_exit}; evidence will still be published for dashboard review."
+          fi
+          exit 0
 
       - name: Publish job evidence
         if: always()
@@ -51,3 +62,10 @@ jobs:
           git commit -m "Record Playwright job ${job_id}" || echo "No Playwright evidence changes to commit."
           git pull --rebase origin "$GITHUB_REF_NAME"
           git push
+
+      - name: Report automation outcome
+        if: always()
+        run: |
+          if [ "${PLAYWRIGHT_SCRIPT_EXIT:-0}" -ne 0 ]; then
+            echo "::warning::Automation script reported failure; open the published View Results page for details."
+          fi
