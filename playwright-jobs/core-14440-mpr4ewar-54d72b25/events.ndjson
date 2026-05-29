@@ -1,0 +1,5 @@
+{"at":"2026-05-29T16:13:28.805Z","type":"step","detail":"Starting browser runner"}
+{"at":"2026-05-29T16:13:30.718Z","type":"step","detail":"Opening https://golfnow.atlassian.net/browse/CORE-14440"}
+{"at":"2026-05-29T16:13:33.132Z","type":"step","detail":"Capturing screenshot"}
+{"at":"2026-05-29T16:13:34.129Z","type":"step","detail":"Saving trace"}
+{"at":"2026-05-29T16:13:34.820Z","type":"complete","detail":"Playwright job completed and evidence was published."}

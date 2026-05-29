@@ -1,0 +1,5 @@
+[2026-05-29T16:13:28.805Z] step: Starting browser runner
+[2026-05-29T16:13:30.718Z] step: Opening https://golfnow.atlassian.net/browse/CORE-14440
+[2026-05-29T16:13:33.132Z] step: Capturing screenshot
+[2026-05-29T16:13:34.129Z] step: Saving trace
+[2026-05-29T16:13:34.820Z] complete: Playwright job completed and evidence was published.
