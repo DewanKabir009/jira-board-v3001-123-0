@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "playwright-job-summary/v1",
+  "jobId": "core-14440-mpr4r07u-4b94bbd7",
+  "status": "completed",
+  "message": "Playwright job completed and evidence was published.",
+  "currentStep": "Complete",
+  "ticketKey": "CORE-14440",
+  "scriptId": "dashboard-regression-smoke",
+  "scriptLabel": "Dashboard regression smoke",
+  "environment": "dev",
+  "repositorySlug": "DewanKabir009/jira-board-v3001-123-0",
+  "requestedBy": {
+    "displayName": "Codex race check B"
+  },
+  "requestedAt": "2026-05-29T16:22:13.723Z",
+  "startedAt": "2026-05-29T16:22:13.724Z",
+  "completedAt": "2026-05-29T16:22:21.248Z",
+  "durationMs": 7525,
+  "actionsUrl": "https://github.com/DewanKabir009/jira-board-v3001-123-0/actions/runs/26648854820",
+  "statusUrl": "https://dewankabir009.github.io/jira-board-v3001-123-0/playwright-jobs/core-14440-mpr4r07u-4b94bbd7/summary.json",
+  "jobUrl": "https://dewankabir009.github.io/jira-board-v3001-123-0/playwright-jobs/core-14440-mpr4r07u-4b94bbd7/",
+  "artifacts": [
+    {
+      "type": "screenshot",
+      "label": "Screenshot",
+      "href": "https://dewankabir009.github.io/jira-board-v3001-123-0/playwright-jobs/core-14440-mpr4r07u-4b94bbd7/screenshot.png"
+    },
+    {
+      "type": "trace",
+      "label": "Trace",
+      "href": "https://dewankabir009.github.io/jira-board-v3001-123-0/playwright-jobs/core-14440-mpr4r07u-4b94bbd7/trace.zip"
+    },
+    {
+      "type": "video",
+      "label": "Video",
+      "href": "https://dewankabir009.github.io/jira-board-v3001-123-0/playwright-jobs/core-14440-mpr4r07u-4b94bbd7/video.webm"
+    },
+    {
+      "type": "logs",
+      "label": "Logs",
+      "href": "https://dewankabir009.github.io/jira-board-v3001-123-0/playwright-jobs/core-14440-mpr4r07u-4b94bbd7/logs.txt"
+    },
+    {
+      "type": "events",
+      "label": "Events",
+      "href": "https://dewankabir009.github.io/jira-board-v3001-123-0/playwright-jobs/core-14440-mpr4r07u-4b94bbd7/events.ndjson"
+    }
+  ],
+  "failureReason": ""
+}
