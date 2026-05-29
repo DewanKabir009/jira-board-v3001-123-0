@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "playwright-job-summary/v1",
+  "jobId": "core-14440-mpr6wu3d-7ae5aabf",
+  "status": "completed",
+  "message": "Playwright job completed and evidence was published.",
+  "currentStep": "Complete",
+  "ticketKey": "CORE-14440",
+  "scriptId": "golfnow-central-smoke",
+  "scriptLabel": "GolfNow Central smoke check",
+  "environment": "dev",
+  "repositorySlug": "DewanKabir009/jira-board-v3001-123-0",
+  "requestedBy": {
+    "displayName": "Dashboard user"
+  },
+  "requestedAt": "2026-05-29T17:23:16.769Z",
+  "startedAt": "2026-05-29T17:23:16.770Z",
+  "completedAt": "2026-05-29T17:23:21.989Z",
+  "durationMs": 5219,
+  "actionsUrl": "https://github.com/DewanKabir009/jira-board-v3001-123-0/actions/runs/26651800197",
+  "statusUrl": "https://dewankabir009.github.io/jira-board-v3001-123-0/playwright-jobs/core-14440-mpr6wu3d-7ae5aabf/summary.json",
+  "jobUrl": "https://dewankabir009.github.io/jira-board-v3001-123-0/playwright-jobs/core-14440-mpr6wu3d-7ae5aabf/",
+  "artifacts": [
+    {
+      "type": "screenshot",
+      "label": "Screenshot",
+      "href": "https://dewankabir009.github.io/jira-board-v3001-123-0/playwright-jobs/core-14440-mpr6wu3d-7ae5aabf/screenshot.png"
+    },
+    {
+      "type": "trace",
+      "label": "Trace",
+      "href": "https://dewankabir009.github.io/jira-board-v3001-123-0/playwright-jobs/core-14440-mpr6wu3d-7ae5aabf/trace.zip"
+    },
+    {
+      "type": "video",
+      "label": "Video",
+      "href": "https://dewankabir009.github.io/jira-board-v3001-123-0/playwright-jobs/core-14440-mpr6wu3d-7ae5aabf/video.webm"
+    },
+    {
+      "type": "logs",
+      "label": "Logs",
+      "href": "https://dewankabir009.github.io/jira-board-v3001-123-0/playwright-jobs/core-14440-mpr6wu3d-7ae5aabf/logs.txt"
+    },
+    {
+      "type": "events",
+      "label": "Events",
+      "href": "https://dewankabir009.github.io/jira-board-v3001-123-0/playwright-jobs/core-14440-mpr6wu3d-7ae5aabf/events.ndjson"
+    }
+  ],
+  "failureReason": "",
+  "failureLog": ""
+}
