@@ -1,0 +1,5 @@
+{"at":"2026-05-29T16:29:42.362Z","type":"step","detail":"Starting browser runner"}
+{"at":"2026-05-29T16:29:44.109Z","type":"step","detail":"Opening https://golfnowcentral.dev.golfnow.io/"}
+{"at":"2026-05-29T16:29:46.673Z","type":"step","detail":"Capturing screenshot"}
+{"at":"2026-05-29T16:29:47.252Z","type":"step","detail":"Saving trace"}
+{"at":"2026-05-29T16:29:47.687Z","type":"complete","detail":"Playwright job completed and evidence was published."}

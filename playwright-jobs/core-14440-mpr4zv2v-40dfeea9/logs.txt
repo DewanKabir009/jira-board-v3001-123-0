@@ -1,0 +1,5 @@
+[2026-05-29T16:29:42.362Z] step: Starting browser runner
+[2026-05-29T16:29:44.109Z] step: Opening https://golfnowcentral.dev.golfnow.io/
+[2026-05-29T16:29:46.673Z] step: Capturing screenshot
+[2026-05-29T16:29:47.252Z] step: Saving trace
+[2026-05-29T16:29:47.687Z] complete: Playwright job completed and evidence was published.
