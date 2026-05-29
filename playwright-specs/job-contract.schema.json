@@ -10,6 +10,7 @@
     "ticketKey",
     "environment",
     "requestedBy",
+    "repositorySlug",
     "artifactPlan"
   ],
   "properties": {
@@ -27,6 +28,18 @@
     "release": {
       "type": "string",
       "examples": ["v3001.123.0"]
+    },
+    "jobId": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]{5,120}$"
+    },
+    "repositorySlug": {
+      "type": "string",
+      "const": "DewanKabir009/jira-board-v3001-123-0"
+    },
+    "dashboardUrl": {
+      "type": "string",
+      "format": "uri"
     },
     "environment": {
       "type": "string",

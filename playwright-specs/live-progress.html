@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PW-04 Live Progress</title>
+    <link rel="stylesheet" href="spec-page.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">PW-04</p>
+        <h1>Observable job progress</h1>
+        <p>The dashboard polls the job summary after the runner publishes it and links directly to the Actions run while execution is active.</p>
+      </header>
+      <section>
+        <h2>Implementation</h2>
+        <ul>
+          <li>Bridge response includes <code>statusUrl</code>, <code>jobUrl</code>, and <code>actionsUrl</code>.</li>
+          <li>The dashboard polls summary JSON and updates status, current step, artifacts, and failure reason.</li>
+          <li>Runner writes <code>events.ndjson</code> and <code>logs.txt</code> for deeper review.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Acceptance</h2>
+        <p>A user can tell whether a run is queued, running, complete, or failed, and can open the exact evidence without terminal access.</p>
+      </section>
+    </main>
+  </body>
+</html>

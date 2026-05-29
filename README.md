@@ -16,8 +16,11 @@ This board now hosts the 123-only Playwright automation specs under `playwright-
 - Runner contract: `playwright-specs/runner-contract.html`
 - Job schema: `playwright-specs/job-contract.schema.json`
 - Script registry: `playwright-specs/script-registry.json`
+- Runner workflow: `.github/workflows/run-playwright-job.yml`
+- Runner script: `scripts/run-playwright-job.cjs`
+- Job evidence path: `playwright-jobs/<jobId>/`
 
-The modern dashboard links to these specs from the Playwright automation playbook above Data Pull. Execution remains planned for a protected hosted runner; the static GitHub Pages board will not run arbitrary browser automation code.
+The modern dashboard links to these specs from the Playwright automation playbook above Data Pull. The dashboard can queue approved jobs through the Cloudflare bridge, while GitHub Actions owns the browser execution and publishes screenshots, video, trace, logs, events, and summary JSON back to GitHub Pages.
 
 ## GitHub Actions Refresh
 

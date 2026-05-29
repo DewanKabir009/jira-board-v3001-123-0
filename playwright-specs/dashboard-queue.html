@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PW-03 Dashboard Queue</title>
+    <link rel="stylesheet" href="spec-page.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">PW-03</p>
+        <h1>Dashboard job queue</h1>
+        <p>The 123 modern board includes a Playwright run console inside the spec playbook above Data Pull.</p>
+      </header>
+      <section>
+        <h2>Implementation</h2>
+        <ul>
+          <li>Users choose a locked script, environment, and Jira ticket key.</li>
+          <li>The board posts a schema-valid job request to <code>/playwright/jobs</code>.</li>
+          <li>The bridge returns a durable job id, Actions URL, summary JSON URL, and evidence page URL.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Acceptance</h2>
+        <p>The user can queue automation from the board and keep the job id visible without leaving the dashboard.</p>
+      </section>
+    </main>
+  </body>
+</html>

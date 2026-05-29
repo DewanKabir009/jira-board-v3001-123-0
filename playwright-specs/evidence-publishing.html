@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PW-05 Evidence Publishing</title>
+    <link rel="stylesheet" href="spec-page.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">PW-05</p>
+        <h1>Evidence publishing</h1>
+        <p>Each job writes a durable evidence folder that GitHub Pages can serve to the dashboard and to Jira reviewers.</p>
+      </header>
+      <section>
+        <h2>Published artifacts</h2>
+        <ul>
+          <li><code>summary.json</code> for dashboard polling.</li>
+          <li><code>index.html</code> for human review.</li>
+          <li><code>logs.txt</code> and <code>events.ndjson</code> for traceability.</li>
+          <li><code>screenshot.png</code>, <code>trace.zip</code>, and <code>video.webm</code> when the browser run produces them.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Acceptance</h2>
+        <p>The final job record keeps enough evidence to debug or attach to Jira without rerunning the automation blindly.</p>
+      </section>
+    </main>
+  </body>
+</html>

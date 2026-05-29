@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PW-06 Production Gates</title>
+    <link rel="stylesheet" href="spec-page.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">PW-06</p>
+        <h1>Production gates</h1>
+        <p>The pilot keeps execution limited to named users, approved scripts, allowed environments, and auditable job records.</p>
+      </header>
+      <section>
+        <h2>Controls</h2>
+        <ul>
+          <li>Cloudflare Access protects the bridge.</li>
+          <li>The bridge rejects repositories other than <code>DewanKabir009/jira-board-v3001-123-0</code> for Playwright jobs.</li>
+          <li>The runner rejects unknown scripts, unsupported environments, and malformed ticket keys.</li>
+          <li>Production targets are read-only unless a future spec explicitly approves write automation.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Acceptance</h2>
+        <p>The pilot is ready for controlled use on 123 without broadening automation access to other boards.</p>
+      </section>
+    </main>
+  </body>
+</html>

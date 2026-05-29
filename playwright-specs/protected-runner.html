@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PW-02 Protected Runner</title>
+    <link rel="stylesheet" href="spec-page.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">PW-02</p>
+        <h1>Protected Playwright runner</h1>
+        <p>Browser execution runs in GitHub Actions for the v3001.123.0 board, not inside the GitHub Pages browser tab.</p>
+      </header>
+      <section>
+        <h2>Implementation</h2>
+        <ul>
+          <li>Workflow: <code>.github/workflows/run-playwright-job.yml</code>.</li>
+          <li>Runner script: <code>scripts/run-playwright-job.cjs</code>.</li>
+          <li>Bridge entry: <code>POST /playwright/jobs</code> on the hosted Cloudflare worker.</li>
+          <li>Only scripts listed in <code>script-registry.json</code> can run.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Acceptance</h2>
+        <p>The dashboard can create a job without exposing tokens, raw Playwright code, or arbitrary target URLs to the browser.</p>
+      </section>
+    </main>
+  </body>
+</html>

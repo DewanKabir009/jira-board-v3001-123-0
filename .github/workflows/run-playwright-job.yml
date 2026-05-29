@@ -1,0 +1,54 @@
+name: Run Playwright Job
+
+on:
+  workflow_dispatch:
+    inputs:
+      job_payload:
+        description: "Validated Playwright job payload JSON"
+        required: true
+        type: string
+
+concurrency:
+  group: playwright-job-${{ github.run_id }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    name: Execute approved Playwright script
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      PLAYWRIGHT_JOB_PAYLOAD: ${{ inputs.job_payload }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Playwright
+        run: |
+          npm init -y
+          npm install --no-save playwright
+          npx playwright install chromium
+
+      - name: Run approved script
+        run: node scripts/run-playwright-job.cjs
+
+      - name: Publish job evidence
+        if: always()
+        run: |
+          set -euo pipefail
+          job_id="$(node -e 'const fs=require("fs"); const path=require("path"); const marker=path.join("playwright-jobs",".latest-job-id"); process.stdout.write(fs.existsSync(marker)?fs.readFileSync(marker,"utf8").trim():"unknown-job")')"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin "$GITHUB_REF_NAME"
+          git add "playwright-jobs/${job_id}" "playwright-jobs/.latest-job-id"
+          git commit -m "Record Playwright job ${job_id}" || echo "No Playwright evidence changes to commit."
+          git push

@@ -6,7 +6,7 @@
     {
       "id": "open-ticket-and-capture",
       "label": "Open Jira ticket and capture evidence",
-      "status": "draft",
+      "status": "ready",
       "description": "Opens the selected Jira ticket in an authenticated runner session and captures baseline page evidence.",
       "allowedEnvironments": ["dev", "stg"],
       "requiredParameters": ["ticketKey"],
@@ -15,7 +15,7 @@
     {
       "id": "golfnow-central-smoke",
       "label": "GolfNow Central smoke check",
-      "status": "planned",
+      "status": "ready",
       "description": "Runs a locked smoke script against the approved GolfNow Central environment and publishes evidence back to the job record.",
       "allowedEnvironments": ["dev"],
       "requiredParameters": ["ticketKey", "startUrl"],
@@ -24,7 +24,7 @@
     {
       "id": "dashboard-regression-smoke",
       "label": "Dashboard regression smoke",
-      "status": "planned",
+      "status": "ready",
       "description": "Verifies the 123 dashboard view toggles, filters, selected ticket panel, and Jira action links after each UI change.",
       "allowedEnvironments": ["dev", "stg"],
       "requiredParameters": ["ticketKey", "dashboardUrl"],

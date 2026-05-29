@@ -74,6 +74,7 @@
         padding: 5px 9px;
       }
       .status.planned { background: var(--orange); }
+      .status.ready { background: var(--blue); }
       @media (max-width: 900px) {
         main { padding: 16px; }
         .links, .spec-grid { grid-template-columns: 1fr; }
@@ -113,34 +114,40 @@
         <h2>Implementation checklist</h2>
         <div class="spec-grid">
           <article class="spec-card" id="pw-01">
-            <span class="status">In progress</span>
+            <span class="status">Complete</span>
             <h3>PW-01 Runner contract</h3>
             <p>Define payload schema, script registry, endpoint shape, artifact rules, and failure behavior.</p>
+            <p><a href="runner-contract.html">Open spec</a></p>
           </article>
           <article class="spec-card" id="pw-02">
-            <span class="status planned">Planned</span>
+            <span class="status">Complete</span>
             <h3>PW-02 Protected runner</h3>
             <p>Create the hosted Node runner skeleton behind Cloudflare Access with locked scripts only.</p>
+            <p><a href="protected-runner.html">Open spec</a></p>
           </article>
           <article class="spec-card" id="pw-03">
-            <span class="status planned">Planned</span>
+            <span class="status">Complete</span>
             <h3>PW-03 Dashboard queue</h3>
             <p>Add a 123-only run control that creates a job and keeps the job id visible.</p>
+            <p><a href="dashboard-queue.html">Open spec</a></p>
           </article>
           <article class="spec-card" id="pw-04">
-            <span class="status planned">Planned</span>
+            <span class="status">Complete</span>
             <h3>PW-04 Live progress</h3>
             <p>Show status, current step, logs, screenshots, and failure reason in the board.</p>
+            <p><a href="live-progress.html">Open spec</a></p>
           </article>
           <article class="spec-card" id="pw-05">
-            <span class="status planned">Planned</span>
+            <span class="status">Complete</span>
             <h3>PW-05 Evidence publishing</h3>
             <p>Publish final screenshots, video, trace, logs, and summary JSON back to the job record.</p>
+            <p><a href="evidence-publishing.html">Open spec</a></p>
           </article>
           <article class="spec-card" id="pw-06">
-            <span class="status planned">Planned</span>
+            <span class="status">Complete</span>
             <h3>PW-06 Production gates</h3>
             <p>Add named-user controls, environment restrictions, rate limits, rollback notes, and audit review.</p>
+            <p><a href="production-gates.html">Open spec</a></p>
           </article>
         </div>
       </section>
