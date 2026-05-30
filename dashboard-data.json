@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-30T08:32:28.291Z",
-  "pulledAtDisplay": "May 30, 2026, 4:32 AM",
+  "pulledAt": "2026-05-30T08:37:30.353Z",
+  "pulledAtDisplay": "May 30, 2026, 4:37 AM",
   "total": 34,
   "issues": [
     {
@@ -2064,10 +2064,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-30T08:27:26.140Z",
-    "previousPulledAtDisplay": "May 30, 2026, 4:27 AM",
-    "currentPulledAt": "2026-05-30T08:32:28.291Z",
-    "currentPulledAtDisplay": "May 30, 2026, 4:32 AM",
+    "previousPulledAt": "2026-05-30T08:32:28.291Z",
+    "previousPulledAtDisplay": "May 30, 2026, 4:32 AM",
+    "currentPulledAt": "2026-05-30T08:37:30.353Z",
+    "currentPulledAtDisplay": "May 30, 2026, 4:37 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -2075,6 +2075,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-30T08:32:28.291Z",
+      "previousPulledAtDisplay": "May 30, 2026, 4:32 AM",
+      "currentPulledAt": "2026-05-30T08:37:30.353Z",
+      "currentPulledAtDisplay": "May 30, 2026, 4:37 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-30T08:27:26.140Z",
       "previousPulledAtDisplay": "May 30, 2026, 4:27 AM",
@@ -3910,92 +3921,6 @@
       "added": [],
       "removed": [],
       "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-29T17:52:32.875Z",
-      "previousPulledAtDisplay": "May 29, 2026, 1:52 PM",
-      "currentPulledAt": "2026-05-29T18:11:20.884Z",
-      "currentPulledAtDisplay": "May 29, 2026, 2:11 PM",
-      "isBaseline": false,
-      "added": [
-        {
-          "key": "CORE-14446",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14446",
-          "summary": "Points for Actions - Anniversary Points is not working correctly",
-          "description": "We are seeing Anniversary Points PFA return either no actions or an oddly specific repeatable amount of actions submitted.\n\n2025 Results - These are good\n\n2026 Results - There looks to be some sort of validation happening that was not present in the 2025 initial run.\n\nWe have tried with and without this checkbox and the results do no improve\n\nHappy Path for Anniversary Points:\n\n- Today’s date = 5/19/26\n\n- If i created my account on 5/19/25 , i should receive anniversary points today\n\n- If i created my account on 5/20/25, i should not receive points",
-          "descriptionHtml": "<p>We are seeing Anniversary Points PFA return either no actions or an oddly specific repeatable amount of actions submitted. </p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14446/720190-image-20260505-172643.png\" alt=\"image-20260505-172643.png\" loading=\"lazy\"><figcaption>image-20260505-172643.png</figcaption></figure></div><p>2025 Results - These are good</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14446/720189-image-20260505-172805.png\" alt=\"image-20260505-172805.png\" loading=\"lazy\"><figcaption>image-20260505-172805.png</figcaption></figure></div><p>2026 Results - There looks to be some sort of validation happening that was not present in the 2025 initial run.</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14446/720191-image-20260505-172902.png\" alt=\"image-20260505-172902.png\" loading=\"lazy\"><figcaption>image-20260505-172902.png</figcaption></figure></div><p>We have tried with and without this checkbox and the results do no improve </p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14446/720188-image-20260505-173048.png\" alt=\"image-20260505-173048.png\" loading=\"lazy\"><figcaption>image-20260505-173048.png</figcaption></figure></div><p>Happy Path for Anniversary Points:</p><ul><li><p>Today’s date = 5/19/26 </p></li><li><p>If i created my account on 5/19/25 , i should receive anniversary points today</p></li><li><p>If i created my account on 5/20/25, i should not receive points</p></li></ul>",
-          "descriptionImageCount": 4,
-          "descriptionVideoCount": 0,
-          "descriptionMediaCount": 4,
-          "commentCount": 0,
-          "comments": [],
-          "lastCommentUrl": "",
-          "lastCommentDisplay": "",
-          "lastCommentAuthor": "",
-          "type": "Bug",
-          "isSubtask": false,
-          "status": "Code Review",
-          "priority": "P2",
-          "assignee": "Yoel Martin Pardo",
-          "assigneeAccountId": "625571809e7380006fb29599",
-          "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
-          "assignedDeveloper": "Raghav Kancherla",
-          "assignedDeveloperAccountId": "557058:24f78684-6276-42b4-9860-f81502d6d45e",
-          "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/initials/RK-4.png",
-          "updated": "2026-05-29T14:01:49.377-0400",
-          "updatedDisplay": "May 29, 2026, 2:01 PM",
-          "created": "2026-05-05T13:24:40.140-0400",
-          "createdDisplay": "May 5, 2026, 1:24 PM",
-          "components": [
-            "Golf.Svc.Loyalty",
-            "SQL"
-          ],
-          "fixVersions": [
-            "v3001.123.0"
-          ],
-          "resolution": "",
-          "parent": {
-            "key": "B2C-21",
-            "url": "https://golfnow.atlassian.net/browse/B2C-21",
-            "summary": "Loyalty - Points for Actions",
-            "description": "",
-            "type": "Epic",
-            "status": "Selected for Development",
-            "priority": "Normal"
-          }
-        }
-      ],
-      "removed": [],
-      "updated": [
-        {
-          "key": "CORE-14423",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14423",
-          "summary": "Troubleshoot Warden setup in DEV",
-          "changes": [
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "May 27, 2026, 5:06 PM",
-              "after": "May 29, 2026, 2:08 PM"
-            }
-          ],
-          "type": "Story",
-          "isSubtask": false,
-          "assignee": "Raghav Kancherla",
-          "assignedDeveloper": "Raghav Kancherla",
-          "status": "QA Testing (DEV)",
-          "parent": {
-            "key": "CORE-14096",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14096",
-            "summary": "ChatGPT - OpenAI Apps",
-            "description": "",
-            "type": "Epic",
-            "status": "Planning",
-            "priority": "None"
-          }
-        }
-      ],
       "statusChanges": []
     }
   ],
