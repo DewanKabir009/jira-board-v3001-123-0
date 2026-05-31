@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-05-31T17:00:59.978Z",
-  "pulledAtDisplay": "May 31, 2026, 1:00 PM",
+  "pulledAt": "2026-05-31T17:06:02.372Z",
+  "pulledAtDisplay": "May 31, 2026, 1:06 PM",
   "total": 34,
   "issues": [
     {
@@ -2064,10 +2064,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-05-31T16:55:57.570Z",
-    "previousPulledAtDisplay": "May 31, 2026, 12:55 PM",
-    "currentPulledAt": "2026-05-31T17:00:59.978Z",
-    "currentPulledAtDisplay": "May 31, 2026, 1:00 PM",
+    "previousPulledAt": "2026-05-31T17:00:59.978Z",
+    "previousPulledAtDisplay": "May 31, 2026, 1:00 PM",
+    "currentPulledAt": "2026-05-31T17:06:02.372Z",
+    "currentPulledAtDisplay": "May 31, 2026, 1:06 PM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -2075,6 +2075,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-05-31T17:00:59.978Z",
+      "previousPulledAtDisplay": "May 31, 2026, 1:00 PM",
+      "currentPulledAt": "2026-05-31T17:06:02.372Z",
+      "currentPulledAtDisplay": "May 31, 2026, 1:06 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-05-31T16:55:57.570Z",
       "previousPulledAtDisplay": "May 31, 2026, 12:55 PM",
@@ -3906,17 +3917,6 @@
       "previousPulledAtDisplay": "May 30, 2026, 9:32 PM",
       "currentPulledAt": "2026-05-31T01:37:41.266Z",
       "currentPulledAtDisplay": "May 30, 2026, 9:37 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-31T01:27:35.864Z",
-      "previousPulledAtDisplay": "May 30, 2026, 9:27 PM",
-      "currentPulledAt": "2026-05-31T01:32:38.598Z",
-      "currentPulledAtDisplay": "May 30, 2026, 9:32 PM",
       "isBaseline": false,
       "added": [],
       "removed": [],
