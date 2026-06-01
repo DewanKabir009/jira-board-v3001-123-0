@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-06-01T14:35:00.593Z",
-  "pulledAtDisplay": "Jun 1, 2026, 10:35 AM",
+  "pulledAt": "2026-06-01T14:40:03.458Z",
+  "pulledAtDisplay": "Jun 1, 2026, 10:40 AM",
   "total": 35,
   "issues": [
     {
@@ -24,16 +24,16 @@
       "lastCommentAuthor": "",
       "type": "Bug",
       "isSubtask": false,
-      "status": "Pending Deployment (DEV)",
+      "status": "QA Testing (DEV)",
       "priority": "P0",
-      "assignee": "Raghav Kancherla",
-      "assigneeAccountId": "557058:24f78684-6276-42b4-9860-f81502d6d45e",
-      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/initials/RK-4.png",
+      "assignee": "Dewan Kabir",
+      "assigneeAccountId": "630fb06bb433b060db559bdb",
+      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
       "assignedDeveloper": "Raghav Kancherla",
       "assignedDeveloperAccountId": "557058:24f78684-6276-42b4-9860-f81502d6d45e",
       "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/initials/RK-4.png",
-      "updated": "2026-06-01T09:58:02.605-0400",
-      "updatedDisplay": "Jun 1, 2026, 9:58 AM",
+      "updated": "2026-06-01T10:35:16.449-0400",
+      "updatedDisplay": "Jun 1, 2026, 10:35 AM",
       "created": "2026-05-27T17:02:13.423-0400",
       "createdDisplay": "May 27, 2026, 5:02 PM",
       "components": [
@@ -2109,17 +2109,152 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-06-01T14:29:57.809Z",
-    "previousPulledAtDisplay": "Jun 1, 2026, 10:29 AM",
-    "currentPulledAt": "2026-06-01T14:35:00.593Z",
-    "currentPulledAtDisplay": "Jun 1, 2026, 10:35 AM",
+    "previousPulledAt": "2026-06-01T14:35:00.593Z",
+    "previousPulledAtDisplay": "Jun 1, 2026, 10:35 AM",
+    "currentPulledAt": "2026-06-01T14:40:03.458Z",
+    "currentPulledAtDisplay": "Jun 1, 2026, 10:40 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
-    "updated": [],
-    "statusChanges": []
+    "updated": [
+      {
+        "key": "CORE-14502",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14502",
+        "summary": "Duplicate records returning for GetProductSubscription response",
+        "changes": [
+          {
+            "field": "status",
+            "label": "Status",
+            "before": "Pending Deployment (DEV)",
+            "after": "QA Testing (DEV)"
+          },
+          {
+            "field": "assignee",
+            "label": "Assignee",
+            "before": "Raghav Kancherla",
+            "after": "Dewan Kabir"
+          },
+          {
+            "field": "updatedDisplay",
+            "label": "Jira updated",
+            "before": "Jun 1, 2026, 9:58 AM",
+            "after": "Jun 1, 2026, 10:35 AM"
+          }
+        ],
+        "type": "Bug",
+        "isSubtask": false,
+        "assignee": "Dewan Kabir",
+        "assignedDeveloper": "Raghav Kancherla",
+        "status": "QA Testing (DEV)",
+        "parent": {
+          "key": "B2C-70",
+          "url": "https://golfnow.atlassian.net/browse/B2C-70",
+          "summary": "NY Cancellation Validation",
+          "description": "",
+          "type": "Epic",
+          "status": "Backlog",
+          "priority": "None"
+        }
+      }
+    ],
+    "statusChanges": [
+      {
+        "key": "CORE-14502",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14502",
+        "summary": "Duplicate records returning for GetProductSubscription response",
+        "before": "Pending Deployment (DEV)",
+        "after": "QA Testing (DEV)",
+        "type": "Bug",
+        "isSubtask": false,
+        "assignee": "Dewan Kabir",
+        "assignedDeveloper": "Raghav Kancherla",
+        "status": "QA Testing (DEV)",
+        "parent": {
+          "key": "B2C-70",
+          "url": "https://golfnow.atlassian.net/browse/B2C-70",
+          "summary": "NY Cancellation Validation",
+          "description": "",
+          "type": "Epic",
+          "status": "Backlog",
+          "priority": "None"
+        }
+      }
+    ]
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-06-01T14:35:00.593Z",
+      "previousPulledAtDisplay": "Jun 1, 2026, 10:35 AM",
+      "currentPulledAt": "2026-06-01T14:40:03.458Z",
+      "currentPulledAtDisplay": "Jun 1, 2026, 10:40 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [
+        {
+          "key": "CORE-14502",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14502",
+          "summary": "Duplicate records returning for GetProductSubscription response",
+          "changes": [
+            {
+              "field": "status",
+              "label": "Status",
+              "before": "Pending Deployment (DEV)",
+              "after": "QA Testing (DEV)"
+            },
+            {
+              "field": "assignee",
+              "label": "Assignee",
+              "before": "Raghav Kancherla",
+              "after": "Dewan Kabir"
+            },
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "Jun 1, 2026, 9:58 AM",
+              "after": "Jun 1, 2026, 10:35 AM"
+            }
+          ],
+          "type": "Bug",
+          "isSubtask": false,
+          "assignee": "Dewan Kabir",
+          "assignedDeveloper": "Raghav Kancherla",
+          "status": "QA Testing (DEV)",
+          "parent": {
+            "key": "B2C-70",
+            "url": "https://golfnow.atlassian.net/browse/B2C-70",
+            "summary": "NY Cancellation Validation",
+            "description": "",
+            "type": "Epic",
+            "status": "Backlog",
+            "priority": "None"
+          }
+        }
+      ],
+      "statusChanges": [
+        {
+          "key": "CORE-14502",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14502",
+          "summary": "Duplicate records returning for GetProductSubscription response",
+          "before": "Pending Deployment (DEV)",
+          "after": "QA Testing (DEV)",
+          "type": "Bug",
+          "isSubtask": false,
+          "assignee": "Dewan Kabir",
+          "assignedDeveloper": "Raghav Kancherla",
+          "status": "QA Testing (DEV)",
+          "parent": {
+            "key": "B2C-70",
+            "url": "https://golfnow.atlassian.net/browse/B2C-70",
+            "summary": "NY Cancellation Validation",
+            "description": "",
+            "type": "Epic",
+            "status": "Backlog",
+            "priority": "None"
+          }
+        }
+      ]
+    },
     {
       "previousPulledAt": "2026-06-01T14:29:57.809Z",
       "previousPulledAtDisplay": "Jun 1, 2026, 10:29 AM",
@@ -2238,9 +2373,9 @@
           ],
           "type": "Bug",
           "isSubtask": false,
-          "assignee": "Raghav Kancherla",
+          "assignee": "Dewan Kabir",
           "assignedDeveloper": "Raghav Kancherla",
-          "status": "Pending Deployment (DEV)",
+          "status": "QA Testing (DEV)",
           "parent": {
             "key": "B2C-70",
             "url": "https://golfnow.atlassian.net/browse/B2C-70",
@@ -2261,9 +2396,9 @@
           "after": "Pending Deployment (DEV)",
           "type": "Bug",
           "isSubtask": false,
-          "assignee": "Raghav Kancherla",
+          "assignee": "Dewan Kabir",
           "assignedDeveloper": "Raghav Kancherla",
-          "status": "Pending Deployment (DEV)",
+          "status": "QA Testing (DEV)",
           "parent": {
             "key": "B2C-70",
             "url": "https://golfnow.atlassian.net/browse/B2C-70",
@@ -2299,9 +2434,9 @@
           "lastCommentAuthor": "",
           "type": "Bug",
           "isSubtask": false,
-          "status": "Pending Deployment (DEV)",
+          "status": "QA Testing (DEV)",
           "priority": "P0",
-          "assignee": "Raghav Kancherla",
+          "assignee": "Dewan Kabir",
           "assigneeAccountId": "557058:24f78684-6276-42b4-9860-f81502d6d45e",
           "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/initials/RK-4.png",
           "assignedDeveloper": "Raghav Kancherla",
@@ -4125,17 +4260,6 @@
       "previousPulledAtDisplay": "May 31, 2026, 4:45 PM",
       "currentPulledAt": "2026-05-31T20:50:50.938Z",
       "currentPulledAtDisplay": "May 31, 2026, 4:50 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-31T20:40:46.900Z",
-      "previousPulledAtDisplay": "May 31, 2026, 4:40 PM",
-      "currentPulledAt": "2026-05-31T20:45:48.887Z",
-      "currentPulledAtDisplay": "May 31, 2026, 4:45 PM",
       "isBaseline": false,
       "added": [],
       "removed": [],
