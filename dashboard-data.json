@@ -4,10 +4,56 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-06-01T11:45:57.154Z",
-  "pulledAtDisplay": "Jun 1, 2026, 7:45 AM",
+  "pulledAt": "2026-06-01T12:10:57.206Z",
+  "pulledAtDisplay": "Jun 1, 2026, 8:10 AM",
   "total": 34,
   "issues": [
+    {
+      "key": "CORE-14446",
+      "url": "https://golfnow.atlassian.net/browse/CORE-14446",
+      "summary": "Points for Actions - Anniversary Points is not working correctly",
+      "description": "We are seeing Anniversary Points PFA return either no actions or an oddly specific repeatable amount of actions submitted.\n\n2025 Results - These are good\n\n2026 Results - There looks to be some sort of validation happening that was not present in the 2025 initial run.\n\nWe have tried with and without this checkbox and the results do no improve\n\nHappy Path for Anniversary Points:\n\n- Today’s date = 5/19/26\n\n- If i created my account on 5/19/25 , i should receive anniversary points today\n\n- If i created my account on 5/20/25, i should not receive points",
+      "descriptionHtml": "<p>We are seeing Anniversary Points PFA return either no actions or an oddly specific repeatable amount of actions submitted. </p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14446/720190-image-20260505-172643.png\" alt=\"image-20260505-172643.png\" loading=\"lazy\"><figcaption>image-20260505-172643.png</figcaption></figure></div><p>2025 Results - These are good</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14446/720189-image-20260505-172805.png\" alt=\"image-20260505-172805.png\" loading=\"lazy\"><figcaption>image-20260505-172805.png</figcaption></figure></div><p>2026 Results - There looks to be some sort of validation happening that was not present in the 2025 initial run.</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14446/720191-image-20260505-172902.png\" alt=\"image-20260505-172902.png\" loading=\"lazy\"><figcaption>image-20260505-172902.png</figcaption></figure></div><p>We have tried with and without this checkbox and the results do no improve </p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14446/720188-image-20260505-173048.png\" alt=\"image-20260505-173048.png\" loading=\"lazy\"><figcaption>image-20260505-173048.png</figcaption></figure></div><p>Happy Path for Anniversary Points:</p><ul><li><p>Today’s date = 5/19/26 </p></li><li><p>If i created my account on 5/19/25 , i should receive anniversary points today</p></li><li><p>If i created my account on 5/20/25, i should not receive points</p></li></ul>",
+      "descriptionImageCount": 4,
+      "descriptionVideoCount": 0,
+      "descriptionMediaCount": 4,
+      "commentCount": 0,
+      "comments": [],
+      "lastCommentUrl": "",
+      "lastCommentDisplay": "",
+      "lastCommentAuthor": "",
+      "type": "Bug",
+      "isSubtask": false,
+      "status": "Pending Deployment (DEV)",
+      "priority": "P2",
+      "assignee": "Raghav Kancherla",
+      "assigneeAccountId": "557058:24f78684-6276-42b4-9860-f81502d6d45e",
+      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/initials/RK-4.png",
+      "assignedDeveloper": "Raghav Kancherla",
+      "assignedDeveloperAccountId": "557058:24f78684-6276-42b4-9860-f81502d6d45e",
+      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/initials/RK-4.png",
+      "updated": "2026-06-01T08:05:37.205-0400",
+      "updatedDisplay": "Jun 1, 2026, 8:05 AM",
+      "created": "2026-05-05T13:24:40.140-0400",
+      "createdDisplay": "May 5, 2026, 1:24 PM",
+      "components": [
+        "Golf.Svc.Loyalty",
+        "SQL"
+      ],
+      "fixVersions": [
+        "v3001.123.0"
+      ],
+      "resolution": "",
+      "parent": {
+        "key": "B2C-21",
+        "url": "https://golfnow.atlassian.net/browse/B2C-21",
+        "summary": "Loyalty - Points for Actions",
+        "description": "",
+        "type": "Epic",
+        "status": "Selected for Development",
+        "priority": "Normal"
+      }
+    },
     {
       "key": "CORE-14423",
       "url": "https://golfnow.atlassian.net/browse/CORE-14423",
@@ -67,52 +113,6 @@
         "type": "Epic",
         "status": "Planning",
         "priority": "None"
-      }
-    },
-    {
-      "key": "CORE-14446",
-      "url": "https://golfnow.atlassian.net/browse/CORE-14446",
-      "summary": "Points for Actions - Anniversary Points is not working correctly",
-      "description": "We are seeing Anniversary Points PFA return either no actions or an oddly specific repeatable amount of actions submitted.\n\n2025 Results - These are good\n\n2026 Results - There looks to be some sort of validation happening that was not present in the 2025 initial run.\n\nWe have tried with and without this checkbox and the results do no improve\n\nHappy Path for Anniversary Points:\n\n- Today’s date = 5/19/26\n\n- If i created my account on 5/19/25 , i should receive anniversary points today\n\n- If i created my account on 5/20/25, i should not receive points",
-      "descriptionHtml": "<p>We are seeing Anniversary Points PFA return either no actions or an oddly specific repeatable amount of actions submitted. </p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14446/720190-image-20260505-172643.png\" alt=\"image-20260505-172643.png\" loading=\"lazy\"><figcaption>image-20260505-172643.png</figcaption></figure></div><p>2025 Results - These are good</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14446/720189-image-20260505-172805.png\" alt=\"image-20260505-172805.png\" loading=\"lazy\"><figcaption>image-20260505-172805.png</figcaption></figure></div><p>2026 Results - There looks to be some sort of validation happening that was not present in the 2025 initial run.</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14446/720191-image-20260505-172902.png\" alt=\"image-20260505-172902.png\" loading=\"lazy\"><figcaption>image-20260505-172902.png</figcaption></figure></div><p>We have tried with and without this checkbox and the results do no improve </p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14446/720188-image-20260505-173048.png\" alt=\"image-20260505-173048.png\" loading=\"lazy\"><figcaption>image-20260505-173048.png</figcaption></figure></div><p>Happy Path for Anniversary Points:</p><ul><li><p>Today’s date = 5/19/26 </p></li><li><p>If i created my account on 5/19/25 , i should receive anniversary points today</p></li><li><p>If i created my account on 5/20/25, i should not receive points</p></li></ul>",
-      "descriptionImageCount": 4,
-      "descriptionVideoCount": 0,
-      "descriptionMediaCount": 4,
-      "commentCount": 0,
-      "comments": [],
-      "lastCommentUrl": "",
-      "lastCommentDisplay": "",
-      "lastCommentAuthor": "",
-      "type": "Bug",
-      "isSubtask": false,
-      "status": "Code Review",
-      "priority": "P2",
-      "assignee": "Yoel Martin Pardo",
-      "assigneeAccountId": "625571809e7380006fb29599",
-      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/625571809e7380006fb29599/0884fec7-a707-4919-8f07-c6d0e05dcc62/32",
-      "assignedDeveloper": "Raghav Kancherla",
-      "assignedDeveloperAccountId": "557058:24f78684-6276-42b4-9860-f81502d6d45e",
-      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/initials/RK-4.png",
-      "updated": "2026-05-29T14:01:49.377-0400",
-      "updatedDisplay": "May 29, 2026, 2:01 PM",
-      "created": "2026-05-05T13:24:40.140-0400",
-      "createdDisplay": "May 5, 2026, 1:24 PM",
-      "components": [
-        "Golf.Svc.Loyalty",
-        "SQL"
-      ],
-      "fixVersions": [
-        "v3001.123.0"
-      ],
-      "resolution": "",
-      "parent": {
-        "key": "B2C-21",
-        "url": "https://golfnow.atlassian.net/browse/B2C-21",
-        "summary": "Loyalty - Points for Actions",
-        "description": "",
-        "type": "Epic",
-        "status": "Selected for Development",
-        "priority": "Normal"
       }
     },
     {
@@ -2064,17 +2064,152 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-06-01T11:20:55.578Z",
-    "previousPulledAtDisplay": "Jun 1, 2026, 7:20 AM",
-    "currentPulledAt": "2026-06-01T11:45:57.154Z",
-    "currentPulledAtDisplay": "Jun 1, 2026, 7:45 AM",
+    "previousPulledAt": "2026-06-01T11:45:57.154Z",
+    "previousPulledAtDisplay": "Jun 1, 2026, 7:45 AM",
+    "currentPulledAt": "2026-06-01T12:10:57.206Z",
+    "currentPulledAtDisplay": "Jun 1, 2026, 8:10 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
-    "updated": [],
-    "statusChanges": []
+    "updated": [
+      {
+        "key": "CORE-14446",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14446",
+        "summary": "Points for Actions - Anniversary Points is not working correctly",
+        "changes": [
+          {
+            "field": "status",
+            "label": "Status",
+            "before": "Code Review",
+            "after": "Pending Deployment (DEV)"
+          },
+          {
+            "field": "assignee",
+            "label": "Assignee",
+            "before": "Yoel Martin Pardo",
+            "after": "Raghav Kancherla"
+          },
+          {
+            "field": "updatedDisplay",
+            "label": "Jira updated",
+            "before": "May 29, 2026, 2:01 PM",
+            "after": "Jun 1, 2026, 8:05 AM"
+          }
+        ],
+        "type": "Bug",
+        "isSubtask": false,
+        "assignee": "Raghav Kancherla",
+        "assignedDeveloper": "Raghav Kancherla",
+        "status": "Pending Deployment (DEV)",
+        "parent": {
+          "key": "B2C-21",
+          "url": "https://golfnow.atlassian.net/browse/B2C-21",
+          "summary": "Loyalty - Points for Actions",
+          "description": "",
+          "type": "Epic",
+          "status": "Selected for Development",
+          "priority": "Normal"
+        }
+      }
+    ],
+    "statusChanges": [
+      {
+        "key": "CORE-14446",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14446",
+        "summary": "Points for Actions - Anniversary Points is not working correctly",
+        "before": "Code Review",
+        "after": "Pending Deployment (DEV)",
+        "type": "Bug",
+        "isSubtask": false,
+        "assignee": "Raghav Kancherla",
+        "assignedDeveloper": "Raghav Kancherla",
+        "status": "Pending Deployment (DEV)",
+        "parent": {
+          "key": "B2C-21",
+          "url": "https://golfnow.atlassian.net/browse/B2C-21",
+          "summary": "Loyalty - Points for Actions",
+          "description": "",
+          "type": "Epic",
+          "status": "Selected for Development",
+          "priority": "Normal"
+        }
+      }
+    ]
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-06-01T11:45:57.154Z",
+      "previousPulledAtDisplay": "Jun 1, 2026, 7:45 AM",
+      "currentPulledAt": "2026-06-01T12:10:57.206Z",
+      "currentPulledAtDisplay": "Jun 1, 2026, 8:10 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [
+        {
+          "key": "CORE-14446",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14446",
+          "summary": "Points for Actions - Anniversary Points is not working correctly",
+          "changes": [
+            {
+              "field": "status",
+              "label": "Status",
+              "before": "Code Review",
+              "after": "Pending Deployment (DEV)"
+            },
+            {
+              "field": "assignee",
+              "label": "Assignee",
+              "before": "Yoel Martin Pardo",
+              "after": "Raghav Kancherla"
+            },
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "May 29, 2026, 2:01 PM",
+              "after": "Jun 1, 2026, 8:05 AM"
+            }
+          ],
+          "type": "Bug",
+          "isSubtask": false,
+          "assignee": "Raghav Kancherla",
+          "assignedDeveloper": "Raghav Kancherla",
+          "status": "Pending Deployment (DEV)",
+          "parent": {
+            "key": "B2C-21",
+            "url": "https://golfnow.atlassian.net/browse/B2C-21",
+            "summary": "Loyalty - Points for Actions",
+            "description": "",
+            "type": "Epic",
+            "status": "Selected for Development",
+            "priority": "Normal"
+          }
+        }
+      ],
+      "statusChanges": [
+        {
+          "key": "CORE-14446",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14446",
+          "summary": "Points for Actions - Anniversary Points is not working correctly",
+          "before": "Code Review",
+          "after": "Pending Deployment (DEV)",
+          "type": "Bug",
+          "isSubtask": false,
+          "assignee": "Raghav Kancherla",
+          "assignedDeveloper": "Raghav Kancherla",
+          "status": "Pending Deployment (DEV)",
+          "parent": {
+            "key": "B2C-21",
+            "url": "https://golfnow.atlassian.net/browse/B2C-21",
+            "summary": "Loyalty - Points for Actions",
+            "description": "",
+            "type": "Epic",
+            "status": "Selected for Development",
+            "priority": "Normal"
+          }
+        }
+      ]
+    },
     {
       "previousPulledAt": "2026-06-01T11:20:55.578Z",
       "previousPulledAtDisplay": "Jun 1, 2026, 7:20 AM",
@@ -3906,17 +4041,6 @@
       "previousPulledAtDisplay": "May 31, 2026, 2:50 PM",
       "currentPulledAt": "2026-05-31T18:53:13.856Z",
       "currentPulledAtDisplay": "May 31, 2026, 2:53 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-05-31T18:45:06.157Z",
-      "previousPulledAtDisplay": "May 31, 2026, 2:45 PM",
-      "currentPulledAt": "2026-05-31T18:50:08.640Z",
-      "currentPulledAtDisplay": "May 31, 2026, 2:50 PM",
       "isBaseline": false,
       "added": [],
       "removed": [],
