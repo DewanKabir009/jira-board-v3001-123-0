@@ -4,10 +4,56 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-06-02T16:20:52.037Z",
-  "pulledAtDisplay": "Jun 2, 2026, 12:20 PM",
+  "pulledAt": "2026-06-02T16:46:14.004Z",
+  "pulledAtDisplay": "Jun 2, 2026, 12:46 PM",
   "total": 35,
   "issues": [
+    {
+      "key": "CORE-14446",
+      "url": "https://golfnow.atlassian.net/browse/CORE-14446",
+      "summary": "Points for Actions - Anniversary Points is not working correctly",
+      "description": "We are seeing Anniversary Points PFA return either no actions or an oddly specific repeatable amount of actions submitted.\n\n2025 Results - These are good\n\n2026 Results - There looks to be some sort of validation happening that was not present in the 2025 initial run.\n\nWe have tried with and without this checkbox and the results do no improve\n\nHappy Path for Anniversary Points:\n\n- Today’s date = 5/19/26\n\n- If i created my account on 5/19/25 , i should receive anniversary points today\n\n- If i created my account on 5/20/25, i should not receive points",
+      "descriptionHtml": "<p>We are seeing Anniversary Points PFA return either no actions or an oddly specific repeatable amount of actions submitted. </p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14446/720190-image-20260505-172643.png\" alt=\"image-20260505-172643.png\" loading=\"lazy\"><figcaption>image-20260505-172643.png</figcaption></figure></div><p>2025 Results - These are good</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14446/720189-image-20260505-172805.png\" alt=\"image-20260505-172805.png\" loading=\"lazy\"><figcaption>image-20260505-172805.png</figcaption></figure></div><p>2026 Results - There looks to be some sort of validation happening that was not present in the 2025 initial run.</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14446/720191-image-20260505-172902.png\" alt=\"image-20260505-172902.png\" loading=\"lazy\"><figcaption>image-20260505-172902.png</figcaption></figure></div><p>We have tried with and without this checkbox and the results do no improve </p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14446/720188-image-20260505-173048.png\" alt=\"image-20260505-173048.png\" loading=\"lazy\"><figcaption>image-20260505-173048.png</figcaption></figure></div><p>Happy Path for Anniversary Points:</p><ul><li><p>Today’s date = 5/19/26 </p></li><li><p>If i created my account on 5/19/25 , i should receive anniversary points today</p></li><li><p>If i created my account on 5/20/25, i should not receive points</p></li></ul>",
+      "descriptionImageCount": 4,
+      "descriptionVideoCount": 0,
+      "descriptionMediaCount": 4,
+      "commentCount": 0,
+      "comments": [],
+      "lastCommentUrl": "",
+      "lastCommentDisplay": "",
+      "lastCommentAuthor": "",
+      "type": "Bug",
+      "isSubtask": false,
+      "status": "QA Testing (DEV)",
+      "priority": "P2",
+      "assignee": "Dewan Kabir",
+      "assigneeAccountId": "630fb06bb433b060db559bdb",
+      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
+      "assignedDeveloper": "Raghav Kancherla",
+      "assignedDeveloperAccountId": "557058:24f78684-6276-42b4-9860-f81502d6d45e",
+      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/initials/RK-4.png",
+      "updated": "2026-06-02T12:38:24.198-0400",
+      "updatedDisplay": "Jun 2, 2026, 12:38 PM",
+      "created": "2026-05-05T13:24:40.140-0400",
+      "createdDisplay": "May 5, 2026, 1:24 PM",
+      "components": [
+        "Golf.Svc.Loyalty",
+        "SQL"
+      ],
+      "fixVersions": [
+        "v3001.123.0"
+      ],
+      "resolution": "",
+      "parent": {
+        "key": "B2C-21",
+        "url": "https://golfnow.atlassian.net/browse/B2C-21",
+        "summary": "Loyalty - Points for Actions",
+        "description": "",
+        "type": "Epic",
+        "status": "Selected for Development",
+        "priority": "Normal"
+      }
+    },
     {
       "key": "CORE-14480",
       "url": "https://golfnow.atlassian.net/browse/CORE-14480",
@@ -510,52 +556,6 @@
       ],
       "resolution": "",
       "parent": null
-    },
-    {
-      "key": "CORE-14446",
-      "url": "https://golfnow.atlassian.net/browse/CORE-14446",
-      "summary": "Points for Actions - Anniversary Points is not working correctly",
-      "description": "We are seeing Anniversary Points PFA return either no actions or an oddly specific repeatable amount of actions submitted.\n\n2025 Results - These are good\n\n2026 Results - There looks to be some sort of validation happening that was not present in the 2025 initial run.\n\nWe have tried with and without this checkbox and the results do no improve\n\nHappy Path for Anniversary Points:\n\n- Today’s date = 5/19/26\n\n- If i created my account on 5/19/25 , i should receive anniversary points today\n\n- If i created my account on 5/20/25, i should not receive points",
-      "descriptionHtml": "<p>We are seeing Anniversary Points PFA return either no actions or an oddly specific repeatable amount of actions submitted. </p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14446/720190-image-20260505-172643.png\" alt=\"image-20260505-172643.png\" loading=\"lazy\"><figcaption>image-20260505-172643.png</figcaption></figure></div><p>2025 Results - These are good</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14446/720189-image-20260505-172805.png\" alt=\"image-20260505-172805.png\" loading=\"lazy\"><figcaption>image-20260505-172805.png</figcaption></figure></div><p>2026 Results - There looks to be some sort of validation happening that was not present in the 2025 initial run.</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14446/720191-image-20260505-172902.png\" alt=\"image-20260505-172902.png\" loading=\"lazy\"><figcaption>image-20260505-172902.png</figcaption></figure></div><p>We have tried with and without this checkbox and the results do no improve </p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14446/720188-image-20260505-173048.png\" alt=\"image-20260505-173048.png\" loading=\"lazy\"><figcaption>image-20260505-173048.png</figcaption></figure></div><p>Happy Path for Anniversary Points:</p><ul><li><p>Today’s date = 5/19/26 </p></li><li><p>If i created my account on 5/19/25 , i should receive anniversary points today</p></li><li><p>If i created my account on 5/20/25, i should not receive points</p></li></ul>",
-      "descriptionImageCount": 4,
-      "descriptionVideoCount": 0,
-      "descriptionMediaCount": 4,
-      "commentCount": 0,
-      "comments": [],
-      "lastCommentUrl": "",
-      "lastCommentDisplay": "",
-      "lastCommentAuthor": "",
-      "type": "Bug",
-      "isSubtask": false,
-      "status": "QA Testing (DEV)",
-      "priority": "P2",
-      "assignee": "Dewan Kabir",
-      "assigneeAccountId": "630fb06bb433b060db559bdb",
-      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
-      "assignedDeveloper": "Raghav Kancherla",
-      "assignedDeveloperAccountId": "557058:24f78684-6276-42b4-9860-f81502d6d45e",
-      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/initials/RK-4.png",
-      "updated": "2026-06-01T12:18:48.714-0400",
-      "updatedDisplay": "Jun 1, 2026, 12:18 PM",
-      "created": "2026-05-05T13:24:40.140-0400",
-      "createdDisplay": "May 5, 2026, 1:24 PM",
-      "components": [
-        "Golf.Svc.Loyalty",
-        "SQL"
-      ],
-      "fixVersions": [
-        "v3001.123.0"
-      ],
-      "resolution": "",
-      "parent": {
-        "key": "B2C-21",
-        "url": "https://golfnow.atlassian.net/browse/B2C-21",
-        "summary": "Loyalty - Points for Actions",
-        "description": "",
-        "type": "Epic",
-        "status": "Selected for Development",
-        "priority": "Normal"
-      }
     },
     {
       "key": "CORE-14304",
@@ -2216,171 +2216,84 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-06-02T16:11:04.249Z",
-    "previousPulledAtDisplay": "Jun 2, 2026, 12:11 PM",
-    "currentPulledAt": "2026-06-02T16:20:52.037Z",
-    "currentPulledAtDisplay": "Jun 2, 2026, 12:20 PM",
+    "previousPulledAt": "2026-06-02T16:20:52.037Z",
+    "previousPulledAtDisplay": "Jun 2, 2026, 12:20 PM",
+    "currentPulledAt": "2026-06-02T16:46:14.004Z",
+    "currentPulledAtDisplay": "Jun 2, 2026, 12:46 PM",
     "isBaseline": false,
     "added": [],
     "removed": [],
     "updated": [
       {
-        "key": "CORE-14480",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14480",
-        "summary": "Upgrade vulnerable and outdated NuGet package(s) identified by Snyk in Logging Service (golf-svc-logging)",
+        "key": "CORE-14446",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14446",
+        "summary": "Points for Actions - Anniversary Points is not working correctly",
         "changes": [
-          {
-            "field": "status",
-            "label": "Status",
-            "before": "QA Testing (DEV)",
-            "after": "Regression Testing (STG)"
-          },
           {
             "field": "updatedDisplay",
             "label": "Jira updated",
-            "before": "Jun 1, 2026, 10:59 AM",
-            "after": "Jun 2, 2026, 12:18 PM"
+            "before": "Jun 1, 2026, 12:18 PM",
+            "after": "Jun 2, 2026, 12:38 PM"
           }
         ],
-        "type": "Security Alert",
+        "type": "Bug",
         "isSubtask": false,
         "assignee": "Dewan Kabir",
-        "assignedDeveloper": "Tyler Olechnowicz",
-        "status": "Regression Testing (STG)",
-        "parent": null
-      },
-      {
-        "key": "CORE-14471",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14471",
-        "summary": "Upgrade vulnerable NuGet package(s) identified by Snyk in Inventory Management API (gn-svc-inventorymanagement",
-        "changes": [
-          {
-            "field": "status",
-            "label": "Status",
-            "before": "QA Testing (DEV)",
-            "after": "Regression Testing (STG)"
-          },
-          {
-            "field": "updatedDisplay",
-            "label": "Jira updated",
-            "before": "Jun 1, 2026, 10:59 AM",
-            "after": "Jun 2, 2026, 12:17 PM"
-          }
-        ],
-        "type": "Security Alert",
-        "isSubtask": false,
-        "assignee": "Dewan Kabir",
-        "assignedDeveloper": "Tyler Olechnowicz",
-        "status": "Regression Testing (STG)",
-        "parent": null
-      },
-      {
-        "key": "CORE-14501",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14501",
-        "summary": "Standardize Commerce Proxy API NuGet and build configuration across environments",
-        "changes": [
-          {
-            "field": "status",
-            "label": "Status",
-            "before": "QA Testing (DEV)",
-            "after": "Regression Testing (STG)"
-          },
-          {
-            "field": "updatedDisplay",
-            "label": "Jira updated",
-            "before": "Jun 1, 2026, 10:59 AM",
-            "after": "Jun 2, 2026, 12:15 PM"
-          }
-        ],
-        "type": "Task",
-        "isSubtask": false,
-        "assignee": "Dewan Kabir",
-        "assignedDeveloper": "Tyler Olechnowicz",
-        "status": "Regression Testing (STG)",
-        "parent": null
-      },
-      {
-        "key": "CORE-14504",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14504",
-        "summary": "Standardize Logging Service NuGet.config and add package source mapping",
-        "changes": [
-          {
-            "field": "status",
-            "label": "Status",
-            "before": "QA Testing (DEV)",
-            "after": "Regression Testing (STG)"
-          },
-          {
-            "field": "updatedDisplay",
-            "label": "Jira updated",
-            "before": "Jun 1, 2026, 10:59 AM",
-            "after": "Jun 2, 2026, 12:13 PM"
-          }
-        ],
-        "type": "Task",
-        "isSubtask": false,
-        "assignee": "Dewan Kabir",
-        "assignedDeveloper": "Tyler Olechnowicz",
-        "status": "Regression Testing (STG)",
-        "parent": null
+        "assignedDeveloper": "Raghav Kancherla",
+        "status": "QA Testing (DEV)",
+        "parent": {
+          "key": "B2C-21",
+          "url": "https://golfnow.atlassian.net/browse/B2C-21",
+          "summary": "Loyalty - Points for Actions",
+          "description": "",
+          "type": "Epic",
+          "status": "Selected for Development",
+          "priority": "Normal"
+        }
       }
     ],
-    "statusChanges": [
-      {
-        "key": "CORE-14480",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14480",
-        "summary": "Upgrade vulnerable and outdated NuGet package(s) identified by Snyk in Logging Service (golf-svc-logging)",
-        "before": "QA Testing (DEV)",
-        "after": "Regression Testing (STG)",
-        "type": "Security Alert",
-        "isSubtask": false,
-        "assignee": "Dewan Kabir",
-        "assignedDeveloper": "Tyler Olechnowicz",
-        "status": "Regression Testing (STG)",
-        "parent": null
-      },
-      {
-        "key": "CORE-14471",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14471",
-        "summary": "Upgrade vulnerable NuGet package(s) identified by Snyk in Inventory Management API (gn-svc-inventorymanagement",
-        "before": "QA Testing (DEV)",
-        "after": "Regression Testing (STG)",
-        "type": "Security Alert",
-        "isSubtask": false,
-        "assignee": "Dewan Kabir",
-        "assignedDeveloper": "Tyler Olechnowicz",
-        "status": "Regression Testing (STG)",
-        "parent": null
-      },
-      {
-        "key": "CORE-14501",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14501",
-        "summary": "Standardize Commerce Proxy API NuGet and build configuration across environments",
-        "before": "QA Testing (DEV)",
-        "after": "Regression Testing (STG)",
-        "type": "Task",
-        "isSubtask": false,
-        "assignee": "Dewan Kabir",
-        "assignedDeveloper": "Tyler Olechnowicz",
-        "status": "Regression Testing (STG)",
-        "parent": null
-      },
-      {
-        "key": "CORE-14504",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14504",
-        "summary": "Standardize Logging Service NuGet.config and add package source mapping",
-        "before": "QA Testing (DEV)",
-        "after": "Regression Testing (STG)",
-        "type": "Task",
-        "isSubtask": false,
-        "assignee": "Dewan Kabir",
-        "assignedDeveloper": "Tyler Olechnowicz",
-        "status": "Regression Testing (STG)",
-        "parent": null
-      }
-    ]
+    "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-06-02T16:20:52.037Z",
+      "previousPulledAtDisplay": "Jun 2, 2026, 12:20 PM",
+      "currentPulledAt": "2026-06-02T16:46:14.004Z",
+      "currentPulledAtDisplay": "Jun 2, 2026, 12:46 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [
+        {
+          "key": "CORE-14446",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14446",
+          "summary": "Points for Actions - Anniversary Points is not working correctly",
+          "changes": [
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "Jun 1, 2026, 12:18 PM",
+              "after": "Jun 2, 2026, 12:38 PM"
+            }
+          ],
+          "type": "Bug",
+          "isSubtask": false,
+          "assignee": "Dewan Kabir",
+          "assignedDeveloper": "Raghav Kancherla",
+          "status": "QA Testing (DEV)",
+          "parent": {
+            "key": "B2C-21",
+            "url": "https://golfnow.atlassian.net/browse/B2C-21",
+            "summary": "Loyalty - Points for Actions",
+            "description": "",
+            "type": "Epic",
+            "status": "Selected for Development",
+            "priority": "Normal"
+          }
+        }
+      ],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-06-02T16:11:04.249Z",
       "previousPulledAtDisplay": "Jun 2, 2026, 12:11 PM",
@@ -4470,17 +4383,6 @@
       "previousPulledAtDisplay": "Jun 1, 2026, 4:57 PM",
       "currentPulledAt": "2026-06-01T21:02:03.866Z",
       "currentPulledAtDisplay": "Jun 1, 2026, 5:02 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-06-01T20:51:59.164Z",
-      "previousPulledAtDisplay": "Jun 1, 2026, 4:51 PM",
-      "currentPulledAt": "2026-06-01T20:57:01.491Z",
-      "currentPulledAtDisplay": "Jun 1, 2026, 4:57 PM",
       "isBaseline": false,
       "added": [],
       "removed": [],
