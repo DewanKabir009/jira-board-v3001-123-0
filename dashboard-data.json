@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-06-02T02:07:57.657Z",
-  "pulledAtDisplay": "Jun 1, 2026, 10:07 PM",
+  "pulledAt": "2026-06-02T02:13:00.267Z",
+  "pulledAtDisplay": "Jun 1, 2026, 10:13 PM",
   "total": 35,
   "issues": [
     {
@@ -32,8 +32,8 @@
       "assignedDeveloper": "Luis Vallejo Mursuli",
       "assignedDeveloperAccountId": "712020:2e637bb4-c610-467b-839d-9a5b84f75f01",
       "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:2e637bb4-c610-467b-839d-9a5b84f75f01/4dca1d1b-3faa-4d03-90b8-2b3e0cc02887/32",
-      "updated": "2026-06-01T22:07:42.790-0400",
-      "updatedDisplay": "Jun 1, 2026, 10:07 PM",
+      "updated": "2026-06-01T22:08:37.673-0400",
+      "updatedDisplay": "Jun 1, 2026, 10:08 PM",
       "created": "2026-05-19T19:23:19.189-0400",
       "createdDisplay": "May 19, 2026, 7:23 PM",
       "components": [],
@@ -2124,10 +2124,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-06-02T02:02:54.776Z",
-    "previousPulledAtDisplay": "Jun 1, 2026, 10:02 PM",
-    "currentPulledAt": "2026-06-02T02:07:57.657Z",
-    "currentPulledAtDisplay": "Jun 1, 2026, 10:07 PM",
+    "previousPulledAt": "2026-06-02T02:07:57.657Z",
+    "previousPulledAtDisplay": "Jun 1, 2026, 10:07 PM",
+    "currentPulledAt": "2026-06-02T02:13:00.267Z",
+    "currentPulledAtDisplay": "Jun 1, 2026, 10:13 PM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -2140,8 +2140,8 @@
           {
             "field": "updatedDisplay",
             "label": "Jira updated",
-            "before": "Jun 1, 2026, 10:01 PM",
-            "after": "Jun 1, 2026, 10:07 PM"
+            "before": "Jun 1, 2026, 10:07 PM",
+            "after": "Jun 1, 2026, 10:08 PM"
           }
         ],
         "type": "Developer Task (sub task)",
@@ -2163,6 +2163,45 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-06-02T02:07:57.657Z",
+      "previousPulledAtDisplay": "Jun 1, 2026, 10:07 PM",
+      "currentPulledAt": "2026-06-02T02:13:00.267Z",
+      "currentPulledAtDisplay": "Jun 1, 2026, 10:13 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [
+        {
+          "key": "CORE-14488",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14488",
+          "summary": "Code changes for [CORE - 14427]",
+          "changes": [
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "Jun 1, 2026, 10:07 PM",
+              "after": "Jun 1, 2026, 10:08 PM"
+            }
+          ],
+          "type": "Developer Task (sub task)",
+          "isSubtask": true,
+          "assignee": "Luis Vallejo Mursuli",
+          "assignedDeveloper": "Luis Vallejo Mursuli",
+          "status": "Analysis",
+          "parent": {
+            "key": "CORE-14427",
+            "url": "https://golfnow.atlassian.net/browse/CORE-14427",
+            "summary": "Home Course Selection/Management",
+            "description": "",
+            "type": "Story",
+            "status": "Analysis",
+            "priority": "P1"
+          }
+        }
+      ],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-06-02T02:02:54.776Z",
       "previousPulledAtDisplay": "Jun 1, 2026, 10:02 PM",
@@ -5234,17 +5273,6 @@
       "previousPulledAtDisplay": "Jun 1, 2026, 3:28 AM",
       "currentPulledAt": "2026-06-01T07:33:55.598Z",
       "currentPulledAtDisplay": "Jun 1, 2026, 3:33 AM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-06-01T07:23:50.076Z",
-      "previousPulledAtDisplay": "Jun 1, 2026, 3:23 AM",
-      "currentPulledAt": "2026-06-01T07:28:52.839Z",
-      "currentPulledAtDisplay": "Jun 1, 2026, 3:28 AM",
       "isBaseline": false,
       "added": [],
       "removed": [],
