@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-06-02T07:48:11.144Z",
-  "pulledAtDisplay": "Jun 2, 2026, 3:48 AM",
+  "pulledAt": "2026-06-02T07:53:13.962Z",
+  "pulledAtDisplay": "Jun 2, 2026, 3:53 AM",
   "total": 35,
   "issues": [
     {
@@ -2124,10 +2124,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-06-02T07:43:08.397Z",
-    "previousPulledAtDisplay": "Jun 2, 2026, 3:43 AM",
-    "currentPulledAt": "2026-06-02T07:48:11.144Z",
-    "currentPulledAtDisplay": "Jun 2, 2026, 3:48 AM",
+    "previousPulledAt": "2026-06-02T07:48:11.144Z",
+    "previousPulledAtDisplay": "Jun 2, 2026, 3:48 AM",
+    "currentPulledAt": "2026-06-02T07:53:13.962Z",
+    "currentPulledAtDisplay": "Jun 2, 2026, 3:53 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -2135,6 +2135,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-06-02T07:48:11.144Z",
+      "previousPulledAtDisplay": "Jun 2, 2026, 3:48 AM",
+      "currentPulledAt": "2026-06-02T07:53:13.962Z",
+      "currentPulledAtDisplay": "Jun 2, 2026, 3:53 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-06-02T07:43:08.397Z",
       "previousPulledAtDisplay": "Jun 2, 2026, 3:43 AM",
@@ -5133,61 +5144,6 @@
           }
         }
       ]
-    },
-    {
-      "previousPulledAt": "2026-06-01T13:49:35.889Z",
-      "previousPulledAtDisplay": "Jun 1, 2026, 9:49 AM",
-      "currentPulledAt": "2026-06-01T13:54:38.768Z",
-      "currentPulledAtDisplay": "Jun 1, 2026, 9:54 AM",
-      "isBaseline": false,
-      "added": [
-        {
-          "key": "CORE-14502",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14502",
-          "summary": "Duplicate records returning for GetProductSubscription response",
-          "description": "Steps to recreate:\n\n- Be a customer that has an FL credit card in your wallet\n\n- Buy GP Free Trial (1076) with FL Postal Code card\n\n- Renew into PPID 1048 (ProductId 71) (uses FL Card)\n\n- Add another card to your wallet that is in in NY Postal Code\n\nI think this is happening in other scenarios too because we found one in prod with the same behavior and they are not in NY. The prod user renewed in to ProductId 71 so that may be the source.\n\nProd User: hagopmouradian00@gmail.com\n\nThe below data and screenshots are for AWS DEV user: bb@0527.com\n\nThe Database looks accurate with the correct subscription data\n\n- {{api-base-url}}/GolfNowAPI.svc/rest/channel/331/customers/{{EmailAddress}}/subscriptions?productTypeId=9\n\n- See that the records are the exact same the only difference is IsEligibleForCancellation is true for one and false for the other\n\n[\n{\n\"AnniversaryDate\": null,\n\"CustomerSubscriptionID\": 3062235,\n\"CutoffDate\": \"/Date(1813190400000+0000)/\",\n\"ExpirationDate\": \"/Date(1810598400000+0000)/\",\n\"IsAutomaticRenewal\": true,\n\"IsEligibleForCancellation\": true,\n\"IsExpired\": false,\n\"MemberSinceDate\": null,\n\"Policy\": null,\n\"Product\": {\n\"Benefits\": [\n..\n],\n\"Description\": \"GolfPass+ Price Increase to $119\",\n\"PriceList\": [\n{\n\"CurrencyCode\": \"USD\",\n\"Description\": \"GolfPass+ - Annual - $119\",\n\"IsActive\": true,\n\"IsTaxIncluded\": false,\n\"Price\": 119.0000,\n\"PricingAttributes\": null,\n\"ProductID\": 71,\n\"ProductPriceID\": 1048,\n\"ProductPricingTags\": {\n\"IsComplementary\": false,\n\"IsEmployee\": false,\n\"IsMilitary\": false,\n\"IsStudent\": false,\n\"IsTrial\": false\n},\n\"RenewalProductPricingID\": 1048,\n\"Subscription\": {\n\"Duration\": 1,\n\"EndDate\": null,\n\"IsActive\": true,\n\"StartDate\": null,\n\"SubscriptionID\": 1,\n\"SubscriptionType\": {\n\"Description\": \"Annual Subscription\",\n\"IsActive\": true,\n\"Name\": \"Year\",\n\"RenewalReminderPeriod\": 30,\n\"SubscriptionTypeID\": 1\n}\n}\n}\n],\n\"ProductAttributes\": null,\n\"ProductID\": 71,\n\"ProductIsActive\": true,\n\"ProductName\": \"GolfPass+\",\n\"ProductTypeID\": 9,\n\"ProductTypeIsActive\": true,\n\"TaxClassification\": \"SUBSCR\"\n},\n\"ProductID\": 71,\n\"ProductPriceID\": 1048,\n\"PurchaseDate\": \"/Date(1779906481630+0000)/\",\n\"PurchaseID\": 3155991,\n\"RenewalProductPrice\": {\n\"CurrencyCode\": \"USD\",\n\"Description\": \"GolfPass+ - Annual - $119\",\n\"IsActive\": true,\n\"IsTaxIncluded\": false,\n\"Price\": 119.0000,\n\"PricingAttributes\": null,\n\"ProductID\": 71,\n\"ProductPriceID\": 1048,\n\"ProductPricingTags\": {\n\"IsComplementary\": false,\n\"IsEmployee\": false,\n\"IsMilitary\": false,\n\"IsStudent\": false,\n\"IsTrial\": false\n},\n\"RenewalProductPricingID\": 1048,\n\"Subscription\": {\n\"Duration\": 1,\n\"EndDate\": null,\n\"IsActive\": true,\n\"StartDate\": null,\n\"SubscriptionID\": 1,\n\"SubscriptionType\": {\n\"Description\": \"Annual Subscription\",\n\"IsActive\": true,\n\"Name\": \"Year\",\n\"RenewalReminderPeriod\": 30,\n\"SubscriptionTypeID\": 1\n}\n}\n},\n\"RenewalProductPriceID\": 1048,\n\"StartDate\": \"/Date(1779062400000+0000)/\",\n\"Status\": 1\n},\n{\n\"AnniversaryDate\": null,\n\"CustomerSubscriptionID\": 3062235,\n\"CutoffDate\": \"/Date(1813190400000+0000)/\",\n\"ExpirationDate\": \"/Date(1810598400000+0000)/\",\n\"IsAutomaticRenewal\": true,\n\"IsEligibleForCancellation\": false,\n\"IsExpired\": false,\n\"MemberSinceDate\": null,\n\"Policy\": null,\n\"Product\": {\n\"Benefits\": [\n...\n],\n\"Description\": \"GolfPass+ Price Increase to $119\",\n\"PriceList\": [\n{\n\"CurrencyCode\": \"USD\",\n\"Description\": \"GolfPass+ - Annual - $119\",\n\"IsActive\": true,\n\"IsTaxIncluded\": false,\n\"Price\": 119.0000,\n\"PricingAttributes\": null,\n\"ProductID\": 71,\n\"ProductPriceID\": 1048,\n\"ProductPricingTags\": {\n\"IsComplementary\": false,\n\"IsEmployee\": false,\n\"IsMilitary\": false,\n\"IsStudent\": false,\n\"IsTrial\": false\n},\n\"RenewalProductPricingID\": 1048,\n\"Subscription\": {\n\"Duration\": 1,\n\"EndDate\": null,\n\"IsActive\": true,\n\"StartDate\": null,\n\"SubscriptionID\": 1,\n\"SubscriptionType\": {\n\"Description\": \"Annual Subscription\",\n\"IsActive\": true,\n\"Name\": \"Year\",\n\"RenewalReminderPeriod\": 30,\n\"SubscriptionTypeID\": 1\n}\n}\n}\n],\n\"ProductAttributes\": null,\n\"ProductID\": 71,\n\"ProductIsActive\": true,\n\"ProductName\": \"GolfPass+\",\n\"ProductTypeID\": 9,\n\"ProductTypeIsActive\": true,\n\"TaxClassification\": \"SUBSCR\"\n},\n\"ProductID\": 71,\n\"ProductPriceID\": 1048,\n\"PurchaseDate\": \"/Date(1779906481630+0000)/\",\n\"PurchaseID\": 3155991,\n\"RenewalProductPrice\": {\n\"CurrencyCode\": \"USD\",\n\"Description\": \"GolfPass+ - Annual - $119\",\n\"IsActive\": true,\n\"IsTaxIncluded\": false,\n\"Price\": 119.0000,\n\"PricingAttributes\": null,\n\"ProductID\": 71,\n\"ProductPriceID\": 1048,\n\"ProductPricingTags\": {\n\"IsComplementary\": false,\n\"IsEmployee\": false,\n\"IsMilitary\": false,\n\"IsStudent\": false,\n\"IsTrial\": false\n},\n\"RenewalProductPricingID\": 1048,\n\"Subscription\": {\n\"Duration\": 1,\n\"EndDate\": null,\n\"IsActive\": true,\n\"StartDate\": null,\n\"SubscriptionID\": 1,\n\"SubscriptionType\": {\n\"Description\": \"Annual Subscription\",\n\"IsActive\": true,\n\"Name\": \"Year\",\n\"RenewalReminderPeriod\": 30,\n\"SubscriptionTypeID\": 1\n}\n}\n},\n\"RenewalProductPriceID\": 1048,\n\"StartDate\": \"/Date(1779062400000+0000)/\",\n\"Status\": 1\n}\n]\n\n- GNC/Product Service\n\n- The two records at the bottom are the same CustomerSubscriptionId",
-          "descriptionHtml": "<p>Steps to recreate:</p><ol><li><p>Be a customer that has an FL credit card in your wallet</p></li><li><p>Buy GP Free Trial (1076) with FL Postal Code card</p></li><li><p>Renew into PPID 1048 (ProductId 71) (uses FL Card)</p></li><li><p>Add another card to your wallet that is in in NY Postal Code</p></li></ol><p>I think this is happening in other scenarios too because we found one in prod with the same behavior and they are not in NY. The prod user renewed in to ProductId 71 so that may be the source. </p><p>Prod User: <a href=\"mailto:hagopmouradian00@gmail.com\" target=\"_blank\" rel=\"noopener\">hagopmouradian00@gmail.com</a></p><p>The below data and screenshots are for AWS DEV user: <a href=\"mailto:bb@0527.com\" target=\"_blank\" rel=\"noopener\">bb@0527.com</a></p><p>The Database looks accurate with the correct subscription data</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14502/731824-image-20260527-210251.png\" alt=\"image-20260527-210251.png\" loading=\"lazy\"><figcaption>image-20260527-210251.png</figcaption></figure></div><ul><li><p>{{api-base-url}}/GolfNowAPI.svc/rest/channel/331/customers/{{EmailAddress}}/subscriptions?productTypeId=9</p><ul><li><p>See that the records are the exact same the only difference is <code>IsEligibleForCancellation</code> is true for one and false for the other</p></li></ul></li></ul><pre><code>[\n    {\n        &quot;AnniversaryDate&quot;: null,\n        &quot;CustomerSubscriptionID&quot;: 3062235,\n        &quot;CutoffDate&quot;: &quot;/Date(1813190400000+0000)/&quot;,\n        &quot;ExpirationDate&quot;: &quot;/Date(1810598400000+0000)/&quot;,\n        &quot;IsAutomaticRenewal&quot;: true,\n        &quot;IsEligibleForCancellation&quot;: true,\n        &quot;IsExpired&quot;: false,\n        &quot;MemberSinceDate&quot;: null,\n        &quot;Policy&quot;: null,\n        &quot;Product&quot;: {\n            &quot;Benefits&quot;: [\n             ..\n            ],\n            &quot;Description&quot;: &quot;GolfPass+ Price Increase to $119&quot;,\n            &quot;PriceList&quot;: [\n                {\n                    &quot;CurrencyCode&quot;: &quot;USD&quot;,\n                    &quot;Description&quot;: &quot;GolfPass+ - Annual - $119&quot;,\n                    &quot;IsActive&quot;: true,\n                    &quot;IsTaxIncluded&quot;: false,\n                    &quot;Price&quot;: 119.0000,\n                    &quot;PricingAttributes&quot;: null,\n                    &quot;ProductID&quot;: 71,\n                    &quot;ProductPriceID&quot;: 1048,\n                    &quot;ProductPricingTags&quot;: {\n                        &quot;IsComplementary&quot;: false,\n                        &quot;IsEmployee&quot;: false,\n                        &quot;IsMilitary&quot;: false,\n                        &quot;IsStudent&quot;: false,\n                        &quot;IsTrial&quot;: false\n                    },\n                    &quot;RenewalProductPricingID&quot;: 1048,\n                    &quot;Subscription&quot;: {\n                        &quot;Duration&quot;: 1,\n                        &quot;EndDate&quot;: null,\n                        &quot;IsActive&quot;: true,\n                        &quot;StartDate&quot;: null,\n                        &quot;SubscriptionID&quot;: 1,\n                        &quot;SubscriptionType&quot;: {\n                            &quot;Description&quot;: &quot;Annual Subscription&quot;,\n                            &quot;IsActive&quot;: true,\n                            &quot;Name&quot;: &quot;Year&quot;,\n                            &quot;RenewalReminderPeriod&quot;: 30,\n                            &quot;SubscriptionTypeID&quot;: 1\n                        }\n                    }\n                }\n            ],\n            &quot;ProductAttributes&quot;: null,\n            &quot;ProductID&quot;: 71,\n            &quot;ProductIsActive&quot;: true,\n            &quot;ProductName&quot;: &quot;GolfPass+&quot;,\n            &quot;ProductTypeID&quot;: 9,\n            &quot;ProductTypeIsActive&quot;: true,\n            &quot;TaxClassification&quot;: &quot;SUBSCR&quot;\n        },\n        &quot;ProductID&quot;: 71,\n        &quot;ProductPriceID&quot;: 1048,\n        &quot;PurchaseDate&quot;: &quot;/Date(1779906481630+0000)/&quot;,\n        &quot;PurchaseID&quot;: 3155991,\n        &quot;RenewalProductPrice&quot;: {\n            &quot;CurrencyCode&quot;: &quot;USD&quot;,\n            &quot;Description&quot;: &quot;GolfPass+ - Annual - $119&quot;,\n            &quot;IsActive&quot;: true,\n            &quot;IsTaxIncluded&quot;: false,\n            &quot;Price&quot;: 119.0000,\n            &quot;PricingAttributes&quot;: null,\n            &quot;ProductID&quot;: 71,\n            &quot;ProductPriceID&quot;: 1048,\n            &quot;ProductPricingTags&quot;: {\n                &quot;IsComplementary&quot;: false,\n                &quot;IsEmployee&quot;: false,\n                &quot;IsMilitary&quot;: false,\n                &quot;IsStudent&quot;: false,\n                &quot;IsTrial&quot;: false\n            },\n            &quot;RenewalProductPricingID&quot;: 1048,\n            &quot;Subscription&quot;: {\n                &quot;Duration&quot;: 1,\n                &quot;EndDate&quot;: null,\n                &quot;IsActive&quot;: true,\n                &quot;StartDate&quot;: null,\n                &quot;SubscriptionID&quot;: 1,\n                &quot;SubscriptionType&quot;: {\n                    &quot;Description&quot;: &quot;Annual Subscription&quot;,\n                    &quot;IsActive&quot;: true,\n                    &quot;Name&quot;: &quot;Year&quot;,\n                    &quot;RenewalReminderPeriod&quot;: 30,\n                    &quot;SubscriptionTypeID&quot;: 1\n                }\n            }\n        },\n        &quot;RenewalProductPriceID&quot;: 1048,\n        &quot;StartDate&quot;: &quot;/Date(1779062400000+0000)/&quot;,\n        &quot;Status&quot;: 1\n    },\n    {\n        &quot;AnniversaryDate&quot;: null,\n        &quot;CustomerSubscriptionID&quot;: 3062235,\n        &quot;CutoffDate&quot;: &quot;/Date(1813190400000+0000)/&quot;,\n        &quot;ExpirationDate&quot;: &quot;/Date(1810598400000+0000)/&quot;,\n        &quot;IsAutomaticRenewal&quot;: true,\n        &quot;IsEligibleForCancellation&quot;: false,\n        &quot;IsExpired&quot;: false,\n        &quot;MemberSinceDate&quot;: null,\n        &quot;Policy&quot;: null,\n        &quot;Product&quot;: {\n            &quot;Benefits&quot;: [\n                ...\n            ],\n            &quot;Description&quot;: &quot;GolfPass+ Price Increase to $119&quot;,\n            &quot;PriceList&quot;: [\n                {\n                    &quot;CurrencyCode&quot;: &quot;USD&quot;,\n                    &quot;Description&quot;: &quot;GolfPass+ - Annual - $119&quot;,\n                    &quot;IsActive&quot;: true,\n                    &quot;IsTaxIncluded&quot;: false,\n                    &quot;Price&quot;: 119.0000,\n                    &quot;PricingAttributes&quot;: null,\n                    &quot;ProductID&quot;: 71,\n                    &quot;ProductPriceID&quot;: 1048,\n                    &quot;ProductPricingTags&quot;: {\n                        &quot;IsComplementary&quot;: false,\n                        &quot;IsEmployee&quot;: false,\n                        &quot;IsMilitary&quot;: false,\n                        &quot;IsStudent&quot;: false,\n                        &quot;IsTrial&quot;: false\n                    },\n                    &quot;RenewalProductPricingID&quot;: 1048,\n                    &quot;Subscription&quot;: {\n                        &quot;Duration&quot;: 1,\n                        &quot;EndDate&quot;: null,\n                        &quot;IsActive&quot;: true,\n                        &quot;StartDate&quot;: null,\n                        &quot;SubscriptionID&quot;: 1,\n                        &quot;SubscriptionType&quot;: {\n                            &quot;Description&quot;: &quot;Annual Subscription&quot;,\n                            &quot;IsActive&quot;: true,\n                            &quot;Name&quot;: &quot;Year&quot;,\n                            &quot;RenewalReminderPeriod&quot;: 30,\n                            &quot;SubscriptionTypeID&quot;: 1\n                        }\n                    }\n                }\n            ],\n            &quot;ProductAttributes&quot;: null,\n            &quot;ProductID&quot;: 71,\n            &quot;ProductIsActive&quot;: true,\n            &quot;ProductName&quot;: &quot;GolfPass+&quot;,\n            &quot;ProductTypeID&quot;: 9,\n            &quot;ProductTypeIsActive&quot;: true,\n            &quot;TaxClassification&quot;: &quot;SUBSCR&quot;\n        },\n        &quot;ProductID&quot;: 71,\n        &quot;ProductPriceID&quot;: 1048,\n        &quot;PurchaseDate&quot;: &quot;/Date(1779906481630+0000)/&quot;,\n        &quot;PurchaseID&quot;: 3155991,\n        &quot;RenewalProductPrice&quot;: {\n            &quot;CurrencyCode&quot;: &quot;USD&quot;,\n            &quot;Description&quot;: &quot;GolfPass+ - Annual - $119&quot;,\n            &quot;IsActive&quot;: true,\n            &quot;IsTaxIncluded&quot;: false,\n            &quot;Price&quot;: 119.0000,\n            &quot;PricingAttributes&quot;: null,\n            &quot;ProductID&quot;: 71,\n            &quot;ProductPriceID&quot;: 1048,\n            &quot;ProductPricingTags&quot;: {\n                &quot;IsComplementary&quot;: false,\n                &quot;IsEmployee&quot;: false,\n                &quot;IsMilitary&quot;: false,\n                &quot;IsStudent&quot;: false,\n                &quot;IsTrial&quot;: false\n            },\n            &quot;RenewalProductPricingID&quot;: 1048,\n            &quot;Subscription&quot;: {\n                &quot;Duration&quot;: 1,\n                &quot;EndDate&quot;: null,\n                &quot;IsActive&quot;: true,\n                &quot;StartDate&quot;: null,\n                &quot;SubscriptionID&quot;: 1,\n                &quot;SubscriptionType&quot;: {\n                    &quot;Description&quot;: &quot;Annual Subscription&quot;,\n                    &quot;IsActive&quot;: true,\n                    &quot;Name&quot;: &quot;Year&quot;,\n                    &quot;RenewalReminderPeriod&quot;: 30,\n                    &quot;SubscriptionTypeID&quot;: 1\n                }\n            }\n        },\n        &quot;RenewalProductPriceID&quot;: 1048,\n        &quot;StartDate&quot;: &quot;/Date(1779062400000+0000)/&quot;,\n        &quot;Status&quot;: 1\n    }\n]</code></pre><ul><li><p>GNC/Product Service </p><ul><li><p>The two records at the bottom are the same CustomerSubscriptionId</p></li></ul></li></ul><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14502/731823-image-20260527-210712.png\" alt=\"image-20260527-210712.png\" loading=\"lazy\"><figcaption>image-20260527-210712.png</figcaption></figure></div>",
-          "descriptionImageCount": 2,
-          "descriptionVideoCount": 0,
-          "descriptionMediaCount": 2,
-          "commentCount": 0,
-          "comments": [],
-          "lastCommentUrl": "",
-          "lastCommentDisplay": "",
-          "lastCommentAuthor": "",
-          "type": "Bug",
-          "isSubtask": false,
-          "status": "QA Testing (DEV)",
-          "priority": "P0",
-          "assignee": "Dewan Kabir",
-          "assigneeAccountId": "557058:24f78684-6276-42b4-9860-f81502d6d45e",
-          "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/initials/RK-4.png",
-          "assignedDeveloper": "Raghav Kancherla",
-          "assignedDeveloperAccountId": "",
-          "assignedDeveloperAvatarUrl": "",
-          "updated": "2026-06-01T09:53:50.149-0400",
-          "updatedDisplay": "Jun 1, 2026, 9:53 AM",
-          "created": "2026-05-27T17:02:13.423-0400",
-          "createdDisplay": "May 27, 2026, 5:02 PM",
-          "components": [],
-          "fixVersions": [
-            "v3001.123.0"
-          ],
-          "resolution": "",
-          "parent": {
-            "key": "B2C-70",
-            "url": "https://golfnow.atlassian.net/browse/B2C-70",
-            "summary": "NY Cancellation Validation",
-            "description": "",
-            "type": "Epic",
-            "status": "Backlog",
-            "priority": "None"
-          }
-        }
-      ],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
     }
   ],
   "schemaVersionNumber": 1,
