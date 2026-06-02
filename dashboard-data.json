@@ -4,10 +4,282 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-06-02T16:11:04.249Z",
-  "pulledAtDisplay": "Jun 2, 2026, 12:11 PM",
+  "pulledAt": "2026-06-02T16:20:52.037Z",
+  "pulledAtDisplay": "Jun 2, 2026, 12:20 PM",
   "total": 35,
   "issues": [
+    {
+      "key": "CORE-14480",
+      "url": "https://golfnow.atlassian.net/browse/CORE-14480",
+      "summary": "Upgrade vulnerable and outdated NuGet package(s) identified by Snyk in Logging Service (golf-svc-logging)",
+      "description": "A Snyk alert identified one or more vulnerable and/or outdated NuGet package dependencies in the Logging Service repository (golf-svc-logging).\n\nThis work includes:\n\n- Reviewing impacted and outdated package version(s)\n\n- Upgrading vulnerable and outdated NuGet package(s) to supported versions\n\n- Validating build and runtime compatibility\n\n- Performing regression testing as needed",
+      "descriptionHtml": "<p>A Snyk alert identified one or more vulnerable and/or outdated NuGet package dependencies in the Logging Service repository (golf-svc-logging).</p><p>This work includes:</p><ul><li><p>Reviewing impacted and outdated package version(s)</p></li><li><p>Upgrading vulnerable and outdated NuGet package(s) to supported versions</p></li><li><p>Validating build and runtime compatibility</p></li><li><p>Performing regression testing as needed</p></li></ul>",
+      "descriptionImageCount": 0,
+      "descriptionVideoCount": 0,
+      "descriptionMediaCount": 0,
+      "commentCount": 1,
+      "comments": [
+        {
+          "id": "1177556",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14480?focusedCommentId=1177556",
+          "author": "Dewan Kabir",
+          "authorAccountId": "630fb06bb433b060db559bdb",
+          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
+          "created": "2026-06-02T12:18:53.161-0400",
+          "createdDisplay": "Jun 2, 2026, 12:18 PM",
+          "updated": "2026-06-02T12:18:53.161-0400",
+          "updatedDisplay": "",
+          "hasMedia": false,
+          "mediaCount": 0,
+          "body": "VALIDATED IN : CORE-14504 - Standardize Logging Service NuGet.config and add package source mapping\nhttps://golfnow.atlassian.net/browse/CORE-14504",
+          "bodyHtml": "<p><strong>VALIDATED IN :</strong> CORE-14504 - Standardize Logging Service NuGet.config and add package source mapping<br><a href=\"https://golfnow.atlassian.net/browse/CORE-14504\" target=\"_blank\" rel=\"noopener\">https://golfnow.atlassian.net/browse/CORE-14504</a> </p>"
+        }
+      ],
+      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14480?focusedCommentId=1177556",
+      "lastCommentDisplay": "Jun 2, 2026, 12:18 PM",
+      "lastCommentAuthor": "Dewan Kabir",
+      "type": "Security Alert",
+      "isSubtask": false,
+      "status": "Regression Testing (STG)",
+      "priority": "P2",
+      "assignee": "Dewan Kabir",
+      "assigneeAccountId": "630fb06bb433b060db559bdb",
+      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
+      "assignedDeveloper": "Tyler Olechnowicz",
+      "assignedDeveloperAccountId": "5d2396c1ea26c40c2043fc92",
+      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5d2396c1ea26c40c2043fc92/1647fb84-acea-4c3f-b1e8-9a79aa120f8f/32",
+      "updated": "2026-06-02T12:18:57.227-0400",
+      "updatedDisplay": "Jun 2, 2026, 12:18 PM",
+      "created": "2026-05-18T16:18:04.192-0400",
+      "createdDisplay": "May 18, 2026, 4:18 PM",
+      "components": [
+        "Golf.Svc.Logging"
+      ],
+      "fixVersions": [
+        "v3001.123.0"
+      ],
+      "resolution": "",
+      "parent": null
+    },
+    {
+      "key": "CORE-14471",
+      "url": "https://golfnow.atlassian.net/browse/CORE-14471",
+      "summary": "Upgrade vulnerable NuGet package(s) identified by Snyk in Inventory Management API (gn-svc-inventorymanagement",
+      "description": "A Snyk alert identified one or more vulnerable NuGet package dependencies in the Inventory Management API repository (`gn-svc-inventorymanagement`).\n\nThis work includes:\n\n- Reviewing the impacted package version(s)\n\n- Upgrading affected NuGet package(s) to non-vulnerable supported versions\n\n- Validating build and runtime compatibility\n\n- Performing regression testing as needed\n\nCurrent package update(s):\n\n- Microsoft.VisualStudio.Web.CodeGeneration.Design -> 8.0.23",
+      "descriptionHtml": "<p>A Snyk alert identified one or more vulnerable NuGet package dependencies in the Inventory Management API repository (`gn-svc-inventorymanagement`).</p><p>This work includes:</p><ul><li><p>Reviewing the impacted package version(s)</p></li><li><p>Upgrading affected NuGet package(s) to non-vulnerable supported versions</p></li><li><p>Validating build and runtime compatibility</p></li><li><p>Performing regression testing as needed</p></li></ul><p>Current package update(s):</p><ul><li><p>Microsoft.VisualStudio.Web.CodeGeneration.Design -&gt; 8.0.23</p></li></ul>",
+      "descriptionImageCount": 0,
+      "descriptionVideoCount": 0,
+      "descriptionMediaCount": 0,
+      "commentCount": 1,
+      "comments": [
+        {
+          "id": "1177555",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14471?focusedCommentId=1177555",
+          "author": "Dewan Kabir",
+          "authorAccountId": "630fb06bb433b060db559bdb",
+          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
+          "created": "2026-06-02T12:17:37.983-0400",
+          "createdDisplay": "Jun 2, 2026, 12:17 PM",
+          "updated": "2026-06-02T12:17:37.983-0400",
+          "updatedDisplay": "",
+          "hasMedia": true,
+          "mediaCount": 1,
+          "body": "VALIDATE IN AWS STG :\n\nCreate Trade Rate Set : Service Operational Status : :check_mark:",
+          "bodyHtml": "<p><strong>VALIDATE IN AWS STG : </strong></p><p>Create Trade Rate Set : Service Operational Status : :check_mark: </p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14471/comments/1177555/733630-image-20260602-161725.png\" alt=\"image-20260602-161725.png\" loading=\"lazy\"><figcaption>image-20260602-161725.png</figcaption></figure></div>"
+        }
+      ],
+      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14471?focusedCommentId=1177555",
+      "lastCommentDisplay": "Jun 2, 2026, 12:17 PM",
+      "lastCommentAuthor": "Dewan Kabir",
+      "type": "Security Alert",
+      "isSubtask": false,
+      "status": "Regression Testing (STG)",
+      "priority": "P2",
+      "assignee": "Dewan Kabir",
+      "assigneeAccountId": "630fb06bb433b060db559bdb",
+      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
+      "assignedDeveloper": "Tyler Olechnowicz",
+      "assignedDeveloperAccountId": "5d2396c1ea26c40c2043fc92",
+      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5d2396c1ea26c40c2043fc92/1647fb84-acea-4c3f-b1e8-9a79aa120f8f/32",
+      "updated": "2026-06-02T12:17:43.133-0400",
+      "updatedDisplay": "Jun 2, 2026, 12:17 PM",
+      "created": "2026-05-14T10:39:24.315-0400",
+      "createdDisplay": "May 14, 2026, 10:39 AM",
+      "components": [
+        "GolfNow.Services.InventoryManagement"
+      ],
+      "fixVersions": [
+        "v3001.123.0"
+      ],
+      "resolution": "",
+      "parent": null
+    },
+    {
+      "key": "CORE-14501",
+      "url": "https://golfnow.atlassian.net/browse/CORE-14501",
+      "summary": "Standardize Commerce Proxy API NuGet and build configuration across environments",
+      "description": "Update the Commerce Proxy API NuGet and build configuration to align with the standardized configuration used across newer applications in order to improve package restore consistency across all environments.\n\nChanges include:\n\n- Add <clear /> to prevent inherited machine/user-level NuGet package sources from affecting restore behavior\n\n- Add packageSourceMapping configuration to explicitly route internal GolfNow packages through the Nexus feed\n\n- Remove NuGet configuration sections that are not required for package restore behavior in the current application:\n\n- defaultPushSource\n\n- bindingRedirects\n\n- packageManagement\n\n- Remove unused NuGet packaging artifacts and workflows that are not applicable to the Commerce Proxy API:\n\n- package-script.ps1\n\n- workflow-nuget.yml\n\nThis change is intended to improve package resolution consistency and reduce environment-specific restore/build issues by ensuring the application uses a deterministic NuGet package source configuration across local development and AWS-hosted environments while also removing unnecessary NuGet package generation infrastructure from the repository.",
+      "descriptionHtml": "<p>Update the Commerce Proxy API NuGet and build configuration to align with the standardized configuration used across newer applications in order to improve package restore consistency across all environments.</p><p>Changes include:</p><ul><li><p>Add <code>&lt;clear /&gt;</code> to prevent inherited machine/user-level NuGet package sources from affecting restore behavior</p></li><li><p>Add <code>packageSourceMapping</code> configuration to explicitly route internal GolfNow packages through the Nexus feed</p></li><li><p>Remove NuGet configuration sections that are not required for package restore behavior in the current application:</p><ul><li><p><code>defaultPushSource</code></p></li><li><p><code>bindingRedirects</code></p></li><li><p><code>packageManagement</code></p></li></ul></li><li><p>Remove unused NuGet packaging artifacts and workflows that are not applicable to the Commerce Proxy API:</p><ul><li><p><code>package-script.ps1</code></p></li><li><p><code>workflow-nuget.yml</code></p></li></ul></li></ul><p>This change is intended to improve package resolution consistency and reduce environment-specific restore/build issues by ensuring the application uses a deterministic NuGet package source configuration across local development and AWS-hosted environments while also removing unnecessary NuGet package generation infrastructure from the repository.</p>",
+      "descriptionImageCount": 0,
+      "descriptionVideoCount": 0,
+      "descriptionMediaCount": 0,
+      "commentCount": 3,
+      "comments": [
+        {
+          "id": "1175280",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14501?focusedCommentId=1175280",
+          "author": "Tyler Olechnowicz",
+          "authorAccountId": "5d2396c1ea26c40c2043fc92",
+          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5d2396c1ea26c40c2043fc92/1647fb84-acea-4c3f-b1e8-9a79aa120f8f/32",
+          "created": "2026-05-27T16:07:23.435-0400",
+          "createdDisplay": "May 27, 2026, 4:07 PM",
+          "updated": "2026-05-27T16:07:23.435-0400",
+          "updatedDisplay": "",
+          "hasMedia": false,
+          "mediaCount": 0,
+          "body": "Testing Instructions\n\nPlease ensure that the API builds successfully across all environments. Also make sure that the NuGet package workflow no longer exists. This API does not need to generate a NuGet package.",
+          "bodyHtml": "<h3>Testing Instructions</h3><p>Please ensure that the API builds successfully across all environments. Also make sure that the NuGet package workflow no longer exists. This API does not need to generate a NuGet package.</p>"
+        },
+        {
+          "id": "1177552",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14501?focusedCommentId=1177552",
+          "author": "Dewan Kabir",
+          "authorAccountId": "630fb06bb433b060db559bdb",
+          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
+          "created": "2026-06-02T12:14:32.891-0400",
+          "createdDisplay": "Jun 2, 2026, 12:14 PM",
+          "updated": "2026-06-02T12:14:32.891-0400",
+          "updatedDisplay": "",
+          "hasMedia": true,
+          "mediaCount": 1,
+          "body": "VALIDATE IN AWS DEV :",
+          "bodyHtml": "<p><strong>VALIDATE IN AWS DEV : </strong></p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14501/comments/1177552/733627-image-20260602-161425.png\" alt=\"image-20260602-161425.png\" loading=\"lazy\"><figcaption>image-20260602-161425.png</figcaption></figure></div>"
+        },
+        {
+          "id": "1177553",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14501?focusedCommentId=1177553",
+          "author": "Dewan Kabir",
+          "authorAccountId": "630fb06bb433b060db559bdb",
+          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
+          "created": "2026-06-02T12:15:05.752-0400",
+          "createdDisplay": "Jun 2, 2026, 12:15 PM",
+          "updated": "2026-06-02T12:15:05.752-0400",
+          "updatedDisplay": "",
+          "hasMedia": true,
+          "mediaCount": 1,
+          "body": "VALIDATE IN AWS STG :",
+          "bodyHtml": "<p><strong>VALIDATE IN AWS STG : </strong></p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14501/comments/1177553/733629-image-20260602-161454.png\" alt=\"image-20260602-161454.png\" loading=\"lazy\"><figcaption>image-20260602-161454.png</figcaption></figure></div>"
+        }
+      ],
+      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14501?focusedCommentId=1177553",
+      "lastCommentDisplay": "Jun 2, 2026, 12:15 PM",
+      "lastCommentAuthor": "Dewan Kabir",
+      "type": "Task",
+      "isSubtask": false,
+      "status": "Regression Testing (STG)",
+      "priority": "P0",
+      "assignee": "Dewan Kabir",
+      "assigneeAccountId": "630fb06bb433b060db559bdb",
+      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
+      "assignedDeveloper": "Tyler Olechnowicz",
+      "assignedDeveloperAccountId": "5d2396c1ea26c40c2043fc92",
+      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5d2396c1ea26c40c2043fc92/1647fb84-acea-4c3f-b1e8-9a79aa120f8f/32",
+      "updated": "2026-06-02T12:15:11.855-0400",
+      "updatedDisplay": "Jun 2, 2026, 12:15 PM",
+      "created": "2026-05-27T15:15:57.565-0400",
+      "createdDisplay": "May 27, 2026, 3:15 PM",
+      "components": [
+        "GolfNow.Services.CommerceProxy"
+      ],
+      "fixVersions": [
+        "v3001.123.0"
+      ],
+      "resolution": "",
+      "parent": null
+    },
+    {
+      "key": "CORE-14504",
+      "url": "https://golfnow.atlassian.net/browse/CORE-14504",
+      "summary": "Standardize Logging Service NuGet.config and add package source mapping",
+      "description": "Updated the Logging Service NuGet.config to align with current repository standards and modern .NET package management practices.\n\nChanges Made\n\n- Added <clear /> to ensure repository-defined package sources are used consistently across environments\n\n- Added Package Source Mapping configuration to:\n\n- Route internal Golf.* and GolfNow.* packages through the GolfNow Nexus feed\n\n- Route all other packages through nuget.org\n\n- Added documentation comments explaining the purpose of Package Source Mapping and dependency confusion protection\n\n- Removed legacy/unnecessary NuGet configuration settings not needed for a modern .NET 10 API:\n\n- bindingRedirects\n\n- packageManagement\n\n- protocolVersion=\"2\" from the GolfNow feed\n\nBenefits\n\n- Improves dependency security by pinning internal packages to the correct source\n\n- Prevents NU1507 warnings when using Central Package Management\n\n- Simplifies and modernizes the repository NuGet configuration\n\n- Aligns the Logging Service with current repository standards",
+      "descriptionHtml": "<p>Updated the Logging Service <code>NuGet.config</code> to align with current repository standards and modern .NET package management practices.</p><h3>Changes Made</h3><ul><li><p>Added <code>&lt;clear /&gt;</code> to ensure repository-defined package sources are used consistently across environments</p></li><li><p>Added Package Source Mapping configuration to:</p><ul><li><p>Route internal <code>Golf.*</code> and <code>GolfNow.*</code> packages through the GolfNow Nexus feed</p></li><li><p>Route all other packages through <code>nuget.org</code></p></li></ul></li><li><p>Added documentation comments explaining the purpose of Package Source Mapping and dependency confusion protection</p></li><li><p>Removed legacy/unnecessary NuGet configuration settings not needed for a modern .NET 10 API:</p><ul><li><p><code>bindingRedirects</code></p></li><li><p><code>packageManagement</code></p></li><li><p><code>protocolVersion=&quot;2&quot;</code> from the GolfNow feed</p></li></ul></li></ul><h3>Benefits</h3><ul><li><p>Improves dependency security by pinning internal packages to the correct source</p></li><li><p>Prevents NU1507 warnings when using Central Package Management</p></li><li><p>Simplifies and modernizes the repository NuGet configuration</p></li><li><p>Aligns the Logging Service with current repository standards</p></li></ul>",
+      "descriptionImageCount": 0,
+      "descriptionVideoCount": 0,
+      "descriptionMediaCount": 0,
+      "commentCount": 3,
+      "comments": [
+        {
+          "id": "1176038",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14504?focusedCommentId=1176038",
+          "author": "Tyler Olechnowicz",
+          "authorAccountId": "5d2396c1ea26c40c2043fc92",
+          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5d2396c1ea26c40c2043fc92/1647fb84-acea-4c3f-b1e8-9a79aa120f8f/32",
+          "created": "2026-05-28T14:37:27.240-0400",
+          "createdDisplay": "May 28, 2026, 2:37 PM",
+          "updated": "2026-05-28T14:37:27.240-0400",
+          "updatedDisplay": "",
+          "hasMedia": false,
+          "mediaCount": 0,
+          "body": "Testing Instructions\n\nPlease ensure that the API builds successfully across all environments.",
+          "bodyHtml": "<h3>Testing Instructions</h3><p>Please ensure that the API builds successfully across all environments.</p>"
+        },
+        {
+          "id": "1177549",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14504?focusedCommentId=1177549",
+          "author": "Dewan Kabir",
+          "authorAccountId": "630fb06bb433b060db559bdb",
+          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
+          "created": "2026-06-02T12:12:13.953-0400",
+          "createdDisplay": "Jun 2, 2026, 12:12 PM",
+          "updated": "2026-06-02T12:12:13.953-0400",
+          "updatedDisplay": "",
+          "hasMedia": true,
+          "mediaCount": 1,
+          "body": "VALIDATE IN AWS DEV :",
+          "bodyHtml": "<p><strong>VALIDATE IN AWS DEV : </strong></p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14504/comments/1177549/733625-image-20260602-161203.png\" alt=\"image-20260602-161203.png\" loading=\"lazy\"><figcaption>image-20260602-161203.png</figcaption></figure></div>"
+        },
+        {
+          "id": "1177550",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14504?focusedCommentId=1177550",
+          "author": "Dewan Kabir",
+          "authorAccountId": "630fb06bb433b060db559bdb",
+          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
+          "created": "2026-06-02T12:13:04.064-0400",
+          "createdDisplay": "Jun 2, 2026, 12:13 PM",
+          "updated": "2026-06-02T12:13:04.064-0400",
+          "updatedDisplay": "",
+          "hasMedia": true,
+          "mediaCount": 1,
+          "body": "VALIDATE IN AWS STG :",
+          "bodyHtml": "<p><strong>VALIDATE IN AWS STG : </strong></p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14504/comments/1177550/733626-image-20260602-161254.png\" alt=\"image-20260602-161254.png\" loading=\"lazy\"><figcaption>image-20260602-161254.png</figcaption></figure></div>"
+        }
+      ],
+      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14504?focusedCommentId=1177550",
+      "lastCommentDisplay": "Jun 2, 2026, 12:13 PM",
+      "lastCommentAuthor": "Dewan Kabir",
+      "type": "Task",
+      "isSubtask": false,
+      "status": "Regression Testing (STG)",
+      "priority": "P0",
+      "assignee": "Dewan Kabir",
+      "assigneeAccountId": "630fb06bb433b060db559bdb",
+      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
+      "assignedDeveloper": "Tyler Olechnowicz",
+      "assignedDeveloperAccountId": "5d2396c1ea26c40c2043fc92",
+      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5d2396c1ea26c40c2043fc92/1647fb84-acea-4c3f-b1e8-9a79aa120f8f/32",
+      "updated": "2026-06-02T12:13:25.452-0400",
+      "updatedDisplay": "Jun 2, 2026, 12:13 PM",
+      "created": "2026-05-28T13:42:37.674-0400",
+      "createdDisplay": "May 28, 2026, 1:42 PM",
+      "components": [
+        "Golf.Svc.Logging"
+      ],
+      "fixVersions": [
+        "v3001.123.0"
+      ],
+      "resolution": "",
+      "parent": null
+    },
     {
       "key": "CORE-14488",
       "url": "https://golfnow.atlassian.net/browse/CORE-14488",
@@ -840,43 +1112,6 @@
       }
     },
     {
-      "key": "CORE-14471",
-      "url": "https://golfnow.atlassian.net/browse/CORE-14471",
-      "summary": "Upgrade vulnerable NuGet package(s) identified by Snyk in Inventory Management API (gn-svc-inventorymanagement",
-      "description": "A Snyk alert identified one or more vulnerable NuGet package dependencies in the Inventory Management API repository (`gn-svc-inventorymanagement`).\n\nThis work includes:\n\n- Reviewing the impacted package version(s)\n\n- Upgrading affected NuGet package(s) to non-vulnerable supported versions\n\n- Validating build and runtime compatibility\n\n- Performing regression testing as needed\n\nCurrent package update(s):\n\n- Microsoft.VisualStudio.Web.CodeGeneration.Design -> 8.0.23",
-      "descriptionHtml": "<p>A Snyk alert identified one or more vulnerable NuGet package dependencies in the Inventory Management API repository (`gn-svc-inventorymanagement`).</p><p>This work includes:</p><ul><li><p>Reviewing the impacted package version(s)</p></li><li><p>Upgrading affected NuGet package(s) to non-vulnerable supported versions</p></li><li><p>Validating build and runtime compatibility</p></li><li><p>Performing regression testing as needed</p></li></ul><p>Current package update(s):</p><ul><li><p>Microsoft.VisualStudio.Web.CodeGeneration.Design -&gt; 8.0.23</p></li></ul>",
-      "descriptionImageCount": 0,
-      "descriptionVideoCount": 0,
-      "descriptionMediaCount": 0,
-      "commentCount": 0,
-      "comments": [],
-      "lastCommentUrl": "",
-      "lastCommentDisplay": "",
-      "lastCommentAuthor": "",
-      "type": "Security Alert",
-      "isSubtask": false,
-      "status": "QA Testing (DEV)",
-      "priority": "P2",
-      "assignee": "Dewan Kabir",
-      "assigneeAccountId": "630fb06bb433b060db559bdb",
-      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
-      "assignedDeveloper": "Tyler Olechnowicz",
-      "assignedDeveloperAccountId": "5d2396c1ea26c40c2043fc92",
-      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5d2396c1ea26c40c2043fc92/1647fb84-acea-4c3f-b1e8-9a79aa120f8f/32",
-      "updated": "2026-06-01T10:59:32.961-0400",
-      "updatedDisplay": "Jun 1, 2026, 10:59 AM",
-      "created": "2026-05-14T10:39:24.315-0400",
-      "createdDisplay": "May 14, 2026, 10:39 AM",
-      "components": [
-        "GolfNow.Services.InventoryManagement"
-      ],
-      "fixVersions": [
-        "v3001.123.0"
-      ],
-      "resolution": "",
-      "parent": null
-    },
-    {
       "key": "CORE-14427",
       "url": "https://golfnow.atlassian.net/browse/CORE-14427",
       "summary": "Home Course Selection/Management",
@@ -934,59 +1169,6 @@
         "status": "Planning",
         "priority": "None"
       }
-    },
-    {
-      "key": "CORE-14504",
-      "url": "https://golfnow.atlassian.net/browse/CORE-14504",
-      "summary": "Standardize Logging Service NuGet.config and add package source mapping",
-      "description": "Updated the Logging Service NuGet.config to align with current repository standards and modern .NET package management practices.\n\nChanges Made\n\n- Added <clear /> to ensure repository-defined package sources are used consistently across environments\n\n- Added Package Source Mapping configuration to:\n\n- Route internal Golf.* and GolfNow.* packages through the GolfNow Nexus feed\n\n- Route all other packages through nuget.org\n\n- Added documentation comments explaining the purpose of Package Source Mapping and dependency confusion protection\n\n- Removed legacy/unnecessary NuGet configuration settings not needed for a modern .NET 10 API:\n\n- bindingRedirects\n\n- packageManagement\n\n- protocolVersion=\"2\" from the GolfNow feed\n\nBenefits\n\n- Improves dependency security by pinning internal packages to the correct source\n\n- Prevents NU1507 warnings when using Central Package Management\n\n- Simplifies and modernizes the repository NuGet configuration\n\n- Aligns the Logging Service with current repository standards",
-      "descriptionHtml": "<p>Updated the Logging Service <code>NuGet.config</code> to align with current repository standards and modern .NET package management practices.</p><h3>Changes Made</h3><ul><li><p>Added <code>&lt;clear /&gt;</code> to ensure repository-defined package sources are used consistently across environments</p></li><li><p>Added Package Source Mapping configuration to:</p><ul><li><p>Route internal <code>Golf.*</code> and <code>GolfNow.*</code> packages through the GolfNow Nexus feed</p></li><li><p>Route all other packages through <code>nuget.org</code></p></li></ul></li><li><p>Added documentation comments explaining the purpose of Package Source Mapping and dependency confusion protection</p></li><li><p>Removed legacy/unnecessary NuGet configuration settings not needed for a modern .NET 10 API:</p><ul><li><p><code>bindingRedirects</code></p></li><li><p><code>packageManagement</code></p></li><li><p><code>protocolVersion=&quot;2&quot;</code> from the GolfNow feed</p></li></ul></li></ul><h3>Benefits</h3><ul><li><p>Improves dependency security by pinning internal packages to the correct source</p></li><li><p>Prevents NU1507 warnings when using Central Package Management</p></li><li><p>Simplifies and modernizes the repository NuGet configuration</p></li><li><p>Aligns the Logging Service with current repository standards</p></li></ul>",
-      "descriptionImageCount": 0,
-      "descriptionVideoCount": 0,
-      "descriptionMediaCount": 0,
-      "commentCount": 1,
-      "comments": [
-        {
-          "id": "1176038",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14504?focusedCommentId=1176038",
-          "author": "Tyler Olechnowicz",
-          "authorAccountId": "5d2396c1ea26c40c2043fc92",
-          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5d2396c1ea26c40c2043fc92/1647fb84-acea-4c3f-b1e8-9a79aa120f8f/32",
-          "created": "2026-05-28T14:37:27.240-0400",
-          "createdDisplay": "May 28, 2026, 2:37 PM",
-          "updated": "2026-05-28T14:37:27.240-0400",
-          "updatedDisplay": "",
-          "hasMedia": false,
-          "mediaCount": 0,
-          "body": "Testing Instructions\n\nPlease ensure that the API builds successfully across all environments.",
-          "bodyHtml": "<h3>Testing Instructions</h3><p>Please ensure that the API builds successfully across all environments.</p>"
-        }
-      ],
-      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14504?focusedCommentId=1176038",
-      "lastCommentDisplay": "May 28, 2026, 2:37 PM",
-      "lastCommentAuthor": "Tyler Olechnowicz",
-      "type": "Task",
-      "isSubtask": false,
-      "status": "QA Testing (DEV)",
-      "priority": "P0",
-      "assignee": "Dewan Kabir",
-      "assigneeAccountId": "630fb06bb433b060db559bdb",
-      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
-      "assignedDeveloper": "Tyler Olechnowicz",
-      "assignedDeveloperAccountId": "5d2396c1ea26c40c2043fc92",
-      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5d2396c1ea26c40c2043fc92/1647fb84-acea-4c3f-b1e8-9a79aa120f8f/32",
-      "updated": "2026-06-01T10:59:32.940-0400",
-      "updatedDisplay": "Jun 1, 2026, 10:59 AM",
-      "created": "2026-05-28T13:42:37.674-0400",
-      "createdDisplay": "May 28, 2026, 1:42 PM",
-      "components": [
-        "Golf.Svc.Logging"
-      ],
-      "fixVersions": [
-        "v3001.123.0"
-      ],
-      "resolution": "",
-      "parent": null
     },
     {
       "key": "CORE-14486",
@@ -1469,59 +1651,6 @@
       }
     },
     {
-      "key": "CORE-14501",
-      "url": "https://golfnow.atlassian.net/browse/CORE-14501",
-      "summary": "Standardize Commerce Proxy API NuGet and build configuration across environments",
-      "description": "Update the Commerce Proxy API NuGet and build configuration to align with the standardized configuration used across newer applications in order to improve package restore consistency across all environments.\n\nChanges include:\n\n- Add <clear /> to prevent inherited machine/user-level NuGet package sources from affecting restore behavior\n\n- Add packageSourceMapping configuration to explicitly route internal GolfNow packages through the Nexus feed\n\n- Remove NuGet configuration sections that are not required for package restore behavior in the current application:\n\n- defaultPushSource\n\n- bindingRedirects\n\n- packageManagement\n\n- Remove unused NuGet packaging artifacts and workflows that are not applicable to the Commerce Proxy API:\n\n- package-script.ps1\n\n- workflow-nuget.yml\n\nThis change is intended to improve package resolution consistency and reduce environment-specific restore/build issues by ensuring the application uses a deterministic NuGet package source configuration across local development and AWS-hosted environments while also removing unnecessary NuGet package generation infrastructure from the repository.",
-      "descriptionHtml": "<p>Update the Commerce Proxy API NuGet and build configuration to align with the standardized configuration used across newer applications in order to improve package restore consistency across all environments.</p><p>Changes include:</p><ul><li><p>Add <code>&lt;clear /&gt;</code> to prevent inherited machine/user-level NuGet package sources from affecting restore behavior</p></li><li><p>Add <code>packageSourceMapping</code> configuration to explicitly route internal GolfNow packages through the Nexus feed</p></li><li><p>Remove NuGet configuration sections that are not required for package restore behavior in the current application:</p><ul><li><p><code>defaultPushSource</code></p></li><li><p><code>bindingRedirects</code></p></li><li><p><code>packageManagement</code></p></li></ul></li><li><p>Remove unused NuGet packaging artifacts and workflows that are not applicable to the Commerce Proxy API:</p><ul><li><p><code>package-script.ps1</code></p></li><li><p><code>workflow-nuget.yml</code></p></li></ul></li></ul><p>This change is intended to improve package resolution consistency and reduce environment-specific restore/build issues by ensuring the application uses a deterministic NuGet package source configuration across local development and AWS-hosted environments while also removing unnecessary NuGet package generation infrastructure from the repository.</p>",
-      "descriptionImageCount": 0,
-      "descriptionVideoCount": 0,
-      "descriptionMediaCount": 0,
-      "commentCount": 1,
-      "comments": [
-        {
-          "id": "1175280",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14501?focusedCommentId=1175280",
-          "author": "Tyler Olechnowicz",
-          "authorAccountId": "5d2396c1ea26c40c2043fc92",
-          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5d2396c1ea26c40c2043fc92/1647fb84-acea-4c3f-b1e8-9a79aa120f8f/32",
-          "created": "2026-05-27T16:07:23.435-0400",
-          "createdDisplay": "May 27, 2026, 4:07 PM",
-          "updated": "2026-05-27T16:07:23.435-0400",
-          "updatedDisplay": "",
-          "hasMedia": false,
-          "mediaCount": 0,
-          "body": "Testing Instructions\n\nPlease ensure that the API builds successfully across all environments. Also make sure that the NuGet package workflow no longer exists. This API does not need to generate a NuGet package.",
-          "bodyHtml": "<h3>Testing Instructions</h3><p>Please ensure that the API builds successfully across all environments. Also make sure that the NuGet package workflow no longer exists. This API does not need to generate a NuGet package.</p>"
-        }
-      ],
-      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14501?focusedCommentId=1175280",
-      "lastCommentDisplay": "May 27, 2026, 4:07 PM",
-      "lastCommentAuthor": "Tyler Olechnowicz",
-      "type": "Task",
-      "isSubtask": false,
-      "status": "QA Testing (DEV)",
-      "priority": "P0",
-      "assignee": "Dewan Kabir",
-      "assigneeAccountId": "630fb06bb433b060db559bdb",
-      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
-      "assignedDeveloper": "Tyler Olechnowicz",
-      "assignedDeveloperAccountId": "5d2396c1ea26c40c2043fc92",
-      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5d2396c1ea26c40c2043fc92/1647fb84-acea-4c3f-b1e8-9a79aa120f8f/32",
-      "updated": "2026-06-01T10:59:32.801-0400",
-      "updatedDisplay": "Jun 1, 2026, 10:59 AM",
-      "created": "2026-05-27T15:15:57.565-0400",
-      "createdDisplay": "May 27, 2026, 3:15 PM",
-      "components": [
-        "GolfNow.Services.CommerceProxy"
-      ],
-      "fixVersions": [
-        "v3001.123.0"
-      ],
-      "resolution": "",
-      "parent": null
-    },
-    {
       "key": "CORE-14498",
       "url": "https://golfnow.atlassian.net/browse/CORE-14498",
       "summary": "Code Changes",
@@ -1781,43 +1910,6 @@
         "status": "Pending Deployment (STG)",
         "priority": "None"
       }
-    },
-    {
-      "key": "CORE-14480",
-      "url": "https://golfnow.atlassian.net/browse/CORE-14480",
-      "summary": "Upgrade vulnerable and outdated NuGet package(s) identified by Snyk in Logging Service (golf-svc-logging)",
-      "description": "A Snyk alert identified one or more vulnerable and/or outdated NuGet package dependencies in the Logging Service repository (golf-svc-logging).\n\nThis work includes:\n\n- Reviewing impacted and outdated package version(s)\n\n- Upgrading vulnerable and outdated NuGet package(s) to supported versions\n\n- Validating build and runtime compatibility\n\n- Performing regression testing as needed",
-      "descriptionHtml": "<p>A Snyk alert identified one or more vulnerable and/or outdated NuGet package dependencies in the Logging Service repository (golf-svc-logging).</p><p>This work includes:</p><ul><li><p>Reviewing impacted and outdated package version(s)</p></li><li><p>Upgrading vulnerable and outdated NuGet package(s) to supported versions</p></li><li><p>Validating build and runtime compatibility</p></li><li><p>Performing regression testing as needed</p></li></ul>",
-      "descriptionImageCount": 0,
-      "descriptionVideoCount": 0,
-      "descriptionMediaCount": 0,
-      "commentCount": 0,
-      "comments": [],
-      "lastCommentUrl": "",
-      "lastCommentDisplay": "",
-      "lastCommentAuthor": "",
-      "type": "Security Alert",
-      "isSubtask": false,
-      "status": "QA Testing (DEV)",
-      "priority": "P2",
-      "assignee": "Dewan Kabir",
-      "assigneeAccountId": "630fb06bb433b060db559bdb",
-      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
-      "assignedDeveloper": "Tyler Olechnowicz",
-      "assignedDeveloperAccountId": "5d2396c1ea26c40c2043fc92",
-      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5d2396c1ea26c40c2043fc92/1647fb84-acea-4c3f-b1e8-9a79aa120f8f/32",
-      "updated": "2026-06-01T10:59:32.730-0400",
-      "updatedDisplay": "Jun 1, 2026, 10:59 AM",
-      "created": "2026-05-18T16:18:04.192-0400",
-      "createdDisplay": "May 18, 2026, 4:18 PM",
-      "components": [
-        "Golf.Svc.Logging"
-      ],
-      "fixVersions": [
-        "v3001.123.0"
-      ],
-      "resolution": "",
-      "parent": null
     },
     {
       "key": "CORE-14487",
@@ -2124,17 +2216,336 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-06-02T15:46:06.211Z",
-    "previousPulledAtDisplay": "Jun 2, 2026, 11:46 AM",
-    "currentPulledAt": "2026-06-02T16:11:04.249Z",
-    "currentPulledAtDisplay": "Jun 2, 2026, 12:11 PM",
+    "previousPulledAt": "2026-06-02T16:11:04.249Z",
+    "previousPulledAtDisplay": "Jun 2, 2026, 12:11 PM",
+    "currentPulledAt": "2026-06-02T16:20:52.037Z",
+    "currentPulledAtDisplay": "Jun 2, 2026, 12:20 PM",
     "isBaseline": false,
     "added": [],
     "removed": [],
-    "updated": [],
-    "statusChanges": []
+    "updated": [
+      {
+        "key": "CORE-14480",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14480",
+        "summary": "Upgrade vulnerable and outdated NuGet package(s) identified by Snyk in Logging Service (golf-svc-logging)",
+        "changes": [
+          {
+            "field": "status",
+            "label": "Status",
+            "before": "QA Testing (DEV)",
+            "after": "Regression Testing (STG)"
+          },
+          {
+            "field": "updatedDisplay",
+            "label": "Jira updated",
+            "before": "Jun 1, 2026, 10:59 AM",
+            "after": "Jun 2, 2026, 12:18 PM"
+          }
+        ],
+        "type": "Security Alert",
+        "isSubtask": false,
+        "assignee": "Dewan Kabir",
+        "assignedDeveloper": "Tyler Olechnowicz",
+        "status": "Regression Testing (STG)",
+        "parent": null
+      },
+      {
+        "key": "CORE-14471",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14471",
+        "summary": "Upgrade vulnerable NuGet package(s) identified by Snyk in Inventory Management API (gn-svc-inventorymanagement",
+        "changes": [
+          {
+            "field": "status",
+            "label": "Status",
+            "before": "QA Testing (DEV)",
+            "after": "Regression Testing (STG)"
+          },
+          {
+            "field": "updatedDisplay",
+            "label": "Jira updated",
+            "before": "Jun 1, 2026, 10:59 AM",
+            "after": "Jun 2, 2026, 12:17 PM"
+          }
+        ],
+        "type": "Security Alert",
+        "isSubtask": false,
+        "assignee": "Dewan Kabir",
+        "assignedDeveloper": "Tyler Olechnowicz",
+        "status": "Regression Testing (STG)",
+        "parent": null
+      },
+      {
+        "key": "CORE-14501",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14501",
+        "summary": "Standardize Commerce Proxy API NuGet and build configuration across environments",
+        "changes": [
+          {
+            "field": "status",
+            "label": "Status",
+            "before": "QA Testing (DEV)",
+            "after": "Regression Testing (STG)"
+          },
+          {
+            "field": "updatedDisplay",
+            "label": "Jira updated",
+            "before": "Jun 1, 2026, 10:59 AM",
+            "after": "Jun 2, 2026, 12:15 PM"
+          }
+        ],
+        "type": "Task",
+        "isSubtask": false,
+        "assignee": "Dewan Kabir",
+        "assignedDeveloper": "Tyler Olechnowicz",
+        "status": "Regression Testing (STG)",
+        "parent": null
+      },
+      {
+        "key": "CORE-14504",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14504",
+        "summary": "Standardize Logging Service NuGet.config and add package source mapping",
+        "changes": [
+          {
+            "field": "status",
+            "label": "Status",
+            "before": "QA Testing (DEV)",
+            "after": "Regression Testing (STG)"
+          },
+          {
+            "field": "updatedDisplay",
+            "label": "Jira updated",
+            "before": "Jun 1, 2026, 10:59 AM",
+            "after": "Jun 2, 2026, 12:13 PM"
+          }
+        ],
+        "type": "Task",
+        "isSubtask": false,
+        "assignee": "Dewan Kabir",
+        "assignedDeveloper": "Tyler Olechnowicz",
+        "status": "Regression Testing (STG)",
+        "parent": null
+      }
+    ],
+    "statusChanges": [
+      {
+        "key": "CORE-14480",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14480",
+        "summary": "Upgrade vulnerable and outdated NuGet package(s) identified by Snyk in Logging Service (golf-svc-logging)",
+        "before": "QA Testing (DEV)",
+        "after": "Regression Testing (STG)",
+        "type": "Security Alert",
+        "isSubtask": false,
+        "assignee": "Dewan Kabir",
+        "assignedDeveloper": "Tyler Olechnowicz",
+        "status": "Regression Testing (STG)",
+        "parent": null
+      },
+      {
+        "key": "CORE-14471",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14471",
+        "summary": "Upgrade vulnerable NuGet package(s) identified by Snyk in Inventory Management API (gn-svc-inventorymanagement",
+        "before": "QA Testing (DEV)",
+        "after": "Regression Testing (STG)",
+        "type": "Security Alert",
+        "isSubtask": false,
+        "assignee": "Dewan Kabir",
+        "assignedDeveloper": "Tyler Olechnowicz",
+        "status": "Regression Testing (STG)",
+        "parent": null
+      },
+      {
+        "key": "CORE-14501",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14501",
+        "summary": "Standardize Commerce Proxy API NuGet and build configuration across environments",
+        "before": "QA Testing (DEV)",
+        "after": "Regression Testing (STG)",
+        "type": "Task",
+        "isSubtask": false,
+        "assignee": "Dewan Kabir",
+        "assignedDeveloper": "Tyler Olechnowicz",
+        "status": "Regression Testing (STG)",
+        "parent": null
+      },
+      {
+        "key": "CORE-14504",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14504",
+        "summary": "Standardize Logging Service NuGet.config and add package source mapping",
+        "before": "QA Testing (DEV)",
+        "after": "Regression Testing (STG)",
+        "type": "Task",
+        "isSubtask": false,
+        "assignee": "Dewan Kabir",
+        "assignedDeveloper": "Tyler Olechnowicz",
+        "status": "Regression Testing (STG)",
+        "parent": null
+      }
+    ]
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-06-02T16:11:04.249Z",
+      "previousPulledAtDisplay": "Jun 2, 2026, 12:11 PM",
+      "currentPulledAt": "2026-06-02T16:20:52.037Z",
+      "currentPulledAtDisplay": "Jun 2, 2026, 12:20 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [
+        {
+          "key": "CORE-14480",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14480",
+          "summary": "Upgrade vulnerable and outdated NuGet package(s) identified by Snyk in Logging Service (golf-svc-logging)",
+          "changes": [
+            {
+              "field": "status",
+              "label": "Status",
+              "before": "QA Testing (DEV)",
+              "after": "Regression Testing (STG)"
+            },
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "Jun 1, 2026, 10:59 AM",
+              "after": "Jun 2, 2026, 12:18 PM"
+            }
+          ],
+          "type": "Security Alert",
+          "isSubtask": false,
+          "assignee": "Dewan Kabir",
+          "assignedDeveloper": "Tyler Olechnowicz",
+          "status": "Regression Testing (STG)",
+          "parent": null
+        },
+        {
+          "key": "CORE-14471",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14471",
+          "summary": "Upgrade vulnerable NuGet package(s) identified by Snyk in Inventory Management API (gn-svc-inventorymanagement",
+          "changes": [
+            {
+              "field": "status",
+              "label": "Status",
+              "before": "QA Testing (DEV)",
+              "after": "Regression Testing (STG)"
+            },
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "Jun 1, 2026, 10:59 AM",
+              "after": "Jun 2, 2026, 12:17 PM"
+            }
+          ],
+          "type": "Security Alert",
+          "isSubtask": false,
+          "assignee": "Dewan Kabir",
+          "assignedDeveloper": "Tyler Olechnowicz",
+          "status": "Regression Testing (STG)",
+          "parent": null
+        },
+        {
+          "key": "CORE-14501",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14501",
+          "summary": "Standardize Commerce Proxy API NuGet and build configuration across environments",
+          "changes": [
+            {
+              "field": "status",
+              "label": "Status",
+              "before": "QA Testing (DEV)",
+              "after": "Regression Testing (STG)"
+            },
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "Jun 1, 2026, 10:59 AM",
+              "after": "Jun 2, 2026, 12:15 PM"
+            }
+          ],
+          "type": "Task",
+          "isSubtask": false,
+          "assignee": "Dewan Kabir",
+          "assignedDeveloper": "Tyler Olechnowicz",
+          "status": "Regression Testing (STG)",
+          "parent": null
+        },
+        {
+          "key": "CORE-14504",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14504",
+          "summary": "Standardize Logging Service NuGet.config and add package source mapping",
+          "changes": [
+            {
+              "field": "status",
+              "label": "Status",
+              "before": "QA Testing (DEV)",
+              "after": "Regression Testing (STG)"
+            },
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "Jun 1, 2026, 10:59 AM",
+              "after": "Jun 2, 2026, 12:13 PM"
+            }
+          ],
+          "type": "Task",
+          "isSubtask": false,
+          "assignee": "Dewan Kabir",
+          "assignedDeveloper": "Tyler Olechnowicz",
+          "status": "Regression Testing (STG)",
+          "parent": null
+        }
+      ],
+      "statusChanges": [
+        {
+          "key": "CORE-14480",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14480",
+          "summary": "Upgrade vulnerable and outdated NuGet package(s) identified by Snyk in Logging Service (golf-svc-logging)",
+          "before": "QA Testing (DEV)",
+          "after": "Regression Testing (STG)",
+          "type": "Security Alert",
+          "isSubtask": false,
+          "assignee": "Dewan Kabir",
+          "assignedDeveloper": "Tyler Olechnowicz",
+          "status": "Regression Testing (STG)",
+          "parent": null
+        },
+        {
+          "key": "CORE-14471",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14471",
+          "summary": "Upgrade vulnerable NuGet package(s) identified by Snyk in Inventory Management API (gn-svc-inventorymanagement",
+          "before": "QA Testing (DEV)",
+          "after": "Regression Testing (STG)",
+          "type": "Security Alert",
+          "isSubtask": false,
+          "assignee": "Dewan Kabir",
+          "assignedDeveloper": "Tyler Olechnowicz",
+          "status": "Regression Testing (STG)",
+          "parent": null
+        },
+        {
+          "key": "CORE-14501",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14501",
+          "summary": "Standardize Commerce Proxy API NuGet and build configuration across environments",
+          "before": "QA Testing (DEV)",
+          "after": "Regression Testing (STG)",
+          "type": "Task",
+          "isSubtask": false,
+          "assignee": "Dewan Kabir",
+          "assignedDeveloper": "Tyler Olechnowicz",
+          "status": "Regression Testing (STG)",
+          "parent": null
+        },
+        {
+          "key": "CORE-14504",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14504",
+          "summary": "Standardize Logging Service NuGet.config and add package source mapping",
+          "before": "QA Testing (DEV)",
+          "after": "Regression Testing (STG)",
+          "type": "Task",
+          "isSubtask": false,
+          "assignee": "Dewan Kabir",
+          "assignedDeveloper": "Tyler Olechnowicz",
+          "status": "Regression Testing (STG)",
+          "parent": null
+        }
+      ]
+    },
     {
       "previousPulledAt": "2026-06-02T15:46:06.211Z",
       "previousPulledAtDisplay": "Jun 2, 2026, 11:46 AM",
@@ -4070,17 +4481,6 @@
       "previousPulledAtDisplay": "Jun 1, 2026, 4:51 PM",
       "currentPulledAt": "2026-06-01T20:57:01.491Z",
       "currentPulledAtDisplay": "Jun 1, 2026, 4:57 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-06-01T20:46:56.843Z",
-      "previousPulledAtDisplay": "Jun 1, 2026, 4:46 PM",
-      "currentPulledAt": "2026-06-01T20:51:59.164Z",
-      "currentPulledAtDisplay": "Jun 1, 2026, 4:51 PM",
       "isBaseline": false,
       "added": [],
       "removed": [],
