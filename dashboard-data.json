@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-06-02T08:33:39.278Z",
-  "pulledAtDisplay": "Jun 2, 2026, 4:33 AM",
+  "pulledAt": "2026-06-02T08:38:41.983Z",
+  "pulledAtDisplay": "Jun 2, 2026, 4:38 AM",
   "total": 35,
   "issues": [
     {
@@ -2124,10 +2124,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-06-02T08:28:36.287Z",
-    "previousPulledAtDisplay": "Jun 2, 2026, 4:28 AM",
-    "currentPulledAt": "2026-06-02T08:33:39.278Z",
-    "currentPulledAtDisplay": "Jun 2, 2026, 4:33 AM",
+    "previousPulledAt": "2026-06-02T08:33:39.278Z",
+    "previousPulledAtDisplay": "Jun 2, 2026, 4:33 AM",
+    "currentPulledAt": "2026-06-02T08:38:41.983Z",
+    "currentPulledAtDisplay": "Jun 2, 2026, 4:38 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -2135,6 +2135,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-06-02T08:33:39.278Z",
+      "previousPulledAtDisplay": "Jun 2, 2026, 4:33 AM",
+      "currentPulledAt": "2026-06-02T08:38:41.983Z",
+      "currentPulledAtDisplay": "Jun 2, 2026, 4:38 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-06-02T08:28:36.287Z",
       "previousPulledAtDisplay": "Jun 2, 2026, 4:28 AM",
@@ -5003,79 +5014,6 @@
       "removed": [],
       "updated": [],
       "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-06-01T14:35:00.593Z",
-      "previousPulledAtDisplay": "Jun 1, 2026, 10:35 AM",
-      "currentPulledAt": "2026-06-01T14:40:03.458Z",
-      "currentPulledAtDisplay": "Jun 1, 2026, 10:40 AM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [
-        {
-          "key": "CORE-14502",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14502",
-          "summary": "Duplicate records returning for GetProductSubscription response",
-          "changes": [
-            {
-              "field": "status",
-              "label": "Status",
-              "before": "Pending Deployment (DEV)",
-              "after": "QA Testing (DEV)"
-            },
-            {
-              "field": "assignee",
-              "label": "Assignee",
-              "before": "Raghav Kancherla",
-              "after": "Dewan Kabir"
-            },
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "Jun 1, 2026, 9:58 AM",
-              "after": "Jun 1, 2026, 10:35 AM"
-            }
-          ],
-          "type": "Bug",
-          "isSubtask": false,
-          "assignee": "Dewan Kabir",
-          "assignedDeveloper": "Raghav Kancherla",
-          "status": "QA Testing (DEV)",
-          "parent": {
-            "key": "B2C-70",
-            "url": "https://golfnow.atlassian.net/browse/B2C-70",
-            "summary": "NY Cancellation Validation",
-            "description": "",
-            "type": "Epic",
-            "status": "Backlog",
-            "priority": "None"
-          }
-        }
-      ],
-      "statusChanges": [
-        {
-          "key": "CORE-14502",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14502",
-          "summary": "Duplicate records returning for GetProductSubscription response",
-          "before": "Pending Deployment (DEV)",
-          "after": "QA Testing (DEV)",
-          "type": "Bug",
-          "isSubtask": false,
-          "assignee": "Dewan Kabir",
-          "assignedDeveloper": "Raghav Kancherla",
-          "status": "QA Testing (DEV)",
-          "parent": {
-            "key": "B2C-70",
-            "url": "https://golfnow.atlassian.net/browse/B2C-70",
-            "summary": "NY Cancellation Validation",
-            "description": "",
-            "type": "Epic",
-            "status": "Backlog",
-            "priority": "None"
-          }
-        }
-      ]
     }
   ],
   "schemaVersionNumber": 1,
