@@ -4,10 +4,116 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-06-02T18:41:05.305Z",
-  "pulledAtDisplay": "Jun 2, 2026, 2:41 PM",
+  "pulledAt": "2026-06-02T19:06:05.678Z",
+  "pulledAtDisplay": "Jun 2, 2026, 3:06 PM",
   "total": 35,
   "issues": [
+    {
+      "key": "CORE-14423",
+      "url": "https://golfnow.atlassian.net/browse/CORE-14423",
+      "summary": "Troubleshoot Warden setup in DEV",
+      "description": "",
+      "descriptionHtml": "",
+      "descriptionImageCount": 0,
+      "descriptionVideoCount": 0,
+      "descriptionMediaCount": 0,
+      "commentCount": 1,
+      "comments": [
+        {
+          "id": "1176440",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14423?focusedCommentId=1176440",
+          "author": "Raghav Kancherla",
+          "authorAccountId": "557058:24f78684-6276-42b4-9860-f81502d6d45e",
+          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/initials/RK-4.png",
+          "created": "2026-05-29T14:08:36.237-0400",
+          "createdDisplay": "May 29, 2026, 2:08 PM",
+          "updated": "2026-05-29T14:08:36.237-0400",
+          "updatedDisplay": "",
+          "hasMedia": true,
+          "mediaCount": 2,
+          "body": "Go to Chatgpt developer account and add a new too connecting to Warden with the below configuration:\n\nOAuth:\n\nwdn_cid_43e132bbc9fe0481d3ad73b5\nwdn_sec_cff40a5858aff7437a1c648cacfd8d22",
+          "bodyHtml": "<p>Go to Chatgpt developer account and add a new too connecting to Warden with the below configuration:</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14423/comments/1176440/732622-image-20260529-180752.png\" alt=\"image-20260529-180752.png\" loading=\"lazy\"><figcaption>image-20260529-180752.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14423/comments/1176440/732621-image-20260529-180735.png\" alt=\"image-20260529-180735.png\" loading=\"lazy\"><figcaption>image-20260529-180735.png</figcaption></figure></div><p>OAuth:</p><p>wdn_cid_43e132bbc9fe0481d3ad73b5<br>wdn_sec_cff40a5858aff7437a1c648cacfd8d22</p>"
+        }
+      ],
+      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14423?focusedCommentId=1176440",
+      "lastCommentDisplay": "May 29, 2026, 2:08 PM",
+      "lastCommentAuthor": "Raghav Kancherla",
+      "type": "Story",
+      "isSubtask": false,
+      "status": "Regression Testing (STG)",
+      "priority": "P1",
+      "assignee": "Raghav Kancherla",
+      "assigneeAccountId": "557058:24f78684-6276-42b4-9860-f81502d6d45e",
+      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/initials/RK-4.png",
+      "assignedDeveloper": "Raghav Kancherla",
+      "assignedDeveloperAccountId": "557058:24f78684-6276-42b4-9860-f81502d6d45e",
+      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/initials/RK-4.png",
+      "updated": "2026-06-02T14:43:35.750-0400",
+      "updatedDisplay": "Jun 2, 2026, 2:43 PM",
+      "created": "2026-04-29T16:56:12.343-0400",
+      "createdDisplay": "Apr 29, 2026, 4:56 PM",
+      "components": [
+        "Golf.OpenAI"
+      ],
+      "fixVersions": [
+        "v3001.123.0"
+      ],
+      "resolution": "",
+      "parent": {
+        "key": "CORE-14096",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14096",
+        "summary": "ChatGPT - OpenAI Apps",
+        "description": "",
+        "type": "Epic",
+        "status": "Planning",
+        "priority": "None"
+      }
+    },
+    {
+      "key": "CORE-14422",
+      "url": "https://golfnow.atlassian.net/browse/CORE-14422",
+      "summary": "Add .well-known challenge for OpenAI app",
+      "description": "Need to expose .well-known/openai-apps-challenge to OpenAI in order to validate domain during app submission\n\napp.MapGet(\".well-known/openai-apps-challenge\", (IConfiguration config) =>\n{\nvar token = config[\"ChallengeToken\"] ?? string.Empty;\nreturn Results.Text(token, \"text/plain\");\n});",
+      "descriptionHtml": "<p>Need to expose .well-known/openai-apps-challenge to OpenAI in order to validate domain during app submission</p><pre><code>app.MapGet(&quot;.well-known/openai-apps-challenge&quot;, (IConfiguration config) =&gt;\n{\n    var token = config[&quot;ChallengeToken&quot;] ?? string.Empty;\n    return Results.Text(token, &quot;text/plain&quot;);\n});</code></pre>",
+      "descriptionImageCount": 0,
+      "descriptionVideoCount": 0,
+      "descriptionMediaCount": 0,
+      "commentCount": 0,
+      "comments": [],
+      "lastCommentUrl": "",
+      "lastCommentDisplay": "",
+      "lastCommentAuthor": "",
+      "type": "Story",
+      "isSubtask": false,
+      "status": "Regression Testing (STG)",
+      "priority": "P1",
+      "assignee": "Dewan Kabir",
+      "assigneeAccountId": "630fb06bb433b060db559bdb",
+      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
+      "assignedDeveloper": "Raghav Kancherla",
+      "assignedDeveloperAccountId": "557058:24f78684-6276-42b4-9860-f81502d6d45e",
+      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/initials/RK-4.png",
+      "updated": "2026-06-02T14:43:25.420-0400",
+      "updatedDisplay": "Jun 2, 2026, 2:43 PM",
+      "created": "2026-04-29T16:54:53.099-0400",
+      "createdDisplay": "Apr 29, 2026, 4:54 PM",
+      "components": [
+        "Golf.OpenAI"
+      ],
+      "fixVersions": [
+        "v3001.123.0"
+      ],
+      "resolution": "",
+      "parent": {
+        "key": "CORE-14096",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14096",
+        "summary": "ChatGPT - OpenAI Apps",
+        "description": "",
+        "type": "Epic",
+        "status": "Planning",
+        "priority": "None"
+      }
+    },
     {
       "key": "CORE-14498",
       "url": "https://golfnow.atlassian.net/browse/CORE-14498",
@@ -1045,51 +1151,6 @@
       }
     },
     {
-      "key": "CORE-14422",
-      "url": "https://golfnow.atlassian.net/browse/CORE-14422",
-      "summary": "Add .well-known challenge for OpenAI app",
-      "description": "Need to expose .well-known/openai-apps-challenge to OpenAI in order to validate domain during app submission\n\napp.MapGet(\".well-known/openai-apps-challenge\", (IConfiguration config) =>\n{\nvar token = config[\"ChallengeToken\"] ?? string.Empty;\nreturn Results.Text(token, \"text/plain\");\n});",
-      "descriptionHtml": "<p>Need to expose .well-known/openai-apps-challenge to OpenAI in order to validate domain during app submission</p><pre><code>app.MapGet(&quot;.well-known/openai-apps-challenge&quot;, (IConfiguration config) =&gt;\n{\n    var token = config[&quot;ChallengeToken&quot;] ?? string.Empty;\n    return Results.Text(token, &quot;text/plain&quot;);\n});</code></pre>",
-      "descriptionImageCount": 0,
-      "descriptionVideoCount": 0,
-      "descriptionMediaCount": 0,
-      "commentCount": 0,
-      "comments": [],
-      "lastCommentUrl": "",
-      "lastCommentDisplay": "",
-      "lastCommentAuthor": "",
-      "type": "Story",
-      "isSubtask": false,
-      "status": "QA Testing (DEV)",
-      "priority": "P1",
-      "assignee": "Dewan Kabir",
-      "assigneeAccountId": "630fb06bb433b060db559bdb",
-      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/630fb06bb433b060db559bdb/32ec0eb9-63e5-4027-9641-1dd0e01b4d01/32",
-      "assignedDeveloper": "Raghav Kancherla",
-      "assignedDeveloperAccountId": "557058:24f78684-6276-42b4-9860-f81502d6d45e",
-      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/initials/RK-4.png",
-      "updated": "2026-06-01T10:59:34.316-0400",
-      "updatedDisplay": "Jun 1, 2026, 10:59 AM",
-      "created": "2026-04-29T16:54:53.099-0400",
-      "createdDisplay": "Apr 29, 2026, 4:54 PM",
-      "components": [
-        "Golf.OpenAI"
-      ],
-      "fixVersions": [
-        "v3001.123.0"
-      ],
-      "resolution": "",
-      "parent": {
-        "key": "CORE-14096",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14096",
-        "summary": "ChatGPT - OpenAI Apps",
-        "description": "",
-        "type": "Epic",
-        "status": "Planning",
-        "priority": "None"
-      }
-    },
-    {
       "key": "CORE-14158",
       "url": "https://golfnow.atlassian.net/browse/CORE-14158",
       "summary": "Follow up from CORE-14094: Bug found in payment during execute fullfillment",
@@ -1174,67 +1235,6 @@
         "key": "GNCBE-9647",
         "url": "https://golfnow.atlassian.net/browse/GNCBE-9647",
         "summary": "External Commerce API Bugs",
-        "description": "",
-        "type": "Epic",
-        "status": "Planning",
-        "priority": "None"
-      }
-    },
-    {
-      "key": "CORE-14423",
-      "url": "https://golfnow.atlassian.net/browse/CORE-14423",
-      "summary": "Troubleshoot Warden setup in DEV",
-      "description": "",
-      "descriptionHtml": "",
-      "descriptionImageCount": 0,
-      "descriptionVideoCount": 0,
-      "descriptionMediaCount": 0,
-      "commentCount": 1,
-      "comments": [
-        {
-          "id": "1176440",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14423?focusedCommentId=1176440",
-          "author": "Raghav Kancherla",
-          "authorAccountId": "557058:24f78684-6276-42b4-9860-f81502d6d45e",
-          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/initials/RK-4.png",
-          "created": "2026-05-29T14:08:36.237-0400",
-          "createdDisplay": "May 29, 2026, 2:08 PM",
-          "updated": "2026-05-29T14:08:36.237-0400",
-          "updatedDisplay": "",
-          "hasMedia": true,
-          "mediaCount": 2,
-          "body": "Go to Chatgpt developer account and add a new too connecting to Warden with the below configuration:\n\nOAuth:\n\nwdn_cid_43e132bbc9fe0481d3ad73b5\nwdn_sec_cff40a5858aff7437a1c648cacfd8d22",
-          "bodyHtml": "<p>Go to Chatgpt developer account and add a new too connecting to Warden with the below configuration:</p><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14423/comments/1176440/732622-image-20260529-180752.png\" alt=\"image-20260529-180752.png\" loading=\"lazy\"><figcaption>image-20260529-180752.png</figcaption></figure></div><div class=\"description-media-group\"><figure class=\"description-media\"><img src=\"assets/jira-media/CORE-14423/comments/1176440/732621-image-20260529-180735.png\" alt=\"image-20260529-180735.png\" loading=\"lazy\"><figcaption>image-20260529-180735.png</figcaption></figure></div><p>OAuth:</p><p>wdn_cid_43e132bbc9fe0481d3ad73b5<br>wdn_sec_cff40a5858aff7437a1c648cacfd8d22</p>"
-        }
-      ],
-      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14423?focusedCommentId=1176440",
-      "lastCommentDisplay": "May 29, 2026, 2:08 PM",
-      "lastCommentAuthor": "Raghav Kancherla",
-      "type": "Story",
-      "isSubtask": false,
-      "status": "QA Testing (DEV)",
-      "priority": "P1",
-      "assignee": "Raghav Kancherla",
-      "assigneeAccountId": "557058:24f78684-6276-42b4-9860-f81502d6d45e",
-      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/initials/RK-4.png",
-      "assignedDeveloper": "Raghav Kancherla",
-      "assignedDeveloperAccountId": "557058:24f78684-6276-42b4-9860-f81502d6d45e",
-      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/initials/RK-4.png",
-      "updated": "2026-06-01T10:59:33.021-0400",
-      "updatedDisplay": "Jun 1, 2026, 10:59 AM",
-      "created": "2026-04-29T16:56:12.343-0400",
-      "createdDisplay": "Apr 29, 2026, 4:56 PM",
-      "components": [
-        "Golf.OpenAI"
-      ],
-      "fixVersions": [
-        "v3001.123.0"
-      ],
-      "resolution": "",
-      "parent": {
-        "key": "CORE-14096",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14096",
-        "summary": "ChatGPT - OpenAI Apps",
         "description": "",
         "type": "Epic",
         "status": "Planning",
@@ -2231,18 +2231,18 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-06-02T18:16:24.369Z",
-    "previousPulledAtDisplay": "Jun 2, 2026, 2:16 PM",
-    "currentPulledAt": "2026-06-02T18:41:05.305Z",
-    "currentPulledAtDisplay": "Jun 2, 2026, 2:41 PM",
+    "previousPulledAt": "2026-06-02T18:41:05.305Z",
+    "previousPulledAtDisplay": "Jun 2, 2026, 2:41 PM",
+    "currentPulledAt": "2026-06-02T19:06:05.678Z",
+    "currentPulledAtDisplay": "Jun 2, 2026, 3:06 PM",
     "isBaseline": false,
     "added": [],
     "removed": [],
     "updated": [
       {
-        "key": "CORE-14498",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14498",
-        "summary": "Code Changes",
+        "key": "CORE-14423",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14423",
+        "summary": "Troubleshoot Warden setup in DEV",
         "changes": [
           {
             "field": "status",
@@ -2254,28 +2254,28 @@
             "field": "updatedDisplay",
             "label": "Jira updated",
             "before": "Jun 1, 2026, 10:59 AM",
-            "after": "Jun 2, 2026, 2:40 PM"
+            "after": "Jun 2, 2026, 2:43 PM"
           }
         ],
-        "type": "Developer Task (sub task)",
-        "isSubtask": true,
-        "assignee": "Dewan Kabir",
-        "assignedDeveloper": "Tyler Olechnowicz",
+        "type": "Story",
+        "isSubtask": false,
+        "assignee": "Raghav Kancherla",
+        "assignedDeveloper": "Raghav Kancherla",
         "status": "Regression Testing (STG)",
         "parent": {
-          "key": "CORE-14497",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14497",
-          "summary": "Upgrade Subscription Renewal Reminder Task to .NET 10",
+          "key": "CORE-14096",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14096",
+          "summary": "ChatGPT - OpenAI Apps",
           "description": "",
-          "type": "Story",
-          "status": "Regression Testing (STG)",
-          "priority": "P2"
+          "type": "Epic",
+          "status": "Planning",
+          "priority": "None"
         }
       },
       {
-        "key": "CORE-14497",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14497",
-        "summary": "Upgrade Subscription Renewal Reminder Task to .NET 10",
+        "key": "CORE-14422",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14422",
+        "summary": "Add .well-known challenge for OpenAI app",
         "changes": [
           {
             "field": "status",
@@ -2287,185 +2287,192 @@
             "field": "updatedDisplay",
             "label": "Jira updated",
             "before": "Jun 1, 2026, 10:59 AM",
-            "after": "Jun 2, 2026, 2:40 PM"
+            "after": "Jun 2, 2026, 2:43 PM"
           }
         ],
         "type": "Story",
         "isSubtask": false,
         "assignee": "Dewan Kabir",
-        "assignedDeveloper": "Tyler Olechnowicz",
-        "status": "Regression Testing (STG)",
-        "parent": null
-      },
-      {
-        "key": "CORE-14466",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14466",
-        "summary": "Latency issue with Product.CustomerSubscriptionList stored procedure.",
-        "changes": [
-          {
-            "field": "status",
-            "label": "Status",
-            "before": "QA Testing (DEV)",
-            "after": "Regression Testing (STG)"
-          },
-          {
-            "field": "updatedDisplay",
-            "label": "Jira updated",
-            "before": "Jun 1, 2026, 10:59 AM",
-            "after": "Jun 2, 2026, 2:39 PM"
-          }
-        ],
-        "type": "Bug",
-        "isSubtask": false,
-        "assignee": "Dewan Kabir",
-        "assignedDeveloper": "Yoel Martin Pardo",
-        "status": "Regression Testing (STG)",
-        "parent": null
-      },
-      {
-        "key": "CORE-14440",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14440",
-        "summary": "Modify New EZL API workflow to Account for Partial Prepaid to GN - 2",
-        "changes": [
-          {
-            "field": "status",
-            "label": "Status",
-            "before": "QA Testing (DEV)",
-            "after": "Regression Testing (STG)"
-          },
-          {
-            "field": "updatedDisplay",
-            "label": "Jira updated",
-            "before": "Jun 1, 2026, 10:59 AM",
-            "after": "Jun 2, 2026, 2:39 PM"
-          }
-        ],
-        "type": "Bug",
-        "isSubtask": false,
-        "assignee": "Nicole Greer",
-        "assignedDeveloper": "Luis Vallejo Mursuli",
-        "status": "Regression Testing (STG)",
-        "parent": null
-      },
-      {
-        "key": "CORE-14469",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14469",
-        "summary": "Code changes for [CORE - 14440]",
-        "changes": [
-          {
-            "field": "status",
-            "label": "Status",
-            "before": "QA Testing (DEV)",
-            "after": "Regression Testing (STG)"
-          },
-          {
-            "field": "updatedDisplay",
-            "label": "Jira updated",
-            "before": "Jun 1, 2026, 10:59 AM",
-            "after": "Jun 2, 2026, 2:39 PM"
-          }
-        ],
-        "type": "Developer Task (sub task)",
-        "isSubtask": true,
-        "assignee": "Nicole Greer",
-        "assignedDeveloper": "Luis Vallejo Mursuli",
+        "assignedDeveloper": "Raghav Kancherla",
         "status": "Regression Testing (STG)",
         "parent": {
-          "key": "CORE-14440",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14440",
-          "summary": "Modify New EZL API workflow to Account for Partial Prepaid to GN - 2",
+          "key": "CORE-14096",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14096",
+          "summary": "ChatGPT - OpenAI Apps",
           "description": "",
-          "type": "Bug",
-          "status": "Regression Testing (STG)",
-          "priority": "P1"
+          "type": "Epic",
+          "status": "Planning",
+          "priority": "None"
         }
       }
     ],
     "statusChanges": [
       {
-        "key": "CORE-14498",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14498",
-        "summary": "Code Changes",
+        "key": "CORE-14423",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14423",
+        "summary": "Troubleshoot Warden setup in DEV",
         "before": "QA Testing (DEV)",
         "after": "Regression Testing (STG)",
-        "type": "Developer Task (sub task)",
-        "isSubtask": true,
-        "assignee": "Dewan Kabir",
-        "assignedDeveloper": "Tyler Olechnowicz",
+        "type": "Story",
+        "isSubtask": false,
+        "assignee": "Raghav Kancherla",
+        "assignedDeveloper": "Raghav Kancherla",
         "status": "Regression Testing (STG)",
         "parent": {
-          "key": "CORE-14497",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14497",
-          "summary": "Upgrade Subscription Renewal Reminder Task to .NET 10",
+          "key": "CORE-14096",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14096",
+          "summary": "ChatGPT - OpenAI Apps",
           "description": "",
-          "type": "Story",
-          "status": "Regression Testing (STG)",
-          "priority": "P2"
+          "type": "Epic",
+          "status": "Planning",
+          "priority": "None"
         }
       },
       {
-        "key": "CORE-14497",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14497",
-        "summary": "Upgrade Subscription Renewal Reminder Task to .NET 10",
+        "key": "CORE-14422",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14422",
+        "summary": "Add .well-known challenge for OpenAI app",
         "before": "QA Testing (DEV)",
         "after": "Regression Testing (STG)",
         "type": "Story",
         "isSubtask": false,
         "assignee": "Dewan Kabir",
-        "assignedDeveloper": "Tyler Olechnowicz",
-        "status": "Regression Testing (STG)",
-        "parent": null
-      },
-      {
-        "key": "CORE-14466",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14466",
-        "summary": "Latency issue with Product.CustomerSubscriptionList stored procedure.",
-        "before": "QA Testing (DEV)",
-        "after": "Regression Testing (STG)",
-        "type": "Bug",
-        "isSubtask": false,
-        "assignee": "Dewan Kabir",
-        "assignedDeveloper": "Yoel Martin Pardo",
-        "status": "Regression Testing (STG)",
-        "parent": null
-      },
-      {
-        "key": "CORE-14440",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14440",
-        "summary": "Modify New EZL API workflow to Account for Partial Prepaid to GN - 2",
-        "before": "QA Testing (DEV)",
-        "after": "Regression Testing (STG)",
-        "type": "Bug",
-        "isSubtask": false,
-        "assignee": "Nicole Greer",
-        "assignedDeveloper": "Luis Vallejo Mursuli",
-        "status": "Regression Testing (STG)",
-        "parent": null
-      },
-      {
-        "key": "CORE-14469",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14469",
-        "summary": "Code changes for [CORE - 14440]",
-        "before": "QA Testing (DEV)",
-        "after": "Regression Testing (STG)",
-        "type": "Developer Task (sub task)",
-        "isSubtask": true,
-        "assignee": "Nicole Greer",
-        "assignedDeveloper": "Luis Vallejo Mursuli",
+        "assignedDeveloper": "Raghav Kancherla",
         "status": "Regression Testing (STG)",
         "parent": {
-          "key": "CORE-14440",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14440",
-          "summary": "Modify New EZL API workflow to Account for Partial Prepaid to GN - 2",
+          "key": "CORE-14096",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14096",
+          "summary": "ChatGPT - OpenAI Apps",
           "description": "",
-          "type": "Bug",
-          "status": "Regression Testing (STG)",
-          "priority": "P1"
+          "type": "Epic",
+          "status": "Planning",
+          "priority": "None"
         }
       }
     ]
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-06-02T18:41:05.305Z",
+      "previousPulledAtDisplay": "Jun 2, 2026, 2:41 PM",
+      "currentPulledAt": "2026-06-02T19:06:05.678Z",
+      "currentPulledAtDisplay": "Jun 2, 2026, 3:06 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [
+        {
+          "key": "CORE-14423",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14423",
+          "summary": "Troubleshoot Warden setup in DEV",
+          "changes": [
+            {
+              "field": "status",
+              "label": "Status",
+              "before": "QA Testing (DEV)",
+              "after": "Regression Testing (STG)"
+            },
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "Jun 1, 2026, 10:59 AM",
+              "after": "Jun 2, 2026, 2:43 PM"
+            }
+          ],
+          "type": "Story",
+          "isSubtask": false,
+          "assignee": "Raghav Kancherla",
+          "assignedDeveloper": "Raghav Kancherla",
+          "status": "Regression Testing (STG)",
+          "parent": {
+            "key": "CORE-14096",
+            "url": "https://golfnow.atlassian.net/browse/CORE-14096",
+            "summary": "ChatGPT - OpenAI Apps",
+            "description": "",
+            "type": "Epic",
+            "status": "Planning",
+            "priority": "None"
+          }
+        },
+        {
+          "key": "CORE-14422",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14422",
+          "summary": "Add .well-known challenge for OpenAI app",
+          "changes": [
+            {
+              "field": "status",
+              "label": "Status",
+              "before": "QA Testing (DEV)",
+              "after": "Regression Testing (STG)"
+            },
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "Jun 1, 2026, 10:59 AM",
+              "after": "Jun 2, 2026, 2:43 PM"
+            }
+          ],
+          "type": "Story",
+          "isSubtask": false,
+          "assignee": "Dewan Kabir",
+          "assignedDeveloper": "Raghav Kancherla",
+          "status": "Regression Testing (STG)",
+          "parent": {
+            "key": "CORE-14096",
+            "url": "https://golfnow.atlassian.net/browse/CORE-14096",
+            "summary": "ChatGPT - OpenAI Apps",
+            "description": "",
+            "type": "Epic",
+            "status": "Planning",
+            "priority": "None"
+          }
+        }
+      ],
+      "statusChanges": [
+        {
+          "key": "CORE-14423",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14423",
+          "summary": "Troubleshoot Warden setup in DEV",
+          "before": "QA Testing (DEV)",
+          "after": "Regression Testing (STG)",
+          "type": "Story",
+          "isSubtask": false,
+          "assignee": "Raghav Kancherla",
+          "assignedDeveloper": "Raghav Kancherla",
+          "status": "Regression Testing (STG)",
+          "parent": {
+            "key": "CORE-14096",
+            "url": "https://golfnow.atlassian.net/browse/CORE-14096",
+            "summary": "ChatGPT - OpenAI Apps",
+            "description": "",
+            "type": "Epic",
+            "status": "Planning",
+            "priority": "None"
+          }
+        },
+        {
+          "key": "CORE-14422",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14422",
+          "summary": "Add .well-known challenge for OpenAI app",
+          "before": "QA Testing (DEV)",
+          "after": "Regression Testing (STG)",
+          "type": "Story",
+          "isSubtask": false,
+          "assignee": "Dewan Kabir",
+          "assignedDeveloper": "Raghav Kancherla",
+          "status": "Regression Testing (STG)",
+          "parent": {
+            "key": "CORE-14096",
+            "url": "https://golfnow.atlassian.net/browse/CORE-14096",
+            "summary": "ChatGPT - OpenAI Apps",
+            "description": "",
+            "type": "Epic",
+            "status": "Planning",
+            "priority": "None"
+          }
+        }
+      ]
+    },
     {
       "previousPulledAt": "2026-06-02T18:16:24.369Z",
       "previousPulledAtDisplay": "Jun 2, 2026, 2:16 PM",
@@ -4811,17 +4818,6 @@
           "parent": null
         }
       ],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-06-01T21:22:13.305Z",
-      "previousPulledAtDisplay": "Jun 1, 2026, 5:22 PM",
-      "currentPulledAt": "2026-06-01T21:27:15.889Z",
-      "currentPulledAtDisplay": "Jun 1, 2026, 5:27 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
       "statusChanges": []
     }
   ],
