@@ -4,7 +4,7 @@ name: Refresh Jira Board
 on:
   workflow_dispatch:
   schedule:
-    - cron: "1,16,31,46 * * * *"
+    - cron: "*/5 * * * *"
 
 concurrency:
   group: refresh-jira-board
@@ -17,11 +17,10 @@ jobs:
   refresh:
     name: Pull Jira and publish dashboard
     runs-on: ubuntu-latest
-    timeout-minutes: 190
+    timeout-minutes: 15
     env:
       MANUAL_REFRESH_ITERATIONS: 1
-      SCHEDULE_REFRESH_ITERATIONS: 36
-      REFRESH_INTERVAL_SECONDS: 300
+      SCHEDULE_REFRESH_ITERATIONS: 1
 
     steps:
       - name: Check out repository
@@ -52,10 +51,12 @@ jobs:
           SMTP_SECURE: ${{ secrets.SMTP_SECURE }}
           SMTP_REJECT_UNAUTHORIZED: ${{ secrets.SMTP_REJECT_UNAUTHORIZED }}
           ASSIGNEE_DISPATCH_ENDPOINT: ${{ vars.ASSIGNEE_DISPATCH_ENDPOINT }}
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           if [ "$GITHUB_EVENT_NAME" = "schedule" ]; then
             refresh_iterations="$SCHEDULE_REFRESH_ITERATIONS"
           else
@@ -87,11 +88,7 @@ jobs:
                 git add assets/jira-media
               fi
               git commit -m "Refresh Jira board data ${pulled_at}"
-              git push
+              git push origin "HEAD:${GITHUB_REF_NAME}"
               node scripts/send-refresh-notifications.cjs || echo "::warning::Notification send failed; continuing refresh loop."
-            fi
-
-            if [ "$iteration" -lt "$refresh_iterations" ]; then
-              sleep "$REFRESH_INTERVAL_SECONDS"
             fi
           done
