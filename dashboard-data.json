@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-06-02T07:53:13.962Z",
-  "pulledAtDisplay": "Jun 2, 2026, 3:53 AM",
+  "pulledAt": "2026-06-02T07:58:17.028Z",
+  "pulledAtDisplay": "Jun 2, 2026, 3:58 AM",
   "total": 35,
   "issues": [
     {
@@ -2124,10 +2124,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-06-02T07:48:11.144Z",
-    "previousPulledAtDisplay": "Jun 2, 2026, 3:48 AM",
-    "currentPulledAt": "2026-06-02T07:53:13.962Z",
-    "currentPulledAtDisplay": "Jun 2, 2026, 3:53 AM",
+    "previousPulledAt": "2026-06-02T07:53:13.962Z",
+    "previousPulledAtDisplay": "Jun 2, 2026, 3:53 AM",
+    "currentPulledAt": "2026-06-02T07:58:17.028Z",
+    "currentPulledAtDisplay": "Jun 2, 2026, 3:58 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -2135,6 +2135,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-06-02T07:53:13.962Z",
+      "previousPulledAtDisplay": "Jun 2, 2026, 3:53 AM",
+      "currentPulledAt": "2026-06-02T07:58:17.028Z",
+      "currentPulledAtDisplay": "Jun 2, 2026, 3:58 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-06-02T07:48:11.144Z",
       "previousPulledAtDisplay": "Jun 2, 2026, 3:48 AM",
@@ -5065,85 +5076,6 @@
       "removed": [],
       "updated": [],
       "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-06-01T13:54:38.768Z",
-      "previousPulledAtDisplay": "Jun 1, 2026, 9:54 AM",
-      "currentPulledAt": "2026-06-01T13:59:41.978Z",
-      "currentPulledAtDisplay": "Jun 1, 2026, 9:59 AM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [
-        {
-          "key": "CORE-14502",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14502",
-          "summary": "Duplicate records returning for GetProductSubscription response",
-          "changes": [
-            {
-              "field": "status",
-              "label": "Status",
-              "before": "Pre Planning",
-              "after": "Pending Deployment (DEV)"
-            },
-            {
-              "field": "assignedDeveloper",
-              "label": "Assigned Developer",
-              "before": "Unassigned",
-              "after": "Raghav Kancherla"
-            },
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "Jun 1, 2026, 9:53 AM",
-              "after": "Jun 1, 2026, 9:58 AM"
-            },
-            {
-              "field": "components",
-              "label": "Components",
-              "before": "None",
-              "after": "SQL"
-            }
-          ],
-          "type": "Bug",
-          "isSubtask": false,
-          "assignee": "Dewan Kabir",
-          "assignedDeveloper": "Raghav Kancherla",
-          "status": "QA Testing (DEV)",
-          "parent": {
-            "key": "B2C-70",
-            "url": "https://golfnow.atlassian.net/browse/B2C-70",
-            "summary": "NY Cancellation Validation",
-            "description": "",
-            "type": "Epic",
-            "status": "Backlog",
-            "priority": "None"
-          }
-        }
-      ],
-      "statusChanges": [
-        {
-          "key": "CORE-14502",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14502",
-          "summary": "Duplicate records returning for GetProductSubscription response",
-          "before": "Pre Planning",
-          "after": "Pending Deployment (DEV)",
-          "type": "Bug",
-          "isSubtask": false,
-          "assignee": "Dewan Kabir",
-          "assignedDeveloper": "Raghav Kancherla",
-          "status": "QA Testing (DEV)",
-          "parent": {
-            "key": "B2C-70",
-            "url": "https://golfnow.atlassian.net/browse/B2C-70",
-            "summary": "NY Cancellation Validation",
-            "description": "",
-            "type": "Epic",
-            "status": "Backlog",
-            "priority": "None"
-          }
-        }
-      ]
     }
   ],
   "schemaVersionNumber": 1,
