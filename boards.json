@@ -1,6 +1,6 @@
 {
   "schemaVersion": "board-registry/v1",
-  "updatedAt": "2026-05-19",
+  "updatedAt": "2026-06-03",
   "owner": "CORE QA",
   "boards": [
     {
@@ -29,9 +29,9 @@
       "url": "https://dewankabir009.github.io/jira-board-v3001-124-0/",
       "modernUrl": "https://dewankabir009.github.io/jira-board-v3001-124-0/modern/",
       "repositorySlug": "DewanKabir009/jira-board-v3001-124-0",
-      "status": "planned",
+      "status": "current",
       "owner": "CORE QA",
-      "notes": "Planned 124 release dashboard slot for the CORE QA HQ registry."
+      "notes": "Current 124 release dashboard with hosted bridge defaults and the CORE QA HQ migration path."
     }
   ],
   "automation": {
