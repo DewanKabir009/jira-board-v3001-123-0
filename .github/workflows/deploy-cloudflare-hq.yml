@@ -1,0 +1,35 @@
+name: Deploy Cloudflare HQ
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: Deploy static HQ assets
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Verify Cloudflare token
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "::error::Set CLOUDFLARE_API_TOKEN in repository secrets before running this workflow."
+            exit 1
+          fi
+
+      - name: Prepare Cloudflare static assets
+        run: node scripts/prepare-cloudflare-hq-assets.cjs
+
+      - name: Deploy HQ Worker Static Assets
+        run: npx -y wrangler deploy -c wrangler.hq.toml
