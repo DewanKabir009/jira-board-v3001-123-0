@@ -22,6 +22,16 @@
       "status": "active",
       "owner": "CORE QA",
       "notes": "Active 123 release dashboard with legacy actions and the modern Astro preview."
+    },
+    {
+      "release": "v3001.124.0",
+      "fixVersion": "v3001.124.0",
+      "url": "https://dewankabir009.github.io/jira-board-v3001-124-0/",
+      "modernUrl": "https://dewankabir009.github.io/jira-board-v3001-124-0/modern/",
+      "repositorySlug": "DewanKabir009/jira-board-v3001-124-0",
+      "status": "planned",
+      "owner": "CORE QA",
+      "notes": "Planned 124 release dashboard slot for the CORE QA HQ registry."
     }
   ],
   "automation": {
