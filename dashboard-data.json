@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-06-04T14:30:47.025Z",
-  "pulledAtDisplay": "Jun 4, 2026, 10:30 AM",
+  "pulledAt": "2026-06-04T14:55:51.180Z",
+  "pulledAtDisplay": "Jun 4, 2026, 10:55 AM",
   "total": 34,
   "issues": [
     {
@@ -2190,111 +2190,28 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-06-04T14:05:46.555Z",
-    "previousPulledAtDisplay": "Jun 4, 2026, 10:05 AM",
-    "currentPulledAt": "2026-06-04T14:30:47.025Z",
-    "currentPulledAtDisplay": "Jun 4, 2026, 10:30 AM",
+    "previousPulledAt": "2026-06-04T14:30:47.025Z",
+    "previousPulledAtDisplay": "Jun 4, 2026, 10:30 AM",
+    "currentPulledAt": "2026-06-04T14:55:51.180Z",
+    "currentPulledAtDisplay": "Jun 4, 2026, 10:55 AM",
     "isBaseline": false,
     "added": [],
-    "removed": [
-      {
-        "key": "CORE-14427",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14427",
-        "summary": "Home Course Selection/Management",
-        "description": "We need to create the ability to assign a Home Course for a user and manage the restrictions around Home Course changes.\n\nRequirements\n\n- One customer can have a configurable amount of GolfFacilityIds assigned as Home Course\n\n- Create a platform configuration for maximum number of Home Courses Allowed\n\n- Configuration should be set to 1 for launch but we should support >1 in the future where a customer could potentially have more than 1\n\n- Do not allow selection of Master Facilities\n\n- Create an exclusion list of GolfFacilityIds just in case certain courses refuse to participate\n\n- If a user selects a course on this list, throw an error saying it is not applicable for Home Course selection\n\n- In Prod, this should be empty but we should test by adding some in Dev\n\n- Log the CreatedTimeStamp, LastModifiedTimestamp and LastModifiedBy for selection and modifications\n\n- LastModifiedBy should be the CustomerNumber or CustomerID or SystemUserId if it was done by a service member through GNC\n\n- Create a history log of the changes made for each customer\n\n- Home Course Selection/Modifications\n\n- Any Full Customer without a membership and customers without a product with BenefitID ## (Created in https://golfnow.atlassian.net/browse/CORE-14428)\n\n- You are allowed two selections/modifications in a 1 year period\n\n- One initial selection would start the 1 year clock\n\n- One additional modification within that 1 year period\n\n- Purchasing a product with BenefitId ##\n\n- This will restart the 1 year period with the start date matching the subscription start date\n\n- This new period will exclude any previous modifications and restart at 2\n\n- Multiple purchases of a product within the 1 year period will not affect the date range\n\n- Example: The initial purchase of a monthly product will start the 1 year period but the renewal of the monthly product will not restart at the end of 30 days, it will still be the original 1 year period. After the 1 year period of 12 renewed monthly memberships, you will then start a new 1 year\n\n- As a user that has already selected their home course and they either purchase an applicable product, renew their applicable product or are a non member and have crossed the 365 day mark\n\n- Your previous selection will remain as is and roll over to the new period as a new Home Course record\n\n- You are allowed two modifications with the new 365 day period\n\n- Monthly product renewals do not reset the modification count or 1 year period\n\n- Guest customers should not be able to select a Home Course\n\n- GNC should have the ability to override the Home Course selection at any time for support purposes\n\n- GNC Modifications should be logged in Change Tracking\n\n- GNC Modifications should not count towards the two allowed modification count\n\n- If you have two stacked memberships with one starting in the future, you should not be able to make modifications to the future dated membership Home Course until the subscription starts\n\n- Future dated memberships are now out of scope since all users get a 365 day period no matter what\n\n- There should be an optional reason for choosing a home course\n\n- Reasons:\n\n- Convenience/location\n\n- Price/value\n\n- Course conditions\n\n- Social/community\n\n- Course amenities\n\n- Personal history/familiarity\n\n- There should be an optional reason for modifying home course\n\n- Reasons:\n\n- Course closed\n\n- Course conditions deteriorated\n\n- I moved\n\n- Snow bird\n\n- Accidental selection\n\n- Course no longer fits my wants/needs\n\nDeliverables\n\n- An API for frontend to set a Home Course\n\n- Needs ChannelId in the request so we can store where the Home Course was set/modified\n\n- An API for frontend to modify a Home Course selection\n\n- Needs ChannelId in the request so we can store where the Home Course was set/modified\n\n- Error messaging around modification limit restrictions\n\n- You have reached your Home Course modification limit. Please reach out to GolfNow Support for further assistance.\n\n- Error messaging around selecting the same facility twice when modifying\n\n- [FacilityName] is already selected as your Home Course.\n\n- Can GetCustomer and GetCustomerSubscription APIs also return the Home Course GolfFacilityId? This is a nice to have\n\n- A GNC UI for managing/Supporting Home Course - https://golfnow.atlassian.net/browse/CORE-14437",
-        "descriptionHtml": "<p>We need to create the ability to assign a Home Course for a user and manage the restrictions around Home Course changes. </p><p><strong>Requirements</strong></p><ul><li><p>One customer can have a configurable amount of GolfFacilityIds assigned as Home Course</p><ul><li><p>Create a platform configuration for maximum number of Home Courses Allowed</p><ul><li><p>Configuration should be set to 1 for launch but we should support &gt;1 in the future where a customer could potentially have more than 1</p></li></ul></li></ul></li><li><p>Do not allow selection of Master Facilities</p></li><li><p>Create an exclusion list of GolfFacilityIds just in case certain courses refuse to participate</p><ul><li><p>If a user selects a course on this list, throw an error saying it is not applicable for Home Course selection</p></li><li><p>In Prod, this should be empty but we should test by adding some in Dev</p></li></ul></li><li><p>Log the CreatedTimeStamp, LastModifiedTimestamp and LastModifiedBy for selection and modifications</p><ul><li><p>LastModifiedBy should be the CustomerNumber or CustomerID or SystemUserId if it was done by a service member through GNC</p></li><li><p>Create a history log of the changes made for each customer</p></li></ul></li><li><p>Home Course Selection/Modifications</p><ul><li><p>Any Full Customer without a membership and customers without a product with BenefitID ## (Created in <a href=\"https://golfnow.atlassian.net/browse/CORE-14428\" target=\"_blank\" rel=\"noopener\">https://golfnow.atlassian.net/browse/CORE-14428</a>)</p><ul><li><p>You are allowed two selections/modifications in a 1 year period</p><ul><li><p>One initial selection would start the 1 year clock</p></li><li><p>One additional modification within that 1 year period</p></li></ul></li></ul></li><li><p>Purchasing a product with BenefitId ## </p><ul><li><p>This will restart the 1 year period with the start date matching the subscription start date</p></li><li><p>This new period will exclude any previous modifications and restart at 2</p></li><li><p>Multiple purchases of a product within the 1 year period will not affect the date range</p><ul><li><p>Example: The initial purchase of a monthly product will start the 1 year period but the renewal of the monthly product will not restart at the end of 30 days, it will still be the original 1 year period. After the 1 year period of 12 renewed monthly memberships, you will then start a new 1 year</p></li></ul></li></ul></li><li><p>As a user that has already selected their home course and they either purchase an applicable product, renew their applicable product or are a non member and have crossed the 365 day mark</p><ul><li><p>Your previous selection will remain as is and roll over to the new period as a new Home Course record</p></li><li><p>You are allowed two modifications with the new 365 day period</p></li><li><p>Monthly product renewals do not reset the modification count or 1 year period</p></li></ul></li><li><p>Guest customers should not be able to select a Home Course</p></li><li><p>GNC should have the ability to override the Home Course selection at any time for support purposes </p><ul><li><p>GNC Modifications should be logged in Change Tracking </p></li><li><p>GNC Modifications should not count towards the two allowed modification count</p></li></ul></li><li><p>If you have two stacked memberships with one starting in the future, you should not be able to make modifications to the future dated membership Home Course until the subscription starts</p><ul><li><p>Future dated memberships are now out of scope since all users get a 365 day period no matter what</p></li></ul></li></ul></li><li><p>There should be an optional reason for choosing a home course</p><ul><li><p>Reasons:</p><ul><li><p>Convenience/location </p></li><li><p>Price/value</p></li><li><p>Course conditions</p></li><li><p>Social/community</p></li><li><p>Course amenities </p></li><li><p>Personal history/familiarity</p></li></ul></li><li><p>There should be an optional reason for modifying home course</p><ul><li><p>Reasons:</p><ul><li><p>Course closed</p></li><li><p>Course conditions deteriorated</p></li><li><p>I moved</p></li><li><p>Snow bird</p></li><li><p>Accidental selection</p></li><li><p>Course no longer fits my wants/needs</p></li></ul></li></ul></li></ul></li></ul><p><strong>Deliverables</strong></p><ul><li><p>An API for frontend to set a Home Course</p><ul><li><p>Needs ChannelId in the request so we can store where the Home Course was set/modified</p></li></ul></li><li><p>An API for frontend to modify a Home Course selection</p><ul><li><p>Needs ChannelId in the request so we can store where the Home Course was set/modified</p></li></ul></li><li><p>Error messaging around modification limit restrictions</p><ul><li><p>You have reached your Home Course modification limit. Please reach out to GolfNow Support for further assistance. </p></li></ul></li><li><p>Error messaging around selecting the same facility twice when modifying</p><ul><li><p>[FacilityName] is already selected as your Home Course.</p></li></ul></li><li><p>Can GetCustomer and GetCustomerSubscription APIs also return the Home Course GolfFacilityId? This is a nice to have</p></li><li><p>A GNC UI for managing/Supporting Home Course - <a href=\"https://golfnow.atlassian.net/browse/CORE-14437\" target=\"_blank\" rel=\"noopener\">https://golfnow.atlassian.net/browse/CORE-14437</a> </p></li></ul>",
-        "descriptionImageCount": 0,
-        "descriptionVideoCount": 0,
-        "descriptionMediaCount": 0,
-        "commentCount": 1,
-        "comments": [
-          {
-            "id": "1168780",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14427?focusedCommentId=1168780",
-            "author": "Luis Vallejo Mursuli",
-            "authorAccountId": "712020:2e637bb4-c610-467b-839d-9a5b84f75f01",
-            "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:2e637bb4-c610-467b-839d-9a5b84f75f01/4dca1d1b-3faa-4d03-90b8-2b3e0cc02887/32",
-            "created": "2026-05-12T18:04:35.483-0400",
-            "createdDisplay": "May 12, 2026, 6:04 PM",
-            "updated": "2026-05-12T18:06:13.976-0400",
-            "updatedDisplay": "May 12, 2026, 6:06 PM",
-            "hasMedia": false,
-            "mediaCount": 0,
-            "body": "Hi @Brian Pugh  and @Daniel McNaughton ,\n\nI’ve been reviewing CORE-14427 in detail to prepare for implementation, and I want to make sure we align on a few areas where the requirements are currently ambiguous or open-ended. Clarifying these upfront will help avoid rework and ensure the APIs and data model are designed correctly for both launch and future extensibility.\n\n---\n1. Data Model / ReferenceId\n\n- The ticket mentions ReferenceId = CustomerSubscriptionId for members, and possibly 1 (or another value) for non-members to avoid nulls.\n\n- Should ReferenceId be nullable for non-members, or do we want a sentinel value?\n\n- If using a sentinel, should we instead model this explicitly (e.g., IsMember flag or ReferenceType) to avoid overloading semantics?\n\n---\n2. Benefit Eligibility\n\nSince I’m also assigned to CORE-14428, and it needs to be implemented in the same sprint, I want to clarify the eligibility rule before wiring it into CORE-14427.\n\nCORE-14428 asks us to insert the new \"Home Course Eligible\" benefit and associate it with the applicable products. Should CORE-14427 rely only on that new benefit to determine whether a user is eligible for member-based Home Course behavior, or are there any other existing/current benefits that should also be considered?\n\n---\n3. Selection / Modification Limits\n\nThere appears to be a potential inconsistency:\n\n- Non-member:\n\n- “Two selections/modifications in a 365-day period” (initial + 1 modification)\n\n- Member:\n\n- “Two selections per subscription period” (initial + 1 modification)\n\n- Later:\n\n- “You are allowed two modifications with the new period”\n\nCan we confirm:\n\n- Is the total allowance 2 actions per period (initial + 1 modification)?\n\n- Or initial selection + 2 modifications (3 total actions) after rollover?\n\n---\n4. Rollover Behavior\n\n- When a user renews or crosses the 365-day mark:\n\n- A new Home Course record is created and previous selection “rolls over”\n\nQuestions:\n\n- What event triggers the rollover? (subscription renewal event, scheduled job, lazy creation on next request, etc.)\n\n- Does the rollover count as the initial selection of the new period?\n\n- If a user does nothing (no modification), do they still retain full modification allowance?\n\n---\n5. Future-Dated Memberships\n\n- Users cannot modify Home Course for a future subscription until it starts\n\nQuestions:\n\n- How do we determine the active subscription context when multiple exist?\n\n- What happens if:\n\n- Current subscription is active and future one exists → user modifies now?\n\n- Future subscription starts → do we automatically create a new record?\n\n- What is the expected error response when trying to modify a future-dated record?\n\n---\n6. Multiple Home Courses (Future Support)\n\n- Configurable max is 1 at launch, but should support >1 in future\n\nQuestions:\n\n- Should we design APIs and DB to support multiple Home Courses now (array-based), even if config = 1?\n\n- Are modification limits:\n\n- Per customer globally, or\n\n- Per Home Course slot, or\n\n- Per subscription period regardless of count?\n\n---\n7. GNC Override Behavior\n\n- GNC can override “at any time”\n\nQuestions:\n\n- Does override bypass:\n\n- Modification limits?\n\n- Future membership restrictions?\n\n- Exclusion list?\n\n- Master facility restriction?\n\n- Should overrides:\n\n- Require a reason?\n\n- Reset modification counters?\n\n- Be flagged differently in audit/history?\n\n---\n8. Exclusion List\n\nI already know how to identify whether a facility is a Master Facility, so the main open question here is around the exclusion list.\n\nShould the exclusion list of GolfFacilityIds already exist somewhere, or do we need to include it as part of the data model/configuration changes for this work?\n\nAdditionally, should this exclusion list be managed through database/configuration only, or should there eventually be an admin/GNC management path for it?\n\n---\n9. Audit / History Logging\n\n- We log Created/Modified timestamps and “LastModifiedBy”\n\nQuestions:\n\n- Should we standardize LastModifiedBy as a single identifier type (e.g., always CustomerId or SystemUserId)?\n\n- Should history include:\n\n- Old value vs new value\n\n- Reason (if provided)\n\n- Source (frontend vs GNC)\n\n- ReferenceId / period context?\n\n---\n10. API Contracts\n\nThe ticket lists APIs but does not define contracts.\n\nWe need clarity on:\n\n- Request/response structure for:\n\n- Set Home Course\n\n- Modify Home Course\n\n- Idempotency:\n\n- If user selects the same course again → does it count as modification?\n\n- Error responses:\n\n- Modification limit reached\n\n- Future membership restriction\n\n- Invalid facility (master/excluded)\n\n---\n11. Integration with Existing APIs\n\n- Question raised: should GetCustomer and GetCustomerSubscription return Home Course?\n\nCan we confirm:\n\n- Is this required for launch?\n\n- Should we return:\n\n- Single GolfFacilityId, or\n\n- Full Home Course object(s)?\n\n---\n12. Acceptance Criteria / Edge Cases\n\nTo ensure completeness, we should confirm expected behavior for:\n\n- 3rd modification attempt → error\n\n- Rollover without user interaction\n\n- Switching from non-member → member\n\n- Membership expiration → non-member behavior\n\n- Stacked memberships with overlapping dates\n\n---\nIf we can align on these points, I can proceed with a concrete design (data model + API contracts + validation flow) and avoid rework later.\n\nThanks!",
-            "bodyHtml": "<p>Hi @Brian Pugh  and @Daniel McNaughton ,</p><p>I’ve been reviewing CORE-14427 in detail to prepare for implementation, and I want to make sure we align on a few areas where the requirements are currently ambiguous or open-ended. Clarifying these upfront will help avoid rework and ensure the APIs and data model are designed correctly for both launch and future extensibility.</p><hr><h3>1. Data Model / ReferenceId</h3><ul><li><p>The ticket mentions <code>ReferenceId = CustomerSubscriptionId</code> for members, and possibly <code>1</code> (or another value) for non-members to avoid nulls.</p><ul><li><p>Should <code>ReferenceId</code> be nullable for non-members, or do we want a sentinel value?</p></li><li><p>If using a sentinel, should we instead model this explicitly (e.g., <code>IsMember</code> flag or <code>ReferenceType</code>) to avoid overloading semantics?</p></li></ul></li></ul><hr><h3>2. Benefit Eligibility</h3><p>Since I’m also assigned to CORE-14428, and it needs to be implemented in the same sprint, I want to clarify the eligibility rule before wiring it into CORE-14427.</p><p>CORE-14428 asks us to insert the new &quot;Home Course Eligible&quot; benefit and associate it with the applicable products. Should CORE-14427 rely only on that new benefit to determine whether a user is eligible for member-based Home Course behavior, or are there any other existing/current benefits that should also be considered?</p><hr><h3>3. Selection / Modification Limits</h3><p>There appears to be a potential inconsistency:</p><ul><li><p>Non-member:</p><ul><li><p>“Two selections/modifications in a 365-day period” (initial + 1 modification)</p></li></ul></li><li><p>Member:</p><ul><li><p>“Two selections per subscription period” (initial + 1 modification)</p></li></ul></li><li><p>Later:</p><ul><li><p>“You are allowed two modifications with the new period”</p></li></ul></li></ul><p>Can we confirm:</p><ul><li><p>Is the total allowance 2 actions per period (initial + 1 modification)?</p></li><li><p>Or initial selection + 2 modifications (3 total actions) after rollover?</p></li></ul><hr><h3>4. Rollover Behavior</h3><ul><li><p>When a user renews or crosses the 365-day mark:</p><ul><li><p>A new Home Course record is created and previous selection “rolls over”</p></li></ul></li></ul><p>Questions:</p><ul><li><p>What event triggers the rollover? (subscription renewal event, scheduled job, lazy creation on next request, etc.)</p></li><li><p>Does the rollover count as the initial selection of the new period?</p></li><li><p>If a user does nothing (no modification), do they still retain full modification allowance?</p></li></ul><hr><h3>5. Future-Dated Memberships</h3><ul><li><p>Users cannot modify Home Course for a future subscription until it starts</p></li></ul><p>Questions:</p><ul><li><p>How do we determine the active subscription context when multiple exist?</p></li><li><p>What happens if:</p><ul><li><p>Current subscription is active and future one exists → user modifies now?</p></li><li><p>Future subscription starts → do we automatically create a new record?</p></li></ul></li><li><p>What is the expected error response when trying to modify a future-dated record?</p></li></ul><hr><h3>6. Multiple Home Courses (Future Support)</h3><ul><li><p>Configurable max is 1 at launch, but should support &gt;1 in future</p></li></ul><p>Questions:</p><ul><li><p>Should we design APIs and DB to support multiple Home Courses now (array-based), even if config = 1?</p></li><li><p>Are modification limits:</p><ul><li><p>Per customer globally, or</p></li><li><p>Per Home Course slot, or</p></li><li><p>Per subscription period regardless of count?</p></li></ul></li></ul><hr><h3>7. GNC Override Behavior</h3><ul><li><p>GNC can override “at any time”</p></li></ul><p>Questions:</p><ul><li><p>Does override bypass:</p><ul><li><p>Modification limits?</p></li><li><p>Future membership restrictions?</p></li><li><p>Exclusion list?</p></li><li><p>Master facility restriction?</p></li></ul></li><li><p>Should overrides:</p><ul><li><p>Require a reason?</p></li><li><p>Reset modification counters?</p></li><li><p>Be flagged differently in audit/history?</p></li></ul></li></ul><hr><h3>8. Exclusion List</h3><p>I already know how to identify whether a facility is a Master Facility, so the main open question here is around the exclusion list.</p><p>Should the exclusion list of <code>GolfFacilityIds</code> already exist somewhere, or do we need to include it as part of the data model/configuration changes for this work?</p><p>Additionally, should this exclusion list be managed through database/configuration only, or should there eventually be an admin/GNC management path for it?</p><hr><h3>9. Audit / History Logging</h3><ul><li><p>We log Created/Modified timestamps and “LastModifiedBy”</p></li></ul><p>Questions:</p><ul><li><p>Should we standardize <code>LastModifiedBy</code> as a single identifier type (e.g., always CustomerId or SystemUserId)?</p></li><li><p>Should history include:</p><ul><li><p>Old value vs new value</p></li><li><p>Reason (if provided)</p></li><li><p>Source (frontend vs GNC)</p></li><li><p>ReferenceId / period context?</p></li></ul></li></ul><hr><h3>10. API Contracts</h3><p>The ticket lists APIs but does not define contracts.</p><p>We need clarity on:</p><ul><li><p>Request/response structure for:</p><ul><li><p>Set Home Course</p></li><li><p>Modify Home Course</p></li></ul></li><li><p>Idempotency:</p><ul><li><p>If user selects the same course again → does it count as modification?</p></li></ul></li><li><p>Error responses:</p><ul><li><p>Modification limit reached</p></li><li><p>Future membership restriction</p></li><li><p>Invalid facility (master/excluded)</p></li></ul></li></ul><hr><h3>11. Integration with Existing APIs</h3><ul><li><p>Question raised: should GetCustomer and GetCustomerSubscription return Home Course?</p></li></ul><p>Can we confirm:</p><ul><li><p>Is this required for launch?</p></li><li><p>Should we return:</p><ul><li><p>Single GolfFacilityId, or</p></li><li><p>Full Home Course object(s)?</p></li></ul></li></ul><hr><h3>12. Acceptance Criteria / Edge Cases</h3><p>To ensure completeness, we should confirm expected behavior for:</p><ul><li><p>3rd modification attempt → error</p></li><li><p>Rollover without user interaction</p></li><li><p>Switching from non-member → member</p></li><li><p>Membership expiration → non-member behavior</p></li><li><p>Stacked memberships with overlapping dates</p></li></ul><hr><p>If we can align on these points, I can proceed with a concrete design (data model + API contracts + validation flow) and avoid rework later.</p><p>Thanks!</p>"
-          }
-        ],
-        "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14427?focusedCommentId=1168780",
-        "lastCommentDisplay": "May 12, 2026, 6:04 PM",
-        "lastCommentAuthor": "Luis Vallejo Mursuli",
-        "type": "Story",
-        "isSubtask": false,
-        "status": "Development",
-        "priority": "P1",
-        "assignee": "Luis Vallejo Mursuli",
-        "assigneeAccountId": "712020:2e637bb4-c610-467b-839d-9a5b84f75f01",
-        "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:2e637bb4-c610-467b-839d-9a5b84f75f01/4dca1d1b-3faa-4d03-90b8-2b3e0cc02887/32",
-        "assignedDeveloper": "Luis Vallejo Mursuli",
-        "assignedDeveloperAccountId": "712020:2e637bb4-c610-467b-839d-9a5b84f75f01",
-        "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:2e637bb4-c610-467b-839d-9a5b84f75f01/4dca1d1b-3faa-4d03-90b8-2b3e0cc02887/32",
-        "updated": "2026-06-03T17:40:28.676-0400",
-        "updatedDisplay": "Jun 3, 2026, 5:40 PM",
-        "created": "2026-04-30T09:20:28.579-0400",
-        "createdDisplay": "Apr 30, 2026, 9:20 AM",
-        "components": [],
-        "fixVersions": [
-          "v3001.123.0"
-        ],
-        "resolution": "",
-        "parent": {
-          "key": "CORE-14301",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14301",
-          "summary": "GolfPass \"Home Course\": Phase I",
-          "description": "",
-          "type": "Epic",
-          "status": "Planning",
-          "priority": "None"
-        }
-      }
-    ],
-    "updated": [
-      {
-        "key": "CORE-14488",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14488",
-        "summary": "Code changes for [CORE - 14427]",
-        "changes": [
-          {
-            "field": "updatedDisplay",
-            "label": "Jira updated",
-            "before": "Jun 3, 2026, 9:15 PM",
-            "after": "Jun 4, 2026, 10:25 AM"
-          },
-          {
-            "field": "components",
-            "label": "Components",
-            "before": "None",
-            "after": "GolfNow.Services.Reservation, GolfNowAPI"
-          }
-        ],
-        "type": "Developer Task (sub task)",
-        "isSubtask": true,
-        "assignee": "Luis Vallejo Mursuli",
-        "assignedDeveloper": "Luis Vallejo Mursuli",
-        "status": "Development",
-        "parent": {
-          "key": "CORE-14427",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14427",
-          "summary": "Home Course Selection/Management",
-          "description": "",
-          "type": "Story",
-          "status": "Development",
-          "priority": "P1"
-        }
-      }
-    ],
+    "removed": [],
+    "updated": [],
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-06-04T14:30:47.025Z",
+      "previousPulledAtDisplay": "Jun 4, 2026, 10:30 AM",
+      "currentPulledAt": "2026-06-04T14:55:51.180Z",
+      "currentPulledAtDisplay": "Jun 4, 2026, 10:55 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-06-04T14:05:46.555Z",
       "previousPulledAtDisplay": "Jun 4, 2026, 10:05 AM",
@@ -8919,17 +8836,6 @@
       "previousPulledAtDisplay": "Jun 2, 2026, 4:28 AM",
       "currentPulledAt": "2026-06-02T08:33:39.278Z",
       "currentPulledAtDisplay": "Jun 2, 2026, 4:33 AM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-06-02T08:23:32.289Z",
-      "previousPulledAtDisplay": "Jun 2, 2026, 4:23 AM",
-      "currentPulledAt": "2026-06-02T08:28:36.287Z",
-      "currentPulledAtDisplay": "Jun 2, 2026, 4:28 AM",
       "isBaseline": false,
       "added": [],
       "removed": [],
