@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-06-05T12:15:32.723Z",
-  "pulledAtDisplay": "Jun 5, 2026, 8:15 AM",
+  "pulledAt": "2026-06-05T12:40:31.867Z",
+  "pulledAtDisplay": "Jun 5, 2026, 8:40 AM",
   "total": 34,
   "issues": [
     {
@@ -2190,10 +2190,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-06-05T11:50:31.726Z",
-    "previousPulledAtDisplay": "Jun 5, 2026, 7:50 AM",
-    "currentPulledAt": "2026-06-05T12:15:32.723Z",
-    "currentPulledAtDisplay": "Jun 5, 2026, 8:15 AM",
+    "previousPulledAt": "2026-06-05T12:15:32.723Z",
+    "previousPulledAtDisplay": "Jun 5, 2026, 8:15 AM",
+    "currentPulledAt": "2026-06-05T12:40:31.867Z",
+    "currentPulledAtDisplay": "Jun 5, 2026, 8:40 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -2201,6 +2201,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-06-05T12:15:32.723Z",
+      "previousPulledAtDisplay": "Jun 5, 2026, 8:15 AM",
+      "currentPulledAt": "2026-06-05T12:40:31.867Z",
+      "currentPulledAtDisplay": "Jun 5, 2026, 8:40 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-06-05T11:50:31.726Z",
       "previousPulledAtDisplay": "Jun 5, 2026, 7:50 AM",
@@ -8421,241 +8432,6 @@
             "type": "Epic",
             "status": "Planning",
             "priority": "None"
-          }
-        }
-      ]
-    },
-    {
-      "previousPulledAt": "2026-06-02T18:16:24.369Z",
-      "previousPulledAtDisplay": "Jun 2, 2026, 2:16 PM",
-      "currentPulledAt": "2026-06-02T18:41:05.305Z",
-      "currentPulledAtDisplay": "Jun 2, 2026, 2:41 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [
-        {
-          "key": "CORE-14498",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14498",
-          "summary": "Code Changes",
-          "changes": [
-            {
-              "field": "status",
-              "label": "Status",
-              "before": "QA Testing (DEV)",
-              "after": "Regression Testing (STG)"
-            },
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "Jun 1, 2026, 10:59 AM",
-              "after": "Jun 2, 2026, 2:40 PM"
-            }
-          ],
-          "type": "Developer Task (sub task)",
-          "isSubtask": true,
-          "assignee": "Unassigned",
-          "assignedDeveloper": "Tyler Olechnowicz",
-          "status": "Closed",
-          "parent": {
-            "key": "CORE-14497",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14497",
-            "summary": "Upgrade Subscription Renewal Reminder Task to .NET 10",
-            "description": "",
-            "type": "Story",
-            "status": "Closed",
-            "priority": "P2"
-          }
-        },
-        {
-          "key": "CORE-14497",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14497",
-          "summary": "Upgrade Subscription Renewal Reminder Task to .NET 10",
-          "changes": [
-            {
-              "field": "status",
-              "label": "Status",
-              "before": "QA Testing (DEV)",
-              "after": "Regression Testing (STG)"
-            },
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "Jun 1, 2026, 10:59 AM",
-              "after": "Jun 2, 2026, 2:40 PM"
-            }
-          ],
-          "type": "Story",
-          "isSubtask": false,
-          "assignee": "Unassigned",
-          "assignedDeveloper": "Tyler Olechnowicz",
-          "status": "Closed",
-          "parent": null
-        },
-        {
-          "key": "CORE-14466",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14466",
-          "summary": "Latency issue with Product.CustomerSubscriptionList stored procedure.",
-          "changes": [
-            {
-              "field": "status",
-              "label": "Status",
-              "before": "QA Testing (DEV)",
-              "after": "Regression Testing (STG)"
-            },
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "Jun 1, 2026, 10:59 AM",
-              "after": "Jun 2, 2026, 2:39 PM"
-            }
-          ],
-          "type": "Bug",
-          "isSubtask": false,
-          "assignee": "Unassigned",
-          "assignedDeveloper": "Yoel Martin Pardo",
-          "status": "Closed",
-          "parent": null
-        },
-        {
-          "key": "CORE-14440",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14440",
-          "summary": "Modify New EZL API workflow to Account for Partial Prepaid to GN - 2",
-          "changes": [
-            {
-              "field": "status",
-              "label": "Status",
-              "before": "QA Testing (DEV)",
-              "after": "Regression Testing (STG)"
-            },
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "Jun 1, 2026, 10:59 AM",
-              "after": "Jun 2, 2026, 2:39 PM"
-            }
-          ],
-          "type": "Bug",
-          "isSubtask": false,
-          "assignee": "Unassigned",
-          "assignedDeveloper": "Luis Vallejo Mursuli",
-          "status": "Closed",
-          "parent": null
-        },
-        {
-          "key": "CORE-14469",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14469",
-          "summary": "Code changes for [CORE - 14440]",
-          "changes": [
-            {
-              "field": "status",
-              "label": "Status",
-              "before": "QA Testing (DEV)",
-              "after": "Regression Testing (STG)"
-            },
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "Jun 1, 2026, 10:59 AM",
-              "after": "Jun 2, 2026, 2:39 PM"
-            }
-          ],
-          "type": "Developer Task (sub task)",
-          "isSubtask": true,
-          "assignee": "Unassigned",
-          "assignedDeveloper": "Luis Vallejo Mursuli",
-          "status": "Closed",
-          "parent": {
-            "key": "CORE-14440",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14440",
-            "summary": "Modify New EZL API workflow to Account for Partial Prepaid to GN - 2",
-            "description": "",
-            "type": "Bug",
-            "status": "Closed",
-            "priority": "P1"
-          }
-        }
-      ],
-      "statusChanges": [
-        {
-          "key": "CORE-14498",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14498",
-          "summary": "Code Changes",
-          "before": "QA Testing (DEV)",
-          "after": "Regression Testing (STG)",
-          "type": "Developer Task (sub task)",
-          "isSubtask": true,
-          "assignee": "Unassigned",
-          "assignedDeveloper": "Tyler Olechnowicz",
-          "status": "Closed",
-          "parent": {
-            "key": "CORE-14497",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14497",
-            "summary": "Upgrade Subscription Renewal Reminder Task to .NET 10",
-            "description": "",
-            "type": "Story",
-            "status": "Closed",
-            "priority": "P2"
-          }
-        },
-        {
-          "key": "CORE-14497",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14497",
-          "summary": "Upgrade Subscription Renewal Reminder Task to .NET 10",
-          "before": "QA Testing (DEV)",
-          "after": "Regression Testing (STG)",
-          "type": "Story",
-          "isSubtask": false,
-          "assignee": "Unassigned",
-          "assignedDeveloper": "Tyler Olechnowicz",
-          "status": "Closed",
-          "parent": null
-        },
-        {
-          "key": "CORE-14466",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14466",
-          "summary": "Latency issue with Product.CustomerSubscriptionList stored procedure.",
-          "before": "QA Testing (DEV)",
-          "after": "Regression Testing (STG)",
-          "type": "Bug",
-          "isSubtask": false,
-          "assignee": "Unassigned",
-          "assignedDeveloper": "Yoel Martin Pardo",
-          "status": "Closed",
-          "parent": null
-        },
-        {
-          "key": "CORE-14440",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14440",
-          "summary": "Modify New EZL API workflow to Account for Partial Prepaid to GN - 2",
-          "before": "QA Testing (DEV)",
-          "after": "Regression Testing (STG)",
-          "type": "Bug",
-          "isSubtask": false,
-          "assignee": "Unassigned",
-          "assignedDeveloper": "Luis Vallejo Mursuli",
-          "status": "Closed",
-          "parent": null
-        },
-        {
-          "key": "CORE-14469",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14469",
-          "summary": "Code changes for [CORE - 14440]",
-          "before": "QA Testing (DEV)",
-          "after": "Regression Testing (STG)",
-          "type": "Developer Task (sub task)",
-          "isSubtask": true,
-          "assignee": "Unassigned",
-          "assignedDeveloper": "Luis Vallejo Mursuli",
-          "status": "Closed",
-          "parent": {
-            "key": "CORE-14440",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14440",
-            "summary": "Modify New EZL API workflow to Account for Partial Prepaid to GN - 2",
-            "description": "",
-            "type": "Bug",
-            "status": "Closed",
-            "priority": "P1"
           }
         }
       ]
