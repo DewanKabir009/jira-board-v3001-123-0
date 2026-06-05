@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-06-05T20:30:51.355Z",
-  "pulledAtDisplay": "Jun 5, 2026, 4:30 PM",
+  "pulledAt": "2026-06-05T20:55:50.662Z",
+  "pulledAtDisplay": "Jun 5, 2026, 4:55 PM",
   "total": 34,
   "issues": [
     {
@@ -2190,10 +2190,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-06-05T20:07:42.918Z",
-    "previousPulledAtDisplay": "Jun 5, 2026, 4:07 PM",
-    "currentPulledAt": "2026-06-05T20:30:51.355Z",
-    "currentPulledAtDisplay": "Jun 5, 2026, 4:30 PM",
+    "previousPulledAt": "2026-06-05T20:30:51.355Z",
+    "previousPulledAtDisplay": "Jun 5, 2026, 4:30 PM",
+    "currentPulledAt": "2026-06-05T20:55:50.662Z",
+    "currentPulledAtDisplay": "Jun 5, 2026, 4:55 PM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -2201,6 +2201,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-06-05T20:30:51.355Z",
+      "previousPulledAtDisplay": "Jun 5, 2026, 4:30 PM",
+      "currentPulledAt": "2026-06-05T20:55:50.662Z",
+      "currentPulledAtDisplay": "Jun 5, 2026, 4:55 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-06-05T20:07:42.918Z",
       "previousPulledAtDisplay": "Jun 5, 2026, 4:07 PM",
@@ -8285,45 +8296,6 @@
       "added": [],
       "removed": [],
       "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-06-03T02:20:34.206Z",
-      "previousPulledAtDisplay": "Jun 2, 2026, 10:20 PM",
-      "currentPulledAt": "2026-06-03T02:45:34.107Z",
-      "currentPulledAtDisplay": "Jun 2, 2026, 10:45 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [
-        {
-          "key": "CORE-14488",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14488",
-          "summary": "Code changes for [CORE - 14427]",
-          "changes": [
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "Jun 1, 2026, 10:08 PM",
-              "after": "Jun 2, 2026, 10:27 PM"
-            }
-          ],
-          "type": "Developer Task (sub task)",
-          "isSubtask": true,
-          "assignee": "Luis Vallejo Mursuli",
-          "assignedDeveloper": "Luis Vallejo Mursuli",
-          "status": "Development",
-          "parent": {
-            "key": "CORE-14427",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14427",
-            "summary": "Home Course Selection/Management",
-            "description": "",
-            "type": "Story",
-            "status": "Development",
-            "priority": "P1"
-          }
-        }
-      ],
       "statusChanges": []
     }
   ],
