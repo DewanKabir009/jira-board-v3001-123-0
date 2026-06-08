@@ -34,7 +34,21 @@ function parseList(value) {
 
 function getAllowedOrigins(env) {
   const configured = parseList(env.ALLOWED_ORIGINS);
-  return configured.length ? configured : ["https://dewankabir009.github.io"];
+  return configured.length ? configured : ["https://dewankabir009.github.io", "https://*.dfkabir253.workers.dev"];
+}
+
+function allowedOriginMatches(origin, allowedOrigin) {
+  if (allowedOrigin === "*" || allowedOrigin === origin) {
+    return true;
+  }
+  if (!allowedOrigin.includes("*")) {
+    return false;
+  }
+
+  const pattern = `^${allowedOrigin
+    .replace(/[.+?^${}()|[\]\\]/g, "\\$&")
+    .replace(/\*/g, ".*")}$`;
+  return new RegExp(pattern).test(origin);
 }
 
 function getAllowedRepositories(env) {
@@ -53,7 +67,7 @@ function corsOrigin(request, env) {
   if (!origin) {
     return allowedOrigins[0] || "*";
   }
-  return allowedOrigins.includes(origin) ? origin : "";
+  return allowedOrigins.some((allowedOrigin) => allowedOriginMatches(origin, allowedOrigin)) ? origin : "";
 }
 
 function corsHeaders(request, env) {
@@ -720,6 +734,200 @@ async function handleStatus(request, env) {
   });
 }
 
+function prefersHtml(request) {
+  const accept = request.headers.get("Accept") || "";
+  return accept.includes("text/html") && !accept.includes("application/json");
+}
+
+function html(request, env, status, body) {
+  return new Response(body, {
+    status,
+    headers: {
+      "Content-Type": "text/html; charset=utf-8",
+      "Cache-Control": "no-store",
+      ...corsHeaders(request, env),
+    },
+  });
+}
+
+function handleBridgeLanding(request, env) {
+  const url = new URL(request.url);
+  const ready = bridgeReady(env);
+  const statusJsonUrl = new URL("/status?format=json", url.origin).toString();
+  const assignUrl = new URL("/assign", url.origin).toString();
+  const checklistUrl = new URL("/comment-checklist", url.origin).toString();
+  const refreshUrl = new URL("/refresh", url.origin).toString();
+  const hqUrl = env.HQ_URL || "https://core-qa-headquarters-124.dfkabir253.workers.dev/hq/";
+  const boardUrl = env.BOARD_URL || "https://core-qa-headquarters-124.dfkabir253.workers.dev/";
+  const repoList = parseList(env.ALLOWED_REPOSITORIES);
+  const repoText = repoList.length ? repoList.join(", ") : "Not configured";
+  const statusLabel = ready ? "Ready" : "Needs configuration";
+  const statusDetail = ready
+    ? "Hosted assignee, refresh, comment, checklist, and ticket lookup routes are online."
+    : "Set BOARD_DISPATCH_TOKEN and an auth guard before dashboard writes can run.";
+
+  return html(request, env, ready ? 200 : 503, `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jira Board Bridge</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --blue: #006edb;
+        --green: #008a3d;
+        --orange: #f58220;
+        --ink: #061826;
+        --muted: #456176;
+        --line: #b8def5;
+        --panel: rgba(255, 255, 255, 0.92);
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 20% 20%, rgba(0, 110, 219, 0.18), transparent 34rem),
+          radial-gradient(circle at 85% 15%, rgba(117, 216, 75, 0.22), transparent 34rem),
+          linear-gradient(135deg, #f6fbff 0%, #effffa 100%);
+      }
+      main {
+        width: min(1100px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 56px 0;
+      }
+      .hero, .panel {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: var(--panel);
+        box-shadow: 0 22px 70px rgba(8, 43, 68, 0.12);
+      }
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 20px;
+        padding: 30px;
+      }
+      .eyebrow {
+        margin: 0 0 8px;
+        color: var(--blue);
+        font-size: 0.75rem;
+        font-weight: 900;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+      h1 {
+        margin: 0;
+        font-size: clamp(2rem, 5vw, 4.6rem);
+        line-height: 0.95;
+      }
+      p {
+        color: var(--muted);
+        font-size: 1rem;
+        line-height: 1.55;
+      }
+      .status {
+        align-self: start;
+        min-width: 210px;
+        border: 1px solid ${ready ? "#9decc4" : "#ffd08a"};
+        border-radius: 999px;
+        background: ${ready ? "#e5fff0" : "#fff6dd"};
+        padding: 12px 16px;
+        color: ${ready ? "var(--green)" : "#9f4d00"};
+        font-weight: 950;
+        text-align: center;
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 22px;
+      }
+      a.button {
+        display: inline-flex;
+        min-height: 42px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--blue);
+        border-radius: 8px;
+        padding: 10px 14px;
+        color: var(--blue);
+        font-weight: 900;
+        text-decoration: none;
+      }
+      a.button.primary {
+        border-color: var(--blue);
+        background: linear-gradient(135deg, var(--blue), #008a3d);
+        color: #fff;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 16px;
+      }
+      .panel {
+        padding: 18px;
+      }
+      .panel strong {
+        display: block;
+        margin-bottom: 6px;
+      }
+      code {
+        display: block;
+        overflow-wrap: anywhere;
+        border: 1px solid #d2eafb;
+        border-radius: 8px;
+        background: #f6fbff;
+        padding: 10px;
+        color: #12354d;
+      }
+      @media (max-width: 780px) {
+        .hero, .grid { grid-template-columns: 1fr; }
+        .status { min-width: 0; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Cloudflare hosted bridge</p>
+          <h1>Jira board bridge</h1>
+          <p>${escapeHtml(statusDetail)} Use this page as the login checkpoint before assigning tickets, refreshing the board, posting checklist comments, or opening live Jira ticket details from the dashboard.</p>
+          <div class="actions">
+            <a class="button primary" href="${escapeHtml(boardUrl)}">Open .124 board</a>
+            <a class="button" href="${escapeHtml(hqUrl)}">Open QA HQ</a>
+            <a class="button" href="${escapeHtml(statusJsonUrl)}">Open status JSON</a>
+          </div>
+        </div>
+        <div class="status">${escapeHtml(statusLabel)}</div>
+      </section>
+      <div class="grid" aria-label="Bridge routes and configuration">
+        <article class="panel">
+          <strong>Write routes</strong>
+          <p>These are called by the dashboard after Cloudflare Access or token auth is available.</p>
+          <code>${escapeHtml(assignUrl)}<br>${escapeHtml(checklistUrl)}<br>${escapeHtml(refreshUrl)}</code>
+        </article>
+        <article class="panel">
+          <strong>Allowed repositories</strong>
+          <p>Dashboards outside this list are rejected before a GitHub workflow dispatch.</p>
+          <code>${escapeHtml(repoText)}</code>
+        </article>
+        <article class="panel">
+          <strong>Browser behavior</strong>
+          <p>Opening /status in a browser now shows this page. Dashboard status checks and /status?format=json still return JSON.</p>
+          <code>${escapeHtml(statusJsonUrl)}</code>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>`);
+}
+
 async function handleRefresh(request, env) {
   const auth = await authorizeMutation(request, env);
   if (!auth.ok) {
@@ -886,9 +1094,12 @@ export default {
     const url = new URL(request.url);
     try {
       if (request.method === "GET" && url.pathname === "/") {
-        return Response.redirect(new URL("/status", url).toString(), 302);
+        return handleBridgeLanding(request, env);
       }
       if (request.method === "GET" && url.pathname.endsWith("/status")) {
+        if (prefersHtml(request) && url.searchParams.get("format") !== "json") {
+          return handleBridgeLanding(request, env);
+        }
         return handleStatus(request, env);
       }
       if (request.method === "GET" && url.pathname.endsWith("/projects")) {
