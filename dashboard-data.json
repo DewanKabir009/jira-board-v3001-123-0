@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-06-09T03:10:23.015Z",
-  "pulledAtDisplay": "Jun 8, 2026, 11:10 PM",
+  "pulledAt": "2026-06-09T03:35:25.136Z",
+  "pulledAtDisplay": "Jun 8, 2026, 11:35 PM",
   "total": 34,
   "issues": [
     {
@@ -2190,45 +2190,28 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-06-09T02:45:25.233Z",
-    "previousPulledAtDisplay": "Jun 8, 2026, 10:45 PM",
-    "currentPulledAt": "2026-06-09T03:10:23.015Z",
-    "currentPulledAtDisplay": "Jun 8, 2026, 11:10 PM",
+    "previousPulledAt": "2026-06-09T03:10:23.015Z",
+    "previousPulledAtDisplay": "Jun 8, 2026, 11:10 PM",
+    "currentPulledAt": "2026-06-09T03:35:25.136Z",
+    "currentPulledAtDisplay": "Jun 8, 2026, 11:35 PM",
     "isBaseline": false,
     "added": [],
     "removed": [],
-    "updated": [
-      {
-        "key": "CORE-14488",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14488",
-        "summary": "Code changes for [CORE - 14427]",
-        "changes": [
-          {
-            "field": "updatedDisplay",
-            "label": "Jira updated",
-            "before": "Jun 8, 2026, 9:17 PM",
-            "after": "Jun 8, 2026, 10:59 PM"
-          }
-        ],
-        "type": "Developer Task (sub task)",
-        "isSubtask": true,
-        "assignee": "Luis Vallejo Mursuli",
-        "assignedDeveloper": "Luis Vallejo Mursuli",
-        "status": "Development",
-        "parent": {
-          "key": "CORE-14427",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14427",
-          "summary": "Home Course Selection/Management",
-          "description": "",
-          "type": "Story",
-          "status": "Development",
-          "priority": "P1"
-        }
-      }
-    ],
+    "updated": [],
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-06-09T03:10:23.015Z",
+      "previousPulledAtDisplay": "Jun 8, 2026, 11:10 PM",
+      "currentPulledAt": "2026-06-09T03:35:25.136Z",
+      "currentPulledAtDisplay": "Jun 8, 2026, 11:35 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-06-09T02:45:25.233Z",
       "previousPulledAtDisplay": "Jun 8, 2026, 10:45 PM",
@@ -4116,17 +4099,6 @@
       "previousPulledAtDisplay": "Jun 6, 2026, 9:20 AM",
       "currentPulledAt": "2026-06-06T13:45:18.867Z",
       "currentPulledAtDisplay": "Jun 6, 2026, 9:45 AM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-06-06T12:58:33.994Z",
-      "previousPulledAtDisplay": "Jun 6, 2026, 8:58 AM",
-      "currentPulledAt": "2026-06-06T13:20:19.134Z",
-      "currentPulledAtDisplay": "Jun 6, 2026, 9:20 AM",
       "isBaseline": false,
       "added": [],
       "removed": [],
