@@ -4,9 +4,9 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-06-10T20:20:46.617Z",
-  "pulledAtDisplay": "Jun 10, 2026, 4:20 PM",
-  "total": 34,
+  "pulledAt": "2026-06-10T20:45:51.132Z",
+  "pulledAtDisplay": "Jun 10, 2026, 4:45 PM",
+  "total": 33,
   "issues": [
     {
       "key": "CORE-14474",
@@ -17,7 +17,7 @@
       "descriptionImageCount": 3,
       "descriptionVideoCount": 0,
       "descriptionMediaCount": 3,
-      "commentCount": 11,
+      "commentCount": 12,
       "comments": [
         {
           "id": "1170913",
@@ -183,23 +183,38 @@
           "mediaCount": 0,
           "body": "Records for last two update statements look good in STG. Publishing in PROD",
           "bodyHtml": "<p>Records for last two update statements look good in STG. Publishing in PROD</p>"
+        },
+        {
+          "id": "1181563",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14474?focusedCommentId=1181563",
+          "author": "Kris Warthen",
+          "authorAccountId": "557058:002ae510-93ac-4554-a8ea-1905eb500995",
+          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/initials/KW-1.png",
+          "created": "2026-06-10T16:25:53.803-0400",
+          "createdDisplay": "Jun 10, 2026, 4:25 PM",
+          "updated": "2026-06-10T16:25:53.803-0400",
+          "updatedDisplay": "",
+          "hasMedia": false,
+          "mediaCount": 0,
+          "body": "confirmed this is done and the script was run in prod",
+          "bodyHtml": "<p>confirmed this is done and the script was run in prod </p>"
         }
       ],
-      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14474?focusedCommentId=1181551",
-      "lastCommentDisplay": "Jun 10, 2026, 4:05 PM",
-      "lastCommentAuthor": "Sebastian Calzadilla Gonzalez",
+      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14474?focusedCommentId=1181563",
+      "lastCommentDisplay": "Jun 10, 2026, 4:25 PM",
+      "lastCommentAuthor": "Kris Warthen",
       "type": "Task",
       "isSubtask": false,
-      "status": "PO Review",
+      "status": "Closed",
       "priority": "P0",
-      "assignee": "Yu-Sheng Tu",
-      "assigneeAccountId": "60d0cfa7d5dde8007174dd0b",
-      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/60d0cfa7d5dde8007174dd0b/25cdd204-3aea-49fd-97fb-2f563849c2ed/32",
+      "assignee": "Unassigned",
+      "assigneeAccountId": "",
+      "assigneeAvatarUrl": "",
       "assignedDeveloper": "Yu-Sheng Tu",
       "assignedDeveloperAccountId": "60d0cfa7d5dde8007174dd0b",
       "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/60d0cfa7d5dde8007174dd0b/25cdd204-3aea-49fd-97fb-2f563849c2ed/32",
-      "updated": "2026-06-10T16:05:09.586-0400",
-      "updatedDisplay": "Jun 10, 2026, 4:05 PM",
+      "updated": "2026-06-10T16:25:56.095-0400",
+      "updatedDisplay": "Jun 10, 2026, 4:25 PM",
       "created": "2026-05-14T19:06:23.473-0400",
       "createdDisplay": "May 14, 2026, 7:06 PM",
       "components": [
@@ -208,54 +223,8 @@
       "fixVersions": [
         "v3001.123.0"
       ],
-      "resolution": "",
+      "resolution": "Done",
       "parent": null
-    },
-    {
-      "key": "CORE-14488",
-      "url": "https://golfnow.atlassian.net/browse/CORE-14488",
-      "summary": "Code changes for [CORE - 14427]",
-      "description": "",
-      "descriptionHtml": "",
-      "descriptionImageCount": 0,
-      "descriptionVideoCount": 0,
-      "descriptionMediaCount": 0,
-      "commentCount": 0,
-      "comments": [],
-      "lastCommentUrl": "",
-      "lastCommentDisplay": "",
-      "lastCommentAuthor": "",
-      "type": "Developer Task (sub task)",
-      "isSubtask": true,
-      "status": "Development",
-      "priority": "P1",
-      "assignee": "Luis Vallejo Mursuli",
-      "assigneeAccountId": "712020:2e637bb4-c610-467b-839d-9a5b84f75f01",
-      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:2e637bb4-c610-467b-839d-9a5b84f75f01/4dca1d1b-3faa-4d03-90b8-2b3e0cc02887/32",
-      "assignedDeveloper": "Luis Vallejo Mursuli",
-      "assignedDeveloperAccountId": "712020:2e637bb4-c610-467b-839d-9a5b84f75f01",
-      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:2e637bb4-c610-467b-839d-9a5b84f75f01/4dca1d1b-3faa-4d03-90b8-2b3e0cc02887/32",
-      "updated": "2026-06-09T21:57:55.934-0400",
-      "updatedDisplay": "Jun 9, 2026, 9:57 PM",
-      "created": "2026-05-19T19:23:19.189-0400",
-      "createdDisplay": "May 19, 2026, 7:23 PM",
-      "components": [
-        "GolfNow.Services.Reservation",
-        "GolfNowAPI"
-      ],
-      "fixVersions": [
-        "v3001.123.0"
-      ],
-      "resolution": "",
-      "parent": {
-        "key": "CORE-14427",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14427",
-        "summary": "Home Course Selection/Management",
-        "description": "",
-        "type": "Story",
-        "status": "Development",
-        "priority": "P1"
-      }
     },
     {
       "key": "CORE-14485",
@@ -2205,13 +2174,60 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-06-10T19:59:35.452Z",
-    "previousPulledAtDisplay": "Jun 10, 2026, 3:59 PM",
-    "currentPulledAt": "2026-06-10T20:20:46.617Z",
-    "currentPulledAtDisplay": "Jun 10, 2026, 4:20 PM",
+    "previousPulledAt": "2026-06-10T20:20:46.617Z",
+    "previousPulledAtDisplay": "Jun 10, 2026, 4:20 PM",
+    "currentPulledAt": "2026-06-10T20:45:51.132Z",
+    "currentPulledAtDisplay": "Jun 10, 2026, 4:45 PM",
     "isBaseline": false,
     "added": [],
-    "removed": [],
+    "removed": [
+      {
+        "key": "CORE-14488",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14488",
+        "summary": "Code changes for [CORE - 14427]",
+        "description": "",
+        "descriptionHtml": "",
+        "descriptionImageCount": 0,
+        "descriptionVideoCount": 0,
+        "descriptionMediaCount": 0,
+        "commentCount": 0,
+        "comments": [],
+        "lastCommentUrl": "",
+        "lastCommentDisplay": "",
+        "lastCommentAuthor": "",
+        "type": "Developer Task (sub task)",
+        "isSubtask": true,
+        "status": "Development",
+        "priority": "P1",
+        "assignee": "Luis Vallejo Mursuli",
+        "assigneeAccountId": "712020:2e637bb4-c610-467b-839d-9a5b84f75f01",
+        "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:2e637bb4-c610-467b-839d-9a5b84f75f01/4dca1d1b-3faa-4d03-90b8-2b3e0cc02887/32",
+        "assignedDeveloper": "Luis Vallejo Mursuli",
+        "assignedDeveloperAccountId": "712020:2e637bb4-c610-467b-839d-9a5b84f75f01",
+        "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:2e637bb4-c610-467b-839d-9a5b84f75f01/4dca1d1b-3faa-4d03-90b8-2b3e0cc02887/32",
+        "updated": "2026-06-09T21:57:55.934-0400",
+        "updatedDisplay": "Jun 9, 2026, 9:57 PM",
+        "created": "2026-05-19T19:23:19.189-0400",
+        "createdDisplay": "May 19, 2026, 7:23 PM",
+        "components": [
+          "GolfNow.Services.Reservation",
+          "GolfNowAPI"
+        ],
+        "fixVersions": [
+          "v3001.123.0"
+        ],
+        "resolution": "",
+        "parent": {
+          "key": "CORE-14427",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14427",
+          "summary": "Home Course Selection/Management",
+          "description": "",
+          "type": "Story",
+          "status": "Development",
+          "priority": "P1"
+        }
+      }
+    ],
     "updated": [
       {
         "key": "CORE-14474",
@@ -2219,23 +2235,165 @@
         "summary": "Geosearch API - enable PPL FeatureCode locations",
         "changes": [
           {
+            "field": "status",
+            "label": "Status",
+            "before": "PO Review",
+            "after": "Closed"
+          },
+          {
+            "field": "assignee",
+            "label": "Assignee",
+            "before": "Yu-Sheng Tu",
+            "after": "Unassigned"
+          },
+          {
+            "field": "resolution",
+            "label": "Resolution",
+            "before": "None",
+            "after": "Done"
+          },
+          {
             "field": "updatedDisplay",
             "label": "Jira updated",
-            "before": "Jun 10, 2026, 3:48 PM",
-            "after": "Jun 10, 2026, 4:05 PM"
+            "before": "Jun 10, 2026, 4:05 PM",
+            "after": "Jun 10, 2026, 4:25 PM"
           }
         ],
         "type": "Task",
         "isSubtask": false,
-        "assignee": "Yu-Sheng Tu",
+        "assignee": "Unassigned",
         "assignedDeveloper": "Yu-Sheng Tu",
-        "status": "PO Review",
+        "status": "Closed",
         "parent": null
       }
     ],
-    "statusChanges": []
+    "statusChanges": [
+      {
+        "key": "CORE-14474",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14474",
+        "summary": "Geosearch API - enable PPL FeatureCode locations",
+        "before": "PO Review",
+        "after": "Closed",
+        "type": "Task",
+        "isSubtask": false,
+        "assignee": "Unassigned",
+        "assignedDeveloper": "Yu-Sheng Tu",
+        "status": "Closed",
+        "parent": null
+      }
+    ]
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-06-10T20:20:46.617Z",
+      "previousPulledAtDisplay": "Jun 10, 2026, 4:20 PM",
+      "currentPulledAt": "2026-06-10T20:45:51.132Z",
+      "currentPulledAtDisplay": "Jun 10, 2026, 4:45 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [
+        {
+          "key": "CORE-14488",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14488",
+          "summary": "Code changes for [CORE - 14427]",
+          "description": "",
+          "descriptionHtml": "",
+          "descriptionImageCount": 0,
+          "descriptionVideoCount": 0,
+          "descriptionMediaCount": 0,
+          "commentCount": 0,
+          "comments": [],
+          "lastCommentUrl": "",
+          "lastCommentDisplay": "",
+          "lastCommentAuthor": "",
+          "type": "Developer Task (sub task)",
+          "isSubtask": true,
+          "status": "Development",
+          "priority": "P1",
+          "assignee": "Luis Vallejo Mursuli",
+          "assigneeAccountId": "712020:2e637bb4-c610-467b-839d-9a5b84f75f01",
+          "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:2e637bb4-c610-467b-839d-9a5b84f75f01/4dca1d1b-3faa-4d03-90b8-2b3e0cc02887/32",
+          "assignedDeveloper": "Luis Vallejo Mursuli",
+          "assignedDeveloperAccountId": "712020:2e637bb4-c610-467b-839d-9a5b84f75f01",
+          "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:2e637bb4-c610-467b-839d-9a5b84f75f01/4dca1d1b-3faa-4d03-90b8-2b3e0cc02887/32",
+          "updated": "2026-06-09T21:57:55.934-0400",
+          "updatedDisplay": "Jun 9, 2026, 9:57 PM",
+          "created": "2026-05-19T19:23:19.189-0400",
+          "createdDisplay": "May 19, 2026, 7:23 PM",
+          "components": [
+            "GolfNow.Services.Reservation",
+            "GolfNowAPI"
+          ],
+          "fixVersions": [
+            "v3001.123.0"
+          ],
+          "resolution": "",
+          "parent": {
+            "key": "CORE-14427",
+            "url": "https://golfnow.atlassian.net/browse/CORE-14427",
+            "summary": "Home Course Selection/Management",
+            "description": "",
+            "type": "Story",
+            "status": "Development",
+            "priority": "P1"
+          }
+        }
+      ],
+      "updated": [
+        {
+          "key": "CORE-14474",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14474",
+          "summary": "Geosearch API - enable PPL FeatureCode locations",
+          "changes": [
+            {
+              "field": "status",
+              "label": "Status",
+              "before": "PO Review",
+              "after": "Closed"
+            },
+            {
+              "field": "assignee",
+              "label": "Assignee",
+              "before": "Yu-Sheng Tu",
+              "after": "Unassigned"
+            },
+            {
+              "field": "resolution",
+              "label": "Resolution",
+              "before": "None",
+              "after": "Done"
+            },
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "Jun 10, 2026, 4:05 PM",
+              "after": "Jun 10, 2026, 4:25 PM"
+            }
+          ],
+          "type": "Task",
+          "isSubtask": false,
+          "assignee": "Unassigned",
+          "assignedDeveloper": "Yu-Sheng Tu",
+          "status": "Closed",
+          "parent": null
+        }
+      ],
+      "statusChanges": [
+        {
+          "key": "CORE-14474",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14474",
+          "summary": "Geosearch API - enable PPL FeatureCode locations",
+          "before": "PO Review",
+          "after": "Closed",
+          "type": "Task",
+          "isSubtask": false,
+          "assignee": "Unassigned",
+          "assignedDeveloper": "Yu-Sheng Tu",
+          "status": "Closed",
+          "parent": null
+        }
+      ]
+    },
     {
       "previousPulledAt": "2026-06-10T19:59:35.452Z",
       "previousPulledAtDisplay": "Jun 10, 2026, 3:59 PM",
@@ -2259,9 +2417,9 @@
           ],
           "type": "Task",
           "isSubtask": false,
-          "assignee": "Yu-Sheng Tu",
+          "assignee": "Unassigned",
           "assignedDeveloper": "Yu-Sheng Tu",
-          "status": "PO Review",
+          "status": "Closed",
           "parent": null
         }
       ],
@@ -2301,9 +2459,9 @@
           ],
           "type": "Task",
           "isSubtask": false,
-          "assignee": "Yu-Sheng Tu",
+          "assignee": "Unassigned",
           "assignedDeveloper": "Yu-Sheng Tu",
-          "status": "PO Review",
+          "status": "Closed",
           "parent": null
         }
       ],
@@ -4307,17 +4465,6 @@
       "previousPulledAtDisplay": "Jun 8, 2026, 12:50 AM",
       "currentPulledAt": "2026-06-08T05:15:29.206Z",
       "currentPulledAtDisplay": "Jun 8, 2026, 1:15 AM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-06-08T04:25:25.056Z",
-      "previousPulledAtDisplay": "Jun 8, 2026, 12:25 AM",
-      "currentPulledAt": "2026-06-08T04:50:25.489Z",
-      "currentPulledAtDisplay": "Jun 8, 2026, 12:50 AM",
       "isBaseline": false,
       "added": [],
       "removed": [],
