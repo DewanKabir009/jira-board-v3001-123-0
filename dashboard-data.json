@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-06-10T19:59:35.452Z",
-  "pulledAtDisplay": "Jun 10, 2026, 3:59 PM",
+  "pulledAt": "2026-06-10T20:20:46.617Z",
+  "pulledAtDisplay": "Jun 10, 2026, 4:20 PM",
   "total": 34,
   "issues": [
     {
@@ -17,7 +17,7 @@
       "descriptionImageCount": 3,
       "descriptionVideoCount": 0,
       "descriptionMediaCount": 3,
-      "commentCount": 10,
+      "commentCount": 11,
       "comments": [
         {
           "id": "1170913",
@@ -168,10 +168,25 @@
           "mediaCount": 0,
           "body": "New records created on STG for requested values that can’t be found on GeoNames\n\n{\n\"_id\": {\n\"$oid\": \"6a1db9b3eae8b9d6f9c01398\"\n},\n\"_Version\": 0,\n\"ModifiedAt\": {\n\"$date\": \"2026-05-21T19:33:02.987Z\"\n},\n\"IsDeleted\": false,\n\"Name\": \"Mulgannon\",\n\"AsciiName\": \"Mulgannon\",\n\"Position\": {\n\"type\": \"Point\",\n\"coordinates\": [\n-6.48389,\n52.32165\n]\n},\n\"FeatureClass\": 0,\n\"FeatureCode\": \"\",\n\"CountryCode\": \"IE\",\n\"Admin1Name\": \"Leinster\",\n\"Admin1Code\": \"L\",\n\"Admin2Name\": \"Wexford\",\n\"Admin2Code\": \"30\",\n\"Population\": {\n\"$numberLong\": \"0\"\n},\n\"Dem\": 64,\n\"TimeZone\": \"Europe/Dublin\",\n\"ModificationDate\": {\n\"$date\": \"2010-08-14T04:00:00.000Z\"\n},\n\"Accuracy\": 0,\n\"IsCity\": true,\n\"IsPostal\": false,\n\"Searchable\": true\n},\n\n{\n\"_id\": {\n\"$oid\": \"6a1db9ebeae8b9d6f9c01399\"\n},\n\"_Version\": 0,\n\"ModifiedAt\": {\n\"$date\": \"2026-05-21T19:33:02.987Z\"\n},\n\"IsDeleted\": false,\n\"Name\": \"Crossagalla\",\n\"AsciiName\": \"Crossagalla\",\n\"Position\": {\n\"type\": \"Point\",\n\"coordinates\": [\n-8.59254,\n52.64402\n]\n},\n\"FeatureClass\": 0,\n\"FeatureCode\": \"\",\n\"CountryCode\": \"IE\",\n\"Admin1Name\": \"Munster\",\n\"Admin1Code\": \"M\",\n\"Admin2Name\": \"Limerick County\",\n\"Admin2Code\": \"42\",\n\"Population\": {\n\"$numberLong\": \"0\"\n},\n\"Dem\": 17,\n\"TimeZone\": \"Europe/Dublin\",\n\"ModificationDate\": {\n\"$date\": \"2010-08-14T04:00:00.000Z\"\n},\n\"Accuracy\": 0,\n\"IsCity\": true,\n\"IsPostal\": false,\n\"Searchable\": true\n}\n\nUpdate naming for following two records:\n\ndb.GeoLocation.updateOne(\n{\n\"Ids.GeoNameId\": \"2962361\"\n},\n{\n$set: { Name: \"Mullingar\" },\n},\n);\n\ndb.GeoLocation.updateOne(\n{\n\"Ids.GeoNameId\": \"2653814\"\n},\n{\n$set: { Name: \"Ceredigion\" },\n},\n);",
           "bodyHtml": "<p>New records created on STG for requested values that can’t be found on GeoNames<br><br></p><pre><code>{\n  &quot;_id&quot;: {\n    &quot;$oid&quot;: &quot;6a1db9b3eae8b9d6f9c01398&quot;\n  },\n  &quot;_Version&quot;: 0,\n  &quot;ModifiedAt&quot;: {\n    &quot;$date&quot;: &quot;2026-05-21T19:33:02.987Z&quot;\n  },\n  &quot;IsDeleted&quot;: false,\n  &quot;Name&quot;: &quot;Mulgannon&quot;,\n  &quot;AsciiName&quot;: &quot;Mulgannon&quot;,\n  &quot;Position&quot;: {\n    &quot;type&quot;: &quot;Point&quot;,\n    &quot;coordinates&quot;: [\n      -6.48389,\n      52.32165\n    ]\n  },\n  &quot;FeatureClass&quot;: 0,\n  &quot;FeatureCode&quot;: &quot;&quot;,\n  &quot;CountryCode&quot;: &quot;IE&quot;,\n  &quot;Admin1Name&quot;: &quot;Leinster&quot;,\n  &quot;Admin1Code&quot;: &quot;L&quot;,\n  &quot;Admin2Name&quot;: &quot;Wexford&quot;,\n  &quot;Admin2Code&quot;: &quot;30&quot;,\n  &quot;Population&quot;: {\n    &quot;$numberLong&quot;: &quot;0&quot;\n  },\n  &quot;Dem&quot;: 64,\n  &quot;TimeZone&quot;: &quot;Europe/Dublin&quot;,\n  &quot;ModificationDate&quot;: {\n    &quot;$date&quot;: &quot;2010-08-14T04:00:00.000Z&quot;\n  },\n  &quot;Accuracy&quot;: 0,\n  &quot;IsCity&quot;: true,\n  &quot;IsPostal&quot;: false,\n  &quot;Searchable&quot;: true\n},\n\n{\n  &quot;_id&quot;: {\n    &quot;$oid&quot;: &quot;6a1db9ebeae8b9d6f9c01399&quot;\n  },\n  &quot;_Version&quot;: 0,\n  &quot;ModifiedAt&quot;: {\n    &quot;$date&quot;: &quot;2026-05-21T19:33:02.987Z&quot;\n  },\n  &quot;IsDeleted&quot;: false,\n  &quot;Name&quot;: &quot;Crossagalla&quot;,\n  &quot;AsciiName&quot;: &quot;Crossagalla&quot;,\n  &quot;Position&quot;: {\n    &quot;type&quot;: &quot;Point&quot;,\n    &quot;coordinates&quot;: [\n      -8.59254,\n      52.64402\n    ]\n  },\n  &quot;FeatureClass&quot;: 0,\n  &quot;FeatureCode&quot;: &quot;&quot;,\n  &quot;CountryCode&quot;: &quot;IE&quot;,\n  &quot;Admin1Name&quot;: &quot;Munster&quot;,\n  &quot;Admin1Code&quot;: &quot;M&quot;,\n  &quot;Admin2Name&quot;: &quot;Limerick County&quot;,\n  &quot;Admin2Code&quot;: &quot;42&quot;,\n  &quot;Population&quot;: {\n    &quot;$numberLong&quot;: &quot;0&quot;\n  },\n  &quot;Dem&quot;: 17,\n  &quot;TimeZone&quot;: &quot;Europe/Dublin&quot;,\n  &quot;ModificationDate&quot;: {\n    &quot;$date&quot;: &quot;2010-08-14T04:00:00.000Z&quot;\n  },\n  &quot;Accuracy&quot;: 0,\n  &quot;IsCity&quot;: true,\n  &quot;IsPostal&quot;: false,\n  &quot;Searchable&quot;: true\n}</code></pre><p>Update naming for following two records:<br></p><pre><code>db.GeoLocation.updateOne(\n  {\n    &quot;Ids.GeoNameId&quot;: &quot;2962361&quot;\n  },\n  {\n    $set: { Name: &quot;Mullingar&quot; },\n  },\n);\n\ndb.GeoLocation.updateOne(\n  {\n    &quot;Ids.GeoNameId&quot;: &quot;2653814&quot;\n  },\n  {\n    $set: { Name: &quot;Ceredigion&quot; },\n  },\n);</code></pre>"
+        },
+        {
+          "id": "1181551",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14474?focusedCommentId=1181551",
+          "author": "Sebastian Calzadilla Gonzalez",
+          "authorAccountId": "712020:99d14cf5-150b-43f9-9207-31630f8747f0",
+          "authorAvatarUrl": "https://secure.gravatar.com/avatar/4bc51cc1e5078afe30e9a981c8f3cd62?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FSG-3.png",
+          "created": "2026-06-10T16:05:09.586-0400",
+          "createdDisplay": "Jun 10, 2026, 4:05 PM",
+          "updated": "2026-06-10T16:05:09.586-0400",
+          "updatedDisplay": "",
+          "hasMedia": false,
+          "mediaCount": 0,
+          "body": "Records for last two update statements look good in STG. Publishing in PROD",
+          "bodyHtml": "<p>Records for last two update statements look good in STG. Publishing in PROD</p>"
         }
       ],
-      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14474?focusedCommentId=1177102",
-      "lastCommentDisplay": "Jun 1, 2026, 5:27 PM",
+      "lastCommentUrl": "https://golfnow.atlassian.net/browse/CORE-14474?focusedCommentId=1181551",
+      "lastCommentDisplay": "Jun 10, 2026, 4:05 PM",
       "lastCommentAuthor": "Sebastian Calzadilla Gonzalez",
       "type": "Task",
       "isSubtask": false,
@@ -183,8 +198,8 @@
       "assignedDeveloper": "Yu-Sheng Tu",
       "assignedDeveloperAccountId": "60d0cfa7d5dde8007174dd0b",
       "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/60d0cfa7d5dde8007174dd0b/25cdd204-3aea-49fd-97fb-2f563849c2ed/32",
-      "updated": "2026-06-10T15:48:44.775-0400",
-      "updatedDisplay": "Jun 10, 2026, 3:48 PM",
+      "updated": "2026-06-10T16:05:09.586-0400",
+      "updatedDisplay": "Jun 10, 2026, 4:05 PM",
       "created": "2026-05-14T19:06:23.473-0400",
       "createdDisplay": "May 14, 2026, 7:06 PM",
       "components": [
@@ -2190,17 +2205,68 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-06-10T19:55:48.381Z",
-    "previousPulledAtDisplay": "Jun 10, 2026, 3:55 PM",
-    "currentPulledAt": "2026-06-10T19:59:35.452Z",
-    "currentPulledAtDisplay": "Jun 10, 2026, 3:59 PM",
+    "previousPulledAt": "2026-06-10T19:59:35.452Z",
+    "previousPulledAtDisplay": "Jun 10, 2026, 3:59 PM",
+    "currentPulledAt": "2026-06-10T20:20:46.617Z",
+    "currentPulledAtDisplay": "Jun 10, 2026, 4:20 PM",
     "isBaseline": false,
     "added": [],
     "removed": [],
-    "updated": [],
+    "updated": [
+      {
+        "key": "CORE-14474",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14474",
+        "summary": "Geosearch API - enable PPL FeatureCode locations",
+        "changes": [
+          {
+            "field": "updatedDisplay",
+            "label": "Jira updated",
+            "before": "Jun 10, 2026, 3:48 PM",
+            "after": "Jun 10, 2026, 4:05 PM"
+          }
+        ],
+        "type": "Task",
+        "isSubtask": false,
+        "assignee": "Yu-Sheng Tu",
+        "assignedDeveloper": "Yu-Sheng Tu",
+        "status": "PO Review",
+        "parent": null
+      }
+    ],
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-06-10T19:59:35.452Z",
+      "previousPulledAtDisplay": "Jun 10, 2026, 3:59 PM",
+      "currentPulledAt": "2026-06-10T20:20:46.617Z",
+      "currentPulledAtDisplay": "Jun 10, 2026, 4:20 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [
+        {
+          "key": "CORE-14474",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14474",
+          "summary": "Geosearch API - enable PPL FeatureCode locations",
+          "changes": [
+            {
+              "field": "updatedDisplay",
+              "label": "Jira updated",
+              "before": "Jun 10, 2026, 3:48 PM",
+              "after": "Jun 10, 2026, 4:05 PM"
+            }
+          ],
+          "type": "Task",
+          "isSubtask": false,
+          "assignee": "Yu-Sheng Tu",
+          "assignedDeveloper": "Yu-Sheng Tu",
+          "status": "PO Review",
+          "parent": null
+        }
+      ],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-06-10T19:55:48.381Z",
       "previousPulledAtDisplay": "Jun 10, 2026, 3:55 PM",
@@ -4252,17 +4318,6 @@
       "previousPulledAtDisplay": "Jun 8, 2026, 12:25 AM",
       "currentPulledAt": "2026-06-08T04:50:25.489Z",
       "currentPulledAtDisplay": "Jun 8, 2026, 12:50 AM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-06-08T04:00:30.321Z",
-      "previousPulledAtDisplay": "Jun 8, 2026, 12:00 AM",
-      "currentPulledAt": "2026-06-08T04:25:25.056Z",
-      "currentPulledAtDisplay": "Jun 8, 2026, 12:25 AM",
       "isBaseline": false,
       "added": [],
       "removed": [],
