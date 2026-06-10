@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-06-10T20:45:51.132Z",
-  "pulledAtDisplay": "Jun 10, 2026, 4:45 PM",
+  "pulledAt": "2026-06-10T21:10:41.172Z",
+  "pulledAtDisplay": "Jun 10, 2026, 5:10 PM",
   "total": 33,
   "issues": [
     {
@@ -2174,116 +2174,28 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-06-10T20:20:46.617Z",
-    "previousPulledAtDisplay": "Jun 10, 2026, 4:20 PM",
-    "currentPulledAt": "2026-06-10T20:45:51.132Z",
-    "currentPulledAtDisplay": "Jun 10, 2026, 4:45 PM",
+    "previousPulledAt": "2026-06-10T20:45:51.132Z",
+    "previousPulledAtDisplay": "Jun 10, 2026, 4:45 PM",
+    "currentPulledAt": "2026-06-10T21:10:41.172Z",
+    "currentPulledAtDisplay": "Jun 10, 2026, 5:10 PM",
     "isBaseline": false,
     "added": [],
-    "removed": [
-      {
-        "key": "CORE-14488",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14488",
-        "summary": "Code changes for [CORE - 14427]",
-        "description": "",
-        "descriptionHtml": "",
-        "descriptionImageCount": 0,
-        "descriptionVideoCount": 0,
-        "descriptionMediaCount": 0,
-        "commentCount": 0,
-        "comments": [],
-        "lastCommentUrl": "",
-        "lastCommentDisplay": "",
-        "lastCommentAuthor": "",
-        "type": "Developer Task (sub task)",
-        "isSubtask": true,
-        "status": "Development",
-        "priority": "P1",
-        "assignee": "Luis Vallejo Mursuli",
-        "assigneeAccountId": "712020:2e637bb4-c610-467b-839d-9a5b84f75f01",
-        "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:2e637bb4-c610-467b-839d-9a5b84f75f01/4dca1d1b-3faa-4d03-90b8-2b3e0cc02887/32",
-        "assignedDeveloper": "Luis Vallejo Mursuli",
-        "assignedDeveloperAccountId": "712020:2e637bb4-c610-467b-839d-9a5b84f75f01",
-        "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:2e637bb4-c610-467b-839d-9a5b84f75f01/4dca1d1b-3faa-4d03-90b8-2b3e0cc02887/32",
-        "updated": "2026-06-09T21:57:55.934-0400",
-        "updatedDisplay": "Jun 9, 2026, 9:57 PM",
-        "created": "2026-05-19T19:23:19.189-0400",
-        "createdDisplay": "May 19, 2026, 7:23 PM",
-        "components": [
-          "GolfNow.Services.Reservation",
-          "GolfNowAPI"
-        ],
-        "fixVersions": [
-          "v3001.123.0"
-        ],
-        "resolution": "",
-        "parent": {
-          "key": "CORE-14427",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14427",
-          "summary": "Home Course Selection/Management",
-          "description": "",
-          "type": "Story",
-          "status": "Development",
-          "priority": "P1"
-        }
-      }
-    ],
-    "updated": [
-      {
-        "key": "CORE-14474",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14474",
-        "summary": "Geosearch API - enable PPL FeatureCode locations",
-        "changes": [
-          {
-            "field": "status",
-            "label": "Status",
-            "before": "PO Review",
-            "after": "Closed"
-          },
-          {
-            "field": "assignee",
-            "label": "Assignee",
-            "before": "Yu-Sheng Tu",
-            "after": "Unassigned"
-          },
-          {
-            "field": "resolution",
-            "label": "Resolution",
-            "before": "None",
-            "after": "Done"
-          },
-          {
-            "field": "updatedDisplay",
-            "label": "Jira updated",
-            "before": "Jun 10, 2026, 4:05 PM",
-            "after": "Jun 10, 2026, 4:25 PM"
-          }
-        ],
-        "type": "Task",
-        "isSubtask": false,
-        "assignee": "Unassigned",
-        "assignedDeveloper": "Yu-Sheng Tu",
-        "status": "Closed",
-        "parent": null
-      }
-    ],
-    "statusChanges": [
-      {
-        "key": "CORE-14474",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14474",
-        "summary": "Geosearch API - enable PPL FeatureCode locations",
-        "before": "PO Review",
-        "after": "Closed",
-        "type": "Task",
-        "isSubtask": false,
-        "assignee": "Unassigned",
-        "assignedDeveloper": "Yu-Sheng Tu",
-        "status": "Closed",
-        "parent": null
-      }
-    ]
+    "removed": [],
+    "updated": [],
+    "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-06-10T20:45:51.132Z",
+      "previousPulledAtDisplay": "Jun 10, 2026, 4:45 PM",
+      "currentPulledAt": "2026-06-10T21:10:41.172Z",
+      "currentPulledAtDisplay": "Jun 10, 2026, 5:10 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-06-10T20:20:46.617Z",
       "previousPulledAtDisplay": "Jun 10, 2026, 4:20 PM",
@@ -4454,17 +4366,6 @@
       "previousPulledAtDisplay": "Jun 8, 2026, 1:15 AM",
       "currentPulledAt": "2026-06-08T05:40:29.142Z",
       "currentPulledAtDisplay": "Jun 8, 2026, 1:40 AM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-06-08T04:50:25.489Z",
-      "previousPulledAtDisplay": "Jun 8, 2026, 12:50 AM",
-      "currentPulledAt": "2026-06-08T05:15:29.206Z",
-      "currentPulledAtDisplay": "Jun 8, 2026, 1:15 AM",
       "isBaseline": false,
       "added": [],
       "removed": [],
