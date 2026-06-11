@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-06-11T17:10:50.870Z",
-  "pulledAtDisplay": "Jun 11, 2026, 1:10 PM",
+  "pulledAt": "2026-06-11T17:35:52.418Z",
+  "pulledAtDisplay": "Jun 11, 2026, 1:35 PM",
   "total": 34,
   "issues": [
     {
@@ -2220,73 +2220,28 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-06-11T16:45:55.522Z",
-    "previousPulledAtDisplay": "Jun 11, 2026, 12:45 PM",
-    "currentPulledAt": "2026-06-11T17:10:50.870Z",
-    "currentPulledAtDisplay": "Jun 11, 2026, 1:10 PM",
+    "previousPulledAt": "2026-06-11T17:10:50.870Z",
+    "previousPulledAtDisplay": "Jun 11, 2026, 1:10 PM",
+    "currentPulledAt": "2026-06-11T17:35:52.418Z",
+    "currentPulledAtDisplay": "Jun 11, 2026, 1:35 PM",
     "isBaseline": false,
     "added": [],
     "removed": [],
-    "updated": [
-      {
-        "key": "CORE-14397",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14397",
-        "summary": "CLONE - Update to allow No Payment Methods when $0 due now for BE",
-        "changes": [
-          {
-            "field": "status",
-            "label": "Status",
-            "before": "Planning",
-            "after": "Development"
-          },
-          {
-            "field": "updatedDisplay",
-            "label": "Jira updated",
-            "before": "Jun 9, 2026, 10:54 AM",
-            "after": "Jun 11, 2026, 1:09 PM"
-          }
-        ],
-        "type": "Story",
-        "isSubtask": false,
-        "assignee": "Andrew Horvat",
-        "assignedDeveloper": "Andrew Horvat",
-        "status": "Development",
-        "parent": {
-          "key": "CORE-13172",
-          "url": "https://golfnow.atlassian.net/browse/CORE-13172",
-          "summary": "Commerce Proxy API",
-          "description": "",
-          "type": "Epic",
-          "status": "Planning",
-          "priority": "None"
-        }
-      }
-    ],
-    "statusChanges": [
-      {
-        "key": "CORE-14397",
-        "url": "https://golfnow.atlassian.net/browse/CORE-14397",
-        "summary": "CLONE - Update to allow No Payment Methods when $0 due now for BE",
-        "before": "Planning",
-        "after": "Development",
-        "type": "Story",
-        "isSubtask": false,
-        "assignee": "Andrew Horvat",
-        "assignedDeveloper": "Andrew Horvat",
-        "status": "Development",
-        "parent": {
-          "key": "CORE-13172",
-          "url": "https://golfnow.atlassian.net/browse/CORE-13172",
-          "summary": "Commerce Proxy API",
-          "description": "",
-          "type": "Epic",
-          "status": "Planning",
-          "priority": "None"
-        }
-      }
-    ]
+    "updated": [],
+    "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-06-11T17:10:50.870Z",
+      "previousPulledAtDisplay": "Jun 11, 2026, 1:10 PM",
+      "currentPulledAt": "2026-06-11T17:35:52.418Z",
+      "currentPulledAtDisplay": "Jun 11, 2026, 1:35 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-06-11T16:45:55.522Z",
       "previousPulledAtDisplay": "Jun 11, 2026, 12:45 PM",
@@ -4564,45 +4519,6 @@
       "added": [],
       "removed": [],
       "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-06-09T01:15:21.513Z",
-      "previousPulledAtDisplay": "Jun 8, 2026, 9:15 PM",
-      "currentPulledAt": "2026-06-09T01:29:39.819Z",
-      "currentPulledAtDisplay": "Jun 8, 2026, 9:29 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [
-        {
-          "key": "CORE-14488",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14488",
-          "summary": "Code changes for [CORE - 14427]",
-          "changes": [
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "Jun 4, 2026, 10:25 AM",
-              "after": "Jun 8, 2026, 9:17 PM"
-            }
-          ],
-          "type": "Developer Task (sub task)",
-          "isSubtask": true,
-          "assignee": "Luis Vallejo Mursuli",
-          "assignedDeveloper": "Luis Vallejo Mursuli",
-          "status": "Development",
-          "parent": {
-            "key": "CORE-14427",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14427",
-            "summary": "Home Course Selection/Management",
-            "description": "",
-            "type": "Story",
-            "status": "Development",
-            "priority": "P1"
-          }
-        }
-      ],
       "statusChanges": []
     }
   ],
