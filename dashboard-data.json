@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-06-12T06:35:38.130Z",
-  "pulledAtDisplay": "Jun 12, 2026, 2:35 AM",
+  "pulledAt": "2026-06-12T07:00:46.102Z",
+  "pulledAtDisplay": "Jun 12, 2026, 3:00 AM",
   "total": 33,
   "issues": [
     {
@@ -2174,10 +2174,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-06-12T06:10:41.893Z",
-    "previousPulledAtDisplay": "Jun 12, 2026, 2:10 AM",
-    "currentPulledAt": "2026-06-12T06:35:38.130Z",
-    "currentPulledAtDisplay": "Jun 12, 2026, 2:35 AM",
+    "previousPulledAt": "2026-06-12T06:35:38.130Z",
+    "previousPulledAtDisplay": "Jun 12, 2026, 2:35 AM",
+    "currentPulledAt": "2026-06-12T07:00:46.102Z",
+    "currentPulledAtDisplay": "Jun 12, 2026, 3:00 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -2185,6 +2185,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-06-12T06:35:38.130Z",
+      "previousPulledAtDisplay": "Jun 12, 2026, 2:35 AM",
+      "currentPulledAt": "2026-06-12T07:00:46.102Z",
+      "currentPulledAtDisplay": "Jun 12, 2026, 3:00 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-06-12T06:10:41.893Z",
       "previousPulledAtDisplay": "Jun 12, 2026, 2:10 AM",
@@ -4394,133 +4405,6 @@
       "removed": [],
       "updated": [],
       "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-06-09T14:30:29.455Z",
-      "previousPulledAtDisplay": "Jun 9, 2026, 10:30 AM",
-      "currentPulledAt": "2026-06-09T14:55:28.655Z",
-      "currentPulledAtDisplay": "Jun 9, 2026, 10:55 AM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [
-        {
-          "key": "CORE-14485",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14485",
-          "summary": "gn-svc-commerceproxy changes",
-          "changes": [
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "Jun 4, 2026, 10:04 AM",
-              "after": "Jun 9, 2026, 10:54 AM"
-            }
-          ],
-          "type": "Developer Task (sub task)",
-          "isSubtask": true,
-          "assignee": "Unassigned",
-          "assignedDeveloper": "Unassigned",
-          "status": "Closed",
-          "parent": {
-            "key": "CORE-14397",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14397",
-            "summary": "CLONE - Update to allow No Payment Methods when $0 due now for BE",
-            "description": "",
-            "type": "Story",
-            "status": "Development",
-            "priority": "P1"
-          }
-        },
-        {
-          "key": "CORE-14484",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14484",
-          "summary": "gn-main changes",
-          "changes": [
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "Jun 4, 2026, 10:04 AM",
-              "after": "Jun 9, 2026, 10:54 AM"
-            }
-          ],
-          "type": "Developer Task (sub task)",
-          "isSubtask": true,
-          "assignee": "Unassigned",
-          "assignedDeveloper": "Unassigned",
-          "status": "Closed",
-          "parent": {
-            "key": "CORE-14397",
-            "url": "https://golfnow.atlassian.net/browse/CORE-14397",
-            "summary": "CLONE - Update to allow No Payment Methods when $0 due now for BE",
-            "description": "",
-            "type": "Story",
-            "status": "Development",
-            "priority": "P1"
-          }
-        },
-        {
-          "key": "CORE-14397",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14397",
-          "summary": "CLONE - Update to allow No Payment Methods when $0 due now for BE",
-          "changes": [
-            {
-              "field": "status",
-              "label": "Status",
-              "before": "Closed",
-              "after": "Planning"
-            },
-            {
-              "field": "assignee",
-              "label": "Assignee",
-              "before": "Unassigned",
-              "after": "Andrew Horvat"
-            },
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "Jun 4, 2026, 10:00 AM",
-              "after": "Jun 9, 2026, 10:54 AM"
-            }
-          ],
-          "type": "Story",
-          "isSubtask": false,
-          "assignee": "Andrew Horvat",
-          "assignedDeveloper": "Andrew Horvat",
-          "status": "Development",
-          "parent": {
-            "key": "CORE-13172",
-            "url": "https://golfnow.atlassian.net/browse/CORE-13172",
-            "summary": "Commerce Proxy API",
-            "description": "",
-            "type": "Epic",
-            "status": "Planning",
-            "priority": "None"
-          }
-        }
-      ],
-      "statusChanges": [
-        {
-          "key": "CORE-14397",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14397",
-          "summary": "CLONE - Update to allow No Payment Methods when $0 due now for BE",
-          "before": "Closed",
-          "after": "Planning",
-          "type": "Story",
-          "isSubtask": false,
-          "assignee": "Andrew Horvat",
-          "assignedDeveloper": "Andrew Horvat",
-          "status": "Development",
-          "parent": {
-            "key": "CORE-13172",
-            "url": "https://golfnow.atlassian.net/browse/CORE-13172",
-            "summary": "Commerce Proxy API",
-            "description": "",
-            "type": "Epic",
-            "status": "Planning",
-            "priority": "None"
-          }
-        }
-      ]
     }
   ],
   "schemaVersionNumber": 1,
