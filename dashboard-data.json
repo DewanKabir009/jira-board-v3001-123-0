@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-06-13T11:30:42.310Z",
-  "pulledAtDisplay": "Jun 13, 2026, 7:30 AM",
+  "pulledAt": "2026-06-13T11:55:39.102Z",
+  "pulledAtDisplay": "Jun 13, 2026, 7:55 AM",
   "total": 33,
   "issues": [
     {
@@ -2174,10 +2174,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-06-13T11:05:37.573Z",
-    "previousPulledAtDisplay": "Jun 13, 2026, 7:05 AM",
-    "currentPulledAt": "2026-06-13T11:30:42.310Z",
-    "currentPulledAtDisplay": "Jun 13, 2026, 7:30 AM",
+    "previousPulledAt": "2026-06-13T11:30:42.310Z",
+    "previousPulledAtDisplay": "Jun 13, 2026, 7:30 AM",
+    "currentPulledAt": "2026-06-13T11:55:39.102Z",
+    "currentPulledAtDisplay": "Jun 13, 2026, 7:55 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -2185,6 +2185,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-06-13T11:30:42.310Z",
+      "previousPulledAtDisplay": "Jun 13, 2026, 7:30 AM",
+      "currentPulledAt": "2026-06-13T11:55:39.102Z",
+      "currentPulledAtDisplay": "Jun 13, 2026, 7:55 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-06-13T11:05:37.573Z",
       "previousPulledAtDisplay": "Jun 13, 2026, 7:05 AM",
@@ -4345,37 +4356,6 @@
       "added": [],
       "removed": [],
       "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-06-10T19:30:48.154Z",
-      "previousPulledAtDisplay": "Jun 10, 2026, 3:30 PM",
-      "currentPulledAt": "2026-06-10T19:55:48.381Z",
-      "currentPulledAtDisplay": "Jun 10, 2026, 3:55 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [
-        {
-          "key": "CORE-14474",
-          "url": "https://golfnow.atlassian.net/browse/CORE-14474",
-          "summary": "Geosearch API - enable PPL FeatureCode locations",
-          "changes": [
-            {
-              "field": "updatedDisplay",
-              "label": "Jira updated",
-              "before": "Jun 4, 2026, 9:55 AM",
-              "after": "Jun 10, 2026, 3:48 PM"
-            }
-          ],
-          "type": "Task",
-          "isSubtask": false,
-          "assignee": "Unassigned",
-          "assignedDeveloper": "Yu-Sheng Tu",
-          "status": "Closed",
-          "parent": null
-        }
-      ],
       "statusChanges": []
     }
   ],
