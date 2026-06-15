@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-06-15T13:40:43.768Z",
-  "pulledAtDisplay": "Jun 15, 2026, 9:40 AM",
+  "pulledAt": "2026-06-15T14:05:46.225Z",
+  "pulledAtDisplay": "Jun 15, 2026, 10:05 AM",
   "total": 33,
   "issues": [
     {
@@ -161,7 +161,7 @@
           "url": "https://golfnow.atlassian.net/browse/CORE-14474?focusedCommentId=1171558",
           "author": "Marcus Briggs",
           "authorAccountId": "557058:5a91a61f-c689-46bf-ad3b-c7291bcdbf7b",
-          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/initials/MB-4.png",
+          "authorAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/557058:5a91a61f-c689-46bf-ad3b-c7291bcdbf7b/b86e7099-e2b4-421f-83e5-99ade05e693f/32",
           "created": "2026-05-18T12:42:23.148-0400",
           "createdDisplay": "May 18, 2026, 12:42 PM",
           "updated": "2026-05-18T12:42:23.148-0400",
@@ -2174,10 +2174,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-06-15T13:15:41.420Z",
-    "previousPulledAtDisplay": "Jun 15, 2026, 9:15 AM",
-    "currentPulledAt": "2026-06-15T13:40:43.768Z",
-    "currentPulledAtDisplay": "Jun 15, 2026, 9:40 AM",
+    "previousPulledAt": "2026-06-15T13:40:43.768Z",
+    "previousPulledAtDisplay": "Jun 15, 2026, 9:40 AM",
+    "currentPulledAt": "2026-06-15T14:05:46.225Z",
+    "currentPulledAtDisplay": "Jun 15, 2026, 10:05 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -2185,6 +2185,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-06-15T13:40:43.768Z",
+      "previousPulledAtDisplay": "Jun 15, 2026, 9:40 AM",
+      "currentPulledAt": "2026-06-15T14:05:46.225Z",
+      "currentPulledAtDisplay": "Jun 15, 2026, 10:05 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-06-15T13:15:41.420Z",
       "previousPulledAtDisplay": "Jun 15, 2026, 9:15 AM",
@@ -4016,17 +4027,6 @@
       "previousPulledAtDisplay": "Jun 12, 2026, 6:15 PM",
       "currentPulledAt": "2026-06-12T22:40:40.167Z",
       "currentPulledAtDisplay": "Jun 12, 2026, 6:40 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-06-12T21:50:48.724Z",
-      "previousPulledAtDisplay": "Jun 12, 2026, 5:50 PM",
-      "currentPulledAt": "2026-06-12T22:15:40.155Z",
-      "currentPulledAtDisplay": "Jun 12, 2026, 6:15 PM",
       "isBaseline": false,
       "added": [],
       "removed": [],
