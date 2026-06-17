@@ -4,56 +4,10 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-06-17T20:00:47.473Z",
-  "pulledAtDisplay": "Jun 17, 2026, 4:00 PM",
-  "total": 33,
+  "pulledAt": "2026-06-17T20:25:50.862Z",
+  "pulledAtDisplay": "Jun 17, 2026, 4:25 PM",
+  "total": 32,
   "issues": [
-    {
-      "key": "CORE-14397",
-      "url": "https://golfnow.atlassian.net/browse/CORE-14397",
-      "summary": "CLONE - Update to allow No Payment Methods when $0 due now for BE",
-      "description": "As a user of the Golf BE, I shouldn’t have to provide a CC in the legacy flow when I don’t have to pay anything up front in some scenarios. There are many legacy courses with this setup.\n\nWe need to update the Process Payment workflow to allow Booking Engine users to not send a payment method for the following:\n\n- Due Now = $0\n\n- Due Later > $0\n\nToday, in this scenario this isn’t possible since there is a due later amount, we are still validating the payment methods. As none are being sent, the following validation error is shown:\n\nRequest:\n\ncurl -X POST \\\n-H \"Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3Yjg1YzE1OS1lZTExLTRkNWMtYmQ4YS1hNDgxZDcxOWZiM2YiLCJUaWNrZXRpbmc6UHJpbmNpcGFsS2V5IjoiNjdhYTc0Y2RmNjYxN2M5ZmRlODFkMWVjIiwiVGlja2V0aW5nOlBlcm1pc3Npb25UeXBlcyI6IjExMSw2MDMsNjA1LDYwNiw3MDAsNzA2LDcwNCw3MTIsNzAxLDcwNSw3MDgsNzA5LDcxOCw3MjEsNzI0LDcwNyw3MTAsNzExLDcxMyw3MTksNzIwLDcyNiw3MjcsNzAyLDcwMyw3MTQsNzIyLDcyMyw3MjUsNzI5LDczMCw3MzIsNzM0LDczNSw3MzYsNzM3LDczOCw3MzksNzQwLDc0MSw3NDIsNzQzLDc0NCw3NDUsNzQ2LDc0Nyw3NDgsNzQ5LDc1MSw3MTUsNzE2LDcxNyw3MjgsNzMxLDc1Miw3NTMiLCJ1bmlxdWVfbmFtZSI6IkdvbGZOb3dCb29raW5nRW5naW5lIiwiVGlja2V0aW5nOlByaW5jaXBhbFR5cGUiOiIxIiwibmJmIjoxNzc1MDY0Mzg1LCJleHAiOjE3NzUyMzcxODUsImlzcyI6Imh0dHBzOi8vc2VjdXJpdHktYXBpLmRldi51cy1lYXN0LTIucGhvdG9uZGFzaC5kZXYiLCJhdWQiOiJodHRwczovL3NlY3VyaXR5LWFwaS5kZXYudXMtZWFzdC0yLnBob3RvbmRhc2guZGV2In0.Rv1IxIReuvcHGwguZAaV5tumZQ66xD1jNX25xl9epIQ\" \\\n-H \"com-x-client-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJHb2xmTm93UUEiLCJjaGFubmVsSWQiOiIyMDk3MiIsIm5vbmNlIjoiYWMxY2ZjNWZjZmY4NzBiYTRmYjU1ODYyOWQ5MDUzZDhhZDk5YzA4OTYyY2RjOGJkZjBmYjU1N2FmZGFjZDBlYSIsImlhdCI6MTc3NTA3MzY5MiwiZXhwIjoxNzc1MDc1NDkyLCJhdWQiOiJnb2xmbm93LWNvbW1lcmNlIiwiaXNzIjoidW5pZmllZC1jb21tZXJjZS1wbGF0Zm9ybSJ9.Ld5VnDDkrIeR0n5zLGV3_rg_3JhimZTtto_Bn_E0AGc\" \\\n-H \"Content-Type: application/json\" \\\n-d '{\"originalInvoiceAmount\":0,\"nonce\":\"3d5ef7e3-9bb4-4c07-841e-3aef1932fead\",\"authenticatedTenant\":{\"tenantTypeCode\":\"booking-engine-identity\",\"identifier\":\"732e6239-a33a-4ae6-a6a9-64637e6e782d\",\"criteria\":{\"access_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wcGluZ0NhcnRJZCI6IjczMmU2MjM5LWEzM2EtNGFlNi1hNmE5LTY0NjM3ZTZlNzgyZCIsImVtYWlsIjoiaGFubmFoNzZ0OEBtYWlsaW5hdG9yLmNvbSIsImlzR3Vlc3QiOmZhbHNlLCJpc0FjY291bnRWZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzc1MDczNjkyLCJleHAiOjE3NzUwNzcyOTJ9.lNW4kT0Xtzdn9hYWw4QISZugyfQ98yVsk8-wFcrK61s\"}},\"guest\":{\"firstName\":\"Hannah\",\"lastName\":\"McDuck\",\"emailAddress\":\"hannah76t8@mailinator.com\",\"phoneNumber\":\"+12345678900\"}}' \\\n\"https://commerce-api.dev.us-east-2.photondash.dev/api/my/v1/payment/process/69cd18224405eb69e43eaeeb\"\n\nResponse:\n\n{\"errorCode\":\"UNKNOWN_ERROR\",\"errorId\":\"b06bc93d-d5d6-4b37-9d6c-471e909590a9\",\"errorMessages\":\"The selected payment methods are invalid: The selected payment methods are not valid for order (store:GN Facility 17266 Store)\",\"level\":\"error\",\"message\":\"Commerce API error:\",\"status\":400,\"url\":\"my/v1/payment/process/69cd18224405eb69e43eaeeb\"}\n\n{\"errorCode\":\"UNKNOWN_ERROR\",\"initialError\":{\"data\":{\"CorrelationId\":\"\",\"Error\":{\"ID\":10012,\"Type\":\"DataValidation\"},\"ErrorID\":\"10012\",\"ErrorMessages\":[\"The selected payment methods are invalid: The selected payment methods are not valid for order (store:GN Facility 17266 Store)\"],\"ErrorType\":\"DataValidation\",\"ValidationErrors\":{}},\"message\":\"Request failed with status code 400\",\"request\":{\"headers\":{},\"method\":\"post\",\"url\":\"my/v1/payment/process/69cd18224405eb69e43eaeeb\"},\"status\":400},\"level\":\"error\",\"message\":\"Error occurred: Unknown error occurred. Error Track ID: b06bc93d-d5d6-4b37-9d6c-471e909590a9\",\"name\":\"AppError\",\"stack\":\"AppError: Unknown error occurred. Error Track ID: b06bc93d-d5d6-4b37-9d6c-471e909590a9\\n    at mapCommerceError (/application/src/services/commerce-api/commerce-error-mapper.ts:69:12)\\n    at CommerceApiClient.processPayment (/application/src/api-clients/commerce-api-client.ts:486:35)\\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\\n    at async processPayment (/application/src/services/invoice/process-payment.ts:151:41)\\n    at async /application/src/routes/shopping-cart-v2.ts:936:34\"}\n\n- In the process payment workflow update the validation to check if any products in the cart requires the credit card to be collect. If there are any then throw the validation error if a payment method is not provided else allow the $0 order to proceed.\n\n- Verify that Authorization and Capture Activites will be bypassed when criteria is met.\n\nThread: https://versant-golfnow.slack.com/archives/C09MHR4RJ3F/p1775138883976139?thread_ts=1771354328.177829&cid=C09MHR4RJ3F",
-      "descriptionHtml": "<p><em>As a user of the Golf BE, I shouldn’t have to provide a CC in the legacy flow when I don’t have to pay anything up front in some scenarios. There are many legacy courses with this setup. </em></p><p>We need to update the Process Payment workflow to allow Booking Engine users to not send a payment method for the following: </p><ul><li><p>Due Now = $0</p></li><li><p>Due Later &gt; $0 </p></li></ul><p>Today, in this scenario this isn’t possible since there is a due later amount, we are still validating the payment methods. As none are being sent, the following validation error is shown: </p><p>Request: </p><pre><code>curl -X POST \\\n  -H &quot;Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3Yjg1YzE1OS1lZTExLTRkNWMtYmQ4YS1hNDgxZDcxOWZiM2YiLCJUaWNrZXRpbmc6UHJpbmNpcGFsS2V5IjoiNjdhYTc0Y2RmNjYxN2M5ZmRlODFkMWVjIiwiVGlja2V0aW5nOlBlcm1pc3Npb25UeXBlcyI6IjExMSw2MDMsNjA1LDYwNiw3MDAsNzA2LDcwNCw3MTIsNzAxLDcwNSw3MDgsNzA5LDcxOCw3MjEsNzI0LDcwNyw3MTAsNzExLDcxMyw3MTksNzIwLDcyNiw3MjcsNzAyLDcwMyw3MTQsNzIyLDcyMyw3MjUsNzI5LDczMCw3MzIsNzM0LDczNSw3MzYsNzM3LDczOCw3MzksNzQwLDc0MSw3NDIsNzQzLDc0NCw3NDUsNzQ2LDc0Nyw3NDgsNzQ5LDc1MSw3MTUsNzE2LDcxNyw3MjgsNzMxLDc1Miw3NTMiLCJ1bmlxdWVfbmFtZSI6IkdvbGZOb3dCb29raW5nRW5naW5lIiwiVGlja2V0aW5nOlByaW5jaXBhbFR5cGUiOiIxIiwibmJmIjoxNzc1MDY0Mzg1LCJleHAiOjE3NzUyMzcxODUsImlzcyI6Imh0dHBzOi8vc2VjdXJpdHktYXBpLmRldi51cy1lYXN0LTIucGhvdG9uZGFzaC5kZXYiLCJhdWQiOiJodHRwczovL3NlY3VyaXR5LWFwaS5kZXYudXMtZWFzdC0yLnBob3RvbmRhc2guZGV2In0.Rv1IxIReuvcHGwguZAaV5tumZQ66xD1jNX25xl9epIQ&quot; \\\n  -H &quot;com-x-client-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJHb2xmTm93UUEiLCJjaGFubmVsSWQiOiIyMDk3MiIsIm5vbmNlIjoiYWMxY2ZjNWZjZmY4NzBiYTRmYjU1ODYyOWQ5MDUzZDhhZDk5YzA4OTYyY2RjOGJkZjBmYjU1N2FmZGFjZDBlYSIsImlhdCI6MTc3NTA3MzY5MiwiZXhwIjoxNzc1MDc1NDkyLCJhdWQiOiJnb2xmbm93LWNvbW1lcmNlIiwiaXNzIjoidW5pZmllZC1jb21tZXJjZS1wbGF0Zm9ybSJ9.Ld5VnDDkrIeR0n5zLGV3_rg_3JhimZTtto_Bn_E0AGc&quot; \\\n  -H &quot;Content-Type: application/json&quot; \\\n  -d '{&quot;originalInvoiceAmount&quot;:0,&quot;nonce&quot;:&quot;3d5ef7e3-9bb4-4c07-841e-3aef1932fead&quot;,&quot;authenticatedTenant&quot;:{&quot;tenantTypeCode&quot;:&quot;booking-engine-identity&quot;,&quot;identifier&quot;:&quot;732e6239-a33a-4ae6-a6a9-64637e6e782d&quot;,&quot;criteria&quot;:{&quot;access_token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wcGluZ0NhcnRJZCI6IjczMmU2MjM5LWEzM2EtNGFlNi1hNmE5LTY0NjM3ZTZlNzgyZCIsImVtYWlsIjoiaGFubmFoNzZ0OEBtYWlsaW5hdG9yLmNvbSIsImlzR3Vlc3QiOmZhbHNlLCJpc0FjY291bnRWZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzc1MDczNjkyLCJleHAiOjE3NzUwNzcyOTJ9.lNW4kT0Xtzdn9hYWw4QISZugyfQ98yVsk8-wFcrK61s&quot;}},&quot;guest&quot;:{&quot;firstName&quot;:&quot;Hannah&quot;,&quot;lastName&quot;:&quot;McDuck&quot;,&quot;emailAddress&quot;:&quot;hannah76t8@mailinator.com&quot;,&quot;phoneNumber&quot;:&quot;+12345678900&quot;}}' \\\n  &quot;https://commerce-api.dev.us-east-2.photondash.dev/api/my/v1/payment/process/69cd18224405eb69e43eaeeb&quot;</code></pre><p>Response: </p><pre><code>{&quot;errorCode&quot;:&quot;UNKNOWN_ERROR&quot;,&quot;errorId&quot;:&quot;b06bc93d-d5d6-4b37-9d6c-471e909590a9&quot;,&quot;errorMessages&quot;:&quot;The selected payment methods are invalid: The selected payment methods are not valid for order (store:GN Facility 17266 Store)&quot;,&quot;level&quot;:&quot;error&quot;,&quot;message&quot;:&quot;Commerce API error:&quot;,&quot;status&quot;:400,&quot;url&quot;:&quot;my/v1/payment/process/69cd18224405eb69e43eaeeb&quot;}\n\n{&quot;errorCode&quot;:&quot;UNKNOWN_ERROR&quot;,&quot;initialError&quot;:{&quot;data&quot;:{&quot;CorrelationId&quot;:&quot;&quot;,&quot;Error&quot;:{&quot;ID&quot;:10012,&quot;Type&quot;:&quot;DataValidation&quot;},&quot;ErrorID&quot;:&quot;10012&quot;,&quot;ErrorMessages&quot;:[&quot;The selected payment methods are invalid: The selected payment methods are not valid for order (store:GN Facility 17266 Store)&quot;],&quot;ErrorType&quot;:&quot;DataValidation&quot;,&quot;ValidationErrors&quot;:{}},&quot;message&quot;:&quot;Request failed with status code 400&quot;,&quot;request&quot;:{&quot;headers&quot;:{},&quot;method&quot;:&quot;post&quot;,&quot;url&quot;:&quot;my/v1/payment/process/69cd18224405eb69e43eaeeb&quot;},&quot;status&quot;:400},&quot;level&quot;:&quot;error&quot;,&quot;message&quot;:&quot;Error occurred: Unknown error occurred. Error Track ID: b06bc93d-d5d6-4b37-9d6c-471e909590a9&quot;,&quot;name&quot;:&quot;AppError&quot;,&quot;stack&quot;:&quot;AppError: Unknown error occurred. Error Track ID: b06bc93d-d5d6-4b37-9d6c-471e909590a9\\n    at mapCommerceError (/application/src/services/commerce-api/commerce-error-mapper.ts:69:12)\\n    at CommerceApiClient.processPayment (/application/src/api-clients/commerce-api-client.ts:486:35)\\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\\n    at async processPayment (/application/src/services/invoice/process-payment.ts:151:41)\\n    at async /application/src/routes/shopping-cart-v2.ts:936:34&quot;}</code></pre><ul><li><p>In the process payment workflow update the validation to check if any products in the cart requires the credit card to be collect. If there are any then throw the validation error if a payment method is not provided else allow the $0 order to proceed. </p></li><li><p>Verify that Authorization and Capture Activites will be bypassed when criteria is met. </p></li></ul><p>Thread: <a href=\"https://versant-golfnow.slack.com/archives/C09MHR4RJ3F/p1775138883976139?thread_ts=1771354328.177829&amp;cid=C09MHR4RJ3F\" target=\"_blank\" rel=\"noopener\">https://versant-golfnow.slack.com/archives/C09MHR4RJ3F/p1775138883976139?thread_ts=1771354328.177829&amp;cid=C09MHR4RJ3F</a> </p>",
-      "descriptionImageCount": 0,
-      "descriptionVideoCount": 0,
-      "descriptionMediaCount": 0,
-      "commentCount": 0,
-      "comments": [],
-      "lastCommentUrl": "",
-      "lastCommentDisplay": "",
-      "lastCommentAuthor": "",
-      "type": "Story",
-      "isSubtask": false,
-      "status": "Development",
-      "priority": "P1",
-      "assignee": "Andrew Horvat",
-      "assigneeAccountId": "712020:d714b2a6-3491-46da-89f1-9777e2d1ab70",
-      "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:d714b2a6-3491-46da-89f1-9777e2d1ab70/25dedc4a-09d9-4ec9-945c-34d31d771711/32",
-      "assignedDeveloper": "Andrew Horvat",
-      "assignedDeveloperAccountId": "712020:fb2131ba-2122-41a0-9559-9966f684a89e",
-      "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:fb2131ba-2122-41a0-9559-9966f684a89e/169c8770-21ac-4272-a73c-858827f0c5bd/32",
-      "updated": "2026-06-11T16:47:31.642-0400",
-      "updatedDisplay": "Jun 11, 2026, 4:47 PM",
-      "created": "2026-04-22T09:44:51.371-0400",
-      "createdDisplay": "Apr 22, 2026, 9:44 AM",
-      "components": [
-        "GolfNow.Services.CommerceProxy",
-        "GolfNowAPI"
-      ],
-      "fixVersions": [
-        "v3001.123.0"
-      ],
-      "resolution": "Force Closed",
-      "parent": {
-        "key": "CORE-13172",
-        "url": "https://golfnow.atlassian.net/browse/CORE-13172",
-        "summary": "Commerce Proxy API",
-        "description": "",
-        "type": "Epic",
-        "status": "Planning",
-        "priority": "None"
-      }
-    },
     {
       "key": "CORE-14446",
       "url": "https://golfnow.atlassian.net/browse/CORE-14446",
@@ -359,7 +313,7 @@
         "summary": "CLONE - Update to allow No Payment Methods when $0 due now for BE",
         "description": "",
         "type": "Story",
-        "status": "Development",
+        "status": "Code Review",
         "priority": "P1"
       }
     },
@@ -404,7 +358,7 @@
         "summary": "CLONE - Update to allow No Payment Methods when $0 due now for BE",
         "description": "",
         "type": "Story",
-        "status": "Development",
+        "status": "Code Review",
         "priority": "P1"
       }
     },
@@ -2174,17 +2128,122 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-06-17T19:38:46.152Z",
-    "previousPulledAtDisplay": "Jun 17, 2026, 3:38 PM",
-    "currentPulledAt": "2026-06-17T20:00:47.473Z",
-    "currentPulledAtDisplay": "Jun 17, 2026, 4:00 PM",
+    "previousPulledAt": "2026-06-17T20:00:47.473Z",
+    "previousPulledAtDisplay": "Jun 17, 2026, 4:00 PM",
+    "currentPulledAt": "2026-06-17T20:25:50.862Z",
+    "currentPulledAtDisplay": "Jun 17, 2026, 4:25 PM",
     "isBaseline": false,
     "added": [],
-    "removed": [],
+    "removed": [
+      {
+        "key": "CORE-14397",
+        "url": "https://golfnow.atlassian.net/browse/CORE-14397",
+        "summary": "CLONE - Update to allow No Payment Methods when $0 due now for BE",
+        "description": "As a user of the Golf BE, I shouldn’t have to provide a CC in the legacy flow when I don’t have to pay anything up front in some scenarios. There are many legacy courses with this setup.\n\nWe need to update the Process Payment workflow to allow Booking Engine users to not send a payment method for the following:\n\n- Due Now = $0\n\n- Due Later > $0\n\nToday, in this scenario this isn’t possible since there is a due later amount, we are still validating the payment methods. As none are being sent, the following validation error is shown:\n\nRequest:\n\ncurl -X POST \\\n-H \"Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3Yjg1YzE1OS1lZTExLTRkNWMtYmQ4YS1hNDgxZDcxOWZiM2YiLCJUaWNrZXRpbmc6UHJpbmNpcGFsS2V5IjoiNjdhYTc0Y2RmNjYxN2M5ZmRlODFkMWVjIiwiVGlja2V0aW5nOlBlcm1pc3Npb25UeXBlcyI6IjExMSw2MDMsNjA1LDYwNiw3MDAsNzA2LDcwNCw3MTIsNzAxLDcwNSw3MDgsNzA5LDcxOCw3MjEsNzI0LDcwNyw3MTAsNzExLDcxMyw3MTksNzIwLDcyNiw3MjcsNzAyLDcwMyw3MTQsNzIyLDcyMyw3MjUsNzI5LDczMCw3MzIsNzM0LDczNSw3MzYsNzM3LDczOCw3MzksNzQwLDc0MSw3NDIsNzQzLDc0NCw3NDUsNzQ2LDc0Nyw3NDgsNzQ5LDc1MSw3MTUsNzE2LDcxNyw3MjgsNzMxLDc1Miw3NTMiLCJ1bmlxdWVfbmFtZSI6IkdvbGZOb3dCb29raW5nRW5naW5lIiwiVGlja2V0aW5nOlByaW5jaXBhbFR5cGUiOiIxIiwibmJmIjoxNzc1MDY0Mzg1LCJleHAiOjE3NzUyMzcxODUsImlzcyI6Imh0dHBzOi8vc2VjdXJpdHktYXBpLmRldi51cy1lYXN0LTIucGhvdG9uZGFzaC5kZXYiLCJhdWQiOiJodHRwczovL3NlY3VyaXR5LWFwaS5kZXYudXMtZWFzdC0yLnBob3RvbmRhc2guZGV2In0.Rv1IxIReuvcHGwguZAaV5tumZQ66xD1jNX25xl9epIQ\" \\\n-H \"com-x-client-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJHb2xmTm93UUEiLCJjaGFubmVsSWQiOiIyMDk3MiIsIm5vbmNlIjoiYWMxY2ZjNWZjZmY4NzBiYTRmYjU1ODYyOWQ5MDUzZDhhZDk5YzA4OTYyY2RjOGJkZjBmYjU1N2FmZGFjZDBlYSIsImlhdCI6MTc3NTA3MzY5MiwiZXhwIjoxNzc1MDc1NDkyLCJhdWQiOiJnb2xmbm93LWNvbW1lcmNlIiwiaXNzIjoidW5pZmllZC1jb21tZXJjZS1wbGF0Zm9ybSJ9.Ld5VnDDkrIeR0n5zLGV3_rg_3JhimZTtto_Bn_E0AGc\" \\\n-H \"Content-Type: application/json\" \\\n-d '{\"originalInvoiceAmount\":0,\"nonce\":\"3d5ef7e3-9bb4-4c07-841e-3aef1932fead\",\"authenticatedTenant\":{\"tenantTypeCode\":\"booking-engine-identity\",\"identifier\":\"732e6239-a33a-4ae6-a6a9-64637e6e782d\",\"criteria\":{\"access_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wcGluZ0NhcnRJZCI6IjczMmU2MjM5LWEzM2EtNGFlNi1hNmE5LTY0NjM3ZTZlNzgyZCIsImVtYWlsIjoiaGFubmFoNzZ0OEBtYWlsaW5hdG9yLmNvbSIsImlzR3Vlc3QiOmZhbHNlLCJpc0FjY291bnRWZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzc1MDczNjkyLCJleHAiOjE3NzUwNzcyOTJ9.lNW4kT0Xtzdn9hYWw4QISZugyfQ98yVsk8-wFcrK61s\"}},\"guest\":{\"firstName\":\"Hannah\",\"lastName\":\"McDuck\",\"emailAddress\":\"hannah76t8@mailinator.com\",\"phoneNumber\":\"+12345678900\"}}' \\\n\"https://commerce-api.dev.us-east-2.photondash.dev/api/my/v1/payment/process/69cd18224405eb69e43eaeeb\"\n\nResponse:\n\n{\"errorCode\":\"UNKNOWN_ERROR\",\"errorId\":\"b06bc93d-d5d6-4b37-9d6c-471e909590a9\",\"errorMessages\":\"The selected payment methods are invalid: The selected payment methods are not valid for order (store:GN Facility 17266 Store)\",\"level\":\"error\",\"message\":\"Commerce API error:\",\"status\":400,\"url\":\"my/v1/payment/process/69cd18224405eb69e43eaeeb\"}\n\n{\"errorCode\":\"UNKNOWN_ERROR\",\"initialError\":{\"data\":{\"CorrelationId\":\"\",\"Error\":{\"ID\":10012,\"Type\":\"DataValidation\"},\"ErrorID\":\"10012\",\"ErrorMessages\":[\"The selected payment methods are invalid: The selected payment methods are not valid for order (store:GN Facility 17266 Store)\"],\"ErrorType\":\"DataValidation\",\"ValidationErrors\":{}},\"message\":\"Request failed with status code 400\",\"request\":{\"headers\":{},\"method\":\"post\",\"url\":\"my/v1/payment/process/69cd18224405eb69e43eaeeb\"},\"status\":400},\"level\":\"error\",\"message\":\"Error occurred: Unknown error occurred. Error Track ID: b06bc93d-d5d6-4b37-9d6c-471e909590a9\",\"name\":\"AppError\",\"stack\":\"AppError: Unknown error occurred. Error Track ID: b06bc93d-d5d6-4b37-9d6c-471e909590a9\\n    at mapCommerceError (/application/src/services/commerce-api/commerce-error-mapper.ts:69:12)\\n    at CommerceApiClient.processPayment (/application/src/api-clients/commerce-api-client.ts:486:35)\\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\\n    at async processPayment (/application/src/services/invoice/process-payment.ts:151:41)\\n    at async /application/src/routes/shopping-cart-v2.ts:936:34\"}\n\n- In the process payment workflow update the validation to check if any products in the cart requires the credit card to be collect. If there are any then throw the validation error if a payment method is not provided else allow the $0 order to proceed.\n\n- Verify that Authorization and Capture Activites will be bypassed when criteria is met.\n\nThread: https://versant-golfnow.slack.com/archives/C09MHR4RJ3F/p1775138883976139?thread_ts=1771354328.177829&cid=C09MHR4RJ3F",
+        "descriptionHtml": "<p><em>As a user of the Golf BE, I shouldn’t have to provide a CC in the legacy flow when I don’t have to pay anything up front in some scenarios. There are many legacy courses with this setup. </em></p><p>We need to update the Process Payment workflow to allow Booking Engine users to not send a payment method for the following: </p><ul><li><p>Due Now = $0</p></li><li><p>Due Later &gt; $0 </p></li></ul><p>Today, in this scenario this isn’t possible since there is a due later amount, we are still validating the payment methods. As none are being sent, the following validation error is shown: </p><p>Request: </p><pre><code>curl -X POST \\\n  -H &quot;Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3Yjg1YzE1OS1lZTExLTRkNWMtYmQ4YS1hNDgxZDcxOWZiM2YiLCJUaWNrZXRpbmc6UHJpbmNpcGFsS2V5IjoiNjdhYTc0Y2RmNjYxN2M5ZmRlODFkMWVjIiwiVGlja2V0aW5nOlBlcm1pc3Npb25UeXBlcyI6IjExMSw2MDMsNjA1LDYwNiw3MDAsNzA2LDcwNCw3MTIsNzAxLDcwNSw3MDgsNzA5LDcxOCw3MjEsNzI0LDcwNyw3MTAsNzExLDcxMyw3MTksNzIwLDcyNiw3MjcsNzAyLDcwMyw3MTQsNzIyLDcyMyw3MjUsNzI5LDczMCw3MzIsNzM0LDczNSw3MzYsNzM3LDczOCw3MzksNzQwLDc0MSw3NDIsNzQzLDc0NCw3NDUsNzQ2LDc0Nyw3NDgsNzQ5LDc1MSw3MTUsNzE2LDcxNyw3MjgsNzMxLDc1Miw3NTMiLCJ1bmlxdWVfbmFtZSI6IkdvbGZOb3dCb29raW5nRW5naW5lIiwiVGlja2V0aW5nOlByaW5jaXBhbFR5cGUiOiIxIiwibmJmIjoxNzc1MDY0Mzg1LCJleHAiOjE3NzUyMzcxODUsImlzcyI6Imh0dHBzOi8vc2VjdXJpdHktYXBpLmRldi51cy1lYXN0LTIucGhvdG9uZGFzaC5kZXYiLCJhdWQiOiJodHRwczovL3NlY3VyaXR5LWFwaS5kZXYudXMtZWFzdC0yLnBob3RvbmRhc2guZGV2In0.Rv1IxIReuvcHGwguZAaV5tumZQ66xD1jNX25xl9epIQ&quot; \\\n  -H &quot;com-x-client-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJHb2xmTm93UUEiLCJjaGFubmVsSWQiOiIyMDk3MiIsIm5vbmNlIjoiYWMxY2ZjNWZjZmY4NzBiYTRmYjU1ODYyOWQ5MDUzZDhhZDk5YzA4OTYyY2RjOGJkZjBmYjU1N2FmZGFjZDBlYSIsImlhdCI6MTc3NTA3MzY5MiwiZXhwIjoxNzc1MDc1NDkyLCJhdWQiOiJnb2xmbm93LWNvbW1lcmNlIiwiaXNzIjoidW5pZmllZC1jb21tZXJjZS1wbGF0Zm9ybSJ9.Ld5VnDDkrIeR0n5zLGV3_rg_3JhimZTtto_Bn_E0AGc&quot; \\\n  -H &quot;Content-Type: application/json&quot; \\\n  -d '{&quot;originalInvoiceAmount&quot;:0,&quot;nonce&quot;:&quot;3d5ef7e3-9bb4-4c07-841e-3aef1932fead&quot;,&quot;authenticatedTenant&quot;:{&quot;tenantTypeCode&quot;:&quot;booking-engine-identity&quot;,&quot;identifier&quot;:&quot;732e6239-a33a-4ae6-a6a9-64637e6e782d&quot;,&quot;criteria&quot;:{&quot;access_token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wcGluZ0NhcnRJZCI6IjczMmU2MjM5LWEzM2EtNGFlNi1hNmE5LTY0NjM3ZTZlNzgyZCIsImVtYWlsIjoiaGFubmFoNzZ0OEBtYWlsaW5hdG9yLmNvbSIsImlzR3Vlc3QiOmZhbHNlLCJpc0FjY291bnRWZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzc1MDczNjkyLCJleHAiOjE3NzUwNzcyOTJ9.lNW4kT0Xtzdn9hYWw4QISZugyfQ98yVsk8-wFcrK61s&quot;}},&quot;guest&quot;:{&quot;firstName&quot;:&quot;Hannah&quot;,&quot;lastName&quot;:&quot;McDuck&quot;,&quot;emailAddress&quot;:&quot;hannah76t8@mailinator.com&quot;,&quot;phoneNumber&quot;:&quot;+12345678900&quot;}}' \\\n  &quot;https://commerce-api.dev.us-east-2.photondash.dev/api/my/v1/payment/process/69cd18224405eb69e43eaeeb&quot;</code></pre><p>Response: </p><pre><code>{&quot;errorCode&quot;:&quot;UNKNOWN_ERROR&quot;,&quot;errorId&quot;:&quot;b06bc93d-d5d6-4b37-9d6c-471e909590a9&quot;,&quot;errorMessages&quot;:&quot;The selected payment methods are invalid: The selected payment methods are not valid for order (store:GN Facility 17266 Store)&quot;,&quot;level&quot;:&quot;error&quot;,&quot;message&quot;:&quot;Commerce API error:&quot;,&quot;status&quot;:400,&quot;url&quot;:&quot;my/v1/payment/process/69cd18224405eb69e43eaeeb&quot;}\n\n{&quot;errorCode&quot;:&quot;UNKNOWN_ERROR&quot;,&quot;initialError&quot;:{&quot;data&quot;:{&quot;CorrelationId&quot;:&quot;&quot;,&quot;Error&quot;:{&quot;ID&quot;:10012,&quot;Type&quot;:&quot;DataValidation&quot;},&quot;ErrorID&quot;:&quot;10012&quot;,&quot;ErrorMessages&quot;:[&quot;The selected payment methods are invalid: The selected payment methods are not valid for order (store:GN Facility 17266 Store)&quot;],&quot;ErrorType&quot;:&quot;DataValidation&quot;,&quot;ValidationErrors&quot;:{}},&quot;message&quot;:&quot;Request failed with status code 400&quot;,&quot;request&quot;:{&quot;headers&quot;:{},&quot;method&quot;:&quot;post&quot;,&quot;url&quot;:&quot;my/v1/payment/process/69cd18224405eb69e43eaeeb&quot;},&quot;status&quot;:400},&quot;level&quot;:&quot;error&quot;,&quot;message&quot;:&quot;Error occurred: Unknown error occurred. Error Track ID: b06bc93d-d5d6-4b37-9d6c-471e909590a9&quot;,&quot;name&quot;:&quot;AppError&quot;,&quot;stack&quot;:&quot;AppError: Unknown error occurred. Error Track ID: b06bc93d-d5d6-4b37-9d6c-471e909590a9\\n    at mapCommerceError (/application/src/services/commerce-api/commerce-error-mapper.ts:69:12)\\n    at CommerceApiClient.processPayment (/application/src/api-clients/commerce-api-client.ts:486:35)\\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\\n    at async processPayment (/application/src/services/invoice/process-payment.ts:151:41)\\n    at async /application/src/routes/shopping-cart-v2.ts:936:34&quot;}</code></pre><ul><li><p>In the process payment workflow update the validation to check if any products in the cart requires the credit card to be collect. If there are any then throw the validation error if a payment method is not provided else allow the $0 order to proceed. </p></li><li><p>Verify that Authorization and Capture Activites will be bypassed when criteria is met. </p></li></ul><p>Thread: <a href=\"https://versant-golfnow.slack.com/archives/C09MHR4RJ3F/p1775138883976139?thread_ts=1771354328.177829&amp;cid=C09MHR4RJ3F\" target=\"_blank\" rel=\"noopener\">https://versant-golfnow.slack.com/archives/C09MHR4RJ3F/p1775138883976139?thread_ts=1771354328.177829&amp;cid=C09MHR4RJ3F</a> </p>",
+        "descriptionImageCount": 0,
+        "descriptionVideoCount": 0,
+        "descriptionMediaCount": 0,
+        "commentCount": 0,
+        "comments": [],
+        "lastCommentUrl": "",
+        "lastCommentDisplay": "",
+        "lastCommentAuthor": "",
+        "type": "Story",
+        "isSubtask": false,
+        "status": "Development",
+        "priority": "P1",
+        "assignee": "Andrew Horvat",
+        "assigneeAccountId": "712020:d714b2a6-3491-46da-89f1-9777e2d1ab70",
+        "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:d714b2a6-3491-46da-89f1-9777e2d1ab70/25dedc4a-09d9-4ec9-945c-34d31d771711/32",
+        "assignedDeveloper": "Andrew Horvat",
+        "assignedDeveloperAccountId": "712020:fb2131ba-2122-41a0-9559-9966f684a89e",
+        "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:fb2131ba-2122-41a0-9559-9966f684a89e/169c8770-21ac-4272-a73c-858827f0c5bd/32",
+        "updated": "2026-06-11T16:47:31.642-0400",
+        "updatedDisplay": "Jun 11, 2026, 4:47 PM",
+        "created": "2026-04-22T09:44:51.371-0400",
+        "createdDisplay": "Apr 22, 2026, 9:44 AM",
+        "components": [
+          "GolfNow.Services.CommerceProxy",
+          "GolfNowAPI"
+        ],
+        "fixVersions": [
+          "v3001.123.0"
+        ],
+        "resolution": "Force Closed",
+        "parent": {
+          "key": "CORE-13172",
+          "url": "https://golfnow.atlassian.net/browse/CORE-13172",
+          "summary": "Commerce Proxy API",
+          "description": "",
+          "type": "Epic",
+          "status": "Planning",
+          "priority": "None"
+        }
+      }
+    ],
     "updated": [],
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-06-17T20:00:47.473Z",
+      "previousPulledAtDisplay": "Jun 17, 2026, 4:00 PM",
+      "currentPulledAt": "2026-06-17T20:25:50.862Z",
+      "currentPulledAtDisplay": "Jun 17, 2026, 4:25 PM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [
+        {
+          "key": "CORE-14397",
+          "url": "https://golfnow.atlassian.net/browse/CORE-14397",
+          "summary": "CLONE - Update to allow No Payment Methods when $0 due now for BE",
+          "description": "As a user of the Golf BE, I shouldn’t have to provide a CC in the legacy flow when I don’t have to pay anything up front in some scenarios. There are many legacy courses with this setup.\n\nWe need to update the Process Payment workflow to allow Booking Engine users to not send a payment method for the following:\n\n- Due Now = $0\n\n- Due Later > $0\n\nToday, in this scenario this isn’t possible since there is a due later amount, we are still validating the payment methods. As none are being sent, the following validation error is shown:\n\nRequest:\n\ncurl -X POST \\\n-H \"Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3Yjg1YzE1OS1lZTExLTRkNWMtYmQ4YS1hNDgxZDcxOWZiM2YiLCJUaWNrZXRpbmc6UHJpbmNpcGFsS2V5IjoiNjdhYTc0Y2RmNjYxN2M5ZmRlODFkMWVjIiwiVGlja2V0aW5nOlBlcm1pc3Npb25UeXBlcyI6IjExMSw2MDMsNjA1LDYwNiw3MDAsNzA2LDcwNCw3MTIsNzAxLDcwNSw3MDgsNzA5LDcxOCw3MjEsNzI0LDcwNyw3MTAsNzExLDcxMyw3MTksNzIwLDcyNiw3MjcsNzAyLDcwMyw3MTQsNzIyLDcyMyw3MjUsNzI5LDczMCw3MzIsNzM0LDczNSw3MzYsNzM3LDczOCw3MzksNzQwLDc0MSw3NDIsNzQzLDc0NCw3NDUsNzQ2LDc0Nyw3NDgsNzQ5LDc1MSw3MTUsNzE2LDcxNyw3MjgsNzMxLDc1Miw3NTMiLCJ1bmlxdWVfbmFtZSI6IkdvbGZOb3dCb29raW5nRW5naW5lIiwiVGlja2V0aW5nOlByaW5jaXBhbFR5cGUiOiIxIiwibmJmIjoxNzc1MDY0Mzg1LCJleHAiOjE3NzUyMzcxODUsImlzcyI6Imh0dHBzOi8vc2VjdXJpdHktYXBpLmRldi51cy1lYXN0LTIucGhvdG9uZGFzaC5kZXYiLCJhdWQiOiJodHRwczovL3NlY3VyaXR5LWFwaS5kZXYudXMtZWFzdC0yLnBob3RvbmRhc2guZGV2In0.Rv1IxIReuvcHGwguZAaV5tumZQ66xD1jNX25xl9epIQ\" \\\n-H \"com-x-client-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJHb2xmTm93UUEiLCJjaGFubmVsSWQiOiIyMDk3MiIsIm5vbmNlIjoiYWMxY2ZjNWZjZmY4NzBiYTRmYjU1ODYyOWQ5MDUzZDhhZDk5YzA4OTYyY2RjOGJkZjBmYjU1N2FmZGFjZDBlYSIsImlhdCI6MTc3NTA3MzY5MiwiZXhwIjoxNzc1MDc1NDkyLCJhdWQiOiJnb2xmbm93LWNvbW1lcmNlIiwiaXNzIjoidW5pZmllZC1jb21tZXJjZS1wbGF0Zm9ybSJ9.Ld5VnDDkrIeR0n5zLGV3_rg_3JhimZTtto_Bn_E0AGc\" \\\n-H \"Content-Type: application/json\" \\\n-d '{\"originalInvoiceAmount\":0,\"nonce\":\"3d5ef7e3-9bb4-4c07-841e-3aef1932fead\",\"authenticatedTenant\":{\"tenantTypeCode\":\"booking-engine-identity\",\"identifier\":\"732e6239-a33a-4ae6-a6a9-64637e6e782d\",\"criteria\":{\"access_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wcGluZ0NhcnRJZCI6IjczMmU2MjM5LWEzM2EtNGFlNi1hNmE5LTY0NjM3ZTZlNzgyZCIsImVtYWlsIjoiaGFubmFoNzZ0OEBtYWlsaW5hdG9yLmNvbSIsImlzR3Vlc3QiOmZhbHNlLCJpc0FjY291bnRWZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzc1MDczNjkyLCJleHAiOjE3NzUwNzcyOTJ9.lNW4kT0Xtzdn9hYWw4QISZugyfQ98yVsk8-wFcrK61s\"}},\"guest\":{\"firstName\":\"Hannah\",\"lastName\":\"McDuck\",\"emailAddress\":\"hannah76t8@mailinator.com\",\"phoneNumber\":\"+12345678900\"}}' \\\n\"https://commerce-api.dev.us-east-2.photondash.dev/api/my/v1/payment/process/69cd18224405eb69e43eaeeb\"\n\nResponse:\n\n{\"errorCode\":\"UNKNOWN_ERROR\",\"errorId\":\"b06bc93d-d5d6-4b37-9d6c-471e909590a9\",\"errorMessages\":\"The selected payment methods are invalid: The selected payment methods are not valid for order (store:GN Facility 17266 Store)\",\"level\":\"error\",\"message\":\"Commerce API error:\",\"status\":400,\"url\":\"my/v1/payment/process/69cd18224405eb69e43eaeeb\"}\n\n{\"errorCode\":\"UNKNOWN_ERROR\",\"initialError\":{\"data\":{\"CorrelationId\":\"\",\"Error\":{\"ID\":10012,\"Type\":\"DataValidation\"},\"ErrorID\":\"10012\",\"ErrorMessages\":[\"The selected payment methods are invalid: The selected payment methods are not valid for order (store:GN Facility 17266 Store)\"],\"ErrorType\":\"DataValidation\",\"ValidationErrors\":{}},\"message\":\"Request failed with status code 400\",\"request\":{\"headers\":{},\"method\":\"post\",\"url\":\"my/v1/payment/process/69cd18224405eb69e43eaeeb\"},\"status\":400},\"level\":\"error\",\"message\":\"Error occurred: Unknown error occurred. Error Track ID: b06bc93d-d5d6-4b37-9d6c-471e909590a9\",\"name\":\"AppError\",\"stack\":\"AppError: Unknown error occurred. Error Track ID: b06bc93d-d5d6-4b37-9d6c-471e909590a9\\n    at mapCommerceError (/application/src/services/commerce-api/commerce-error-mapper.ts:69:12)\\n    at CommerceApiClient.processPayment (/application/src/api-clients/commerce-api-client.ts:486:35)\\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\\n    at async processPayment (/application/src/services/invoice/process-payment.ts:151:41)\\n    at async /application/src/routes/shopping-cart-v2.ts:936:34\"}\n\n- In the process payment workflow update the validation to check if any products in the cart requires the credit card to be collect. If there are any then throw the validation error if a payment method is not provided else allow the $0 order to proceed.\n\n- Verify that Authorization and Capture Activites will be bypassed when criteria is met.\n\nThread: https://versant-golfnow.slack.com/archives/C09MHR4RJ3F/p1775138883976139?thread_ts=1771354328.177829&cid=C09MHR4RJ3F",
+          "descriptionHtml": "<p><em>As a user of the Golf BE, I shouldn’t have to provide a CC in the legacy flow when I don’t have to pay anything up front in some scenarios. There are many legacy courses with this setup. </em></p><p>We need to update the Process Payment workflow to allow Booking Engine users to not send a payment method for the following: </p><ul><li><p>Due Now = $0</p></li><li><p>Due Later &gt; $0 </p></li></ul><p>Today, in this scenario this isn’t possible since there is a due later amount, we are still validating the payment methods. As none are being sent, the following validation error is shown: </p><p>Request: </p><pre><code>curl -X POST \\\n  -H &quot;Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3Yjg1YzE1OS1lZTExLTRkNWMtYmQ4YS1hNDgxZDcxOWZiM2YiLCJUaWNrZXRpbmc6UHJpbmNpcGFsS2V5IjoiNjdhYTc0Y2RmNjYxN2M5ZmRlODFkMWVjIiwiVGlja2V0aW5nOlBlcm1pc3Npb25UeXBlcyI6IjExMSw2MDMsNjA1LDYwNiw3MDAsNzA2LDcwNCw3MTIsNzAxLDcwNSw3MDgsNzA5LDcxOCw3MjEsNzI0LDcwNyw3MTAsNzExLDcxMyw3MTksNzIwLDcyNiw3MjcsNzAyLDcwMyw3MTQsNzIyLDcyMyw3MjUsNzI5LDczMCw3MzIsNzM0LDczNSw3MzYsNzM3LDczOCw3MzksNzQwLDc0MSw3NDIsNzQzLDc0NCw3NDUsNzQ2LDc0Nyw3NDgsNzQ5LDc1MSw3MTUsNzE2LDcxNyw3MjgsNzMxLDc1Miw3NTMiLCJ1bmlxdWVfbmFtZSI6IkdvbGZOb3dCb29raW5nRW5naW5lIiwiVGlja2V0aW5nOlByaW5jaXBhbFR5cGUiOiIxIiwibmJmIjoxNzc1MDY0Mzg1LCJleHAiOjE3NzUyMzcxODUsImlzcyI6Imh0dHBzOi8vc2VjdXJpdHktYXBpLmRldi51cy1lYXN0LTIucGhvdG9uZGFzaC5kZXYiLCJhdWQiOiJodHRwczovL3NlY3VyaXR5LWFwaS5kZXYudXMtZWFzdC0yLnBob3RvbmRhc2guZGV2In0.Rv1IxIReuvcHGwguZAaV5tumZQ66xD1jNX25xl9epIQ&quot; \\\n  -H &quot;com-x-client-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJHb2xmTm93UUEiLCJjaGFubmVsSWQiOiIyMDk3MiIsIm5vbmNlIjoiYWMxY2ZjNWZjZmY4NzBiYTRmYjU1ODYyOWQ5MDUzZDhhZDk5YzA4OTYyY2RjOGJkZjBmYjU1N2FmZGFjZDBlYSIsImlhdCI6MTc3NTA3MzY5MiwiZXhwIjoxNzc1MDc1NDkyLCJhdWQiOiJnb2xmbm93LWNvbW1lcmNlIiwiaXNzIjoidW5pZmllZC1jb21tZXJjZS1wbGF0Zm9ybSJ9.Ld5VnDDkrIeR0n5zLGV3_rg_3JhimZTtto_Bn_E0AGc&quot; \\\n  -H &quot;Content-Type: application/json&quot; \\\n  -d '{&quot;originalInvoiceAmount&quot;:0,&quot;nonce&quot;:&quot;3d5ef7e3-9bb4-4c07-841e-3aef1932fead&quot;,&quot;authenticatedTenant&quot;:{&quot;tenantTypeCode&quot;:&quot;booking-engine-identity&quot;,&quot;identifier&quot;:&quot;732e6239-a33a-4ae6-a6a9-64637e6e782d&quot;,&quot;criteria&quot;:{&quot;access_token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wcGluZ0NhcnRJZCI6IjczMmU2MjM5LWEzM2EtNGFlNi1hNmE5LTY0NjM3ZTZlNzgyZCIsImVtYWlsIjoiaGFubmFoNzZ0OEBtYWlsaW5hdG9yLmNvbSIsImlzR3Vlc3QiOmZhbHNlLCJpc0FjY291bnRWZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzc1MDczNjkyLCJleHAiOjE3NzUwNzcyOTJ9.lNW4kT0Xtzdn9hYWw4QISZugyfQ98yVsk8-wFcrK61s&quot;}},&quot;guest&quot;:{&quot;firstName&quot;:&quot;Hannah&quot;,&quot;lastName&quot;:&quot;McDuck&quot;,&quot;emailAddress&quot;:&quot;hannah76t8@mailinator.com&quot;,&quot;phoneNumber&quot;:&quot;+12345678900&quot;}}' \\\n  &quot;https://commerce-api.dev.us-east-2.photondash.dev/api/my/v1/payment/process/69cd18224405eb69e43eaeeb&quot;</code></pre><p>Response: </p><pre><code>{&quot;errorCode&quot;:&quot;UNKNOWN_ERROR&quot;,&quot;errorId&quot;:&quot;b06bc93d-d5d6-4b37-9d6c-471e909590a9&quot;,&quot;errorMessages&quot;:&quot;The selected payment methods are invalid: The selected payment methods are not valid for order (store:GN Facility 17266 Store)&quot;,&quot;level&quot;:&quot;error&quot;,&quot;message&quot;:&quot;Commerce API error:&quot;,&quot;status&quot;:400,&quot;url&quot;:&quot;my/v1/payment/process/69cd18224405eb69e43eaeeb&quot;}\n\n{&quot;errorCode&quot;:&quot;UNKNOWN_ERROR&quot;,&quot;initialError&quot;:{&quot;data&quot;:{&quot;CorrelationId&quot;:&quot;&quot;,&quot;Error&quot;:{&quot;ID&quot;:10012,&quot;Type&quot;:&quot;DataValidation&quot;},&quot;ErrorID&quot;:&quot;10012&quot;,&quot;ErrorMessages&quot;:[&quot;The selected payment methods are invalid: The selected payment methods are not valid for order (store:GN Facility 17266 Store)&quot;],&quot;ErrorType&quot;:&quot;DataValidation&quot;,&quot;ValidationErrors&quot;:{}},&quot;message&quot;:&quot;Request failed with status code 400&quot;,&quot;request&quot;:{&quot;headers&quot;:{},&quot;method&quot;:&quot;post&quot;,&quot;url&quot;:&quot;my/v1/payment/process/69cd18224405eb69e43eaeeb&quot;},&quot;status&quot;:400},&quot;level&quot;:&quot;error&quot;,&quot;message&quot;:&quot;Error occurred: Unknown error occurred. Error Track ID: b06bc93d-d5d6-4b37-9d6c-471e909590a9&quot;,&quot;name&quot;:&quot;AppError&quot;,&quot;stack&quot;:&quot;AppError: Unknown error occurred. Error Track ID: b06bc93d-d5d6-4b37-9d6c-471e909590a9\\n    at mapCommerceError (/application/src/services/commerce-api/commerce-error-mapper.ts:69:12)\\n    at CommerceApiClient.processPayment (/application/src/api-clients/commerce-api-client.ts:486:35)\\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\\n    at async processPayment (/application/src/services/invoice/process-payment.ts:151:41)\\n    at async /application/src/routes/shopping-cart-v2.ts:936:34&quot;}</code></pre><ul><li><p>In the process payment workflow update the validation to check if any products in the cart requires the credit card to be collect. If there are any then throw the validation error if a payment method is not provided else allow the $0 order to proceed. </p></li><li><p>Verify that Authorization and Capture Activites will be bypassed when criteria is met. </p></li></ul><p>Thread: <a href=\"https://versant-golfnow.slack.com/archives/C09MHR4RJ3F/p1775138883976139?thread_ts=1771354328.177829&amp;cid=C09MHR4RJ3F\" target=\"_blank\" rel=\"noopener\">https://versant-golfnow.slack.com/archives/C09MHR4RJ3F/p1775138883976139?thread_ts=1771354328.177829&amp;cid=C09MHR4RJ3F</a> </p>",
+          "descriptionImageCount": 0,
+          "descriptionVideoCount": 0,
+          "descriptionMediaCount": 0,
+          "commentCount": 0,
+          "comments": [],
+          "lastCommentUrl": "",
+          "lastCommentDisplay": "",
+          "lastCommentAuthor": "",
+          "type": "Story",
+          "isSubtask": false,
+          "status": "Development",
+          "priority": "P1",
+          "assignee": "Andrew Horvat",
+          "assigneeAccountId": "712020:d714b2a6-3491-46da-89f1-9777e2d1ab70",
+          "assigneeAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:d714b2a6-3491-46da-89f1-9777e2d1ab70/25dedc4a-09d9-4ec9-945c-34d31d771711/32",
+          "assignedDeveloper": "Andrew Horvat",
+          "assignedDeveloperAccountId": "712020:fb2131ba-2122-41a0-9559-9966f684a89e",
+          "assignedDeveloperAvatarUrl": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:fb2131ba-2122-41a0-9559-9966f684a89e/169c8770-21ac-4272-a73c-858827f0c5bd/32",
+          "updated": "2026-06-11T16:47:31.642-0400",
+          "updatedDisplay": "Jun 11, 2026, 4:47 PM",
+          "created": "2026-04-22T09:44:51.371-0400",
+          "createdDisplay": "Apr 22, 2026, 9:44 AM",
+          "components": [
+            "GolfNow.Services.CommerceProxy",
+            "GolfNowAPI"
+          ],
+          "fixVersions": [
+            "v3001.123.0"
+          ],
+          "resolution": "Force Closed",
+          "parent": {
+            "key": "CORE-13172",
+            "url": "https://golfnow.atlassian.net/browse/CORE-13172",
+            "summary": "Commerce Proxy API",
+            "description": "",
+            "type": "Epic",
+            "status": "Planning",
+            "priority": "None"
+          }
+        }
+      ],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-06-17T19:38:46.152Z",
       "previousPulledAtDisplay": "Jun 17, 2026, 3:38 PM",
@@ -4016,17 +4075,6 @@
       "previousPulledAtDisplay": "Jun 14, 2026, 1:20 AM",
       "currentPulledAt": "2026-06-14T05:45:42.224Z",
       "currentPulledAtDisplay": "Jun 14, 2026, 1:45 AM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-06-14T04:55:42.020Z",
-      "previousPulledAtDisplay": "Jun 14, 2026, 12:55 AM",
-      "currentPulledAt": "2026-06-14T05:20:44.746Z",
-      "currentPulledAtDisplay": "Jun 14, 2026, 1:20 AM",
       "isBaseline": false,
       "added": [],
       "removed": [],
