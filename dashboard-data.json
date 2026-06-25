@@ -4,8 +4,8 @@
   "dashboardVersion": "v1.10.6",
   "siteUrl": "https://golfnow.atlassian.net",
   "jql": "fixVersion = \"v3001.123.0\" ORDER BY updated DESC",
-  "pulledAt": "2026-06-25T13:06:13.164Z",
-  "pulledAtDisplay": "Jun 25, 2026, 9:06 AM",
+  "pulledAt": "2026-06-25T13:31:13.294Z",
+  "pulledAtDisplay": "Jun 25, 2026, 9:31 AM",
   "total": 32,
   "issues": [
     {
@@ -313,7 +313,7 @@
         "summary": "CLONE - Update to allow No Payment Methods when $0 due now for BE",
         "description": "",
         "type": "Story",
-        "status": "QA Testing (DEV)",
+        "status": "PO Review",
         "priority": "P1"
       }
     },
@@ -358,7 +358,7 @@
         "summary": "CLONE - Update to allow No Payment Methods when $0 due now for BE",
         "description": "",
         "type": "Story",
-        "status": "QA Testing (DEV)",
+        "status": "PO Review",
         "priority": "P1"
       }
     },
@@ -2128,10 +2128,10 @@
     }
   ],
   "pullDiff": {
-    "previousPulledAt": "2026-06-25T12:41:13.423Z",
-    "previousPulledAtDisplay": "Jun 25, 2026, 8:41 AM",
-    "currentPulledAt": "2026-06-25T13:06:13.164Z",
-    "currentPulledAtDisplay": "Jun 25, 2026, 9:06 AM",
+    "previousPulledAt": "2026-06-25T13:06:13.164Z",
+    "previousPulledAtDisplay": "Jun 25, 2026, 9:06 AM",
+    "currentPulledAt": "2026-06-25T13:31:13.294Z",
+    "currentPulledAtDisplay": "Jun 25, 2026, 9:31 AM",
     "isBaseline": false,
     "added": [],
     "removed": [],
@@ -2139,6 +2139,17 @@
     "statusChanges": []
   },
   "pullHistory": [
+    {
+      "previousPulledAt": "2026-06-25T13:06:13.164Z",
+      "previousPulledAtDisplay": "Jun 25, 2026, 9:06 AM",
+      "currentPulledAt": "2026-06-25T13:31:13.294Z",
+      "currentPulledAtDisplay": "Jun 25, 2026, 9:31 AM",
+      "isBaseline": false,
+      "added": [],
+      "removed": [],
+      "updated": [],
+      "statusChanges": []
+    },
     {
       "previousPulledAt": "2026-06-25T12:41:13.423Z",
       "previousPulledAtDisplay": "Jun 25, 2026, 8:41 AM",
@@ -3970,17 +3981,6 @@
       "previousPulledAtDisplay": "Jun 22, 2026, 5:01 PM",
       "currentPulledAt": "2026-06-22T21:26:06.050Z",
       "currentPulledAtDisplay": "Jun 22, 2026, 5:26 PM",
-      "isBaseline": false,
-      "added": [],
-      "removed": [],
-      "updated": [],
-      "statusChanges": []
-    },
-    {
-      "previousPulledAt": "2026-06-22T20:36:13.337Z",
-      "previousPulledAtDisplay": "Jun 22, 2026, 4:36 PM",
-      "currentPulledAt": "2026-06-22T21:01:11.451Z",
-      "currentPulledAtDisplay": "Jun 22, 2026, 5:01 PM",
       "isBaseline": false,
       "added": [],
       "removed": [],
